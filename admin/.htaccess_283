@@ -1,0 +1,47 @@
+Options +FollowSymLinks
+RewriteEngine On
+
+
+RewriteCond %{HTTP_HOST} ^([^/.]+)\.lapnano\.local$ 
+RewriteCond %1 !^(www|ftp|mail)$ [NC]
+RewriteRule ^(.*)$ index.php?module=template&alias=%1&raw=1 [L]
+
+RewriteCond %{HTTP_HOST} ^www\.(.*)
+RewriteRule (.*) http://%1/$1 [R=301,L]
+
+RewriteCond %{HTTP_HOST} ^www.(.+) [NC]
+RewriteRule ^(.*) http://%1/$1 [R=301,NE,L]
+
+
+AddType text/x-component .htc
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+
+RewriteRule ^index.html$ index.php?module=products&view=products&Itemid=1&lang=vi&%{QUERY_STRING} [L]
+
+#products
+
+RewriteRule ^product/categories$ index.php?module=products&view=categories&%{QUERY_STRING} [L]
+RewriteRule ^product/categorie/edit/([0-9]*)$ index.php?module=products&view=categories&task=edit&id=$1&Itemid=1&lang=vi&%{QUERY_STRING} [L]
+
+
+RewriteRule ^product/add/([0-9]*)$ index.php?module=products&view=products&task=add&cid=$1&Itemid=1&lang=vi&%{QUERY_STRING} [L]
+RewriteRule ^product/edit/([0-9]*)$ index.php?module=products&view=products&task=edit&id=$1&Itemid=1&lang=vi&%{QUERY_STRING} [L]
+RewriteRule ^products$ index.php?module=products&view=products&%{QUERY_STRING} [L]
+
+#warehouses
+RewriteRule ^warehouses/add/([0-9]*)$ index.php?module=warehouses&view=warehouses&task=add&cid=$1&Itemid=1&lang=vi&%{QUERY_STRING} [L]
+RewriteRule ^warehouses/edit/([0-9]*)$ index.php?module=warehouses&view=warehouses&task=edit&id=$1&%{QUERY_STRING} [L]
+RewriteRule ^warehouses$ index.php?module=warehouses&view=warehouses&%{QUERY_STRING} [L]
+
+RewriteRule ^supplier/add/([0-9]*)$ index.php?module=warehouses&view=supplier&task=add&cid=$1&Itemid=1&lang=vi&%{QUERY_STRING} [L]
+RewriteRule ^supplier/edit/([0-9]*)$ index.php?module=warehouses&view=supplier&task=edit&id=$1&%{QUERY_STRING} [L]
+RewriteRule ^supplier$ index.php?module=warehouses&view=supplier&%{QUERY_STRING} [L]
+
+RewriteRule ^warehouses/bill/add/([0-9]*)$ index.php?module=warehouses&view=bill&task=add&cid=$1&Itemid=1&lang=vi&%{QUERY_STRING} [L]
+RewriteRule ^warehouses/bill/edit/([0-9]*)$ index.php?module=warehouses&view=bill&task=edit&id=$1&%{QUERY_STRING} [L]
+RewriteRule ^warehouses/bill$ index.php?module=warehouses&view=bill&%{QUERY_STRING} [L]
+
+ErrorDocument 404 /404.html

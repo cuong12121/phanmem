@@ -1,0 +1,54 @@
+
+.menu_user{
+    color: #333;
+    font-size: 18px;
+    font-family: Myriad Pro Bold;
+    margin-bottom: 20px;
+}
+.menu_item {
+    color: #333;
+    cursor: pointer;
+    margin-bottom: 2px;
+    padding: 6px 45px;
+    width: 100%;
+}
+.menu_item.activated > a, .menu_item:hover > a {
+    color: #fff;
+    text-decoration: none;
+}
+.menu_item01 {
+    background: url("../images/icon-tttk.png") no-repeat scroll 15px 8px;
+}
+.menu_item01.activated, .menu_item01:hover {
+    background: url("../images/icon-active-tttk.png") no-repeat scroll 15px 8px #32a6ff;
+}
+.menu_item02 {
+    background: url("../images/icon-sdc.png") no-repeat scroll 15px 8px;
+}
+.menu_item02.activated, .menu_item02:hover {
+    background: url("../images/icon-active-sdc.png") no-repeat scroll 15px 8px #32a6ff;
+}
+.menu_item03 {
+    background: url("../images/icon-lsgd.png") no-repeat scroll 15px 8px;
+}
+.menu_item03.activated, .menu_item03:hover {
+    background: url("../images/icon-active-lsgd.png") no-repeat scroll 15px 8px #32a6ff;
+}
+.menu_item04 {
+    background: url("../images/icon-ttbh.png") no-repeat scroll 15px 8px;
+}
+.menu_item04.activated, .menu_item04:hover {
+    background: url("../images/icon-active-ttbh.png") no-repeat scroll 15px 8px #32a6ff;
+}
+.menu_item05 {
+    background: url("../images/icon-nbt.png") no-repeat scroll 15px 8px;
+}
+.menu_item05.activated, .menu_item05:hover {
+    background: url("../images/icon-active-nbt.png") no-repeat scroll 15px 8px #32a6ff;
+}
+.menu_item06 {
+    background: url("../images/icon-lsp.png") no-repeat scroll 15px 8px;
+}
+.menu_item06.activated, .menu_item06:hover {
+    background: url("../images/icon-active-lsp.png") no-repeat scroll 15px 8px #32a6ff;
+}

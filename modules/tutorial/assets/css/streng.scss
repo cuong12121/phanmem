@@ -1,0 +1,26 @@
+.streng_content {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    .item {
+    	width: calc(100% / 3 - 30px);
+    	margin: 0 15px;
+    	text-align: center;
+    	.summary_hover {
+    		span {
+    			display: inline-block;
+			    width: 44px;
+			    height: 44px;
+			    border-radius: 50%;
+			    border: 1px solid var(--extra-color);
+			    line-height: 44px;
+			    font-family: 'ExtraBold';
+			    font-size: 14px;
+    		}
+    	}
+    	.title_st {
+    		margin-top: 16px;
+    		line-height: 27px;
+    	}
+    }
+}

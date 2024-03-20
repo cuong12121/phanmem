@@ -1,0 +1,52 @@
+.title_content{
+	border-bottom: 1px solid #d8d8d8;
+    margin-bottom: 20px;
+	color: #1b99e9;
+    font-family: semibold;
+    font-size: 14px;
+}
+.fieldset_item_row {
+    margin-bottom: 10px;
+    text-align: center;
+}
+.form_name {
+    color: #333333;
+    display: inline-block;
+    font-family: opensans;
+    text-align: left;
+    vertical-align: top;
+    width: 140px;
+}
+.value {
+    display: inline-block;
+    position: relative;
+    text-align: left;
+    width: 240px;
+}
+.txtinput {
+    border: 1px solid #b4b4b4;
+    padding: 2px 6px;
+    width: 100%;
+    color: #333;
+}
+.submitbt{
+    background-position: 16px center;
+    background-repeat: no-repeat;
+    
+    font-family: opensans;
+    border-radius:0; 
+}
+.button-submit-edit{
+	background-color: #1b99e9;
+	color: #fff;
+}
+.button-submit-edit:hover{
+	background-color: #28a6f6;
+	color: #fff;
+}
+.button-reset-edit {
+	background-color: #DCDCDC;
+}
+.button-reset-edit:hover {
+	background-color: #e6e6e6;
+}

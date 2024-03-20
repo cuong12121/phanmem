@@ -1,0 +1,71 @@
+h1 {
+    border-bottom: 1px solid #ededed;
+    margin-bottom: 16px;
+    margin-top: 0;
+    padding-bottom: 10px;
+}
+h1 span {
+    color: #b80405;
+    font-family: MyriadPro-Regular;
+    font-size: 18px;
+    margin-right: 10px;
+    text-transform: uppercase;
+}
+.faq-question .col-left {
+    border-left: 1px solid #ededed;
+}
+.faq-question .question_table{
+	margin: 0 auto;
+}
+.faq-question  .question_table th {
+	 color: #325ea1;
+    font-size: 18px;
+    text-transform: uppercase;
+}
+.faq-question   .form_name {
+    font-weight: bold;
+}
+.faq-question  .form_control {
+    border: 1px solid #e2e2e2;
+    height: 30px;
+    padding: 0 5px;
+      width: 280px;
+}
+.faq-question  textarea {
+	border: 1px solid #e2e2e2;
+    float: right;
+    height: 140px;
+    padding: 0 5px;
+    width: 420px;
+}
+#submitbt, #submitbt_order{
+    background: #B80405;
+    border-radius: 4px;
+    font-weight: bold;
+    font-family: arial;
+    margin-right: 10px;
+    padding: 6px 38px;
+    color: #fff;
+}
+#resetbt {
+    background: #ECECEC;
+    border-radius: 4px;
+    font-weight: bold;
+    font-family: arial;
+    margin-right: 10px;
+    padding: 6px 38px;
+    color: #134593;
+}
+#resetbt {
+    padding: 6px 28px;
+}
+#submitbt:hover, #resetbt:hover {
+    background: #1b99e9;
+    color: #fff;
+    font-family: arial;
+    text-decoration: none;
+}
+#txtCaptcha{
+	height: 30px;
+	border: 1px solid #e2e2e2;
+}

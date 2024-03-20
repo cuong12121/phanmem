@@ -1,0 +1,40 @@
+body{
+    background-color: #333 !important; 
+}
+#login-from{
+   
+}
+#login-from .txt_login{
+    background: none transparent;
+    display: block;
+    border: none;
+    padding: 0 0 0 0;
+    width: 195px; height: 26px;
+    margin: 0 0 0 110px;
+    color: #b6b9bd;
+    outline: none !important;
+}
+#login-from #usermane{
+    margin-top: 88px;
+}
+#login-from #password{
+
+}
+#login-from input[type="submit"]{
+    
+}
+#login-from input[type="submit"]:hover{
+    color: #111;
+}
+#login-from .copyright{
+    text-align: center;
+    color: #505c6a;
+    font-size: 11px;
+    margin-top: 20px;
+}
+#login-from .copyright a{
+    color: #505c6a; text-decoration: none;
+}
+#login-from .copyright a:hover{
+    text-decoration: underline;
+}

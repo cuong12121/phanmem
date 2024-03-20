@@ -1,0 +1,73 @@
+.title_aq {
+	padding: 5px 0;
+	color: var(--extra-color);
+	line-height: 20px;
+}
+.list_aq_on_products {
+	.send_question {
+		text-align: right;
+		a {
+			display: inline-block;
+			padding: 15px 40px;
+			text-transform: uppercase;
+			font-size: 16px;
+			color: #fff;
+			margin-top: 20px;
+			background: var(--main-color);
+		}
+	}
+	.item {
+		color: var(--extra-color);
+		.item_top {
+			padding: 15px 0;
+			border-top: 1px solid #ddd;
+			cursor: pointer;
+		}
+
+		&:last-child {
+			border-bottom: 1px solid #ddd;
+		}
+		.col1 {
+			width: 20%;
+			float: left;
+			padding-left: 50px;
+			box-sizing: border-box;
+			@media all and (max-width: 600px) {
+				padding-left: 0px;
+				width: 10%;
+			}
+		}
+		.col2 {
+			width: 50%;
+			float: left;
+		}
+		.col3 {
+			width: 15%;
+			float: left;
+		}
+		.col4 {
+			width: 15%;
+			float: left;
+		}
+		.col5 {
+			padding: 15px 0 4px;
+			border-top: 1px solid #ddd;
+			padding-left: 50px;
+			padding-right: 50px;
+			@media all and (max-width: 600px) {
+				padding-left: 10px;
+				padding-right: 10px;
+			}
+			p {
+				margin-bottom: 10px;
+				line-height: 20px;
+			}
+
+
+		}
+	}
+	.dhead {
+		padding: 10px 0;
+		border-top: 2px solid var(--main-color);
+	}
+}

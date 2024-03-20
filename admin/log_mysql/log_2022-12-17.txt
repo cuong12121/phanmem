@@ -1,0 +1,11805 @@
+
+================REMOTE: 27.72.105.247  (2022-12-17 08:34:35)===================
+
+================URL : /admin/order_items/items===================
+
+================1671240875===================
+
+ SELECT *
+FROM fs_config
+
+time:::0.00294303894042969
+
+===========
+
+SELECT u.id, u.username, u.email,u.published
+        FROM fs_users AS u
+        WHERE u.id = '214' AND u.published = 1
+        LIMIT 1
+
+time:::0.000954151153564453
+
+===========
+
+================REMOTE: 27.72.105.247  (2022-12-17 08:34:35)===================
+
+================URL : /admin/order_items/items===================
+
+================1671240875===================
+
+ SELECT lang_key, lang_vi 
+						FROM fs_languages_text_admin 
+						WHERE is_common = 1
+					 OR module = 'order_items' 
+
+time:::0.00102400779724121
+
+===========
+
+SELECT * FROM fs_users_groups WHERE id = 1
+
+time:::0.000844001770019531
+
+===========
+
+ SELECT * FROM fs_config
+			WHERE is_common = 1
+			
+
+time:::0.00219416618347168
+
+===========
+
+SELECT id FROM fs_permission_tasks WHERE module = "order_items" AND `view` = "items" AND _task = "display"
+
+time:::0.000746965408325195
+
+===========
+
+SELECT * FROM fs_users_groups WHERE id = 1
+
+time:::0.00045013427734375
+
+===========
+
+SELECT id FROM fs_permission_tasks WHERE module = "order_items" AND `view` = "items" AND _task = "display"
+
+time:::0.000406026840209961
+
+===========
+
+SELECT * FROM fs_users_groups WHERE id = 1
+
+time:::0.000356912612915039
+
+===========
+
+ SELECT *
+			FROM fs_users
+			WHERE id = 214
+
+time:::0.000870943069458008
+
+===========
+
+ SELECT *
+		FROM fs_warehouses  WHERE published = 1 AND id IN (1,2,4)
+
+time:::0.000414133071899414
+
+===========
+
+ SELECT *
+		FROM fs_platforms  WHERE published = 1
+
+time:::0.000440835952758789
+
+===========
+
+ SELECT *
+		FROM fs_house  WHERE published = 1
+
+time:::0.000419139862060547
+
+===========
+
+ SELECT *
+		FROM fs_shipping_unit  WHERE published = 1
+
+time:::0.0014960765838623
+
+===========
+
+ SELECT *
+			FROM fs_users
+			WHERE id = 214
+
+time:::0.000887870788574219
+
+===========
+
+SELECT * FROM fs_order_uploads_detail AS a WHERE 1=1  AND is_print = 1  AND warehouse_id IN (1,2,4) AND list_user_id_manage_shop LIKE "%,214,%" ORDER BY created_time DESC , id DESC   LIMIT 0,30 
+
+time:::9.05990600585938E-6
+
+===========
+
+ SELECT *
+			FROM fs_users
+			WHERE id = 214
+
+time:::0.00112104415893555
+
+===========
+
+SELECT * FROM fs_order_uploads_detail AS a WHERE 1=1  AND is_print = 1  AND warehouse_id IN (1,2,4) AND list_user_id_manage_shop LIKE "%,214,%" ORDER BY created_time DESC , id DESC  
+
+time:::0.85164999961853
+
+===========
+
+ SELECT *
+			FROM fs_users
+			WHERE id = 214
+
+time:::0.00148200988769531
+
+===========
+
+ SELECT id,code
+			FROM fs_warehouses
+			WHERE id = 1
+
+time:::0.000884056091308594
+
+===========
+
+ SELECT id,name
+			FROM fs_platforms
+			WHERE id = 2
+
+time:::0.000710010528564453
+
+===========
+
+ SELECT id,code
+			FROM fs_shops
+			WHERE id = 474
+
+time:::0.000386953353881836
+
+===========
+
+ SELECT id,name
+			FROM fs_house
+			WHERE id = 4
+
+time:::0.000339984893798828
+
+===========
+
+ SELECT *
+			FROM fs_order_uploads_detail
+			WHERE id = 349102
+
+time:::0.000842094421386719
+
+===========
+
+SELECT id FROM fs_permission_tasks WHERE module = "order_items" AND `view` = "items" AND _task = "ajax_add_refund"
+
+time:::0.000462055206298828
+
+===========
+
+SELECT * FROM fs_users_groups WHERE id = 1
+
+time:::0.000329971313476562
+
+===========
+
+ SELECT id,code
+			FROM fs_warehouses
+			WHERE id = 1
+
+time:::0.000455856323242188
+
+===========
+
+ SELECT id,name
+			FROM fs_platforms
+			WHERE id = 2
+
+time:::0.000380039215087891
+
+===========
+
+ SELECT id,code
+			FROM fs_shops
+			WHERE id = 474
+
+time:::0.000380039215087891
+
+===========
+
+ SELECT id,name
+			FROM fs_house
+			WHERE id = 4
+
+time:::0.000468015670776367
+
+===========
+
+ SELECT *
+			FROM fs_order_uploads_detail
+			WHERE id = 349101
+
+time:::0.000787973403930664
+
+===========
+
+SELECT id FROM fs_permission_tasks WHERE module = "order_items" AND `view` = "items" AND _task = "ajax_add_refund"
+
+time:::0.000322103500366211
+
+===========
+
+SELECT * FROM fs_users_groups WHERE id = 1
+
+time:::0.000422954559326172
+
+===========
+
+ SELECT id,code
+			FROM fs_warehouses
+			WHERE id = 1
+
+time:::0.000457048416137695
+
+===========
+
+ SELECT id,name
+			FROM fs_platforms
+			WHERE id = 2
+
+time:::0.000377893447875977
+
+===========
+
+ SELECT id,code
+			FROM fs_shops
+			WHERE id = 474
+
+time:::0.000360965728759766
+
+===========
+
+ SELECT id,name
+			FROM fs_house
+			WHERE id = 4
+
+time:::0.000284194946289062
+
+===========
+
+ SELECT *
+			FROM fs_order_uploads_detail
+			WHERE id = 349100
+
+time:::0.000697851181030273
+
+===========
+
+SELECT id FROM fs_permission_tasks WHERE module = "order_items" AND `view` = "items" AND _task = "ajax_add_refund"
+
+time:::0.000357151031494141
+
+===========
+
+SELECT * FROM fs_users_groups WHERE id = 1
+
+time:::0.000273942947387695
+
+===========
+
+ SELECT id,code
+			FROM fs_warehouses
+			WHERE id = 1
+
+time:::0.000410079956054688
+
+===========
+
+ SELECT id,name
+			FROM fs_platforms
+			WHERE id = 2
+
+time:::0.000372171401977539
+
+===========
+
+ SELECT id,code
+			FROM fs_shops
+			WHERE id = 474
+
+time:::0.000427007675170898
+
+===========
+
+ SELECT id,name
+			FROM fs_house
+			WHERE id = 4
+
+time:::0.000332832336425781
+
+===========
+
+ SELECT *
+			FROM fs_order_uploads_detail
+			WHERE id = 349099
+
+time:::0.000606060028076172
+
+===========
+
+SELECT id FROM fs_permission_tasks WHERE module = "order_items" AND `view` = "items" AND _task = "ajax_add_refund"
+
+time:::0.000421047210693359
+
+===========
+
+SELECT * FROM fs_users_groups WHERE id = 1
+
+time:::0.000356912612915039
+
+===========
+
+ SELECT id,code
+			FROM fs_warehouses
+			WHERE id = 2
+
+time:::0.000452041625976562
+
+===========
+
+ SELECT id,name
+			FROM fs_platforms
+			WHERE id = 2
+
+time:::0.000483036041259766
+
+===========
+
+ SELECT id,code
+			FROM fs_shops
+			WHERE id = 474
+
+time:::0.000361919403076172
+
+===========
+
+ SELECT id,name
+			FROM fs_house
+			WHERE id = 13
+
+time:::0.000317811965942383
+
+===========
+
+ SELECT *
+			FROM fs_order_uploads_detail
+			WHERE id = 348788
+
+time:::0.000581979751586914
+
+===========
+
+SELECT id FROM fs_permission_tasks WHERE module = "order_items" AND `view` = "items" AND _task = "ajax_add_refund"
+
+time:::0.000305891036987305
+
+===========
+
+SELECT * FROM fs_users_groups WHERE id = 1
+
+time:::0.000317096710205078
+
+===========
+
+ SELECT id,code
+			FROM fs_warehouses
+			WHERE id = 2
+
+time:::0.000400066375732422
+
+===========
+
+ SELECT id,name
+			FROM fs_platforms
+			WHERE id = 2
+
+time:::0.000458955764770508
+
+===========
+
+ SELECT id,code
+			FROM fs_shops
+			WHERE id = 474
+
+time:::0.000416994094848633
+
+===========
+
+ SELECT id,name
+			FROM fs_house
+			WHERE id = 13
+
+time:::0.000375986099243164
+
+===========
+
+ SELECT *
+			FROM fs_order_uploads_detail
+			WHERE id = 348787
+
+time:::0.000647068023681641
+
+===========
+
+SELECT id FROM fs_permission_tasks WHERE module = "order_items" AND `view` = "items" AND _task = "ajax_add_refund"
+
+time:::0.000334978103637695
+
+===========
+
+SELECT * FROM fs_users_groups WHERE id = 1
+
+time:::0.000355005264282227
+
+===========
+
+ SELECT id,code
+			FROM fs_warehouses
+			WHERE id = 2
+
+time:::0.000519990921020508
+
+===========
+
+ SELECT id,name
+			FROM fs_platforms
+			WHERE id = 2
+
+time:::0.000398874282836914
+
+===========
+
+ SELECT id,code
+			FROM fs_shops
+			WHERE id = 474
+
+time:::0.000359058380126953
+
+===========
+
+ SELECT id,name
+			FROM fs_house
+			WHERE id = 13
+
+time:::0.000318050384521484
+
+===========
+
+ SELECT *
+			FROM fs_order_uploads_detail
+			WHERE id = 348786
+
+time:::0.000710964202880859
+
+===========
+
+SELECT id FROM fs_permission_tasks WHERE module = "order_items" AND `view` = "items" AND _task = "ajax_add_refund"
+
+time:::0.000416994094848633
+
+===========
+
+SELECT * FROM fs_users_groups WHERE id = 1
+
+time:::0.000347137451171875
+
+===========
+
+ SELECT id,code
+			FROM fs_warehouses
+			WHERE id = 2
+
+time:::0.000446081161499023
+
+===========
+
+ SELECT id,name
+			FROM fs_platforms
+			WHERE id = 2
+
+time:::0.000490903854370117
+
+===========
+
+ SELECT id,code
+			FROM fs_shops
+			WHERE id = 474
+
+time:::0.000400066375732422
+
+===========
+
+ SELECT id,name
+			FROM fs_house
+			WHERE id = 13
+
+time:::0.000309944152832031
+
+===========
+
+ SELECT *
+			FROM fs_order_uploads_detail
+			WHERE id = 348785
+
+time:::0.00078892707824707
+
+===========
+
+SELECT id FROM fs_permission_tasks WHERE module = "order_items" AND `view` = "items" AND _task = "ajax_add_refund"
+
+time:::0.000346899032592773
+
+===========
+
+SELECT * FROM fs_users_groups WHERE id = 1
+
+time:::0.00032496452331543
+
+===========
+
+ SELECT id,code
+			FROM fs_warehouses
+			WHERE id = 2
+
+time:::0.000526189804077148
+
+===========
+
+ SELECT id,name
+			FROM fs_platforms
+			WHERE id = 2
+
+time:::0.000450849533081055
+
+===========
+
+ SELECT id,code
+			FROM fs_shops
+			WHERE id = 474
+
+time:::0.000368118286132812
+
+===========
+
+ SELECT id,name
+			FROM fs_house
+			WHERE id = 13
+
+time:::0.000342845916748047
+
+===========
+
+ SELECT *
+			FROM fs_order_uploads_detail
+			WHERE id = 348784
+
+time:::0.000709772109985352
+
+===========
+
+SELECT id FROM fs_permission_tasks WHERE module = "order_items" AND `view` = "items" AND _task = "ajax_add_refund"
+
+time:::0.000360965728759766
+
+===========
+
+SELECT * FROM fs_users_groups WHERE id = 1
+
+time:::0.000309944152832031
+
+===========
+
+ SELECT id,code
+			FROM fs_warehouses
+			WHERE id = 2
+
+time:::0.000488042831420898
+
+===========
+
+ SELECT id,name
+			FROM fs_platforms
+			WHERE id = 2
+
+time:::0.000359058380126953
+
+===========
+
+ SELECT id,code
+			FROM fs_shops
+			WHERE id = 474
+
+time:::0.000439167022705078
+
+===========
+
+ SELECT id,name
+			FROM fs_house
+			WHERE id = 13
+
+time:::0.000375032424926758
+
+===========
+
+ SELECT *
+			FROM fs_order_uploads_detail
+			WHERE id = 348783
+
+time:::0.000693082809448242
+
+===========
+
+SELECT id FROM fs_permission_tasks WHERE module = "order_items" AND `view` = "items" AND _task = "ajax_add_refund"
+
+time:::0.000416994094848633
+
+===========
+
+SELECT * FROM fs_users_groups WHERE id = 1
+
+time:::0.00034785270690918
+
+===========
+
+ SELECT id,code
+			FROM fs_warehouses
+			WHERE id = 2
+
+time:::0.000426054000854492
+
+===========
+
+ SELECT id,name
+			FROM fs_platforms
+			WHERE id = 2
+
+time:::0.000475168228149414
+
+===========
+
+ SELECT id,code
+			FROM fs_shops
+			WHERE id = 474
+
+time:::0.000414133071899414
+
+===========
+
+ SELECT id,name
+			FROM fs_house
+			WHERE id = 13
+
+time:::0.000348091125488281
+
+===========
+
+ SELECT *
+			FROM fs_order_uploads_detail
+			WHERE id = 348782
+
+time:::0.00078892707824707
+
+===========
+
+SELECT id FROM fs_permission_tasks WHERE module = "order_items" AND `view` = "items" AND _task = "ajax_add_refund"
+
+time:::0.000401020050048828
+
+===========
+
+SELECT * FROM fs_users_groups WHERE id = 1
+
+time:::0.000301837921142578
+
+===========
+
+ SELECT id,code
+			FROM fs_warehouses
+			WHERE id = 2
+
+time:::0.000458955764770508
+
+===========
+
+ SELECT id,name
+			FROM fs_platforms
+			WHERE id = 2
+
+time:::0.000390052795410156
+
+===========
+
+ SELECT id,code
+			FROM fs_shops
+			WHERE id = 474
+
+time:::0.000334978103637695
+
+===========
+
+ SELECT id,name
+			FROM fs_house
+			WHERE id = 13
+
+time:::0.000262022018432617
+
+===========
+
+ SELECT *
+			FROM fs_order_uploads_detail
+			WHERE id = 348781
+
+time:::0.000603914260864258
+
+===========
+
+SELECT id FROM fs_permission_tasks WHERE module = "order_items" AND `view` = "items" AND _task = "ajax_add_refund"
+
+time:::0.00038599967956543
+
+===========
+
+SELECT * FROM fs_users_groups WHERE id = 1
+
+time:::0.000318050384521484
+
+===========
+
+ SELECT id,code
+			FROM fs_warehouses
+			WHERE id = 2
+
+time:::0.000397920608520508
+
+===========
+
+ SELECT id,name
+			FROM fs_platforms
+			WHERE id = 1
+
+time:::0.000453948974609375
+
+===========
+
+ SELECT id,code
+			FROM fs_shops
+			WHERE id = 551
+
+time:::0.000353813171386719
+
+===========
+
+ SELECT id,name
+			FROM fs_house
+			WHERE id = 13
+
+time:::0.00029301643371582
+
+===========
+
+ SELECT *
+			FROM fs_order_uploads_detail
+			WHERE id = 347913
+
+time:::0.000599861145019531
+
+===========
+
+SELECT id FROM fs_permission_tasks WHERE module = "order_items" AND `view` = "items" AND _task = "ajax_add_refund"
+
+time:::0.000380992889404297
+
+===========
+
+SELECT * FROM fs_users_groups WHERE id = 1
+
+time:::0.000358104705810547
+
+===========
+
+ SELECT id,code
+			FROM fs_warehouses
+			WHERE id = 2
+
+time:::0.00048518180847168
+
+===========
+
+ SELECT id,name
+			FROM fs_platforms
+			WHERE id = 1
+
+time:::0.000396966934204102
+
+===========
+
+ SELECT id,code
+			FROM fs_shops
+			WHERE id = 551
+
+time:::0.000318050384521484
+
+===========
+
+ SELECT id,name
+			FROM fs_house
+			WHERE id = 7
+
+time:::0.000358104705810547
+
+===========
+
+ SELECT *
+			FROM fs_order_uploads_detail
+			WHERE id = 347613
+
+time:::0.000687837600708008
+
+===========
+
+SELECT id FROM fs_permission_tasks WHERE module = "order_items" AND `view` = "items" AND _task = "ajax_add_refund"
+
+time:::0.00035405158996582
+
+===========
+
+SELECT * FROM fs_users_groups WHERE id = 1
+
+time:::0.000294923782348633
+
+===========
+
+ SELECT id,code
+			FROM fs_warehouses
+			WHERE id = 2
+
+time:::0.000390052795410156
+
+===========
+
+ SELECT id,name
+			FROM fs_platforms
+			WHERE id = 1
+
+time:::0.000422954559326172
+
+===========
+
+ SELECT id,code
+			FROM fs_shops
+			WHERE id = 551
+
+time:::0.000383138656616211
+
+===========
+
+ SELECT id,name
+			FROM fs_house
+			WHERE id = 7
+
+time:::0.000348091125488281
+
+===========
+
+ SELECT *
+			FROM fs_order_uploads_detail
+			WHERE id = 347612
+
+time:::0.000774860382080078
+
+===========
+
+SELECT id FROM fs_permission_tasks WHERE module = "order_items" AND `view` = "items" AND _task = "ajax_add_refund"
+
+time:::0.000421047210693359
+
+===========
+
+SELECT * FROM fs_users_groups WHERE id = 1
+
+time:::0.000349044799804688
+
+===========
+
+ SELECT id,code
+			FROM fs_warehouses
+			WHERE id = 2
+
+time:::0.000453948974609375
+
+===========
+
+ SELECT id,name
+			FROM fs_platforms
+			WHERE id = 2
+
+time:::0.000411033630371094
+
+===========
+
+ SELECT id,code
+			FROM fs_shops
+			WHERE id = 474
+
+time:::0.000388860702514648
+
+===========
+
+ SELECT id,name
+			FROM fs_house
+			WHERE id = 7
+
+time:::0.000313043594360352
+
+===========
+
+ SELECT *
+			FROM fs_order_uploads_detail
+			WHERE id = 347517
+
+time:::0.000665903091430664
+
+===========
+
+SELECT id FROM fs_permission_tasks WHERE module = "order_items" AND `view` = "items" AND _task = "ajax_add_refund"
+
+time:::0.000296115875244141
+
+===========
+
+SELECT * FROM fs_users_groups WHERE id = 1
+
+time:::0.000274896621704102
+
+===========
+
+ SELECT id,code
+			FROM fs_warehouses
+			WHERE id = 2
+
+time:::0.000385046005249023
+
+===========
+
+ SELECT id,name
+			FROM fs_platforms
+			WHERE id = 2
+
+time:::0.000400781631469727
+
+===========
+
+ SELECT id,code
+			FROM fs_shops
+			WHERE id = 474
+
+time:::0.000330209732055664
+
+===========
+
+ SELECT id,name
+			FROM fs_house
+			WHERE id = 7
+
+time:::0.000285863876342773
+
+===========
+
+ SELECT *
+			FROM fs_order_uploads_detail
+			WHERE id = 347516
+
+time:::0.000608205795288086
+
+===========
+
+SELECT id FROM fs_permission_tasks WHERE module = "order_items" AND `view` = "items" AND _task = "ajax_add_refund"
+
+time:::0.000343084335327148
+
+===========
+
+SELECT * FROM fs_users_groups WHERE id = 1
+
+time:::0.00026702880859375
+
+===========
+
+ SELECT id,code
+			FROM fs_warehouses
+			WHERE id = 2
+
+time:::0.000444889068603516
+
+===========
+
+ SELECT id,name
+			FROM fs_platforms
+			WHERE id = 2
+
+time:::0.000370979309082031
+
+===========
+
+ SELECT id,code
+			FROM fs_shops
+			WHERE id = 474
+
+time:::0.000319004058837891
+
+===========
+
+ SELECT id,name
+			FROM fs_house
+			WHERE id = 7
+
+time:::0.00027918815612793
+
+===========
+
+ SELECT *
+			FROM fs_order_uploads_detail
+			WHERE id = 347515
+
+time:::0.000701904296875
+
+===========
+
+SELECT id FROM fs_permission_tasks WHERE module = "order_items" AND `view` = "items" AND _task = "ajax_add_refund"
+
+time:::0.000386953353881836
+
+===========
+
+SELECT * FROM fs_users_groups WHERE id = 1
+
+time:::0.00026392936706543
+
+===========
+
+ SELECT id,code
+			FROM fs_warehouses
+			WHERE id = 2
+
+time:::0.000445127487182617
+
+===========
+
+ SELECT id,name
+			FROM fs_platforms
+			WHERE id = 2
+
+time:::0.000375032424926758
+
+===========
+
+ SELECT id,code
+			FROM fs_shops
+			WHERE id = 474
+
+time:::0.000311136245727539
+
+===========
+
+ SELECT id,name
+			FROM fs_house
+			WHERE id = 7
+
+time:::0.000294923782348633
+
+===========
+
+ SELECT *
+			FROM fs_order_uploads_detail
+			WHERE id = 347514
+
+time:::0.00053095817565918
+
+===========
+
+SELECT id FROM fs_permission_tasks WHERE module = "order_items" AND `view` = "items" AND _task = "ajax_add_refund"
+
+time:::0.000341176986694336
+
+===========
+
+SELECT * FROM fs_users_groups WHERE id = 1
+
+time:::0.000277042388916016
+
+===========
+
+ SELECT id,code
+			FROM fs_warehouses
+			WHERE id = 1
+
+time:::0.000416994094848633
+
+===========
+
+ SELECT id,name
+			FROM fs_platforms
+			WHERE id = 2
+
+time:::0.000340938568115234
+
+===========
+
+ SELECT id,code
+			FROM fs_shops
+			WHERE id = 474
+
+time:::0.000342130661010742
+
+===========
+
+ SELECT id,name
+			FROM fs_house
+			WHERE id = 4
+
+time:::0.000258922576904297
+
+===========
+
+ SELECT *
+			FROM fs_order_uploads_detail
+			WHERE id = 346649
+
+time:::0.000699043273925781
+
+===========
+
+SELECT id FROM fs_permission_tasks WHERE module = "order_items" AND `view` = "items" AND _task = "ajax_add_refund"
+
+time:::0.000406026840209961
+
+===========
+
+SELECT * FROM fs_users_groups WHERE id = 1
+
+time:::0.000330924987792969
+
+===========
+
+ SELECT id,code
+			FROM fs_warehouses
+			WHERE id = 1
+
+time:::0.000416040420532227
+
+===========
+
+ SELECT id,name
+			FROM fs_platforms
+			WHERE id = 2
+
+time:::0.000416040420532227
+
+===========
+
+ SELECT id,code
+			FROM fs_shops
+			WHERE id = 474
+
+time:::0.000316143035888672
+
+===========
+
+ SELECT id,name
+			FROM fs_house
+			WHERE id = 4
+
+time:::0.000289201736450195
+
+===========
+
+ SELECT *
+			FROM fs_order_uploads_detail
+			WHERE id = 346648
+
+time:::0.000721216201782227
+
+===========
+
+SELECT id FROM fs_permission_tasks WHERE module = "order_items" AND `view` = "items" AND _task = "ajax_add_refund"
+
+time:::0.00038599967956543
+
+===========
+
+SELECT * FROM fs_users_groups WHERE id = 1
+
+time:::0.000298023223876953
+
+===========
+
+ SELECT id,code
+			FROM fs_warehouses
+			WHERE id = 1
+
+time:::0.000399112701416016
+
+===========
+
+ SELECT id,name
+			FROM fs_platforms
+			WHERE id = 2
+
+time:::0.000467061996459961
+
+===========
+
+ SELECT id,code
+			FROM fs_shops
+			WHERE id = 474
+
+time:::0.000432014465332031
+
+===========
+
+ SELECT id,name
+			FROM fs_house
+			WHERE id = 4
+
+time:::0.000283956527709961
+
+===========
+
+ SELECT *
+			FROM fs_order_uploads_detail
+			WHERE id = 346647
+
+time:::0.000725984573364258
+
+===========
+
+SELECT id FROM fs_permission_tasks WHERE module = "order_items" AND `view` = "items" AND _task = "ajax_add_refund"
+
+time:::0.000357151031494141
+
+===========
+
+SELECT * FROM fs_users_groups WHERE id = 1
+
+time:::0.000284910202026367
+
+===========
+
+ SELECT id,code
+			FROM fs_warehouses
+			WHERE id = 1
+
+time:::0.000463962554931641
+
+===========
+
+ SELECT id,name
+			FROM fs_platforms
+			WHERE id = 2
+
+time:::0.000375986099243164
+
+===========
+
+ SELECT id,code
+			FROM fs_shops
+			WHERE id = 474
+
+time:::0.000412940979003906
+
+===========
+
+ SELECT id,name
+			FROM fs_house
+			WHERE id = 4
+
+time:::0.000352859497070312
+
+===========
+
+ SELECT *
+			FROM fs_order_uploads_detail
+			WHERE id = 346646
+
+time:::0.000581026077270508
+
+===========
+
+SELECT id FROM fs_permission_tasks WHERE module = "order_items" AND `view` = "items" AND _task = "ajax_add_refund"
+
+time:::0.000345945358276367
+
+===========
+
+SELECT * FROM fs_users_groups WHERE id = 1
+
+time:::0.000262022018432617
+
+===========
+
+ SELECT id,code
+			FROM fs_warehouses
+			WHERE id = 1
+
+time:::0.000427961349487305
+
+===========
+
+ SELECT id,name
+			FROM fs_platforms
+			WHERE id = 2
+
+time:::0.000380039215087891
+
+===========
+
+ SELECT id,code
+			FROM fs_shops
+			WHERE id = 474
+
+time:::0.000355005264282227
+
+===========
+
+ SELECT id,name
+			FROM fs_house
+			WHERE id = 4
+
+time:::0.000262022018432617
+
+===========
+
+ SELECT *
+			FROM fs_order_uploads_detail
+			WHERE id = 346645
+
+time:::0.000627040863037109
+
+===========
+
+SELECT id FROM fs_permission_tasks WHERE module = "order_items" AND `view` = "items" AND _task = "ajax_add_refund"
+
+time:::0.000341892242431641
+
+===========
+
+SELECT * FROM fs_users_groups WHERE id = 1
+
+time:::0.000305891036987305
+
+===========
+
+ SELECT id,code
+			FROM fs_warehouses
+			WHERE id = 1
+
+time:::0.000439882278442383
+
+===========
+
+ SELECT id,name
+			FROM fs_platforms
+			WHERE id = 2
+
+time:::0.000405073165893555
+
+===========
+
+ SELECT id,code
+			FROM fs_shops
+			WHERE id = 474
+
+time:::0.000347137451171875
+
+===========
+
+ SELECT id,name
+			FROM fs_house
+			WHERE id = 4
+
+time:::0.000295162200927734
+
+===========
+
+ SELECT *
+			FROM fs_order_uploads_detail
+			WHERE id = 346644
+
+time:::0.000627040863037109
+
+===========
+
+SELECT id FROM fs_permission_tasks WHERE module = "order_items" AND `view` = "items" AND _task = "ajax_add_refund"
+
+time:::0.000380039215087891
+
+===========
+
+SELECT * FROM fs_users_groups WHERE id = 1
+
+time:::0.000308990478515625
+
+===========
+
+ SELECT id,code
+			FROM fs_warehouses
+			WHERE id = 1
+
+time:::0.000469207763671875
+
+===========
+
+ SELECT id,name
+			FROM fs_platforms
+			WHERE id = 2
+
+time:::0.000453948974609375
+
+===========
+
+ SELECT id,code
+			FROM fs_shops
+			WHERE id = 474
+
+time:::0.000471830368041992
+
+===========
+
+ SELECT id,name
+			FROM fs_house
+			WHERE id = 4
+
+time:::0.000351905822753906
+
+===========
+
+ SELECT *
+			FROM fs_order_uploads_detail
+			WHERE id = 346643
+
+time:::0.000815153121948242
+
+===========
+
+SELECT id FROM fs_permission_tasks WHERE module = "order_items" AND `view` = "items" AND _task = "ajax_add_refund"
+
+time:::0.000357151031494141
+
+===========
+
+SELECT * FROM fs_users_groups WHERE id = 1
+
+time:::0.0002899169921875
+
+===========
+
+ SELECT id,code
+			FROM fs_warehouses
+			WHERE id = 1
+
+time:::0.000436067581176758
+
+===========
+
+ SELECT id,name
+			FROM fs_platforms
+			WHERE id = 2
+
+time:::0.000366926193237305
+
+===========
+
+ SELECT id,code
+			FROM fs_shops
+			WHERE id = 474
+
+time:::0.000401020050048828
+
+===========
+
+ SELECT id,name
+			FROM fs_house
+			WHERE id = 4
+
+time:::0.000272035598754883
+
+===========
+
+ SELECT *
+			FROM fs_order_uploads_detail
+			WHERE id = 346642
+
+time:::0.000618934631347656
+
+===========
+
+SELECT id FROM fs_permission_tasks WHERE module = "order_items" AND `view` = "items" AND _task = "ajax_add_refund"
+
+time:::0.000324010848999023
+
+===========
+
+SELECT * FROM fs_users_groups WHERE id = 1
+
+time:::0.000283002853393555
+
+===========
+
+ SELECT id,code
+			FROM fs_warehouses
+			WHERE id = 1
+
+time:::0.00040888786315918
+
+===========
+
+ SELECT id,name
+			FROM fs_platforms
+			WHERE id = 2
+
+time:::0.000360965728759766
+
+===========
+
+ SELECT id,code
+			FROM fs_shops
+			WHERE id = 474
+
+time:::0.000339984893798828
+
+===========
+
+ SELECT id,name
+			FROM fs_house
+			WHERE id = 4
+
+time:::0.000277996063232422
+
+===========
+
+ SELECT *
+			FROM fs_order_uploads_detail
+			WHERE id = 346641
+
+time:::0.000703096389770508
+
+===========
+
+SELECT id FROM fs_permission_tasks WHERE module = "order_items" AND `view` = "items" AND _task = "ajax_add_refund"
+
+time:::0.000568151473999023
+
+===========
+
+SELECT * FROM fs_users_groups WHERE id = 1
+
+time:::0.000453948974609375
+
+===========
+
+ SELECT id,code
+			FROM fs_warehouses
+			WHERE id = 1
+
+time:::0.000514984130859375
+
+===========
+
+ SELECT id,name
+			FROM fs_platforms
+			WHERE id = 2
+
+time:::0.000437021255493164
+
+===========
+
+ SELECT id,code
+			FROM fs_shops
+			WHERE id = 474
+
+time:::0.00044703483581543
+
+===========
+
+ SELECT id,name
+			FROM fs_house
+			WHERE id = 4
+
+time:::0.000296831130981445
+
+===========
+
+ SELECT *
+			FROM fs_order_uploads_detail
+			WHERE id = 346640
+
+time:::0.000762939453125
+
+===========
+
+SELECT id FROM fs_permission_tasks WHERE module = "order_items" AND `view` = "items" AND _task = "ajax_add_refund"
+
+time:::0.000404119491577148
+
+===========
+
+SELECT * FROM fs_users_groups WHERE id = 1
+
+time:::0.000309944152832031
+
+===========
+
+ SELECT id,code
+			FROM fs_warehouses
+			WHERE id = 1
+
+time:::0.000589132308959961
+
+===========
+
+ SELECT id,name
+			FROM fs_platforms
+			WHERE id = 2
+
+time:::0.000414133071899414
+
+===========
+
+ SELECT id,code
+			FROM fs_shops
+			WHERE id = 474
+
+time:::0.000368118286132812
+
+===========
+
+ SELECT id,name
+			FROM fs_house
+			WHERE id = 4
+
+time:::0.000367164611816406
+
+===========
+
+ SELECT *
+			FROM fs_order_uploads_detail
+			WHERE id = 346639
+
+time:::0.000805854797363281
+
+===========
+
+SELECT id FROM fs_permission_tasks WHERE module = "order_items" AND `view` = "items" AND _task = "ajax_add_refund"
+
+time:::0.000360012054443359
+
+===========
+
+SELECT * FROM fs_users_groups WHERE id = 1
+
+time:::0.000300884246826172
+
+===========
+
+SELECT *
+            FROM fs_menus_admin_add
+            WHERE published = 1 ORDER BY ordering ASC
+
+time:::0.000539064407348633
+
+===========
+
+SELECT * FROM fs_users_groups WHERE id = 1
+
+time:::0.000312089920043945
+
+===========
+
+SELECT * FROM fs_permission_tasks WHERE id IN (5,126,9,10,11,12,42,48,49,55,53,54,57,124,58,101,102,103,121,122,123,105,104,128,127)
+
+time:::0.00049901008605957
+
+===========
+
+ SELECT *, parent_id as parent_id
+						  FROM fs_menus_admin
+						  WHERE published = 1
+						   AND module IN ("products","order","order_items","packages","shops","warehouse_sales","refunds","profits","home")
+						  ORDER BY ordering 
+						 
+
+time:::0.000772953033447266
+
+===========
+
+ SELECT a.permission,b.module ,b.view 
+						FROM fs_users_permission AS a 
+						INNER JOIN fs_permission_tasks  AS b ON a.task_id = b.id
+						WHERE user_id = 214
+					
+
+time:::0.000332832336425781
+
+===========
+
+================REMOTE: 27.72.105.247  (2022-12-17 08:34:41)===================
+
+================URL : /admin/order_items/items===================
+
+================1671240881===================
+
+ SELECT *
+FROM fs_config
+
+time:::0.00202393531799316
+
+===========
+
+SELECT u.id, u.username, u.email,u.published
+        FROM fs_users AS u
+        WHERE u.id = '214' AND u.published = 1
+        LIMIT 1
+
+time:::0.000948190689086914
+
+===========
+
+================REMOTE: 27.72.105.247  (2022-12-17 08:34:41)===================
+
+================URL : /admin/order_items/items===================
+
+================1671240881===================
+
+ SELECT lang_key, lang_vi 
+						FROM fs_languages_text_admin 
+						WHERE is_common = 1
+					 OR module = 'order_items' 
+
+time:::0.00104284286499023
+
+===========
+
+SELECT * FROM fs_users_groups WHERE id = 1
+
+time:::0.000799894332885742
+
+===========
+
+ SELECT * FROM fs_config
+			WHERE is_common = 1
+			
+
+time:::0.00202512741088867
+
+===========
+
+SELECT id FROM fs_permission_tasks WHERE module = "order_items" AND `view` = "items" AND _task = "display"
+
+time:::0.000669002532958984
+
+===========
+
+SELECT * FROM fs_users_groups WHERE id = 1
+
+time:::0.000461101531982422
+
+===========
+
+SELECT id FROM fs_permission_tasks WHERE module = "order_items" AND `view` = "items" AND _task = "display"
+
+time:::0.000308036804199219
+
+===========
+
+SELECT * FROM fs_users_groups WHERE id = 1
+
+time:::0.000272989273071289
+
+===========
+
+ SELECT *
+			FROM fs_users
+			WHERE id = 214
+
+time:::0.000699996948242188
+
+===========
+
+ SELECT *
+		FROM fs_warehouses  WHERE published = 1 AND id IN (1,2,4)
+
+time:::0.000344038009643555
+
+===========
+
+ SELECT *
+		FROM fs_platforms  WHERE published = 1
+
+time:::0.000336170196533203
+
+===========
+
+ SELECT *
+		FROM fs_house  WHERE published = 1
+
+time:::0.000314950942993164
+
+===========
+
+ SELECT *
+		FROM fs_shipping_unit  WHERE published = 1
+
+time:::0.00106692314147949
+
+===========
+
+ SELECT *
+			FROM fs_users
+			WHERE id = 214
+
+time:::0.000648021697998047
+
+===========
+
+SELECT * FROM fs_order_uploads_detail AS a WHERE 1=1  AND is_print = 1  AND warehouse_id IN (1,2,4) AND list_user_id_manage_shop LIKE "%,214,%" AND tracking_code LIKE '%LMP0155798114VNA%' OR code LIKE '%LMP0155798114VNA%'  AND is_print = 1  AND warehouse_id IN (1,2,4) AND list_user_id_manage_shop LIKE "%,214,%" ORDER BY created_time DESC , id DESC   LIMIT 0,30 
+
+time:::1.09672546386719E-5
+
+===========
+
+ SELECT *
+			FROM fs_users
+			WHERE id = 214
+
+time:::0.001007080078125
+
+===========
+
+SELECT * FROM fs_order_uploads_detail AS a WHERE 1=1  AND is_print = 1  AND warehouse_id IN (1,2,4) AND list_user_id_manage_shop LIKE "%,214,%" AND tracking_code LIKE '%LMP0155798114VNA%' OR code LIKE '%LMP0155798114VNA%'  AND is_print = 1  AND warehouse_id IN (1,2,4) AND list_user_id_manage_shop LIKE "%,214,%" ORDER BY created_time DESC , id DESC  
+
+time:::0.754425048828125
+
+===========
+
+ SELECT *
+			FROM fs_users
+			WHERE id = 214
+
+time:::0.000746965408325195
+
+===========
+
+ SELECT id,code
+			FROM fs_warehouses
+			WHERE id = 2
+
+time:::0.000498056411743164
+
+===========
+
+ SELECT id,name
+			FROM fs_platforms
+			WHERE id = 1
+
+time:::0.00035405158996582
+
+===========
+
+ SELECT id,code
+			FROM fs_shops
+			WHERE id = 551
+
+time:::0.000294208526611328
+
+===========
+
+ SELECT id,name
+			FROM fs_house
+			WHERE id = 7
+
+time:::0.000326871871948242
+
+===========
+
+ SELECT *
+			FROM fs_order_uploads_detail
+			WHERE id = 347613
+
+time:::0.000571966171264648
+
+===========
+
+SELECT id FROM fs_permission_tasks WHERE module = "order_items" AND `view` = "items" AND _task = "ajax_add_refund"
+
+time:::0.000339984893798828
+
+===========
+
+SELECT * FROM fs_users_groups WHERE id = 1
+
+time:::0.00125408172607422
+
+===========
+
+SELECT *
+            FROM fs_menus_admin_add
+            WHERE published = 1 ORDER BY ordering ASC
+
+time:::0.000880002975463867
+
+===========
+
+SELECT * FROM fs_users_groups WHERE id = 1
+
+time:::0.00061798095703125
+
+===========
+
+SELECT * FROM fs_permission_tasks WHERE id IN (5,126,9,10,11,12,42,48,49,55,53,54,57,124,58,101,102,103,121,122,123,105,104,128,127)
+
+time:::0.000899076461791992
+
+===========
+
+ SELECT *, parent_id as parent_id
+						  FROM fs_menus_admin
+						  WHERE published = 1
+						   AND module IN ("products","order","order_items","packages","shops","warehouse_sales","refunds","profits","home")
+						  ORDER BY ordering 
+						 
+
+time:::0.00109601020812988
+
+===========
+
+ SELECT a.permission,b.module ,b.view 
+						FROM fs_users_permission AS a 
+						INNER JOIN fs_permission_tasks  AS b ON a.task_id = b.id
+						WHERE user_id = 214
+					
+
+time:::0.000510931015014648
+
+===========
+
+================REMOTE: 116.104.88.226  (2022-12-17 08:34:44)===================
+
+================URL : /admin/refunds/excel/import_excel===================
+
+================1671240884===================
+
+ SELECT *
+FROM fs_config
+
+time:::0.00260114669799805
+
+===========
+
+SELECT u.id, u.username, u.email,u.published
+        FROM fs_users AS u
+        WHERE u.id = '9' AND u.published = 1
+        LIMIT 1
+
+time:::0.000903844833374023
+
+===========
+
+================REMOTE: 116.104.88.226  (2022-12-17 08:34:44)===================
+
+================URL : /admin/refunds/excel/import_excel===================
+
+================1671240884===================
+
+ SELECT lang_key, lang_vi 
+						FROM fs_languages_text_admin 
+						WHERE is_common = 1
+					 OR module = 'refunds' 
+
+time:::0.000658988952636719
+
+===========
+
+ SELECT * FROM fs_config
+			WHERE is_common = 1
+			
+
+time:::0.00214600563049316
+
+===========
+
+ INSERT INTO  fs_admin_history(`module`,`view`,`task`,`user_id`,`username`,`ipaddress`,`created_time`) VALUES ('refunds','excel','import_excel','9','admin','116.104.88.226','2022-12-17 08:34:44') 
+
+time:::0.000576019287109375
+
+===========
+
+ SELECT *
+		FROM fs_order_uploads_detail  WHERE is_refund = 0 AND is_print = 1 AND tracking_code = "LMP0154403246VNA"
+
+time:::0.772755146026611
+
+===========
+
+ SELECT *
+		FROM fs_order_uploads_detail  WHERE is_refund = 0 AND is_print = 1 AND tracking_code = "LMP0153687270VNA"
+
+time:::0.624541044235229
+
+===========
+
+ SELECT *
+		FROM fs_order_uploads_detail  WHERE is_refund = 0 AND is_print = 1 AND tracking_code = "LMP0154404327VNA"
+
+time:::0.740685939788818
+
+===========
+
+ SELECT *
+		FROM fs_order_uploads_detail  WHERE is_refund = 0 AND is_print = 1 AND tracking_code = "LMP0155023781VNA"
+
+time:::0.658345937728882
+
+===========
+
+ SELECT *
+		FROM fs_order_uploads_detail  WHERE is_refund = 0 AND is_print = 1 AND tracking_code = "LMP0155023306VNA"
+
+time:::0.522080898284912
+
+===========
+
+ SELECT *
+		FROM fs_order_uploads_detail  WHERE is_refund = 0 AND is_print = 1 AND tracking_code = "LMP0155023789VNA"
+
+time:::0.622009038925171
+
+===========
+
+ SELECT *
+		FROM fs_order_uploads_detail  WHERE is_refund = 0 AND is_print = 1 AND tracking_code = "LMP0154406973VNA"
+
+time:::0.586449146270752
+
+===========
+
+ SELECT *
+		FROM fs_order_uploads_detail  WHERE is_refund = 0 AND is_print = 1 AND tracking_code = "LMP0155024157VNA"
+
+time:::0.573240041732788
+
+===========
+
+================REMOTE: 42.114.113.243  (2022-12-17 08:34:49)===================
+
+================URL : /admin/order/upload===================
+
+================1671240889===================
+
+ SELECT *
+FROM fs_config
+
+time:::0.00316596031188965
+
+===========
+
+SELECT u.id, u.username, u.email,u.published
+        FROM fs_users AS u
+        WHERE u.id = '146' AND u.published = 1
+        LIMIT 1
+
+time:::0.00114893913269043
+
+===========
+
+================REMOTE: 42.114.113.243  (2022-12-17 08:34:49)===================
+
+================URL : /admin/order/upload===================
+
+================1671240889===================
+
+ SELECT lang_key, lang_vi 
+						FROM fs_languages_text_admin 
+						WHERE is_common = 1
+					 OR module = 'order' 
+
+time:::0.000896930694580078
+
+===========
+
+SELECT * FROM fs_users_groups WHERE id = 1
+
+time:::0.00076603889465332
+
+===========
+
+ SELECT * FROM fs_config
+			WHERE is_common = 1
+			
+
+time:::0.00190901756286621
+
+===========
+
+SELECT id FROM fs_permission_tasks WHERE module = "order" AND `view` = "upload" AND _task = "display"
+
+time:::0.000845909118652344
+
+===========
+
+SELECT * FROM fs_users_groups WHERE id = 1
+
+time:::0.000505924224853516
+
+===========
+
+SELECT id FROM fs_permission_tasks WHERE module = "order" AND `view` = "upload" AND _task = "display"
+
+time:::0.000400066375732422
+
+===========
+
+SELECT * FROM fs_users_groups WHERE id = 1
+
+time:::0.000523090362548828
+
+===========
+
+ SELECT *
+			FROM fs_users
+			WHERE id = 146
+
+time:::0.000838994979858398
+
+===========
+
+ SELECT *
+		FROM fs_warehouses  WHERE published = 1 AND id IN (1,2,4)
+
+time:::0.000336170196533203
+
+===========
+
+ SELECT *
+		FROM fs_platforms  WHERE published = 1
+
+time:::0.000472068786621094
+
+===========
+
+ SELECT *
+		FROM fs_house  WHERE published = 1
+
+time:::0.000365018844604492
+
+===========
+
+ SELECT *
+			FROM fs_users
+			WHERE id = 146
+
+time:::0.00068211555480957
+
+===========
+
+ SELECT *
+			FROM fs_users
+			WHERE id = 146
+
+time:::0.000754117965698242
+
+===========
+
+SELECT * FROM fs_order_uploads AS a WHERE 1=1    AND list_user_id_manage_shop LIKE "%,146,%" AND warehouse_id IN (1,2,4) ORDER BY created_time DESC , id DESC   LIMIT 0,50 
+
+time:::6.91413879394531E-6
+
+===========
+
+ SELECT *
+			FROM fs_users
+			WHERE id = 146
+
+time:::0.000902175903320312
+
+===========
+
+SELECT * FROM fs_order_uploads AS a WHERE 1=1    AND list_user_id_manage_shop LIKE "%,146,%" AND warehouse_id IN (1,2,4) ORDER BY created_time DESC , id DESC  
+
+time:::0.0946159362792969
+
+===========
+
+ SELECT id,code
+			FROM fs_warehouses
+			WHERE id = 2
+
+time:::0.00111293792724609
+
+===========
+
+ SELECT id,name
+			FROM fs_platforms
+			WHERE id = 1
+
+time:::0.000550031661987305
+
+===========
+
+ SELECT id,code
+			FROM fs_shops
+			WHERE id = 558
+
+time:::0.000406980514526367
+
+===========
+
+ SELECT id,name
+			FROM fs_house
+			WHERE id = 13
+
+time:::0.000345945358276367
+
+===========
+
+ SELECT id,file_pdf,total_page_pdf
+			FROM fs_order_uploads
+			WHERE id = 45580
+
+time:::0.000387191772460938
+
+===========
+
+ SELECT id
+		FROM fs_order_uploads_page_pdf  WHERE record_id = 45580
+
+time:::0.000410079956054688
+
+===========
+
+ SELECT id
+			FROM fs_order_uploads_detail
+			WHERE record_id = 45580
+
+time:::0.000442028045654297
+
+===========
+
+ SELECT id,file_xlsx
+			FROM fs_order_uploads
+			WHERE id = 45580
+
+time:::0.000540971755981445
+
+===========
+
+ SELECT id
+			FROM fs_order_uploads_detail
+			WHERE record_id = 45580
+
+time:::0.000425100326538086
+
+===========
+
+ SELECT id,code
+			FROM fs_warehouses
+			WHERE id = 2
+
+time:::0.000971078872680664
+
+===========
+
+ SELECT id,name
+			FROM fs_platforms
+			WHERE id = 1
+
+time:::0.000447988510131836
+
+===========
+
+ SELECT id,code
+			FROM fs_shops
+			WHERE id = 585
+
+time:::0.000389814376831055
+
+===========
+
+ SELECT id,name
+			FROM fs_house
+			WHERE id = 13
+
+time:::0.000380039215087891
+
+===========
+
+ SELECT id,file_pdf,total_page_pdf
+			FROM fs_order_uploads
+			WHERE id = 45577
+
+time:::0.000370979309082031
+
+===========
+
+ SELECT id
+		FROM fs_order_uploads_page_pdf  WHERE record_id = 45577
+
+time:::0.000375032424926758
+
+===========
+
+ SELECT id
+			FROM fs_order_uploads_detail
+			WHERE record_id = 45577
+
+time:::0.000537872314453125
+
+===========
+
+ SELECT id,file_xlsx
+			FROM fs_order_uploads
+			WHERE id = 45577
+
+time:::0.000516891479492188
+
+===========
+
+ SELECT id
+			FROM fs_order_uploads_detail
+			WHERE record_id = 45577
+
+time:::0.000427007675170898
+
+===========
+
+ SELECT id,code
+			FROM fs_warehouses
+			WHERE id = 2
+
+time:::0.000499963760375977
+
+===========
+
+ SELECT id,name
+			FROM fs_platforms
+			WHERE id = 1
+
+time:::0.000440120697021484
+
+===========
+
+ SELECT id,code
+			FROM fs_shops
+			WHERE id = 558
+
+time:::0.00038909912109375
+
+===========
+
+ SELECT id,name
+			FROM fs_house
+			WHERE id = 13
+
+time:::0.000369071960449219
+
+===========
+
+ SELECT id,file_pdf,total_page_pdf
+			FROM fs_order_uploads
+			WHERE id = 45571
+
+time:::0.000339984893798828
+
+===========
+
+ SELECT id
+		FROM fs_order_uploads_page_pdf  WHERE record_id = 45571
+
+time:::0.000469207763671875
+
+===========
+
+ SELECT id
+			FROM fs_order_uploads_detail
+			WHERE record_id = 45571
+
+time:::0.000483989715576172
+
+===========
+
+ SELECT id,file_xlsx
+			FROM fs_order_uploads
+			WHERE id = 45571
+
+time:::0.000429153442382812
+
+===========
+
+ SELECT id
+			FROM fs_order_uploads_detail
+			WHERE record_id = 45571
+
+time:::0.000433206558227539
+
+===========
+
+ SELECT id,code
+			FROM fs_warehouses
+			WHERE id = 2
+
+time:::0.000359058380126953
+
+===========
+
+ SELECT id,name
+			FROM fs_platforms
+			WHERE id = 1
+
+time:::0.000386953353881836
+
+===========
+
+ SELECT id,code
+			FROM fs_shops
+			WHERE id = 490
+
+time:::0.000308990478515625
+
+===========
+
+ SELECT id,name
+			FROM fs_house
+			WHERE id = 1
+
+time:::0.000288009643554688
+
+===========
+
+ SELECT id,file_pdf,total_page_pdf
+			FROM fs_order_uploads
+			WHERE id = 45567
+
+time:::0.000311136245727539
+
+===========
+
+ SELECT id
+		FROM fs_order_uploads_page_pdf  WHERE record_id = 45567
+
+time:::0.000391960144042969
+
+===========
+
+ SELECT id
+			FROM fs_order_uploads_detail
+			WHERE record_id = 45567
+
+time:::0.000387907028198242
+
+===========
+
+ SELECT id,file_xlsx
+			FROM fs_order_uploads
+			WHERE id = 45567
+
+time:::0.00037693977355957
+
+===========
+
+ SELECT id
+			FROM fs_order_uploads_detail
+			WHERE record_id = 45567
+
+time:::0.000409126281738281
+
+===========
+
+ SELECT id,code
+			FROM fs_warehouses
+			WHERE id = 4
+
+time:::0.000444173812866211
+
+===========
+
+ SELECT id,name
+			FROM fs_platforms
+			WHERE id = 1
+
+time:::0.000396966934204102
+
+===========
+
+ SELECT id,code
+			FROM fs_shops
+			WHERE id = 21
+
+time:::0.000300168991088867
+
+===========
+
+ SELECT id,name
+			FROM fs_house
+			WHERE id = 13
+
+time:::0.000316143035888672
+
+===========
+
+ SELECT id,file_pdf,total_page_pdf
+			FROM fs_order_uploads
+			WHERE id = 45562
+
+time:::0.000368118286132812
+
+===========
+
+ SELECT id
+		FROM fs_order_uploads_page_pdf  WHERE record_id = 45562
+
+time:::0.000401973724365234
+
+===========
+
+ SELECT id
+			FROM fs_order_uploads_detail
+			WHERE record_id = 45562
+
+time:::0.000475883483886719
+
+===========
+
+ SELECT id,file_xlsx
+			FROM fs_order_uploads
+			WHERE id = 45562
+
+time:::0.000489950180053711
+
+===========
+
+ SELECT id
+			FROM fs_order_uploads_detail
+			WHERE record_id = 45562
+
+time:::0.00043797492980957
+
+===========
+
+ SELECT id,code
+			FROM fs_warehouses
+			WHERE id = 2
+
+time:::0.000537872314453125
+
+===========
+
+ SELECT id,name
+			FROM fs_platforms
+			WHERE id = 1
+
+time:::0.000435113906860352
+
+===========
+
+ SELECT id,code
+			FROM fs_shops
+			WHERE id = 21
+
+time:::0.000429153442382812
+
+===========
+
+ SELECT id,name
+			FROM fs_house
+			WHERE id = 13
+
+time:::0.000365018844604492
+
+===========
+
+ SELECT id,file_pdf,total_page_pdf
+			FROM fs_order_uploads
+			WHERE id = 45559
+
+time:::0.000360965728759766
+
+===========
+
+ SELECT id
+		FROM fs_order_uploads_page_pdf  WHERE record_id = 45559
+
+time:::0.000352144241333008
+
+===========
+
+ SELECT id
+			FROM fs_order_uploads_detail
+			WHERE record_id = 45559
+
+time:::0.000349044799804688
+
+===========
+
+ SELECT id,file_xlsx
+			FROM fs_order_uploads
+			WHERE id = 45559
+
+time:::0.00055694580078125
+
+===========
+
+ SELECT id
+			FROM fs_order_uploads_detail
+			WHERE record_id = 45559
+
+time:::0.000355958938598633
+
+===========
+
+ SELECT id,code
+			FROM fs_warehouses
+			WHERE id = 2
+
+time:::0.000380992889404297
+
+===========
+
+ SELECT id,name
+			FROM fs_platforms
+			WHERE id = 1
+
+time:::0.000366926193237305
+
+===========
+
+ SELECT id,code
+			FROM fs_shops
+			WHERE id = 273
+
+time:::0.000323057174682617
+
+===========
+
+ SELECT id,name
+			FROM fs_house
+			WHERE id = 1
+
+time:::0.000298976898193359
+
+===========
+
+ SELECT id,file_pdf,total_page_pdf
+			FROM fs_order_uploads
+			WHERE id = 45480
+
+time:::0.000293970108032227
+
+===========
+
+ SELECT id
+		FROM fs_order_uploads_page_pdf  WHERE record_id = 45480
+
+time:::0.000650882720947266
+
+===========
+
+ SELECT id
+			FROM fs_order_uploads_detail
+			WHERE record_id = 45480
+
+time:::0.000525951385498047
+
+===========
+
+ SELECT id,file_xlsx
+			FROM fs_order_uploads
+			WHERE id = 45480
+
+time:::0.000425815582275391
+
+===========
+
+ SELECT id
+			FROM fs_order_uploads_detail
+			WHERE record_id = 45480
+
+time:::0.000507116317749023
+
+===========
+
+ SELECT id,code
+			FROM fs_warehouses
+			WHERE id = 2
+
+time:::0.000379085540771484
+
+===========
+
+ SELECT id,name
+			FROM fs_platforms
+			WHERE id = 3
+
+time:::0.000337123870849609
+
+===========
+
+ SELECT id,code
+			FROM fs_shops
+			WHERE id = 271
+
+time:::0.000318050384521484
+
+===========
+
+ SELECT id,name
+			FROM fs_house
+			WHERE id = 2
+
+time:::0.000257015228271484
+
+===========
+
+ SELECT id,file_pdf,total_page_pdf
+			FROM fs_order_uploads
+			WHERE id = 45478
+
+time:::0.000284194946289062
+
+===========
+
+ SELECT id
+		FROM fs_order_uploads_page_pdf  WHERE record_id = 45478
+
+time:::0.000319004058837891
+
+===========
+
+ SELECT id
+			FROM fs_order_uploads_detail
+			WHERE record_id = 45478
+
+time:::0.000322818756103516
+
+===========
+
+ SELECT id,file_xlsx
+			FROM fs_order_uploads
+			WHERE id = 45478
+
+time:::0.000383138656616211
+
+===========
+
+ SELECT id
+			FROM fs_order_uploads_detail
+			WHERE record_id = 45478
+
+time:::0.00031590461730957
+
+===========
+
+ SELECT id,code
+			FROM fs_warehouses
+			WHERE id = 1
+
+time:::0.000396966934204102
+
+===========
+
+ SELECT id,name
+			FROM fs_platforms
+			WHERE id = 3
+
+time:::0.000344991683959961
+
+===========
+
+ SELECT id,code
+			FROM fs_shops
+			WHERE id = 264
+
+time:::0.000380039215087891
+
+===========
+
+ SELECT id,name
+			FROM fs_house
+			WHERE id = 2
+
+time:::0.000319957733154297
+
+===========
+
+ SELECT id,file_pdf,total_page_pdf
+			FROM fs_order_uploads
+			WHERE id = 45477
+
+time:::0.000368833541870117
+
+===========
+
+ SELECT id
+		FROM fs_order_uploads_page_pdf  WHERE record_id = 45477
+
+time:::0.000298023223876953
+
+===========
+
+ SELECT id
+			FROM fs_order_uploads_detail
+			WHERE record_id = 45477
+
+time:::0.000397205352783203
+
+===========
+
+ SELECT id,file_xlsx
+			FROM fs_order_uploads
+			WHERE id = 45477
+
+time:::0.000419139862060547
+
+===========
+
+ SELECT id
+			FROM fs_order_uploads_detail
+			WHERE record_id = 45477
+
+time:::0.000333070755004883
+
+===========
+
+ SELECT id,code
+			FROM fs_warehouses
+			WHERE id = 2
+
+time:::0.000380039215087891
+
+===========
+
+ SELECT id,name
+			FROM fs_platforms
+			WHERE id = 1
+
+time:::0.000391960144042969
+
+===========
+
+ SELECT id,code
+			FROM fs_shops
+			WHERE id = 490
+
+time:::0.000333070755004883
+
+===========
+
+ SELECT id,name
+			FROM fs_house
+			WHERE id = 7
+
+time:::0.000268936157226562
+
+===========
+
+ SELECT id,file_pdf,total_page_pdf
+			FROM fs_order_uploads
+			WHERE id = 45385
+
+time:::0.000322818756103516
+
+===========
+
+ SELECT id
+		FROM fs_order_uploads_page_pdf  WHERE record_id = 45385
+
+time:::0.00027012825012207
+
+===========
+
+ SELECT id
+			FROM fs_order_uploads_detail
+			WHERE record_id = 45385
+
+time:::0.000365972518920898
+
+===========
+
+ SELECT id,file_xlsx
+			FROM fs_order_uploads
+			WHERE id = 45385
+
+time:::0.000406026840209961
+
+===========
+
+ SELECT id
+			FROM fs_order_uploads_detail
+			WHERE record_id = 45385
+
+time:::0.000369071960449219
+
+===========
+
+ SELECT id,code
+			FROM fs_warehouses
+			WHERE id = 2
+
+time:::0.000385046005249023
+
+===========
+
+ SELECT id,name
+			FROM fs_platforms
+			WHERE id = 1
+
+time:::0.000429868698120117
+
+===========
+
+ SELECT id,code
+			FROM fs_shops
+			WHERE id = 585
+
+time:::0.000315189361572266
+
+===========
+
+ SELECT id,name
+			FROM fs_house
+			WHERE id = 14
+
+time:::0.00027012825012207
+
+===========
+
+ SELECT id,file_pdf,total_page_pdf
+			FROM fs_order_uploads
+			WHERE id = 45382
+
+time:::0.000306129455566406
+
+===========
+
+ SELECT id
+		FROM fs_order_uploads_page_pdf  WHERE record_id = 45382
+
+time:::0.000384092330932617
+
+===========
+
+ SELECT id
+			FROM fs_order_uploads_detail
+			WHERE record_id = 45382
+
+time:::0.00058293342590332
+
+===========
+
+ SELECT id,file_xlsx
+			FROM fs_order_uploads
+			WHERE id = 45382
+
+time:::0.000427961349487305
+
+===========
+
+ SELECT id
+			FROM fs_order_uploads_detail
+			WHERE record_id = 45382
+
+time:::0.000561952590942383
+
+===========
+
+ SELECT id,code
+			FROM fs_warehouses
+			WHERE id = 1
+
+time:::0.00056004524230957
+
+===========
+
+ SELECT id,name
+			FROM fs_platforms
+			WHERE id = 1
+
+time:::0.000433921813964844
+
+===========
+
+ SELECT id,code
+			FROM fs_shops
+			WHERE id = 585
+
+time:::0.000419855117797852
+
+===========
+
+ SELECT id,name
+			FROM fs_house
+			WHERE id = 7
+
+time:::0.000308036804199219
+
+===========
+
+ SELECT id,file_pdf,total_page_pdf
+			FROM fs_order_uploads
+			WHERE id = 45377
+
+time:::0.000325202941894531
+
+===========
+
+ SELECT id
+		FROM fs_order_uploads_page_pdf  WHERE record_id = 45377
+
+time:::0.000378131866455078
+
+===========
+
+ SELECT id
+			FROM fs_order_uploads_detail
+			WHERE record_id = 45377
+
+time:::0.000401973724365234
+
+===========
+
+ SELECT id,file_xlsx
+			FROM fs_order_uploads
+			WHERE id = 45377
+
+time:::0.000470161437988281
+
+===========
+
+ SELECT id
+			FROM fs_order_uploads_detail
+			WHERE record_id = 45377
+
+time:::0.000311851501464844
+
+===========
+
+ SELECT id,code
+			FROM fs_warehouses
+			WHERE id = 2
+
+time:::0.000444173812866211
+
+===========
+
+ SELECT id,name
+			FROM fs_platforms
+			WHERE id = 1
+
+time:::0.000386953353881836
+
+===========
+
+ SELECT id,code
+			FROM fs_shops
+			WHERE id = 558
+
+time:::0.000382900238037109
+
+===========
+
+ SELECT id,name
+			FROM fs_house
+			WHERE id = 7
+
+time:::0.00037693977355957
+
+===========
+
+ SELECT id,file_pdf,total_page_pdf
+			FROM fs_order_uploads
+			WHERE id = 45373
+
+time:::0.000353813171386719
+
+===========
+
+ SELECT id
+		FROM fs_order_uploads_page_pdf  WHERE record_id = 45373
+
+time:::0.000355005264282227
+
+===========
+
+ SELECT id
+			FROM fs_order_uploads_detail
+			WHERE record_id = 45373
+
+time:::0.000371932983398438
+
+===========
+
+ SELECT id,file_xlsx
+			FROM fs_order_uploads
+			WHERE id = 45373
+
+time:::0.000450849533081055
+
+===========
+
+ SELECT id
+			FROM fs_order_uploads_detail
+			WHERE record_id = 45373
+
+time:::0.000466108322143555
+
+===========
+
+ SELECT id,code
+			FROM fs_warehouses
+			WHERE id = 2
+
+time:::0.000458955764770508
+
+===========
+
+ SELECT id,name
+			FROM fs_platforms
+			WHERE id = 3
+
+time:::0.000367164611816406
+
+===========
+
+ SELECT id,code
+			FROM fs_shops
+			WHERE id = 264
+
+time:::0.000295877456665039
+
+===========
+
+ SELECT id,name
+			FROM fs_house
+			WHERE id = 2
+
+time:::0.000285863876342773
+
+===========
+
+ SELECT id,file_pdf,total_page_pdf
+			FROM fs_order_uploads
+			WHERE id = 45261
+
+time:::0.000398159027099609
+
+===========
+
+ SELECT id
+		FROM fs_order_uploads_page_pdf  WHERE record_id = 45261
+
+time:::0.000351905822753906
+
+===========
+
+ SELECT id
+			FROM fs_order_uploads_detail
+			WHERE record_id = 45261
+
+time:::0.0004119873046875
+
+===========
+
+ SELECT id,file_xlsx
+			FROM fs_order_uploads
+			WHERE id = 45261
+
+time:::0.000401020050048828
+
+===========
+
+ SELECT id
+			FROM fs_order_uploads_detail
+			WHERE record_id = 45261
+
+time:::0.000307798385620117
+
+===========
+
+ SELECT id,code
+			FROM fs_warehouses
+			WHERE id = 1
+
+time:::0.000388145446777344
+
+===========
+
+ SELECT id,name
+			FROM fs_platforms
+			WHERE id = 1
+
+time:::0.000489950180053711
+
+===========
+
+ SELECT id,code
+			FROM fs_shops
+			WHERE id = 558
+
+time:::0.000424861907958984
+
+===========
+
+ SELECT id,name
+			FROM fs_house
+			WHERE id = 2
+
+time:::0.000332117080688477
+
+===========
+
+ SELECT id,file_pdf,total_page_pdf
+			FROM fs_order_uploads
+			WHERE id = 45257
+
+time:::0.000370025634765625
+
+===========
+
+ SELECT id
+		FROM fs_order_uploads_page_pdf  WHERE record_id = 45257
+
+time:::0.00026392936706543
+
+===========
+
+ SELECT id
+			FROM fs_order_uploads_detail
+			WHERE record_id = 45257
+
+time:::0.000329971313476562
+
+===========
+
+ SELECT id,file_xlsx
+			FROM fs_order_uploads
+			WHERE id = 45257
+
+time:::0.000360012054443359
+
+===========
+
+ SELECT id
+			FROM fs_order_uploads_detail
+			WHERE record_id = 45257
+
+time:::0.000444173812866211
+
+===========
+
+ SELECT id,code
+			FROM fs_warehouses
+			WHERE id = 2
+
+time:::0.000403881072998047
+
+===========
+
+ SELECT id,name
+			FROM fs_platforms
+			WHERE id = 1
+
+time:::0.000416994094848633
+
+===========
+
+ SELECT id,code
+			FROM fs_shops
+			WHERE id = 558
+
+time:::0.000320911407470703
+
+===========
+
+ SELECT id,name
+			FROM fs_house
+			WHERE id = 13
+
+time:::0.000329017639160156
+
+===========
+
+ SELECT id,file_pdf,total_page_pdf
+			FROM fs_order_uploads
+			WHERE id = 45256
+
+time:::0.000339031219482422
+
+===========
+
+ SELECT id
+		FROM fs_order_uploads_page_pdf  WHERE record_id = 45256
+
+time:::0.000303983688354492
+
+===========
+
+ SELECT id
+			FROM fs_order_uploads_detail
+			WHERE record_id = 45256
+
+time:::0.000349044799804688
+
+===========
+
+ SELECT id,file_xlsx
+			FROM fs_order_uploads
+			WHERE id = 45256
+
+time:::0.000391006469726562
+
+===========
+
+ SELECT id
+			FROM fs_order_uploads_detail
+			WHERE record_id = 45256
+
+time:::0.00036311149597168
+
+===========
+
+ SELECT id,code
+			FROM fs_warehouses
+			WHERE id = 2
+
+time:::0.000422000885009766
+
+===========
+
+ SELECT id,name
+			FROM fs_platforms
+			WHERE id = 1
+
+time:::0.000367879867553711
+
+===========
+
+ SELECT id,code
+			FROM fs_shops
+			WHERE id = 585
+
+time:::0.000357866287231445
+
+===========
+
+ SELECT id,name
+			FROM fs_house
+			WHERE id = 13
+
+time:::0.00030207633972168
+
+===========
+
+ SELECT id,file_pdf,total_page_pdf
+			FROM fs_order_uploads
+			WHERE id = 45254
+
+time:::0.000298976898193359
+
+===========
+
+ SELECT id
+		FROM fs_order_uploads_page_pdf  WHERE record_id = 45254
+
+time:::0.000389814376831055
+
+===========
+
+ SELECT id
+			FROM fs_order_uploads_detail
+			WHERE record_id = 45254
+
+time:::0.000481128692626953
+
+===========
+
+ SELECT id,file_xlsx
+			FROM fs_order_uploads
+			WHERE id = 45254
+
+time:::0.000472068786621094
+
+===========
+
+ SELECT id
+			FROM fs_order_uploads_detail
+			WHERE record_id = 45254
+
+time:::0.000446081161499023
+
+===========
+
+ SELECT id,code
+			FROM fs_warehouses
+			WHERE id = 2
+
+time:::0.000437021255493164
+
+===========
+
+ SELECT id,name
+			FROM fs_platforms
+			WHERE id = 3
+
+time:::0.000339984893798828
+
+===========
+
+ SELECT id,code
+			FROM fs_shops
+			WHERE id = 271
+
+time:::0.000295877456665039
+
+===========
+
+ SELECT id,name
+			FROM fs_house
+			WHERE id = 2
+
+time:::0.000258922576904297
+
+===========
+
+ SELECT id,file_pdf,total_page_pdf
+			FROM fs_order_uploads
+			WHERE id = 45185
+
+time:::0.000344991683959961
+
+===========
+
+ SELECT id
+		FROM fs_order_uploads_page_pdf  WHERE record_id = 45185
+
+time:::0.000262022018432617
+
+===========
+
+ SELECT id
+			FROM fs_order_uploads_detail
+			WHERE record_id = 45185
+
+time:::0.00032806396484375
+
+===========
+
+ SELECT id,file_xlsx
+			FROM fs_order_uploads
+			WHERE id = 45185
+
+time:::0.000365018844604492
+
+===========
+
+ SELECT id
+			FROM fs_order_uploads_detail
+			WHERE record_id = 45185
+
+time:::0.000306129455566406
+
+===========
+
+ SELECT id,code
+			FROM fs_warehouses
+			WHERE id = 1
+
+time:::0.000347137451171875
+
+===========
+
+ SELECT id,name
+			FROM fs_platforms
+			WHERE id = 3
+
+time:::0.000355005264282227
+
+===========
+
+ SELECT id,code
+			FROM fs_shops
+			WHERE id = 271
+
+time:::0.000318050384521484
+
+===========
+
+ SELECT id,name
+			FROM fs_house
+			WHERE id = 2
+
+time:::0.00035405158996582
+
+===========
+
+ SELECT id,file_pdf,total_page_pdf
+			FROM fs_order_uploads
+			WHERE id = 45182
+
+time:::0.000319004058837891
+
+===========
+
+ SELECT id
+		FROM fs_order_uploads_page_pdf  WHERE record_id = 45182
+
+time:::0.000266075134277344
+
+===========
+
+ SELECT id
+			FROM fs_order_uploads_detail
+			WHERE record_id = 45182
+
+time:::0.000368833541870117
+
+===========
+
+ SELECT id,file_xlsx
+			FROM fs_order_uploads
+			WHERE id = 45182
+
+time:::0.000416994094848633
+
+===========
+
+ SELECT id
+			FROM fs_order_uploads_detail
+			WHERE record_id = 45182
+
+time:::0.000351905822753906
+
+===========
+
+ SELECT id,code
+			FROM fs_warehouses
+			WHERE id = 2
+
+time:::0.000432968139648438
+
+===========
+
+ SELECT id,name
+			FROM fs_platforms
+			WHERE id = 1
+
+time:::0.000428199768066406
+
+===========
+
+ SELECT id,code
+			FROM fs_shops
+			WHERE id = 425
+
+time:::0.000295877456665039
+
+===========
+
+ SELECT id,name
+			FROM fs_house
+			WHERE id = 1
+
+time:::0.000262022018432617
+
+===========
+
+ SELECT id,file_pdf,total_page_pdf
+			FROM fs_order_uploads
+			WHERE id = 45176
+
+time:::0.000303030014038086
+
+===========
+
+ SELECT id
+		FROM fs_order_uploads_page_pdf  WHERE record_id = 45176
+
+time:::0.000317811965942383
+
+===========
+
+ SELECT id
+			FROM fs_order_uploads_detail
+			WHERE record_id = 45176
+
+time:::0.000426054000854492
+
+===========
+
+ SELECT id,file_xlsx
+			FROM fs_order_uploads
+			WHERE id = 45176
+
+time:::0.000493049621582031
+
+===========
+
+ SELECT id
+			FROM fs_order_uploads_detail
+			WHERE record_id = 45176
+
+time:::0.000494003295898438
+
+===========
+
+ SELECT id,code
+			FROM fs_warehouses
+			WHERE id = 2
+
+time:::0.000368833541870117
+
+===========
+
+ SELECT id,name
+			FROM fs_platforms
+			WHERE id = 1
+
+time:::0.000415802001953125
+
+===========
+
+ SELECT id,code
+			FROM fs_shops
+			WHERE id = 273
+
+time:::0.000347137451171875
+
+===========
+
+ SELECT id,name
+			FROM fs_house
+			WHERE id = 1
+
+time:::0.000319004058837891
+
+===========
+
+ SELECT id,file_pdf,total_page_pdf
+			FROM fs_order_uploads
+			WHERE id = 45174
+
+time:::0.000280141830444336
+
+===========
+
+ SELECT id
+		FROM fs_order_uploads_page_pdf  WHERE record_id = 45174
+
+time:::0.000471830368041992
+
+===========
+
+ SELECT id
+			FROM fs_order_uploads_detail
+			WHERE record_id = 45174
+
+time:::0.000576972961425781
+
+===========
+
+ SELECT id,file_xlsx
+			FROM fs_order_uploads
+			WHERE id = 45174
+
+time:::0.000375986099243164
+
+===========
+
+ SELECT id
+			FROM fs_order_uploads_detail
+			WHERE record_id = 45174
+
+time:::0.000472068786621094
+
+===========
+
+ SELECT id,code
+			FROM fs_warehouses
+			WHERE id = 2
+
+time:::0.000420093536376953
+
+===========
+
+ SELECT id,name
+			FROM fs_platforms
+			WHERE id = 1
+
+time:::0.000338077545166016
+
+===========
+
+ SELECT id,code
+			FROM fs_shops
+			WHERE id = 490
+
+time:::0.00032806396484375
+
+===========
+
+ SELECT id,name
+			FROM fs_house
+			WHERE id = 1
+
+time:::0.000329971313476562
+
+===========
+
+ SELECT id,file_pdf,total_page_pdf
+			FROM fs_order_uploads
+			WHERE id = 45173
+
+time:::0.000298023223876953
+
+===========
+
+ SELECT id
+		FROM fs_order_uploads_page_pdf  WHERE record_id = 45173
+
+time:::0.000339984893798828
+
+===========
+
+ SELECT id
+			FROM fs_order_uploads_detail
+			WHERE record_id = 45173
+
+time:::0.000451087951660156
+
+===========
+
+ SELECT id,file_xlsx
+			FROM fs_order_uploads
+			WHERE id = 45173
+
+time:::0.00035405158996582
+
+===========
+
+ SELECT id
+			FROM fs_order_uploads_detail
+			WHERE record_id = 45173
+
+time:::0.000418901443481445
+
+===========
+
+ SELECT id,code
+			FROM fs_warehouses
+			WHERE id = 2
+
+time:::0.000494956970214844
+
+===========
+
+ SELECT id,name
+			FROM fs_platforms
+			WHERE id = 1
+
+time:::0.00037693977355957
+
+===========
+
+ SELECT id,code
+			FROM fs_shops
+			WHERE id = 21
+
+time:::0.000300884246826172
+
+===========
+
+ SELECT id,name
+			FROM fs_house
+			WHERE id = 10
+
+time:::0.000280141830444336
+
+===========
+
+ SELECT id,file_pdf,total_page_pdf
+			FROM fs_order_uploads
+			WHERE id = 45130
+
+time:::0.000360965728759766
+
+===========
+
+ SELECT id
+		FROM fs_order_uploads_page_pdf  WHERE record_id = 45130
+
+time:::0.00029301643371582
+
+===========
+
+ SELECT id
+			FROM fs_order_uploads_detail
+			WHERE record_id = 45130
+
+time:::0.000355005264282227
+
+===========
+
+ SELECT id,file_xlsx
+			FROM fs_order_uploads
+			WHERE id = 45130
+
+time:::0.000427007675170898
+
+===========
+
+ SELECT id
+			FROM fs_order_uploads_detail
+			WHERE record_id = 45130
+
+time:::0.000391960144042969
+
+===========
+
+ SELECT id,code
+			FROM fs_warehouses
+			WHERE id = 1
+
+time:::0.000493049621582031
+
+===========
+
+ SELECT id,name
+			FROM fs_platforms
+			WHERE id = 1
+
+time:::0.000478982925415039
+
+===========
+
+ SELECT id,code
+			FROM fs_shops
+			WHERE id = 21
+
+time:::0.000394105911254883
+
+===========
+
+ SELECT id,name
+			FROM fs_house
+			WHERE id = 7
+
+time:::0.000373125076293945
+
+===========
+
+ SELECT id,file_pdf,total_page_pdf
+			FROM fs_order_uploads
+			WHERE id = 45090
+
+time:::0.000368118286132812
+
+===========
+
+ SELECT id
+		FROM fs_order_uploads_page_pdf  WHERE record_id = 45090
+
+time:::0.000378847122192383
+
+===========
+
+ SELECT id
+			FROM fs_order_uploads_detail
+			WHERE record_id = 45090
+
+time:::0.000458002090454102
+
+===========
+
+ SELECT id,file_xlsx
+			FROM fs_order_uploads
+			WHERE id = 45090
+
+time:::0.000494003295898438
+
+===========
+
+ SELECT id
+			FROM fs_order_uploads_detail
+			WHERE record_id = 45090
+
+time:::0.000452995300292969
+
+===========
+
+ SELECT id,code
+			FROM fs_warehouses
+			WHERE id = 4
+
+time:::0.000480890274047852
+
+===========
+
+ SELECT id,name
+			FROM fs_platforms
+			WHERE id = 1
+
+time:::0.000344991683959961
+
+===========
+
+ SELECT id,code
+			FROM fs_shops
+			WHERE id = 21
+
+time:::0.000386953353881836
+
+===========
+
+ SELECT id,name
+			FROM fs_house
+			WHERE id = 7
+
+time:::0.000262022018432617
+
+===========
+
+ SELECT id,file_pdf,total_page_pdf
+			FROM fs_order_uploads
+			WHERE id = 45087
+
+time:::0.000339984893798828
+
+===========
+
+ SELECT id
+		FROM fs_order_uploads_page_pdf  WHERE record_id = 45087
+
+time:::0.000265121459960938
+
+===========
+
+ SELECT id
+			FROM fs_order_uploads_detail
+			WHERE record_id = 45087
+
+time:::0.000369071960449219
+
+===========
+
+ SELECT id,file_xlsx
+			FROM fs_order_uploads
+			WHERE id = 45087
+
+time:::0.00037693977355957
+
+===========
+
+ SELECT id
+			FROM fs_order_uploads_detail
+			WHERE record_id = 45087
+
+time:::0.000351905822753906
+
+===========
+
+ SELECT id,code
+			FROM fs_warehouses
+			WHERE id = 2
+
+time:::0.000411033630371094
+
+===========
+
+ SELECT id,name
+			FROM fs_platforms
+			WHERE id = 1
+
+time:::0.000450849533081055
+
+===========
+
+ SELECT id,code
+			FROM fs_shops
+			WHERE id = 558
+
+time:::0.000360012054443359
+
+===========
+
+ SELECT id,name
+			FROM fs_house
+			WHERE id = 7
+
+time:::0.000304937362670898
+
+===========
+
+ SELECT id,file_pdf,total_page_pdf
+			FROM fs_order_uploads
+			WHERE id = 45073
+
+time:::0.000299930572509766
+
+===========
+
+ SELECT id
+		FROM fs_order_uploads_page_pdf  WHERE record_id = 45073
+
+time:::0.000273942947387695
+
+===========
+
+ SELECT id
+			FROM fs_order_uploads_detail
+			WHERE record_id = 45073
+
+time:::0.000345945358276367
+
+===========
+
+ SELECT id,file_xlsx
+			FROM fs_order_uploads
+			WHERE id = 45073
+
+time:::0.000464916229248047
+
+===========
+
+ SELECT id
+			FROM fs_order_uploads_detail
+			WHERE record_id = 45073
+
+time:::0.000364065170288086
+
+===========
+
+ SELECT id,code
+			FROM fs_warehouses
+			WHERE id = 2
+
+time:::0.000472068786621094
+
+===========
+
+ SELECT id,name
+			FROM fs_platforms
+			WHERE id = 1
+
+time:::0.000385046005249023
+
+===========
+
+ SELECT id,code
+			FROM fs_shops
+			WHERE id = 558
+
+time:::0.000392913818359375
+
+===========
+
+ SELECT id,name
+			FROM fs_house
+			WHERE id = 8
+
+time:::0.000268936157226562
+
+===========
+
+ SELECT id,file_pdf,total_page_pdf
+			FROM fs_order_uploads
+			WHERE id = 45066
+
+time:::0.000377893447875977
+
+===========
+
+ SELECT id
+		FROM fs_order_uploads_page_pdf  WHERE record_id = 45066
+
+time:::0.000303983688354492
+
+===========
+
+ SELECT id
+			FROM fs_order_uploads_detail
+			WHERE record_id = 45066
+
+time:::0.000329971313476562
+
+===========
+
+ SELECT id,file_xlsx
+			FROM fs_order_uploads
+			WHERE id = 45066
+
+time:::0.000353097915649414
+
+===========
+
+ SELECT id
+			FROM fs_order_uploads_detail
+			WHERE record_id = 45066
+
+time:::0.0003509521484375
+
+===========
+
+ SELECT id,code
+			FROM fs_warehouses
+			WHERE id = 2
+
+time:::0.000440120697021484
+
+===========
+
+ SELECT id,name
+			FROM fs_platforms
+			WHERE id = 1
+
+time:::0.000398159027099609
+
+===========
+
+ SELECT id,code
+			FROM fs_shops
+			WHERE id = 273
+
+time:::0.000353813171386719
+
+===========
+
+ SELECT id,name
+			FROM fs_house
+			WHERE id = 1
+
+time:::0.000266075134277344
+
+===========
+
+ SELECT id,file_pdf,total_page_pdf
+			FROM fs_order_uploads
+			WHERE id = 44959
+
+time:::0.000307798385620117
+
+===========
+
+ SELECT id
+		FROM fs_order_uploads_page_pdf  WHERE record_id = 44959
+
+time:::0.00033116340637207
+
+===========
+
+ SELECT id
+			FROM fs_order_uploads_detail
+			WHERE record_id = 44959
+
+time:::0.000435113906860352
+
+===========
+
+ SELECT id,file_xlsx
+			FROM fs_order_uploads
+			WHERE id = 44959
+
+time:::0.000449895858764648
+
+===========
+
+ SELECT id
+			FROM fs_order_uploads_detail
+			WHERE record_id = 44959
+
+time:::0.000414133071899414
+
+===========
+
+ SELECT id,code
+			FROM fs_warehouses
+			WHERE id = 2
+
+time:::0.000410079956054688
+
+===========
+
+ SELECT id,name
+			FROM fs_platforms
+			WHERE id = 1
+
+time:::0.000349998474121094
+
+===========
+
+ SELECT id,code
+			FROM fs_shops
+			WHERE id = 490
+
+time:::0.000315189361572266
+
+===========
+
+ SELECT id,name
+			FROM fs_house
+			WHERE id = 1
+
+time:::0.000283956527709961
+
+===========
+
+ SELECT id,file_pdf,total_page_pdf
+			FROM fs_order_uploads
+			WHERE id = 44952
+
+time:::0.000337123870849609
+
+===========
+
+ SELECT id
+		FROM fs_order_uploads_page_pdf  WHERE record_id = 44952
+
+time:::0.000324010848999023
+
+===========
+
+ SELECT id
+			FROM fs_order_uploads_detail
+			WHERE record_id = 44952
+
+time:::0.00037693977355957
+
+===========
+
+ SELECT id,file_xlsx
+			FROM fs_order_uploads
+			WHERE id = 44952
+
+time:::0.000422954559326172
+
+===========
+
+ SELECT id
+			FROM fs_order_uploads_detail
+			WHERE record_id = 44952
+
+time:::0.000375032424926758
+
+===========
+
+ SELECT id,code
+			FROM fs_warehouses
+			WHERE id = 2
+
+time:::0.000428915023803711
+
+===========
+
+ SELECT id,name
+			FROM fs_platforms
+			WHERE id = 1
+
+time:::0.000414848327636719
+
+===========
+
+ SELECT id,code
+			FROM fs_shops
+			WHERE id = 558
+
+time:::0.00038599967956543
+
+===========
+
+ SELECT id,name
+			FROM fs_house
+			WHERE id = 13
+
+time:::0.000341892242431641
+
+===========
+
+ SELECT id,file_pdf,total_page_pdf
+			FROM fs_order_uploads
+			WHERE id = 44945
+
+time:::0.00031590461730957
+
+===========
+
+ SELECT id
+		FROM fs_order_uploads_page_pdf  WHERE record_id = 44945
+
+time:::0.000540018081665039
+
+===========
+
+ SELECT id
+			FROM fs_order_uploads_detail
+			WHERE record_id = 44945
+
+time:::0.000540971755981445
+
+===========
+
+ SELECT id,file_xlsx
+			FROM fs_order_uploads
+			WHERE id = 44945
+
+time:::0.000547885894775391
+
+===========
+
+ SELECT id
+			FROM fs_order_uploads_detail
+			WHERE record_id = 44945
+
+time:::0.00042414665222168
+
+===========
+
+ SELECT id,code
+			FROM fs_warehouses
+			WHERE id = 2
+
+time:::0.000411033630371094
+
+===========
+
+ SELECT id,name
+			FROM fs_platforms
+			WHERE id = 1
+
+time:::0.000462770462036133
+
+===========
+
+ SELECT id,code
+			FROM fs_shops
+			WHERE id = 21
+
+time:::0.000395059585571289
+
+===========
+
+ SELECT id,name
+			FROM fs_house
+			WHERE id = 13
+
+time:::0.000379085540771484
+
+===========
+
+ SELECT id,file_pdf,total_page_pdf
+			FROM fs_order_uploads
+			WHERE id = 44937
+
+time:::0.000370025634765625
+
+===========
+
+ SELECT id
+		FROM fs_order_uploads_page_pdf  WHERE record_id = 44937
+
+time:::0.00026702880859375
+
+===========
+
+ SELECT id
+			FROM fs_order_uploads_detail
+			WHERE record_id = 44937
+
+time:::0.000327825546264648
+
+===========
+
+ SELECT id,file_xlsx
+			FROM fs_order_uploads
+			WHERE id = 44937
+
+time:::0.000412940979003906
+
+===========
+
+ SELECT id
+			FROM fs_order_uploads_detail
+			WHERE record_id = 44937
+
+time:::0.00035405158996582
+
+===========
+
+ SELECT id,code
+			FROM fs_warehouses
+			WHERE id = 1
+
+time:::0.000463962554931641
+
+===========
+
+ SELECT id,name
+			FROM fs_platforms
+			WHERE id = 3
+
+time:::0.000395059585571289
+
+===========
+
+ SELECT id,code
+			FROM fs_shops
+			WHERE id = 271
+
+time:::0.00032496452331543
+
+===========
+
+ SELECT id,name
+			FROM fs_house
+			WHERE id = 2
+
+time:::0.00032806396484375
+
+===========
+
+ SELECT id,file_pdf,total_page_pdf
+			FROM fs_order_uploads
+			WHERE id = 44854
+
+time:::0.000340938568115234
+
+===========
+
+ SELECT id
+		FROM fs_order_uploads_page_pdf  WHERE record_id = 44854
+
+time:::0.000288009643554688
+
+===========
+
+ SELECT id
+			FROM fs_order_uploads_detail
+			WHERE record_id = 44854
+
+time:::0.000394105911254883
+
+===========
+
+ SELECT id,file_xlsx
+			FROM fs_order_uploads
+			WHERE id = 44854
+
+time:::0.000496149063110352
+
+===========
+
+ SELECT id
+			FROM fs_order_uploads_detail
+			WHERE record_id = 44854
+
+time:::0.000386953353881836
+
+===========
+
+ SELECT id,code
+			FROM fs_warehouses
+			WHERE id = 2
+
+time:::0.000452041625976562
+
+===========
+
+ SELECT id,name
+			FROM fs_platforms
+			WHERE id = 3
+
+time:::0.000370025634765625
+
+===========
+
+ SELECT id,code
+			FROM fs_shops
+			WHERE id = 271
+
+time:::0.000397920608520508
+
+===========
+
+ SELECT id,name
+			FROM fs_house
+			WHERE id = 2
+
+time:::0.00033116340637207
+
+===========
+
+ SELECT id,file_pdf,total_page_pdf
+			FROM fs_order_uploads
+			WHERE id = 44850
+
+time:::0.000344991683959961
+
+===========
+
+ SELECT id
+		FROM fs_order_uploads_page_pdf  WHERE record_id = 44850
+
+time:::0.000338077545166016
+
+===========
+
+ SELECT id
+			FROM fs_order_uploads_detail
+			WHERE record_id = 44850
+
+time:::0.000442028045654297
+
+===========
+
+ SELECT id,file_xlsx
+			FROM fs_order_uploads
+			WHERE id = 44850
+
+time:::0.000496149063110352
+
+===========
+
+ SELECT id
+			FROM fs_order_uploads_detail
+			WHERE record_id = 44850
+
+time:::0.000397920608520508
+
+===========
+
+ SELECT id,code
+			FROM fs_warehouses
+			WHERE id = 2
+
+time:::0.000424861907958984
+
+===========
+
+ SELECT id,name
+			FROM fs_platforms
+			WHERE id = 3
+
+time:::0.000449895858764648
+
+===========
+
+ SELECT id,code
+			FROM fs_shops
+			WHERE id = 271
+
+time:::0.000413894653320312
+
+===========
+
+ SELECT id,name
+			FROM fs_house
+			WHERE id = 2
+
+time:::0.000383138656616211
+
+===========
+
+ SELECT id,file_pdf,total_page_pdf
+			FROM fs_order_uploads
+			WHERE id = 44849
+
+time:::0.000401973724365234
+
+===========
+
+ SELECT id
+		FROM fs_order_uploads_page_pdf  WHERE record_id = 44849
+
+time:::0.000401020050048828
+
+===========
+
+ SELECT id
+			FROM fs_order_uploads_detail
+			WHERE record_id = 44849
+
+time:::0.000471115112304688
+
+===========
+
+ SELECT id,file_xlsx
+			FROM fs_order_uploads
+			WHERE id = 44849
+
+time:::0.000517129898071289
+
+===========
+
+ SELECT id
+			FROM fs_order_uploads_detail
+			WHERE record_id = 44849
+
+time:::0.000456094741821289
+
+===========
+
+ SELECT id,code
+			FROM fs_warehouses
+			WHERE id = 2
+
+time:::0.000506877899169922
+
+===========
+
+ SELECT id,name
+			FROM fs_platforms
+			WHERE id = 3
+
+time:::0.000486850738525391
+
+===========
+
+ SELECT id,code
+			FROM fs_shops
+			WHERE id = 264
+
+time:::0.000435113906860352
+
+===========
+
+ SELECT id,name
+			FROM fs_house
+			WHERE id = 2
+
+time:::0.000372171401977539
+
+===========
+
+ SELECT id,file_pdf,total_page_pdf
+			FROM fs_order_uploads
+			WHERE id = 44848
+
+time:::0.000361204147338867
+
+===========
+
+ SELECT id
+		FROM fs_order_uploads_page_pdf  WHERE record_id = 44848
+
+time:::0.000423192977905273
+
+===========
+
+ SELECT id
+			FROM fs_order_uploads_detail
+			WHERE record_id = 44848
+
+time:::0.000468015670776367
+
+===========
+
+ SELECT id,file_xlsx
+			FROM fs_order_uploads
+			WHERE id = 44848
+
+time:::0.000555038452148438
+
+===========
+
+ SELECT id
+			FROM fs_order_uploads_detail
+			WHERE record_id = 44848
+
+time:::0.000464916229248047
+
+===========
+
+ SELECT id,code
+			FROM fs_warehouses
+			WHERE id = 1
+
+time:::0.000486850738525391
+
+===========
+
+ SELECT id,name
+			FROM fs_platforms
+			WHERE id = 3
+
+time:::0.000468969345092773
+
+===========
+
+ SELECT id,code
+			FROM fs_shops
+			WHERE id = 264
+
+time:::0.000374078750610352
+
+===========
+
+ SELECT id,name
+			FROM fs_house
+			WHERE id = 2
+
+time:::0.000309944152832031
+
+===========
+
+ SELECT id,file_pdf,total_page_pdf
+			FROM fs_order_uploads
+			WHERE id = 44846
+
+time:::0.000375986099243164
+
+===========
+
+ SELECT id
+		FROM fs_order_uploads_page_pdf  WHERE record_id = 44846
+
+time:::0.000324010848999023
+
+===========
+
+ SELECT id
+			FROM fs_order_uploads_detail
+			WHERE record_id = 44846
+
+time:::0.000429153442382812
+
+===========
+
+ SELECT id,file_xlsx
+			FROM fs_order_uploads
+			WHERE id = 44846
+
+time:::0.000407934188842773
+
+===========
+
+ SELECT id
+			FROM fs_order_uploads_detail
+			WHERE record_id = 44846
+
+time:::0.000355958938598633
+
+===========
+
+ SELECT id,code
+			FROM fs_warehouses
+			WHERE id = 2
+
+time:::0.000504970550537109
+
+===========
+
+ SELECT id,name
+			FROM fs_platforms
+			WHERE id = 1
+
+time:::0.000360012054443359
+
+===========
+
+ SELECT id,code
+			FROM fs_shops
+			WHERE id = 425
+
+time:::0.000380992889404297
+
+===========
+
+ SELECT id,name
+			FROM fs_house
+			WHERE id = 1
+
+time:::0.000339031219482422
+
+===========
+
+ SELECT id,file_pdf,total_page_pdf
+			FROM fs_order_uploads
+			WHERE id = 44845
+
+time:::0.000388145446777344
+
+===========
+
+ SELECT id
+		FROM fs_order_uploads_page_pdf  WHERE record_id = 44845
+
+time:::0.000519990921020508
+
+===========
+
+ SELECT id
+			FROM fs_order_uploads_detail
+			WHERE record_id = 44845
+
+time:::0.000413894653320312
+
+===========
+
+ SELECT id,file_xlsx
+			FROM fs_order_uploads
+			WHERE id = 44845
+
+time:::0.000422954559326172
+
+===========
+
+ SELECT id
+			FROM fs_order_uploads_detail
+			WHERE record_id = 44845
+
+time:::0.000448226928710938
+
+===========
+
+ SELECT id,code
+			FROM fs_warehouses
+			WHERE id = 2
+
+time:::0.000482082366943359
+
+===========
+
+ SELECT id,name
+			FROM fs_platforms
+			WHERE id = 1
+
+time:::0.000445842742919922
+
+===========
+
+ SELECT id,code
+			FROM fs_shops
+			WHERE id = 273
+
+time:::0.000409126281738281
+
+===========
+
+ SELECT id,name
+			FROM fs_house
+			WHERE id = 1
+
+time:::0.000323772430419922
+
+===========
+
+ SELECT id,file_pdf,total_page_pdf
+			FROM fs_order_uploads
+			WHERE id = 44844
+
+time:::0.000362157821655273
+
+===========
+
+ SELECT id
+		FROM fs_order_uploads_page_pdf  WHERE record_id = 44844
+
+time:::0.000545978546142578
+
+===========
+
+ SELECT id
+			FROM fs_order_uploads_detail
+			WHERE record_id = 44844
+
+time:::0.000509023666381836
+
+===========
+
+ SELECT id,file_xlsx
+			FROM fs_order_uploads
+			WHERE id = 44844
+
+time:::0.000504016876220703
+
+===========
+
+ SELECT id
+			FROM fs_order_uploads_detail
+			WHERE record_id = 44844
+
+time:::0.000455141067504883
+
+===========
+
+ SELECT id,code
+			FROM fs_warehouses
+			WHERE id = 2
+
+time:::0.000402927398681641
+
+===========
+
+ SELECT id,name
+			FROM fs_platforms
+			WHERE id = 1
+
+time:::0.000352144241333008
+
+===========
+
+ SELECT id,code
+			FROM fs_shops
+			WHERE id = 490
+
+time:::0.000378131866455078
+
+===========
+
+ SELECT id,name
+			FROM fs_house
+			WHERE id = 1
+
+time:::0.000308990478515625
+
+===========
+
+ SELECT id,file_pdf,total_page_pdf
+			FROM fs_order_uploads
+			WHERE id = 44839
+
+time:::0.000295877456665039
+
+===========
+
+ SELECT id
+		FROM fs_order_uploads_page_pdf  WHERE record_id = 44839
+
+time:::0.00056004524230957
+
+===========
+
+ SELECT id
+			FROM fs_order_uploads_detail
+			WHERE record_id = 44839
+
+time:::0.000503778457641602
+
+===========
+
+ SELECT id,file_xlsx
+			FROM fs_order_uploads
+			WHERE id = 44839
+
+time:::0.000372886657714844
+
+===========
+
+ SELECT id
+			FROM fs_order_uploads_detail
+			WHERE record_id = 44839
+
+time:::0.000430107116699219
+
+===========
+
+ SELECT id,code
+			FROM fs_warehouses
+			WHERE id = 1
+
+time:::0.000479936599731445
+
+===========
+
+ SELECT id,name
+			FROM fs_platforms
+			WHERE id = 1
+
+time:::0.000398874282836914
+
+===========
+
+ SELECT id,code
+			FROM fs_shops
+			WHERE id = 558
+
+time:::0.000360965728759766
+
+===========
+
+ SELECT id,name
+			FROM fs_house
+			WHERE id = 7
+
+time:::0.000257968902587891
+
+===========
+
+ SELECT id,file_pdf,total_page_pdf
+			FROM fs_order_uploads
+			WHERE id = 44724
+
+time:::0.000329971313476562
+
+===========
+
+ SELECT id
+		FROM fs_order_uploads_page_pdf  WHERE record_id = 44724
+
+time:::0.000267982482910156
+
+===========
+
+ SELECT id
+			FROM fs_order_uploads_detail
+			WHERE record_id = 44724
+
+time:::0.000331878662109375
+
+===========
+
+ SELECT id,file_xlsx
+			FROM fs_order_uploads
+			WHERE id = 44724
+
+time:::0.000380039215087891
+
+===========
+
+ SELECT id
+			FROM fs_order_uploads_detail
+			WHERE record_id = 44724
+
+time:::0.000296831130981445
+
+===========
+
+ SELECT id,code
+			FROM fs_warehouses
+			WHERE id = 2
+
+time:::0.00129604339599609
+
+===========
+
+ SELECT id,name
+			FROM fs_platforms
+			WHERE id = 1
+
+time:::0.00068211555480957
+
+===========
+
+ SELECT id,code
+			FROM fs_shops
+			WHERE id = 558
+
+time:::0.000351905822753906
+
+===========
+
+ SELECT id,name
+			FROM fs_house
+			WHERE id = 7
+
+time:::0.000247001647949219
+
+===========
+
+ SELECT id,file_pdf,total_page_pdf
+			FROM fs_order_uploads
+			WHERE id = 44686
+
+time:::0.000288009643554688
+
+===========
+
+ SELECT id
+		FROM fs_order_uploads_page_pdf  WHERE record_id = 44686
+
+time:::0.000464916229248047
+
+===========
+
+ SELECT id
+			FROM fs_order_uploads_detail
+			WHERE record_id = 44686
+
+time:::0.000400066375732422
+
+===========
+
+ SELECT id,file_xlsx
+			FROM fs_order_uploads
+			WHERE id = 44686
+
+time:::0.000347137451171875
+
+===========
+
+ SELECT id
+			FROM fs_order_uploads_detail
+			WHERE record_id = 44686
+
+time:::0.000331878662109375
+
+===========
+
+ SELECT id,code
+			FROM fs_warehouses
+			WHERE id = 1
+
+time:::0.000372886657714844
+
+===========
+
+ SELECT id,name
+			FROM fs_platforms
+			WHERE id = 1
+
+time:::0.000364065170288086
+
+===========
+
+ SELECT id,code
+			FROM fs_shops
+			WHERE id = 21
+
+time:::0.000287055969238281
+
+===========
+
+ SELECT id,name
+			FROM fs_house
+			WHERE id = 7
+
+time:::0.000299930572509766
+
+===========
+
+ SELECT id,file_pdf,total_page_pdf
+			FROM fs_order_uploads
+			WHERE id = 44685
+
+time:::0.000268936157226562
+
+===========
+
+ SELECT id
+		FROM fs_order_uploads_page_pdf  WHERE record_id = 44685
+
+time:::0.000338077545166016
+
+===========
+
+ SELECT id
+			FROM fs_order_uploads_detail
+			WHERE record_id = 44685
+
+time:::0.000373125076293945
+
+===========
+
+ SELECT id,file_xlsx
+			FROM fs_order_uploads
+			WHERE id = 44685
+
+time:::0.0004730224609375
+
+===========
+
+ SELECT id
+			FROM fs_order_uploads_detail
+			WHERE record_id = 44685
+
+time:::0.000323057174682617
+
+===========
+
+ SELECT id,code
+			FROM fs_warehouses
+			WHERE id = 4
+
+time:::0.000432014465332031
+
+===========
+
+ SELECT id,name
+			FROM fs_platforms
+			WHERE id = 1
+
+time:::0.000298976898193359
+
+===========
+
+ SELECT id,code
+			FROM fs_shops
+			WHERE id = 558
+
+time:::0.000375032424926758
+
+===========
+
+ SELECT id,name
+			FROM fs_house
+			WHERE id = 7
+
+time:::0.000291109085083008
+
+===========
+
+ SELECT id,file_pdf,total_page_pdf
+			FROM fs_order_uploads
+			WHERE id = 44681
+
+time:::0.000335216522216797
+
+===========
+
+ SELECT id
+		FROM fs_order_uploads_page_pdf  WHERE record_id = 44681
+
+time:::0.000349998474121094
+
+===========
+
+ SELECT id
+			FROM fs_order_uploads_detail
+			WHERE record_id = 44681
+
+time:::0.00043797492980957
+
+===========
+
+ SELECT id,file_xlsx
+			FROM fs_order_uploads
+			WHERE id = 44681
+
+time:::0.000535011291503906
+
+===========
+
+ SELECT id
+			FROM fs_order_uploads_detail
+			WHERE record_id = 44681
+
+time:::0.000330924987792969
+
+===========
+
+ SELECT id,code
+			FROM fs_warehouses
+			WHERE id = 2
+
+time:::0.000397920608520508
+
+===========
+
+ SELECT id,name
+			FROM fs_platforms
+			WHERE id = 1
+
+time:::0.000311136245727539
+
+===========
+
+ SELECT id,code
+			FROM fs_shops
+			WHERE id = 558
+
+time:::0.000352144241333008
+
+===========
+
+ SELECT id,name
+			FROM fs_house
+			WHERE id = 5
+
+time:::0.000232934951782227
+
+===========
+
+ SELECT id,file_pdf,total_page_pdf
+			FROM fs_order_uploads
+			WHERE id = 44677
+
+time:::0.000236988067626953
+
+===========
+
+ SELECT id
+		FROM fs_order_uploads_page_pdf  WHERE record_id = 44677
+
+time:::0.000198841094970703
+
+===========
+
+ SELECT id
+			FROM fs_order_uploads_detail
+			WHERE record_id = 44677
+
+time:::0.00026702880859375
+
+===========
+
+ SELECT id,file_xlsx
+			FROM fs_order_uploads
+			WHERE id = 44677
+
+time:::0.000364065170288086
+
+===========
+
+ SELECT id
+			FROM fs_order_uploads_detail
+			WHERE record_id = 44677
+
+time:::0.000326871871948242
+
+===========
+
+ SELECT id,code
+			FROM fs_warehouses
+			WHERE id = 2
+
+time:::0.000371932983398438
+
+===========
+
+ SELECT id,name
+			FROM fs_platforms
+			WHERE id = 1
+
+time:::0.000335931777954102
+
+===========
+
+ SELECT id,code
+			FROM fs_shops
+			WHERE id = 558
+
+time:::0.000321865081787109
+
+===========
+
+ SELECT id,name
+			FROM fs_house
+			WHERE id = 5
+
+time:::0.000256061553955078
+
+===========
+
+ SELECT id,file_pdf,total_page_pdf
+			FROM fs_order_uploads
+			WHERE id = 44669
+
+time:::0.000332117080688477
+
+===========
+
+ SELECT id
+		FROM fs_order_uploads_page_pdf  WHERE record_id = 44669
+
+time:::0.000230073928833008
+
+===========
+
+ SELECT id
+			FROM fs_order_uploads_detail
+			WHERE record_id = 44669
+
+time:::0.000277996063232422
+
+===========
+
+ SELECT id,file_xlsx
+			FROM fs_order_uploads
+			WHERE id = 44669
+
+time:::0.00032496452331543
+
+===========
+
+ SELECT id
+			FROM fs_order_uploads_detail
+			WHERE record_id = 44669
+
+time:::0.000381946563720703
+
+===========
+
+ SELECT id,code
+			FROM fs_warehouses
+			WHERE id = 2
+
+time:::0.000379085540771484
+
+===========
+
+ SELECT id,name
+			FROM fs_platforms
+			WHERE id = 1
+
+time:::0.000366926193237305
+
+===========
+
+ SELECT id,code
+			FROM fs_shops
+			WHERE id = 558
+
+time:::0.000262022018432617
+
+===========
+
+ SELECT id,name
+			FROM fs_house
+			WHERE id = 9
+
+time:::0.000297069549560547
+
+===========
+
+ SELECT id,file_pdf,total_page_pdf
+			FROM fs_order_uploads
+			WHERE id = 44651
+
+time:::0.000247001647949219
+
+===========
+
+ SELECT id
+		FROM fs_order_uploads_page_pdf  WHERE record_id = 44651
+
+time:::0.000226974487304688
+
+===========
+
+ SELECT id
+			FROM fs_order_uploads_detail
+			WHERE record_id = 44651
+
+time:::0.000308036804199219
+
+===========
+
+ SELECT id,file_xlsx
+			FROM fs_order_uploads
+			WHERE id = 44651
+
+time:::0.000313997268676758
+
+===========
+
+ SELECT id
+			FROM fs_order_uploads_detail
+			WHERE record_id = 44651
+
+time:::0.000298976898193359
+
+===========
+
+ SELECT id,code
+			FROM fs_warehouses
+			WHERE id = 1
+
+time:::0.000365972518920898
+
+===========
+
+ SELECT id,name
+			FROM fs_platforms
+			WHERE id = 3
+
+time:::0.000337839126586914
+
+===========
+
+ SELECT id,code
+			FROM fs_shops
+			WHERE id = 271
+
+time:::0.000322103500366211
+
+===========
+
+ SELECT id,name
+			FROM fs_house
+			WHERE id = 2
+
+time:::0.000305891036987305
+
+===========
+
+ SELECT id,file_pdf,total_page_pdf
+			FROM fs_order_uploads
+			WHERE id = 44612
+
+time:::0.000326156616210938
+
+===========
+
+ SELECT id
+		FROM fs_order_uploads_page_pdf  WHERE record_id = 44612
+
+time:::0.000310182571411133
+
+===========
+
+ SELECT id
+			FROM fs_order_uploads_detail
+			WHERE record_id = 44612
+
+time:::0.00031280517578125
+
+===========
+
+ SELECT id,file_xlsx
+			FROM fs_order_uploads
+			WHERE id = 44612
+
+time:::0.000326156616210938
+
+===========
+
+ SELECT id
+			FROM fs_order_uploads_detail
+			WHERE record_id = 44612
+
+time:::0.000373125076293945
+
+===========
+
+ SELECT id,code
+			FROM fs_warehouses
+			WHERE id = 2
+
+time:::0.000374078750610352
+
+===========
+
+ SELECT id,name
+			FROM fs_platforms
+			WHERE id = 3
+
+time:::0.000298976898193359
+
+===========
+
+ SELECT id,code
+			FROM fs_shops
+			WHERE id = 264
+
+time:::0.000278949737548828
+
+===========
+
+ SELECT id,name
+			FROM fs_house
+			WHERE id = 2
+
+time:::0.000221967697143555
+
+===========
+
+ SELECT id,file_pdf,total_page_pdf
+			FROM fs_order_uploads
+			WHERE id = 44596
+
+time:::0.000243902206420898
+
+===========
+
+ SELECT id
+		FROM fs_order_uploads_page_pdf  WHERE record_id = 44596
+
+time:::0.000265836715698242
+
+===========
+
+ SELECT id
+			FROM fs_order_uploads_detail
+			WHERE record_id = 44596
+
+time:::0.000292062759399414
+
+===========
+
+ SELECT id,file_xlsx
+			FROM fs_order_uploads
+			WHERE id = 44596
+
+time:::0.000334978103637695
+
+===========
+
+ SELECT id
+			FROM fs_order_uploads_detail
+			WHERE record_id = 44596
+
+time:::0.000252008438110352
+
+===========
+
+ SELECT id,code
+			FROM fs_warehouses
+			WHERE id = 1
+
+time:::0.000323057174682617
+
+===========
+
+ SELECT id,name
+			FROM fs_platforms
+			WHERE id = 1
+
+time:::0.000282049179077148
+
+===========
+
+ SELECT id,code
+			FROM fs_shops
+			WHERE id = 558
+
+time:::0.000291109085083008
+
+===========
+
+ SELECT id,name
+			FROM fs_house
+			WHERE id = 2
+
+time:::0.000236988067626953
+
+===========
+
+ SELECT id,file_pdf,total_page_pdf
+			FROM fs_order_uploads
+			WHERE id = 44590
+
+time:::0.000272035598754883
+
+===========
+
+ SELECT id
+		FROM fs_order_uploads_page_pdf  WHERE record_id = 44590
+
+time:::0.000256061553955078
+
+===========
+
+ SELECT id
+			FROM fs_order_uploads_detail
+			WHERE record_id = 44590
+
+time:::0.000287055969238281
+
+===========
+
+ SELECT id,file_xlsx
+			FROM fs_order_uploads
+			WHERE id = 44590
+
+time:::0.000305891036987305
+
+===========
+
+ SELECT id
+			FROM fs_order_uploads_detail
+			WHERE record_id = 44590
+
+time:::0.000260114669799805
+
+===========
+
+ SELECT id,code
+			FROM fs_warehouses
+			WHERE id = 1
+
+time:::0.000385046005249023
+
+===========
+
+ SELECT id,name
+			FROM fs_platforms
+			WHERE id = 1
+
+time:::0.000288963317871094
+
+===========
+
+ SELECT id,code
+			FROM fs_shops
+			WHERE id = 585
+
+time:::0.000310897827148438
+
+===========
+
+ SELECT id,name
+			FROM fs_house
+			WHERE id = 2
+
+time:::0.000224113464355469
+
+===========
+
+ SELECT id,file_pdf,total_page_pdf
+			FROM fs_order_uploads
+			WHERE id = 44589
+
+time:::0.000337123870849609
+
+===========
+
+ SELECT id
+		FROM fs_order_uploads_page_pdf  WHERE record_id = 44589
+
+time:::0.000281095504760742
+
+===========
+
+ SELECT id
+			FROM fs_order_uploads_detail
+			WHERE record_id = 44589
+
+time:::0.000336885452270508
+
+===========
+
+ SELECT id,file_xlsx
+			FROM fs_order_uploads
+			WHERE id = 44589
+
+time:::0.000380992889404297
+
+===========
+
+ SELECT id
+			FROM fs_order_uploads_detail
+			WHERE record_id = 44589
+
+time:::0.000319004058837891
+
+===========
+
+SELECT *
+            FROM fs_menus_admin_add
+            WHERE published = 1 ORDER BY ordering ASC
+
+time:::0.000448942184448242
+
+===========
+
+SELECT * FROM fs_users_groups WHERE id = 1
+
+time:::0.000349044799804688
+
+===========
+
+SELECT * FROM fs_permission_tasks WHERE id IN (5,126,9,10,11,12,42,48,49,55,53,54,57,124,58,101,102,103,121,122,123,105,104,128,127)
+
+time:::0.000487089157104492
+
+===========
+
+ SELECT *, parent_id as parent_id
+						  FROM fs_menus_admin
+						  WHERE published = 1
+						   AND module IN ("products","order","order_items","packages","shops","warehouse_sales","refunds","profits","home")
+						  ORDER BY ordering 
+						 
+
+time:::0.000649929046630859
+
+===========
+
+ SELECT a.permission,b.module ,b.view 
+						FROM fs_users_permission AS a 
+						INNER JOIN fs_permission_tasks  AS b ON a.task_id = b.id
+						WHERE user_id = 146
+					
+
+time:::0.0002899169921875
+
+===========
+
+ SELECT *
+		FROM fs_order_uploads_detail  WHERE is_refund = 0 AND is_print = 1 AND tracking_code = "LMP0153684916VNA"
+
+time:::0.583588123321533
+
+===========
+
+ SELECT *
+		FROM fs_order_uploads_detail  WHERE is_refund = 0 AND is_print = 1 AND tracking_code = "LMP0154404326VNA"
+
+time:::0.657580137252808
+
+===========
+
+ SELECT *
+		FROM fs_order_uploads_detail  WHERE is_refund = 0 AND is_print = 1 AND tracking_code = "LMP0153684379VNA"
+
+time:::0.686735868453979
+
+===========
+
+ SELECT *
+		FROM fs_order_uploads_detail  WHERE is_refund = 0 AND is_print = 1 AND tracking_code = "LMP0153084956VNA"
+
+time:::0.639212131500244
+
+===========
+
+ SELECT *
+		FROM fs_order_uploads_detail  WHERE is_refund = 0 AND is_print = 1 AND tracking_code = "LMP0154407887VNA"
+
+time:::0.723510026931763
+
+===========
+
+ SELECT *
+		FROM fs_order_uploads_detail  WHERE is_refund = 0 AND is_print = 1 AND tracking_code = "JNTMP0012135106VNA"
+
+time:::0.535236835479736
+
+===========
+
+ SELECT *
+		FROM fs_order_uploads_detail  WHERE is_refund = 0 AND is_print = 1 AND tracking_code = "LMP0154468267VNA"
+
+time:::0.743025779724121
+
+===========
+
+ SELECT *
+		FROM fs_order_uploads_detail  WHERE is_refund = 0 AND is_print = 1 AND tracking_code = "LMP0153684734VNA"
+
+time:::0.607377052307129
+
+===========
+
+ SELECT *
+		FROM fs_order_uploads_detail  WHERE is_refund = 0 AND is_print = 1 AND tracking_code = "LMP0154404505VNA"
+
+time:::0.674274921417236
+
+===========
+
+ SELECT *
+		FROM fs_order_uploads_detail  WHERE is_refund = 0 AND is_print = 1 AND tracking_code = "LMP0153684747VNA"
+
+time:::0.694356918334961
+
+===========
+
+ SELECT *
+		FROM fs_order_uploads_detail  WHERE is_refund = 0 AND is_print = 1 AND tracking_code = "LMP0154403253VNA"
+
+time:::0.579550981521606
+
+===========
+
+ SELECT *
+		FROM fs_order_uploads_detail  WHERE is_refund = 0 AND is_print = 1 AND tracking_code = "LMP0153684914VNA"
+
+time:::0.606688022613525
+
+===========
+
+ SELECT *
+		FROM fs_order_uploads_detail  WHERE is_refund = 0 AND is_print = 1 AND tracking_code = "LMP0154404333VNA"
+
+time:::0.553865909576416
+
+===========
+
+ SELECT *
+		FROM fs_order_uploads_detail  WHERE is_refund = 0 AND is_print = 1 AND tracking_code = "BESTMP0024278832VNA"
+
+time:::0.465290069580078
+
+===========
+
+ SELECT *
+		FROM fs_order_uploads_detail  WHERE is_refund = 0 AND is_print = 1 AND tracking_code = "LMP0153684377VNA"
+
+time:::0.45895791053772
+
+===========
+
+ SELECT *
+		FROM fs_order_uploads_detail  WHERE is_refund = 0 AND is_print = 1 AND tracking_code = "LMP0153296484VNA"
+
+time:::0.484646081924438
+
+===========
+
+ SELECT *
+		FROM fs_order_uploads_detail  WHERE is_refund = 0 AND is_print = 1 AND tracking_code = "JNTMP0012134932VNA"
+
+time:::0.543442010879517
+
+===========
+
+ SELECT *
+		FROM fs_order_uploads_detail  WHERE is_refund = 0 AND is_print = 1 AND tracking_code = "LMP0153684371VNA"
+
+time:::0.584221839904785
+
+===========
+
+ SELECT *
+		FROM fs_order_uploads_detail  WHERE is_refund = 0 AND is_print = 1 AND tracking_code = "LMP0153296286VNA"
+
+time:::0.656013011932373
+
+===========
+
+ SELECT *
+		FROM fs_order_uploads_detail  WHERE is_refund = 0 AND is_print = 1 AND tracking_code = "JNTMP0012026131VNA"
+
+time:::0.65552282333374
+
+===========
+
+ SELECT *
+		FROM fs_order_uploads_detail  WHERE is_refund = 0 AND is_print = 1 AND tracking_code = "LMP0154407707VNA"
+
+time:::0.627079010009766
+
+===========
+
+ SELECT *
+		FROM fs_order_uploads_detail  WHERE is_refund = 0 AND is_print = 1 AND tracking_code = "JNTMP0011887939VNA"
+
+time:::0.578268051147461
+
+===========
+
+ SELECT *
+		FROM fs_order_uploads_detail  WHERE is_refund = 0 AND is_print = 1 AND tracking_code = "LMP0153684838VNA"
+
+time:::0.725353002548218
+
+===========
+
+ SELECT *
+		FROM fs_order_uploads_detail  WHERE is_refund = 0 AND is_print = 1 AND tracking_code = "BESTMP0024312016VNA"
+
+time:::0.541485071182251
+
+===========
+
+ SELECT *
+		FROM fs_order_uploads_detail  WHERE is_refund = 0 AND is_print = 1 AND tracking_code = "LMP0153684835VNA"
+
+time:::0.625266075134277
+
+===========
+
+ SELECT *
+		FROM fs_order_uploads_detail  WHERE is_refund = 0 AND is_print = 1 AND tracking_code = "LMP0153688137VNA"
+
+time:::0.565950155258179
+
+===========
+
+ SELECT *
+		FROM fs_order_uploads_detail  WHERE is_refund = 0 AND is_print = 1 AND tracking_code = "LMP0152846577VNA"
+
+time:::0.472938060760498
+
+===========
+
+ SELECT *
+		FROM fs_order_uploads_detail  WHERE is_refund = 0 AND is_print = 1 AND tracking_code = "LMP0152846576VNA"
+
+time:::0.568210124969482
+
+===========
+
+ SELECT *
+		FROM fs_order_uploads_detail  WHERE is_refund = 0 AND is_print = 1 AND tracking_code = "BESTMP0024311227VNA"
+
+time:::0.544273853302002
+
+===========
+
+ SELECT *
+		FROM fs_order_uploads_detail  WHERE is_refund = 0 AND is_print = 1 AND tracking_code = "BESTMP0024311967VNA"
+
+time:::0.597104072570801
+
+===========
+
+ SELECT *
+		FROM fs_order_uploads_detail  WHERE is_refund = 0 AND is_print = 1 AND tracking_code = "LMP0154407891VNA"
+
+time:::0.484930038452148
+
+===========
+
+ SELECT *
+		FROM fs_order_uploads_detail  WHERE is_refund = 0 AND is_print = 1 AND tracking_code = "BESTMP0024245777VNA"
+
+time:::0.429814100265503
+
+===========
+
+ SELECT *
+		FROM fs_order_uploads_detail  WHERE is_refund = 0 AND is_print = 1 AND tracking_code = "LMP0155007830VNA"
+
+time:::0.468060970306396
+
+===========
+
+ SELECT *
+		FROM fs_order_uploads_detail  WHERE is_refund = 0 AND is_print = 1 AND tracking_code = "LMP0154441838VNA"
+
+time:::0.447405099868774
+
+===========
+
+ SELECT *
+		FROM fs_order_uploads_detail  WHERE is_refund = 0 AND is_print = 1 AND tracking_code = "LMP0153617577VNA"
+
+time:::0.494414091110229
+
+===========
+
+ SELECT *
+		FROM fs_order_uploads_detail  WHERE is_refund = 0 AND is_print = 1 AND tracking_code = "LMP0155454027VNA"
+
+time:::0.476392984390259
+
+===========
+
+ SELECT *
+		FROM fs_order_uploads_detail  WHERE is_refund = 0 AND is_print = 1 AND tracking_code = "JNTMP0011987782VNA"
+
+time:::0.450759887695312
+
+===========
+
+ SELECT *
+		FROM fs_order_uploads_detail  WHERE is_refund = 0 AND is_print = 1 AND tracking_code = "JNTMP0011828797VNA"
+
+time:::0.675662994384766
+
+===========
+
+ SELECT *
+		FROM fs_order_uploads_detail  WHERE is_refund = 0 AND is_print = 1 AND tracking_code = "LMP0153619544VNA"
+
+time:::0.540278911590576
+
+===========
+
+ SELECT *
+		FROM fs_order_uploads_detail  WHERE is_refund = 0 AND is_print = 1 AND tracking_code = "LMP0154473506VNA"
+
+time:::0.522760152816772
+
+===========
+
+ SELECT *
+		FROM fs_order_uploads_detail  WHERE is_refund = 0 AND is_print = 1 AND tracking_code = "LMP0154428531VNA"
+
+time:::0.678031921386719
+
+===========
+
+ SELECT *
+		FROM fs_order_uploads_detail  WHERE is_refund = 0 AND is_print = 1 AND tracking_code = "LMP0154750190VNA"
+
+time:::0.654096841812134
+
+===========
+
+ SELECT *
+		FROM fs_order_uploads_detail  WHERE is_refund = 0 AND is_print = 1 AND tracking_code = "LMP0154047551VNA"
+
+time:::0.60952091217041
+
+===========
+
+ SELECT *
+		FROM fs_order_uploads_detail  WHERE is_refund = 0 AND is_print = 1 AND tracking_code = "LMP0153398599VNA"
+
+time:::0.491191864013672
+
+===========
+
+ SELECT *
+		FROM fs_order_uploads_detail  WHERE is_refund = 0 AND is_print = 1 AND tracking_code = "AHMMP0000996449VNA"
+
+time:::0.416897058486938
+
+===========
+
+ SELECT *
+		FROM fs_order_uploads_detail  WHERE is_refund = 0 AND is_print = 1 AND tracking_code = "AHMMP0000964660VNA"
+
+time:::0.457720994949341
+
+===========
+
+ SELECT *
+		FROM fs_order_uploads_detail  WHERE is_refund = 0 AND is_print = 1 AND tracking_code = "AHMMP0000963426VNA"
+
+time:::0.538109064102173
+
+===========
+
+ SELECT *
+		FROM fs_order_uploads_detail  WHERE is_refund = 0 AND is_print = 1 AND tracking_code = "AHMMP0000965394VNA"
+
+time:::0.610054016113281
+
+===========
+
+ SELECT *
+		FROM fs_order_uploads_detail  WHERE is_refund = 0 AND is_print = 1 AND tracking_code = "JNTMP0011997561VNA"
+
+time:::0.526993036270142
+
+===========
+
+ SELECT *
+		FROM fs_order_uploads_detail  WHERE is_refund = 0 AND is_print = 1 AND tracking_code = "LMP0155253756VNA"
+
+time:::0.618401050567627
+
+===========
+
+ SELECT *
+		FROM fs_order_uploads_detail  WHERE is_refund = 0 AND is_print = 1 AND tracking_code = "LMP0155007826VNA"
+
+time:::0.468309164047241
+
+===========
+
+ SELECT *
+		FROM fs_order_uploads_detail  WHERE is_refund = 0 AND is_print = 1 AND tracking_code = "LMP0153650017VNA"
+
+time:::0.738256931304932
+
+===========
+
+ SELECT *
+		FROM fs_order_uploads_detail  WHERE is_refund = 0 AND is_print = 1 AND tracking_code = "LMP0155262142VNA"
+
+time:::0.626734972000122
+
+===========
+
+ SELECT *
+		FROM fs_order_uploads_detail  WHERE is_refund = 0 AND is_print = 1 AND tracking_code = "LMP0155162194VNA"
+
+time:::0.628949165344238
+
+===========
+
+ SELECT *
+		FROM fs_order_uploads_detail  WHERE is_refund = 0 AND is_print = 1 AND tracking_code = "BESTMP0024697377VNA"
+
+time:::0.69667911529541
+
+===========
+
+ SELECT *
+		FROM fs_order_uploads_detail  WHERE is_refund = 0 AND is_print = 1 AND tracking_code = "BESTMP0024564360VNA"
+
+time:::0.572016954421997
+
+===========
+
+ SELECT *
+		FROM fs_order_uploads_detail  WHERE is_refund = 0 AND is_print = 1 AND tracking_code = "BESTMP0024603050VNA"
+
+time:::0.49553918838501
+
+===========
+
+ SELECT *
+		FROM fs_order_uploads_detail  WHERE is_refund = 0 AND is_print = 1 AND tracking_code = "LMP0152864323VNA"
+
+time:::0.529222011566162
+
+===========
+
+ SELECT *
+		FROM fs_order_uploads_detail  WHERE is_refund = 0 AND is_print = 1 AND tracking_code = "LMP0155440410VNA"
+
+time:::0.577679872512817
+
+===========
+
+ SELECT *
+		FROM fs_order_uploads_detail  WHERE is_refund = 0 AND is_print = 1 AND tracking_code = "BESTMP0024400985VNA"
+
+time:::0.563126802444458
+
+===========
+
+ SELECT *
+		FROM fs_order_uploads_detail  WHERE is_refund = 0 AND is_print = 1 AND tracking_code = "BESTMP0024673403VNA"
+
+time:::0.571017980575562
+
+===========
+
+ SELECT *
+		FROM fs_order_uploads_detail  WHERE is_refund = 0 AND is_print = 1 AND tracking_code = "LMP0155239606VNA"
+
+time:::0.618669033050537
+
+===========
+
+ SELECT *
+		FROM fs_order_uploads_detail  WHERE is_refund = 0 AND is_print = 1 AND tracking_code = "LMP0154771404VNA"
+
+time:::0.719612836837769
+
+===========
+
+ SELECT *
+		FROM fs_order_uploads_detail  WHERE is_refund = 0 AND is_print = 1 AND tracking_code = "LMP0155261104VNA"
+
+time:::0.565692901611328
+
+===========
+
+ SELECT *
+		FROM fs_order_uploads_detail  WHERE is_refund = 0 AND is_print = 1 AND tracking_code = "LMP0154771249VNA"
+
+time:::0.512839078903198
+
+===========
+
+ SELECT *
+		FROM fs_order_uploads_detail  WHERE is_refund = 0 AND is_print = 1 AND tracking_code = "LMP0155253046VNA"
+
+time:::0.57221508026123
+
+===========
+
+ SELECT *
+		FROM fs_order_uploads_detail  WHERE is_refund = 0 AND is_print = 1 AND tracking_code = "LMP0155247181VNA"
+
+time:::0.613308906555176
+
+===========
+
+ SELECT *
+		FROM fs_order_uploads_detail  WHERE is_refund = 0 AND is_print = 1 AND tracking_code = "LMP0155162195VNA"
+
+time:::0.684000968933105
+
+===========
+
+ SELECT *
+		FROM fs_order_uploads_detail  WHERE is_refund = 0 AND is_print = 1 AND tracking_code = "LMP0155028885VNA"
+
+time:::0.629924058914185
+
+===========
+
+ SELECT *
+		FROM fs_order_uploads_detail  WHERE is_refund = 0 AND is_print = 1 AND tracking_code = "LMP0155010777VNA"
+
+time:::0.48303484916687
+
+===========
+
+ SELECT *
+		FROM fs_order_uploads_detail  WHERE is_refund = 0 AND is_print = 1 AND tracking_code = "BESTMP0024624287VNA"
+
+time:::0.563626050949097
+
+===========
+
+ SELECT *
+		FROM fs_order_uploads_detail  WHERE is_refund = 0 AND is_print = 1 AND tracking_code = "LMP0155219473VNA"
+
+time:::0.635231018066406
+
+===========
+
+ SELECT *
+		FROM fs_order_uploads_detail  WHERE is_refund = 0 AND is_print = 1 AND tracking_code = "LMP0155454207VNA"
+
+time:::0.533971071243286
+
+===========
+
+ SELECT *
+		FROM fs_order_uploads_detail  WHERE is_refund = 0 AND is_print = 1 AND tracking_code = "BESTMP0024624288VNA"
+
+time:::0.430657148361206
+
+===========
+
+ SELECT *
+		FROM fs_order_uploads_detail  WHERE is_refund = 0 AND is_print = 1 AND tracking_code = "JNTMP0012164672VNA"
+
+time:::0.617708921432495
+
+===========
+
+ SELECT *
+		FROM fs_order_uploads_detail  WHERE is_refund = 0 AND is_print = 1 AND tracking_code = "LMP0153650216VNA"
+
+time:::0.683229923248291
+
+===========
+
+ SELECT *
+		FROM fs_order_uploads_detail  WHERE is_refund = 0 AND is_print = 1 AND tracking_code = "LMP0155454396VNA"
+
+time:::0.685834884643555
+
+===========
+
+ SELECT *
+		FROM fs_order_uploads_detail  WHERE is_refund = 0 AND is_print = 1 AND tracking_code = "BESTMP0024525564VNA"
+
+time:::0.661554098129272
+
+===========
+
+ SELECT *
+		FROM fs_order_uploads_detail  WHERE is_refund = 0 AND is_print = 1 AND tracking_code = "LMP0155454139VNA"
+
+time:::0.644673109054565
+
+===========
+
+ SELECT *
+		FROM fs_order_uploads_detail  WHERE is_refund = 0 AND is_print = 1 AND tracking_code = "LMP0154063398VNA"
+
+time:::0.552506923675537
+
+===========
+
+ SELECT *
+		FROM fs_order_uploads_detail  WHERE is_refund = 0 AND is_print = 1 AND tracking_code = "LMP0155454314VNA"
+
+time:::0.606190919876099
+
+===========
+
+ SELECT *
+		FROM fs_order_uploads_detail  WHERE is_refund = 0 AND is_print = 1 AND tracking_code = "LMP0155016564VNA"
+
+time:::0.567533016204834
+
+===========
+
+ SELECT *
+		FROM fs_order_uploads_detail  WHERE is_refund = 0 AND is_print = 1 AND tracking_code = "LMP0155453793VNA"
+
+time:::0.527744054794312
+
+===========
+
+ SELECT *
+		FROM fs_order_uploads_detail  WHERE is_refund = 0 AND is_print = 1 AND tracking_code = "JNTMP0012238131VNA"
+
+time:::0.507281064987183
+
+===========
+
+ SELECT *
+		FROM fs_order_uploads_detail  WHERE is_refund = 0 AND is_print = 1 AND tracking_code = "JNTMP0012184421VNA"
+
+time:::0.510317802429199
+
+===========
+
+ SELECT *
+		FROM fs_order_uploads_detail  WHERE is_refund = 0 AND is_print = 1 AND tracking_code = "LMP0154087873VNA"
+
+time:::0.610743999481201
+
+===========
+
+ SELECT *
+		FROM fs_order_uploads_detail  WHERE is_refund = 0 AND is_print = 1 AND tracking_code = "LMP0153268623VNA"
+
+time:::0.540569067001343
+
+===========
+
+ SELECT *
+		FROM fs_order_uploads_detail  WHERE is_refund = 0 AND is_print = 1 AND tracking_code = "LMP0154046772VNA"
+
+time:::0.540544033050537
+
+===========
+
+ SELECT *
+		FROM fs_order_uploads_detail  WHERE is_refund = 0 AND is_print = 1 AND tracking_code = "AHMMP0000994514VNA"
+
+time:::0.58174991607666
+
+===========
+
+ SELECT *
+		FROM fs_order_uploads_detail  WHERE is_refund = 0 AND is_print = 1 AND tracking_code = "BESTMP0024306660VNA"
+
+time:::0.521934032440186
+
+===========
+
+ SELECT *
+		FROM fs_order_uploads_detail  WHERE is_refund = 0 AND is_print = 1 AND tracking_code = "JNTMP0011827605VN"
+
+time:::0.575248956680298
+
+===========
+
+ SELECT *
+		FROM fs_order_uploads_detail  WHERE is_refund = 0 AND is_print = 1 AND tracking_code = "LMP0153664306VNA"
+
+time:::0.806862115859985
+
+===========
+
+ SELECT *
+		FROM fs_order_uploads_detail  WHERE is_refund = 0 AND is_print = 1 AND tracking_code = "LMP0153197300VNA"
+
+time:::0.545185089111328
+
+===========
+
+ SELECT *
+		FROM fs_order_uploads_detail  WHERE is_refund = 0 AND is_print = 1 AND tracking_code = "LMP0154788768VNA"
+
+time:::0.568105936050415
+
+===========
+
+ SELECT *
+		FROM fs_order_uploads_detail  WHERE is_refund = 0 AND is_print = 1 AND tracking_code = "LMP0154047369VNA"
+
+time:::0.569855928421021
+
+===========
+
+ SELECT *
+		FROM fs_order_uploads_detail  WHERE is_refund = 0 AND is_print = 1 AND tracking_code = "BESTMP0024244739VNA"
+
+time:::0.468283891677856
+
+===========
+
+ SELECT *
+		FROM fs_order_uploads_detail  WHERE is_refund = 0 AND is_print = 1 AND tracking_code = "LMP0153693320VNA"
+
+time:::0.48252010345459
+
+===========
+
+ SELECT *
+		FROM fs_order_uploads_detail  WHERE is_refund = 0 AND is_print = 1 AND tracking_code = "BESTMP0024311040VNA"
+
+time:::0.431235074996948
+
+===========
+
+ SELECT *
+		FROM fs_order_uploads_detail  WHERE is_refund = 0 AND is_print = 1 AND tracking_code = "BESTMP0024205355VNA"
+
+time:::0.558495998382568
+
+===========
+
+ SELECT *
+		FROM fs_order_uploads_detail  WHERE is_refund = 0 AND is_print = 1 AND tracking_code = "LMP0153617152VNA"
+
+time:::0.635210990905762
+
+===========
+
+ SELECT *
+		FROM fs_order_uploads_detail  WHERE is_refund = 0 AND is_print = 1 AND tracking_code = "LMP0153398687VNA"
+
+time:::0.584663867950439
+
+===========
+
+ SELECT *
+		FROM fs_order_uploads_detail  WHERE is_refund = 0 AND is_print = 1 AND tracking_code = "LMP0152853890VNA"
+
+time:::0.523293018341064
+
+===========
+
+ SELECT *
+		FROM fs_order_uploads_detail  WHERE is_refund = 0 AND is_print = 1 AND tracking_code = "LMP0153075794VNA"
+
+time:::0.689655065536499
+
+===========
+
+ SELECT *
+		FROM fs_order_uploads_detail  WHERE is_refund = 0 AND is_print = 1 AND tracking_code = "LMP0153281824VNA"
+
+time:::0.584066867828369
+
+===========
+
+ SELECT *
+		FROM fs_order_uploads_detail  WHERE is_refund = 0 AND is_print = 1 AND tracking_code = "LMP0154417769VNA"
+
+time:::0.604887962341309
+
+===========
+
+ SELECT *
+		FROM fs_order_uploads_detail  WHERE is_refund = 0 AND is_print = 1 AND tracking_code = "BESTMP0024565675VNA"
+
+time:::0.644192934036255
+
+===========
+
+ SELECT *
+		FROM fs_order_uploads_detail  WHERE is_refund = 0 AND is_print = 1 AND tracking_code = "BESTMP0024403997VNA"
+
+time:::0.606702089309692
+
+===========
+
+================REMOTE: 146.70.67.66  (2022-12-17 08:35:51)===================
+
+================URL : /admin/===================
+
+================1671240951===================
+
+ SELECT *
+FROM fs_config
+
+time:::0.00193285942077637
+
+===========
+
+SELECT u.id, u.username, u.email,u.published
+        FROM fs_users AS u
+        WHERE u.id = '166' AND u.published = 1
+        LIMIT 1
+
+time:::0.00101590156555176
+
+===========
+
+================REMOTE: 146.70.67.66  (2022-12-17 08:35:51)===================
+
+================URL : /admin/===================
+
+================1671240951===================
+
+ SELECT lang_key, lang_vi 
+						FROM fs_languages_text_admin 
+						WHERE is_common = 1
+					 OR module = 'home' 
+
+time:::0.00107502937316895
+
+===========
+
+SELECT * FROM fs_users_groups WHERE id = 1
+
+time:::0.000771045684814453
+
+===========
+
+ SELECT * FROM fs_config
+			WHERE is_common = 1
+			
+
+time:::0.0021209716796875
+
+===========
+
+ SELECT id, name, image, link  
+                            FROM fs_menus_admin 
+                            WHERE published = 1 AND featured = 1
+                            ORDER BY ordering
+
+time:::0.00104999542236328
+
+===========
+
+ SELECT name, title, value  
+                            FROM fs_config 
+                            WHERE id = 1 
+                            LIMIT 1
+
+time:::0.0012061595916748
+
+===========
+
+SELECT *
+            FROM fs_menus_admin_add
+            WHERE published = 1 ORDER BY ordering ASC
+
+time:::0.00158405303955078
+
+===========
+
+SELECT * FROM fs_users_groups WHERE id = 1
+
+time:::0.000670909881591797
+
+===========
+
+SELECT * FROM fs_permission_tasks WHERE id IN (5,126,9,10,11,12,42,48,49,55,53,54,57,124,58,101,102,103,121,122,123,105,104,128,127)
+
+time:::0.000726938247680664
+
+===========
+
+ SELECT *, parent_id as parent_id
+						  FROM fs_menus_admin
+						  WHERE published = 1
+						   AND module IN ("products","order","order_items","packages","shops","warehouse_sales","refunds","profits","home")
+						  ORDER BY ordering 
+						 
+
+time:::0.00106096267700195
+
+===========
+
+ SELECT a.permission,b.module ,b.view 
+						FROM fs_users_permission AS a 
+						INNER JOIN fs_permission_tasks  AS b ON a.task_id = b.id
+						WHERE user_id = 166
+					
+
+time:::0.000540018081665039
+
+===========
+
+ SELECT *
+		FROM fs_order_uploads_detail  WHERE is_refund = 0 AND is_print = 1 AND tracking_code = "BESTMP0024278063VNA"
+
+time:::0.624587059020996
+
+===========
+
+ SELECT *
+		FROM fs_order_uploads_detail  WHERE is_refund = 0 AND is_print = 1 AND tracking_code = "JNTMP0012072564VNA"
+
+time:::0.690982103347778
+
+===========
+
+ SELECT *
+		FROM fs_order_uploads_detail  WHERE is_refund = 0 AND is_print = 1 AND tracking_code = "BESTMP0024403408VNA"
+
+time:::0.517903089523315
+
+===========
+
+================REMOTE: 146.70.67.66  (2022-12-17 08:35:53)===================
+
+================URL : /admin/order/upload===================
+
+================1671240953===================
+
+ SELECT *
+FROM fs_config
+
+time:::0.0022130012512207
+
+===========
+
+SELECT u.id, u.username, u.email,u.published
+        FROM fs_users AS u
+        WHERE u.id = '166' AND u.published = 1
+        LIMIT 1
+
+time:::0.00106501579284668
+
+===========
+
+================REMOTE: 146.70.67.66  (2022-12-17 08:35:53)===================
+
+================URL : /admin/order/upload===================
+
+================1671240953===================
+
+ SELECT lang_key, lang_vi 
+						FROM fs_languages_text_admin 
+						WHERE is_common = 1
+					 OR module = 'order' 
+
+time:::0.000999927520751953
+
+===========
+
+SELECT * FROM fs_users_groups WHERE id = 1
+
+time:::0.000895023345947266
+
+===========
+
+ SELECT * FROM fs_config
+			WHERE is_common = 1
+			
+
+time:::0.00252795219421387
+
+===========
+
+SELECT id FROM fs_permission_tasks WHERE module = "order" AND `view` = "upload" AND _task = "display"
+
+time:::0.000655174255371094
+
+===========
+
+SELECT * FROM fs_users_groups WHERE id = 1
+
+time:::0.000458002090454102
+
+===========
+
+SELECT id FROM fs_permission_tasks WHERE module = "order" AND `view` = "upload" AND _task = "display"
+
+time:::0.000397205352783203
+
+===========
+
+SELECT * FROM fs_users_groups WHERE id = 1
+
+time:::0.000327110290527344
+
+===========
+
+ SELECT *
+			FROM fs_users
+			WHERE id = 166
+
+time:::0.000856161117553711
+
+===========
+
+ SELECT *
+		FROM fs_warehouses  WHERE published = 1 AND id IN (1,2,4)
+
+time:::0.000385046005249023
+
+===========
+
+ SELECT *
+		FROM fs_platforms  WHERE published = 1
+
+time:::0.000413894653320312
+
+===========
+
+ SELECT *
+		FROM fs_house  WHERE published = 1
+
+time:::0.000298023223876953
+
+===========
+
+ SELECT *
+			FROM fs_users
+			WHERE id = 166
+
+time:::0.000674009323120117
+
+===========
+
+ SELECT *
+			FROM fs_users
+			WHERE id = 166
+
+time:::0.000666141510009766
+
+===========
+
+SELECT * FROM fs_order_uploads AS a WHERE 1=1    AND list_user_id_manage_shop LIKE "%,166,%" AND warehouse_id IN (1,2,4) ORDER BY created_time DESC , id DESC   LIMIT 0,50 
+
+time:::8.10623168945312E-6
+
+===========
+
+ SELECT *
+			FROM fs_users
+			WHERE id = 166
+
+time:::0.0023047924041748
+
+===========
+
+SELECT * FROM fs_order_uploads AS a WHERE 1=1    AND list_user_id_manage_shop LIKE "%,166,%" AND warehouse_id IN (1,2,4) ORDER BY created_time DESC , id DESC  
+
+time:::0.0808219909667969
+
+===========
+
+ SELECT id,code
+			FROM fs_warehouses
+			WHERE id = 2
+
+time:::0.00113296508789062
+
+===========
+
+ SELECT id,name
+			FROM fs_platforms
+			WHERE id = 1
+
+time:::0.000522136688232422
+
+===========
+
+ SELECT id,code
+			FROM fs_shops
+			WHERE id = 571
+
+time:::0.000383138656616211
+
+===========
+
+ SELECT id,name
+			FROM fs_house
+			WHERE id = 4
+
+time:::0.000345945358276367
+
+===========
+
+ SELECT id,file_pdf,total_page_pdf
+			FROM fs_order_uploads
+			WHERE id = 45602
+
+time:::0.00032806396484375
+
+===========
+
+ SELECT id
+		FROM fs_order_uploads_page_pdf  WHERE record_id = 45602
+
+time:::0.000456094741821289
+
+===========
+
+ SELECT id
+			FROM fs_order_uploads_detail
+			WHERE record_id = 45602
+
+time:::0.000883102416992188
+
+===========
+
+ SELECT id,file_xlsx
+			FROM fs_order_uploads
+			WHERE id = 45602
+
+time:::0.000483036041259766
+
+===========
+
+ SELECT id
+			FROM fs_order_uploads_detail
+			WHERE record_id = 45602
+
+time:::0.000940799713134766
+
+===========
+
+ SELECT id,code
+			FROM fs_warehouses
+			WHERE id = 2
+
+time:::0.000454902648925781
+
+===========
+
+ SELECT id,name
+			FROM fs_platforms
+			WHERE id = 1
+
+time:::0.000448942184448242
+
+===========
+
+ SELECT id,code
+			FROM fs_shops
+			WHERE id = 571
+
+time:::0.000369071960449219
+
+===========
+
+ SELECT id,name
+			FROM fs_house
+			WHERE id = 14
+
+time:::0.000313997268676758
+
+===========
+
+ SELECT id,file_pdf,total_page_pdf
+			FROM fs_order_uploads
+			WHERE id = 45520
+
+time:::0.000320911407470703
+
+===========
+
+ SELECT id
+		FROM fs_order_uploads_page_pdf  WHERE record_id = 45520
+
+time:::0.000257968902587891
+
+===========
+
+ SELECT id
+			FROM fs_order_uploads_detail
+			WHERE record_id = 45520
+
+time:::0.000488042831420898
+
+===========
+
+ SELECT id,file_xlsx
+			FROM fs_order_uploads
+			WHERE id = 45520
+
+time:::0.00046992301940918
+
+===========
+
+ SELECT id
+			FROM fs_order_uploads_detail
+			WHERE record_id = 45520
+
+time:::0.000462055206298828
+
+===========
+
+ SELECT id,code
+			FROM fs_warehouses
+			WHERE id = 1
+
+time:::0.00041508674621582
+
+===========
+
+ SELECT id,name
+			FROM fs_platforms
+			WHERE id = 1
+
+time:::0.00040888786315918
+
+===========
+
+ SELECT id,code
+			FROM fs_shops
+			WHERE id = 571
+
+time:::0.000339031219482422
+
+===========
+
+ SELECT id,name
+			FROM fs_house
+			WHERE id = 2
+
+time:::0.000332832336425781
+
+===========
+
+ SELECT id,file_pdf,total_page_pdf
+			FROM fs_order_uploads
+			WHERE id = 45514
+
+time:::0.000334978103637695
+
+===========
+
+ SELECT id
+		FROM fs_order_uploads_page_pdf  WHERE record_id = 45514
+
+time:::0.000358819961547852
+
+===========
+
+ SELECT id
+			FROM fs_order_uploads_detail
+			WHERE record_id = 45514
+
+time:::0.000365972518920898
+
+===========
+
+ SELECT id,file_xlsx
+			FROM fs_order_uploads
+			WHERE id = 45514
+
+time:::0.00046086311340332
+
+===========
+
+ SELECT id
+			FROM fs_order_uploads_detail
+			WHERE record_id = 45514
+
+time:::0.000412940979003906
+
+===========
+
+ SELECT id,code
+			FROM fs_warehouses
+			WHERE id = 2
+
+time:::0.000511884689331055
+
+===========
+
+ SELECT id,name
+			FROM fs_platforms
+			WHERE id = 2
+
+time:::0.000480890274047852
+
+===========
+
+ SELECT id,code
+			FROM fs_shops
+			WHERE id = 506
+
+time:::0.000436782836914062
+
+===========
+
+ SELECT id,name
+			FROM fs_house
+			WHERE id = 13
+
+time:::0.000364065170288086
+
+===========
+
+ SELECT id,file_pdf,total_page_pdf
+			FROM fs_order_uploads
+			WHERE id = 45509
+
+time:::0.000407934188842773
+
+===========
+
+ SELECT id
+		FROM fs_order_uploads_page_pdf  WHERE record_id = 45509
+
+time:::0.000864028930664062
+
+===========
+
+ SELECT id
+			FROM fs_order_uploads_detail
+			WHERE record_id = 45509
+
+time:::0.000770807266235352
+
+===========
+
+ SELECT id,file_xlsx
+			FROM fs_order_uploads
+			WHERE id = 45509
+
+time:::0.000509023666381836
+
+===========
+
+ SELECT id
+			FROM fs_order_uploads_detail
+			WHERE record_id = 45509
+
+time:::0.000664949417114258
+
+===========
+
+ SELECT id,code
+			FROM fs_warehouses
+			WHERE id = 1
+
+time:::0.000502109527587891
+
+===========
+
+ SELECT id,name
+			FROM fs_platforms
+			WHERE id = 1
+
+time:::0.000442981719970703
+
+===========
+
+ SELECT id,code
+			FROM fs_shops
+			WHERE id = 571
+
+time:::0.000353097915649414
+
+===========
+
+ SELECT id,name
+			FROM fs_house
+			WHERE id = 2
+
+time:::0.000269889831542969
+
+===========
+
+ SELECT id,file_pdf,total_page_pdf
+			FROM fs_order_uploads
+			WHERE id = 45163
+
+time:::0.000330924987792969
+
+===========
+
+ SELECT id
+		FROM fs_order_uploads_page_pdf  WHERE record_id = 45163
+
+time:::0.00048518180847168
+
+===========
+
+ SELECT id
+			FROM fs_order_uploads_detail
+			WHERE record_id = 45163
+
+time:::0.000578880310058594
+
+===========
+
+ SELECT id,file_xlsx
+			FROM fs_order_uploads
+			WHERE id = 45163
+
+time:::0.000509977340698242
+
+===========
+
+ SELECT id
+			FROM fs_order_uploads_detail
+			WHERE record_id = 45163
+
+time:::0.000555992126464844
+
+===========
+
+ SELECT id,code
+			FROM fs_warehouses
+			WHERE id = 1
+
+time:::0.00050806999206543
+
+===========
+
+ SELECT id,name
+			FROM fs_platforms
+			WHERE id = 1
+
+time:::0.000482082366943359
+
+===========
+
+ SELECT id,code
+			FROM fs_shops
+			WHERE id = 571
+
+time:::0.000441074371337891
+
+===========
+
+ SELECT id,name
+			FROM fs_house
+			WHERE id = 2
+
+time:::0.000353097915649414
+
+===========
+
+ SELECT id,file_pdf,total_page_pdf
+			FROM fs_order_uploads
+			WHERE id = 45162
+
+time:::0.000440120697021484
+
+===========
+
+ SELECT id
+		FROM fs_order_uploads_page_pdf  WHERE record_id = 45162
+
+time:::0.000334024429321289
+
+===========
+
+ SELECT id
+			FROM fs_order_uploads_detail
+			WHERE record_id = 45162
+
+time:::0.000472068786621094
+
+===========
+
+ SELECT id,file_xlsx
+			FROM fs_order_uploads
+			WHERE id = 45162
+
+time:::0.00049901008605957
+
+===========
+
+ SELECT id
+			FROM fs_order_uploads_detail
+			WHERE record_id = 45162
+
+time:::0.000379800796508789
+
+===========
+
+ SELECT id,code
+			FROM fs_warehouses
+			WHERE id = 2
+
+time:::0.000406980514526367
+
+===========
+
+ SELECT id,name
+			FROM fs_platforms
+			WHERE id = 1
+
+time:::0.000418901443481445
+
+===========
+
+ SELECT id,code
+			FROM fs_shops
+			WHERE id = 571
+
+time:::0.000407934188842773
+
+===========
+
+ SELECT id,name
+			FROM fs_house
+			WHERE id = 13
+
+time:::0.000382900238037109
+
+===========
+
+ SELECT id,file_pdf,total_page_pdf
+			FROM fs_order_uploads
+			WHERE id = 45161
+
+time:::0.000398874282836914
+
+===========
+
+ SELECT id
+		FROM fs_order_uploads_page_pdf  WHERE record_id = 45161
+
+time:::0.000436782836914062
+
+===========
+
+ SELECT id
+			FROM fs_order_uploads_detail
+			WHERE record_id = 45161
+
+time:::0.000540971755981445
+
+===========
+
+ SELECT id,file_xlsx
+			FROM fs_order_uploads
+			WHERE id = 45161
+
+time:::0.000566005706787109
+
+===========
+
+ SELECT id
+			FROM fs_order_uploads_detail
+			WHERE record_id = 45161
+
+time:::0.000539064407348633
+
+===========
+
+ SELECT id,code
+			FROM fs_warehouses
+			WHERE id = 2
+
+time:::0.000522136688232422
+
+===========
+
+ SELECT id,name
+			FROM fs_platforms
+			WHERE id = 2
+
+time:::0.000394105911254883
+
+===========
+
+ SELECT id,code
+			FROM fs_shops
+			WHERE id = 506
+
+time:::0.000393867492675781
+
+===========
+
+ SELECT id,name
+			FROM fs_house
+			WHERE id = 7
+
+time:::0.000361204147338867
+
+===========
+
+ SELECT id,file_pdf,total_page_pdf
+			FROM fs_order_uploads
+			WHERE id = 44791
+
+time:::0.00030207633972168
+
+===========
+
+ SELECT id
+		FROM fs_order_uploads_page_pdf  WHERE record_id = 44791
+
+time:::0.000895977020263672
+
+===========
+
+ SELECT id
+			FROM fs_order_uploads_detail
+			WHERE record_id = 44791
+
+time:::0.000818967819213867
+
+===========
+
+ SELECT id,file_xlsx
+			FROM fs_order_uploads
+			WHERE id = 44791
+
+time:::0.00051116943359375
+
+===========
+
+ SELECT id
+			FROM fs_order_uploads_detail
+			WHERE record_id = 44791
+
+time:::0.000853061676025391
+
+===========
+
+ SELECT id,code
+			FROM fs_warehouses
+			WHERE id = 1
+
+time:::0.00058293342590332
+
+===========
+
+ SELECT id,name
+			FROM fs_platforms
+			WHERE id = 1
+
+time:::0.000483989715576172
+
+===========
+
+ SELECT id,code
+			FROM fs_shops
+			WHERE id = 123
+
+time:::0.000409841537475586
+
+===========
+
+ SELECT id,name
+			FROM fs_house
+			WHERE id = 7
+
+time:::0.00037693977355957
+
+===========
+
+ SELECT id,file_pdf,total_page_pdf
+			FROM fs_order_uploads
+			WHERE id = 44755
+
+time:::0.000400066375732422
+
+===========
+
+ SELECT id
+		FROM fs_order_uploads_page_pdf  WHERE record_id = 44755
+
+time:::0.000406980514526367
+
+===========
+
+ SELECT id
+			FROM fs_order_uploads_detail
+			WHERE record_id = 44755
+
+time:::0.000422000885009766
+
+===========
+
+ SELECT id,file_xlsx
+			FROM fs_order_uploads
+			WHERE id = 44755
+
+time:::0.000504970550537109
+
+===========
+
+ SELECT id
+			FROM fs_order_uploads_detail
+			WHERE record_id = 44755
+
+time:::0.000382900238037109
+
+===========
+
+ SELECT id,code
+			FROM fs_warehouses
+			WHERE id = 2
+
+time:::0.000476837158203125
+
+===========
+
+ SELECT id,name
+			FROM fs_platforms
+			WHERE id = 1
+
+time:::0.000452041625976562
+
+===========
+
+ SELECT id,code
+			FROM fs_shops
+			WHERE id = 123
+
+time:::0.000405073165893555
+
+===========
+
+ SELECT id,name
+			FROM fs_house
+			WHERE id = 7
+
+time:::0.000274896621704102
+
+===========
+
+ SELECT id,file_pdf,total_page_pdf
+			FROM fs_order_uploads
+			WHERE id = 44753
+
+time:::0.00035405158996582
+
+===========
+
+ SELECT id
+		FROM fs_order_uploads_page_pdf  WHERE record_id = 44753
+
+time:::0.000355005264282227
+
+===========
+
+ SELECT id
+			FROM fs_order_uploads_detail
+			WHERE record_id = 44753
+
+time:::0.000442028045654297
+
+===========
+
+ SELECT id,file_xlsx
+			FROM fs_order_uploads
+			WHERE id = 44753
+
+time:::0.000568151473999023
+
+===========
+
+ SELECT id
+			FROM fs_order_uploads_detail
+			WHERE record_id = 44753
+
+time:::0.000395059585571289
+
+===========
+
+ SELECT id,code
+			FROM fs_warehouses
+			WHERE id = 4
+
+time:::0.000440120697021484
+
+===========
+
+ SELECT id,name
+			FROM fs_platforms
+			WHERE id = 1
+
+time:::0.000406980514526367
+
+===========
+
+ SELECT id,code
+			FROM fs_shops
+			WHERE id = 571
+
+time:::0.000365018844604492
+
+===========
+
+ SELECT id,name
+			FROM fs_house
+			WHERE id = 7
+
+time:::0.000365972518920898
+
+===========
+
+ SELECT id,file_pdf,total_page_pdf
+			FROM fs_order_uploads
+			WHERE id = 44733
+
+time:::0.00032496452331543
+
+===========
+
+ SELECT id
+		FROM fs_order_uploads_page_pdf  WHERE record_id = 44733
+
+time:::0.00036311149597168
+
+===========
+
+ SELECT id
+			FROM fs_order_uploads_detail
+			WHERE record_id = 44733
+
+time:::0.000343084335327148
+
+===========
+
+ SELECT id,file_xlsx
+			FROM fs_order_uploads
+			WHERE id = 44733
+
+time:::0.000429868698120117
+
+===========
+
+ SELECT id
+			FROM fs_order_uploads_detail
+			WHERE record_id = 44733
+
+time:::0.000356912612915039
+
+===========
+
+ SELECT id,code
+			FROM fs_warehouses
+			WHERE id = 1
+
+time:::0.000465154647827148
+
+===========
+
+ SELECT id,name
+			FROM fs_platforms
+			WHERE id = 1
+
+time:::0.000443935394287109
+
+===========
+
+ SELECT id,code
+			FROM fs_shops
+			WHERE id = 571
+
+time:::0.000420093536376953
+
+===========
+
+ SELECT id,name
+			FROM fs_house
+			WHERE id = 7
+
+time:::0.000370025634765625
+
+===========
+
+ SELECT id,file_pdf,total_page_pdf
+			FROM fs_order_uploads
+			WHERE id = 44730
+
+time:::0.000378847122192383
+
+===========
+
+ SELECT id
+		FROM fs_order_uploads_page_pdf  WHERE record_id = 44730
+
+time:::0.000571012496948242
+
+===========
+
+ SELECT id
+			FROM fs_order_uploads_detail
+			WHERE record_id = 44730
+
+time:::0.000537872314453125
+
+===========
+
+ SELECT id,file_xlsx
+			FROM fs_order_uploads
+			WHERE id = 44730
+
+time:::0.000514030456542969
+
+===========
+
+ SELECT id
+			FROM fs_order_uploads_detail
+			WHERE record_id = 44730
+
+time:::0.000619888305664062
+
+===========
+
+ SELECT id,code
+			FROM fs_warehouses
+			WHERE id = 2
+
+time:::0.000530004501342773
+
+===========
+
+ SELECT id,name
+			FROM fs_platforms
+			WHERE id = 1
+
+time:::0.000453948974609375
+
+===========
+
+ SELECT id,code
+			FROM fs_shops
+			WHERE id = 571
+
+time:::0.000351905822753906
+
+===========
+
+ SELECT id,name
+			FROM fs_house
+			WHERE id = 7
+
+time:::0.000400066375732422
+
+===========
+
+ SELECT id,file_pdf,total_page_pdf
+			FROM fs_order_uploads
+			WHERE id = 44725
+
+time:::0.000412940979003906
+
+===========
+
+ SELECT id
+		FROM fs_order_uploads_page_pdf  WHERE record_id = 44725
+
+time:::0.000701904296875
+
+===========
+
+ SELECT id
+			FROM fs_order_uploads_detail
+			WHERE record_id = 44725
+
+time:::0.000634908676147461
+
+===========
+
+ SELECT id,file_xlsx
+			FROM fs_order_uploads
+			WHERE id = 44725
+
+time:::0.000613927841186523
+
+===========
+
+ SELECT id
+			FROM fs_order_uploads_detail
+			WHERE record_id = 44725
+
+time:::0.000560998916625977
+
+===========
+
+ SELECT id,code
+			FROM fs_warehouses
+			WHERE id = 1
+
+time:::0.000541925430297852
+
+===========
+
+ SELECT id,name
+			FROM fs_platforms
+			WHERE id = 1
+
+time:::0.000492095947265625
+
+===========
+
+ SELECT id,code
+			FROM fs_shops
+			WHERE id = 555
+
+time:::0.000586032867431641
+
+===========
+
+ SELECT id,name
+			FROM fs_house
+			WHERE id = 7
+
+time:::0.000298023223876953
+
+===========
+
+ SELECT id,file_pdf,total_page_pdf
+			FROM fs_order_uploads
+			WHERE id = 44436
+
+time:::0.000304937362670898
+
+===========
+
+ SELECT id
+		FROM fs_order_uploads_page_pdf  WHERE record_id = 44436
+
+time:::0.00034022331237793
+
+===========
+
+ SELECT id
+			FROM fs_order_uploads_detail
+			WHERE record_id = 44436
+
+time:::0.000452041625976562
+
+===========
+
+ SELECT id,file_xlsx
+			FROM fs_order_uploads
+			WHERE id = 44436
+
+time:::0.00040888786315918
+
+===========
+
+ SELECT id
+			FROM fs_order_uploads_detail
+			WHERE record_id = 44436
+
+time:::0.000436067581176758
+
+===========
+
+ SELECT id,code
+			FROM fs_warehouses
+			WHERE id = 4
+
+time:::0.000471115112304688
+
+===========
+
+ SELECT id,name
+			FROM fs_platforms
+			WHERE id = 1
+
+time:::0.000391006469726562
+
+===========
+
+ SELECT id,code
+			FROM fs_shops
+			WHERE id = 571
+
+time:::0.000330924987792969
+
+===========
+
+ SELECT id,name
+			FROM fs_house
+			WHERE id = 7
+
+time:::0.000282049179077148
+
+===========
+
+ SELECT id,file_pdf,total_page_pdf
+			FROM fs_order_uploads
+			WHERE id = 44430
+
+time:::0.000313997268676758
+
+===========
+
+ SELECT id
+		FROM fs_order_uploads_page_pdf  WHERE record_id = 44430
+
+time:::0.000440120697021484
+
+===========
+
+ SELECT id
+			FROM fs_order_uploads_detail
+			WHERE record_id = 44430
+
+time:::0.000464916229248047
+
+===========
+
+ SELECT id,file_xlsx
+			FROM fs_order_uploads
+			WHERE id = 44430
+
+time:::0.000544071197509766
+
+===========
+
+ SELECT id
+			FROM fs_order_uploads_detail
+			WHERE record_id = 44430
+
+time:::0.000394105911254883
+
+===========
+
+ SELECT id,code
+			FROM fs_warehouses
+			WHERE id = 1
+
+time:::0.000396966934204102
+
+===========
+
+ SELECT id,name
+			FROM fs_platforms
+			WHERE id = 1
+
+time:::0.000391960144042969
+
+===========
+
+ SELECT id,code
+			FROM fs_shops
+			WHERE id = 571
+
+time:::0.00032496452331543
+
+===========
+
+ SELECT id,name
+			FROM fs_house
+			WHERE id = 7
+
+time:::0.000313997268676758
+
+===========
+
+ SELECT id,file_pdf,total_page_pdf
+			FROM fs_order_uploads
+			WHERE id = 44423
+
+time:::0.000297784805297852
+
+===========
+
+ SELECT id
+		FROM fs_order_uploads_page_pdf  WHERE record_id = 44423
+
+time:::0.000377178192138672
+
+===========
+
+ SELECT id
+			FROM fs_order_uploads_detail
+			WHERE record_id = 44423
+
+time:::0.000404119491577148
+
+===========
+
+ SELECT id,file_xlsx
+			FROM fs_order_uploads
+			WHERE id = 44423
+
+time:::0.000422954559326172
+
+===========
+
+ SELECT id
+			FROM fs_order_uploads_detail
+			WHERE record_id = 44423
+
+time:::0.000448942184448242
+
+===========
+
+ SELECT id,code
+			FROM fs_warehouses
+			WHERE id = 1
+
+time:::0.000544071197509766
+
+===========
+
+ SELECT id,name
+			FROM fs_platforms
+			WHERE id = 1
+
+time:::0.000500917434692383
+
+===========
+
+ SELECT id,code
+			FROM fs_shops
+			WHERE id = 571
+
+time:::0.000368118286132812
+
+===========
+
+ SELECT id,name
+			FROM fs_house
+			WHERE id = 7
+
+time:::0.00038599967956543
+
+===========
+
+ SELECT id,file_pdf,total_page_pdf
+			FROM fs_order_uploads
+			WHERE id = 44416
+
+time:::0.000402212142944336
+
+===========
+
+ SELECT id
+		FROM fs_order_uploads_page_pdf  WHERE record_id = 44416
+
+time:::0.000503063201904297
+
+===========
+
+ SELECT id
+			FROM fs_order_uploads_detail
+			WHERE record_id = 44416
+
+time:::0.000522136688232422
+
+===========
+
+ SELECT id,file_xlsx
+			FROM fs_order_uploads
+			WHERE id = 44416
+
+time:::0.000470876693725586
+
+===========
+
+ SELECT id
+			FROM fs_order_uploads_detail
+			WHERE record_id = 44416
+
+time:::0.000348091125488281
+
+===========
+
+ SELECT id,code
+			FROM fs_warehouses
+			WHERE id = 2
+
+time:::0.000472068786621094
+
+===========
+
+ SELECT id,name
+			FROM fs_platforms
+			WHERE id = 2
+
+time:::0.000384807586669922
+
+===========
+
+ SELECT id,code
+			FROM fs_shops
+			WHERE id = 506
+
+time:::0.000400066375732422
+
+===========
+
+ SELECT id,name
+			FROM fs_house
+			WHERE id = 7
+
+time:::0.00037693977355957
+
+===========
+
+ SELECT id,file_pdf,total_page_pdf
+			FROM fs_order_uploads
+			WHERE id = 44405
+
+time:::0.000329971313476562
+
+===========
+
+ SELECT id
+		FROM fs_order_uploads_page_pdf  WHERE record_id = 44405
+
+time:::0.000653982162475586
+
+===========
+
+ SELECT id
+			FROM fs_order_uploads_detail
+			WHERE record_id = 44405
+
+time:::0.00053715705871582
+
+===========
+
+ SELECT id,file_xlsx
+			FROM fs_order_uploads
+			WHERE id = 44405
+
+time:::0.00050806999206543
+
+===========
+
+ SELECT id
+			FROM fs_order_uploads_detail
+			WHERE record_id = 44405
+
+time:::0.000483989715576172
+
+===========
+
+ SELECT id,code
+			FROM fs_warehouses
+			WHERE id = 1
+
+time:::0.000512123107910156
+
+===========
+
+ SELECT id,name
+			FROM fs_platforms
+			WHERE id = 1
+
+time:::0.000519037246704102
+
+===========
+
+ SELECT id,code
+			FROM fs_shops
+			WHERE id = 571
+
+time:::0.000377178192138672
+
+===========
+
+ SELECT id,name
+			FROM fs_house
+			WHERE id = 7
+
+time:::0.000322103500366211
+
+===========
+
+ SELECT id,file_pdf,total_page_pdf
+			FROM fs_order_uploads
+			WHERE id = 44400
+
+time:::0.000349998474121094
+
+===========
+
+ SELECT id
+		FROM fs_order_uploads_page_pdf  WHERE record_id = 44400
+
+time:::0.000290155410766602
+
+===========
+
+ SELECT id
+			FROM fs_order_uploads_detail
+			WHERE record_id = 44400
+
+time:::0.000387907028198242
+
+===========
+
+ SELECT id,file_xlsx
+			FROM fs_order_uploads
+			WHERE id = 44400
+
+time:::0.000483989715576172
+
+===========
+
+ SELECT id
+			FROM fs_order_uploads_detail
+			WHERE record_id = 44400
+
+time:::0.000513076782226562
+
+===========
+
+ SELECT id,code
+			FROM fs_warehouses
+			WHERE id = 4
+
+time:::0.00056910514831543
+
+===========
+
+ SELECT id,name
+			FROM fs_platforms
+			WHERE id = 1
+
+time:::0.00049281120300293
+
+===========
+
+ SELECT id,code
+			FROM fs_shops
+			WHERE id = 571
+
+time:::0.00031590461730957
+
+===========
+
+ SELECT id,name
+			FROM fs_house
+			WHERE id = 7
+
+time:::0.000370025634765625
+
+===========
+
+ SELECT id,file_pdf,total_page_pdf
+			FROM fs_order_uploads
+			WHERE id = 44396
+
+time:::0.000291109085083008
+
+===========
+
+ SELECT id
+		FROM fs_order_uploads_page_pdf  WHERE record_id = 44396
+
+time:::0.00061798095703125
+
+===========
+
+ SELECT id
+			FROM fs_order_uploads_detail
+			WHERE record_id = 44396
+
+time:::0.00049901008605957
+
+===========
+
+ SELECT id,file_xlsx
+			FROM fs_order_uploads
+			WHERE id = 44396
+
+time:::0.000416994094848633
+
+===========
+
+ SELECT id
+			FROM fs_order_uploads_detail
+			WHERE record_id = 44396
+
+time:::0.0004119873046875
+
+===========
+
+ SELECT id,code
+			FROM fs_warehouses
+			WHERE id = 2
+
+time:::0.000433921813964844
+
+===========
+
+ SELECT id,name
+			FROM fs_platforms
+			WHERE id = 1
+
+time:::0.000346899032592773
+
+===========
+
+ SELECT id,code
+			FROM fs_shops
+			WHERE id = 571
+
+time:::0.000329017639160156
+
+===========
+
+ SELECT id,name
+			FROM fs_house
+			WHERE id = 7
+
+time:::0.00026702880859375
+
+===========
+
+ SELECT id,file_pdf,total_page_pdf
+			FROM fs_order_uploads
+			WHERE id = 44393
+
+time:::0.000311136245727539
+
+===========
+
+ SELECT id
+		FROM fs_order_uploads_page_pdf  WHERE record_id = 44393
+
+time:::0.000386953353881836
+
+===========
+
+ SELECT id
+			FROM fs_order_uploads_detail
+			WHERE record_id = 44393
+
+time:::0.000487089157104492
+
+===========
+
+ SELECT id,file_xlsx
+			FROM fs_order_uploads
+			WHERE id = 44393
+
+time:::0.000351905822753906
+
+===========
+
+ SELECT id
+			FROM fs_order_uploads_detail
+			WHERE record_id = 44393
+
+time:::0.00037693977355957
+
+===========
+
+ SELECT id,code
+			FROM fs_warehouses
+			WHERE id = 2
+
+time:::0.000393152236938477
+
+===========
+
+ SELECT id,name
+			FROM fs_platforms
+			WHERE id = 1
+
+time:::0.000456094741821289
+
+===========
+
+ SELECT id,code
+			FROM fs_shops
+			WHERE id = 571
+
+time:::0.00061488151550293
+
+===========
+
+ SELECT id,name
+			FROM fs_house
+			WHERE id = 5
+
+time:::0.000571966171264648
+
+===========
+
+ SELECT id,file_pdf,total_page_pdf
+			FROM fs_order_uploads
+			WHERE id = 44313
+
+time:::0.000440120697021484
+
+===========
+
+ SELECT id
+		FROM fs_order_uploads_page_pdf  WHERE record_id = 44313
+
+time:::0.000486135482788086
+
+===========
+
+ SELECT id
+			FROM fs_order_uploads_detail
+			WHERE record_id = 44313
+
+time:::0.000498056411743164
+
+===========
+
+ SELECT id,file_xlsx
+			FROM fs_order_uploads
+			WHERE id = 44313
+
+time:::0.000578165054321289
+
+===========
+
+ SELECT id
+			FROM fs_order_uploads_detail
+			WHERE record_id = 44313
+
+time:::0.000583887100219727
+
+===========
+
+ SELECT id,code
+			FROM fs_warehouses
+			WHERE id = 2
+
+time:::0.000648975372314453
+
+===========
+
+ SELECT id,name
+			FROM fs_platforms
+			WHERE id = 1
+
+time:::0.000474929809570312
+
+===========
+
+ SELECT id,code
+			FROM fs_shops
+			WHERE id = 571
+
+time:::0.000711917877197266
+
+===========
+
+ SELECT id,name
+			FROM fs_house
+			WHERE id = 5
+
+time:::0.000381946563720703
+
+===========
+
+ SELECT id,file_pdf,total_page_pdf
+			FROM fs_order_uploads
+			WHERE id = 44303
+
+time:::0.000524044036865234
+
+===========
+
+ SELECT *
+		FROM fs_order_uploads_detail  WHERE is_refund = 0 AND is_print = 1 AND tracking_code = "477928691"
+
+time:::0.471915006637573
+
+===========
+
+ SELECT id
+		FROM fs_order_uploads_page_pdf  WHERE record_id = 44303
+
+time:::0.00040888786315918
+
+===========
+
+ SELECT id
+			FROM fs_order_uploads_detail
+			WHERE record_id = 44303
+
+time:::0.000450849533081055
+
+===========
+
+ SELECT id,file_xlsx
+			FROM fs_order_uploads
+			WHERE id = 44303
+
+time:::0.00103282928466797
+
+===========
+
+ SELECT id
+			FROM fs_order_uploads_detail
+			WHERE record_id = 44303
+
+time:::0.000465154647827148
+
+===========
+
+ SELECT id,code
+			FROM fs_warehouses
+			WHERE id = 1
+
+time:::0.00055384635925293
+
+===========
+
+ SELECT id,name
+			FROM fs_platforms
+			WHERE id = 1
+
+time:::0.000486135482788086
+
+===========
+
+ SELECT id,code
+			FROM fs_shops
+			WHERE id = 571
+
+time:::0.000797033309936523
+
+===========
+
+ SELECT id,name
+			FROM fs_house
+			WHERE id = 7
+
+time:::0.000971078872680664
+
+===========
+
+ SELECT id,file_pdf,total_page_pdf
+			FROM fs_order_uploads
+			WHERE id = 44050
+
+time:::0.000537872314453125
+
+===========
+
+ SELECT id
+		FROM fs_order_uploads_page_pdf  WHERE record_id = 44050
+
+time:::0.000388860702514648
+
+===========
+
+ SELECT id
+			FROM fs_order_uploads_detail
+			WHERE record_id = 44050
+
+time:::0.000477075576782227
+
+===========
+
+ SELECT id,file_xlsx
+			FROM fs_order_uploads
+			WHERE id = 44050
+
+time:::0.000577926635742188
+
+===========
+
+ SELECT id
+			FROM fs_order_uploads_detail
+			WHERE record_id = 44050
+
+time:::0.000471115112304688
+
+===========
+
+ SELECT id,code
+			FROM fs_warehouses
+			WHERE id = 2
+
+time:::0.000507116317749023
+
+===========
+
+ SELECT id,name
+			FROM fs_platforms
+			WHERE id = 2
+
+time:::0.000480175018310547
+
+===========
+
+ SELECT id,code
+			FROM fs_shops
+			WHERE id = 506
+
+time:::0.000432014465332031
+
+===========
+
+ SELECT id,name
+			FROM fs_house
+			WHERE id = 7
+
+time:::0.000375986099243164
+
+===========
+
+ SELECT id,file_pdf,total_page_pdf
+			FROM fs_order_uploads
+			WHERE id = 44042
+
+time:::0.000430822372436523
+
+===========
+
+ SELECT id
+		FROM fs_order_uploads_page_pdf  WHERE record_id = 44042
+
+time:::0.00088810920715332
+
+===========
+
+ SELECT id
+			FROM fs_order_uploads_detail
+			WHERE record_id = 44042
+
+time:::0.000654935836791992
+
+===========
+
+ SELECT id,file_xlsx
+			FROM fs_order_uploads
+			WHERE id = 44042
+
+time:::0.000612020492553711
+
+===========
+
+ SELECT id
+			FROM fs_order_uploads_detail
+			WHERE record_id = 44042
+
+time:::0.000638008117675781
+
+===========
+
+ SELECT id,code
+			FROM fs_warehouses
+			WHERE id = 1
+
+time:::0.000530004501342773
+
+===========
+
+ SELECT id,name
+			FROM fs_platforms
+			WHERE id = 1
+
+time:::0.000470876693725586
+
+===========
+
+ SELECT id,code
+			FROM fs_shops
+			WHERE id = 571
+
+time:::0.000447988510131836
+
+===========
+
+ SELECT id,name
+			FROM fs_house
+			WHERE id = 7
+
+time:::0.000373125076293945
+
+===========
+
+ SELECT id,file_pdf,total_page_pdf
+			FROM fs_order_uploads
+			WHERE id = 43998
+
+time:::0.000403881072998047
+
+===========
+
+ SELECT id
+		FROM fs_order_uploads_page_pdf  WHERE record_id = 43998
+
+time:::0.000401020050048828
+
+===========
+
+ SELECT id
+			FROM fs_order_uploads_detail
+			WHERE record_id = 43998
+
+time:::0.000456094741821289
+
+===========
+
+ SELECT id,file_xlsx
+			FROM fs_order_uploads
+			WHERE id = 43998
+
+time:::0.000541925430297852
+
+===========
+
+ SELECT id
+			FROM fs_order_uploads_detail
+			WHERE record_id = 43998
+
+time:::0.000488996505737305
+
+===========
+
+ SELECT id,code
+			FROM fs_warehouses
+			WHERE id = 4
+
+time:::0.000550031661987305
+
+===========
+
+ SELECT id,name
+			FROM fs_platforms
+			WHERE id = 1
+
+time:::0.000475883483886719
+
+===========
+
+ SELECT id,code
+			FROM fs_shops
+			WHERE id = 571
+
+time:::0.000425100326538086
+
+===========
+
+ SELECT id,name
+			FROM fs_house
+			WHERE id = 7
+
+time:::0.000416994094848633
+
+===========
+
+ SELECT id,file_pdf,total_page_pdf
+			FROM fs_order_uploads
+			WHERE id = 43992
+
+time:::0.000410795211791992
+
+===========
+
+ SELECT id
+		FROM fs_order_uploads_page_pdf  WHERE record_id = 43992
+
+time:::0.000456809997558594
+
+===========
+
+ SELECT id
+			FROM fs_order_uploads_detail
+			WHERE record_id = 43992
+
+time:::0.000541925430297852
+
+===========
+
+ SELECT id,file_xlsx
+			FROM fs_order_uploads
+			WHERE id = 43992
+
+time:::0.000602960586547852
+
+===========
+
+ SELECT id
+			FROM fs_order_uploads_detail
+			WHERE record_id = 43992
+
+time:::0.000461816787719727
+
+===========
+
+ SELECT id,code
+			FROM fs_warehouses
+			WHERE id = 1
+
+time:::0.000530004501342773
+
+===========
+
+ SELECT id,name
+			FROM fs_platforms
+			WHERE id = 1
+
+time:::0.000471115112304688
+
+===========
+
+ SELECT id,code
+			FROM fs_shops
+			WHERE id = 571
+
+time:::0.000434160232543945
+
+===========
+
+ SELECT id,name
+			FROM fs_house
+			WHERE id = 7
+
+time:::0.000380992889404297
+
+===========
+
+ SELECT id,file_pdf,total_page_pdf
+			FROM fs_order_uploads
+			WHERE id = 43982
+
+time:::0.000432014465332031
+
+===========
+
+ SELECT id
+		FROM fs_order_uploads_page_pdf  WHERE record_id = 43982
+
+time:::0.000563144683837891
+
+===========
+
+ SELECT id
+			FROM fs_order_uploads_detail
+			WHERE record_id = 43982
+
+time:::0.000555992126464844
+
+===========
+
+ SELECT id,file_xlsx
+			FROM fs_order_uploads
+			WHERE id = 43982
+
+time:::0.00053095817565918
+
+===========
+
+ SELECT id
+			FROM fs_order_uploads_detail
+			WHERE record_id = 43982
+
+time:::0.000566005706787109
+
+===========
+
+ SELECT id,code
+			FROM fs_warehouses
+			WHERE id = 4
+
+time:::0.000524044036865234
+
+===========
+
+ SELECT id,name
+			FROM fs_platforms
+			WHERE id = 1
+
+time:::0.000471115112304688
+
+===========
+
+ SELECT id,code
+			FROM fs_shops
+			WHERE id = 571
+
+time:::0.000420093536376953
+
+===========
+
+ SELECT id,name
+			FROM fs_house
+			WHERE id = 7
+
+time:::0.000402927398681641
+
+===========
+
+ SELECT id,file_pdf,total_page_pdf
+			FROM fs_order_uploads
+			WHERE id = 43975
+
+time:::0.00039982795715332
+
+===========
+
+ SELECT id
+		FROM fs_order_uploads_page_pdf  WHERE record_id = 43975
+
+time:::0.000474214553833008
+
+===========
+
+ SELECT id
+			FROM fs_order_uploads_detail
+			WHERE record_id = 43975
+
+time:::0.000657081604003906
+
+===========
+
+ SELECT id,file_xlsx
+			FROM fs_order_uploads
+			WHERE id = 43975
+
+time:::0.000613927841186523
+
+===========
+
+ SELECT id
+			FROM fs_order_uploads_detail
+			WHERE record_id = 43975
+
+time:::0.0005950927734375
+
+===========
+
+ SELECT id,code
+			FROM fs_warehouses
+			WHERE id = 2
+
+time:::0.000555992126464844
+
+===========
+
+ SELECT id,name
+			FROM fs_platforms
+			WHERE id = 1
+
+time:::0.000470876693725586
+
+===========
+
+ SELECT id,code
+			FROM fs_shops
+			WHERE id = 571
+
+time:::0.000441074371337891
+
+===========
+
+ SELECT id,name
+			FROM fs_house
+			WHERE id = 7
+
+time:::0.000414133071899414
+
+===========
+
+ SELECT id,file_pdf,total_page_pdf
+			FROM fs_order_uploads
+			WHERE id = 43967
+
+time:::0.000399112701416016
+
+===========
+
+ SELECT id
+		FROM fs_order_uploads_page_pdf  WHERE record_id = 43967
+
+time:::0.000852823257446289
+
+===========
+
+ SELECT id
+			FROM fs_order_uploads_detail
+			WHERE record_id = 43967
+
+time:::0.000597953796386719
+
+===========
+
+ SELECT id,file_xlsx
+			FROM fs_order_uploads
+			WHERE id = 43967
+
+time:::0.000549077987670898
+
+===========
+
+ SELECT id
+			FROM fs_order_uploads_detail
+			WHERE record_id = 43967
+
+time:::0.000602960586547852
+
+===========
+
+ SELECT id,code
+			FROM fs_warehouses
+			WHERE id = 1
+
+time:::0.00053095817565918
+
+===========
+
+ SELECT id,name
+			FROM fs_platforms
+			WHERE id = 1
+
+time:::0.000472068786621094
+
+===========
+
+ SELECT id,code
+			FROM fs_shops
+			WHERE id = 571
+
+time:::0.00042414665222168
+
+===========
+
+ SELECT id,name
+			FROM fs_house
+			WHERE id = 7
+
+time:::0.000396013259887695
+
+===========
+
+ SELECT id,file_pdf,total_page_pdf
+			FROM fs_order_uploads
+			WHERE id = 43947
+
+time:::0.000409126281738281
+
+===========
+
+ SELECT id
+		FROM fs_order_uploads_page_pdf  WHERE record_id = 43947
+
+time:::0.000410795211791992
+
+===========
+
+ SELECT id
+			FROM fs_order_uploads_detail
+			WHERE record_id = 43947
+
+time:::0.000505924224853516
+
+===========
+
+ SELECT id,file_xlsx
+			FROM fs_order_uploads
+			WHERE id = 43947
+
+time:::0.000580072402954102
+
+===========
+
+ SELECT id
+			FROM fs_order_uploads_detail
+			WHERE record_id = 43947
+
+time:::0.000473976135253906
+
+===========
+
+ SELECT id,code
+			FROM fs_warehouses
+			WHERE id = 2
+
+time:::0.000524997711181641
+
+===========
+
+ SELECT id,name
+			FROM fs_platforms
+			WHERE id = 1
+
+time:::0.000510931015014648
+
+===========
+
+ SELECT id,code
+			FROM fs_shops
+			WHERE id = 555
+
+time:::0.000418901443481445
+
+===========
+
+ SELECT id,name
+			FROM fs_house
+			WHERE id = 7
+
+time:::0.000391006469726562
+
+===========
+
+ SELECT id,file_pdf,total_page_pdf
+			FROM fs_order_uploads
+			WHERE id = 43924
+
+time:::0.000432968139648438
+
+===========
+
+ SELECT id
+		FROM fs_order_uploads_page_pdf  WHERE record_id = 43924
+
+time:::0.000423192977905273
+
+===========
+
+ SELECT id
+			FROM fs_order_uploads_detail
+			WHERE record_id = 43924
+
+time:::0.000431060791015625
+
+===========
+
+ SELECT id,file_xlsx
+			FROM fs_order_uploads
+			WHERE id = 43924
+
+time:::0.000502824783325195
+
+===========
+
+ SELECT id
+			FROM fs_order_uploads_detail
+			WHERE record_id = 43924
+
+time:::0.000402927398681641
+
+===========
+
+ SELECT id,code
+			FROM fs_warehouses
+			WHERE id = 4
+
+time:::0.000466823577880859
+
+===========
+
+ SELECT id,name
+			FROM fs_platforms
+			WHERE id = 1
+
+time:::0.000436067581176758
+
+===========
+
+ SELECT id,code
+			FROM fs_shops
+			WHERE id = 555
+
+time:::0.000365018844604492
+
+===========
+
+ SELECT id,name
+			FROM fs_house
+			WHERE id = 7
+
+time:::0.000329971313476562
+
+===========
+
+ SELECT id,file_pdf,total_page_pdf
+			FROM fs_order_uploads
+			WHERE id = 43920
+
+time:::0.000373125076293945
+
+===========
+
+ SELECT id
+		FROM fs_order_uploads_page_pdf  WHERE record_id = 43920
+
+time:::0.000366926193237305
+
+===========
+
+ SELECT id
+			FROM fs_order_uploads_detail
+			WHERE record_id = 43920
+
+time:::0.000429868698120117
+
+===========
+
+ SELECT id,file_xlsx
+			FROM fs_order_uploads
+			WHERE id = 43920
+
+time:::0.000543832778930664
+
+===========
+
+ SELECT id
+			FROM fs_order_uploads_detail
+			WHERE record_id = 43920
+
+time:::0.000370025634765625
+
+===========
+
+ SELECT id,code
+			FROM fs_warehouses
+			WHERE id = 1
+
+time:::0.000442028045654297
+
+===========
+
+ SELECT id,name
+			FROM fs_platforms
+			WHERE id = 1
+
+time:::0.000355005264282227
+
+===========
+
+ SELECT id,code
+			FROM fs_shops
+			WHERE id = 123
+
+time:::0.000396966934204102
+
+===========
+
+ SELECT id,name
+			FROM fs_house
+			WHERE id = 7
+
+time:::0.000272989273071289
+
+===========
+
+ SELECT id,file_pdf,total_page_pdf
+			FROM fs_order_uploads
+			WHERE id = 43911
+
+time:::0.000308990478515625
+
+===========
+
+ SELECT id
+		FROM fs_order_uploads_page_pdf  WHERE record_id = 43911
+
+time:::0.000419855117797852
+
+===========
+
+ SELECT id
+			FROM fs_order_uploads_detail
+			WHERE record_id = 43911
+
+time:::0.000423908233642578
+
+===========
+
+ SELECT id,file_xlsx
+			FROM fs_order_uploads
+			WHERE id = 43911
+
+time:::0.000447988510131836
+
+===========
+
+ SELECT id
+			FROM fs_order_uploads_detail
+			WHERE record_id = 43911
+
+time:::0.000492095947265625
+
+===========
+
+ SELECT id,code
+			FROM fs_warehouses
+			WHERE id = 2
+
+time:::0.000410079956054688
+
+===========
+
+ SELECT id,name
+			FROM fs_platforms
+			WHERE id = 1
+
+time:::0.000428915023803711
+
+===========
+
+ SELECT id,code
+			FROM fs_shops
+			WHERE id = 123
+
+time:::0.000313043594360352
+
+===========
+
+ SELECT id,name
+			FROM fs_house
+			WHERE id = 7
+
+time:::0.00032806396484375
+
+===========
+
+ SELECT id,file_pdf,total_page_pdf
+			FROM fs_order_uploads
+			WHERE id = 43910
+
+time:::0.000297784805297852
+
+===========
+
+ SELECT id
+		FROM fs_order_uploads_page_pdf  WHERE record_id = 43910
+
+time:::0.000504016876220703
+
+===========
+
+ SELECT id
+			FROM fs_order_uploads_detail
+			WHERE record_id = 43910
+
+time:::0.000371932983398438
+
+===========
+
+ SELECT id,file_xlsx
+			FROM fs_order_uploads
+			WHERE id = 43910
+
+time:::0.000419139862060547
+
+===========
+
+ SELECT id
+			FROM fs_order_uploads_detail
+			WHERE record_id = 43910
+
+time:::0.000406026840209961
+
+===========
+
+ SELECT id,code
+			FROM fs_warehouses
+			WHERE id = 2
+
+time:::0.000416994094848633
+
+===========
+
+ SELECT id,name
+			FROM fs_platforms
+			WHERE id = 1
+
+time:::0.000422954559326172
+
+===========
+
+ SELECT id,code
+			FROM fs_shops
+			WHERE id = 571
+
+time:::0.000311136245727539
+
+===========
+
+ SELECT id,name
+			FROM fs_house
+			WHERE id = 9
+
+time:::0.000314950942993164
+
+===========
+
+ SELECT id,file_pdf,total_page_pdf
+			FROM fs_order_uploads
+			WHERE id = 43846
+
+time:::0.000287055969238281
+
+===========
+
+ SELECT id
+		FROM fs_order_uploads_page_pdf  WHERE record_id = 43846
+
+time:::0.00038909912109375
+
+===========
+
+ SELECT id
+			FROM fs_order_uploads_detail
+			WHERE record_id = 43846
+
+time:::0.000396013259887695
+
+===========
+
+ SELECT id,file_xlsx
+			FROM fs_order_uploads
+			WHERE id = 43846
+
+time:::0.000495195388793945
+
+===========
+
+ SELECT id
+			FROM fs_order_uploads_detail
+			WHERE record_id = 43846
+
+time:::0.000380992889404297
+
+===========
+
+ SELECT id,code
+			FROM fs_warehouses
+			WHERE id = 2
+
+time:::0.000445127487182617
+
+===========
+
+ SELECT id,name
+			FROM fs_platforms
+			WHERE id = 1
+
+time:::0.00048518180847168
+
+===========
+
+ SELECT id,code
+			FROM fs_shops
+			WHERE id = 571
+
+time:::0.000463008880615234
+
+===========
+
+ SELECT id,name
+			FROM fs_house
+			WHERE id = 14
+
+time:::0.000330924987792969
+
+===========
+
+ SELECT id,file_pdf,total_page_pdf
+			FROM fs_order_uploads
+			WHERE id = 43600
+
+time:::0.000407934188842773
+
+===========
+
+ SELECT id
+		FROM fs_order_uploads_page_pdf  WHERE record_id = 43600
+
+time:::0.00126504898071289
+
+===========
+
+ SELECT id
+			FROM fs_order_uploads_detail
+			WHERE record_id = 43600
+
+time:::0.00377798080444336
+
+===========
+
+ SELECT id,file_xlsx
+			FROM fs_order_uploads
+			WHERE id = 43600
+
+time:::0.000789165496826172
+
+===========
+
+ SELECT id
+			FROM fs_order_uploads_detail
+			WHERE record_id = 43600
+
+time:::0.00346708297729492
+
+===========
+
+ SELECT id,code
+			FROM fs_warehouses
+			WHERE id = 2
+
+time:::0.000735998153686523
+
+===========
+
+ SELECT id,name
+			FROM fs_platforms
+			WHERE id = 1
+
+time:::0.000452995300292969
+
+===========
+
+ SELECT id,code
+			FROM fs_shops
+			WHERE id = 555
+
+time:::0.000406026840209961
+
+===========
+
+ SELECT id,name
+			FROM fs_house
+			WHERE id = 7
+
+time:::0.0003509521484375
+
+===========
+
+ SELECT id,file_pdf,total_page_pdf
+			FROM fs_order_uploads
+			WHERE id = 43556
+
+time:::0.000427007675170898
+
+===========
+
+ SELECT id
+		FROM fs_order_uploads_page_pdf  WHERE record_id = 43556
+
+time:::0.000442028045654297
+
+===========
+
+ SELECT id
+			FROM fs_order_uploads_detail
+			WHERE record_id = 43556
+
+time:::0.000380039215087891
+
+===========
+
+ SELECT id,file_xlsx
+			FROM fs_order_uploads
+			WHERE id = 43556
+
+time:::0.000573873519897461
+
+===========
+
+ SELECT id
+			FROM fs_order_uploads_detail
+			WHERE record_id = 43556
+
+time:::0.000422000885009766
+
+===========
+
+ SELECT id,code
+			FROM fs_warehouses
+			WHERE id = 2
+
+time:::0.00053715705871582
+
+===========
+
+ SELECT id,name
+			FROM fs_platforms
+			WHERE id = 1
+
+time:::0.00043487548828125
+
+===========
+
+ SELECT id,code
+			FROM fs_shops
+			WHERE id = 123
+
+time:::0.000394105911254883
+
+===========
+
+ SELECT id,name
+			FROM fs_house
+			WHERE id = 7
+
+time:::0.000277996063232422
+
+===========
+
+ SELECT id,file_pdf,total_page_pdf
+			FROM fs_order_uploads
+			WHERE id = 43549
+
+time:::0.000356912612915039
+
+===========
+
+ SELECT id
+		FROM fs_order_uploads_page_pdf  WHERE record_id = 43549
+
+time:::0.000428915023803711
+
+===========
+
+ SELECT id
+			FROM fs_order_uploads_detail
+			WHERE record_id = 43549
+
+time:::0.000444889068603516
+
+===========
+
+ SELECT id,file_xlsx
+			FROM fs_order_uploads
+			WHERE id = 43549
+
+time:::0.000405073165893555
+
+===========
+
+ SELECT id
+			FROM fs_order_uploads_detail
+			WHERE record_id = 43549
+
+time:::0.000427961349487305
+
+===========
+
+ SELECT id,code
+			FROM fs_warehouses
+			WHERE id = 1
+
+time:::0.000456094741821289
+
+===========
+
+ SELECT id,name
+			FROM fs_platforms
+			WHERE id = 1
+
+time:::0.000371932983398438
+
+===========
+
+ SELECT id,code
+			FROM fs_shops
+			WHERE id = 571
+
+time:::0.000379085540771484
+
+===========
+
+ SELECT id,name
+			FROM fs_house
+			WHERE id = 7
+
+time:::0.000411033630371094
+
+===========
+
+ SELECT id,file_pdf,total_page_pdf
+			FROM fs_order_uploads
+			WHERE id = 43537
+
+time:::0.000391006469726562
+
+===========
+
+ SELECT id
+		FROM fs_order_uploads_page_pdf  WHERE record_id = 43537
+
+time:::0.000384807586669922
+
+===========
+
+ SELECT id
+			FROM fs_order_uploads_detail
+			WHERE record_id = 43537
+
+time:::0.000468969345092773
+
+===========
+
+ SELECT id,file_xlsx
+			FROM fs_order_uploads
+			WHERE id = 43537
+
+time:::0.000538110733032227
+
+===========
+
+ SELECT id
+			FROM fs_order_uploads_detail
+			WHERE record_id = 43537
+
+time:::0.000576972961425781
+
+===========
+
+ SELECT id,code
+			FROM fs_warehouses
+			WHERE id = 1
+
+time:::0.000580072402954102
+
+===========
+
+ SELECT id,name
+			FROM fs_platforms
+			WHERE id = 1
+
+time:::0.00056004524230957
+
+===========
+
+ SELECT id,code
+			FROM fs_shops
+			WHERE id = 571
+
+time:::0.000494003295898438
+
+===========
+
+ SELECT id,name
+			FROM fs_house
+			WHERE id = 7
+
+time:::0.000401020050048828
+
+===========
+
+ SELECT id,file_pdf,total_page_pdf
+			FROM fs_order_uploads
+			WHERE id = 43533
+
+time:::0.000418901443481445
+
+===========
+
+ SELECT id
+		FROM fs_order_uploads_page_pdf  WHERE record_id = 43533
+
+time:::0.000437021255493164
+
+===========
+
+ SELECT id
+			FROM fs_order_uploads_detail
+			WHERE record_id = 43533
+
+time:::0.000427961349487305
+
+===========
+
+ SELECT id,file_xlsx
+			FROM fs_order_uploads
+			WHERE id = 43533
+
+time:::0.000542879104614258
+
+===========
+
+ SELECT id
+			FROM fs_order_uploads_detail
+			WHERE record_id = 43533
+
+time:::0.000478982925415039
+
+===========
+
+ SELECT id,code
+			FROM fs_warehouses
+			WHERE id = 2
+
+time:::0.000486850738525391
+
+===========
+
+ SELECT id,name
+			FROM fs_platforms
+			WHERE id = 1
+
+time:::0.000464916229248047
+
+===========
+
+ SELECT id,code
+			FROM fs_shops
+			WHERE id = 571
+
+time:::0.000422954559326172
+
+===========
+
+ SELECT id,name
+			FROM fs_house
+			WHERE id = 7
+
+time:::0.000319957733154297
+
+===========
+
+ SELECT id,file_pdf,total_page_pdf
+			FROM fs_order_uploads
+			WHERE id = 43532
+
+time:::0.000367879867553711
+
+===========
+
+ SELECT id
+		FROM fs_order_uploads_page_pdf  WHERE record_id = 43532
+
+time:::0.000496864318847656
+
+===========
+
+ SELECT id
+			FROM fs_order_uploads_detail
+			WHERE record_id = 43532
+
+time:::0.000498056411743164
+
+===========
+
+ SELECT id,file_xlsx
+			FROM fs_order_uploads
+			WHERE id = 43532
+
+time:::0.000418186187744141
+
+===========
+
+ SELECT id
+			FROM fs_order_uploads_detail
+			WHERE record_id = 43532
+
+time:::0.000510931015014648
+
+===========
+
+ SELECT id,code
+			FROM fs_warehouses
+			WHERE id = 2
+
+time:::0.000400066375732422
+
+===========
+
+ SELECT id,name
+			FROM fs_platforms
+			WHERE id = 2
+
+time:::0.000392913818359375
+
+===========
+
+ SELECT id,code
+			FROM fs_shops
+			WHERE id = 506
+
+time:::0.0004119873046875
+
+===========
+
+ SELECT id,name
+			FROM fs_house
+			WHERE id = 7
+
+time:::0.000283002853393555
+
+===========
+
+ SELECT id,file_pdf,total_page_pdf
+			FROM fs_order_uploads
+			WHERE id = 43525
+
+time:::0.000396966934204102
+
+===========
+
+ SELECT id
+		FROM fs_order_uploads_page_pdf  WHERE record_id = 43525
+
+time:::0.000414133071899414
+
+===========
+
+ SELECT id
+			FROM fs_order_uploads_detail
+			WHERE record_id = 43525
+
+time:::0.000532150268554688
+
+===========
+
+ SELECT id,file_xlsx
+			FROM fs_order_uploads
+			WHERE id = 43525
+
+time:::0.000436782836914062
+
+===========
+
+ SELECT id
+			FROM fs_order_uploads_detail
+			WHERE record_id = 43525
+
+time:::0.000540018081665039
+
+===========
+
+ SELECT id,code
+			FROM fs_warehouses
+			WHERE id = 2
+
+time:::0.000501155853271484
+
+===========
+
+ SELECT id,name
+			FROM fs_platforms
+			WHERE id = 8
+
+time:::0.000524997711181641
+
+===========
+
+ SELECT id,code
+			FROM fs_shops
+			WHERE id = 571
+
+time:::0.000414133071899414
+
+===========
+
+ SELECT id,name
+			FROM fs_house
+			WHERE id = 7
+
+time:::0.00034022331237793
+
+===========
+
+ SELECT id,file_pdf,total_page_pdf
+			FROM fs_order_uploads
+			WHERE id = 43439
+
+time:::0.000392913818359375
+
+===========
+
+ SELECT id
+		FROM fs_order_uploads_page_pdf  WHERE record_id = 43439
+
+time:::0.00035405158996582
+
+===========
+
+ SELECT id
+			FROM fs_order_uploads_detail
+			WHERE record_id = 43439
+
+time:::0.000356912612915039
+
+===========
+
+ SELECT id,file_xlsx
+			FROM fs_order_uploads
+			WHERE id = 43439
+
+time:::0.000432968139648438
+
+===========
+
+ SELECT id
+			FROM fs_order_uploads_detail
+			WHERE record_id = 43439
+
+time:::0.00035405158996582
+
+===========
+
+ SELECT id,code
+			FROM fs_warehouses
+			WHERE id = 2
+
+time:::0.000528097152709961
+
+===========
+
+ SELECT id,name
+			FROM fs_platforms
+			WHERE id = 2
+
+time:::0.0004119873046875
+
+===========
+
+ SELECT id,code
+			FROM fs_shops
+			WHERE id = 506
+
+time:::0.000387907028198242
+
+===========
+
+ SELECT id,name
+			FROM fs_house
+			WHERE id = 13
+
+time:::0.000314950942993164
+
+===========
+
+ SELECT id,file_pdf,total_page_pdf
+			FROM fs_order_uploads
+			WHERE id = 43293
+
+time:::0.000339984893798828
+
+===========
+
+ SELECT id
+		FROM fs_order_uploads_page_pdf  WHERE record_id = 43293
+
+time:::0.000806093215942383
+
+===========
+
+ SELECT id
+			FROM fs_order_uploads_detail
+			WHERE record_id = 43293
+
+time:::0.000574111938476562
+
+===========
+
+ SELECT id,file_xlsx
+			FROM fs_order_uploads
+			WHERE id = 43293
+
+time:::0.000538110733032227
+
+===========
+
+ SELECT id
+			FROM fs_order_uploads_detail
+			WHERE record_id = 43293
+
+time:::0.000612020492553711
+
+===========
+
+ SELECT id,code
+			FROM fs_warehouses
+			WHERE id = 4
+
+time:::0.000533103942871094
+
+===========
+
+ SELECT id,name
+			FROM fs_platforms
+			WHERE id = 1
+
+time:::0.000423908233642578
+
+===========
+
+ SELECT id,code
+			FROM fs_shops
+			WHERE id = 571
+
+time:::0.000671863555908203
+
+===========
+
+ SELECT id,name
+			FROM fs_house
+			WHERE id = 7
+
+time:::0.000493049621582031
+
+===========
+
+ SELECT id,file_pdf,total_page_pdf
+			FROM fs_order_uploads
+			WHERE id = 43216
+
+time:::0.000368118286132812
+
+===========
+
+ SELECT id
+		FROM fs_order_uploads_page_pdf  WHERE record_id = 43216
+
+time:::0.000436067581176758
+
+===========
+
+ SELECT id
+			FROM fs_order_uploads_detail
+			WHERE record_id = 43216
+
+time:::0.000578165054321289
+
+===========
+
+ SELECT id,file_xlsx
+			FROM fs_order_uploads
+			WHERE id = 43216
+
+time:::0.000791072845458984
+
+===========
+
+ SELECT id
+			FROM fs_order_uploads_detail
+			WHERE record_id = 43216
+
+time:::0.000519037246704102
+
+===========
+
+ SELECT id,code
+			FROM fs_warehouses
+			WHERE id = 2
+
+time:::0.000720024108886719
+
+===========
+
+ SELECT id,name
+			FROM fs_platforms
+			WHERE id = 1
+
+time:::0.000366926193237305
+
+===========
+
+ SELECT id,code
+			FROM fs_shops
+			WHERE id = 571
+
+time:::0.00041508674621582
+
+===========
+
+ SELECT id,name
+			FROM fs_house
+			WHERE id = 7
+
+time:::0.000281810760498047
+
+===========
+
+ SELECT id,file_pdf,total_page_pdf
+			FROM fs_order_uploads
+			WHERE id = 43215
+
+time:::0.000401020050048828
+
+===========
+
+ SELECT id
+		FROM fs_order_uploads_page_pdf  WHERE record_id = 43215
+
+time:::0.000312089920043945
+
+===========
+
+ SELECT id
+			FROM fs_order_uploads_detail
+			WHERE record_id = 43215
+
+time:::0.000401020050048828
+
+===========
+
+ SELECT id,file_xlsx
+			FROM fs_order_uploads
+			WHERE id = 43215
+
+time:::0.000488042831420898
+
+===========
+
+ SELECT id
+			FROM fs_order_uploads_detail
+			WHERE record_id = 43215
+
+time:::0.000329971313476562
+
+===========
+
+ SELECT id,code
+			FROM fs_warehouses
+			WHERE id = 2
+
+time:::0.000500202178955078
+
+===========
+
+ SELECT id,name
+			FROM fs_platforms
+			WHERE id = 1
+
+time:::0.000361919403076172
+
+===========
+
+ SELECT id,code
+			FROM fs_shops
+			WHERE id = 571
+
+time:::0.00035405158996582
+
+===========
+
+ SELECT id,name
+			FROM fs_house
+			WHERE id = 7
+
+time:::0.000327825546264648
+
+===========
+
+ SELECT id,file_pdf,total_page_pdf
+			FROM fs_order_uploads
+			WHERE id = 43214
+
+time:::0.000401020050048828
+
+===========
+
+ SELECT id
+		FROM fs_order_uploads_page_pdf  WHERE record_id = 43214
+
+time:::0.000666141510009766
+
+===========
+
+ SELECT id
+			FROM fs_order_uploads_detail
+			WHERE record_id = 43214
+
+time:::0.000433921813964844
+
+===========
+
+ SELECT id,file_xlsx
+			FROM fs_order_uploads
+			WHERE id = 43214
+
+time:::0.000472068786621094
+
+===========
+
+ SELECT id
+			FROM fs_order_uploads_detail
+			WHERE record_id = 43214
+
+time:::0.000504016876220703
+
+===========
+
+ SELECT id,code
+			FROM fs_warehouses
+			WHERE id = 4
+
+time:::0.00049281120300293
+
+===========
+
+ SELECT id,name
+			FROM fs_platforms
+			WHERE id = 8
+
+time:::0.000437021255493164
+
+===========
+
+ SELECT id,code
+			FROM fs_shops
+			WHERE id = 571
+
+time:::0.000442028045654297
+
+===========
+
+ SELECT id,name
+			FROM fs_house
+			WHERE id = 11
+
+time:::0.000412940979003906
+
+===========
+
+ SELECT id,file_pdf,total_page_pdf
+			FROM fs_order_uploads
+			WHERE id = 42958
+
+time:::0.000423908233642578
+
+===========
+
+ SELECT id
+		FROM fs_order_uploads_page_pdf  WHERE record_id = 42958
+
+time:::0.000409841537475586
+
+===========
+
+ SELECT id
+			FROM fs_order_uploads_detail
+			WHERE record_id = 42958
+
+time:::0.000488996505737305
+
+===========
+
+ SELECT id,file_xlsx
+			FROM fs_order_uploads
+			WHERE id = 42958
+
+time:::0.000562906265258789
+
+===========
+
+ SELECT id
+			FROM fs_order_uploads_detail
+			WHERE record_id = 42958
+
+time:::0.000406980514526367
+
+===========
+
+ SELECT id,code
+			FROM fs_warehouses
+			WHERE id = 2
+
+time:::0.000488042831420898
+
+===========
+
+ SELECT id,name
+			FROM fs_platforms
+			WHERE id = 8
+
+time:::0.000452041625976562
+
+===========
+
+ SELECT id,code
+			FROM fs_shops
+			WHERE id = 571
+
+time:::0.000407934188842773
+
+===========
+
+ SELECT id,name
+			FROM fs_house
+			WHERE id = 13
+
+time:::0.000355958938598633
+
+===========
+
+ SELECT id,file_pdf,total_page_pdf
+			FROM fs_order_uploads
+			WHERE id = 42957
+
+time:::0.000400066375732422
+
+===========
+
+ SELECT id
+		FROM fs_order_uploads_page_pdf  WHERE record_id = 42957
+
+time:::0.000317096710205078
+
+===========
+
+ SELECT id
+			FROM fs_order_uploads_detail
+			WHERE record_id = 42957
+
+time:::0.000419139862060547
+
+===========
+
+ SELECT id,file_xlsx
+			FROM fs_order_uploads
+			WHERE id = 42957
+
+time:::0.000550985336303711
+
+===========
+
+ SELECT id
+			FROM fs_order_uploads_detail
+			WHERE record_id = 42957
+
+time:::0.000478982925415039
+
+===========
+
+SELECT *
+            FROM fs_menus_admin_add
+            WHERE published = 1 ORDER BY ordering ASC
+
+time:::0.000710010528564453
+
+===========
+
+SELECT * FROM fs_users_groups WHERE id = 1
+
+time:::0.000592947006225586
+
+===========
+
+SELECT * FROM fs_permission_tasks WHERE id IN (5,126,9,10,11,12,42,48,49,55,53,54,57,124,58,101,102,103,121,122,123,105,104,128,127)
+
+time:::0.000864028930664062
+
+===========
+
+ SELECT *, parent_id as parent_id
+						  FROM fs_menus_admin
+						  WHERE published = 1
+						   AND module IN ("products","order","order_items","packages","shops","warehouse_sales","refunds","profits","home")
+						  ORDER BY ordering 
+						 
+
+time:::0.00115299224853516
+
+===========
+
+ SELECT a.permission,b.module ,b.view 
+						FROM fs_users_permission AS a 
+						INNER JOIN fs_permission_tasks  AS b ON a.task_id = b.id
+						WHERE user_id = 166
+					
+
+time:::0.000509023666381836
+
+===========
+
+ SELECT *
+		FROM fs_order_uploads_detail  WHERE is_refund = 0 AND is_print = 1 AND tracking_code = "SPEVN228026422795G"
+
+time:::0.476799964904785
+
+===========
+
+ SELECT *
+		FROM fs_order_uploads_detail  WHERE is_refund = 0 AND is_print = 1 AND tracking_code = "SPXVN02342205044C"
+
+time:::0.517409086227417
+
+===========
+
+ SELECT *
+		FROM fs_order_uploads_detail  WHERE is_refund = 0 AND is_print = 1 AND tracking_code = "CM214285590VN"
+
+time:::0.543951034545898
+
+===========
+
+ SELECT *
+		FROM fs_order_uploads_detail  WHERE is_refund = 0 AND is_print = 1 AND tracking_code = "SPXVN02625188666C"
+
+time:::0.608439922332764
+
+===========
+
+ SELECT *
+		FROM fs_order_uploads_detail  WHERE is_refund = 0 AND is_print = 1 AND tracking_code = "SPEVN2295730513087"
+
+time:::0.54404616355896
+
+===========
+
+ SELECT *
+		FROM fs_order_uploads_detail  WHERE is_refund = 0 AND is_print = 1 AND tracking_code = "221214N856NWGK"
+
+time:::0.569855928421021
+
+===========
+
+ SELECT *
+		FROM fs_order_uploads_detail  WHERE is_refund = 0 AND is_print = 1 AND tracking_code = "221209692QVREY"
+
+time:::0.540248870849609
+
+===========
+
+ SELECT *
+		FROM fs_order_uploads_detail  WHERE is_refund = 0 AND is_print = 1 AND tracking_code = "22120867DQAJQE"
+
+time:::0.494673013687134
+
+===========
+
+ SELECT *
+		FROM fs_order_uploads_detail  WHERE is_refund = 0 AND is_print = 1 AND tracking_code = "2212097H6P09BF"
+
+time:::0.510308980941772
+
+===========
+
+ SELECT *
+		FROM fs_order_uploads_detail  WHERE is_refund = 0 AND is_print = 1 AND tracking_code = "2212109KBMCNW7"
+
+time:::0.673434972763062
+
+===========
+
+ SELECT *
+		FROM fs_order_uploads_detail  WHERE is_refund = 0 AND is_print = 1 AND tracking_code = "221209864KJMGM"
+
+time:::0.534502983093262
+
+===========
+
+ SELECT *
+		FROM fs_order_uploads_detail  WHERE is_refund = 0 AND is_print = 1 AND tracking_code = "22120856C478UF"
+
+time:::0.501381874084473
+
+===========
+
+ SELECT *
+		FROM fs_order_uploads_detail  WHERE is_refund = 0 AND is_print = 1 AND tracking_code = "2212097H2S1DQA"
+
+time:::0.58671498298645
+
+===========
+
+ SELECT *
+		FROM fs_order_uploads_detail  WHERE is_refund = 0 AND is_print = 1 AND tracking_code = "SPXVN02701815524C"
+
+time:::0.602560997009277
+
+===========
+
+ SELECT *
+		FROM fs_order_uploads_detail  WHERE is_refund = 0 AND is_print = 1 AND tracking_code = "SPXVN02629611730C"
+
+time:::0.606734037399292
+
+===========
+
+ SELECT *
+		FROM fs_order_uploads_detail  WHERE is_refund = 0 AND is_print = 1 AND tracking_code = "SPXVN02690707734C"
+
+time:::0.651408910751343
+
+===========
+
+ SELECT *
+		FROM fs_order_uploads_detail  WHERE is_refund = 0 AND is_print = 1 AND tracking_code = "SPXVN02706196065C"
+
+time:::0.666289091110229
+
+===========
+
+ SELECT *
+		FROM fs_order_uploads_detail  WHERE is_refund = 0 AND is_print = 1 AND tracking_code = "GAHEEYX8"
+
+time:::0.593865156173706
+
+===========
+
+ SELECT *
+		FROM fs_order_uploads_detail  WHERE is_refund = 0 AND is_print = 1 AND tracking_code = "SPXVN02537231330C"
+
+time:::0.620260953903198
+
+===========
+
+ SELECT *
+		FROM fs_order_uploads_detail  WHERE is_refund = 0 AND is_print = 1 AND tracking_code = "SPXVN02749959306C"
+
+time:::0.57990288734436
+
+===========
+
+ SELECT *
+		FROM fs_order_uploads_detail  WHERE is_refund = 0 AND is_print = 1 AND tracking_code = "SPXVN02605767737C"
+
+time:::0.510957956314087
+
+===========
+
+ SELECT *
+		FROM fs_order_uploads_detail  WHERE is_refund = 0 AND is_print = 1 AND tracking_code = "SPXVN02017984712C"
+
+time:::0.435967922210693
+
+===========
+
+ SELECT *
+		FROM fs_order_uploads_detail  WHERE is_refund = 0 AND is_print = 1 AND tracking_code = "SPXVN02755187278C"
+
+time:::0.515972852706909
+
+===========
+
+ SELECT *
+		FROM fs_order_uploads_detail  WHERE is_refund = 0 AND is_print = 1 AND tracking_code = "SPXVN02928033936C"
+
+time:::0.656044006347656
+
+===========
+
+ SELECT *
+		FROM fs_order_uploads_detail  WHERE is_refund = 0 AND is_print = 1 AND tracking_code = "SPXVN02165193959C"
+
+time:::0.622604131698608
+
+===========
+
+ SELECT *
+		FROM fs_order_uploads_detail  WHERE is_refund = 0 AND is_print = 1 AND tracking_code = "SPXVN02861996723C"
+
+time:::0.584344148635864
+
+===========
+
+ SELECT *
+		FROM fs_order_uploads_detail  WHERE is_refund = 0 AND is_print = 1 AND tracking_code = "SPXVN02536534982C"
+
+time:::0.574886083602905
+
+===========
+
+ SELECT *
+		FROM fs_order_uploads_detail  WHERE is_refund = 0 AND is_print = 1 AND tracking_code = "SPXVN02294746950C"
+
+time:::0.477319955825806
+
+===========
+
+ SELECT *
+		FROM fs_order_uploads_detail  WHERE is_refund = 0 AND is_print = 1 AND tracking_code = "SPEVN226664547139H"
+
+time:::0.579787015914917
+
+===========
+
+ SELECT *
+		FROM fs_order_uploads_detail  WHERE is_refund = 0 AND is_print = 1 AND tracking_code = "CM212225633VN"
+
+time:::0.489043951034546
+
+===========
+
+ SELECT *
+		FROM fs_order_uploads_detail  WHERE is_refund = 0 AND is_print = 1 AND tracking_code = "SPEVN227767430623X"
+
+time:::0.504546165466309
+
+===========
+
+ SELECT *
+		FROM fs_order_uploads_detail  WHERE is_refund = 0 AND is_print = 1 AND tracking_code = "SPXVN02362035984C"
+
+time:::0.581255912780762
+
+===========
+
+ SELECT *
+		FROM fs_order_uploads_detail  WHERE is_refund = 0 AND is_print = 1 AND tracking_code = "SPXVN02203457294C"
+
+time:::0.61545205116272
+
+===========
+
+ SELECT *
+		FROM fs_order_uploads_detail  WHERE is_refund = 0 AND is_print = 1 AND tracking_code = "SPXVN02312098714C"
+
+time:::0.730540037155151
+
+===========
+
+ SELECT *
+		FROM fs_order_uploads_detail  WHERE is_refund = 0 AND is_print = 1 AND tracking_code = "SPXVN02467207467C"
+
+time:::0.603107929229736
+
+===========
+
+ SELECT *
+		FROM fs_order_uploads_detail  WHERE is_refund = 0 AND is_print = 1 AND tracking_code = "SPXVN02021419323C"
+
+time:::0.686983108520508
+
+===========
+
+ SELECT *
+		FROM fs_order_uploads_detail  WHERE is_refund = 0 AND is_print = 1 AND tracking_code = "SPXVN02405081650C"
+
+time:::0.71937108039856
+
+===========
+
+ SELECT *
+		FROM fs_order_uploads_detail  WHERE is_refund = 0 AND is_print = 1 AND tracking_code = "SPXVN02041660790C"
+
+time:::0.74272608757019
+
+===========
+
+ SELECT *
+		FROM fs_order_uploads_detail  WHERE is_refund = 0 AND is_print = 1 AND tracking_code = "CM212630208VN"
+
+time:::0.564836025238037
+
+===========
+
+ SELECT *
+		FROM fs_order_uploads_detail  WHERE is_refund = 0 AND is_print = 1 AND tracking_code = "SPXVN02174207298C"
+
+time:::0.529646873474121
+
+===========
+
+ SELECT *
+		FROM fs_order_uploads_detail  WHERE is_refund = 0 AND is_print = 1 AND tracking_code = "SPXVN02787678806C"
+
+time:::0.430815935134888
+
+===========
+
+ SELECT *
+		FROM fs_order_uploads_detail  WHERE is_refund = 0 AND is_print = 1 AND tracking_code = "855564651200"
+
+time:::0.409020900726318
+
+===========
+
+ SELECT *
+		FROM fs_order_uploads_detail  WHERE is_refund = 0 AND is_print = 1 AND tracking_code = "SPXVN02099331870C"
+
+time:::0.517489910125732
+
+===========
+
+ SELECT *
+		FROM fs_order_uploads_detail  WHERE is_refund = 0 AND is_print = 1 AND tracking_code = "811055903747"
+
+time:::0.581354856491089
+
+===========
+
+ SELECT *
+		FROM fs_order_uploads_detail  WHERE is_refund = 0 AND is_print = 1 AND tracking_code = "84856576559624"
+
+time:::0.59456205368042
+
+===========
+
+ SELECT *
+		FROM fs_order_uploads_detail  WHERE is_refund = 0 AND is_print = 1 AND tracking_code = "84856612419896"
+
+time:::0.652068853378296
+
+===========
+
+ SELECT *
+		FROM fs_order_uploads_detail  WHERE is_refund = 0 AND is_print = 1 AND tracking_code = "84856606280501"
+
+time:::0.559627056121826
+
+===========
+
+ SELECT *
+		FROM fs_order_uploads_detail  WHERE is_refund = 0 AND is_print = 1 AND tracking_code = "SPXVN02765764471B"
+
+time:::0.511976957321167
+
+===========
+
+ SELECT *
+		FROM fs_order_uploads_detail  WHERE is_refund = 0 AND is_print = 1 AND tracking_code = "JNTRM0000082447VNA"
+
+time:::0.575411796569824
+
+===========
+
+ SELECT *
+		FROM fs_order_uploads_detail  WHERE is_refund = 0 AND is_print = 1 AND tracking_code = "LMP0152121543VNA"
+
+time:::0.501816034317017
+
+===========
+
+ SELECT *
+		FROM fs_order_uploads_detail  WHERE is_refund = 0 AND is_print = 1 AND tracking_code = "JNTRM0000088967VNA"
+
+time:::0.413980007171631
+
+===========
+
+ SELECT *
+		FROM fs_order_uploads_detail  WHERE is_refund = 0 AND is_print = 1 AND tracking_code = "JNTCR0000680733VNA"
+
+time:::0.389437913894653
+
+===========
+
+ SELECT *
+		FROM fs_order_uploads_detail  WHERE is_refund = 0 AND is_print = 1 AND tracking_code = "SPXVN02818118776C"
+
+time:::0.651428937911987
+
+===========
+
+ SELECT *
+		FROM fs_order_uploads_detail  WHERE is_refund = 0 AND is_print = 1 AND tracking_code = "JNTRM0000081814VNA"
+
+time:::0.570664882659912
+
+===========
+
+ SELECT *
+		FROM fs_order_uploads_detail  WHERE is_refund = 0 AND is_print = 1 AND tracking_code = "LMP0152710523VNA"
+
+time:::0.628012895584106
+
+===========
+
+ SELECT *
+		FROM fs_order_uploads_detail  WHERE is_refund = 0 AND is_print = 1 AND tracking_code = "SPXVN02915223185B"
+
+time:::0.536246061325073
+
+===========
+
+ SELECT *
+		FROM fs_order_uploads_detail  WHERE is_refund = 0 AND is_print = 1 AND tracking_code = "JNTCR0000717949VNA"
+
+time:::0.489074945449829
+
+===========
+
+ SELECT *
+		FROM fs_order_uploads_detail  WHERE is_refund = 0 AND is_print = 1 AND tracking_code = "JNTMP0011889029VNA"
+
+time:::0.483038187026978
+
+===========
+
+ SELECT *
+		FROM fs_order_uploads_detail  WHERE is_refund = 0 AND is_print = 1 AND tracking_code = "SPXVN02543170594C"
+
+time:::0.544323205947876
+
+===========
+
+ SELECT *
+		FROM fs_order_uploads_detail  WHERE is_refund = 0 AND is_print = 1 AND tracking_code = "528884206"
+
+time:::0.508559942245483
+
+===========
+
+================REMOTE: 171.224.180.81  (2022-12-17 08:36:39)===================
+
+================URL : /admin/product/edit/23538763===================
+
+================1671240999===================
+
+ SELECT *
+FROM fs_config
+
+time:::0.00202012062072754
+
+===========
+
+SELECT u.id, u.username, u.email,u.published
+        FROM fs_users AS u
+        WHERE u.id = '9' AND u.published = 1
+        LIMIT 1
+
+time:::0.00100207328796387
+
+===========
+
+================REMOTE: 171.224.180.81  (2022-12-17 08:36:39)===================
+
+================URL : /admin/product/edit/23538763===================
+
+================1671240999===================
+
+ SELECT lang_key, lang_vi 
+						FROM fs_languages_text_admin 
+						WHERE is_common = 1
+					 OR module = 'products' 
+
+time:::0.00061798095703125
+
+===========
+
+ SELECT * FROM fs_config
+			WHERE is_common = 1
+			
+
+time:::0.00195908546447754
+
+===========
+
+ SELECT params  FROM fs_config_modules
+		WHERE module = "products" AND view = "product" AND ( task = "display" OR task = "" OR task IS NULL) 
+
+time:::0.00163102149963379
+
+===========
+
+ SELECT params  FROM fs_config_modules
+		WHERE module = "products" AND view = "product" AND ( task = "display" OR task = "" OR task IS NULL) 
+
+time:::0.000577926635742188
+
+===========
+
+SELECT id,`trigger` FROM fs_permission_tasks WHERE module = "products" AND `view` = "products"
+
+time:::0.00040888786315918
+
+===========
+
+ SELECT user_id FROM fs_users_permission WHERE user_id = "9" 
+
+time:::0.000701904296875
+
+===========
+
+ SELECT *
+			FROM fs_products
+			WHERE id = 23538763 
+
+time:::0.000657081604003906
+
+===========
+
+ SELECT id, name 
+		FROM fs_manufactories ORDER BY ordering ASC
+
+time:::0.000358104705810547
+
+===========
+
+ SELECT *
+		FROM fs_products_status  WHERE published = 1
+
+time:::0.000423908233642578
+
+===========
+
+ SELECT *
+		FROM fs_products_types  WHERE published = 1
+
+time:::0.00211000442504883
+
+===========
+
+ SELECT *
+		FROM fs_products_origins  WHERE published = 1
+
+time:::0.000410079956054688
+
+===========
+
+ SELECT id, name,list_parents, parent_id AS parent_id 
+		FROM fs_products_categories ORDER BY ordering ASC
+
+time:::0.000905990600585938
+
+===========
+
+SELECT  TABLE_NAME  FROM INFORMATION_SCHEMA.TABLES WHERE 
+				TABLE_TYPE='BASE TABLE' AND TABLE_NAME='fs_products_parameter'
+				AND TABLE_SCHEMA = 'sql_hdshop'
+
+time:::0.000589132308959961
+
+===========
+
+ SELECT *
+		FROM fs_products_parameter
+		WHERE record_id = 23538763 
+
+time:::0.00448799133300781
+
+===========
+
+SELECT  TABLE_NAME  FROM INFORMATION_SCHEMA.TABLES WHERE 
+				TABLE_TYPE='BASE TABLE' AND TABLE_NAME='fs_products_parameter'
+				AND TABLE_SCHEMA = 'sql_hdshop'
+
+time:::0.000720977783203125
+
+===========
+
+ SELECT * 
+		FROM fs_products_tables
+		WHERE table_name =  'fs_products_parameter' 
+		AND field_name <> 'id' 
+		ORDER BY ordering ASC 
+
+time:::0.000722169876098633
+
+===========
+
+ SELECT *
+		FROM fs_extends_items  WHERE group_id = 51
+
+time:::0.000550031661987305
+
+===========
+
+ SELECT *
+		FROM fs_extends_items  WHERE group_id = 52
+
+time:::0.000401020050048828
+
+===========
+
+ SELECT *
+		FROM fs_products_images
+		WHERE record_id = 23538763 
+		ORDER BY ordering ASC, image ASC 
+
+time:::0.00132203102111816
+
+===========
+
+SELECT *
+            FROM fs_menus_admin_add
+            WHERE published = 1 ORDER BY ordering ASC
+
+time:::0.00108909606933594
+
+===========
+
+SELECT * FROM fs_users_groups WHERE id = 6
+
+time:::0.000682830810546875
+
+===========
+
+SELECT * FROM fs_permission_tasks WHERE id IN (4,1,2,3,5,6,7,8,21,18,19,20,25,22,23,24,29,41,38,40,39,9,10,11,12,13,17,14,15,16,42,43,44,45,46,47,48,33,30,31,32,37,34,35,36,49,51,50,52)
+
+time:::0.00141191482543945
+
+===========
+
+ SELECT *, parent_id as parent_id
+						  FROM fs_menus_admin
+						  WHERE published = 1
+						  
+						  ORDER BY ordering 
+						 
+
+time:::0.00324010848999023
+
+===========
+
+ SELECT a.permission,b.module ,b.view 
+						FROM fs_users_permission AS a 
+						INNER JOIN fs_permission_tasks  AS b ON a.task_id = b.id
+						WHERE user_id = 9
+					
+
+time:::0.00076603889465332
+
+===========
+
+================REMOTE: 171.224.180.81  (2022-12-17 08:36:49)===================
+
+================URL : /admin/product===================
+
+================1671241009===================
+
+ SELECT *
+FROM fs_config
+
+time:::0.00215792655944824
+
+===========
+
+SELECT u.id, u.username, u.email,u.published
+        FROM fs_users AS u
+        WHERE u.id = '9' AND u.published = 1
+        LIMIT 1
+
+time:::0.00110697746276855
+
+===========
+
+================REMOTE: 171.224.180.81  (2022-12-17 08:36:49)===================
+
+================URL : /admin/product===================
+
+================1671241009===================
+
+ SELECT lang_key, lang_vi 
+						FROM fs_languages_text_admin 
+						WHERE is_common = 1
+					 OR module = 'products' 
+
+time:::0.00150108337402344
+
+===========
+
+ SELECT * FROM fs_config
+			WHERE is_common = 1
+			
+
+time:::0.00273299217224121
+
+===========
+
+ SELECT params  FROM fs_config_modules
+		WHERE module = "products" AND view = "product" AND ( task = "display" OR task = "" OR task IS NULL) 
+
+time:::0.00133085250854492
+
+===========
+
+ SELECT params  FROM fs_config_modules
+		WHERE module = "products" AND view = "product" AND ( task = "display" OR task = "" OR task IS NULL) 
+
+time:::0.000710010528564453
+
+===========
+
+ SELECT a.*,b.* FROM fs_products as a LEFT JOIN fs_warehouses_products_total as b ON a.id = b.product_id WHERE 1=1    AND ( a.code LIKE '%360h%' OR a.name LIKE '%360h%' OR a.barcode LIKE '%360h%' OR a.id = '360h' ) ORDER BY created_time DESC , id DESC  LIMIT 0,50 
+
+time:::1.00135803222656E-5
+
+===========
+
+ SELECT id, name,list_parents, parent_id AS parent_id 
+		FROM fs_products_categories ORDER BY ordering ASC
+
+time:::0.00169706344604492
+
+===========
+
+ SELECT *
+		FROM fs_warehouses  WHERE published = 1
+
+time:::0.000729084014892578
+
+===========
+
+ SELECT a.*,b.* FROM fs_products as a LEFT JOIN fs_warehouses_products_total as b ON a.id = b.product_id WHERE 1=1    AND ( a.code LIKE '%360h%' OR a.name LIKE '%360h%' OR a.barcode LIKE '%360h%' OR a.id = '360h' ) ORDER BY created_time DESC , id DESC 
+
+time:::0.0453457832336426
+
+===========
+
+SELECT id,`trigger` FROM fs_permission_tasks WHERE module = "products" AND `view` = "products"
+
+time:::0.000729799270629883
+
+===========
+
+ SELECT user_id FROM fs_users_permission WHERE user_id = "9" 
+
+time:::0.000400066375732422
+
+===========
+
+ SELECT code
+			FROM fs_products
+			WHERE id = 23326561
+
+time:::0.000472068786621094
+
+===========
+
+ SELECT amount
+		FROM fs_warehouses_products  WHERE product_id = 23326561
+
+time:::0.000455141067504883
+
+===========
+
+ SELECT amount,amount_hold
+		FROM fs_warehouses_products  WHERE product_id = 23326561
+
+time:::0.000329017639160156
+
+===========
+
+ SELECT amount,amount_hold
+		FROM fs_warehouses_products  WHERE product_id = 23326561
+
+time:::0.000285148620605469
+
+===========
+
+SELECT id,`trigger` FROM fs_permission_tasks WHERE module = "products" AND `view` = "products"
+
+time:::0.000324010848999023
+
+===========
+
+ SELECT user_id FROM fs_users_permission WHERE user_id = "9" 
+
+time:::0.000319004058837891
+
+===========
+
+ SELECT code
+			FROM fs_products
+			WHERE id = 23538763
+
+time:::0.000503063201904297
+
+===========
+
+ SELECT amount
+		FROM fs_warehouses_products  WHERE product_id = 23538763
+
+time:::0.00053095817565918
+
+===========
+
+ SELECT amount,amount_hold
+		FROM fs_warehouses_products  WHERE product_id = 23538763
+
+time:::0.000359058380126953
+
+===========
+
+ SELECT amount,amount_hold
+		FROM fs_warehouses_products  WHERE product_id = 23538763
+
+time:::0.000365972518920898
+
+===========
+
+SELECT *
+            FROM fs_menus_admin_add
+            WHERE published = 1 ORDER BY ordering ASC
+
+time:::0.000646829605102539
+
+===========
+
+SELECT * FROM fs_users_groups WHERE id = 6
+
+time:::0.000559091567993164
+
+===========
+
+SELECT * FROM fs_permission_tasks WHERE id IN (4,1,2,3,5,6,7,8,21,18,19,20,25,22,23,24,29,41,38,40,39,9,10,11,12,13,17,14,15,16,42,43,44,45,46,47,48,33,30,31,32,37,34,35,36,49,51,50,52)
+
+time:::0.000759124755859375
+
+===========
+
+ SELECT *, parent_id as parent_id
+						  FROM fs_menus_admin
+						  WHERE published = 1
+						  
+						  ORDER BY ordering 
+						 
+
+time:::0.00262713432312012
+
+===========
+
+ SELECT a.permission,b.module ,b.view 
+						FROM fs_users_permission AS a 
+						INNER JOIN fs_permission_tasks  AS b ON a.task_id = b.id
+						WHERE user_id = 9
+					
+
+time:::0.000720977783203125
+
+===========
+
+================REMOTE: 171.224.180.81  (2022-12-17 08:36:54)===================
+
+================URL : /admin/product===================
+
+================1671241014===================
+
+ SELECT *
+FROM fs_config
+
+time:::0.00208091735839844
+
+===========
+
+SELECT u.id, u.username, u.email,u.published
+        FROM fs_users AS u
+        WHERE u.id = '9' AND u.published = 1
+        LIMIT 1
+
+time:::0.00103497505187988
+
+===========
+
+================REMOTE: 171.224.180.81  (2022-12-17 08:36:54)===================
+
+================URL : /admin/product===================
+
+================1671241014===================
+
+ SELECT lang_key, lang_vi 
+						FROM fs_languages_text_admin 
+						WHERE is_common = 1
+					 OR module = 'products' 
+
+time:::0.00103998184204102
+
+===========
+
+ SELECT * FROM fs_config
+			WHERE is_common = 1
+			
+
+time:::0.00228595733642578
+
+===========
+
+ SELECT params  FROM fs_config_modules
+		WHERE module = "products" AND view = "product" AND ( task = "display" OR task = "" OR task IS NULL) 
+
+time:::0.00130391120910645
+
+===========
+
+ SELECT params  FROM fs_config_modules
+		WHERE module = "products" AND view = "product" AND ( task = "display" OR task = "" OR task IS NULL) 
+
+time:::0.000800132751464844
+
+===========
+
+ SELECT a.*,b.* FROM fs_products as a LEFT JOIN fs_warehouses_products_total as b ON a.id = b.product_id WHERE 1=1    AND ( a.code LIKE '%002j%' OR a.name LIKE '%002j%' OR a.barcode LIKE '%002j%' OR a.id = '002j' ) ORDER BY created_time DESC , id DESC  LIMIT 0,50 
+
+time:::8.10623168945312E-6
+
+===========
+
+ SELECT id, name,list_parents, parent_id AS parent_id 
+		FROM fs_products_categories ORDER BY ordering ASC
+
+time:::0.00125503540039062
+
+===========
+
+ SELECT *
+		FROM fs_warehouses  WHERE published = 1
+
+time:::0.000706911087036133
+
+===========
+
+ SELECT a.*,b.* FROM fs_products as a LEFT JOIN fs_warehouses_products_total as b ON a.id = b.product_id WHERE 1=1    AND ( a.code LIKE '%002j%' OR a.name LIKE '%002j%' OR a.barcode LIKE '%002j%' OR a.id = '002j' ) ORDER BY created_time DESC , id DESC 
+
+time:::0.0508878231048584
+
+===========
+
+SELECT id,`trigger` FROM fs_permission_tasks WHERE module = "products" AND `view` = "products"
+
+time:::0.00177001953125
+
+===========
+
+ SELECT user_id FROM fs_users_permission WHERE user_id = "9" 
+
+time:::0.000603914260864258
+
+===========
+
+ SELECT code
+			FROM fs_products
+			WHERE id = 37896325
+
+time:::0.000607967376708984
+
+===========
+
+ SELECT amount
+		FROM fs_warehouses_products  WHERE product_id = 37896325
+
+time:::0.000715017318725586
+
+===========
+
+ SELECT amount,amount_hold
+		FROM fs_warehouses_products  WHERE product_id = 37896325
+
+time:::0.00193500518798828
+
+===========
+
+ SELECT amount,amount_hold
+		FROM fs_warehouses_products  WHERE product_id = 37896325
+
+time:::0.000493049621582031
+
+===========
+
+SELECT id,`trigger` FROM fs_permission_tasks WHERE module = "products" AND `view` = "products"
+
+time:::0.000473976135253906
+
+===========
+
+ SELECT user_id FROM fs_users_permission WHERE user_id = "9" 
+
+time:::0.000464916229248047
+
+===========
+
+ SELECT code
+			FROM fs_products
+			WHERE id = 37896324
+
+time:::0.00101995468139648
+
+===========
+
+ SELECT amount
+		FROM fs_warehouses_products  WHERE product_id = 37896324
+
+time:::0.000495195388793945
+
+===========
+
+ SELECT amount,amount_hold
+		FROM fs_warehouses_products  WHERE product_id = 37896324
+
+time:::0.000337123870849609
+
+===========
+
+ SELECT amount,amount_hold
+		FROM fs_warehouses_products  WHERE product_id = 37896324
+
+time:::0.000288009643554688
+
+===========
+
+SELECT *
+            FROM fs_menus_admin_add
+            WHERE published = 1 ORDER BY ordering ASC
+
+time:::0.00158882141113281
+
+===========
+
+SELECT * FROM fs_users_groups WHERE id = 6
+
+time:::0.00114607810974121
+
+===========
+
+SELECT * FROM fs_permission_tasks WHERE id IN (4,1,2,3,5,6,7,8,21,18,19,20,25,22,23,24,29,41,38,40,39,9,10,11,12,13,17,14,15,16,42,43,44,45,46,47,48,33,30,31,32,37,34,35,36,49,51,50,52)
+
+time:::0.00153708457946777
+
+===========
+
+ SELECT *, parent_id as parent_id
+						  FROM fs_menus_admin
+						  WHERE published = 1
+						  
+						  ORDER BY ordering 
+						 
+
+time:::0.00314211845397949
+
+===========
+
+ SELECT a.permission,b.module ,b.view 
+						FROM fs_users_permission AS a 
+						INNER JOIN fs_permission_tasks  AS b ON a.task_id = b.id
+						WHERE user_id = 9
+					
+
+time:::0.000746965408325195
+
+===========
+
+================REMOTE: 171.224.180.81  (2022-12-17 08:37:05)===================
+
+================URL : /admin/index.php?module=products&view=products&task=ajax_show_info_product&raw=1&id=37896325===================
+
+================1671241025===================
+
+ SELECT *
+FROM fs_config
+
+time:::0.00175094604492188
+
+===========
+
+SELECT u.id, u.username, u.email,u.published
+        FROM fs_users AS u
+        WHERE u.id = '9' AND u.published = 1
+        LIMIT 1
+
+time:::0.00101900100708008
+
+===========
+
+================REMOTE: 171.224.180.81  (2022-12-17 08:37:05)===================
+
+================URL : /admin/index.php?module=products&view=products&task=ajax_show_info_product&raw=1&id=37896325===================
+
+================1671241025===================
+
+ SELECT lang_key, lang_vi 
+						FROM fs_languages_text_admin 
+						WHERE is_common = 1
+					 OR module = 'products' 
+
+time:::0.000982999801635742
+
+===========
+
+ SELECT * FROM fs_config
+			WHERE is_common = 1
+			
+
+time:::0.00246787071228027
+
+===========
+
+ SELECT params  FROM fs_config_modules
+		WHERE module = "products" AND view = "product" AND ( task = "display" OR task = "" OR task IS NULL) 
+
+time:::0.00120091438293457
+
+===========
+
+ SELECT params  FROM fs_config_modules
+		WHERE module = "products" AND view = "product" AND ( task = "display" OR task = "" OR task IS NULL) 
+
+time:::0.002410888671875
+
+===========
+
+ INSERT INTO  fs_admin_history(`ids_action`,`module`,`view`,`task`,`user_id`,`username`,`ipaddress`,`created_time`) VALUES ('37896325','products','products','ajax_show_info_product','9','admin','171.224.180.81','2022-12-17 08:37:06') 
+
+time:::0.000702857971191406
+
+===========
+
+ SELECT *
+			FROM fs_products
+			WHERE id = 37896325
+
+time:::0.000844955444335938
+
+===========
+
+ SELECT *
+		FROM fs_products_status 
+
+time:::0.000366926193237305
+
+===========
+
+ SELECT *
+		FROM fs_products_types  WHERE published = 1
+
+time:::0.000511884689331055
+
+===========
+
+ SELECT *
+		FROM fs_warehouses_products  WHERE product_id = 37896325
+
+time:::0.000544071197509766
+
+===========
+
+ SELECT *
+		FROM fs_warehouses  WHERE published = 1
+
+time:::0.000380992889404297
+
+===========
+
+================REMOTE: 171.224.180.81  (2022-12-17 08:37:35)===================
+
+================URL : /admin/product/edit/37896324===================
+
+================1671241055===================
+
+ SELECT *
+FROM fs_config
+
+time:::0.00197601318359375
+
+===========
+
+SELECT u.id, u.username, u.email,u.published
+        FROM fs_users AS u
+        WHERE u.id = '9' AND u.published = 1
+        LIMIT 1
+
+time:::0.000866889953613281
+
+===========
+
+================REMOTE: 171.224.180.81  (2022-12-17 08:37:35)===================
+
+================URL : /admin/product/edit/37896324===================
+
+================1671241055===================
+
+ SELECT lang_key, lang_vi 
+						FROM fs_languages_text_admin 
+						WHERE is_common = 1
+					 OR module = 'products' 
+
+time:::0.00106000900268555
+
+===========
+
+ SELECT * FROM fs_config
+			WHERE is_common = 1
+			
+
+time:::0.00258302688598633
+
+===========
+
+ SELECT params  FROM fs_config_modules
+		WHERE module = "products" AND view = "product" AND ( task = "display" OR task = "" OR task IS NULL) 
+
+time:::0.00130486488342285
+
+===========
+
+ SELECT params  FROM fs_config_modules
+		WHERE module = "products" AND view = "product" AND ( task = "display" OR task = "" OR task IS NULL) 
+
+time:::0.000915050506591797
+
+===========
+
+SELECT id,`trigger` FROM fs_permission_tasks WHERE module = "products" AND `view` = "products"
+
+time:::0.000446796417236328
+
+===========
+
+ SELECT user_id FROM fs_users_permission WHERE user_id = "9" 
+
+time:::0.000436067581176758
+
+===========
+
+ SELECT *
+			FROM fs_products
+			WHERE id = 37896324 
+
+time:::0.000715970993041992
+
+===========
+
+ SELECT id, name 
+		FROM fs_manufactories ORDER BY ordering ASC
+
+time:::0.000375986099243164
+
+===========
+
+ SELECT *
+		FROM fs_products_status  WHERE published = 1
+
+time:::0.000478982925415039
+
+===========
+
+ SELECT *
+		FROM fs_products_types  WHERE published = 1
+
+time:::0.000439882278442383
+
+===========
+
+ SELECT *
+		FROM fs_products_origins  WHERE published = 1
+
+time:::0.000267982482910156
+
+===========
+
+ SELECT id, name,list_parents, parent_id AS parent_id 
+		FROM fs_products_categories ORDER BY ordering ASC
+
+time:::0.00403594970703125
+
+===========
+
+SELECT  TABLE_NAME  FROM INFORMATION_SCHEMA.TABLES WHERE 
+				TABLE_TYPE='BASE TABLE' AND TABLE_NAME='fs_products_parameter'
+				AND TABLE_SCHEMA = 'sql_hdshop'
+
+time:::0.000799179077148438
+
+===========
+
+ SELECT *
+		FROM fs_products_parameter
+		WHERE record_id = 37896324 
+
+time:::0.00500202178955078
+
+===========
+
+SELECT  TABLE_NAME  FROM INFORMATION_SCHEMA.TABLES WHERE 
+				TABLE_TYPE='BASE TABLE' AND TABLE_NAME='fs_products_parameter'
+				AND TABLE_SCHEMA = 'sql_hdshop'
+
+time:::0.00073695182800293
+
+===========
+
+ SELECT * 
+		FROM fs_products_tables
+		WHERE table_name =  'fs_products_parameter' 
+		AND field_name <> 'id' 
+		ORDER BY ordering ASC 
+
+time:::0.000624895095825195
+
+===========
+
+ SELECT *
+		FROM fs_extends_items  WHERE group_id = 51
+
+time:::0.000396013259887695
+
+===========
+
+ SELECT *
+		FROM fs_extends_items  WHERE group_id = 52
+
+time:::0.000434160232543945
+
+===========
+
+ SELECT *
+		FROM fs_products_images
+		WHERE record_id = 37896324 
+		ORDER BY ordering ASC, image ASC 
+
+time:::0.0013880729675293
+
+===========
+
+SELECT *
+            FROM fs_menus_admin_add
+            WHERE published = 1 ORDER BY ordering ASC
+
+time:::0.00118494033813477
+
+===========
+
+SELECT * FROM fs_users_groups WHERE id = 6
+
+time:::0.000805139541625977
+
+===========
+
+SELECT * FROM fs_permission_tasks WHERE id IN (4,1,2,3,5,6,7,8,21,18,19,20,25,22,23,24,29,41,38,40,39,9,10,11,12,13,17,14,15,16,42,43,44,45,46,47,48,33,30,31,32,37,34,35,36,49,51,50,52)
+
+time:::0.00123095512390137
+
+===========
+
+ SELECT *, parent_id as parent_id
+						  FROM fs_menus_admin
+						  WHERE published = 1
+						  
+						  ORDER BY ordering 
+						 
+
+time:::0.0043489933013916
+
+===========
+
+ SELECT a.permission,b.module ,b.view 
+						FROM fs_users_permission AS a 
+						INNER JOIN fs_permission_tasks  AS b ON a.task_id = b.id
+						WHERE user_id = 9
+					
+
+time:::0.00100994110107422
+
+===========

@@ -1,0 +1,20 @@
+// .header_wrapper_wrap_body {
+// 	background: #fff;
+// }
+.header_wrapper_wrap_body  {
+	background: #fff;
+	.header-l .logo {
+		svg {
+			fill: var(--blue-color);
+		}
+	}
+	.dcjq-mega-menu .menu_item_a {
+		color: var(--extra-color);
+	}
+	.search_mb svg,.shopcart_simple .buy_icon svg {
+		fill: var(--extra-color);
+	}
+	.menu_show .navicon-line {
+		background: var(--extra-color);
+	}
+}

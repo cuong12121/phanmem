@@ -1,0 +1,78 @@
+#container3 {
+	background-color: #fff;
+	width: 310px;
+	margin-left:8px;
+}
+.sliderGallery {
+	overflow: hidden;
+	position: relative;
+	padding: 10px;
+	height: 140px;
+	width: 300px;
+}
+
+.sliderGallery UL {
+	position: absolute;
+	list-style: none;
+	overflow: none;
+	white-space: nowrap;
+	padding: 0;
+	margin: 0;
+}
+
+.sliderGallery UL LI {
+	display: inline;
+}
+
+.slider {
+	width: 300px;
+	height: 11px;
+	margin-top: 140px;
+	margin-left: 5px;
+	padding: 1px;
+	position: relative;
+	background: url(../image/bar-bg.png) no-repeat;
+}
+
+.handle {
+	position: absolute;
+	cursor: move;
+	height: 10px;
+	width: 76px;
+	top: 0;
+	background: url(../image/run-bar.png) no-repeat;
+	z-index: 100;
+}
+
+.slider span {
+	color: #bbb;
+	font-size: 80%;
+	cursor: pointer;
+	position: absolute;
+	z-index: 110;
+	top: 3px;
+}
+.ui-resizable-handle { width: 8px; height: 8px; border: 1px solid rgb(128, 128, 128); background: rgb(242, 242, 242); }
+.ui-resizable-n, .ui-resizable-s { left: 45%; }
+.ui-resizable-e, .ui-resizable-w { top: 45%; }
+.ui-resizable-se { bottom: -5px; right: -5px; }
+.ui-slider-horizontal .ui-state-default {background: white url(http://stackoverflow.com/content/img/so/vote-arrow-down.png) no-repeat scroll 50% 50%;}
+.slider .slider-lbl1 {
+	left: 50px;
+}
+
+.slider .slider-lbl2 {
+	left: 107px;
+}
+
+.slider .slider-lbl3 {
+	left: 156px;
+}
+
+.slider .slider-lbl4 {
+	left: 280px;
+}
+
+.slider .slider-lbl5 {
+	left: 455px;
+}

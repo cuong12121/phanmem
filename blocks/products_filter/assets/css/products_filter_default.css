@@ -1,0 +1,24 @@
+.block_products_filter .field_item {
+    border-top: 1px solid #e8e8e8;
+	padding-top: 10px;
+}
+.block_products_filter .field_item:first-child{
+ 	border-top: none;
+ 	padding-top: 0;
+}
+.block_products_filter .field_name{
+	text-transform: uppercase;
+	color: #333333;
+	background: url(../images/icon_field_name.png) no-repeat 0 center;
+	padding-left: 18px;
+}
+.block_products_filter .field_label > h3 {
+    font-size: 13px;
+    margin: 0;
+}
+.block_products_filter .field_label a {
+    background: url("../images/icon_field_label.png") no-repeat scroll 18px center;
+    color: #555555;
+    display: block;
+    padding: 10px 10px 10px 30px;
+}

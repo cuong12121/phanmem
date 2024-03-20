@@ -1,0 +1,106 @@
+#search_form_simple{
+	position: relative;
+	width: 260px;
+}
+@media only screen and (max-width:768px){
+	#search_form_simple {
+	    position: relative;
+	    width: 100%;
+	}
+}
+.keyword_simple {
+    border-radius: 0px;
+    color: #797979;
+    padding: 0 10px;
+    width: 100%;
+}
+.searchbt_simple {
+    background: url("../images/icon-search.png") no-repeat scroll center center;
+    border: medium none;
+    position: absolute;
+    right: 0;
+    width: 36px;
+     top: 0;
+      text-indent: -99999px;
+}
+@media only screen and (max-width:768px){
+	.searchbt_simple {
+	     /*background: none repeat scroll 0 0 #7f7f7f;*/
+	    border-radius: 3px;
+	    color: #fff;
+	    font-weight: bold;
+	    text-align: center;
+	    text-indent: inherit;
+	    text-transform: uppercase;
+	    width: 52px;
+	}
+}
+.ui-widget-content {
+    display: block;
+    width: 345px;
+    margin: 55px auto 0;
+    border: 1px solid #e2e2e2;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    box-shadow: 0 1px 3px 0 #7d7d7d;
+    -webkit-box-shadow: 0 1px 3px 0 #7d7d7d;
+    -moz-box-shadow: 0 1px 3px 0 #7d7d7d;
+    background: #fff;
+    position: absolute;
+    z-index: 999;
+    left: 170px;
+}
+.ui-widget-content li {
+    display: block;
+    background: #fff;
+    overflow: hidden;
+    list-style: none;
+    border-bottom: 1px dotted #ccc;
+}
+.ui-widget-content li a {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    padding: 6px;
+}
+.ui-widget-content li  img {
+    float: left;
+    width: 50px;
+    height: 50px;
+    margin: 0 6px 0 0;
+}
+.ui-widget-content li  h3 {
+    display: block;
+    color: #333;
+    font-size: 14px;
+    font-weight: 700;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin: 0
+}
+.ui-widget-content li  span.price {
+	float: left;
+    font-size: 14px;
+    margin-top: 8px;
+    color: red;
+}
+.autocomplete-suggestions{position:absolute;top:4px;right:-5px;margin:6px 0 0 6px;_background:none;_margin:1px 0 0 0}
+.autocomplete-suggestions{border:1px solid #0083bf;background:#fff;cursor:default;overflow:auto;margin:0 6px 6px -1px;width:272px  !important;top:31px;left:101px; position: fixed !important}
+.autocomplete-suggestions div{font:400 10pt opensans !important;cursor:pointer;width:100%;display:inline-block;clear:both;padding:0;margin:0;margin-bottom:-5px}
+.autocomplete-suggestions .autocomplete-group{padding:8px 3%;width:100%;background:#f1f1f1}
+.autocomplete-suggestions div a,.autocomplete-suggestions div a:link,.autocomplete-suggestions div a:visited{display:inline-block;margin:0;padding:6px 3%;width:100%;font-family:opensans; font-size:13px;color:#333;background:#fff;clear:both;border-bottom:1px solid #eee}
+.autocomplete-suggestions div a:hover{background:#d9eef8}
+.autocomplete-suggestions div a img{width:50px;float:left}
+.autocomplete-suggestions div a label{float:right;width:186px;font-weight:normal;cursor:pointer;margin:0;padding:0}
+.autocomplete-suggestions div a span{display:block;clear:both;cursor:pointer;margin:0;padding:0}
+.autocomplete-suggestions div a span.price{color:#fd0000;padding-top:10px}
+.autocomplete-suggestions div.last{border:none}
+.autocomplete-suggestions strong{font-weight:bold;color:#0083bf}
+@media only screen and (max-width:768px){
+    .autocomplete-suggestions {
+           top: 30px;
+           left: 10px;
+    }
+}

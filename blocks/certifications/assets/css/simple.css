@@ -1,0 +1,81 @@
+/*begin partners*/
+.partners {
+	     border: 1px solid #E7E7E7;
+    border-radius: 4px;
+    position: relative;
+}
+.partners-inner{
+	padding: 20px;
+}
+.partners .title {
+	height: 33px;
+	background: url(../images/user2.png) no-repeat left;
+	padding-left: 45px;
+	font-size: 24px;
+	color: #333;
+	font-weight: bold;
+	margin-bottom: 20px;
+}
+
+.partners .title p {
+	float: right;
+	width: 35px;
+	height: 35px;
+	margin-left: 10px;
+	cursor: pointer;
+}
+
+.partners .title .next {
+	background: url(../images/next.png);
+}
+
+.partners .title .next:hover {
+	background: url(../images/next-h.png);
+}
+
+.partners .title .prev {
+	background: url(../images/prev.png);
+}
+
+.partners .title .prev:hover {
+	background: url(../images/prev-h.png);
+}
+
+.partners .owl-carousel {
+	/*max-height: 140px;*/
+}
+
+.partners .owl-stage {
+	padding-bottom: 2px;
+}
+
+.partners .item {
+	border-radius: 10px;
+	box-sizing: border-box;
+	overflow: hidden;
+}
+
+.partners .item img {
+}
+.partners .owl-controls .owl-nav div {
+   color: #fff;
+    display: inline-block;
+    padding: 10px 10px;
+    position: absolute;
+    top: -4px;
+}
+.partners .owl-nav .owl-prev {
+       background: rgba(0, 0, 0, 0) url(../images/arrow-l.png) no-repeat scroll 0 0 !important;
+    left: -21px;
+}
+.partners .owl-nav .owl-next {
+       background: rgba(0, 0, 0, 0) url(../images/arrow-r.png) no-repeat scroll 0 0 !important;
+    right: -22px;
+}
+/*end partner */
+
+@media screen and (max-width:1200px){
+	.partners {
+	    overflow: hidden;
+	}
+}

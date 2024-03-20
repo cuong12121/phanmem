@@ -1,0 +1,98 @@
+.discount_content{
+	background: none repeat scroll 0 0 #EFEFEF;
+    border-radius: 4px 4px 4px 4px;
+    float: left;
+    padding: 14px 10px 17px;
+    width: 347px;
+}
+.discount_popup_content{
+	position: relative;
+}
+.discount_popup_content .label{
+	background: url("../images/discount.png") no-repeat scroll 4px 12px rgba(0, 0, 0, 0);
+    color: #FFFFFF;
+    cursor: pointer;
+    height: 31px;
+    padding-left: 39px;
+    padding-top: 10px;
+    font-weight: bold;
+   
+}
+.discount_popup_content_inner{
+	 background-image: linear-gradient(to bottom, #390F35, #A4518F);
+    border-radius: 4px 4px 0 0;
+    bottom: 37px;
+    left: -57px;
+    padding: 4px 10px 5px;
+    position: absolute;
+    z-index: 50;
+}
+.discount_description_inner{
+	background: none repeat scroll 0 0 #FFFFFF;
+    border-radius: 2px 2px 0 0;
+    padding: 10px;
+}
+.discount_description{
+	color: #353535;
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 12px;
+    text-align: center;
+}
+.discount_description span,.discount_description strong{
+	 color: #FF740E;
+}
+.discount_popup_content .button{
+	background: none repeat scroll 0 0 #FF740E;
+    border: 2px solid #FF740E;
+    border-radius: 3px 3px 3px 3px;
+    color: #FFFFFF;
+    font-size: 11px;
+    font-weight: bold;
+    margin-right: 2px;
+    padding: 1px 0px;
+}
+.discount_popup_content .button{
+	background: none repeat scroll 0 0 #FF740E;
+    border: 2px solid #FF740E;
+    border-radius: 3px;
+    color: #FFFFFF;
+    font-size: 11px;
+    font-weight: bold;
+    padding: 1px 21px;
+    cursor: pointer;
+}
+.discount_popup_content #bt-female{
+	margin-right: 6px;
+}
+.discount_description_label{
+	background: url("../images/subtract.gif") no-repeat scroll right -2px rgba(0, 0, 0, 0);
+    color: #EFA851;
+    cursor: pointer;
+    font-size: 17px;
+    font-weight: bold;
+    margin-bottom: 4px;
+    text-align: center;
+}
+.discount_popup_content #discount_form .bt-select{
+    border: 2px solid red;
+}
+.discount_popup_content .txt-input{
+	border: 1px solid #D6D6D6;
+    color: #808080;
+    font-size: 11px;
+    height: 22px;
+    margin-bottom: 8px;
+    margin-right: 4px;
+    padding-left: 4px;
+    width: 253px;
+}
+.discount_popup_content .note{
+	color: #898989;
+    margin-top: 10px;
+    text-align: center;
+}
+.discount_description_inner_wrapper{
+    padding: 0 10px;
+    width: 280px;
+}

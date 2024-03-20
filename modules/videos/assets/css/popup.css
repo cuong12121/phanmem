@@ -1,0 +1,28 @@
+.gallery_tabs .popup{
+	display: none;
+    margin-left: -284px;
+    margin-top: -191px;
+    padding: 10px;
+    background: none repeat scroll 0 0 #FFFFFF;
+    box-shadow: 0 0 20px #000000;
+    left: 50%;
+    position: fixed;
+    top: 50%;
+    z-index: 101;
+}.gallery_tabs .popup_v360{
+    margin-left: -130px;
+    margin-top: -160px;
+}
+.content-popup {
+    position: relative;
+}
+.button-close {
+    cursor: pointer;
+    position: absolute;
+     right: -26px;
+    top: -26px;
+}
+#playlist {
+    height: 150px;
+    width: 170px;
+}

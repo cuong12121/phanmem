@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA,mCAAmC,CAClC,UAAU,CAAE,IAAI,CACb,OAAO,CAAE,IAAI,CAEZ,uDAAK,CACJ,KAAK,CAAE,gBAAgB",
+"sources": ["manufactory.scss"],
+"names": [],
+"file": "manufactory.css"
+}

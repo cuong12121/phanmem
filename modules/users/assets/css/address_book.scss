@@ -1,0 +1,122 @@
+.title_content {
+    border-bottom: 1px solid #d8d8d8;
+    color: #1b99e9;
+    // font-family: semibold;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+.fieldset_item_row{
+    margin-bottom: 10px;
+    text-align: center;
+}
+.row_edit {
+    margin-bottom: 0px;
+}
+.form_name{
+    color: #333333;
+    display: inline-block;
+    // font-family: opensans;
+    text-align: left;
+    vertical-align: top;
+    width: 140px;
+}
+.value{
+    display: inline-block;
+    position: relative;
+    text-align: left;
+    width: 240px;
+}
+.button_edit:hover,.button_add_address:hover,
+.button_edit:focus,.button_add_address:focus
+{
+	color: #fff;
+}
+.button_add_address{
+	// float: right;
+}
+.button_add_address {
+    width: 100%;
+    border: 1px dashed #888;
+    padding: 22px;
+    box-sizing: border-box;
+    text-align: center;
+    background: #fff;
+    font-size: 16px;
+    display: inline-block;
+    cursor: pointer;
+    span {
+        color: var(--extra-color);
+        display: inline-block;
+        padding-left: 40px;
+        position: relative;
+        svg {
+            width: 26px;
+            height: 26px;
+            position: absolute;
+            top: -5px;
+            left: 0px;
+            fill: #888;
+        }
+    }
+}
+.hide {
+    display: none !important;
+}
+
+.list_address {
+    .address_item {
+        margin-top: 20px;
+        background: #fff;
+        padding: 20px;
+        box-sizing: border-box;
+        line-height: 24px;
+        position: relative;
+        .row_edit {
+            position: absolute;
+            right: 20px;
+            top: 20px;
+            a {
+                display: inline-block;
+                font-size: 15px;
+                padding: 3px 10px;
+                margin-left: 10px;
+            }
+            .button_address_remove {
+
+                border-radius: 5px;
+                background: #f4f4f4;    
+                font {
+                   color: red;
+               }
+           }
+       }
+       .name {
+        text-transform: uppercase;
+        font-size: 16px;
+        line-height: 24px;
+        .default {
+            font-size: 14px;
+            color: var(--extra-color);
+            display: inline-block;
+            margin-left: 10px;
+            text-transform: none;
+            padding-left: 20px;
+            position: relative;
+            svg {
+                width: 14px;
+                height: 14px;
+                fill: var(--extra-color);
+                position: absolute;
+                left: 0px;
+                top: 4px;
+            }
+        }
+    }
+    div {
+        span {
+            color: #555;
+        }
+    }
+}
+
+}

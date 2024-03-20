@@ -1,0 +1,243 @@
+.popup-login-resgister{
+	width: 516px;
+    position: fixed;
+    background: #f6f6f6;
+    z-index: 22222;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 25px 0px 20px;
+    border-radius: 4px;
+    .close_popup{
+    	position: absolute;
+	    top: -19px;
+	    right: -19px;
+	    width: 38px;
+	    height: 38px;
+	    background: #fff;
+	    font-size: 24px;
+	    text-align: center;
+	    padding-top: 9px;
+	    box-sizing: border-box;
+	    border-radius: 50%;
+	    cursor: pointer;
+	    svg{
+	    	width: 14px;
+	    	height: 14px;
+	    }
+    }
+    .title{
+    	text-align: center;
+	    font-size: 22px;
+	    padding-bottom: 15px;
+	    border-bottom: 1px solid #ddd;
+	    margin-bottom: 18px;
+    }
+
+    .social_login{
+    	padding: 0px 50px 22px;
+	    border-bottom: 1px solid #ddd;
+	    position: relative;
+	    margin-bottom: 30px;
+    	>a{
+    		display: block;
+		    position: relative;
+		    height: 45px;
+		    padding: 0px 0px 0px 52px;
+		    margin-bottom: 10px;
+		    line-height: 45px;
+		    border: 1px solid #4267b2;
+		    text-align: center;
+		    background: #ffff;
+		    font-weight: bold;
+		    color: #4267b2;
+		    &:before{
+		    	background: #4267b2;
+		    	content: "";
+		    	height: 45px;
+		    	width: 52px;
+		    	position: absolute;
+		    	left: 0px;
+		    	top: 0px;
+
+		    }
+		    &:nth-child(2){
+				color: #da0808;
+				border: 1px solid #da0808;
+				&:before{
+					background: #da0808;
+				}
+		    }
+    		svg{
+    			width: 25px;
+			    height: 25px;
+			    fill: #fff;
+			    position: absolute;
+			    left: 13px;
+			    top: 10px;
+			    z-index: 2;
+    		}
+
+    	}
+    	.other{
+    		position: absolute;
+		    bottom: -8px;
+		    left: 50%;
+		    background: #f6f6f6;
+		    padding: 0px 10px;
+		    transform: translateX(-50%);
+    	}
+    }
+
+    .website_login{
+    	padding: 0px 50px;
+    }
+    .row-register{
+    	input{
+    		height: 44px;
+		    background: #fff;
+		    border: 1px solid #ddd;
+		    margin-bottom: 12px;
+		    line-height: 44px;
+		    width: 100%;
+		    padding: 0px 15px;
+		    -webkit-box-sizing: border-box;
+		       -moz-box-sizing: border-box;
+		            box-sizing: border-box;
+
+    	}
+    	.btn-submit{
+			background: var(--main-color);
+			color: #fff;
+			border: none;
+			border-radius: 4px;
+			margin-bottom: 15px;
+			cursor: pointer;
+    	}
+    }
+    .save_resetpass{
+    	margin-bottom: 30px;
+    	.save_login{
+    		width: 50%;
+    		float: left;
+    	}
+    	.reset_pass{
+    		width: 50%;
+    		float: right;
+    		text-align: right;
+    		a{
+    			color: var(--blue-color);
+    		}
+    	}
+    }
+
+    .create{
+    	text-align: center;
+    	a{
+    		color: var(--blue-color);
+    	}
+    }
+    .divforget{
+    	padding: 0px 50px;
+    }
+    .code-view{
+    	display: block;
+   	 	margin-bottom: 8px;
+    }
+    .box-register{
+    	padding: 0px 50px;
+    	border-bottom: 1px solid #ddd;
+    	position: relative;
+    	margin-bottom: 12px;
+    	padding-bottom: 12px;
+        @media all and (max-width: 550px) {
+            padding: 0px 20px;
+            height: 434px;
+            overflow-y: auto;
+        }
+    	.other{
+    		position: absolute;
+		    bottom: -8px;
+		    left: 50%;
+		    background: #f6f6f6;
+		    padding: 0px 10px;
+		    transform: translateX(-50%);
+    	}
+    }
+    .row-register-sl{
+    	.date_l{
+    		width: calc(100% - 88px);
+    		float: left;
+    		select{
+    			width: calc(100% / 3 - 10px);
+			    float: left;
+			    margin-right: 10px;
+    		}
+            @media all and (max-width: 550px) {
+                width: 100%;
+                float: none;
+                select{
+                    width: 100%;
+                    float: none;
+                    margin-right: 0px;
+                    margin-bottom: 12px;
+                }
+            }
+
+    	}
+    	.date_r{
+    		width: 88px;
+    		float: right;
+            @media all and (max-width: 550px) {
+                width: 100%;
+                float: none;
+            }
+    	}
+    	.title-t{
+			margin-bottom: 6px;
+		}
+    	select{
+    		height: 44px;
+		    background: #fff;
+		    border: 1px solid #ddd;
+		    padding: 0px 15px;
+            width: 100%;
+
+    	}
+    }
+    .input-check{
+    	margin-top: 14px;
+    	margin-bottom: 14px;
+    	
+    }
+    .text-bot{
+    	a{
+    		color: var(--blue-color);
+    	}
+    }
+    .login-bot{
+    	text-align: center;
+    	a{
+    		color: var(--blue-color);
+    	}
+    }
+
+    @media all and (max-width: 550px) {
+        width: 98%;
+        .close_popup{
+            top: 10px;
+            right: 9px;
+            background: #dedede;
+        }
+        .social_login{
+            padding: 0px 20px 22px;
+        }
+        .website_login{
+            padding: 0px 20px;
+        }
+        .divforget{
+            padding: 0px 20px;
+        }
+    }
+
+}

@@ -1,0 +1,63 @@
+<?php
+/*
+ * Huy write
+ */
+	// controller
+	
+	class DepartmentControllersDepartment extends FSControllers
+	{
+		var $module;
+		var $view;
+		function display()
+		{
+			// call models
+			$model = $this -> model;
+//			$cat  = $model->get_category();
+//			if(!$cat)
+//			{
+//				echo "Kh&#244;ng th&#7845;y Category";	
+//				die;
+//			}
+//			global $tags_group;
+			$query_body = $model->set_query_body();
+			$list = $model->get_list($query_body);
+                         $dataCity = $model->get_city(); 
+                         $info_other = $model->get_info_other(); 
+                        $district = $model->get_categories_tree();
+//			$total = $model->getTotal($query_body);
+//			$pagination = $model->getPagination($total);
+			
+			$breadcrumbs = array();
+			$breadcrumbs[] = array(0=>$cat->name, 1 => '');
+			global $tmpl;	
+			$tmpl -> assign('breadcrumbs', $breadcrumbs);
+			
+			// seo
+			$tmpl -> set_data_seo($cat);
+			
+			// call views			
+			include 'modules/'.$this->module.'/views/'.$this->view.'/default.php';
+		}
+                function get_agency(){
+                    $city_id = FSInput::get('district_id');
+                    if($city_id==0){
+                        unset($_SESSION["district"]);
+                    }else{
+                        $_SESSION["district"]=$city_id;
+                    }
+                }
+                        function loadDistricts(){
+			$city_id = FSInput::get('city_id');
+                        $_SESSION["city"]=$city_id;
+			global $config;
+			
+			$listDistricts = $this->model->getListDistricts($city_id);
+			$html = '';
+			foreach($listDistricts as $item){
+				$html .= '<option  value="'.$item->id.'">'.$item->name.'</option>';
+			}
+			echo $html;
+		}
+	}
+	
+?>

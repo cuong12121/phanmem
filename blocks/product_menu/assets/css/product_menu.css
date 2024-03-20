@@ -1,0 +1,15 @@
+.product_menu_default{
+	margin-bottom: 20px;
+}
+.product_menu_default .item a{
+  background: url(../images/arrow_orange.gif) no-repeat scroll 16px center;
+  border-bottom:1px solid #D2D2D4;
+  display: block;
+  margin: 0;
+  padding: 10px 32px;
+  position: relative;
+}
+
+.product_menu_default li ul.wrapper_children_level0{
+	display: none;
+}

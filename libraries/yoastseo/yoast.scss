@@ -1,0 +1,158 @@
+.inner_cus {
+	width: 50%;
+	background: #fff;
+	position: absolute;
+	z-index: 99;
+	padding: 15px;
+	border-radius: 10px;
+	border: 1px solid #888;
+	display: none;
+}
+.auto_cus li {
+	list-style: none;
+	cursor: pointer;
+}
+.close_cus {
+	top: 0px;
+	right: 0px;
+	display: inline-block;
+	position: absolute;
+	cursor: pointer;
+	padding: 4px 8px;
+	color: white;
+	font-weight: bold;
+	background: red;
+	border-radius: 10px;
+}
+
+.close_cus:hover {
+	background: blue;
+}
+.result_duplicate {
+	color: green;
+}
+.check_duplicate_load {
+	position: relative;
+	&:after {
+		content: '';
+		position: absolute;
+		width: 30px;
+		height: 30px;
+		background-image: url('image/giphy.gif');
+		background-size: cover;
+		top: -5px;
+		right: -40px;
+	}
+}
+.dupli {
+	color: red !important;
+	font-weight: bold;
+}
+.count_character {
+	color: #888888;
+	font-size: 12px;
+	margin-left: 10px;
+}
+#text_point_seo {
+	font-weight: bold;
+	font-size: 20px;
+}
+.text_success {
+	color: green;
+	font-weight: bold;
+}
+.text_warning {
+	color: orange;
+	font-weight: bold;
+}
+.text_danger {
+	color: #a94442;
+	font-weight: bold;
+}
+
+.result_seo {
+	.result_seo_inner {
+	}
+	.van_de {
+		font {
+			a {
+				font-weight: bold;
+				color: #a94442  !important;	
+				text-decoration: underline;
+			}
+
+		}
+	}
+	.cai_tien {
+		font {
+			a {
+				font-weight: bold;
+				color: orange !important;	
+				text-decoration: underline;
+			}
+
+		}
+	}
+	.kq_tot {
+		font {
+			a {
+				font-weight: bold;
+				color: green  !important;	
+				text-decoration: underline;
+			}
+
+		}
+	}
+
+}
+.cls {
+	&:after {
+		content: '';
+		display: block;
+		clear: both;
+	}
+}
+
+.alt_auto{
+	#click_alt_auto{
+		color: #fff;
+		background-color: #337ab7;
+		border-color: #2e6da4;
+		padding: 6px 12px;
+		font-size: 14px;
+		border-radius: 4px;
+		cursor: pointer;
+		transition: .2s;
+		&:hover{
+			background-color: #204d74;
+			border-color: #122b40;
+		}
+	}
+}
+
+.list_keyword {
+	.item {
+		display: inline-block;
+		padding: 5px 10px;
+		border-radius: 3px;
+		background: #ccc;
+		margin-right: 10px;
+		cursor: pointer;
+		opacity: 0.6;
+		&:hover {
+			opacity: 0.9;
+		}
+	}
+	.text_success {
+		background: #00800063;
+	}
+	.text_warning {
+		background: #ffa50047;
+	}
+	.text_danger {
+		background: #a9444247;
+	}
+	.item_active {
+		opacity: 1;
+	}
+}

@@ -1,0 +1,303 @@
+h1{
+    color: #333333;
+    font-size: 19px;
+    font-weight: 700;
+    line-height: 28px;
+    margin-bottom: 8px;
+}
+.table_t{
+	    border: 1px solid #EEE;
+    margin-bottom: 20px;
+}
+.product_instalment select{
+       background: none;
+    color: #333333;
+    padding: 7px 8px;
+    border: #dadada 1px solid;
+    border-radius: 2px;
+    margin-bottom: 14px;
+    width: 100%;
+}
+.table_t thead,
+.table_t tr{
+	border-top: 1px solid #EEE;;
+}
+.table_t .table_head{
+	border-bottom: 1px solid #EEE;
+    text-align: center;
+}
+.table_t .table_head label{
+	    margin: 6px 10px;
+    font-size: 18px;
+    margin: 8px 20px;
+    padding-left: 34px;
+    display: inline-block;
+    line-height: 27px;
+}
+.table_body_l{
+       width: 30%;
+    float: left;
+    text-align: left;
+    box-sizing: border-box;
+    padding: 16px;
+}
+.table_t label{
+    font-weight: bold;
+    margin-bottom: 10px;
+    display: block;
+}
+.table_t  #mortgage{
+	background: url(../images/icon_mortgage.png) no-repeat;
+}
+.table_t  #prove{
+	background: url(../images/icon_prove.png) no-repeat;
+}
+.table_t  #notarized{
+	background: url(../images/icon_notarized.png) no-repeat;
+}
+.table_t #product-content{
+	    text-align: left;
+}
+.table_t #product-content img{
+     height: 200px;
+}
+.table_t .product-img {
+}
+.table_body_r{
+	     float: right;
+    width: 33%;
+    margin-top: 20px;
+    padding-right: 20px;
+    box-sizing: border-box;
+}
+.table_body_c{
+    width: 33%;
+    float: left;
+    padding-left: 66px;
+    box-sizing: border-box;
+    text-align: center;
+}
+.price_modal {
+        overflow: hidden;
+    font-size: 28px;
+    font-weight: bold;
+    font-style: italic;
+    text-shadow: 1px 1px 0 #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 3px 3px 5px #7b7b7b;
+    color: #ED1C24;
+    margin-bottom: 10px;
+    padding: 10px 5px;
+}
+.col-modal-r input[type="text"]{
+       background: none;
+   
+    color: #333333;
+    padding: 7px 8px;
+    width: 100%;
+    border: #dadada 1px solid;
+    border-radius: 2px;
+    margin-bottom: 14px;
+    max-width: 100%;
+}
+.product_instalment .col-modal-r select{
+    
+    width: 100%;
+}
+.product_instalment .col-modal-r textarea{
+    
+    width: 100%;
+    height: 49px;
+    border: #dadada 1px solid;
+    padding: 7px 8px;
+    margin-bottom: 14px;
+}
+.product_instalment .col-modal-r button{
+    background: none repeat scroll 0 0 #0083bf;
+    border-radius: 0px;
+    color: #fff;
+    font-size: 18px;
+    margin-bottom: 24px;
+    padding: 14px;
+    text-transform: uppercase;
+    display: inline-block;
+    border-radius: 4px;
+    width: 100%;
+    border: none;
+    cursor: pointer;
+}
+
+._color .Selector {
+    display: inline-block!important;
+}
+._color .Selector .color_item {
+    display: inline-block!important;
+    border: 1px solid #9B9B9B;
+    height: 28px;
+    width: 28px;
+    margin-right: 4px;
+    visibility: visible!important;
+    cursor: pointer;
+    border-radius: 50%;
+    background-position: -105px -158px;
+    background-repeat: no-repeat;
+    position: relative;
+}
+._color .Selector .color_item font {
+    position: absolute;
+    top: -32px;
+    z-index: 10000;
+    background: #2080CA;
+    color: #FFF;
+    padding: 3px 10px;
+    left: -96%;
+    border-radius: 4px;
+    min-width: 67px;
+    display: none;
+    text-align: center;
+}
+._color .Selector.active .color_item, ._color .Selector:hover .color_item {
+    border: 1px solid red;
+    background-position: -110px -139px;
+}
+._color .Selector:hover .color_item font {
+    display: block;
+}
+._color .Selector .color_item font::after {
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+    border-top: 7px solid #2080CA;
+    display: inline-block;
+    width: 0;
+    height: 0;
+    position: absolute;
+    left: 39%;
+    top: 23px;
+    vertical-align: top;
+    content: '';
+}
+.table_result{
+	text-align: center;
+    padding: 0 16px;
+}
+.table_t #product-description{
+}
+.table_t .name a {
+    font-size: 12px;
+    font-weight: bold;
+}
+.table_t .price span,
+.table_t .discount span{
+    color: #ff3300;
+    font-size: 13px;
+    font-weight: bold;
+}
+.table_t  #product_text{
+	    padding: 4px 10px;
+    width: 200px;
+    display: none;
+}
+.table_t .select-box {
+   overflow: hidden;
+   
+}
+.table_t .select-box select {
+      background: none;
+    border: none;
+    color: #333333;
+    padding: 7px 8px;
+    width: 100%;
+    border: #dadada 1px solid;
+    border-radius: 2px;
+    margin-bottom: 14px;
+}
+.table_t .td-left {
+     display: inline-block;
+    text-align: left;
+    /* width: 210px; */
+    margin: 4px 0;
+    float: left;
+}
+.table_t .td-right  {
+        color: #ff3300;
+    display: inline-block;
+    font-weight: bold;
+    text-align: right;
+    /* width: 160px; */
+    margin: 4px 0;
+    float: right;
+}
+.table_t .td-note{
+}
+.table_t .td-hotline {
+         background: none repeat scroll 0 0 #0083bf;
+    border-radius: 0px;
+    color: #fff;
+    font-size: 15px;
+    /* margin-bottom: 24px; */
+    padding: 16px 21px;
+    text-transform: uppercase;
+    display: inline-block;
+    border-radius: 4px;
+    margin-top: 26px;
+}
+.table_t .td-hotline a{
+        
+    color: #fff;
+   
+}
+.table-instalment-process,
+.table-instalment-ask{
+	border: 1px solid #ECEFF3;
+}
+.table-instalment-procedures{
+	
+}
+.table-instalment-process thead,
+.table-instalment-ask thead thead{
+	border-bottom: 1px solid #ECEFF3;
+}
+.table-instalment-process thead label,
+.table-instalment-ask thead label,
+.table-instalment-procedures thead label{
+	    margin: 6px 10px;
+    font-size: 18px;
+    margin: 4px 20px;
+    padding-left: 34px;
+    color: #0083bf;
+    text-transform: uppercase;
+    display: block;
+}
+.table_t .content,
+.table-instalment-process .content,
+.table-instalment-ask .content,
+.table-instalment-procedures .content{
+	    margin: 16px 16px 0;
+}
+.table_body_l ._color{
+        margin-bottom: 5px;
+}
+.table_body_l ._color > span{
+    line-height: 32px;
+    display: inline-flex;
+    float: left;
+    margin-right: 10px;
+    font-weight: bold;
+}
+@media only screen and (max-width:750px){
+	.table_body_l{
+		width: 100%;
+	}
+	.table_body_r{
+		width: 100%;
+            padding: 15px;
+	}
+	.table_t .select-box{
+		width: 100%;
+	}
+    .table_body_c {
+        width: 100%;
+     
+        padding-left: 0;
+     
+    }
+}
+

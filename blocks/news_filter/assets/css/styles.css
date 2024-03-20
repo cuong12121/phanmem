@@ -1,0 +1,56 @@
+#cssmenu {
+  width: 250px;
+}
+#cssmenu h2 {
+    background: url("../images/bg-news.png") no-repeat;
+    color: #fff;
+    font-family: semibold;
+    font-size: 16px;
+    margin: 0;
+    padding: 12px 20px;
+    text-transform: uppercase;
+}
+#cssmenu > ul {
+    border: 1px solid #c7c7c7;
+    border-bottom: 0;
+	list-style:none;
+	margin:0px;
+}
+#cssmenu > ul > li > ul {
+	margin:0px;
+}
+#cssmenu > ul > li > ul > li{
+	list-style:none;
+}
+.parent.has-sub {
+    position: relative;
+}
+.parent.has-sub .level_0{
+    border-bottom: 1px solid #ccc;
+    border-left: 4px solid #fff;
+    padding: 8px 18px;
+    display: block;
+    width: 100%;
+    font-family: semibold;
+    font-size: 13px;
+}
+.parent.has-sub .level_0:hover, 
+.parent.has-sub.active .level_0,
+.parent.has-sub .level_1:hover, 
+.parent_2.has-sub.active .level_1{
+    color:#17b0e4;
+    text-decoration: none;
+     border-left: 4px solid #33add6;
+     background: #f6f6f6;
+	 list-style:none;
+}
+.parent.has-sub ul .level_1{
+    border-bottom: 1px solid #ccc;
+    border-left: 4px solid #fff;
+    padding: 8px 30px;
+    display: block;
+    width: 100%;
+    font-family: semibold;
+    font-size: 13px;
+	list-style:none;
+}

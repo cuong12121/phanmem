@@ -1,0 +1,46 @@
+.header_event {
+	padding: 7px 0;
+    background: var(--extra-color);
+    color: #fff;
+    position: relative;
+    @media all and (max-width: 1600px){
+    	padding: 5px 0;
+    }
+    a{
+    	color: #fff;
+    }
+	#time-dow-hotdeal {
+		display: flex;
+		font-family: 'ExtraBold';
+		font-size: 14px;
+		@media all and (max-width: 500px){
+			font-size: 13px;
+		}
+	}
+	.even_item  {
+		display: flex;
+	    align-items: center;
+	    justify-content: center;
+
+	}
+	.name_even {
+		margin-right: 20px;
+		font-size: 13px;
+		@media all and (max-width: 500px){
+			margin-right: 12px;
+			font-size: 11px;
+		}
+	}
+	.closed_event {
+		position: absolute;
+		right: 20px;
+		top:50%;
+		transform: translate(0px, -50%);
+		cursor: pointer;
+		svg {
+			fill:#fff;
+			width: 15px;
+			height: 15px;
+		}
+	}
+}

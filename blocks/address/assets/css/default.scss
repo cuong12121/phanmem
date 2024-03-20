@@ -1,0 +1,62 @@
+	.address_title {
+		font-weight: bold;
+		text-transform: uppercase;
+		font-size: 18px;
+		margin-bottom: 20px;
+	}
+
+	.address_content {
+		margin-top: 10px;
+		// display: flex;
+		// flex-wrap: wrap;
+		// max-height: 220px;
+		// overflow-y: scroll;
+		.item {
+			margin: 0 -10px;
+		}
+		.item_1 {
+			width: calc(50% - 20px);
+			margin: 0 10px;
+			float: left;
+			box-sizing: border-box;
+			margin-bottom: 17px;
+			line-height: 25px;
+
+			@media all and (max-width: 600px) {
+				width: 50%;
+			}
+			.name a {
+				font-weight: bold;
+				text-transform: uppercase;
+			}
+			.name {
+				margin-bottom: 5px;
+			}
+			figure {
+				margin-bottom: 0px;
+			}
+			.info {
+				li {
+					position: relative;
+					padding-left: 50px;
+					margin-bottom: 10px;
+					font-size: 13px;
+					line-height: 22px;
+					a {
+						font-weight: bold;
+					}
+					svg {
+						width: 15px;
+						height: 15px;
+						position: absolute;
+						left: 0;
+						top: 3px;
+						padding: 10px;
+						border-radius: 50%;
+						fill: var(--extra-color);
+						border: 1px solid #eee;
+					}
+				}
+			}
+		}
+	}

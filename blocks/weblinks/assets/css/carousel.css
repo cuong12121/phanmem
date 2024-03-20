@@ -1,0 +1,107 @@
+.relate_title {
+    border-bottom: 2px solid #838992;
+}
+.relate_title > span {
+    color: #0C4BA0;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+#wrapper {
+	float: right;
+    width: 500px;
+}
+#carousel {
+     margin-top: 7px;
+    width: 500px;
+}
+#carousel ul {
+	list-style: none;
+	display: block;
+	margin: 0;
+	padding: 0;
+}
+.weblinks_label{
+	float: left;
+    font-weight: bold;
+    margin-top: 16px;
+}
+#carousel li {
+    display: block;
+    float: left;
+    height: 32px;
+    margin: 0 10px 0 0;
+    padding: 0;
+    position: relative;
+    text-align: center;
+}
+@media screen and (-webkit-min-device-pixel-ratio:0) { 
+ #carousel li {width: 200px;} 
+}
+.product-info {
+    display: table-cell;
+    height: 100px;
+    vertical-align: middle;
+}
+
+.img-product {
+    padding: 0 10px;
+}
+#carousel li img {
+}
+
+#carousel li span {
+	text-indent: -999px;
+	display: block;
+	overflow: hidden;
+	width: 201px;
+	height: 127px;
+	position: absolute;
+	z-index: 2;
+	top: 14px;
+	left: 16px;
+}			
+
+.clearfix {
+	float: none;
+	clear: both;
+}
+.prev {
+    display: block;
+    height: 34px;
+    margin-left: 1025px;
+    margin-top: -60px;
+    overflow: hidden;
+    position: absolute;
+    text-indent: -999px;
+    width: 34px;
+}
+.next {
+    display: block;
+    height: 34px;
+    margin-left: -48px;
+    margin-top: -60px;
+    overflow: hidden;
+    position: absolute;
+    text-indent: -999px;
+    width: 34px;
+}
+
+#carousel .pager {
+	text-align: center;
+	margin: 0 auto;
+}
+#carousel .pager a {
+	background: transparent url(../images/carousel_control.png) no-repeat -2px -32px;
+	text-decoration: none;
+	text-indent: -999px;
+	display: inline-block;
+	overflow: hidden;
+	width: 8px;
+	height: 8px;
+	margin: 0 5px 0 0;
+}
+#carousel .pager a.selected {
+	background: transparent url(../images/carousel_control.png) no-repeat -12px -32px;
+	text-decoration: underline;				
+}

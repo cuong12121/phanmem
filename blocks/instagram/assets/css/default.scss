@@ -1,0 +1,25 @@
+.instagram_default {
+	.sum_instagram {
+		text-align: center;
+	    font-size: 24px;
+	    line-height: 1.049;
+	    margin-bottom: 20px;
+	    position: relative;
+	    @media all and (max-width: 1025px){
+	    	font-size: 20px;
+	    }
+	    @media all and (max-width: 850px){
+	    	font-size: 18px;
+	    }
+	    @media all and (max-width: 650px){
+	    	font-size: 16px;
+	    }
+	    a {
+	    	color: var(--extra-color);
+	    	transition: .4s;
+	    	&:hover {
+	    		color: var(--main-color);
+	    	}
+	    }
+	}
+}

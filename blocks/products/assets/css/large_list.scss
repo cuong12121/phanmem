@@ -1,0 +1,134 @@
+.product-large-list{
+	// border: 1px solid #ededed;
+    background: #fff;
+    display: flex;
+    flex-wrap: wrap;
+    .item{
+    	padding: 27px 20px;
+		box-sizing: border-box;
+    	.name{
+    		display: block;
+		    font-size: 16px;
+		    line-height: 27px;
+		    margin-bottom: 10px;
+		    @media all and (max-width: 450px){
+		    	font-size: 14px;
+			    line-height: 22px;
+			    margin-bottom: 5px;
+		    }
+
+    	}
+    	
+    	@media all and (max-width: 530px){
+    		padding: 10px;
+    	}
+    }
+	.large-list-l{
+		float: left;
+	    width: 50%;
+	    border-right: 1px solid #ededed;
+	    box-sizing: border-box;
+	    .product_image{
+	    	min-height: 450px;
+	    	img{
+	    		max-height: 450px;
+	    	}
+	    }
+
+	    @media all and (max-width: 900px){
+	    	width: 45%;
+	    	.product_image{
+		    	min-height: 350px;
+		    	img{
+		    		max-height: 350px;
+		    	}
+		    }
+	    }
+
+	    @media all and (max-width: 700px){
+	    	.product_image{
+		    	min-height: 250px;
+		    	img{
+		    		max-height: 250px;
+		    	}
+		    }
+	    }
+
+
+	    @media all and (max-width: 530px){
+	    	float: none;
+	    	width: 100%;
+	    	border-right: 0px solid #ededed;
+	    	border-bottom: 1px solid #ededed;
+	    	.product_image{
+	    		margin-bottom: 0px;
+	    	}
+	    }	
+
+	}
+
+	.large-list-r{
+		float: right;
+		width: 50%;
+		.item{
+			.product_image{
+				width: 50%;
+				float: left;
+				min-height: 220px;
+				img{
+					
+    				max-height: 220px;
+				}
+			}
+			.content-r{
+				width: 50%;
+				float: right;
+				padding-left: 35px;
+				box-sizing: border-box;
+			}
+
+			&:nth-child(1){
+				border-bottom: 1px solid #ededed;
+	    		box-sizing: border-box;
+			}
+			
+		}
+
+		@media all and (max-width: 900px){
+	    	width: 55%;
+	    	.item{
+		    	.product_image{
+			    	min-height: 170px;
+			    	img{
+			    		max-height: 170px;
+			    	}
+			    }
+			}
+	    }
+
+	    @media all and (max-width: 700px){
+	    	.item{
+		    	.content-r{
+					padding-left: 10px;
+				}
+				.name{
+					font-size: 14px;
+				    line-height: 22px;
+				    margin-bottom: 5px;
+				}
+			}
+	    }
+
+
+	    @media all and (max-width: 530px){
+	    	float: none;
+	    	width: 100%;
+	    	.item{
+		    	.product_image{
+			   		margin-bottom: 0px;
+			    	
+			    }
+			}
+	    }
+	}
+}

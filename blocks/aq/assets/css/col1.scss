@@ -1,0 +1,44 @@
+.block-aq-col1{
+	.all-item{
+		background: #fff;
+		padding: 10px;
+		.img-diemban{
+			margin-bottom: 10px;
+		}
+	}
+	.item{
+		position: relative;
+		padding-left: 20px;
+		line-height: 27px;
+		display: -webkit-box;
+	    -webkit-line-clamp: 1;
+	    -webkit-box-orient: vertical;
+	    text-overflow: ellipsis;
+	    overflow: hidden;
+		svg{
+			position: absolute;
+			left: 0px;
+			top: 6px;
+			width: 15px;
+			height: 15px;
+			fill: blue;
+		}
+	}
+
+	.view_all{
+		text-align: right;
+	    background: #fff;
+	    width: 100%;
+	    padding: 0px 10px 0px;
+	    box-sizing: border-box;
+	    margin-top: 12px;
+	    a{
+	    	display: inline-block;
+		    padding: 3px 10px;
+		    background: var(--main-color);
+		    color: #fff;
+		    border-radius: 3px;
+		    font-size: 14px;
+	    }
+	}
+}

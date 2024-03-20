@@ -1,0 +1,204 @@
+.main_wrapper .left-col .block_products_filter, .main_wrapper .right-col .block_products_filter {
+    border: none;
+}
+.block_products_filter {
+    margin: 0 0px;
+}
+.block_products_filter .field_item {
+       float: left;
+    margin-right: 20px;
+    position: relative;
+    padding-right: 30px;
+}
+.block_products_filter .field_item:after {
+   border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid #2080CA;
+    display: inline-block;
+    width: 0;
+    height: 0;
+    position: absolute;
+    right: 14px;
+    top: 22px;
+    vertical-align: top;
+    content: '';
+}
+.icon-filter{
+	    float: left;
+    margin-left: 38px;
+}
+.block_products_filter .field_item .field_name {
+    color: #2080CA;
+    cursor: pointer;
+    font-weight: normal;
+}
+.block_products_filter .field_label a {
+   margin: 3px 0;
+    line-height: 24px;
+    display: block;
+}
+.filters_in_field{
+    display: none;
+    position: absolute;
+    width: 400px;
+    z-index: 10000;
+    top: 44px;
+    padding-top: 4px;
+    left: -10px;
+}
+.filters_in_field_inner{
+    background: #FFF;
+    border: 1px solid #E7E7E7;
+    padding: 10px;
+    border-width: 0 1px 1px 1px;
+}
+.block_products_filter .field_item:hover  .filters_in_field{
+	display: block;
+}
+.block_products_filter .field_label h3{
+    transform: translate(0.5em,0px);
+    box-sizing: border-box;
+    display: flex;
+}
+.block_products_filter .field_label h3:hover, 
+.block_products_filter .field_label h3.activated {
+}
+.block_products_filter .field_label h3 a {
+    color: #333;
+    font-weight: 500;
+    margin-left: 0px;
+}
+.block_products_filter .field_label h3 i {
+        width: 15px;
+    height: 23px;
+    z-index: 10;
+    float: left;
+    background-position: -93px -143px;
+    margin-right: 8px;
+}
+.block_products_filter .field_label h3:hover i,.block_products_filter .field_label h3.activated i {
+         background-position: -72px -143px;
+}
+.block_products_filter .field_label h3.activated:hover i {
+        background-position: -72px -143px;
+}
+.block_products_filter .field_label h3:hover a, .block_products_filter .field_label h3.activated a {
+    color: #ff2a00;
+}
+.block_products_filter .field_label h3.activated:hover a {
+    color: #333;
+}
+.filters_in_field_3_column {
+	    width: 400px;
+}
+.filters_in_field_2_column.filter_4_subcats{
+    width: 450px;
+}
+.filters_in_field_3_column.filter_4_subcats{
+    width: 650px;
+}
+.filters_in_field_3_column h3 {
+    width: 33.333%;
+    float: left;
+}
+.filters_in_field_2_column {
+	    width: 300px;
+}
+.filters_in_field_2_column h3 {
+    width: 50%;
+    float: left;
+}
+.filters_in_field_1_column {
+    width: 200px;
+}
+.filters_in_field_1_column h3 {
+}
+
+.icon-filter {
+    position: relative;
+    float: left;
+    display: inline;
+}
+.icon-filter > span {
+   background: #00A7F4;
+    padding: 14px 14px 14px;
+    margin-right: 8px;
+    cursor: pointer;
+    display: none;
+    margin-top: 9px;
+    border-bottom: 10px solid #FBFBFB;
+}
+.icon-filter > span::before {
+    content: '';
+    position: absolute;
+    top: 15px;
+    left: 0;
+    width: 28px;
+    height: 5px;
+    background: #FFF;
+}
+.icon-filter > span::after {
+        content: '';
+    position: absolute;
+    top: 26px;
+    left: 0;
+    width: 28px;
+    height: 5px;
+    background: #FFF;
+}
+.block_products_filter {
+    margin: 0 0px;
+}
+
+
+@media screen and (max-width:900px){
+	.icon-filter {
+        float: left;
+	}
+	.icon-filter > span {
+	    display: block;
+	}
+	.block_products_filter .field_item {
+	    float: none;
+	}
+	.icon-filter .filter_inner {
+        display: none;
+	    padding: 10px;
+	    box-shadow: #bfbdbd 1px 2px 2px 1px;
+	    position: absolute;
+	    z-index: 1000;
+	    background: #FFF;
+	    width: 277px;
+	    top: 20px;
+	    left: 0;
+	    border-top: 3px solid #00A7F4;
+	    text-align: left;
+	}
+	.icon-filter .filter_inner {
+          display: none;
+	    padding: 10px;
+	    width: 277px;
+	    top: 42px;
+	    right: 0;
+	    left: 0;
+	}
+	
+	.filters_in_field_3_column {
+	    width: 300px;
+	}
+	.filters_in_field_3_column h3 {
+	    width: 50%;
+	    float: left;
+	}
+.icon-filter:hover .filter_inner {
+		display: block;
+	}
+}
+@media screen and (max-width:550px){
+	.icon-filter {
+	    float: right;
+	}
+	.icon-filter .filter_inner {
+	    left: inherit;
+	}
+}

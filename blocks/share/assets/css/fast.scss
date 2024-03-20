@@ -1,0 +1,78 @@
+.share_fast_fixed {
+    position: fixed;
+    right: 10px;
+    bottom: 60px;
+    z-index: 99;
+    
+    .share_fast_fixed_inner {
+        a {
+            display: grid;
+            // padding: 6px;
+            border-radius: 50%;
+            svg {
+                fill: #fff;
+                width: 50px;
+                height: 50px;
+            }
+        }
+        .mesenger-icon {
+            svg {
+                fill: #00a4ff;
+            }
+        }
+        .holine-icon {
+            padding: 10px;
+            box-sizing: border-box;
+            background: blue;
+            svg {
+                width: 35px;
+                height: 35px;
+            }
+        }
+        .zalo-icon {
+            padding: 10px;
+            box-sizing: border-box;
+            background: #00afff;
+            svg {
+                width: 30px;
+                height: 30px;
+            }
+        }
+        position: relative;
+        .share-icon {
+            position: absolute;
+            top: 5px;
+            left: 5px;
+            z-index: 9998;
+            transition: 0.5s;
+        }
+        .contact_more {
+            padding: 10px;
+            position: inherit;
+            z-index: 9999;
+            background: blue;
+            svg {
+                width: 40px;
+                height: 40px;
+            }
+        }
+    }
+}
+
+.share_fast_fixed  {
+    .share_fast_fixed_inner_click {
+        .mesenger-icon {
+            top: -50px;
+            left: -35px;
+        }
+        .zalo-icon {
+            top: 60px;
+            left: -35px;
+        }
+
+        .holine-icon {
+            left: -75px;
+        }
+
+    }
+}

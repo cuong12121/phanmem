@@ -1,0 +1,9 @@
+.products_manufactory .list_content{
+	background: #fff;
+    padding: 20px;
+   	.product_grid{
+   		.item{
+   			width: calc(20% - 14px);
+   		}
+   	}
+}

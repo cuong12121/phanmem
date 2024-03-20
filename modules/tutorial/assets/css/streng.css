@@ -1,0 +1,2 @@
+.streng_content{display:flex;justify-content:center;flex-wrap:wrap}.streng_content .item{width:calc(100% / 3 - 30px);margin:0 15px;text-align:center}.streng_content .item .summary_hover span{display:inline-block;width:44px;height:44px;border-radius:50%;border:1px solid var(--extra-color);line-height:44px;font-family:'ExtraBold';font-size:14px}.streng_content .item .title_st{margin-top:16px;line-height:27px}
+/*# sourceMappingURL=streng.css.map */

@@ -1,0 +1,118 @@
+.news_detail .title {
+    color: #2080CA;
+    font-weight: normal;
+    margin-bottom: 6px;
+    font-size: 22px;
+    padding-bottom: 6px;
+    margin-top: 9px;
+}
+.news_detail .news_time {
+        font-size: 14px;
+    font-weight: normal;
+    margin-bottom: 12px;
+    color: #a9a7a7;
+    margin-left: 15px;
+    margin-right: 10px;
+}
+.time_rate{
+	    margin-bottom: 7px;
+    margin-top: 23px;
+}
+.time_rate font{
+	       color: #a9a7a7;
+    margin-right: 8px;
+}
+.summary{
+	    font-size: 14px;
+    font-weight: 600;
+    line-height: 24px;
+}
+.news_detail .description{
+    line-height: 28px;
+    font-size: 16px;
+}
+.news_detail .description p, .news_detail .description ul li, .news_detail .description div , .description h2, .description h3 {
+    margin-bottom: 12px;
+}
+.news_detail .description img {
+    opacity: 0.6;
+}
+.news_detail .relate_title {
+    color: #222222;
+    font-size: 17px;
+    font-weight: bold;
+    margin-bottom: 18px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 8px;
+    font-weight: normal;
+    margin-top: 20px;
+}
+.item-related {
+    float: left;
+    /* margin-right: 15px; */
+    width: 25%;
+    box-sizing: border-box;
+    padding: 0 8px;
+    margin-bottom: 15px;
+}
+.related {
+	overflow: hidden;
+}
+.related_content{
+	    margin-left: -8px;
+    margin-right: -8px;
+}
+.relate_title > span {
+       color: #2080CA;
+    border-bottom: 1px solid #2080CA;
+    text-transform: uppercase;
+    font-size: 18px;
+    padding-bottom: 7px;
+    font-weight: 500;
+}
+.title-item-related {
+    margin-top: 13px;
+}
+.item-related:hover .title-item-related {
+    color: #2080CA;
+}
+.title-item-related > a {
+    font-size: 15px;
+    color: #333;
+    text-decoration: none;
+}
+.item-related  .img_a  {
+        text-align: center;
+    overflow: hidden;
+    display: block;
+}
+.item-related > a > img {
+    width: 100%;
+       transition: all 0.3s ease 0s;
+    -webkit-transition: all 0.3s ease 0s;
+}
+
+.item-related:hover  a > img {
+    transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    opacity: 0.5;
+}
+.rate i {
+    width: 14px;
+    height: 14px;
+    display: inline-flex;
+}
+.rate .star_off {
+    background-position: -393px -2px;
+}
+.rate .star_on {
+    background-position: -377px -2px;
+}
+@media only screen and (max-width:500px){
+	.item-related {
+	    width: 50%;
+	}
+	.related_content .item-related:nth-child(odd) {
+	    clear: left;
+	}
+}

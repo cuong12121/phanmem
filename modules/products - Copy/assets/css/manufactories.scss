@@ -1,0 +1,30 @@
+.home-menu{
+	.hot-wapper-page{
+		margin: 0px -2px;
+		display: flex;
+    	flex-wrap: wrap;
+		.item{
+			width: calc(100% / 8 - 4px);
+		    float: left;
+		    background: #fff;
+		    padding: 5px;
+		    box-sizing: border-box;
+		    margin: 2px;
+		    text-align: center;
+		    img{
+		    	width:136px;
+		    	height: 60px;
+		    }
+		    @media only screen and (max-width: 900px){
+		    	width: calc(100% / 5 - 4px);
+		    }
+		    @media only screen and (max-width: 600px){
+		    	width: calc(100% / 4 - 4px);
+		    }
+
+		    @media only screen and (max-width: 420px){
+		    	width: calc(100% / 3 - 4px);
+		    }
+		}
+	}
+}

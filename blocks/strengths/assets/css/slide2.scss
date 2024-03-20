@@ -1,0 +1,144 @@
+.strengths_slide2_block {
+	//height: 300px;
+	display: flex;
+
+	@media all and (max-width: 750px) {
+		display: block;
+	}
+	.namemb {
+		display: none;
+		@media all and (max-width: 750px) {
+    display: block;
+    position: absolute;
+    bottom: 35px;
+    left: 10px;
+    color: #fff;
+    width: calc(100% - 20px);
+
+		}
+
+	}
+	.image{
+		position: relative;
+		width: 50%;
+		float: left;
+		@media all and (max-width: 750px) {
+			width: 100%;
+			float: none;
+			max-height: 270px;
+			overflow: hidden;
+			padding: 20px 0;
+			padding-bottom: 80px;
+		}
+		.item_str {
+			position: absolute;
+			width: 585px;
+			text-align: center;
+			right: 0;
+			//top: 0;
+			bottom: 60px;
+			@media all and (max-width: 1170px) {
+				width: 100%;
+			}
+			@media all and (max-width: 780px) {
+				//position: inherit;
+				bottom: 20px;			
+			}
+			@media all and (max-width: 750px) {
+				position: unset;
+
+			}
+		}
+	}
+	.list_str {
+		width: 50%;
+		float: left;
+		padding-top: 100px;
+		padding-left: 50px;
+		box-sizing: border-box;
+		padding-bottom: 25px;
+		cursor: pointer;
+		@media all and (max-width: 800px) {
+			padding-top: 50px;
+		}
+		@media all and (max-width: 750px) {
+			padding-top: 5px;
+			width: 100%;
+			padding-left: 83px;
+			padding-bottom: 0;
+			display: flex;
+			transform: translate(0px, -35px);
+		}
+		.i_list_str {
+			position: relative;
+			margin: 20px 0;
+			padding: 15px;
+			display : flex;
+			align-items : center;
+			@media all and (max-width: 750px) {
+				margin: 5px 0;
+				padding: 10px;
+				min-height: 35px;
+				display: inline-block;
+				width: 33.33%;
+			}
+			.stt {
+				position: absolute;
+				width: 66px;
+				height: 66px;
+				border-radius: 50%;
+				background: #b7b7b7;
+				text-align: center;
+				padding: 18px;
+				font-size: 25px;
+				color: #fff;
+				left: -83px;
+				top: 0;
+				box-sizing: border-box;
+				border: 2px solid #fff;
+				@media all and (max-width: 750px) {
+					left: -25px;
+					width: 50px;
+					height: 50px;
+					padding: 9px;
+
+				}
+
+			}
+			.name {
+				text-transform: uppercase;
+				font-family: Helvetica;
+				font-weight: Bold;
+				font-size: 18px;
+				transition: 0.5s;
+				-moz-transition: 0.5s;
+				-webkit-transition:0.5s;
+				-o-transition: 0.5s;
+				@media all and (max-width: 750px) {
+					font-size: 16px;
+					display: none;
+				}
+				span {
+					text-transform: none;
+					font-family: Helvetica;
+					font-size: 15px;
+					@media all and (max-width: 800px) {
+						display: none;
+					}
+
+				}
+			}
+		}
+		.active {
+			.name {
+				color: var(--main-color);
+				span {
+					color: #000;
+				}
+			}
+			.stt {
+				background: var(--main-color);
+			}
+		}
+	}
+}

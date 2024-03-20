@@ -1,0 +1,100 @@
+.filter-manufactory{
+  @media only screen and (min-width:736px){
+    clear: both;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-flow: row wrap;
+    flex-flow: row wrap;
+    flex: 1 100%;
+    background: #fff;
+    border: 1px solid #c5c5c538;
+    position: relative;
+    a{
+      display: inline-block;
+       // width: calc((100% - 110px) / 13);
+       margin: 0 5px;
+       height: 50px;
+       line-height: 50px;
+       vertical-align: middle;
+       text-align: center;
+       transition: all ease 300ms;
+       color: #288ad6;
+       position: relative;
+       @media all and (max-width: 800px) {
+         width: calc((100% - 110px) / 8); 
+       }
+       img {
+         left: 50%;
+         top: 50%;   
+         position: absolute;
+         transform: translate(-50%,-50%);
+       }
+       span {
+        display: inline-block;
+        color: #fff;
+        background: var(--main-color);
+        line-height: 20px;
+        padding: 4px 10px 5px;
+        border-radius: 5px;
+      }
+    }
+    .active {
+      span {
+        background: red; 
+      }
+     
+    }
+    .morecate {
+      color: #222;
+      position: absolute;
+      right: 5px;
+    } 
+    .fewcate {
+      color: #222;
+    }
+
+    .hidden{
+      display: none;
+    }
+  }
+
+  @media only screen and (max-width:736px){
+    display: block;
+    background: transparent;
+    overflow-y: hidden;
+    overflow-x: auto;
+    -ms-overflow-style: none;
+    -ms-scroll-snap-type: mandatory;
+    -ms-scroll-snap-points-x: snapInterval(0%,100%);
+    -ms-scroll-chaining: chained;
+    -webkit-overflow-scrolling: touch;
+    padding: 10px 0px;
+
+    .filter-manufactory-scroll{
+      white-space: nowrap;
+      width: 660px;
+      a{
+        display: inline-block;
+   // border: 1px solid #dfdfdf;
+   border-radius: 4px;
+   margin-right: 5px;
+   overflow: hidden;
+   padding: 5px;
+   box-sizing: border-box;
+   color: #fff;
+   background: var(--main-color);
+ }
+ img {
+  height: 20px;
+  width: auto;
+  display: block;
+  padding: 10px 5px;
+}
+}
+
+}
+
+}

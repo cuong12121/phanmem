@@ -1,0 +1,47 @@
+.video_product {
+	.video_product_inner {
+		height: 800px;
+	    background-repeat: no-repeat;
+	    background-size: cover;
+	    background-position: center;
+	    position: relative;
+	    cursor: pointer;
+	    @media all and (max-width: 1025px){
+	    	height: 600px;
+	    }
+	    @media all and (max-width: 990px){
+	    	height: 500px;
+	    }
+	     @media all and (max-width: 650px){
+	    	height: 350px;
+	    }
+	    .icon {
+	    	position: absolute;
+		    left: 50%;
+		    top: 50%;
+		    transform: translate(-50%, -50%);
+		    z-index: 1;
+		    width: 75px;
+		    height: 75px;
+		    border: 2px solid #c44215;
+		    box-sizing: border-box;
+		    border-radius: 50%;
+		    display: flex;
+		    align-items: center;
+		    justify-content: center;
+		    transition: .5s;
+		    background: #c44215;
+	    	svg {
+	    		width: 25px;
+			    height: 25px;
+			    fill: #fff;
+			    transform: translate(4px, 0px);
+	    	}
+	    }
+	    &:hover {
+	    	.icon {
+	    		background: transparent;
+	    	}
+	    }
+	}
+}

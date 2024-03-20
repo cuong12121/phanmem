@@ -1,0 +1,129 @@
+.filter-manufactory{
+  @media all and (max-width: 1025px){
+   overflow: auto;
+ }
+ span{
+  display: none;
+}
+.filter-manufactory-scroll{
+ clear: both;
+ display: -webkit-box;
+ display: -moz-box;
+ display: -ms-flexbox;
+ display: -webkit-flex;
+ display: flex;
+ -webkit-flex-flow: row wrap;
+ flex-flow: row wrap;
+ margin: 0 -5px;
+ flex: 1 100%;
+ // border-top: 1px solid var(--border-color);
+
+ // border-left: 1px solid var(--border-color);
+ @media all and (max-width: 1025px){
+   width: max-content;
+   width: 900px;
+ }
+
+ a{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: calc(10% - 10px);
+  border: 1px solid transparent;
+  height: 42px;
+  vertical-align: middle;
+  text-align: center;
+  transition: all ease 300ms;
+  color: #000;
+  position: relative;
+  border-radius: 5px;
+  box-sizing: border-box;
+  background: #fff;
+  margin: 0px 0px 0;
+  border-radius: 0;
+  transition: .3s;
+  // border-bottom: 1px solid var(--border-color);
+  // border-right: 1px solid var(--border-color);
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin: 0 5px 10px;
+  @media all and (max-width: 600px) {
+    display: flex !important; 
+  }
+  @media all and (max-width: 1025px){
+   width: 100px;
+   height: 38px;
+ }
+ &:hover{
+  border: 1px solid var(--main-color);
+}
+img {
+  display: inline-block;
+  max-height: 40px;
+  vertical-align: middle;
+  @media all and (max-width: 1025px){
+    max-height: 36px;
+  }
+}
+
+      // &:first-child {
+      //   border-left: 1px solid var(--border-color);
+      // }
+    }
+    .active{
+      border: 1px solid var(--main-color);
+    }
+
+    .hidden{
+      display: none;
+    }
+  } 
+  .morecate,.fewcate{
+    @media only screen and (max-width:1024px){
+      display: none !important;
+    }
+  }
+
+
+}
+.filter-manufactory2{
+  margin-top: 12px;
+  span{
+    display: block;
+  }
+  a{
+    @media only screen and (min-width:1024px){
+         //background-color: #f6f6f6;
+         width: calc(100% / 7 - 6px);
+         height: 40px;
+       } 
+       @media only screen and (max-width:1024px){ 
+         padding: 7px 10px;
+         height: 20px;
+        //background: #f6f6f6;
+      }          
+      &:hover{
+        border: 1px solid var(--main-color);
+            //color: #fff;
+          }
+        }
+        @media only screen and (max-width:1024px){ 
+          padding-top: 0px;
+        }
+      }
+      .fewcate {
+        color: #222;
+      }
+
+// .filter-manufactory2-mb {
+//   overflow: auto;
+//   .filter-manufactory-scroll {
+//       width: max-content;
+//       a {
+//           width: 100px;
+//           img {
+//               max-height: 30px;
+//           }
+//       }
+//   }
+// }

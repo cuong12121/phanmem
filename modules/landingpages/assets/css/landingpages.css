@@ -1,0 +1,2 @@
+*{box-sizing:border-box}.move_right{opacity:0;transform:translate(-100%, 0px)}.move_left{opacity:0;transform:translate(100%, 0px)}.move_up{opacity:0;transform:translate(0px, 100%)}.move_down{opacity:0;transform:translate(0px, -100%)}.typed_text{position:relative}.tab_item{cursor:pointer}.tab_item img{filter:grayscale(100%)}.tab_item:hover{color:#0d7fef}.tab_item:hover img{filter:none}.tab_title_active{color:#0d7fef}.tab_title_active img{filter:none}.hide{display:none}.container_ld{overflow:hidden}
+/*# sourceMappingURL=landingpages.css.map */

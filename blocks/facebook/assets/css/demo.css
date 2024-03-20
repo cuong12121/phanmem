@@ -1,0 +1,36 @@
+.product{
+	height:150px;
+	padding-top:10px;
+	float:left;	
+	border-radius:12px;
+}
+
+.product .pic{
+	float:left;
+	width:100px;
+	height:110px;
+	margin-top:-15px;
+}
+
+.product .link,.product .price{
+	font-size:10px;
+	text-transform:uppercase;
+	padding:4px 0;
+}
+
+.product .price{
+	color:#CCCCCC;
+}
+
+.product .title{
+	font-size:16px;
+	font-weight:bold;
+}
+
+.tutorial-info{
+	text-align:center;
+	padding:10px;
+}
+.sliderBtn{
+	cursor:pointer;
+}

@@ -1,0 +1,7 @@
+.regions_content ul{
+  padding-bottom: 5px;
+}
+
+.regions_content ul li a:hover{
+    text-decoration: underline;
+}

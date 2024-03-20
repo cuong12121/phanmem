@@ -1,0 +1,332 @@
+
+.product_grid_home{
+  
+}
+
+.product_grid{
+    display:block;
+    background: #fff;
+    .item_special{
+        width:40%;
+        padding:0px;
+        .frame_inner{
+            padding:0px;
+            position:relative;
+        }
+
+        
+
+        @media only screen and (max-width:1200px){
+            display:none;
+        }
+        
+    }
+}
+.item_special{
+    .doi-1{
+        left:0px;
+        top:-242px;
+    }
+}
+
+.product_grid_home{
+  .item_special{
+    .doi-1{
+        left: -10px;
+        top: -278px;
+    }
+}  
+}
+
+
+
+.item_special_t{
+    padding: 20px 0px 13px 0px;
+    overflow: hidden;
+    min-height: 185px;
+}
+
+.product_grid_home .item_special_t{
+    &:hover{
+        .item_special_l{
+            transform: scale(1.11);
+            // animation: 4s ease-in-out 0s normal none infinite running chang-rotage-anim-3;
+        } 
+    }
+}
+
+
+
+.item_special_l {
+    width: 200px;
+    float: left;
+    transition: all .4s ease-out;
+    
+   figure{
+        margin-bottom: 0px !important;
+   }
+   .product_image {
+        overflow: initial !important;
+        
+    }
+    .shadow{
+        position:absolute;
+        opacity: 0.3;
+        bottom: -179px;
+        left: 31px;
+        transform: rotateX(180deg);
+    }
+}
+
+@keyframes chang-rotage-anim-3 {
+    0% {
+        transform: rotate(0deg) scale(1) skew(0);
+    }
+    10% {
+        transform: rotate(0deg) scale(1) skew(0);
+    }
+    65% {
+        transform: rotate(-15deg) scale(1.1) skew(1deg);
+    }
+    70% {
+        transform: rotate(15deg) scale(1) skew(1deg);
+    }
+    75% {
+        transform: rotate(-15deg) scale(1.1) skew(1deg);
+    }
+    80% {
+        transform: rotate(15deg) scale(1) skew(1deg);
+    }
+    85% {
+        transform: rotateY(360deg) scale(1) skew(1deg);
+    }
+    100% {
+        transform: rotate(0deg) scale(1) skew(1deg);
+    }
+   
+}
+
+
+.item_special_r {
+    width: calc(100% - 200px);
+    float: right;
+    color: #fff;
+    a:hover {
+        text-decoration: none;
+    }
+    .name_core{
+        font-size:20px;
+        color: #fff;
+        text-align: center;
+        margin-top: 15px;
+        margin-bottom: 5px;
+    }
+    .name_display{
+        font-size:14px;
+        color: #fff;
+        text-align: center;
+    }
+    .price-txt{
+        text-align: center;
+        margin-top: 6px;
+    }
+    .price_old{
+            display: block !important;
+    }
+    .price_arae{
+        text-align: center;
+       .price_current{
+            font-size: 25px !important;
+            font-weight: normal !important;
+            display: inline-block !important;
+            padding: 15px;
+            background: #ffffff14;
+            color: #fff;
+            margin-bottom: 8px;
+            margin-top: -8px;
+            position: relative;
+            .bf{
+                width: 23px;
+                height:23px;
+                border-left:1px solid #fffefe9c;
+                border-bottom:1px solid #fffefe9c;
+                left:0px;
+                bottom:0px;
+                position:absolute;
+            }
+            .af{
+                width: 23px;
+                height:23px;
+                border-right:1px solid #fffefe9c;
+                border-top:1px solid #fffefe9c;
+                right:0px;
+                top:0px;
+                position:absolute;
+            }
+        } 
+    }
+    .special_gifts {
+        font-size: 12px;
+        position: relative;
+        padding-left: 70px;
+        span{
+            position: absolute;
+            left: 14px;
+            bottom: 2px;
+            svg#Layer_1 {
+                width: 50px;
+                height: 50px;
+            }
+        }
+    }
+    
+
+}
+.item_special_bt {
+    padding: 20px;
+    a.name {
+        font-size: 14px;
+        margin-bottom: 34px;
+        font-weight: normal;
+        color: black;
+
+    }
+    
+    .style_types {
+        float: right;
+        margin-top: -3px;
+        text-align: center;
+    }
+    .price_current{
+        display: inline-block;
+        
+
+    }
+}
+
+.gift {
+    font-size: 12px;
+    color: #777777;
+    margin-bottom: 6px;
+    margin-top: 9px;
+}
+
+
+
+
+
+#dt-phu-kien{
+    display:none;
+}
+
+.cat_item_store{
+    margin-top: 12px;
+    &:first-child{
+        margin-top: 0px;
+    }
+}
+.cat-title{
+    background: #fff;
+    line-height: 45px;
+    border-bottom: 1px solid #e7e7e7;
+}
+.cat-title .cat-title-main{
+        float: left;
+}
+.cat-title .cat-title-main > a{
+    margin-left: 15px;
+    text-transform: uppercase;
+    font-size: 17px;
+    font-weight: bold;
+    margin-top: 10px;
+    color: var(--main-color);
+    span{
+       color: black; 
+    }
+}
+.cat-title .nav-tabs{
+    float: right;
+    display: flex;
+}
+.cat-title .nav-tabs li{ 
+    margin-right: 14px;
+    margin-left: 16px;
+    a{
+        color:#288ad6;
+    }
+}
+.cat-title .nav-tabs li.active a, 
+.cat-title .nav-tabs li:hover a{
+	color: #0183BF;    
+	text-decoration: underline;
+}
+.title_icon{
+    width: 40px;
+    height: 50px;
+    float: left;
+    background: #00A7F4;
+    margin-left: -1px;
+    margin-top: -1px;
+    margin-bottom: -1px;
+    position: relative;
+    display:none;
+
+}
+.title_icon i {
+    position: absolute;
+    content: ' ';
+    width: 22px;
+    height: 26px;
+    top: 13px;
+    left: 16px;
+    z-index: 10;
+}
+.title_icon::before {
+    content: '';
+    position: absolute;
+    top: 0px;
+    right: -19px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 25px 0 25px 19px;
+    border-color: transparent transparent transparent #00A7F4;
+}
+#cat-dien-thoai .title_icon i,#cat-iphone .title_icon i {
+    background-position: -85px -64px;
+}
+#cat-phu-kien .title_icon i {
+    background-position: -113px -64px;
+    width: 29px;
+    height: 26px;
+    top: 13px;
+    left: 12px;
+}
+#cat-may-tinh-bang .title_icon i {
+     background-position: -229px -77px;
+}
+#cat-dich-vu .title_icon i {
+    background-position: -273px -125px;
+    height: 31px;
+    left: 13px;
+    top: 11px;
+}
+#cat-dich-vu-sua-chua .title_icon i {
+    background-position: -305px -124px;
+    height: 31px;
+    left: 13px;
+    top: 11px;
+}
+@media only screen and (max-width:768px){
+	.cat-title .nav-tabs {
+	    display: none;
+	}
+}
+@media only screen and (max-width:500px){
+	#cat_item_store_136{
+		display: none;
+	}
+	.home_pos_2 {
+		display: none;
+	}
+}

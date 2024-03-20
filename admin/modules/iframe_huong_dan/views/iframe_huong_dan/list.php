@@ -1,0 +1,1 @@
+<iframe class="ifame-vd-hd" height="600" src="https://delecweb.com/videohd.html" width="100%"></iframe>

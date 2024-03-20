@@ -1,0 +1,113 @@
+.block-manufactories{
+	margin: 0px -5px;
+	.item{
+		width: 50%;
+		padding: 5px;
+		box-sizing: border-box;
+		float: left;
+		position: relative;
+
+	}
+	.name{
+		position: absolute;
+	    top: 20%;
+	    color: #fff;
+	    font-size: 32px;
+	    left: 70px;
+	    font-weight: bold;
+	    text-transform: uppercase;
+	    background: #00000017;
+    	padding: 3px 15px;
+    	
+    	&:before{
+    		position: absolute;
+		    top: 0px;
+		    left: 0px;
+		    content: "";
+		    height: 50px;
+		    width: 2px;
+		    background: #fff;
+    	}
+    	@media only screen and (max-width: 620px){
+			font-size: 20px;
+			left: 50%;
+    		transform: translate(-50%,0px);
+    		&:before{
+    			display: none;
+    		}
+    	}
+    	
+	}
+	a{
+		display: block;
+	}
+	.view-more{
+		display: inline-block;
+	    position: absolute;
+	    bottom: 20%;
+	    font-size: 14px;
+	    text-transform: uppercase;
+	    color: #fff;
+	    left: 70px;
+	    padding: 8px 20px;
+	    border: 1px solid #fff;
+	    webkit-transition: 0.3s ease-in-out;
+    	transition: 0.3s ease-in-out; 
+	    &:hover{
+	    	background: #ffffffa8;
+   			color: #000 !important;
+	    }
+	    @media only screen and (max-width: 620px){
+			left: 50%;
+    		transform: translate(-50%,0px);
+    	}
+		@media only screen and (max-width: 470px){
+		    padding: 3px 13px;
+		    text-transform: unset;
+		}
+		@media only screen and (max-width: 320px){
+			padding: 3px 6px;
+		}
+
+	}
+
+	.content {
+	    position: absolute;
+	    top: 46%;
+	    left: 70px;
+	    right: 39%;
+	    line-height: 22px;
+	    color: #fff;
+	    @media only screen and (max-width: 1024px){
+			display: none;
+	    }
+	}
+	.view-all{
+		text-align: center;
+		margin-top: 50px;
+		
+		
+		a{
+			display: inline-block;
+			display: inline-block;
+		    padding: 12px 35px;
+    		font-size: 18px;
+		    background: #e2e2e2;
+		    text-transform: uppercase;
+			webkit-transition: 0.3s ease-in-out;
+    		transition: 0.3s ease-in-out;
+		    &:hover{
+		    	background: var(--main-color);
+	   			color: #fff !important;
+		    }
+
+		}
+		@media all and (max-width: 480px){
+            margin-top: 15px;
+            a{
+                padding: 8px 22px;
+                font-size: 12px;
+            }
+        }
+	}
+}

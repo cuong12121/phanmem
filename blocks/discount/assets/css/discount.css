@@ -1,0 +1,26 @@
+.discount_content .discount_title {
+   color: #000000;
+    font-size: 12px;
+    margin-bottom: 10px;
+	position: relative;
+}
+.discount_content #discount_form {
+}
+.discount_content .txt-input {
+    background: none repeat scroll 0 0 #fff;
+    border: 1px solid #ccc;
+    color: #808080;
+    font-size: 12px;
+    font-style: italic;
+    padding: 5px;
+    width: 50%;
+}
+.discount_content .button-sub.button {
+    background: #de5648;
+    border: none;
+    color: #fff;
+    padding: 5px 13px;
+    width: 30%;
+}
+.discount_content .discount_description {
+}

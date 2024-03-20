@@ -1,0 +1,15 @@
+.block-products-horizontal .row{
+	width: 134px;
+	float: left;
+	margin-right: 20px;
+	margin-bottom: 20px;
+}
+.block-products-horizontal .row .name{
+	
+}
+.block-products-horizontal .row_4 {
+    margin-right: 0px;
+}
+.block-products-horizontal .row_0 {
+    clear: left;
+}

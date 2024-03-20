@@ -1,0 +1,12 @@
+.vertical {
+    border: 1px solid #ccc;
+    margin-bottom: 50px;
+}
+.item_w2_left {
+    float: left;
+    width: 50%;
+}
+.item_w2_right {
+    float: right;
+    width: 50%;
+}

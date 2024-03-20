@@ -1,0 +1,16 @@
+.banners_row2 {
+	display: flex;
+    flex-wrap: wrap;
+	.item {
+		overflow: hidden;
+		border-radius: 50px;
+		a {
+			display: grid;
+		}
+		&:hover {
+			img {
+				transform: scale(1.03);
+			}
+		}
+	}
+}

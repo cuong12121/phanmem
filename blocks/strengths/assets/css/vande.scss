@@ -1,0 +1,236 @@
+.strengths_vande_block {
+  padding: 40px 0;
+  overflow: hidden;
+  @media all and (max-width: 800px) {
+    padding: 20px;
+  }
+  .str_hotline {
+    text-align: center;
+    .inner {
+      display: inline-block;
+      padding: 15px 20px;
+      background: #252525;
+      border-radius: 30px;
+      transform: translate(0,50px);
+      opacity: 0;
+      transition: 0.5s;
+      a {
+        color: #bdbdbd;
+        display: inline-block;
+        padding-left: 20px;
+        padding-right: 20px;
+        font-size: 16px;
+        font {
+          color: #fff;
+          font-weight: bold;
+        }
+      }
+      .hotline {
+        border-right: 1px solid #999999;
+      }
+    }
+    
+  }
+  .cat_des {
+    width: 40%;
+    margin: auto;
+    text-align: center;
+    color: #fff;
+    float: left;
+    img {
+      opacity: 0;
+      transform: translate(100px);
+      transition: 0.5s;
+    }
+
+    @media all and (max-width: 800px) {
+     width: 100%;
+     margin-right: 0;
+     margin-top: 20px;
+   }
+   h4 {
+     color: var(--main-color);
+     font-size: 20px;
+     margin-bottom: 10px;
+   }
+   ul {
+     margin-left: 8px;
+     li {
+	//background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px"><path fill="#f7941d" stroke="transparent" stroke-width="0" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>\a</svg>');
+	background-repeat: no-repeat;
+	padding-left: 25px;
+	padding-right: 20px;
+	box-sizing: border-box;
+	margin-bottom: 5px;
+	position: relative;
+	&::before {
+		width: 16px;
+		height: 16px;
+		top: 4px;
+		content: '';
+		position: absolute;
+		left: 0px;
+		background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px"><path fill="#f7941d" stroke="transparent" stroke-width="0" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>\a</svg>');
+		background-repeat: no-repeat;
+		background-size: 100%;
+
+
+	};
+}
+}
+p {
+	margin-top: 20px;
+	font-size: 18px;
+	text-transform: uppercase;
+			//line-height: 25px;
+			
+		}
+	}
+	.str_content {
+		overflow: hidden;
+		margin: auto;
+		position: relative;
+		box-sizing: border-box;
+    width: 60%;
+    float: left;
+    @media all and (max-width: 1000px) {
+     width: 100%;
+     margin-right: 0;
+   }
+   @media all and (max-width: 700px) {
+     padding-left: 0px;
+   }
+   .title_cat {
+    text-align: center;
+    text-transform: uppercase;
+    color: #fff;
+    font-size: 24px;
+    font-weight: bold;
+    padding-top: 8px;
+    line-height: 30px;
+  }
+  .strengths_why {
+   padding-top: 40px;
+   box-sizing: border-box;
+   @media all and (max-width: 800px) {
+    padding-top: 20px;
+   }
+   @media all and (max-width: 600px) {
+    width: 100%;
+    padding-left: 0;
+  }
+  .b_title {
+    font-weight: bold;
+    font-size: 26px;
+    position: relative;
+    padding-bottom: 15px;
+    margin-bottom: 30px;
+    float: left;
+    &:after {
+     content: '';
+     width: 30px;
+     height: 2px;
+     background: var(--extra-color);
+     position: absolute;
+     bottom: 0;
+     left: calc(50% - 15px);
+   } 
+
+ }
+
+
+ .item {
+  transform: translate(100%);
+  opacity: 0;
+  margin-bottom: 20px;
+  position: relative;
+  transition: 2.5s;
+  @media all and (max-width: 800px) {
+  }
+  svg {
+    width: 22px;
+    height: 22px;
+    fill: var(--extra-color);
+    position: absolute;
+    left: 0;
+    top: -4px;
+
+  }
+  .name {
+    display: inline-block;
+    padding: 8px 13px;
+    font-weight: bold;
+    color: var(--main-color);
+    border-radius: 50%;
+    border: 2px dashed var(--main-color);
+    width: 40px;
+    height: 40px;
+    box-sizing: border-box;
+    font-size: 18px;
+    position: absolute;
+    left: 0px;
+    top: -4px;
+  }
+  .summary {
+    display: inline-block;
+    font-size: 17px;
+    line-height: 26px;
+    color: #fff;
+    text-transform: uppercase;
+    vertical-align: middle;
+    padding-left: 50px;
+    @media all and (max-width: 1200px) {
+      font-size: 15px;
+      line-height: 20px;
+    }
+    font {
+      font-weight: bold;
+    }
+    svg {
+      fill: #fff;
+      width: 30px;
+      height: 30px;
+      transform: scale(1,0.8);
+    }
+  }
+}
+.item_1{
+  transition: 0.5s;
+  -webkit-transition:0.5s;
+}
+.item_2{
+  transition: 1s;
+  -webkit-transition:1s;
+}
+.item_3{
+  transition: 1.5s;
+  -webkit-transition:1.5s;
+}
+.item_3{
+  transition: 2.0s;
+  -webkit-transition:2.0s;
+}
+}
+}
+}
+.hello {
+	.strengths_vande_block {
+		.item {
+			transform: translate(0) !important;
+			opacity: 1 !important;
+
+		}
+    .cat_des {
+      img {
+        transform: translate(0);
+        opacity: 1;
+      }
+    }
+    .str_hotline {
+      .inner {
+        transform: translate(0);
+        opacity: 1;
+      }
+    }
+  }
+}

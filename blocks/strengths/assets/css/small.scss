@@ -1,0 +1,76 @@
+.strengths_small_block{
+    ul{
+        li{
+                float: right;
+                    margin-left: 80px;
+                 @media only screen and (max-width:980px){
+                    margin-left: 40px;
+                 }
+                 @media only screen and (max-width:860px){
+                       margin-left: 20px;
+                    width: 33.333%;
+                    margin: 0;
+                    box-sizing: border-box;
+                 }
+            &:last-child{
+                margin-left: 0px;
+            }
+            figure{
+                img{                    
+
+                        float: left;
+                        margin-right: 10px;
+                        border-radius: 50%;
+                        transition: all 1.2s;
+                        -webkit-transition: all 1.2s;
+                        background: #ff8b00;
+                        width: 33px;
+                        height: 33px;
+                        margin-top: 7px;
+                }
+                figcaption{
+                         color: #444444;
+                    line-height: 20px;
+                    height: 50px;
+                    vertical-align: middle;
+                    display: table-cell;
+                    font-size: 13px;
+                    text-align: left;
+                    span{
+                        display: block;
+                        transition: all 1.2s;
+                        -webkit-transition: all 1.2s;
+                        &:first-child{
+                                 margin-bottom: 0px;
+                            font-weight: bold;
+                            @media only screen and (max-width:360px){
+                                font-weight: normal;
+                            }
+                        }
+                        &:last-child{
+                            color: #969696;
+                            @media only screen and (max-width:600px){
+                                display: none;
+                            }
+                        }
+                    }
+                }
+            }
+            &:hover{
+                img{
+                    background: #0187CF;
+                }
+                span{
+                       
+                        &:first-child{
+                             color: #ff8b00;
+                        }
+                        &:last-child{
+                                color: #5a5a5a;
+                        }
+                    }
+            }
+        }
+    }     
+
+}

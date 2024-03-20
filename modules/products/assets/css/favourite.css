@@ -1,0 +1,25 @@
+.head-tr th{
+	color: #fff;
+	text-align: center;
+}
+.td-img a{
+	margin-right: 10px;
+}
+.td-img img{
+	border: 1px solid #DCDCDC;
+}
+.td-img h4 a{
+ font-weight: bold;
+}
+.td-img .price{
+ font-weight: bold;
+ font-size: 16px
+}
+.buy_add {
+    background: none repeat scroll 0 0 #25b7e9;
+    color: #fff;
+    padding: 4px 10px;
+}
+.buy_add:hover {
+    color: #fff;
+}

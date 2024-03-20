@@ -1,0 +1,83 @@
+.slider-bottom {
+    position: relative;    
+    padding-bottom: 30px;}
+.wrapper-block-item-customer {
+    background: #f5f5f5;
+    padding: 10px;
+}
+.slider-bottom .block-item-customer .avatar-home {
+    margin-top: 10px; }
+.slider-bottom .block-item-customer .avatar-home img {
+    width: 100%;
+    border-radius: 50%; }
+.slider-bottom .block-item-customer .summary-customer {
+    width: 88.5%; }
+.slider-bottom .block-item-customer .summary-customer .title-customer {
+    font-size: 18px;
+    line-height: 24px;
+    font-family: " bold";
+    text-transform: uppercase;
+    margin-bottom: 13px; }
+.slider-bottom .block-item-customer .summary-customer .description-customer {
+    font-family: " italic";
+    line-height: 20px;
+    margin-bottom: 10px;
+    color: #777777;
+    font-size: 15px;
+    text-align: justify;
+    position: relative;
+    padding-bottom: 25px;}
+.slider-bottom .block-item-customer .summary-customer .description-customer:before {
+    content: "";
+    background: url("../images/icon-home.png") no-repeat -70px -80px;
+    float: left;
+    width: 20px;
+    height: 17px;
+    padding-right: 10px; }
+.slider-bottom .block-item-customer .summary-customer .description-customer:after {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 17px;
+    background: url("../images/icon-home.png") no-repeat -103px -80px;
+    bottom: -1px;
+    right: 23px; }
+.slider-bottom .block-item-customer .summary-customer .name-customer {
+    font-size: 16px;
+    line-height: 24px;
+    color: #1dbed0; }
+.slider-bottom .customNavi {
+    position: absolute;
+    left: 155px;
+    bottom: 15px; }
+.slider-bottom .customNavi a {
+    cursor: pointer;
+    display: inline-block;
+    width: 30px;
+    height: 30px; }
+.slider-bottom .owl-prev {
+    background: url("../images/icon-home.png") no-repeat -4px -116px;
+    margin-right: 5px;
+    width: 30px;
+    float: left;
+    margin: -58px 0px 0px 163px;
+    position: relative;
+    height: 30px; }
+.slider-bottom .customNavi a.prev:hover {
+    background: url("../images/hover-pre.png") no-repeat;
+    margin-right: 5px; }
+.slider-bottom .owl-next {
+    background: url("../images/icon-home.png") no-repeat -53px -116px;
+    margin-right: 5px;
+    width: 30px;
+    margin: -58px 0px 0px 200px;
+    position: relative;
+    height: 30px;
+    float: left; }
+.slider-bottom .customNavi a.next:hover {
+    background: url("../images/hover.png") no-repeat; }
+.block-item-customer {
+    border: 1px solid #e0e0e0;
+    padding: 25px 20px 10px 30px;
+    background: #fff;
+}

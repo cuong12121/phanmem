@@ -1,0 +1,36 @@
+.partner_menu {
+    margin-bottom: 15px;
+}
+
+.partner_menu h2 {
+    background: none repeat scroll 0 0 #AB368D;
+    border-radius: 3px 3px 3px 3px;
+    color: #FDFAFC;
+    display: block;
+    font-family: arial;
+    font-size: 16px;
+    margin-bottom: 5px;
+    padding-left: 13px;
+}
+.partner_menu .item {
+    background: url("../images/icon-menu-li.gif") no-repeat scroll 5px center #EDC971;
+    border: 1px none;
+    border-radius: 3px 3px 3px 3px;
+    line-height: 22px;
+    padding-left: 8px;
+}
+.partner_menu .item > a {
+    color: #C35C19;
+    display: block;
+    font-family: arial;
+    font-size: 14px;
+    margin-bottom: 5px;
+    padding: 2px
+}
+.partner_menu .item > a {
+	text-decoration: none;
+}
+.item span {
+    display: block;
+    padding-left: 10px;
+}

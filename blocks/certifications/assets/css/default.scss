@@ -1,0 +1,123 @@
+.block_certifications {
+	.block_certifications_body {
+		display: flex;
+	    /* align-items: center; */
+	    justify-content: center;
+	    flex-wrap: wrap;
+		.block_certifications_body_l {
+			width: 43%;
+			@media all and (max-width: 850px){
+		    	width: 50%;
+		    }
+		    @media all and (max-width: 650px){
+		    	width: 60%;
+		    	margin-bottom: 25px;
+		    }
+		}
+		.block_certifications_body_r {
+			width: 57%;
+    		box-sizing: border-box;
+    		padding-left: 100px;
+    		@media all and (max-width: 850px){
+		    	width: 50%;
+		    	padding-left: 50px;
+		    }
+		    @media all and (max-width: 650px){
+		    	width: 100%;
+		    	padding-left: 0px;
+		    }
+    		.block_title {
+    			text-align: left;
+    			margin-bottom: 30px;
+    			@media all and (max-width: 850px){
+			    	margin-bottom: 20px;
+			    }
+			    @media all and (max-width: 850px){
+			    	text-align: center;
+			    }
+    		}
+    		.sum_cat {
+    			font-size: 22px;
+			    line-height: 32px;
+			    font-weight: 600;
+			    @media all and (max-width: 1025px){
+			    	font-size: 20px;
+			    }
+			    @media all and (max-width: 850px){
+			    	font-size: 16px;
+			    	line-height: 28px;
+			    }
+			    @media all and (max-width: 650px){
+			    	text-align: center;
+			    	font-size: 14px;
+			    	line-height: 23px;
+			    }
+    		}
+    		.box_items {
+    			padding: 22px 0;
+			    overflow: hidden;
+			    border-top: 1px solid var(--extra-color);
+			    border-bottom: 1px solid var(--extra-color);
+			    margin-top: 44px;
+			    @media all and (max-width: 1025px){
+			    	margin-top: 32px;
+			    }
+			    @media all and (max-width: 850px){
+			    	margin-top: 22px;
+			    }
+    		}
+			.name {
+				display: none;
+			    width: 240%;
+			    left: -70%;
+			    position: relative;
+			    text-align: center;
+			    line-height: 22px;
+			    margin-top: 32px;
+			    @media all and (max-width: 850px){
+			    	margin-top: 20px;
+    				font-size: 15px;
+			    }
+			    @media all and (max-width: 650px){
+    				font-size: 14px;
+			    }
+			}
+			.item {
+				padding-top: 15px;
+			}
+			.active {
+				.iamge {
+					transform: scale(0.9);
+					text-align: center;
+					img {
+						-webkit-filter: grayscale(100%);
+					}
+    			}
+			}		
+    		.center {
+    			.name {  				
+    				display: block;
+    			}
+    			.iamge {
+    				transform: scale(1.2);
+    				img {
+						-webkit-filter: grayscale(0%);
+					}
+    			}
+    		}  		
+		}
+		.owl-nav {
+			div {				
+			    font-size: 50px;
+			    position: absolute;
+			    bottom: 35px;
+			}
+			.owl-prev {
+				left:0;
+			}
+			.owl-next {
+				right: 0;
+			}
+		}
+	}
+}

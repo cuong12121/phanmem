@@ -1,0 +1,47 @@
+.banners_products_cat {
+	.item {
+		a {
+			display: grid;
+			img {
+				width: 100%;
+			}
+		}
+	}
+}
+.banners_products_cat_2 {
+	margin: 0 -10px;
+	.item {
+		width: calc(50% - 20px);
+		float: left;
+		margin: 0 10px 10px;
+	}
+}
+.banners_products_cat_3 {
+	margin: 0 -10px;
+	@media all and (max-width: 800px) {
+		margin: 0 -5px;
+	}
+	.item {
+		float: left;
+		margin: 0 10px 10px;
+		@media all and (max-width: 800px) {
+			margin: 0 5px 10px;
+		}
+	}
+	.item_0 {
+		width: calc(68.5% - 20px);
+		@media all and (max-width: 800px) {
+			width: calc(100% - 10px);
+		}
+	}
+	.item_1, .item_2 {
+		width: calc(31.5% - 20px);
+		margin-bottom: 20px;
+		@media all and (max-width: 800px) {
+			width: calc(50% - 10px);
+			float: left;
+			margin: 0 5px;
+			margin-bottom: 10px;
+		}
+	}
+}

@@ -1,0 +1,44 @@
+#myCarousel > h2 {
+    background: url("../images/bg-sph.png")no-repeat #f1f1f1;
+    padding: 10px 45px;
+    margin: 0;
+}
+#myCarousel > h2 span {
+    font-family: semibold;
+    font-size: 15px;
+    text-decoration: none;
+}
+#myCarousel > h2  strong{
+    color: #ff0000;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+#myCarousel .item{
+	padding: 10px 0;
+}
+#myCarousel .carousel-control.left{
+	background: url("../images/prev.png") no-repeat scroll 0 90px ;
+}
+#myCarousel .carousel-control.right{
+	background: url("../images/next.png") no-repeat scroll 0 90px ;
+}
+#myCarousel h2 {
+    margin-top: 0;
+}
+#myCarousel .name {
+    font-family: semibold;
+    font-size: 13px;
+    line-height: 20px;
+}
+#myCarousel .price {
+    color: #ff1111;
+    font-family: semibold;
+    font-size: 18px;
+}
+#myCarousel .product_info {
+    background: none repeat scroll 0 0 #f1f1f1;
+    margin-top: 10px;
+    padding:10px;
+    min-height: 110px;
+   display: none;             
+}

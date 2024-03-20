@@ -1,0 +1,50 @@
+.newslist_tabs .nav.nav-tabs {
+    background:#f1f1f1;
+    border: 0;
+}
+.newslist_tabs .nav-tabs > li:FIRST-CHILD > a{
+	 background: none !important;
+}
+.newslist_tabs .nav-tabs > li.active > a, .newslist_tabs .nav-tabs > li.active > a:hover, .newslist_tabs .nav-tabs > li.active > a:focus{
+     background: url("../images/dotted.png") no-repeat scroll 0 center;
+    border-radius: 0;
+    border: 0;
+    border-top: 2px solid #0183bd;
+    color: #0183bd;
+    margin: 0 5px;
+}
+.newslist_tabs .nav > li > a {
+    display: block;
+    padding: 10px 6px;
+    position: relative;
+    font-family: opensans;
+    font-size: 13px;
+     background: url("../images/dotted.png") no-repeat scroll 0 center;
+}
+.newslist_tabs .nav > li > a:hover, .newslist_tabs .nav > li > a:focus {
+    border-radius: 0;
+    border: 0;
+    border-top: 2px solid #42bae3;
+    text-decoration: none;
+    background: url("../images/dotted.png") no-repeat scroll 0 center;
+}
+.newslist_tabs .media-box {
+    border-top: 1px dotted #ccc;
+    padding: 12.5px 0 0;
+}
+.newslist_tabs .media-box:first-child {
+    border-top: 0;
+}
+.newslist_tabs .pull-left {
+    margin-right: 10px;
+}
+.newslist_tabs .media-heading > a {
+    color: #000;
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 15px;
+}
+.newslist_tabs p {
+    font-size: 12px;
+    text-align: justify;
+}

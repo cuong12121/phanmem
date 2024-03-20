@@ -1,0 +1,119 @@
+.breadcrumb {
+    margin-bottom: 15px;
+}
+.centent_main {
+    margin-top: 15px;
+}
+.center-name_vd{
+    display: none;
+}
+.video .menu_name {
+    height: 44px;
+    margin-bottom: 18px;
+}
+.news-first {
+    float: left;
+    width: 240px;
+}
+.center-name {
+    background: url("../images/bg_tt.png") no-repeat;
+    float: left;
+    padding: 13px 150px 7px 35px;
+}
+.center-name a {
+    color: #fff;
+    font-family: opensans;
+    font-size: 16px;
+}
+.menu_name > a {
+    float: right;
+    font-size: 11px;
+    margin: 13px 0;
+}
+.main_content{
+    margin-bottom: 20px;
+}
+.video_cat h1 {
+    background: url("../images/bg_tt.png") no-repeat;
+    color: #fff;
+    float: left;
+    font-size: 16px;
+    font-weight: normal;
+    margin-bottom: 9px;
+    padding: 14px 0 14px 37px;
+    width: 180px;
+}
+.ordering {
+    border-bottom: 1px solid #ccc;
+    float: right;
+    margin: 15px 0 0;
+    padding: 3px 0;
+}
+.order-item {
+    border-left: 1px solid #ccc;
+    color: #333;
+    font-family: opensans;
+    font-size: 14px;
+    padding: 0 16px 4px;
+    position: relative;
+}
+.order-item:first-child {
+    border-left: 0;
+}
+.order-item:hover, .selected.order-item {
+    border-bottom: 1px solid #f267b7;
+    color: #f267b7;
+    font-size: 14px;
+    padding: 0 16px 3.5px;
+}
+.order-item:hover > span, .selected.order-item > span{
+    background: url("../images/icon-tab.png") no-repeat;
+    padding: 4px;
+    position: absolute;
+    left: 48%;
+    top: 100%;
+}
+
+
+
+.cat_title {
+    width: 240px;
+    margin-bottom: 5px;
+}
+.frame_left {
+    float: left;
+    height: 220px;
+    margin-right: 10px;
+    margin-bottom: 15px;
+}
+.cat_title > a{
+    font-family: opensans;
+    font-size: 13px;
+}
+.frame_left > p, .frame_left > span {
+    color: #929292;
+    font-size: 11px;
+    margin-bottom: 5px;
+}
+.title_user > a{
+    color: #ec2196;
+}
+.cat-item {
+    float: left;
+    height: 220px;
+    margin-bottom: 15px;
+    margin-left: 20px;
+}
+.cat-item.row1 {
+    margin-left: 0;
+}
+.item-img {
+    position: relative;
+}
+.item-img > span {
+    background: url("../images/icon_video.png") no-repeat;
+    bottom: 40px;
+    left: 40%;
+    padding: 30px;
+    position: absolute;
+}

@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAEC,0BAAK,CACJ,MAAM,CAAE,cAAc,CACnB,YAAY,CAAE,mBAAmB,CACjC,WAAW,CAAE,mBAAmB,CAChC,UAAU,CAAE,UAAU,CACtB,UAAU,CAAE,MAAM,CAClB,OAAO,CAAE,OAAO",
+"sources": ["row.scss"],
+"names": [],
+"file": "row.css"
+}

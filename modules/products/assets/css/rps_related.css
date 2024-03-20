@@ -1,0 +1,87 @@
+.rps_vertical {
+    margin-bottom: 20px;
+}
+.rps_vertical .relate_title {
+    border-bottom: 2px solid #b1b1b1;
+    font-family: arial;
+    font-size: 18px;
+    font-weight: normal;
+}
+.product-relate {
+    position: relative;
+     width: 100%;
+     overflow: hidden;
+}
+.product-relate .wrapper_relate {
+}
+.product-relate .carousel_body {
+    margin: 0 auto;
+    overflow: hidden;
+    width: 94%;
+}
+.product-relate .carousel {
+	width: 1130px;
+	position: relative;
+	
+}
+
+.product-relate .carousel ul {
+	list-style: none;
+	display: block;
+	margin: 0;
+	padding: 0;
+}
+.product-relate .carousel li {
+    color: #999999;
+    display: block;
+    float: left;
+    height: 126px;
+    margin: 6px 0;
+    padding: 0;
+    position: relative;
+    text-align: center;
+    width: 170px;
+}
+.product-relate .carousel li a {
+    display: block;
+}
+.product-relate .carousel li img {
+    width: 60%;
+}
+.product-relate .carousel li span {
+    display: block;
+    font-size: 11px;
+    line-height: 14px;
+    z-index: 2;
+}
+.product-relate .carousel li:hover span {
+	color: #F47921;
+}
+.product-relate .clearfix {
+	float: none;
+	clear: both;
+}
+
+.product-relate .prev,.product-relate .next {
+	text-indent: -999px;
+	display: block;
+	overflow: hidden;
+	width: 15px;
+	height: 21px;
+	position: absolute;
+	top: 52px;
+}
+
+.product-relate .prev {
+	background: transparent url(../images/gui-prev.png) no-repeat 0 0 ;
+	 left: 20px;
+}
+.product-relate .next {
+	background: transparent url(../images/gui-next.png) no-repeat 0 0 ;
+	right: 10px;
+}
+.product-relate .carousel .pager {
+	text-align: center;
+	margin: 0 auto;
+}
+

@@ -1,0 +1,136 @@
+.body-block-column{
+	.title{
+		text-align: center;
+	    font-size: 22px;
+	    text-transform: uppercase;
+	    padding: 9px 0px 12px 0px;
+	    font-family: RobotoCondensed-Bold;
+	    background: var(--extra-color);
+    	color: #fff;
+	}
+	.item{
+    	position: relative;
+    	margin: 0px 0px 20px 0px;
+    	box-sizing: border-box;
+    	border-bottom: 1px solid #f1f1f1;
+    	overflow: hidden;
+    	&:hover {
+		    box-sizing: border-box;
+		    border-bottom: 1px solid var(--extra-color);
+		    img{
+				transform: scale(1.1);
+			}
+
+		    .button_od button {
+			    background: var(--extra-color);
+			    transform: rotate(360deg);
+			}
+			.name {
+			    color: var(--extra-color);
+			}
+		}
+		&:last-child {
+			border-bottom: none;;
+		}
+
+    }
+    .frame_inner{
+		padding:15px;
+		background:#fff;
+		position: relative;
+		.product_image {
+		    text-align: center;
+		    overflow: hidden;
+		    margin-bottom: 16px;
+		    min-height: 186px;
+		    .product_grid .item .product_image a {
+			    display: block;
+			    position: relative;
+			}
+		}
+
+    }
+    .button_area {
+	    display: none;
+	}
+	.manufactory_name {
+	    font-size: 16px;
+	    color: #989898;
+	    margin-bottom: 2px;
+	}
+	.frame_inner>h2 {
+	    margin-bottom: 8px;
+	    margin-top: 0px;
+	    overflow: hidden;
+	    height: 43px;
+	}
+	.name {
+	    display: block;
+	    font-weight: normal;
+	    color: #333;
+	    font-size: 16px;
+	    font-family: RobotoCondensed-Bold;
+	}
+	.price_arae {
+	    position: relative;
+	}
+	.price_current {
+	    color: var(--extra-color);
+	    font-size: 16px;
+	}
+
+	.price_old {
+	    color: #d4d3d3;
+	    font-size: 16px;
+	    font-weight: normal;
+	    span {
+		    text-decoration: line-through;
+		}
+	}
+
+	.discount {
+	    left: 116px;
+    	bottom: 33px;
+		position: absolute;
+		background: var(--extra-color);
+	    color: #FFFFFF;
+	    height: 22px;
+	    width: 57px;
+	    text-align: center;
+	    border-radius: 2px;
+	    line-height: 22px;
+	    span {
+		    position: relative;
+		    &:after {
+			    content: '';
+			    position: absolute;
+			    top: 6px;
+			    left: -24px;
+			    width: 0;
+			    height: 0;
+			    border-style: solid;
+			    border-width: 5px 8px 5px 0;
+			    border-color: transparent var(--extra-color) transparent transparent;
+			}
+		}
+	}
+
+	.button_od button {
+	    background: #c3c3c3;
+	    padding: 6px;
+	    border: none;
+	    text-transform: uppercase;
+	    cursor: pointer;
+	    border-radius: 50%;
+	    width: 40px;
+	    height: 40px;
+	    box-sizing: border-box;
+	    position: absolute;
+	    right: 19px;
+        bottom: 16px;
+	    -webkit-transition: all .5s ease;
+	    -moz-transition: all .5s ease;
+	    -o-transition: all .5s ease;
+	    transition: all .5s ease;
+	}
+}

@@ -1,0 +1,49 @@
+.shopcart .departure {
+    svg {
+        fill:#fff;
+    }
+    position: relative;
+    a {
+        display: block;
+        text-align: left;
+        color: #666666;
+        font-size: 16px;
+        text-transform: uppercase;
+        font-family: initial;
+        @media screen and (max-width: 930px){
+           
+            padding-bottom: 14px;
+        }
+           
+        font{
+            color: #fff;
+            position: absolute;
+            top: -8px;
+            right: -8px;
+
+        }
+        &:first-child {
+            font-family: RobotoBold;
+            display: block;
+            font-size: 15px;
+            text-align: left;
+            margin-bottom: 0px;
+            color: #333;
+        }
+    }
+    .icon-shopping {
+        position: absolute;
+        right: 10px;
+        top: -7px;
+        @media screen and (max-width: 930px){
+            
+        }
+    }
+
+    @media screen and (max-width:420px){
+      
+    }
+
+
+}
+

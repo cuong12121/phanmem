@@ -1,0 +1,242 @@
+.sims_categories_cols_left,.sims_prices_cols_left {
+	width: 50%;
+	float: left;
+}
+
+.sims_categories_cols_right,.sims_prices_cols_right {
+	width: 50%;
+	float: right;
+}
+#block_id_66 {
+    border: 1px solid #DDDDDD;
+    background: #FFFFFF;
+    min-height: 1264px;
+    width: 236px;
+}
+.filter_item_lelel_1 .filter_item_inner {
+	padding-left: 10px;
+}
+
+.filter_item_lelel_1 .filter_item_inner label {
+	left: 10px;
+}
+.manu_item .manu_item_inner,.length_item .length_item_inner {
+	cursor: default;
+}
+.manu_item .manu_item_inner a{
+    padding-left: 30px;
+    background: url('../images/icon_c_box.png') no-repeat left;
+    font-family: droid_sansregular;
+}
+.years_item {
+    float: left;
+    width: 28%;
+}
+.years_item_last {
+    width: 16%;
+}
+.excludes_item {
+	width: 20%;
+	float: left;
+}
+.sub_block_title {
+    background: url("../images/bg_bottom.png") repeat-x scroll 0 bottom ;
+    cursor: pointer;
+    min-height: 30px;
+    padding-bottom: 4px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    width: 206px;
+}
+.service_city_body.summary {
+    float: left;
+    margin-top: 10px;
+    width: 100%;
+}
+.service_city_body.summary > select {
+margin-left: 7px;
+box-shadow: -1px 3px 1px -2px #D1D1D3 inset;
+border: 1px solid #D1D1D3;
+height: 22px;
+border-radius: 2px;
+}
+.service_city_body.summary a {
+    float: left;
+    margin-bottom: 15px;
+    margin-right: 7px;
+    padding-left: 22px;
+    background: url("../images/Radio_button_off.png") no-repeat left -3px;
+}
+.service_city_body .activated{
+    background: url("../images/Radio_button_on.png") no-repeat left -3px !important;
+} 
+.sub_block_title .normal {
+    background: url("../images/retractable.png") no-repeat  300px center;
+    height: 20px;
+}
+.sub_block_title .active {
+    background: url("../images/expand.png") no-repeat 300px center !important;
+}
+.sub_block_title span {
+    color: #2DA6D7;
+    display: block;
+    float: left;
+    font-family: arial;
+    font-weight: bold;
+    font-size: 18px;
+    min-height: 22px;
+    padding: 0 10px 0 0;
+}
+.sims_filter .sub_block .sims_categories_label {
+    border-bottom: 3px solid #E7E7E7;
+    border-left: 1px solid #DADADA;
+    border-right: 1px solid #DADADA;
+    padding: 20px;
+    position: relative;
+}
+.sims_filter .sub_block .sims_categories_label .sims_body {
+    margin-bottom: 6px;
+    max-height: 150px;
+    overflow: hidden;
+}
+#products_color > ul > li:hover {
+border: 1px solid #EB8518;
+}
+.activate{
+    background: url("../images/icon_cb_active.png") no-repeat 0px !important;
+}
+.filter_item, .manu_item, .length_item , .years_item , .excludes_item, .prices_item {
+    margin: 10px auto 14px;
+    position: relative;
+}
+.sub_block {
+    margin: 0 0 12px;
+}
+
+.filter_item_inner a, .manu_item_inner > a, .length_item_inner > a, .prices_item_inner > a, .years_item_inner > a, .excludes_item_inner > a  {
+	font-size: 13px;
+}
+.filter_item.activated .filter_item_inner a, .manu_item.activate .manu_item_inner > a , .length_item.activate .length_item_inner > a, .prices_item.activate .prices_item_inner > a, .years_item.activate .years_item_inner > a , .excludes_item.activate .excludes_item_inner > a   {
+	background: url(../images/icon_delete.png) no-repeat right center;
+	font-weight: bold;
+	padding-right: 16px;
+}
+.filter_item_inner a .check_box, .manu_item_inner a .check_box, .length_item_inner a .check_box, .prices_item_inner a .check_box, .years_item_inner a .check_box, .excludes_item_inner a .check_box {
+	background: url("../images/icon_no_checked.png") no-repeat scroll 0 0 ;
+    display: block;
+    float: left;
+    height: 12px;
+    margin-right: 2px;
+    width: 12px;
+}
+.filter_item.activated .filter_item_inner a .check_box, .manu_item.activate .manu_item_inner > a .check_box, .length_item.activate .length_item_inner > a .check_box, .prices_item.activate .prices_item_inner > a .check_box, .years_item.activate .years_item_inner > a .check_box, .excludes_item.activate .excludes_item_inner > a  .check_box {
+	background: url("../images/icon_checked.png") no-repeat scroll 0 0 ;
+    display: block;
+    float: left;
+    height: 12px;
+    margin-right: 2px;
+    width: 12px;
+}
+.checked {
+ 
+}
+.years_item.activate .years_item_inner > a {
+	background: url(../images/icon_delete.png) no-repeat right center;
+	font-weight: bold;
+	padding-right: 16px				;
+}
+.price_form {
+    margin-top: 10px;
+}
+#price_form > span,#summer_form > span {
+    float: left;
+    font-size: 11px;
+    margin-right: 10px;
+}
+
+.price_f, .price_t ,.summer_f, .summer_t  {
+    border: 1px solid #7F9DB9;
+    float: left;
+    margin-right: 10px;
+    width: 88px;
+}
+
+#searchbt {
+    background: url("../images/search.png") no-repeat;
+    border: medium none;
+    float: right;
+    height: 16px;
+    text-indent: -9999px;
+    width: 16px;
+    cursor: pointer;
+}
+.summary_action {
+    border-top: 1px solid #C7C7C7;
+    cursor: pointer;
+    left: 0;
+    position: absolute;
+    width: 320px;
+}
+.summary_action .expand_bt {
+   
+    display: block;
+    font-size: 11px;
+    font-weight: bold;
+    margin: 0 auto;
+    width: 64px;
+}
+.summary_action .plus {
+	 background: url("../images/icon_view.png") no-repeat scroll right center;
+}
+.summary_action .subtract {
+	 background: url("../images/icon_collapse.png") no-repeat scroll right center;
+}
+.services_filter {
+    margin-left: 15px;
+}
+.manu_item_inner > span {
+}
+#sim-hop-menh .filter_item a{
+    padding-left: 30px;
+    background: url('../images/icon_c_box.png') no-repeat left;
+    font-size: 13px;
+
+}
+#products_color > ul > li {
+float: left;
+margin-right: 10px;
+border: 1px solid #ccc;
+padding: 1px;
+}
+.panel-body {
+   width: 210px;
+}
+#products_color > ul > li > a {
+float: left;
+width: 20px;
+height: 20px;
+}
+#products_color > ul > li > a:hover{
+}
+#id_manus > div.manu_item > div > div {
+    margin-left: 20px;
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+.pmodel_item_inner span {
+    color: #7a7a7a;
+    margin-left: 11px;
+}
+.pmodels_sub div.pmodel_item a{
+     background: url('../images/icon_c_box.png') no-repeat left;
+    padding-top: 1px;
+}
+#activated {
+     background: url('../images/icon_cb_active.png') no-repeat left !important;
+}
+.activate{
+    background: url('../images/icon_cb_active.png') no-repeat left !important;
+}
+.services_filter .actives {
+    background: url("../images/icon_cb_active.png") no-repeat 0px !important;
+}

@@ -1,0 +1,140 @@
+.tab_content_inner {
+    .title_content {
+        color: #fff;
+        padding: 15px;
+        box-shadow: border-box;
+        background: var(--main-color);
+        border-radius: 5px 5px 0 0;
+        font-size: 18px;
+        margin-bottom: 15px;
+    }
+    .fieldset_item_row {
+        margin-bottom: 10px;
+        .form_name {
+            color: #333333;
+            display: inline-block;
+            text-align: left;
+            vertical-align: top;
+            width: 160px;
+            float: left;
+            height: 36px;
+            display: flex;
+            align-items: center;
+            // line-height: 36px;
+            @media all and (max-width: 600px) {
+                width: 100px;
+            }
+        }
+        .value {
+            width: calc(80% - 180px);
+            float: left;
+            margin-left: 20px;
+            line-height: 36px;
+
+            @media all and (max-width: 600px) {
+               width: calc(100% - 120px);
+           }
+           .itemmale {
+            display: inline-block;
+            float: left;
+            position: relative;
+            padding-left: 12px;
+            width: 100px;
+            label {
+                position: absolute;
+                line-height: 36px;
+                left: 30px;
+                top: 0px;
+            }
+        }
+        .itemfemale {
+            display: inline-block;
+            float: left;
+            position: relative;
+            padding-left: 12px;
+            width: 100px;
+            label {
+                position: absolute;
+                line-height: 36px;
+                left: 30px;
+                top: 0px;
+            }
+        }
+        #female {
+            opacity: 0;
+        }
+        #male {
+            opacity: 0;
+        }
+    }
+    .radio-fake {
+        position: absolute;
+        top: 6px;
+        left: 0;
+        height: 20px;
+        width: 20px;
+        border-radius: 50%;
+        border: 1px solid #555;
+        background-color: #fff;
+    }
+    input ~ .radio-fake {
+    }
+    input:checked  ~ .radio-fake {
+        background: var(--extra-color);
+        border: 1px solid var(--extra-color);
+    }
+
+    input {
+        width: 100%;
+        line-height: 36px;
+        border-radius: 5px;
+        border: 1px solid #d6d6d6;
+        padding: 0 15px;
+        box-sizing: border-box;
+    }
+    .button-submit-edit{
+        width: 180px;
+        background: #fdd835;
+        cursor: pointer;
+    }
+
+    select {
+        width: 100%;
+            // font-size: 16px;
+            height: 36px;
+            display: block;
+            border-radius: 4px;
+            border: 1px solid #cacaca;
+            padding-left: 15px;
+            box-sizing: border-box;
+            margin-top: 3px;
+            outline: none;
+        }
+
+    }
+    .birthday {
+        select {
+            width: 100px;
+            float: left;
+            margin-left: 20px;
+            @media all and (max-width: 600px) {
+                    width: 60px;
+    float: left;
+    margin-left: 10px;
+            }
+        }
+    }
+}
+
+.button-reset-edit {
+	background-color: #DCDCDC;
+}
+.button-reset-edit:hover {
+	background-color: #e6e6e6;
+}
+
+.text_note {
+    line-height: 20px;
+    font-style: italic;
+    margin-top: 5px;
+}

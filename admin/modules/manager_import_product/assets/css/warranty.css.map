@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA,aAAa,CACZ,UAAU,CAAE,KAAK,CACd,UAAU,CAAE,IAAI",
+"sources": ["warranty.scss"],
+"names": [],
+"file": "warranty.css"
+}

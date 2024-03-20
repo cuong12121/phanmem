@@ -1,0 +1,108 @@
+.block-gallery-slide2{
+	min-height: 390px;
+	@media all and (max-width:1024px){
+	 	min-height: 314px;
+	}
+	@media all and (max-width:768px){
+	 	min-height: 234px;
+	}
+	.gallery-item{
+		width: calc(50% - 5px);
+		@media all and (max-width:768px){
+			width: 100%;
+		}
+	}
+
+	.item_inner{
+		display: flex;
+		flex-wrap: wrap;
+	}
+
+	.gallery-item-l{
+		margin-right: 5px;
+		@media all and (max-width:700px){
+			margin-right: 0px;
+			margin-bottom: 10px;
+		}
+	}
+
+	.gallery-item-r{
+		display: flex;
+		flex-wrap: wrap;
+		margin-left: 5px;
+		@media all and (max-width:700px){
+			margin-left: 0px;
+		}
+		.item-content{
+			width: calc(50% - 5px);
+			overflow: hidden;
+			&:nth-child(1),&:nth-child(2){
+				margin-bottom: 10px;
+			}
+			&:nth-child(1),&:nth-child(3){
+				margin-right: 5px;
+			}
+			&:nth-child(2),&:nth-child(4){
+				margin-left: 5px;
+			}
+
+		}
+
+
+	}
+
+	.item-content{
+		a{
+			position: relative;
+    		display: grid;
+    		>p{
+    			position: absolute;
+			    bottom: 0px;
+			    width: 100%;
+			    background: #3c3c3ce0;
+			    color: #fff;
+			    padding: 0px 20px;
+			    box-sizing: border-box;
+			    display: -webkit-box;
+			    -webkit-line-clamp: 1;
+			    -webkit-box-orient: vertical;
+			    text-overflow: ellipsis;
+			    overflow: hidden;
+			    line-height: 50px;
+			    @media all and (max-width:450px){
+			    	line-height: 30px;
+			    }
+    		}
+		}
+	}
+	.owl-controls .owl-nav div{
+	    display: inline-block;
+	    zoom: 1;
+	    position: absolute;
+	    margin: 0;
+	    background: #3c3c3ce0;
+	    width: 34px;
+	    height: 64px;
+	    text-align: center;
+	    font-size: 47px;
+	    color: #fff;
+	    font-family: -webkit-body;
+	    line-height: 52px;
+	    top: 50%;
+	    transform: translate(0, -50%);
+	    @media all and (max-width:450px){
+		    width: 26px;
+		    height: 27px;
+		    font-size: 27px;
+		    line-height: 22px;
+		}
+
+	}
+	.owl-controls .owl-prev {
+	    left: 0px;
+	}
+	.owl-controls .owl-next {
+	    right: 0px;
+	}
+
+}

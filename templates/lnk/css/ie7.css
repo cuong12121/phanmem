@@ -1,0 +1,30 @@
+.frame_body, .frame_footer{
+	float: left;
+}
+.center-col-3col .frame_footer{
+	width: 505px;
+}
+.center-col-3col .frame_body{
+	width: 491px;
+}
+.center-col-2col-right .frame_footer{
+	width: 665px;
+}
+.center-col-2col-right .frame_body{
+	width: 651px;
+}
+.center-col-2col-left .frame_footer{
+	width: 815px;
+}
+.center-col-2col-left .frame_body{
+	width: 801px;
+}
+.center-col-1col .frame_footer{
+	width: 975px;	
+}
+.center-col-1col .frame_body{
+	width: 961px;	
+}
+.person_info{
+	width: 447px;
+}

@@ -1,0 +1,140 @@
+.compare-product{display:table;-dt-display:table;behavior:url(/display-table.min.htc)}.compare-product .one-product{position:relative}.compare-product .one-product img{cursor:pointer}.compare-product .cmp_prd_name{border-radius:4px;bottom:14px;opacity:0;left:0;margin-left:-110px;padding:5px 8px;position:absolute;text-align:center;width:240px}.compare-product .one-product:hover .cmp_prd_name{opacity:1;z-index:999}.arrow_box{position:relative;background:#FFF;border:1px solid #D7D7D7}.compare-product .one-product:hover .cmp_prd_name .arrow_box{display:block}.arrow_box:after,.arrow_box:before{top:100%;left:50%;border:solid transparent;content:" ";height:0;width:0;position:absolute;pointer-events:none}.arrow_box:after{border-color:rgba(255,255,255,0);border-top-color:#FFF;border-width:8px;margin-left:-8px}.arrow_box:before{border-color:rgba(215,215,215,0);border-top-color:#D7D7D7;border-width:9px;margin-left:-9px}.inner_cmp_prd_name{background:none repeat scroll 0 0 #FFF;border:1px solid #D7D7D7;border-radius:8px;padding:4px 8px;position:relative}.compare-product .cmp_prd_name .txt_name{border-radius:4px;padding:4px 26px}.compare-product .cmp_prd_name .del-product-cmp{background:url(../images/del_icon_cmp.png) no-repeat scroll 0 0;cursor:pointer;padding:0 8px;position:absolute;right:16px;text-indent:-9999px;top:4px}.compare-product .text-title{display:none;padding-right:12px;vertical-align:middle}.compare-product .left-compare{display:table-cell;-dt-display:table-cell;vertical-align:middle}.compare-product .right-compare{display:table-cell;-dt-display:table-cell;vertical-align:middle}.compare-product .compare-all{background:url(../images/icon_compare_large.png) no-repeat scroll 0 center;cursor:pointer;padding:12px 0 12px 38px}@media only screen and (min-width: 1100px){.compare-product .compare-all:after{content:"So sánh sản phẩm"}}.compare-product .one-product{background:none repeat scroll 0 0 #DADADA;border:1px solid #F38C43;float:left;height:35px;margin-right:10px;width:35px}.delete-all{display:none}.compare .delete-all{display:block}.title-product-hot{display:none}.cp_content>a{color:var(--main-color);font-weight: 600;line-height:16px}.compare_table.compare_detail{border-collapse:collapse}
+.compare .tr-1.tr_first{    background: none repeat scroll 0 0 var(--main-color);
+    color: #FFF;}
+.compare .compare_label{font-size:16px;font-weight: 600;text-transform:uppercase}.compare .compare_detail .title{font-weight: 600}.compare .compare_detail .group_field{font-weight: 600}.compare .picture_small img{width:130px}.compare .compare_detail .picture_small img{width:100%}.compar_search,.soft_search{padding:4px 28px 10px}.compar_search select{width:200px}#cw_br,#cw_price,#cw_os{float:left}.jqTransformButton{background:none repeat scroll 0 0 #000;border:medium none;color:#FFF;cursor:pointer;font-family:'UTMCafetaRegular',arial;height:24px;line-height:24px;padding:0 10px;text-transform:uppercase;width:140px}#ss_bt{float:right}.compar_search label,.soft_search label{display:block;float:left;font-weight: 600;margin:0 20px 2px}.compare_frame_content{margin-bottom:30px}.abutton{width:98px;border:medium none;color:#FFF;cursor:pointer;display:block;font-size:16px;font-weight:300;height:22px;line-height:23px;margin:0 0 10px;padding:6px 12px 6px 22px;text-transform:uppercase}#compare-detail .compare-all{background:url(../images/icon_sosanh.png) no-repeat scroll 16px center #CB0000}.button_back{background:url(../images/icon_back.png) no-repeat scroll 16px center #CB0000}.delete-all{background:url(../images/icon-close.png) no-repeat scroll 16px center #000}.button_add{background:url(../images/icon_add.png) no-repeat scroll 16px center #2BA1B1}.abutton a{color:#FFF}.cmp_prd_name{margin-bottom:20px}.cmp_prd_name > a,.cmp_prd_name{color:#348AD4;font-weight: 600;line-height:16px}#compare-detail .del-product-cmp:before{background:url(../images/icon-close-1.png) no-repeat scroll 0 0 rgba(0,0,0,0);content:"";display:block;height:20px;left:0;position:absolute;transition:transform .1s ease-in-out 0;width:20px}#compare-detail .del-product-cmp:hover:before{transform:rotate(180deg)}#compare-detail .del-product-cmp{background:url(../images/bg_remove_clr.png) no-repeat scroll -120px 0 #F4F4F4;color:#333;margin:0 auto;text-align:center;width:90px;display:block;font-weight: 600;height:20px;line-height:20px;margin:0 auto;overflow:hidden;position:relative;transition:background .25s ease-in-out 0}#compare-detail .del-product-cmp:hover{background:url(../images/bg_remove_clr.png) no-repeat scroll 0 0 #F4F4F4;color:#DC0000;cursor:pointer}.paginate{display:none;text-align:right}.paginate li{display:inline-block;margin-right:4px}.paginate li a{background:none repeat scroll 0 0 #B3B3B3;border:1px solid #B3B3B3;display:inline-block;font-weight: 600;padding:0 6px;font-weight:bold;color:#FFF}.paginate li a.active{background:none repeat scroll 0 0 #FE770C;border:1px solid #FE770C}
+.picture_small{
+	    position: relative;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+.remove_compare{
+    position: absolute;
+    top: -14px;
+    right: -6px;
+    font-weight: bold;
+    padding: 2px 5px;
+}
+.compare_result{
+	overflow-x: scroll;
+}
+.compare_result table{
+    min-width: 600px;
+}
+/******** COMPARE BOX ********/
+.compare_box{
+	    background: #F5F5F5;
+    padding: 10px;
+    margin-bottom: 15px;
+}
+.compare_box label{
+	 font-weight: 500;
+}
+.compare_box input{
+	     padding: 11px 10px;
+    width: 100%;
+    box-sizing: border-box;
+    border: none;
+    font-size: 13px;
+    margin-top: 12px;
+    margin-bottom: 10px;
+}
+.autocomplete-suggestions-compare{position:absolute;top:4px;right:-5px;margin:6px 0 0 6px;_background:none;_margin:1px 0 0 0}
+.autocomplete-suggestions-compare{
+	    border: 1px solid #ececec;
+    background: #fff;
+    cursor: default;
+    overflow: auto;
+    margin: 0px 0px 6px 0px;
+    width: 100%;
+    top: 31px;
+    left: 101px;
+}
+.autocomplete-suggestions-compare div{cursor:pointer;width:100%;display:inline-block;clear:both;padding:0;margin:0;margin-bottom:-5px}
+.autocomplete-suggestions-compare .autocomplete-group{
+	    padding: 8px 3%;
+    width: 100%;
+    background: #f9f9f9;
+    box-sizing: border-box;
+}
+.autocomplete-suggestions-compare div a,.autocomplete-suggestions-compare div a:link,.autocomplete-suggestions-compare div a:visited{
+	display: inline-block;
+    margin: 0;
+    padding: 6px 3%;
+    width: 100%;
+    /* font-family: opensans; */
+    font-size: 13px;
+    color: #333;
+    background: #fff;
+    clear: both;
+    border-bottom: 1px solid #eee;
+    box-sizing: border-box;
+}
+.autocomplete-suggestions-compare div a:hover{background:#ececec}
+.autocomplete-suggestions-compare div a img{    width: 64px;
+    float: left;
+    margin-right: 20px;}
+.autocomplete-suggestions-compare div a label{
+       font-weight: normal;
+    cursor: pointer;
+    margin: 0;
+}
+.autocomplete-suggestions-compare div a span{clear:both;cursor:pointer;margin:0;padding:0}
+.autocomplete-suggestions-compare div a span.price{color:#fd0000;padding-top:10px}
+.autocomplete-suggestions-compare div.last{border:none}
+.autocomplete-suggestions-compare strong{    font-weight: 500;
+    color: #0083bf;}
+
+.autocomplete-suggestions-compare::-webkit-scrollbar-track{
+	border-radius: 15px;
+	background-color: #EBEBEB;
+}
+
+.autocomplete-suggestions-compare::-webkit-scrollbar{
+	width: 5px;
+	background-color: #EBEBEB;
+	border-radius: 15px;
+}
+
+.autocomplete-suggestions-compare::-webkit-scrollbar-thumb{
+	border-radius: 15px;
+	background: #2080CA;
+	border: 1px solid #EBEBEB;
+}
+
+@media only screen and (max-width:768px){
+    .autocomplete-suggestions-compare {
+           top: 30px;
+           left: 10px;
+    }
+}
+.news_compare {
+    .title_new {
+        font-size: 16px;
+        font-weight: bold;
+        margin-bottom: 15px;
+    }
+}
+/******** end COMPARE BOX ********/
+
+
+
+
+.compare{
+    .export_file {
+        text-transform: uppercase;
+        font-size: 15px;
+        display: flex;
+        align-items: center;
+        line-height: 0;
+        color: var(--main-color);
+        cursor: pointer;
+        float: right;
+        margin-bottom: 10px;
+    }
+    svg {
+        width: 18px;
+        height: 18px;
+        fill: var(--main-color);
+        margin-right: 5px;
+    }
+}

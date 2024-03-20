@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA,QAAQ,CACP,OAAO,CAAE,KAAK,CACX,OAAO,CAAE,GAAG,CACZ,KAAK,CAAE,eAAe,CACtB,UAAU,CAAE,OAAO,CACnB,aAAa,CAAE,GAAG,CAClB,aAAa,CAAE,GAAG",
+"sources": ["package.scss"],
+"names": [],
+"file": "package.css"
+}

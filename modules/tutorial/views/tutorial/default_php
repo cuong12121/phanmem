@@ -1,0 +1,229 @@
+<?php  	global $tmpl, $config;
+	$tmpl -> addScript('form');
+	$tmpl -> addStylesheet('default','modules/tutorial/assets/css');
+	$tmpl -> addScript("detail","modules/tutorial/assets/js");
+	FSFactory::include_class('fsstring');
+	$print = FSInput::get('print',0);
+
+	$check_img = check_image($data->image,'');
+	if(!$check_img){
+		$tmpl -> addStylesheet('nav_no_back');
+	}
+	
+?>
+
+
+<div class="<?php echo ($check_img)?'detail_main_menu_fixed_img':'detail_main_menu_fixed';?>">
+	<div class="tutorial_home">
+	<?php if($check_img){?>
+		<div class="banner_img_menu">
+			<?php echo set_image_webp($data->image,'compress',@$data->title,'',0,'');?>
+			<div class="page_title_img">
+				<div class="container">
+					<h1 class="heading_title">
+						<span><?php echo $data->title;?></span>
+					</h1>
+					<div class="heading_title_core"><?php echo $data->name_core;?></div>
+				</div>		
+			</div>
+			<div class="elementor-shape elementor-shape-bottom">
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" preserveAspectRatio="none">
+					<path class="elementor-shape-fill" d="M421.9,6.5c22.6-2.5,51.5,0.4,75.5,5.3c23.6,4.9,70.9,23.5,100.5,35.7c75.8,32.2,133.7,44.5,192.6,49.7
+					c23.6,2.1,48.7,3.5,103.4-2.5c54.7-6,106.2-25.6,106.2-25.6V0H0v30.3c0,0,72,32.6,158.4,30.5c39.2-0.7,92.8-6.7,134-22.4
+					c21.2-8.1,52.2-18.2,79.7-24.2C399.3,7.9,411.6,7.5,421.9,6.5z"></path>
+				</svg>
+			</div>
+		</div>
+	<?php }?>
+		<div class="tutorial_contents">
+			<?php if($data->content){?>
+				<div class="elementor_section_text summary_top">
+					<div class="container container3">		
+						<?php echo $data->content;?>
+					</div>
+				</div>
+			<?php }?>
+			<?php if(!empty($tabs_menu)){?>
+				<div class="tutorial_tabs container cls">
+					<div class="block_title">Tổng quan về nội dung</div>
+					<div class=" tutorial_tabs_body cls">
+						<?php foreach ($tabs_menu as $tab_it){ ?>
+							<div class="tab_item" id="tab_item_<?php echo $tab_it->id;?> ">
+								<figure class="image">									
+									<?php echo set_image_webp($tab_it->img_menu,'compress',@$tab_it->name,'lazy',1,''); ?>															
+								</figure>
+								<div class="box_content">
+									<div class="title_core">
+										<?php echo $tab_it->title_core;?>
+									</div>
+									<div class="title">
+										<?php echo $tab_it->title_menu;?>
+									</div>
+								</div>
+							</div>
+						<?php } ?>
+						<div class="tab_item" id="tab_item_<?php //echo $tab_it->id;?> ">
+							<figure class="image">
+								<?php //echo set_image_webp($tab_it->img_menu,'compress',@$tab_it->name,'lazy',1,''); ?>
+							</figure>
+							<div class="box_content">
+								<div class="title_core">
+									<?php //echo $tab_it->title_core;?>
+								</div>
+								<div class="title">
+									<?php //echo $tab_it->title;?>
+									Các câu hỏi thường gặp
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			<?php }?>
+			<?php 
+			if(!empty($list)){?>
+				<?php foreach ($list as $item){
+						$is_content = 0;
+						$is_video = 0;
+						$is_img = 0;
+						// 1: content, 2: img, 3:video
+						if($item->types == 1){
+							$class_types = 'content container';
+							$is_content = 1;
+						}elseif($item->types == 2){
+							$class_types = 'full';
+							$is_img = 1;
+						}elseif($item->types == 3){
+							$class_types = 'full';
+							$is_video = 1;
+						}
+
+
+						$color = '';
+						$background = '';
+						$color_curved = '';
+						//$padding_bot = '';
+						if($item->color){
+							$color = 'color:'.$item->color.';';
+						}
+						
+						if($item->background){
+							$background = 'background-color:'.$item->background.';';
+							//$padding_bot = 'padding_bottom';												
+						}
+
+						$is_curved = 0;
+						$curved = '';
+						if($item->is_curved == 1){
+							$is_curved = 1;
+							$curved = 'curved';
+						}
+
+
+						if($item->color_curved){
+							$color_curved = $item->color_curved;
+						}
+					?>
+					<div class="elementor_section_wrap <?php echo 'elementor_section_wrap'.$curved;?>" <?php echo ($color || $background)?'style = "'.$color.$background.'"':'';?>>
+						<?php if($is_curved){?>
+							<div class="elementor-shape elementor-shape-top">
+								<svg fill = "<?php echo $color_curved;?>" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" preserveAspectRatio="none">
+									<path fill = "<?php echo $color_curved;?>" class="elementor-shape-fill" d="M790.5,93.1c-59.3-5.3-116.8-18-192.6-50c-29.6-12.7-76.9-31-100.5-35.9c-23.6-4.9-52.6-7.8-75.5-5.3
+									c-10.2,1.1-22.6,1.4-50.1,7.4c-27.2,6.3-58.2,16.6-79.4,24.7c-41.3,15.9-94.9,21.9-134,22.6C72,58.2,0,25.8,0,25.8V100h1000V65.3
+									c0,0-51.5,19.4-106.2,25.7C839.5,97,814.1,95.2,790.5,93.1z"></path>
+								</svg>
+							</div>	
+
+						<?php }?>
+
+						<div class="elementor_section elementor_section_<?php echo $class_types;?> " id="elementor_section_<?php echo $item->id;?>" >
+							<?php if($item->title_core){?>
+								<div class="title_core"><?php echo $item->title_core;?></div>
+							<?php }?>
+							<?php if($item->title){?>
+								<h2 class="block_title <?php echo ($item->types != 1)?'container elementor_section_content':'';?>" <?php echo ($color)?'style = "'.$color.'"':'';?>>
+									<?php echo  $item->title ;?>
+								</h2>	
+							<?php }?>
+							<?php if($item->description){?>
+								<div class="elementor_section_text <?php echo ($is_content)?'section_content':''?> <?php echo ($is_video)?'elementor_section_text_video':''?>">
+									<?php //echo $item->description;?>
+
+									<?php 
+										$description = $item->description;
+										$des = '';
+										$html = '';
+										if ((strpos($description, '{v{videos:') !== false) ) {
+											$description2 = str_replace('{v{videos:','}v}videos:',$description);
+											$arr_des = explode("}v}", $description2);
+											echo 	'<pre>';
+											print_r($arr_des);
+
+											foreach ($arr_des as $item_des) {
+												$arr_item = explode(":", $item_des);
+												
+
+												if($arr_item[0]=='videos') {
+													$list_product_in = array();
+													$list_product_in = $model-> get_video_in($arr_item[1]);
+													$list = $list_product_in;
+													//include 'default_video_in.php';
+													
+													//include './blocks/videos/views/videos/video_home.php';
+													include 'default_video_in.php';
+													$des .= $html;													
+													//die;
+													//include './blocks/videos/views/videos/video_home.php';
+
+												} else {
+													$des .= $item_des;
+													//echo  $item_des;
+												}
+											}
+										}else {
+											$des = $description;
+										}
+
+										//echo $des;
+										$des_aq = '';
+										if ((strpos($des, '{{aq_all}}') !== false) ) {
+											$des2 = str_replace('{{aq_all}}','}}aq_all}}',$des);
+											$arr_des = explode("}}", $des2);									
+											foreach ($arr_des as $item_des) {										
+												if($item_des=='aq_all') {
+													
+													$list_product_in = array();
+													$list_aq_in = $model-> get_aq_in($data-> aq_related);
+													$list = $list_aq_in;
+
+													include 'default_aq_in.php';
+													$des_aq .= $html;
+													
+
+												} else {
+													$des_aq .= $item_des;
+												}
+											}
+											$des = $des_aq;
+											
+										}else {
+											$des = $des;
+										}
+
+
+										echo $des;
+										
+									?>
+								</div>
+							<?php }?>
+						</div>						
+					</div>
+				<?php } ?>
+
+			<?php }?>
+		</div>
+	</div>
+
+<input type="hidden" value="<?php echo $data->id; ?>" name='tutorial_id' id='tutorial_id'  />
+<div class="clear"></div>
+</div>
+

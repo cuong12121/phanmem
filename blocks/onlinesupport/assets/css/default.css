@@ -1,0 +1,25 @@
+.onlinesupport_inner span {
+    color: #e20000;
+    font-family: opensans;
+    font-size: 15px;
+    font-weight: bold;
+    text-transform: uppercase; 
+    margin-right: 12px;
+}
+.onlinesupport_inner .avata {
+	 border-radius: 32px 32px 32px 32px;
+    padding-top: 8px;
+}
+.onlinesupport_inner .show-support{
+}
+.onlinesupport_inner  li  {
+	float: left;
+	margin-right: 10px;
+}
+.onlinesupport_inner  li a {
+	color: #333333 !important;
+    font-family: arial !important;
+    font-size: 12px !important;
+    font-weight: normal !important;
+    text-transform: none !important;
+}

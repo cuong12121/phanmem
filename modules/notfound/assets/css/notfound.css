@@ -1,0 +1,101 @@
+body {
+    color: #222222;
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 12px;
+    line-height: 18px;
+    margin: 0;
+}
+/*** HORINAJA ******/
+.horinaja ul {
+    position: relative;
+}
+.horinaja ul li {
+    background: none repeat scroll 0 0 rgba(0, 0, 0, 0);
+    display: block;
+    top: 0;
+}
+ol.horinaja_pagination {
+   background: none repeat scroll 0 0 rgba(0, 0, 0, 0);
+    float: left;
+    height: 14px;
+    margin: 0 auto;
+    padding: 1px 0 0;
+    position: relative;
+}
+ol.horinaja_pagination li {
+  	cursor: pointer;
+    display: block;
+    float: left;
+    height: 8px;
+    margin: 6px 4px;
+    width: 8px;
+}
+ol.horinaja_pagination li a {
+   color: #FFFFFF;
+    cursor: pointer;
+    display: block;
+    float: left;
+    font-size: 12px;
+    font-weight: bold;
+    height: 11px;
+    padding: 1px 0 0;
+    text-align: center;
+    text-indent: -9999px;
+}
+/*** end HORINAJA ******/
+a {
+    color: #000000;
+    text-decoration: none;
+}
+.pntd_widget_default{
+    border: 1px solid #CCCCCC;
+    width: 158px;
+}
+.pntd_widget_default .pntd_widget_title{
+	 background: none repeat scroll 0 0 #E4256D;
+    height: 27px;
+    margin: 1px;
+    text-align: right;
+}
+.pntd_widget_default .pntd_widget_body{
+    padding: 10px;
+}
+.pntd_widget_default ul{
+	 margin: 0;
+    padding-left: 0;
+}
+.news-item .title {
+    font-size: 12px;
+    margin: 0 0 10px;
+    text-align: justify;
+}
+.hidden, .hide{
+	display: none;
+}
+.pntd_widget_default  .news-item {
+	width:140px;
+	text-align: center;
+}
+.horinaja_pagination li{
+	 background: none repeat scroll 0 0 #CCCCCC;
+}
+.horinaja_pagination li.activated{
+	 background: none repeat scroll 0 0 #E21361;
+}
+.horinaja_pre,.horinaja_next{
+	 cursor: pointer;
+    float: left;
+    width: 19px;
+}
+.horinaja_pre{
+	   background: url("../images/pre.jpg") no-repeat scroll right center rgba(0, 0, 0, 0);
+    margin-left: 15px;
+    margin-right: 3px;
+}
+.horinaja_next{
+	background: url("../images/next.jpg") no-repeat scroll right center transparent;
+	margin-left: 3px;
+}
+.wrapper_controller{
+	display: table;
+}

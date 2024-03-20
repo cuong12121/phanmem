@@ -1,0 +1,153 @@
+#fname, #mname, #lname
+{
+	width: 80px;
+}
+.form-title h1
+{
+	background:url("../images/register.jpg") no-repeat scroll left center transparent;
+}
+.form-body form.register_form
+{
+	width: 998px; 
+}
+.login_area
+{
+	float: left;
+	/*
+	 * width: 380px;
+	 */
+	width:397px;
+}
+.login_area_inner
+{
+	margin:23px 22px;
+}
+.login_area_inner_t_l 
+{
+	height: 3px;
+	width: 100%;
+	background:url("../images/login-t-l.png") no-repeat scroll left top transparent;
+}
+.login_area_inner_t_r 
+{
+	height: 3px;
+	width: 100%;
+	background:url("../images/login-t-r.png") no-repeat scroll right top transparent;
+}
+.login_area_inner_t_c
+{
+	border-top: 1px solid #D5D5D5;
+	margin: 0 4px ;
+}
+.login_area_inner_c
+{
+	border-left: 1px solid #D5D5D5;
+	border-right: 1px solid #D5D5D5;
+	background:none repeat scroll 0 0 #F9F9F9;
+	
+}
+.register_area
+{
+	float:left;
+	width:100%;
+}
+.register_area_inner
+{
+	background:none repeat scroll 0 0 #EAEAEA;
+	border:1px solid #FFFFFF;
+	padding:1px;
+}
+.person_login_info
+{
+	color:#6D6D6D;
+	float:right;
+	width:600px;
+}
+.person_login_info p
+{
+	padding-left: 30px;
+}
+.person_login_info .info-head
+{
+	color:#E97D13;
+	font-size:15px;
+	font-weight:bold;
+}
+.person_login_info .info-title
+{
+	background:url("../images/info-title.jpg") no-repeat scroll left center transparent;
+	font-size:13px;
+	font-weight:bold;
+}
+.login_area_inner_c table
+{
+	line-height:34px;
+	margin:10px 20px;
+	width:290px;
+}
+.login_area_inner_c table td.label
+{
+	line-height:inherit;
+	padding:0px;
+	text-align:left;
+	width:115px;
+}
+.login_area_inner_c table td a
+{
+	color: #6D6D6D;
+}
+.login_area_inner_c table td a:hover
+{
+	
+}
+
+#login-form .form-body
+{
+	width: 1000px;
+}
+.login_area_inner_b_l 
+{
+	height: 3px;
+	width: 100%;
+	background:url("../images/login-b-l.png") no-repeat scroll left bottom transparent;
+}
+.login_area_inner_b_r 
+{
+	height: 3px;
+	width: 100%;
+	background:url("../images/login-b-r.png") no-repeat scroll right bottom transparent;
+}
+.login_area_inner_b_c
+{
+	border-bottom: 1px solid #D5D5D5;
+	margin: 0 4px ;
+	height:2px;
+}
+p.alert
+{
+	color: red;
+	font-size: 13px;
+}
+#referrer_name
+{
+	font-size:14px;
+	font-weight:bold;
+}
+.register_bt
+{
+	float:left;
+	height:37px;
+	padding:32px 18px 0;
+	width:195px;
+}
+.person_regiter_info
+{
+	color:#616161;
+	padding:0 10px;
+	text-align:justify;
+}
+.person_regiter_info p.title
+{
+	color:#3188E7;
+	font-weight:bold;
+}

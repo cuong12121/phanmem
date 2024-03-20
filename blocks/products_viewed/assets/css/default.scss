@@ -1,0 +1,8 @@
+.block_products_viewed{
+	background: #fff;
+    padding: 20px;
+    margin-bottom: 12px;
+    @media all and (max-width:1050px) {
+        padding: 20px 0px;
+    }
+}

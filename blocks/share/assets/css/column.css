@@ -1,0 +1,30 @@
+.share_column a {
+        display: block;
+    margin-bottom: 9px;
+    
+}
+.share_column a i {
+       color: #FFF;
+    width: 30px;
+    height: 30px;
+    border-radius: 50px;
+    background: transparent;
+    text-align: center;
+    /* display: table-cell; */
+    vertical-align: middle;
+    font-size: 16px;
+    /* float: left; */
+    line-height: 30px;
+    margin-right: 10px;
+    
+}
+.share_column .facebook-icon i{
+    color: #FFF;
+    background: #2854A6;
+}
+.share_column .googleplus-icon i{
+    background: #D4252A;    
+}
+.share_column .youtube-icon i{
+    background: #B61010;    
+}

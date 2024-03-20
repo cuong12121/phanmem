@@ -1,0 +1,315 @@
+.dcjq-mega-menu {
+         background: #F5F5F5;
+    position: relative;
+}
+.dcjq-mega-menu #megamenu {
+    position: relative;
+    z-index: 9;
+}
+
+#megamenu .menu-sepa {
+       width: 0;
+    border-right: 1px solid transparent;
+    float: left;
+    padding: 12px 0;
+}
+.dcjq-mega-menu ul.menu li.level_0 {
+        float: left;
+    padding: 13px 23px 13px;
+    position: relative;
+    text-align: center;
+    box-sizing: border-box;
+    -webkit-transition: 0.5s ease-in-out all;
+    transition: 0.5s ease-in-out all;
+}
+
+.dcjq-mega-menu ul.menu li.level_0:last-child {
+    border-right: none;
+}
+.dcjq-mega-menu ul.menu li.mega-hover, .dcjq-mega-menu ul.menu > li.activated, .dcjq-mega-menu ul.menu > li:hover {
+       background: #00B8E0;
+      
+}
+.dcjq-mega-menu ul.menu li.mega-hover:before, .dcjq-mega-menu ul.menu > li.activated:before, .dcjq-mega-menu ul.menu > li:hover:before {
+    
+    border-color: transparent transparent #E60013 transparent;
+    
+}
+.dcjq-mega-menu ul.menu li.mega-hover:after, .dcjq-mega-menu ul.menu > li.activated:after, .dcjq-mega-menu ul.menu > li:hover:after {
+
+    border-color: #E51515 transparent transparent transparent;
+  
+}
+.dcjq-mega-menu ul.menu li.mega-hover a, .dcjq-mega-menu ul.menu > li.activated > a, .dcjq-mega-menu ul.menu > li:hover > a{
+        color: #ffffff;
+}
+.dcjq-mega-menu .menu_item_a {
+	    color: #ffffff;
+    float: left;
+    font-size: 16px;
+    /* font-weight: normal; */
+    /* text-transform: uppercase; */
+    white-space: nowrap;
+}
+.dcjq-mega-menu .drop_down {
+    color: #FFFFFF;
+    display: block;
+    float: left;
+    padding: 0 10px;
+    
+    display: none;
+}
+.dcjq-mega-menu .highlight {
+    position: absolute;
+    text-align: left;
+    top: 39px;
+    left: -1px;
+    width: 215px;
+    z-index: 99999999;
+    padding-top: 7px;
+    -webkit-transition: 0.9s ease-in-out all;
+    transition: 0.9s ease-in-out all;
+    opacity: 0;
+    visibility: hidden;
+    
+}
+.dcjq-mega-menu .highlight .highlight1{
+       background: #FFF;
+    border: 1px solid #CBCBCB;
+    border-top: 2px solid #0183BF;
+   
+}
+.dcjq-mega-menu ul.menu li:hover .highlight {
+	 opacity: 1;
+    visibility: visible;
+}
+.dcjq-mega-menu .highlight .sub-menu-level1 {
+        border-top: 1px solid #E7E7E7;
+    padding: 9px 0 9px 12px;
+    font-size: 16px;
+}
+.dcjq-mega-menu .highlight .sub-menu-level1:hover {
+        cursor: pointer;
+    border-left: 4px solid #00B8E0;
+    -webkit-transition: 0.15s ease-in-out all;
+    transition: 0.15s ease-in-out all;
+}
+.dcjq-mega-menu .highlight .sub-menu-level1:hover a{
+       text-decoration: none;
+    color: #0183BF;
+}
+.dcjq-mega-menu .highlight .sub-menu-level1 a img {
+	display: none;
+}
+
+
+.dcjq-mega-menu .sb-toggle-left {
+        float: right;
+    float: right;
+    padding: 28px 18px 10px;
+    display: none;
+    cursor: pointer;
+
+    margin-top: 2px;
+    position: relative;
+
+}
+.dcjq-mega-menu .sb-toggle-left:before {
+   position: absolute;
+    top: 4px;
+    left: 0;
+    width: 32px;
+    height: 32px;
+    content: "\f142";
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: 20px;
+    border: 1px solid #EEEEEE;
+    border-radius: 50%;
+    text-align: center;
+    padding-top: 8px;
+    box-sizing: border-box;
+    color: #FFF;
+    background: #29AEE6;
+    border: none;
+    line-height: 18px;
+}
+
+
+@media screen and (max-width:1240px){
+	.dcjq-mega-menu ul.menu li.level_0 {
+	    float: left;
+        padding-left: 19px;
+        padding-right: 19px;
+	  
+	}
+}
+@media screen and (max-width:1200px){
+	.dcjq-mega-menu ul.menu li.level_0 {
+	    float: left;
+	    padding-left: 16px;
+        padding-right: 16px;
+	}
+}
+@media screen and (max-width:1170px){
+	.dcjq-mega-menu ul.menu li.level_0 {
+	    float: left;
+	     padding-left: 11px;
+        padding-right: 11px;
+	}
+	.dcjq-mega-menu .menu_item_a {
+	   
+	}
+}
+@media screen and (max-width:1050px){
+	.dcjq-mega-menu .menu_item_a {
+	 
+	}
+}
+@media screen and (max-width:990px){
+	.top_menu #megamenu{		
+          position: absolute;
+        background: #ffffff;
+        width: 300px;
+        right: 0px;
+        top: 42px;
+        z-index: 999;
+        /* box-shadow: #f1f1f1 -1px 3px 10px -2px; */
+        border-top: 3px solid transparent;
+        border-left: 1px solid #EFEFEF;
+        border-bottom: 1px solid #EFEFEF;
+        max-width: 100%;
+        display: none;
+       
+	}
+    /*.top_menu .dcjq-mega-menu:hover #megamenu{
+        opacity: 1;
+        visibility: visible;
+        z-index: 999;
+    }*/
+    .dcjq-mega-menu ul.menu li.mega-hover a, .dcjq-mega-menu ul.menu > li.activated > a, .dcjq-mega-menu ul.menu > li:hover > a{
+            color: #0084BF;
+}
+.dcjq-mega-menu .menu_item_a {
+	       color: #000000;
+}
+
+	.dcjq-mega-menu .sb-toggle-left {
+	    display: block;
+	}
+	.dcjq-mega-menu .menu_item_a {
+	       display: block;
+        float: none;
+        text-align: left;
+            padding: 9px 0 9px 10px;
+        text-transform: uppercase;
+        text-decoration: unset;
+        font-size: 14px;
+        border-bottom: 1px solid rgba(234, 234, 234, 0.56);
+	}
+
+	.dcjq-mega-menu ul.menu li.level_0 {
+    	  float: none;
+        padding: 0px;
+        margin: 0;
+	}
+    .dcjq-mega-menu ul.menu li.level_0:before{
+        display: none;
+    }
+    .dcjq-mega-menu ul.menu li.level_0:after{
+        display: none;
+    }
+	.dcjq-mega-menu .highlight {
+	     background: transparent;
+        border: none;
+        box-shadow: none;
+        position: relative;
+        text-align: left;
+        /* margin-top: 3px; */
+        
+        float: none;
+        top: 0px;
+        width: auto;
+        
+        opacity: 1;
+        visibility: visible;
+        left: 0;
+        padding-top: 0;
+        display: none;
+	}
+    .dcjq-mega-menu .drop_down {
+           display: block;
+        float: left;
+        padding: 8px 10px;
+        /* text-indent: -9999px; */
+        display: block;
+        /* background: red; */
+        position: absolute;
+        right: 0;
+        top: 0px;
+         -webkit-transition: 0.7s ease-in-out all;
+        transition: 0.7s ease-in-out all;
+        /* text-align: right; */
+    }
+    .dcjq-mega-menu .drop_down:before {
+        content: "\f103";
+        font-family: FontAwesome;
+        color: #00B8E0;
+       
+    }
+    .dcjq-mega-menu .level_0:hover .drop_down {
+        transform: rotate(180deg) translate(0,0);
+        -webkit-transform: rotate(180deg) translate(0,0);
+        /* -webkit-transition: all cubic-bezier(0.4, 0, 1, 1) 2s; */
+    }
+
+    .dcjq-mega-menu .level_0:hover .highlight {
+        display: block;
+    }
+
+    .dcjq-mega-menu .highlight .highlight1 {
+        background: transparent;
+        border: none;
+        
+        text-transform: none;
+    }
+    .dcjq-mega-menu .highlight .highlight1 a{
+            color: #0084BF;
+    }
+    .dcjq-mega-menu .highlight .highlight1 a{
+       color: #101010;
+        position: relative;
+        display: block;
+        font-size: 14px;
+    }
+   .dcjq-mega-menu .highlight .highlight1 a::before {
+           content: "\f138";
+        position: absolute;
+        top: 4px;
+        font-family: FontAwesome;
+        font-weight: normal;
+        left: -17px;
+        color: #00B8E0;
+        -webkit-transition: 0.7s ease-in-out all;
+        transition: 0.7s ease-in-out all;
+    }
+	.dcjq-mega-menu .highlight .sub-menu-level1 {
+	      border-top: none;
+        padding: 9px 0 9px 29px;
+        border-bottom: 1px solid rgba(234, 234, 234, 0.56);
+	}
+	.dcjq-mega-menu ul.menu li.mega-hover, .dcjq-mega-menu ul.menu > li.activated, .dcjq-mega-menu ul.menu > li:hover {
+	   
+	}
+	.dcjq-mega-menu ul.menu li.mega-hover a, .dcjq-mega-menu ul.menu > li.activated > a, .dcjq-mega-menu ul.menu > li:hover > a {
+    	    -webkit-transition: 0.25s ease-in-out all;
+        transition: 0.25s ease-in-out all;
+        background: #fbfbfb;
+	}
+	.dcjq-mega-menu .highlight .sub-menu-level1:hover {
+	   background: #FFF;
+	}
+    .dcjq-mega-menu ul.menu li.mega-hover, .dcjq-mega-menu ul.menu > li.activated, .dcjq-mega-menu ul.menu > li:hover {
+        background: #FFF;
+    }
+
+}

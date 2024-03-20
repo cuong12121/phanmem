@@ -1,0 +1,185 @@
+.menu_label {
+      color: #ED1C24;
+    font-size: 15px;
+    font-weight: bold;
+    left: 0;
+    padding: 14px 55px 14px 17px;
+    position: relative;
+    text-transform: uppercase;
+    cursor: pointer;
+    white-space: nowrap;
+    background: url(../images/menu-down.png) no-repeat scroll top 14px right 28px #FFFFFF;
+	height: 22px;
+}
+.menu_label:before {
+    background: url(../images/menu.png) no-repeat scroll 0px center transparent;
+    content: '';
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-right: 11px;
+    float: left;
+}
+.menu_label.active {
+	
+}
+#product_menu_ul {
+     background: none repeat scroll 0 0 #FFFFFF;
+    border: 1px solid #E7E7E7;
+    left: 0px;
+    position: absolute;
+    top: 44px;
+    width: 269px;
+    z-index: 999;
+    box-shadow: 1px 1px 9px 1px #EEE;
+    margin-top: 5px;
+}
+#product_menu_ul .level_0 {
+   border-bottom: 1px solid #E7E7E7;
+    padding: 9px 0 9px 12px;
+}
+#product_menu_ul .level_0:hover {
+	cursor: pointer;
+    border-left: 3px solid #ce3c5c;
+    -webkit-transition: 0.15s ease-in-out all;
+    transition: 0.15s ease-in-out all;
+}
+
+#product_menu_ul .level_0 .menu_item_a {
+    display: table;
+}
+
+#product_menu_ul .level_0  .img-menu {
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+    width: 50px;
+}
+#product_menu_ul .level_0:hover .img-menu .grayscale {
+    filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\' 0  0  0  1  0  0  0  0  1  0 0  0  0  1  0 0  0  0  1  0\'/></filter></svg>#grayscale");
+}
+#product_menu_ul .level_0:hover .text-menu {
+    color: #ED1C24;
+    text-decoration: none;
+}
+#product_menu_ul .level_0 .text-menu {
+	color: #000;
+    display: table-cell;
+    vertical-align: mid
+}
+#product_menu_ul .level_0.level_1_same_0  {	
+    border-bottom: medium none;
+    padding: 2px 0 2px 12px;
+}
+#product_menu_ul .level_0.level_1_same_0  .text-menu {
+	 font-weight: normal;
+    padding-left: 29px;
+}
+#product_menu_ul .level_0:hover  .highlight{
+	display: flex;
+}
+
+#product_menu_ul .second-level-menu ul li{
+	    padding: 4px 0 4px 16px;
+}
+#product_menu_ul .highlight {
+   background: #FFFFFF;
+    border: 1px solid #E7E7E7;
+    display: none;
+    left: 43px;
+    margin-left: 226px;
+    padding: 12px 0;
+    position: absolute;
+    z-index: 99999;
+    top: 0;
+    width: 912px;
+    height: 385px;
+    overflow: hidden;
+}
+/*#product_menu_ul .layer_menu_1 {
+    top: -3px;
+}
+#product_menu_ul .layer_menu_2 {
+    top: -60px;
+}
+#product_menu_ul .layer_menu_3 {
+    top: -164px;
+}
+#product_menu_ul #childs_of_50 {
+    top: -31px;
+}
+#product_menu_ul .layer_menu_4 {
+    bottom: -31px;
+}
+#product_menu_ul .layer_menu_5 {
+    bottom: -31px;
+}
+
+*/#product_menu_ul .highlight1 {
+   display: inline-block;
+    float: left;
+    min-width: 118px;
+    padding: 0 30px;
+}
+#product_menu_ul .menu_col:FIRST-LETTER{
+    border-right: none;
+}
+#product_menu_ul  .menu_col{
+}
+#product_menu_ul  .menu_col:first-child{
+}
+#product_menu_ul .field_name{
+	border-bottom: medium none;
+    color: #2E2E2E;
+    font-weight: bold;
+    padding: 10px 25px;
+    width: 178px;
+}
+
+#product_menu_ul .sub-menu-level0 {
+    margin-bottom: 2px;
+}
+
+#product_menu_ul  .sub-menu-level0 a {
+    color: #3F3F3F;
+    font-weight: bold;
+}
+#product_menu_ul .sub-menu-level1 {
+    padding: 2px 0;
+}
+#product_menu_ul .sub-menu-level1 a{
+     color: #000;
+}
+#product_menu_ul .sub-menu-level1 .image_sub{
+	display: none;
+}
+#product_menu_ul .second_field{
+	border-top: 1px dotted #D3D3D3;
+    margin-top: 10px;
+}
+
+#product_menu_ul .field_name h3 {
+    color: #000;
+    margin-bottom: 4px;
+}
+#product_menu_ul .field_name h3 a{
+    color: #000;
+    margin-bottom: 4px;
+}
+#product_menu_ul .field_name .read_more a{
+    color: #348AD4;
+    text-decoration: underline;
+}
+#product_menu_ul .field_label {
+    color: #3F3F3F;
+    margin-bottom: 5px;
+}
+@media screen and (max-width:380px){
+	.menu_label {
+	    padding: 14px 39px 14px 17px;
+	    background: url(../images/menu-down.png) no-repeat scroll top 14px right 11px #FFFFFF;
+	}
+	.menu_label:before {
+	    display: none;
+	}
+}

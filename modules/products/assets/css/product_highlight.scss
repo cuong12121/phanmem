@@ -1,0 +1,89 @@
+#products_slideshow_hightlight{
+    display: block;
+}
+#products_slideshow_hightlight .name {
+    background: rgba(0, 0, 0, 0.6) none repeat scroll 0 0;
+    bottom: 0;
+    color: #fff;
+    display: none;
+    font-family: MyriadPro-Light;
+    font-size: 18px;
+    font-weight: bold;
+    left: 0;
+    margin: 0;
+    padding: 8px 20px;
+    position: absolute;
+    width: 100%;
+}
+#products_slideshow_hightlight .item {
+    text-align: center;
+    display: none;
+}
+#products_slideshow_hightlight .item:first-child {    
+    display: block;
+}
+#pav-slideShow .owl-controls {  
+}
+.owl-dot{
+       background: #ffffff;
+    margin: 0px 4px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    display: inline-block;
+    /* border: 1px solid #fff; */
+    box-sizing: border-box;
+    box-shadow: 1px 1px 1px #FFF;
+}
+#products_slideshow_hightlight:hover .owl-dot{
+    opacity: 1;
+}
+.owl-dots{
+	    text-align: center;
+    position: absolute;
+    bottom: 3px;
+    padding: 6px 7px;
+    border-radius: 19px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    background: none;
+}
+.owl-dot.active,
+.owl-dot:hover{
+         background: #0183BF;
+    box-shadow: inset rgba(255, 255, 255, 0.37) -1px 1px 1px;
+}
+#products_slideshow_hightlight .owl-controls .owl-nav{
+    position: absolute;
+    top: 38%;
+    height: 0;
+    width: 100%;
+    display: none;
+}
+#products_slideshow_hightlight:hover  .owl-controls .owl-nav{
+	display: block;
+}
+#products_slideshow_hightlight .owl-controls .owl-nav div{
+     display: inline-block;
+    zoom: 1;
+    position: absolute;
+    padding: 6px 0 0;
+    margin: 0;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    background: rgba(1, 131, 191, 0.87);
+    width: 48px;
+    height: 34px;
+    text-align: center;
+    font-size: 46px;
+    color: #fff;
+    font-family: -webkit-body;
+    line-height: 20px;
+}
+#products_slideshow_hightlight .owl-controls .owl-prev {
+    left: 10px;
+}
+#products_slideshow_hightlight .owl-controls .owl-next {
+    right: 10px;
+}

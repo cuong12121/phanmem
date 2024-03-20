@@ -1,0 +1,126 @@
+.block_utilities_full_cat {
+	color: #fff;
+	.item_cat {
+		display: flex;
+    	flex-wrap: wrap;
+    	position: relative;
+    	align-items: center;
+		.name_cat {
+			font-size: 36px;
+			font-family: 'ExtraBold';
+			line-height: 1.361;
+			transition: 1.5s;
+			transform: translate(-150px, 0px);
+		}
+		.name2_cat {
+			font-size: 18px;
+		  	line-height: 1.389;
+		  	margin-bottom: 18px;
+		  	transition: 1s;
+		  	transform: translate(-150px, 0px);
+		}
+		.summary_cat {
+			font-size: 18px;
+			line-height: 1.389;
+			margin-top: 27px;
+			transition: 2s;
+			transform: translate(-150px, 0px);
+		}
+		.item_cat_l {
+			width: 45%;
+			//transform: translate(-150px, 0px);
+			transition: 1s;
+		}
+		.item_cat_r {
+			width: calc(100% - 45%);
+		}
+		.box_item {
+			display: flex;
+    		flex-wrap: wrap;
+    		align-items: flex-end;
+    		margin-top: 28px;
+    		transition: 2.5s;
+			transform: translate(0 , 250px);
+    		.item {
+    			margin-right: 30px;
+    			text-align: center;
+    			&:last-child {
+    				margin-right: 0px;
+    			}
+    			svg {
+    				fill:#fff;
+    			}
+    			.name {
+    				font-size: 18px;
+					line-height: 1.389;
+					text-align: left;
+					margin-top: 5px;
+    			}
+    		}
+		}
+	}
+	.item_cat {
+		padding:130px 0;
+		.image {
+			position: absolute;
+    		bottom: -40px;
+    		transform: translate(200px, 0px);
+    		opacity: .2;
+    		transition: 1.5s;
+		}
+		&:nth-child(1){
+			.image {
+				position: absolute;
+		    	top: 0;
+		    	width: 85%;
+		    	transform: translate(380px, 25px);
+		    	opacity: 0.2;
+		    	transition: 1.5s;
+			}		
+		}
+		&:nth-child(odd){
+			//padding-top: 105px;
+			.image {
+				bottom: -0px;
+			}		
+		}
+	}
+	.utilities_item_1  {
+		.name_cat,.name2_cat,.summary_cat {
+			transform: translate(150px, 0px);
+		}
+		.image {
+    		transform: translate(-200px, 0px);
+		}
+	}
+	.item_cat_1 {
+		.item_cat_l {
+			order:2;
+		}
+	}
+}
+
+
+.block_utilities_full_cat {
+	.hello {
+	 	.name2_cat,.name_cat,.summary_cat,.box_item {
+	 		transform: translate(0px, 0px);
+	 	}
+	 	.image {
+	 		transform: translate(0px, 0px);
+    		opacity: 1;
+	 	}
+	 	&:nth-child(1){
+			.image {
+				position: absolute;
+		    	top: 0;
+		    	width: 85%;
+		    	transform: translate(110px, 25px);
+		    	opacity: 1;
+		    	@media all and (max-width: 1520px) {
+		    		transform: translate(80px, 25px);
+		    	}
+			}		
+		}			 
+	}
+}

@@ -1,0 +1,26 @@
+.cat_item_store{
+	background:#fff;
+	margin-top:20px;
+}
+.cat-title img{
+	float:left;
+}
+.cat-title h2{
+	float:left;
+}
+.cat-title a{
+	float:right;
+}
+.cat-title{
+	background:url(../images/bg-under-title-store.jpg) bottom repeat-x;
+	padding:10px;
+	margin-bottom:20px;
+}
+.cat_readmore{
+	background:url(../images/view-all.jpg) no-repeat;
+	padding:11px 55px;
+}
+#main-cat{
+	background:#fff;
+	padding:0 33px 20px;
+}

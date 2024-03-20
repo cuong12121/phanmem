@@ -1,0 +1,24 @@
+.images{
+	float:left;
+	width:440xp;
+}
+#gallery{
+	border:1px solid white;
+	overflow:hidden;
+	width:400px;
+}
+#main{
+	width:440px;
+	float:left;
+}
+#slides{
+	height:360px;
+	width:400px;
+	overflow:hidden;
+	margin-bottom:10px;
+}
+
+.slide{
+	float:left;
+	width:400px;
+}

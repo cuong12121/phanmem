@@ -1,0 +1,111 @@
+.banners-responsive_carousel{
+	padding: 0 10px;
+}
+.banners-responsive_carousel .crsl-nav {
+    min-height: 1px;
+    position: relative;
+}
+.banners-responsive_carousel  .previous {
+	background: url("../images/icon_prev.png") no-repeat scroll ;
+ 	height: 21px;
+    left: 0;
+    margin-top: 54px;
+    opacity: 0.7;
+    overflow: hidden;
+    position: absolute;
+    text-decoration: none;
+    text-indent: -9999px;
+    top: 52%;
+    width: 20px;
+    z-index: 3;
+}
+.banners-responsive_carousel  .previous:hover {
+	background: url("../images/icon_prev_active.png") no-repeat scroll ;
+}
+.banners-responsive_carousel .next {
+    background: url("../images/icon_next.png") no-repeat scroll 0 0 ;
+    height: 21px;
+    right: 0;
+    margin-top: 54px;
+    opacity: 0.7;
+    overflow: hidden;
+    position: absolute;
+    text-decoration: none;
+    text-indent: -9999px;
+    top: 52%;
+    width: 20px;
+    z-index: 3;
+}
+.banners-responsive_carousel  .next:hover {
+	background: url("../images/icon_next_active.png") no-repeat scroll;
+}
+.banners-responsive_carousel .crsl-item .banner_bg {
+    background: none repeat scroll 0 0 #FFFFFF;
+    border-radius: 6px;
+    box-shadow: 1px 1px 1px #D2D2D2;
+    margin: 2px;
+}
+.collection-type-gallery #slideshow .slide, .collection-type-gallery #slideshow .slide img {
+    height: 500px;
+}
+.collection-type-gallery #slideshow .slide img {
+    height: 500px;
+}
+.banners-responsive_carousel .banner_content {
+    display: table;
+    margin: 0 auto;
+    width: 90%;
+    padding: 20px 0;
+}
+@media only screen and  (max-width:900px){
+	.banners-responsive_carousel .banner_content {
+	    height: 90px;
+	}
+}
+@media only screen and  (max-width:300px){
+	.banners-responsive_carousel .banner_content {
+	    height: auto;
+	}
+}
+
+.banners-responsive_carousel .banner_content .frame_img {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    width: 50%;
+}
+
+.banners-responsive_carousel .banner_content .frame_img .img-thumbnail{
+    max-width: 86px;
+}
+.banners-responsive_carousel .banner_content .detail_banner {
+    display: table-cell;
+    vertical-align: top;
+    width: 50%;
+}
+
+.banners-responsive_carousel .detail_title {
+    font-size: 11px;
+    font-weight: normal;
+    height: 30px;
+    margin-bottom: 12px;
+    overflow: hidden;
+}
+.banners-responsive_carousel .detail_content {
+    height: 30px;
+    overflow: hidden;
+}
+.banners-responsive_carousel .detail_content span {
+    font-family: verdana;
+    font-size: 11px;
+    font-weight: bold;
+    color: #E86219;
+}
+.banners-responsive_carousel .detail_view {
+    margin-bottom: 20px;
+}
+
+.banners-responsive_carousel .detail_view > a {
+    background:url("../images/icon-detail.png") no-repeat scroll left 1px;
+    padding-left: 16px;
+}

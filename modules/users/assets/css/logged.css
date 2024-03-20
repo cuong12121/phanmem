@@ -1,0 +1,155 @@
+.logged ul li
+{
+	float:left;
+	margin-top:25px;
+	text-align:center;
+	width:25%;
+}
+.logged ul li img
+{
+	display: block;
+	margin:0 auto;
+}
+.form_body .form_body_inner .commission
+{
+	color:red;
+	font-weight:bold;
+	margin-top:0;
+}
+.form_body .form_body_inner .select_function
+{
+	color:#555555;
+	font-weight:bold;
+}
+.form_body .form_body_inner .tasks ul
+{
+	width: 808px;
+}
+.form_body .form_body_inner .tasks
+{
+	float:left;
+	margin:0 0 20px;
+}
+.members
+{
+	width:828px;
+}
+.form_body_inner, .form_body_inner a
+{
+	color: #4D4D4D;
+}
+.member_tree_left ul li
+{
+	font-size: 13px;
+	line-height: 25px;
+}
+/************ MEMBER TREE ********/
+.member_tree_left
+{
+	border:1px solid #D6D6D6;
+	float:left;
+	min-height:200px;
+	max-height:774px;
+	overflow:auto;
+	width:398px;
+
+}
+.member_tree_right 
+{
+	padding-left: 10px;
+	width:398px;
+	float:left;
+}
+.member_tree_bottom
+{
+	float:left;
+	margin:20px 0 10px;
+	width:100%;
+}
+/********* MEMBERS STATISTICS *********/
+.members_statistics table ,.lower-member-statistics table
+{
+	float: left;
+	border: 1px solid #D8D8D8;
+	width: 100%;
+	font-size: 12px;
+	text-align: center;
+}
+.members_statistics table tr.row0 ,.lower-member-statistics table tr.row0
+{
+	background: #F6F6F6;	
+}
+.members_statistics table tr.row1 ,.lower-member-statistics table tr.row1
+{
+	background: #fff;
+}
+.members_statistics table tfoot , .lower-member-statistics table tfoot
+{
+	font-weight: bold;	
+}
+.members_statistics table thead tr th ,.lower-member-statistics table thead tr th
+{
+	border-bottom: 1px  solid #D8D8D8;
+	background:url("../images/table-head.jpg") repeat-x bottom;
+}
+.members_statistics table tr td.border-r, .members_statistics table tr th.border-r,
+.lower-member-statistics table tr th.border-r,  .lower-member-statistics table tr td.border-r
+{
+	border-right: 1px  solid #D8D8D8;
+}
+.members_statistics ul li , .lower-member-statistics ul li,
+.members_statistics, .lower-member-statistics
+{
+	font-size: 14px;
+	line-height: 25px;
+}
+
+/********** INFO ONE MEMBER **********/
+.lower_member
+{
+	float:left;
+	width:100%;
+}
+.lower-member-infor
+{
+	border:1px solid #EDEDED;
+	margin-top:10px;
+}
+.lower-member-infor .member-infor-head
+{
+	background:#EDEDED;
+	font-weight:bold;
+	padding:7px;
+}
+.lower-member-statistics
+{
+	margin-top:10px;
+	float: left;
+	width:100%;
+}
+
+.lower-member-infor ul
+{
+	margin-left:16px;
+	width:177px;
+}
+.lower-member-infor ul li
+{
+	font-size:11px;
+	line-height:19px;
+	list-style:square outside none;
+	padding:3px 0;
+}
+.lower-member-infor table td.td-left
+{
+	border-right:1px solid #EDEDED;
+}
+.lower-member-infor ul li span
+{
+	font-weight: bold;
+}
+
+/******** EDIT INFO ***********/
+#fname, #mname, #lname {
+	width:80px;
+}

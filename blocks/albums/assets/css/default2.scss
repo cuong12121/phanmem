@@ -1,0 +1,140 @@
+
+.sum_alb {
+	text-align: center;
+    font-size: 24px;
+    line-height: 1.049;
+    margin-bottom: 20px;
+    position: relative;
+    @media all and (max-width: 1025px){
+    	font-size: 20px;
+    }
+    @media all and (max-width: 850px){
+    	font-size: 18px;
+    }
+    @media all and (max-width: 650px){
+    	font-size: 16px;
+    }
+    a {
+    	color: var(--extra-color);
+    	transition: .4s;
+    	&:hover {
+    		color: var(--main-color);
+    	}
+    }
+    // &:after {
+    // 	    position: absolute;
+	   //  width: 170px;
+	   //  height: 1px;
+	   //  content: '';
+	   //  top: -16px;
+	   //  left: calc(50% - 85px);
+	   //  background: var(--extra-color);
+    // }
+}
+#block-albums {
+	margin: 0 -10px;
+	padding-top: 20px;
+	@media all and (max-width: 600px) {
+		margin: 0 -5px;
+		padding-top: 10px;
+	}
+	.item {
+		width: calc(100% / 6 - 20px);
+		margin: 0 10px 20px;
+		float: left;
+		@media all and (max-width: 800px) {
+			width: calc(100% / 4 - 20px);	
+		}
+		@media all and (max-width: 600px) {
+			width: calc(100% / 3 - 10px);	
+			margin: 0 5px 5px;
+		}
+
+		.cboxElement_album {
+			position:relative;
+			display: inline-block;
+			width: 100%;
+			height: 100%;
+			// &:before {
+			// 	width: 100%;
+			// 	height: 100%;
+			// 	opacity: 0;
+			// 	background: #fff;
+			// 	position: absolute;
+			// 	top: 0;
+			// 	left: 0;
+			// 	z-index: 2;
+			// 	transition: 0.5s;
+			// 	content: '';
+			// }
+			svg {
+				width: 10px;
+				height: 10px;
+				position: absolute;
+				left: calc(50% - 5px);
+				top: calc(50% - 5px);
+				fill: #252525;
+				transition: 0.5s;
+				opacity: 0;
+				z-index: 1;
+				&:hover {
+					fill: var(--main-color);
+				}
+			}
+		}
+		figure {
+			margin-bottom: 0px;
+			overflow: hidden;
+		}
+		img {
+			transition: 0.5s;
+			transform: scale(1.03);
+			//border: 2px dashed transparent;
+			box-sizing: border-box;
+		}
+		&:hover {
+			img {
+				transform: scale(1.07);
+				//transform: rotate(-10deg)!important;
+				//border: 2px dashed var(--extra-color);
+			}
+			.cboxElement_album {
+
+				&:before {
+					opacity: 0.6;
+					transform: rotate(-10deg)!important;
+				}
+				svg {
+					opacity: 1;
+					z-index: 3;
+					width: 40px;
+					height: 40px;
+					position: absolute;
+					left: calc(50% - 20px);
+					top: calc(50% - 20px);
+				}
+			}
+		}
+	}
+	.active {
+		img {
+			transform: rotate(10deg);
+			border: 2px dashed var(--main-color);
+		}
+	}
+}
+.block_albums {
+	position: relative;
+	.readmore {
+		position: absolute;
+		color: #777;
+		right: 0px;
+		top: 5px;
+		@media all and (max-width: 600px) {
+			top: 0px;
+		}
+		&:hover {
+			color: #000;
+		}
+	}
+}

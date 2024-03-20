@@ -1,0 +1,102 @@
+.mainmenu ul li{
+    float: left;
+}
+.mainmenu ul.menus_level_0 li.item{
+ 	height: 40px;
+    line-height: 40px;
+    padding: 0 2px;
+    position: relative;
+}
+.mainmenu ul.menus_level_0 li.home_menu{
+ 	padding: 0 5px;
+}
+.mainmenu ul.menus_level_0 li.item a{
+	padding: 7px 10px 3px;
+    text-decoration: none;
+}
+.mainmenu ul.menus_level_0 li.activated a span,.mainmenu ul.menus_level_0 li:hover a span{
+	 color: #FFF;
+}
+.mainmenu ul.menus_level_1 li.sub-item{
+	height: 28px;
+    line-height: 28px;
+    padding: 0 8px 0 6px;
+}
+.mainmenu ul.menus_level_1 li.sub-item   a span{
+ 	 text-transform: none;
+ 	 color: #121212;
+ 	 font-weight: normal;
+}
+.mainmenu ul.menus_level_1 li.activated a span,.mainmenu ul.menus_level_1 li:hover a span{
+	 font-weight: bold;
+	 text-decoration: underline;
+}
+.mainmenu .item a span{
+	color: #FFFFFF;
+    font-size: 13px;
+    font-weight: bold;
+}
+.menus_level_0{
+	background: none repeat scroll 0 0 #E21361;
+    display: table;
+    width: 950px;
+}
+. menus_level_1_null{
+	height: 10px;
+}
+.mainmenu ul.menus_level_0 li.activated,.mainmenu ul.menus_level_0 li:hover{
+	background: url("../images/menu_activated.png") no-repeat scroll center 35px #BA0047;
+    color: #FFFFFF;
+}
+.mainmenu ul.menus_level_1 li.activated,.mainmenu ul.menus_level_1 li:hover{
+	text-decoration: underline;
+    background: none;
+}
+.wrapper_mainmenu .mainmenu ul.menus_level_0 li.sepa{
+    margin: 0;
+    padding: 6px 0;
+    width: 1px;
+}
+.wrapper_mainmenu .mainmenu ul.menus_level_1 li.sepa{
+ color: #DDDDDD;
+    font-size: 15px;
+    padding-right: 8px;
+    padding-top: 0;
+    height: 24px;
+    line-height: 24px;
+}
+.menus_level_1{
+    display: table;
+    position: absolute;
+    top: 40px;
+    width: 1000px;
+    height: 28px;
+}
+.home_menu a{
+	background: url("../images/home_menu_hover.png") no-repeat scroll center 1px transparent;
+}
+.menus_level_0 .home_menu:hover a,.menus_level_0 .activated .a_home_menu {
+	background: url("../images/home_menu_hover.png") no-repeat scroll center 1px transparent;
+}
+.sub-unactivated{
+	display: none;	
+}
+.sub_menu_order_0{
+	left: 0px;
+	color: #000;
+}
+.sub_menu_order_1{
+	left: -35px;
+}
+.sub_menu_order_2,.sub_menu_order_3,.sub_menu_order_4,.sub_menu_order_5,.sub_menu_order_6{
+	left: -90px;
+}
+.sub_menu_order_7,.sub_menu_order_8{
+	right: -200px;
+}
+.sub_menu_order_9{
+	left: -90px;
+}
+.sub_menu_order_10{
+	right: -200px;
+}

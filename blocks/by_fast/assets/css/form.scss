@@ -1,0 +1,42 @@
+.buy_fast_body {
+	.button-buy-fast {
+    width: 300px;
+    border: none;
+    color: white;
+    background-color: var(--extra-color);
+ 
+    // float: right;
+    cursor: pointer;
+    line-height: 40px;
+    font-family: RobotoCondensed-Bold;
+    margin:0px 0px;
+    padding-left: 0px;
+    margin-top: 20px;
+    font-size:18px;
+    position: relative;
+    transition: 0.5s;
+    outline: none;
+     margin-left: calc(50% - 150px);
+    @media screen and (max-width:770px){
+    	width: 90px;
+	    line-height: 40px;
+	    position: relative;
+    }
+    &:hover{
+    	background: var(--extra-color);
+    	color: var(--main-color);
+    
+    }
+    svg {
+    	fill: white;
+    	transition: 0.5s;
+    }
+    &:hover svg {
+    	fill: var(--main-color);
+    	transition: 0.5s;
+
+    }
+ 
+	
+}
+}

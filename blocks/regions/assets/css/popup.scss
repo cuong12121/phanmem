@@ -1,0 +1,66 @@
+.modal {
+    
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1050;
+    -webkit-overflow-scrolling: touch;
+    outline: 0;
+        background: #0000008c;
+    .modal-dialog{
+            max-width: 96%;
+        width: 460px;
+        margin: 30px auto;
+        -webkit-box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+        box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+        background: #FFF;
+
+    }
+    .welcome-city {
+            color: #0183BF;
+        font-size: 25px;
+        font-weight: bold;
+        margin-bottom: 24px;
+        text-align: center;
+        width: 100%;
+    }
+    .pupzbutton {
+        text-align: center;
+        .button {
+               background: #0183BF;
+            color: #fff;
+            display: inline-block;
+            font-weight: bold;
+            /* height: 36px; */
+            margin: 0 0 10px;
+            padding-bottom: 1px;
+            text-decoration: none;
+            transition: all 0.6s ease 0s;
+            cursor: pointer;
+            border-radius: 4px;
+            padding: 13px 17px;
+            &:hover{
+                background: #036491;
+            }
+        }
+    }
+    .puzinfo {
+        font-size: 14px;
+        font-weight: bold;
+        padding: 10px;
+        text-align: center;
+    }
+}
+.modal-content {
+    border: 1px solid #AAAAAA;
+    padding: 4px;
+}
+#modal_city .modal-body {
+    border-bottom: 1px solid #aaa;
+    margin-bottom: 20px;
+    margin: 20px;
+    padding: 0;
+}

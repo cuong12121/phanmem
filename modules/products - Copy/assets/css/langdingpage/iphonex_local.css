@@ -1,0 +1,279 @@
+/******COMMON******/
+.breadcrumbs {
+    display: none;
+}
+.main_wrapper{
+    width: 100%;
+}
+video{
+    max-width: 100%;
+}
+.base_left{
+    width: 50%;
+}
+.base_left h1{
+       color: #FFF;
+    font-size: 23px;
+    margin-bottom: 33px;
+}
+.hotline_detail {    
+    color: #FFF;    
+}
+.hotline_detail a{    
+    color: #FFF;    
+}
+.base_left img{
+       margin-bottom: 30px;
+}
+.base_right{
+        width: 50%;
+    text-align: right;
+    padding-left: 40px;
+    box-sizing: border-box;
+}
+/******end COMMON******/
+.section1{
+     background: url(../../../images/note8/bgpre.png) top center repeat;
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+.section2 {
+    background: #FAFAFA;
+    padding: 0px 0;
+    color: #FFF;
+    overflow: hidden;
+}
+.section2 .title{
+       color: #111;
+    font-size: 30px;
+    text-align: center;
+    margin-top: 50px;
+}
+.section2 .summary{
+    color: #111;
+    font-size: 60px;
+    text-align: center;
+    line-height: 80px;    
+    margin-bottom: 30px;
+    font-weight: 600;
+    transition: all 1.2s;
+    -webkit-transition: all 1.2s;
+}
+.section2 .container{
+    position: relative;
+    height: 672px;
+}
+.section2  .design_display{
+        background: url(../../../images/iphonex/design_hero_large.jpg) top left no-repeat;
+    width: 1785px;
+    height: 672px;
+    position: absolute;
+    left: 17%;
+    top: 0;
+    transition: all 1.2s;
+    -webkit-transition: all 1.2s;
+}
+.section3{
+    overflow: hidden;
+    max-width: 100%;
+    background: #FFF;
+        padding-top: 220px;
+    
+}
+.video_iphonex_wrapper{
+        text-align: center;
+}
+.section4{
+        background: #FFF;
+    position: relative;
+}
+.video_super_retina_wrapper{
+   width: 360px;
+    height: 722px;
+    padding: 22px 0 0 23px;
+    visibility: visible;
+    transition: all 1.2s;
+    -webkit-transition: all 1.2s;
+    margin: 0 auto;
+    position: relative;
+}
+.video_super_retina_wrapper::after{
+    content: '';
+    display: block;
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    width: 360px;
+    height: 722px;
+    background-size: 360px 722px;
+    background-repeat: no-repeat;
+    background-image: url(../../../images/iphonex/hardware_portrait_silver_large.png);
+}
+.iphonex_feature_top{
+    text-align: center;
+    padding-top: 30px;
+    padding-bottom: 100px;
+}
+
+.iphonex_feature_top .title{    
+   font-size: 25px;
+    line-height: 1.13353;
+    font-weight: 400;
+    letter-spacing: .006em;
+    font-family: "SF Pro Display","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
+    color: #272727;
+}
+.iphonex_feature_top .summary{    
+        font-size: 60px;
+    line-height: 1.05;
+    font-weight: 600;
+    letter-spacing: -.015em;
+    font-family: "SF Pro Display","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
+}
+.iphonex_feature{
+    
+    padding-top: 100px;
+    padding-bottom: 124px;
+}
+.iphonex_feature .feature_title{
+  margin-top: 4px;
+    font-size: 18px;
+    line-height: 24px;
+    font-weight: 600;
+    letter-spacing: .012em;
+    font-family: "SF Pro Display","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
+    width: 17%;
+    float: left;
+    color: #333;
+    box-sizing: border-box;
+    padding-left: 50px;
+}
+.iphonex_feature .feature_summary{
+  font-size: 25px;
+    line-height: 36px;
+    font-weight: 600;
+    letter-spacing: .004em;
+    font-family: "SF Pro Display","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
+    width: 82%;
+    padding-left: 100px;
+    box-sizing: border-box;
+}
+.iphonex_feature .feature_summary span{
+       max-width: 600px;
+    display: inline-block;
+}
+.animation_wp{
+    transition: all 1.2s;
+    -webkit-transition: all 1.2s;
+}
+
+.face_id_mapping_wrapper {
+    width: 556px;
+    height: 762px;    
+    padding: 40px 0 0 42px;
+    visibility: visible;
+    transition: all 1.2s;
+    -webkit-transition: all 1.2s;
+    margin: 0 auto;
+    position: relative;
+    max-width: 100%;
+        box-sizing: border-box;
+  } 
+.face_id_mapping_wrapper  .face_id_mapping_inner{
+     background-size: 556px 762px;
+    background-repeat: no-repeat;
+     background-image: url(../../../images/iphonex/face_id_mapping_fallback_large.jpg);
+}
+.face_id_mapping_wrapper  .face_id_mapping_inner video{
+          margin-top: 194px;
+}
+
+.face_id_mapping_wrapper::after {
+    content: '';
+    display: block;
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    width: 640px;
+    height: 800px;
+    background-size: 640px 800px;
+    background-repeat: no-repeat;
+    background-image: url(../../../images/iphonex/face_id_hardware_cropped_large.png);
+        max-width: 100%;
+}
+.section9{
+    background: #EDECED;
+}
+
+.section10, .section13 {
+    background: #FAFAFA;
+}
+
+@media only screen and (max-width:815px){
+    .base_left {
+        width: 100%;
+    }
+    .base_right {
+        width: 100%;
+        text-align: center;
+        padding-left: 0;
+        margin-top: 40px;
+    }
+}
+
+@media only screen and (max-width:730px){
+    .iphonex_feature .feature_title {
+   
+        width: 100%;
+       
+        padding-left: 30px;
+    }
+    .iphonex_feature .feature_summary {
+        font-size: 22px;
+        line-height: 31px;       
+        width: 100%;
+        padding-left: 30px;
+        box-sizing: border-box;
+        margin-top: 15px;
+    }
+    .iphonex_feature_top .title {
+        font-size: 22px;
+   
+    }
+    .iphonex_feature_top .summary {
+        font-size: 30px;
+      
+    }
+    .section2  .design_display{
+            background: url(../../../images/iphonex/design_hero_small.jpg) top left no-repeat;
+        width: 736px;
+        height: 421px;
+        position: absolute;
+        left: 17%;
+        top: 0;
+        transition: all 1.2s;
+        -webkit-transition: all 1.2s;
+    }
+
+}
+@media only screen and (max-width:600px){
+    .section2 .design_display {
+        
+        left: 7%;
+        
+    }
+}
+@media only screen and (max-width:500px){
+
+    .iphonex_feature .feature_title {   
+        width: 100%;       
+        padding-left: 10px;
+    }
+    .iphonex_feature .feature_summary {     
+       
+        padding-left: 10px;       
+    }
+   
+} 

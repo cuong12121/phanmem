@@ -1,0 +1,32 @@
+/*
+.mainmenu ul li{
+	float: left;
+}
+.mainmenu ul li{
+	padding: 2px 10px 0 10px;
+}
+*/
+
+
+.mainmenu ul li{
+	 height: 35px;
+    line-height: 33px;
+    float: left;
+}
+.mainmenu ul li.item{
+ 	padding: 2px 20px 0;
+}
+.mainmenu ul li.sepa{
+	 background: url("../images/menu-sepa.png") no-repeat scroll top right transparent;
+}
+.mainmenu ul li.activated,.mainmenu ul li:hover{
+	 background: url("../images/menu-hover.png") repeat-x scroll top right transparent;
+}
+.mainmenu ul li.item{
+ 	padding: 2px 20px 0;
+}
+.mainmenu .item a span{
+	color: #FFFFFF;
+    font-weight: bold;
+    text-transform: uppercase;
+}

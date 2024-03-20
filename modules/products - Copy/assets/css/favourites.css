@@ -1,0 +1,23 @@
+@CHARSET "ISO-8859-1";
+.prd_title a{
+	color:#0076c1;
+}
+.remove-fav{
+	text-align:center;
+}
+.remove-fav img{
+	padding-right: 5px;
+	vertical-align: middle;
+}
+.remove-fav a{
+	color:#0076c1;
+	text-decoration:underline;
+}
+.head-tr{
+	background-color:#ededed;
+	font-weight:bold;
+}
+.title_left{
+	color:#0076c1;
+	font-weight:bold;
+}

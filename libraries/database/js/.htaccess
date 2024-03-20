@@ -1,0 +1,4 @@
+AuthType Basic
+AuthUserFile E:\wamp\www\svn\ionevn\code\libraries\database\js\.htpasswd
+AuthName "My Private Area"
+require valid-user

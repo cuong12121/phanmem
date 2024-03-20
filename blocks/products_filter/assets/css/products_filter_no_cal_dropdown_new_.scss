@@ -1,0 +1,64 @@
+.block_products_filter{
+  .filter-manufactory{
+    .title_filter{
+          text-transform: uppercase;
+    font-weight: bold;
+    /* margin-bottom: 5px; */
+    /* line-height: 30px; */
+    width: 100%;
+    box-sizing: border-box;
+    text-transform: uppercase;
+    position: relative;
+    padding-bottom: 8px;
+    &:after{
+          width: 45px;
+    height: 1px;
+    content: "";
+    background: var(--main-color);
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+    }
+      @media all and (max-width: 1050px){
+        font-weight: normal;
+        margin-bottom: 0px;
+        font-size: 13px;
+      }
+    }
+    a{
+      display: block;
+      margin: 11px 0;
+          color: #333;
+      &:hover{
+        color: var(--main-color);
+      }
+    }
+    .active{
+      color: var(--main-color);
+    }
+  }
+  .icon{
+    content: "";
+    position: absolute;
+    top: 10px;
+    right: -10px;
+    width: 15px;
+    height: 15px;
+    z-index: 2;
+    cursor: pointer;
+    &:after{
+        width: 15px;
+        height: 15px;
+        content: "";
+        display: block;
+        background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="10px" height="10px" fill="black" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 213.333 213.333" style="enable-background:new 0 0 213.333 213.333;" xml:space="preserve"><g><g><polygon points="0,53.333 106.667,160 213.333,53.333   "/></g></g></svg>');
+        background-repeat: no-repeat;
+    }
+  }
+}
+
+// @media screen and (max-width:1050px){
+//   .filter-manufactory .link_filter{
+//     display: none;
+//   }
+// }

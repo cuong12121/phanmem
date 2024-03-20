@@ -1,0 +1,206 @@
+php_value memory_limit 128M
+
+Options +FollowSymLinks
+RewriteEngine On
+
+RewriteCond %{HTTP_HOST} ^([^/.]+)\.lapnano\.local$ 
+RewriteCond %1 !^(www|ftp|mail)$ [NC]
+RewriteRule ^(.*)$ index.php?module=template&alias=%1&raw=1 [L]
+
+RewriteCond %{HTTP_HOST} ^www\.(.*)
+RewriteRule (.*) http://%1/$1 [R=301,L]
+
+RewriteCond %{HTTP_HOST} ^www.(.+) [NC]
+RewriteRule ^(.*) http://%1/$1 [R=301,NE,L]
+
+
+AddType text/x-component .htc
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+
+RewriteRule ^index.html$ index.php?module=home&view=home&%{QUERY_STRING} [L]
+
+#products
+
+RewriteRule ^product/categories$ index.php?module=products&view=categories&%{QUERY_STRING} [L]
+RewriteRule ^product/categories/add index.php?module=products&view=categories&task=add&%{QUERY_STRING} [L]
+RewriteRule ^product/categories/edit/([0-9]*)$ index.php?module=products&view=categories&task=edit&id=$1&%{QUERY_STRING} [L]
+
+
+RewriteRule ^product/add/([0-9]*)$ index.php?module=products&view=products&task=add&cid=$1&Itemid=1&lang=vi&%{QUERY_STRING} [L]
+RewriteRule ^product/edit/([0-9]*)$ index.php?module=products&view=products&task=edit&id=$1&Itemid=1&lang=vi&%{QUERY_STRING} [L]
+RewriteRule ^products$ index.php?module=products&view=products&%{QUERY_STRING} [L]
+
+
+RewriteRule ^product/platforms$ index.php?module=products&view=platforms&%{QUERY_STRING} [L]
+RewriteRule ^product/platforms/add index.php?module=products&view=platforms&task=add&%{QUERY_STRING} [L]
+RewriteRule ^product/platforms/edit/([0-9]*)$ index.php?module=products&view=platforms&task=edit&id=$1&%{QUERY_STRING} [L]
+
+RewriteRule ^product/house$ index.php?module=products&view=house&%{QUERY_STRING} [L]
+RewriteRule ^product/house/add index.php?module=products&view=house&task=add&%{QUERY_STRING} [L]
+RewriteRule ^product/house/edit/([0-9]*)$ index.php?module=products&view=house&task=edit&id=$1&%{QUERY_STRING} [L]
+
+RewriteRule ^product/types$ index.php?module=products&view=types&%{QUERY_STRING} [L]
+RewriteRule ^product/types/add index.php?module=products&view=types&task=add&%{QUERY_STRING} [L]
+RewriteRule ^product/types/edit/([0-9]*)$ index.php?module=products&view=types&task=edit&id=$1&%{QUERY_STRING} [L]
+
+RewriteRule ^product/manufactories$ index.php?module=products&view=manufactories&%{QUERY_STRING} [L]
+RewriteRule ^product/manufactories/add index.php?module=products&view=manufactories&task=add&%{QUERY_STRING} [L]
+RewriteRule ^product/manufactories/edit/([0-9]*)$ index.php?module=products&view=manufactories&task=edit&id=$1&%{QUERY_STRING} [L]
+
+RewriteRule ^product/tables$ index.php?module=products&view=tables&%{QUERY_STRING} [L]
+RewriteRule ^product/tables/add index.php?module=products&view=tables&task=add&%{QUERY_STRING} [L]
+RewriteRule ^product/tables/edit/([0-9]*)$ index.php?module=products&view=tables&task=edit&id=$1&%{QUERY_STRING} [L]
+
+
+RewriteRule ^product/inventory-detail/([0-9]*)$ index.php?module=products&view=inventory_detail&id=$1&%{QUERY_STRING} [L]
+RewriteRule ^product/inventory$ index.php?module=products&view=inventory&%{QUERY_STRING} [L]
+
+
+#extends
+RewriteRule ^extends/groups$ index.php?module=extends&view=groups&%{QUERY_STRING} [L]
+RewriteRule ^extends/groups/add index.php?module=extends&view=groups&task=add&%{QUERY_STRING} [L]
+RewriteRule ^extends/groups/edit/([0-9]*)$ index.php?module=extends&view=groups&task=edit&id=$1&%{QUERY_STRING} [L]
+
+
+RewriteRule ^extends/data$ index.php?module=extends&view=data&%{QUERY_STRING} [L]
+RewriteRule ^extends/data/add index.php?module=extends&view=data&task=add&%{QUERY_STRING} [L]
+RewriteRule ^extends/data/edit/([0-9]*)$ index.php?module=extends&view=data&task=edit&id=$1&%{QUERY_STRING} [L]
+
+
+#config
+RewriteRule ^config/data$ index.php?module=config&view=config&%{QUERY_STRING} [L]
+
+
+
+#user
+RewriteRule ^users/profile$ index.php?module=users&view=profile&%{QUERY_STRING} [L]
+RewriteRule ^users/profile/add index.php?module=users&view=profile&task=add&%{QUERY_STRING} [L]
+RewriteRule ^users/profile/edit/([0-9]*)$ index.php?module=users&view=profile&task=edit&id=$1&%{QUERY_STRING} [L]
+
+RewriteRule ^users/groups_file$ index.php?module=users&view=groups_file&%{QUERY_STRING} [L]
+RewriteRule ^users/groups_file/add index.php?module=users&view=groups_file&task=add&%{QUERY_STRING} [L]
+RewriteRule ^users/groups_file/edit/([0-9]*)$ index.php?module=users&view=groups_file&task=edit&id=$1&%{QUERY_STRING} [L]
+
+RewriteRule ^users/files$ index.php?module=users&view=files&%{QUERY_STRING} [L]
+RewriteRule ^users/files/add index.php?module=users&view=files&task=add&%{QUERY_STRING} [L]
+RewriteRule ^users/files/edit/([0-9]*)$ index.php?module=users&view=files&task=edit&id=$1&%{QUERY_STRING} [L]
+
+RewriteRule ^users/groups$ index.php?module=users&view=groups&%{QUERY_STRING} [L]
+RewriteRule ^users/groups/add index.php?module=users&view=groups&task=add&%{QUERY_STRING} [L]
+RewriteRule ^users/groups/edit/([0-9]*)$ index.php?module=users&view=groups&task=edit&id=$1&%{QUERY_STRING} [L]
+
+#sells
+RewriteRule ^sells/retail$ index.php?module=sells&view=retail&%{QUERY_STRING} [L]
+RewriteRule ^sells/retail/add index.php?module=sells&view=retail&task=add&%{QUERY_STRING} [L]
+RewriteRule ^sells/retail/edit/([0-9]*)$ index.php?module=sells&view=retail&task=edit&id=$1&%{QUERY_STRING} [L]
+
+
+#shops
+RewriteRule ^shops/shop$ index.php?module=shops&view=shop&%{QUERY_STRING} [L]
+RewriteRule ^shops/shop/add index.php?module=shops&view=shop&task=add&%{QUERY_STRING} [L]
+RewriteRule ^shops/shop/edit/([0-9]*)$ index.php?module=shops&view=shop&task=edit&id=$1&%{QUERY_STRING} [L]
+
+
+RewriteRule ^shops/recharges$ index.php?module=shops&view=recharges&%{QUERY_STRING} [L]
+RewriteRule ^shops/recharges/add index.php?module=shops&view=recharges&task=add&%{QUERY_STRING} [L]
+RewriteRule ^shops/recharges/edit/([0-9]*)$ index.php?module=shops&view=recharges&task=edit&id=$1&%{QUERY_STRING} [L]
+
+RewriteRule ^shops/transfer_money$ index.php?module=shops&view=transfer_money&%{QUERY_STRING} [L]
+RewriteRule ^shops/transfer_money/add index.php?module=shops&view=transfer_money&task=add&%{QUERY_STRING} [L]
+RewriteRule ^shops/transfer_money/edit/([0-9]*)$ index.php?module=shops&view=transfer_money&task=edit&id=$1&%{QUERY_STRING} [L]
+
+
+
+#warehouse_sales
+RewriteRule ^warehouse_sales/sales$ index.php?module=warehouse_sales&view=sales&%{QUERY_STRING} [L]
+RewriteRule ^warehouse_sales/sales/add index.php?module=warehouse_sales&view=sales&task=add&%{QUERY_STRING} [L]
+RewriteRule ^warehouse_sales/sales/edit/([0-9]*)$ index.php?module=warehouse_sales&view=sales&task=edit&id=$1&%{QUERY_STRING} [L]
+RewriteRule ^warehouse_sales/barcode$ index.php?module=warehouse_sales&view=barcode&%{QUERY_STRING} [L]
+RewriteRule ^warehouse_sales/excel$ index.php?module=warehouse_sales&view=excel&%{QUERY_STRING} [L]
+RewriteRule ^warehouse_sales/excel/import_excel$ index.php?module=warehouse_sales&view=excel&task=import_excel&%{QUERY_STRING} [L]
+RewriteRule ^warehouse_sales/excel/download_file$ index.php?module=warehouse_sales&view=excel&task=download_file&%{QUERY_STRING} [L]
+
+
+#add_shop
+RewriteRule ^add_shop/excel$ index.php?module=add_shop&view=excel&%{QUERY_STRING} [L]
+RewriteRule ^add_shop/excel/import_excel$ index.php?module=add_shop&view=excel&task=import_excel&%{QUERY_STRING} [L]
+
+#add_product
+RewriteRule ^add_product/excel$ index.php?module=add_product&view=excel&%{QUERY_STRING} [L]
+RewriteRule ^add_product/excel/import_excel$ index.php?module=add_product&view=excel&task=import_excel&%{QUERY_STRING} [L]
+RewriteRule ^add_product/excel/export_product$ index.php?module=add_product&view=excel&task=export_product&%{QUERY_STRING} [L]
+
+#print_history
+RewriteRule ^print_history/history$ index.php?module=print_history&view=history&%{QUERY_STRING} [L]
+
+
+#refunds
+RewriteRule ^refunds/refund$ index.php?module=refunds&view=refund&%{QUERY_STRING} [L]
+RewriteRule ^refunds/refund/add index.php?module=refunds&view=refund&task=add&%{QUERY_STRING} [L]
+RewriteRule ^refunds/refund/edit/([0-9]*)$ index.php?module=refunds&view=refund&task=edit&id=$1&%{QUERY_STRING} [L]
+RewriteRule ^refunds/refund/excel_hoan_hang$ index.php?module=refunds&view=refund&task=excel_hoan_hang&%{QUERY_STRING} [L]
+
+RewriteRule ^refunds/barcode$ index.php?module=refunds&view=barcode&%{QUERY_STRING} [L]
+RewriteRule ^refunds/excel$ index.php?module=refunds&view=excel&%{QUERY_STRING} [L]
+RewriteRule ^refunds/excel/import_excel$ index.php?module=refunds&view=excel&task=import_excel&%{QUERY_STRING} [L]
+RewriteRule ^refunds/excel/download_file$ index.php?module=refunds&view=excel&task=download_file&%{QUERY_STRING} [L]
+
+#order
+RewriteRule ^order/upload$ index.php?module=order&view=upload&%{QUERY_STRING} [L]
+RewriteRule ^order/upload/add index.php?module=order&view=upload&task=add&%{QUERY_STRING} [L]
+RewriteRule ^order/upload/edit/([0-9]*)$ index.php?module=order&view=upload&task=edit&id=$1&%{QUERY_STRING} [L]
+
+
+#order_items
+RewriteRule ^order_items/items$ index.php?module=order_items&view=items&%{QUERY_STRING} [L]
+RewriteRule ^order_items/items/excel_nhat$ index.php?module=order_items&view=items&task=excel_nhat&%{QUERY_STRING} [L]
+RewriteRule ^order_items/items/excel_misa$ index.php?module=order_items&view=items&task=excel_misa&%{QUERY_STRING} [L]
+RewriteRule ^order_items/items/excel_tong_ngay$ index.php?module=order_items&view=items&task=excel_tong_ngay&%{QUERY_STRING} [L]
+RewriteRule ^order_items/items/edit/([0-9]*)$ index.php?module=order_items&view=items&task=edit&id=$1&%{QUERY_STRING} [L]
+
+
+RewriteRule ^packages/package$ index.php?module=packages&view=package&%{QUERY_STRING} [L]
+RewriteRule ^packages/statistic$ index.php?module=packages&view=statistic&%{QUERY_STRING} [L]
+
+#profits
+RewriteRule ^profits/excel/import_excel$ index.php?module=profits&view=excel&task=import_excel&%{QUERY_STRING} [L]
+RewriteRule ^profits/excel/download_file_lazada$ index.php?module=profits&view=excel&task=download_file_lazada&%{QUERY_STRING} [L]
+RewriteRule ^profits/excel/download_file_shoppe$ index.php?module=profits&view=excel&task=download_file_shoppe&%{QUERY_STRING} [L]
+RewriteRule ^profits/excel/download_file_tiki$ index.php?module=profits&view=excel&task=download_file_tiki&%{QUERY_STRING} [L]
+
+#warehouses
+RewriteRule ^warehouses/add/([0-9]*)$ index.php?module=warehouses&view=warehouses&task=add&cid=$1&Itemid=1&lang=vi&%{QUERY_STRING} [L]
+RewriteRule ^warehouses/edit/([0-9]*)$ index.php?module=warehouses&view=warehouses&task=edit&id=$1&%{QUERY_STRING} [L]
+RewriteRule ^warehouses$ index.php?module=warehouses&view=warehouses&%{QUERY_STRING} [L]
+
+RewriteRule ^supplier/add/([0-9]*)$ index.php?module=warehouses&view=supplier&task=add&cid=$1&Itemid=1&lang=vi&%{QUERY_STRING} [L]
+RewriteRule ^supplier/edit/([0-9]*)$ index.php?module=warehouses&view=supplier&task=edit&id=$1&%{QUERY_STRING} [L]
+RewriteRule ^supplier$ index.php?module=warehouses&view=supplier&%{QUERY_STRING} [L]
+
+RewriteRule ^warehouses/bill/add/([0-9]*)$ index.php?module=warehouses&view=bill&task=add&cid=$1&Itemid=1&lang=vi&%{QUERY_STRING} [L]
+RewriteRule ^warehouses/bill/edit/([0-9]*)$ index.php?module=warehouses&view=bill&task=edit&id=$1&%{QUERY_STRING} [L]
+RewriteRule ^warehouses/bill/print/([0-9]*)$ index.php?module=warehouses&view=bill&task=print&raw=1&id=$1&%{QUERY_STRING} [L]
+RewriteRule ^warehouses/bill$ index.php?module=warehouses&view=bill&%{QUERY_STRING} [L]
+
+RewriteRule ^warehouses/check/add/([0-9]*)$ index.php?module=warehouses&view=check&task=add&cid=$1&Itemid=1&lang=vi&%{QUERY_STRING} [L]
+RewriteRule ^warehouses/check/edit/([0-9]*)$ index.php?module=warehouses&view=check&task=edit&id=$1&%{QUERY_STRING} [L]
+RewriteRule ^warehouses/check/print/([0-9]*)$ index.php?module=warehouses&view=check&task=print&raw=1&id=$1&%{QUERY_STRING} [L]
+RewriteRule ^warehouses/check$ index.php?module=warehouses&view=check&%{QUERY_STRING} [L]
+
+RewriteRule ^warehouses/positions_categories/add$ index.php?module=warehouses&view=positions_categories&task=add&Itemid=1&lang=vi&%{QUERY_STRING} [L]
+RewriteRule ^warehouses/positions_categories/edit/([0-9]*)$ index.php?module=warehouses&view=positions_categories&task=edit&id=$1&%{QUERY_STRING} [L]
+RewriteRule ^warehouses/positions_categories/print/([0-9]*)$ index.php?module=warehouses&view=positions_categories&task=print&raw=1&id=$1&%{QUERY_STRING} [L]
+RewriteRule ^warehouses/positions_categories$ index.php?module=warehouses&view=positions_categories&%{QUERY_STRING} [L]
+
+
+RewriteRule ^([^/]*)/([^/]*)/add$ index.php?module=$1&view=$2&task=add&Itemid=1&lang=vi&%{QUERY_STRING} [L]
+RewriteRule ^^([^/]*)/([^/]*)/edit/([0-9]*)$ index.php?module=$1&view=$2&task=edit&id=$3&%{QUERY_STRING} [L]
+RewriteRule ^^([^/]*)/([^/]*)/revoke/([0-9]*)$ index.php?module=$1&view=$2&task=revoke&id=$3&%{QUERY_STRING} [L]
+RewriteRule ^^([^/]*)/([^/]*)/print/([0-9]*)$ index.php?module=$1&view=$2&task=print&raw=1&id=$3&%{QUERY_STRING} [L]
+RewriteRule ^([^/]*)/([^/]*)$ index.php?module=$1&view=$2&%{QUERY_STRING} [L]
+
+
+ErrorDocument 404 /404.html

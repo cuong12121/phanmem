@@ -1,0 +1,350 @@
+ Options +FollowSymLinks
+RewriteEngine On
+
+
+RewriteCond %{HTTP_HOST} ^([^/.]+)\.lapnano\.local$ 
+RewriteCond %1 !^(www|ftp|mail)$ [NC]
+RewriteRule ^(.*)$ index.php?module=template&alias=%1&raw=1 [L]
+
+RewriteCond %{HTTP_HOST} ^www\.(.*)
+RewriteRule (.*) http://%1/$1 [R=301,L]
+
+RewriteCond %{HTTP_HOST} ^www.(.+) [NC]
+RewriteRule ^(.*) http://%1/$1 [R=301,NE,L]
+
+
+AddType text/x-component .htc
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+
+#RewriteCond %{REQUEST_URI} !^/index.php
+#RewriteCond %{REQUEST_URI} (/|\.php|\.html|\.htm|\.feed|\.pdf|\.raw|/[^.]*)$  [NC]
+#RewriteRule (.*) index.php
+
+RewriteRule ^(index.php|index.html)$ index.php?module=products&view=home&Itemid=1&lang=vi[L]
+RewriteRule ^&tmpl=1$ index.php?module=home&view=home&Itemid=1&lang=vi&tmpl=1[L]
+RewriteRule ^$ index.php?module=home&view=home&Itemid=1&lang=vi&%{QUERY_STRING} [L]
+RewriteRule ^$ index.php?lang=vi [L]
+RewriteRule ^en$ index.php?module=products&view=home&Itemid=1&lang=en [L]
+
+
+RewriteRule ^export-print.html$ index.php?module=export_pdf&view=export_pdf&task=export_nows&raw=1 [L]
+
+RewriteRule ^([^/]*)-ld([0-9]*).html$ index.php?module=landingpages&view=landingpages&code=$1&id=$2&Itemid=88&lang=vi&$3  [L] 
+
+#services
+RewriteRule ^dich-vu.html$ index.php?module=services&view=home&Itemid=95 [L]
+RewriteRule ^([^/]*)-csv([0-9]*)(-page([0-9]*))?.html$ index.php?module=services&view=cat&ccode=$1&id=$2&Itemid=93&page=$5&lang=vi [L]
+RewriteRule ^([^/]*)-sv([0-9]*).html$ index.php?module=services&view=services&code=$1&id=$2&Itemid=94&lang=vi&$3  [L]
+
+
+
+#new
+RewriteRule ^tin-tuc(-page([0-9]*)).html$ index.php?module=news&view=home&ccode=$1&Itemid=4&page=$2 [L]
+RewriteRule ^tin-tuc.html$ index.php?module=news&view=home&Itemid=2 [L]
+RewriteRule ^tim-kiem-tin-tuc/([^/]*)(-page([0-9]*)).html(.*) index.php?module=news&view=search&keyword=$1&Itemid=2&page=$3 [L]
+RewriteRule ^tim-kiem-tin-tuc/([^/]*).html(.*) index.php?module=news&view=search&keyword=$1&Itemid=2 [L]
+RewriteRule ^([^/]*)-kn([0-9]*)(-page([0-9]*))?.html$ index.php?module=news&view=cat&ccode=$1&cid=$2&Itemid=3&page=$4&%{QUERY_STRING} [L]
+
+RewriteRule ^([^/]*)-n([0-9]*).html$ index.php?module=news&view=news&code=$1&id=$2&Itemid=4&%{QUERY_STRING} [L]
+
+#new_amp
+RewriteRule ^([^/]*)(-page([0-9]*))-kn([0-9]*).amp$ index.php?module=news&view=cat&ccode=$1&Itemid=2&page=$3&id=$4&amp=1 [L]
+RewriteRule ^([^/]*)-kn([0-9]*)(-page([0-9]*))?.amp$ index.php?module=news&view=cat&ccode=$1&cid=$2&Itemid=3&page=$4&%{QUERY_STRING}&amp=1 [L]
+RewriteRule ^tin-tuc(-page([0-9]*)).amp$ index.php?module=news&view=home&ccode=$1&Itemid=4&page=$2&amp=1 [L]
+RewriteRule ^tin-tuc.amp$ index.php?module=news&view=home&Itemid=2&amp=1 [L]
+
+RewriteRule ^([^/]*)-n([0-9]*).amp$ index.php?module=news&view=news&code=$1&amp=1&id=$2&Itemid=4&%{QUERY_STRING} [L]
+
+#tutorial
+RewriteRule ^([^/]*)-hd([0-9]*).html$ index.php?module=tutorial&view=tutorial&code=$1&id=$2&Itemid=40 [L]
+
+#certifications
+RewriteRule ^giai-thuong.html$ index.php?module=certifications&view=home&Itemid=67 [L]
+
+
+
+#aq
+RewriteRule ^([^/]*)-cq.html$ index.php?module=aq&view=cat&ccode=$1&Itemid=92[L]
+RewriteRule ^([^/]*)-q([0-9]*).html$ index.php?module=aq&view=aq&code=$1&id=$2&Itemid=91 [L]
+RewriteRule ^hoi-dap(-page([0-9]*))?.html$ index.php?module=aq&view=home&Itemid=89&page=$2 [L]
+RewriteRule ^gui-cau-hoi.html$ index.php?module=aq&view=aq&task=send_question&Itemid=90 [L]
+
+#testimonial
+#RewriteRule ^([^/]*)-t([0-9]*).html$ index.php?module=testimonials=testimonial&code=$1&id=$2&Itemid=18 [L]
+RewriteRule ^danh-gia(-page([0-9]*))?.html$ index.php?module=testimonials&view=home&page=$2&Itemid=17 [L]
+
+#albums
+RewriteRule ^bo-suu-tap(-page([0-9]*))?.html$ index.php?module=albums&view=home&page=$2&Itemid=177 [L]
+
+
+#service_center
+RewriteRule ^trung-tam-bao-hanh.html$ index.php?module=contact&view=services_centers&Itemid=187 [L]
+
+#department
+#RewriteRule ^he-thong-cua-hang-dd([0-9]*).html$ index.php?module=department&view=department&did=$1&Itemid=11 [L]
+RewriteRule ^he-thong-cua-hang.html$ index.php?module=department&view=department&Itemid=11 [L]
+
+#contents
+RewriteRule ^danh-muc/([^/]*)(-page([0-9]*)).html$ index.php?module=content&view=cat&ccode=$1&Itemid=7&page=$3 [L]
+RewriteRule ^danh-muc/([^/]*).html$ index.php?module=contents&view=cat&ccode=$1&Itemid=7 [L]
+RewriteRule ^ct-([^/]*).html$ index.php?module=contents&view=contents&code=$1&Itemid=8&lang=vi&$3  [L]
+RewriteRule ^ct-([^/]*).amp$ index.php?module=contents&view=contents&code=$1&Itemid=8&lang=vi&$3&amp=1  [L]
+RewriteRule ^ce-([^/]*).html$ index.php?module=contents&view=contents&code=$1&Itemid=8&lang=en&$3 [L]
+
+#advices
+RewriteRule ^danh-muc-tu-van/([^/]*)(-page([0-9]*)).html$ index.php?module=advices&view=cat&ccode=$1&Itemid=102&page=$3 [L]
+RewriteRule ^danh-muc-tu-van/([^/]*).html$ index.php?module=advices&view=cat&ccode=$1&Itemid=102 [L]
+RewriteRule ^chi-tiet-tu-van/([^/]*)/([^/]*).html$ index.php?module=advices&view=advice&ccode=$1&code=$2&Itemid=101 [L]
+RewriteRule ^tu-van(-page([0-9]*)).html$ index.php?module=advices&view=home&ccode=$1&Itemid=99&page=$2 [L]
+RewriteRule ^tu-van.html$ index.php?module=advices&view=home&Itemid=99 [L]
+
+#products
+
+RewriteRule ^thuong-hieu(-page([0-9]*))?.html(.*) index.php?module=products&view=manufactories&Itemid=12&page=$2&$2 [L]
+RewriteRule ^([^/]*)-mn([0-9]*)(-page([0-9]*))?.html$ index.php?module=products&view=manufactory&code=$1&id=$2&ccode=$1&page=$4&Itemid=13&%{QUERY_STRING}  [L]
+
+RewriteRule ^combo(-page([0-9]*))?.html(.*) index.php?module=products&view=combo&page=$2&Itemid=24&$1&%{QUERY_STRING}  [L]
+
+
+RewriteRule ^([^/]*)-pcm([0-9]*)(/([^/]*)-dlt)?(/sap-xep-([^/]*))?\-page([0-9]*).html$ index.php?module=products&view=cat&ccode=$1&cid=$2&filter=$4&Itemid=9&checkmanu=1&sort=$6&page=$7&%{QUERY_STRING}   [L]
+
+RewriteRule ^([^/]*)-pcm([0-9]*)(/([^/]*)-dlt)?(/sap-xep-([^/]*))?.html$ index.php?module=products&view=cat&ccode=$1&cid=$2&filter=$4&Itemid=9&checkmanu=1&sort=$6&%{QUERY_STRING}   [L]
+
+RewriteRule ^([^/]*)-pcm([0-9]*)/([^/]*)-dlt.html$ index.php?module=products&view=cat&ccode=$1&cid=$2&filter=$3&Itemid=9&checkmanu=1&%{QUERY_STRING}   [L]
+
+RewriteRule ^([^/]*)-([^/]*)-pcm([0-9]*)/([^/]*)-dlt.html$ index.php?module=products&view=cat&ccode=$1&manu=$2&cid=$3&filter=$4&Itemid=9&checkmanu=1&%{QUERY_STRING}   [L]
+
+RewriteRule ^([^/]*)-pcm([0-9]*)(-page([0-9]*)).html(.*) index.php?module=products&view=cat&ccode=$1&Itemid=9&checkmanu=1&page=$4&$5  [L]
+
+RewriteRule ^([^/]*)-([^/]*)-pcm([0-9]*).html(.*) index.php?module=products&view=cat&ccode=$1&manu=$2&cid=$3&Itemid=9&checkmanu=1&$3  [L]
+
+
+
+
+
+RewriteRule ^([^/]*)-pc([0-9]*)(/([^/]*)-dlt)?(/sap-xep-([^/]*))?\-page([0-9]*).html$ index.php?module=products&view=cat&ccode=$1&cid=$2&filter=$4&Itemid=9&sort=$6&page=$7&%{QUERY_STRING}   [L]
+RewriteRule ^([^/]*)-pc([0-9]*)(/([^/]*)-dlt)?(/sap-xep-([^/]*))?.html$ index.php?module=products&view=cat&ccode=$1&cid=$2&filter=$4&Itemid=9&sort=$6&%{QUERY_STRING}   [L]
+
+RewriteRule ^([^/]*)-pc([0-9]*)/([^/]*)-dlt.html$ index.php?module=products&view=cat&ccode=$1&cid=$2&filter=$3&Itemid=9&%{QUERY_STRING}   [L]
+RewriteRule ^([^/]*)-([^/]*)-pc([0-9]*)/([^/]*)-dlt.html$ index.php?module=products&view=cat&ccode=$1&manu=$2&cid=$3&filter=$4&Itemid=9&%{QUERY_STRING}   [L]
+
+RewriteRule ^([^/]*)-pc([0-9]*)(-page([0-9]*)).html(.*) index.php?module=products&view=cat&ccode=$1&Itemid=9&page=$4&$5  [L]
+RewriteRule ^([^/]*)-([^/]*)-pc([0-9]*).html(.*) index.php?module=products&view=cat&ccode=$1&manu=$2&cid=$3&Itemid=9&$3  [L]
+
+
+
+RewriteRule ^tags/([^/]*)-page([0-9]*).html(.*) index.php?module=products&view=tags&code=$1&page=$2&Itemid=9 [L]
+
+RewriteRule ^tags/([^/]*).html(.*) index.php?module=products&view=tags&code=$1&Itemid=9 [L]
+
+
+RewriteRule ^san-pham-ajax/([^/]*)-([0-9]*)/loc-([^/]*).html(.*) index.php?module=products&view=cat&ccode=$1&cid=$2&filter=$3&task=fetch_pages&raw=1&Itemid=34&$4  [L]
+RewriteRule ^san-pham-ajax/([^/]*)-([0-9]*).html(.*) index.php?module=products&view=cat&ccode=$1&cid=$2&Itemid=9&task=fetch_pages&raw=1&$3  [L]
+
+RewriteRule ^([^/]*)/([^/]*)-dg([0-9]*)/danh-gia(-page([0-9]*)).html(.*) index.php?module=products&view=rate&ccode=$1&code=$2&id=$3&Itemid=9&page=$5&lang=vi [L]
+RewriteRule ^([^/]*)/([^/]*)-dg([0-9]*)/danh-gia.html(.*) index.php?module=products&view=rate&ccode=$1&code=$2&id=$3&Itemid=9&$4&lang=vi  [L]
+
+
+#products_apm
+
+RewriteRule ^([^/]*)-pc([0-9]*)(/([^/]*)-dlt)?(/sap-xep-([^/]*))?\-page([0-9]*).amp$ index.php?module=products&view=cat&ccode=$1&cid=$2&filter=$4&Itemid=9&sort=$6&page=$7&amp=1&%{QUERY_STRING}   [L]
+RewriteRule ^([^/]*)-pc([0-9]*)(/([^/]*)-dlt)?(/sap-xep-([^/]*))?.amp$ index.php?module=products&view=cat&ccode=$1&cid=$2&filter=$4&Itemid=9&sort=$6&amp=1&%{QUERY_STRING}   [L]
+RewriteRule ^([^/]*)-pc([0-9]*)/([^/]*)-dlt.amp$ index.php?module=products&view=cat&ccode=$1&cid=$2&filter=$3&Itemid=9&amp=1&%{QUERY_STRING}   [L]
+
+
+
+RewriteRule ^([^/]*)-pc([0-9]*)(-page([0-9]*)).amp(.*) index.php?module=products&view=cat&ccode=$1&Itemid=9&page=$4&amp=1&$5  [L]
+RewriteRule ^([^/]*)-pc([0-9]*).amp(.*) index.php?module=products&view=cat&ccode=$1&cid=$2&Itemid=9&amp=1&$3  [L]
+
+
+
+#single_url_product
+RewriteRule ^([^/]*)-p([0-9]*).html$ index.php?module=products&view=product&id=$2&code=$1&Itemid=10&%{QUERY_STRING}  [L]
+
+RewriteRule ^tim-kiem/([^/]*).html(.*) index.php?module=products&view=search&keyword=$1&Itemid=9&$2 [L] 
+
+RewriteRule ^tim-kiem/([^/]*)/cat-([^/]*)/manf-([^/]*)-page([0-9]*).html(.*) index.php?module=products&view=search&keyword=$1&cat=$2&manf=$3&page=$4&Itemid=9 [L] 
+
+RewriteRule ^tim-kiem/([^/]*)/cat-([^/]*)/manf-([^/]*).html(.*) index.php?module=products&view=search&keyword=$1&cat=$2&manf=$3&Itemid=9 [L] 
+RewriteRule ^tim-kiem-ajax/([^/]*).html(.*) index.php?module=products&view=search&keyword=$1&Itemid=9&task=fetch_pages&raw=1&$2 [L] 
+
+#RewriteRule ^hotdeal(-page([0-9]*)).html(.*) index.php?module=products&view=hotdeal&Itemid=9&page=$2&$2 [L] 
+#RewriteRule ^hotdeal.html(.*) index.php?module=products&view=hotdeal&Itemid=9&$2 [L] 
+#RewriteRule ^product-feed.html(.*) index.php?module=products&view=feed&raw=1&Itemid=9&$2 [L] 
+
+#RewriteRule ^khuyen-mai(-page([0-9]*)).html(.*) index.php?module=products&view=hotdeal&Itemid=9&page=$2&$2 [L] 
+#RewriteRule ^khuyen-mai.html(.*) index.php?module=products&view=hotdeal&Itemid=9&$2 [L]
+
+RewriteRule ^san-pham-ban-chay(-page([0-9]*)).html(.*) index.php?module=products&view=sell&Itemid=9&page=$2&$2 [L] 
+RewriteRule ^san-pham-ban-chay.html(.*) index.php?module=products&view=sell&Itemid=9&$2 [L]
+
+RewriteRule ^changepass.html$ index.php?module=users&task=changepass&Itemid=45&%{QUERY_STRING}  [L]
+
+
+RewriteRule ^san-pham-hot(-page([0-9]*)).html(.*) index.php?module=products&view=hot&Itemid=9&page=$2&$2 [L] 
+RewriteRule ^san-pham-hot.html(.*) index.php?module=products&view=hot&Itemid=9&$2 [L]
+
+RewriteRule ^san-pham-khuyen-mai(-page([0-9]*)).html(.*) index.php?module=products&view=promotion&Itemid=9&page=$2&$2 [L] 
+RewriteRule ^san-pham-khuyen-mai.html(.*) index.php?module=products&view=promotion&Itemid=9&$2 [L]
+
+
+
+#RewriteRule ^so-sanh-san-pham/([^/]*).html(.*) index.php?module=products&view=compare&cid=$1&Itemid=38&$2 [L]
+RewriteRule ^so-sanh-giua-([^/]*)-cp([0-9]*)?(-([0-9]*))?(-([0-9]*))?(-([0-9]*))?.html index.php?module=products&view=compare&code=$1&id[]=$2&id[]=$4&id[]=$6&id[]=$8&Itemid=38 [L]
+#RewriteRule ^so-sanh-giua([^/]*)-cp([0-9]*)-([0-9]*).html index.php?module=products&view=compare&id=$2&id2=$3&Itemid=38 [L]
+
+RewriteRule ^store.html(.*) index.php?module=products&view=home&Itemid=24&$1&%{QUERY_STRING}  [L]
+RewriteRule ^gio-hang.html$ index.php?module=products&view=cart&task=shopcart&Itemid=11&action=gio-hang  [L]
+RewriteRule ^thanh-toan.html$ index.php?module=products&view=cart&task=shopcart&Itemid=11&action=thanh-toan  [L]
+#RewriteRule ^gio-hang.html$ index.php?module=products&view=cart&task=eshopcart2&Itemid=11  [L]
+#RewriteRule ^don-hang.html$ index.php?module=products&view=cart&task=order&Itemid=11  [L]
+RewriteRule ^ket-thuc-don-hang-([0-9]*).html$ index.php?module=products&view=cart&task=finished&id=$1&Itemid=11&%{QUERY_STRING}  [L]
+
+RewriteRule ^xac-thuc-ipn-vnpay.html$ index.php?module=products&view=cart&task=finished_ipn_vnpay&Itemid=11&%{QUERY_STRING}  [L]
+
+RewriteRule ^xoa-san-pham-([0-9]*).html$ index.php?module=products&view=cart&task=edel&id=$1&Itemid=11  [L]
+
+#RewriteRule ^tra-gop-([^/]*)-([0-9]*).html index.php?module=products&view=instalment&code=$1&id=$2&Itemid=12  [L]
+#RewriteRule ^tra-gop-([0-9]*).html index.php?module=products&view=instalment&id=$1&Itemid=12  [L]
+#RewriteRule ^alepay_result.htm index.php?module=products&view=instalment&task=alepay_result&raw=1&%{QUERY_STRING}  [L]
+
+
+
+
+#partners
+RewriteRule ^doi-tac.html$ index.php?module=partners&Itemid=104 [L]
+
+#contact
+RewriteRule ^lien-he.html$ index.php?module=contact&Itemid=43 [L]
+#RewriteRule ^([^/]*)-c([0-9]*).html$ index.php?module=contact&view=contact&code=$1&id=$2&Itemid=12&%{QUERY_STRING}  [L]
+
+#newsletter
+RewriteRule ^newsletter.html index.php?module=newsletter&task=save [L]
+
+#user:
+#RewriteRule ^thong-tin-tai-khoan.html$ index.php?module=users&task=user_info&Itemid=45  [L]
+RewriteRule ^dang-nhap.html$(.*) index.php?module=users&task=login&Itemid=39&$1  [L]
+RewriteRule ^quen-mat-khau.html$ index.php?module=users&task=forget&Itemid=48  [L]
+#RewriteRule ^dang-ky.html$ index.php?module=users&task=register&Itemid=12  [L]
+RewriteRule ^dang-xuat.html$ index.php?module=users&task=logout  [L]
+RewriteRule ^dang-ky-dang-nhap.html$ index.php?module=users&task=login_register&Itemid=39  [L]
+#RewriteRule ^thanh-vien.html$(.*) index.php?module=users&task=logged&Itemid=39&$1  [L]
+RewriteRule ^thong-tin-tai-khoan.html$ index.php?module=users&task=edit&Itemid=45&%{QUERY_STRING}  [L]
+RewriteRule ^user_address_book.html$ index.php?module=users&task=address_book&Itemid=45&%{QUERY_STRING}  [L]
+RewriteRule ^user_point.html$ index.php?module=users&task=user_point&Itemid=45&%{QUERY_STRING}  [L]
+
+RewriteRule ^thong-bao-cua-toi(-page([0-9]*)).html$ index.php?module=users&task=notification&Itemid=45&page=$2&%{QUERY_STRING}  [L]
+RewriteRule ^thong-bao-cua-toi.html$ index.php?module=users&task=notification&Itemid=45&%{QUERY_STRING}  [L]
+RewriteRule ^chi-tiet-thong-bao/([^/]*)-nt([0-9]*).html$ index.php?module=users&task=notification_detail&code=$1&Itemid=45&id=$2 [L]
+RewriteRule ^xoa-thong-bao/([^/]*)-dnt([0-9]*).html$ index.php?module=users&task=delete_notification&code=$1&Itemid=45&id=$2 [L]
+
+
+RewriteRule ^ma-giam-gia(-page([0-9]*)).html$ index.php?module=users&task=code_sale&Itemid=45&page=$2&%{QUERY_STRING}  [L]
+RewriteRule ^ma-giam-gia.html$ index.php?module=users&task=code_sale&Itemid=45&%{QUERY_STRING}  [L]
+
+RewriteRule ^orders(-page([0-9]*)).html$ index.php?module=users&task=orders&Itemid=45&page=$2&%{QUERY_STRING}  [L]
+RewriteRule ^orders.html$ index.php?module=users&task=orders&Itemid=45&%{QUERY_STRING}  [L]
+RewriteRule ^chi-tiet-don-hang-dh([0-9]*).html index.php?module=users&task=orders_detail&id=$1&Itemid=45  [L]
+
+RewriteRule ^san-pham-da-xem(-page([0-9]*)).html$ index.php?module=users&task=view_product&Itemid=45&page=$2&%{QUERY_STRING}  [L]
+RewriteRule ^san-pham-da-xem.html$ index.php?module=users&task=view_product&Itemid=45&%{QUERY_STRING}  [L]
+
+
+RewriteRule ^cau-hoi-cua-toi(-page([0-9]*)).html$ index.php?module=users&task=view_aq&Itemid=45&page=$2&%{QUERY_STRING}  [L]
+RewriteRule ^cau-hoi-cua-toi.html$ index.php?module=users&task=view_aq&Itemid=45&%{QUERY_STRING}  [L]
+
+
+RewriteRule ^nhan-xet-cua-toi(-page([0-9]*)).html$ index.php?module=users&task=view_comment&Itemid=45&page=$2&%{QUERY_STRING}  [L]
+RewriteRule ^nhan-xet-cua-toi.html$ index.php?module=users&task=view_comment&Itemid=45&%{QUERY_STRING}  [L]
+
+
+RewriteRule ^wishlist.html$ index.php?module=users&task=wishlist&Itemid=45&%{QUERY_STRING}  [L]
+
+#RewriteRule ^da.html$ index.php?module=users&task=logout  [L]
+#Google
+RewriteRule ^oauth2callback$ index.php?module=users&view=google&raw=1&task=google_login&Itemid=10&%{QUERY_STRING} [L]
+
+RewriteRule ^face_login.html$ index.php?module=users&view=face&task=callback&Itemid=45&%{QUERY_STRING}  [L]
+RewriteRule ^oauth2callback$ index.php?module=users&view=google&task=google_login&Itemid=45&%{QUERY_STRING}  [L]
+
+#sitemap
+#RewriteRule ^site-map.html(.*) index.php?module=sitemap&view=sitemap&Itemid=16 [L]
+
+#rss
+#RewriteRule ^rss.xml$ rss.php [L]
+#RewriteRule ^feeds$ rss.php [L]
+#RewriteRule ^feeds-remarketing.xml$ rss.php?remarketing=1 [L]
+#RewriteRule ^feeds-instant-articles$ rss.php?instant_articles=1 [L]
+
+#rss
+RewriteRule ^trang-chu.rss$ index.php?module=rss&view=rss&raw=1 [L]
+RewriteRule ^rss.html$ index.php?module=rss&view=home&raw=1[L]
+RewriteRule ^rss.xml$ rss.php [L]
+#RewriteRule ^rss-tools.xml$ rss.php?tool=1 [L]
+RewriteRule ^([^/]*).rss index.php?module=rss&view=rss&ccode=$1&raw=1 [L]
+
+
+#sitemap_v2
+#RewriteRule ^sitemap.xml index.php?module=sitemap&view=sitemap&raw=1 [L]
+#RewriteRule ^sitemap-([^/]*)-spc([0-9]*).xml$ index.php?module=sitemap&view=sitemap&task=show_products&ccode=$1&cid=$2&raw=1 [L]
+
+
+
+
+#genarate sitemap
+#RewriteRule ^genarate_sitemap.xml index.php?module=sitemap_auto&view=sitemap_auto&raw=1 [L]
+RewriteRule ^sitemap_video.xml index.php?module=sitemap_auto&view=sitemap_auto&type=video&raw=1 [L]
+RewriteRule ^sitemap_video_cat.xml index.php?module=sitemap_auto&view=sitemap_auto&type=video_cat&raw=1 [L]
+RewriteRule ^sitemap_news.xml index.php?module=sitemap_auto&view=sitemap_auto&type=news&raw=1 [L]
+RewriteRule ^sitemap_news_cat.xml index.php?module=sitemap_auto&view=sitemap_auto&type=news_cat&raw=1 [L]
+RewriteRule ^sitemap_contents.xml index.php?module=sitemap_auto&view=sitemap_auto&type=contents&raw=1 [L]
+RewriteRule ^sitemap_product.xml index.php?module=sitemap_auto&view=sitemap_auto&type=product&raw=1 [L]
+RewriteRule ^sitemap_product_cat.xml index.php?module=sitemap_auto&view=sitemap_auto&type=product_cat&raw=1 [L]
+
+#videos
+RewriteRule ^video.html(-page([0-9]*)).html$ index.php?module=videos&view=home&page=$2 [L]
+RewriteRule ^video.html$ index.php?module=videos&view=home&Itemid=30 [L]
+
+
+RewriteRule ^([^/]*)-cv([0-9]*)(-page([0-9]*)).html$ index.php?module=videos&view=cat&ccode=$1&cid=$2&Itemid=30&page=$4 [L]
+RewriteRule ^([^/]*)-cv([0-9]*).html$ index.php?module=videos&view=cat&ccode=$1&cid=$2&Itemid=30 [L]
+
+RewriteRule ^([^/]*)-vd([0-9]*).html$ index.php?module=videos&view=video&code=$1&id=$2&Itemid=31&$3  [L]
+
+
+
+#baohanh
+RewriteRule ^bao-hanh.html$ index.php?module=warrantyinfo&view=home&ccode=$1&Itemid=57&page=$3&%{QUERY_STRING} [L]
+
+
+#messages
+#RewriteRule ^soan-tin-nhan/([^/]*)/-mp([0-9]*).html$ index.php?module=messages&view=messages&task=compose&product_id=$4&username=$2&Itemid=45
+
+RewriteRule ^soan-tin-nhan(/([^/]*))?(-mp([0-9]*))?.html$ index.php?module=messages&view=messages&task=compose&product_id=$4&username=$2&Itemid=45
+RewriteRule ^hop-thu-den(-page([0-9]*))?.html$ index.php?module=messages&view=messages&task=inbox&page=$2&Itemid=45
+RewriteRule ^thu-da-gui(-page([0-9]*))?.html$ index.php?module=messages&view=messages&task=outbox&page=$2&Itemid=45
+
+#them
+#images
+RewriteRule ^hinh-anh(-page([0-9]*))?.html$ index.php?module=images&view=home&ccode=$1&Itemid=98&page=$2 [L]
+RewriteRule ^([^/]*)/([^/]*)-im([0-9]*).html$ index.php?module=images&view=images&ccode=$1&code=$2&id=$3&Itemid=100 [L]
+
+RewriteCond %{REQUEST_FILENAME} !\.(jpg|gif|ico|webp)$
+
+#notfound
+RewriteRule ^404.html index.php?module=notfound&view=notfound&Itemid=1000 [L]
+RewriteRule ^404-page.html index.php?module=notfound&view=notfound&Itemid=1000 [L]
+
+#RewriteRule ^([^/]*)$ index.php?module=redirect&type=redirect_404&code=$1&%{QUERY_STRING} [L]
+
+ErrorDocument 404 /404.html
+
+
+# Permanent URL redirect - generated by www.rapidtables.com
+RewriteBase /
+
+
+

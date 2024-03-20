@@ -1,0 +1,2 @@
+.block-strengths-fix-icon{position:fixed;z-index:2;left:0px;top:20%;background:var(--main-color);padding:5px}.block-strengths-fix-icon .item{margin-bottom:5px;transition:0.3s}.block-strengths-fix-icon .item a{display:block}.block-strengths-fix-icon .item svg{width:30px;height:30px;fill:#fff}.block-strengths-fix-icon .item p{font-size:12px;color:#fff}.block-strengths-fix-icon .item:hover svg{fill:#2196F3}.block-strengths-fix-icon .item:hover p{color:#2196F3}
+/*# sourceMappingURL=fix_icon.css.map */

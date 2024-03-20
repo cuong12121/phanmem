@@ -1,0 +1,49 @@
+#myCarouselPrd .item{
+	padding: 12px 0;
+}
+#myCarouselPrd .item img{
+	margin: 0 auto;
+}
+#myCarouselPrd  .carousel-control.left{
+	background:url("../images/icon_prev.png") no-repeat scroll left center;
+}
+
+#myCarouselPrd  .carousel-control.right{
+	background:url("../images/icon_next.png") no-repeat scroll right center;
+}
+#myCarouselPrd  .carousel-caption{
+	background: none repeat scroll 0 0 rgba(0, 0, 0, 0.6);
+    bottom: 0;
+    left: 0;
+    padding: 10px;
+    right: 0;
+    text-align: left;
+    width: 100%;
+    font-family: opensans;
+}
+#myCarouselPrd  .carousel-caption h3{
+	margin-top: 0;
+}
+#myCarouselPrd  .carousel-caption h3 span{
+	font-weight: bold;
+	font-family: opensans;
+}
+#myCarouselPrd .carousel-indicators{
+	bottom: -40px;
+    left: auto;
+    padding-right: 36px;
+    right: 0;
+    text-align: right;
+}
+#myCarouselPrd  .carousel-indicators li{
+	 background-color: #dcdcdc;
+	 border: #dcdcdc;
+	 width: 12px;
+	 height: 12px;
+}
+#myCarouselPrd  .carousel-indicators .active {
+    background-color: #0083bf;
+    border: #0083bf;
+    margin: 1px;
+   
+}

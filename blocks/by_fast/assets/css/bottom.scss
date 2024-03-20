@@ -1,0 +1,289 @@
+.wrap-by-fast-bottom {
+	.title {
+		padding-left: 30px;
+		text-transform: uppercase;
+		font-size: 18px;
+		font-family: robotobold;
+		margin-bottom: 30px;
+		@media all and (max-width: 600px) {
+			padding-left: 0px;
+			margin-bottom: 0px;
+		}
+	}
+
+.footer_phone{
+	border-bottom: 1px solid #ddd; 
+	padding-top: 50px;
+	background: #222222;
+	padding-bottom: 50px;
+}
+	.phone-tittle {
+		text-transform: uppercase;
+		font-size: 20px;
+		font-family: robotobold;
+		@media all and (max-width: 800px) and (min-width: 650px){
+			display: inline;
+		}
+	}
+
+	.phone-content {
+		font-size: 15px;
+		margin-top: 5px;
+		@media all and (max-width: 800px) and (min-width: 650px){
+			display: inline;
+			margin-left: 10px;
+		}
+	}
+.fast-left{
+	width: 658px;
+	float:left;
+	@media screen and (max-width:1040px){
+		width: 100%;
+		text-align:center;
+    }
+	.fast-left-icon{
+        width: calc(100% - 552px);
+	    float: left;
+	    height: 102px;
+	    background: var(--black-color);
+	    position:relative;
+	    animation: 2s ease-in-out 0s normal none infinite running change-translate;
+    	-webkit-transition: 0.3s ease-in-out all;
+    	transition: 0.3s ease-in-out all;
+	    @media screen and (max-width:1040px){
+			display:none;
+	    }
+	 
+	}
+
+	    .icon_phone{
+    	       width: 58px;
+			    height: 75px;
+			    /* background: green; */
+			    margin: 14px 5px 0px 60px;
+			    z-index: 2;
+			    position: absolute;;
+    		
+	    }
+	    .icon_v1{
+			background-position: -35px 75px;
+			z-index: 3;
+	    }
+
+	.fast-left-text{
+		float: right;
+	    width: 505px;
+	    margin: 26px 0px;
+	    color: #fff;
+	    padding-left: 13px;
+	    box-sizing: border-box;
+	    @media screen and (max-width:1040px){
+			width: 100%;
+			margin: 5px 0px 0px 0px;
+			padding-left: 0px;
+	    }
+
+		.fast-top{
+			font-size:24px;
+			font-family:RobotoCondensed-Bold;
+			margin-top: -3px;
+		}
+		.fast-bottom{
+			font-size:16px;
+			 @media screen and (max-width:1040px){
+			 	box-sizing: border-box;
+			 }
+		}
+	}
+}
+.buy_fast {
+	float: left;
+	padding-left: 25px;
+	box-sizing: border-box;
+	@media all and (max-width: 600px){
+		padding-left: 0px;
+	}
+}
+
+@keyframes change-translate {
+  from {
+        transform: translateX(-88px);
+  }
+}
+.fast-right{
+	width: calc(100% - 658px);
+	float:right;
+	box-sizing: border-box;
+	@media screen and (max-width:1040px){
+		width: calc(100% - 10px);
+	    margin: -15px 5px;
+	    text-align: center;
+    }
+}
+
+// .buy_fast #telephone_buy_fast {
+//     width: 375px;
+//     padding-left: 20px;
+//     box-sizing: border-box;
+//     line-height: 50px;
+//     background:white;
+//     margin:0px;
+//     font-size:16px;
+//     color: black;
+//     border: none;
+//     outline: none;
+//     @media screen and (max-width:770px){
+//     	width: calc(100% - 90px);
+// 	    line-height: 40px;
+// 	    font-size: 16px;
+// 	    padding-left: 10px;
+// 	    font-size: 13px;
+
+//     }
+// }
+.buy_fast #telephone_buy_fast :placeholder {
+	color: #ddd;
+	margin-left: -10px;
+	} 
+	
+
+
+.buy_fast .button-buy-fast {
+    width:303px;
+    border: none;
+    color: white;
+    background:var(--extra-color);
+    cursor: pointer;
+    line-height: 40px;
+    margin-left: 0px;
+    font-family: RobotoCondensed-Bold;
+    margin:0px 0px;
+    padding-left: 0px;
+    margin-top: 20px;
+    font-size:18px;
+    position: relative;
+    transition: 0.5s;
+    outline: none;
+    @media screen and (max-width:770px){
+    	//width: 90px;
+	    line-height: 40px;
+	    position: relative;
+    }
+    &:hover{
+    	background: var(--main-color);
+    	//color: var(--main-color);
+    
+    }
+    svg {
+    	fill: white;
+    	transition: 0.5s;
+    }
+    &:hover svg {
+    	//fill: var(--main-color);
+    	transition: 0.5s;
+
+    }
+ 
+	
+
+}
+.buy_fast_body {
+	margin-top: -10px;
+	@media all and (max-width: 800px){
+		margin-top: 20px;
+	}
+	td {
+		height: 30px;
+		border-bottom: 1px solid #ddd;
+		padding-top: 10px;
+		color: #fff;
+	}
+	input {
+		border: none;
+		height: 28px;
+		background: transparent;
+		outline: none;
+		color: #fff;
+
+	}
+	
+}
+.buy_fast_body button:last-child{
+}
+
+.wrap-by-fast-bottom{
+	padding: 0px 0;
+	float: left;
+	.title {
+		text-align: center;
+		text-transform: uppercase;
+		font-size: 18px;
+		font-family: robotobold;
+		margin-bottom: 30px;
+	}
+
+}
+.wrap-by-fast .form-title {
+	color: white;
+
+}
+
+.wrap-by-fast .form-title span {
+	    font-size: 25px;
+    font-style: italic;
+    font-family: 'Lobster Two', cursive !important;
+    line-height: 20px;
+}
+.wrap-by-fast .form-title p {
+	margin-top: 10px;
+ 	    font-size: 60px;
+    font-weight: bold;
+    text-transform: uppercase;
+    line-height: 60px;
+    margin-bottom: 0;
+ }
+ .wrap-by-fast h3{
+ 	    font-size:40px;
+    font-style: italic;
+    font-family: 'Lobster Two', cursive !important;
+    color: #fff;
+    font-weight: bold;
+    margin-top: 0px;
+}
+@media all and (max-width: 1000px) {
+	.phone-left {
+		padding-left: 50px;
+	}
+	.buy_fast #telephone_buy_fast {
+		width: 70%;
+	}
+}
+
+@media all and (max-width: 800px){
+ 	.footer_phone {
+ 		padding: 20px 20px 0;
+ 		.phone-left {
+ 			width: 100%;
+ 			padding: 0;
+ 		}
+ 	}
+ 	.buy_fast #telephone_buy_fast {
+
+ 	}
+ 	.phone-tittle {
+ 		font-size: 18px;
+ 	}
+ 	.phone-content {
+ 		font-size: 16px;
+ 	}
+ 	.buy_fast .button-buy-fast {
+ 		font-size: 16px;
+ 	}
+ }
+ @media all and (max-width: 600px) {
+ 	.phone-left {
+		padding-left: 0px;
+	}
+ }
+
+}

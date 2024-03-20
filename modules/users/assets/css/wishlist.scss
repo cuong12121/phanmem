@@ -1,0 +1,39 @@
+.list_products {
+	background: #fff;
+	.item {
+		padding: 15px 20px;
+		border-bottom: 1px solid #eaeaea;
+	}
+	.image {
+		width: 160px;
+		float: left;
+		padding: 15px 20px;
+		box-sizing: border-box;
+	}
+	.price_area {
+		width: 200px;
+		float: left;
+		padding: 15px 20px;
+		box-sizing: border-box;
+		font-size: 20px;
+		line-height: 26px;
+		text-align: right;
+		.price {
+			color: red;
+		}
+		.price_old {
+			color: #888888;
+			text-decoration: line-through;
+			font-size: 18px;
+		}
+	}
+	.title-name {
+		width: calc(100% - 360px);
+		padding: 15px 20px;
+		box-sizing: border-box;
+		float: left;
+		font-size: 20px;
+		line-height: 26px;
+
+	}
+}

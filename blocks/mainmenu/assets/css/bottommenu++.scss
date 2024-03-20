@@ -1,0 +1,208 @@
+ul.menu-bottom{
+    //display: flex;
+
+    @media all and (max-width: 650px){
+        //display:block;
+    }
+}
+ul.menu-bottom li.level0 input[type =checkbox]{
+    display:none;
+    position:absolute;
+    z-index: -9999999;
+    visibility: hidden;
+}
+
+ul.menu-bottom li.level0{
+    width: calc(100% / 5);
+    float: left;
+    box-sizing: border-box;
+    padding-right: 10px;
+    @media all and (max-width: 850px){
+        padding-right: 0px;
+    }
+    @media all and (max-width: 650px){
+        //padding-right: 00px;
+    }
+    &:last-child{
+        @media all and (max-width: 850px){
+           // padding-right: 0px;
+       }
+   }
+}
+
+.title_bottom {
+ display: block;
+ font-size: 15px;
+ position: relative;
+ color: var(--main-color);
+ text-transform: uppercase;
+ line-height: 26px;
+}
+
+ul.menu-bottom li.level0 ul{
+    margin-top: -5px;
+    //padding: 0 15px;
+    box-sizing: border-box;
+    padding-right: 15px;
+    
+}
+
+
+ul.menu-bottom li.level0 ul li{
+
+    position:relative;
+    line-height: 22px;
+    color: #666;
+
+}
+ul.menu-bottom li.level0 ul li a,
+ul.menu-bottom li.level0 ul li span{
+        //color: #a8a8a8;
+        //color: rgb(146, 182, 205);
+        padding: 5px 0;
+        color: #666;
+        display: inline-block;
+        //text-transform: uppercase;
+    }
+    ul.menu-bottom li.level0 ul li a:hover{
+      color:  var(--main-color);
+     // font-size: 14px;
+ }
+ ul.menu-bottom li.menu-item {
+   box-sizing: border-box;
+     //padding-left: 7px;
+
+     box-sizing: border-box;
+     @media all and (max-width: 1025px){
+        padding-left:0;
+    }
+    @media all and (max-width: 800px){
+        //padding-left:40px;
+    }
+    @media all and (max-width: 650px){
+        //padding-left:0;
+    }
+}
+
+ul li.level1 a,
+ul li.level1 label{
+}
+ul li.level1 a:hover,
+ul li.level1 label:hover{
+    //color: #fff;
+}
+.menu-bottom .level0 .click-mobile {
+    background: rgba(0, 0, 0, 0) url("../images/icon-click.png") no-repeat scroll center;
+    position: absolute;
+    cursor: pointer;
+    padding: 16px;
+    right: 0px;
+    top: 0px;
+    display: none;
+}
+.menu-bottom .level0 .click-mobile.active {
+    background: rgba(0, 0, 0, 0) url("../images/icon-click-active.png") no-repeat scroll center;
+}
+.menu-bottom ul li.mid-sitem > label i{
+    background: rgba(0, 0, 0, 0) url(../images/bo-cong-thuong.png) no-repeat scroll left bottom;
+    content: ' ';
+    height: 47px;
+    display: block;
+    /* border-top: 1px solid #CCC; */
+    margin-top: 23px;
+    padding-top: 12px;
+}
+
+
+@media screen and (max-width:650px){
+    ul.menu-bottom li.level0 {
+        float: left;
+        width: 100%;
+        border: 1px solid var(--border-color);
+        margin-bottom: 16px;
+        position: relative;
+        box-sizing: border-box;
+        &:last-child{
+            margin-bottom: 0px;
+        }
+    }
+    ul.menu-bottom li.level0 label.click-mobile {
+        display: block;
+    }
+    ul.menu-bottom li.level0 > a {
+        display:block;
+        padding: 10px 10px 0px;
+        margin-bottom: 0;
+        font-size: 14px;
+        //font-weight: normal;
+       box-sizing: border-box;
+    }
+    ul.menu-bottom li.level0 ul {
+        //display: none;
+    }
+    ul li.level1 {
+     border-top: 1px solid var(--border-color);
+     padding: 8px 0px 7px 0px;
+     margin: 0 22px;
+     line-height: 25px;
+ }
+ ul.menu-bottom li.level0 ul li {
+   margin-bottom: 0;
+   padding:0px 0;
+}
+  ul li.level1.first-sitem,
+  ul li.level1:first-child {
+      border-top: 0;
+      a {
+         padding-top: 0;
+      }
+  }
+}
+.label_link{
+    @media all and (max-width: 650px){
+       position: absolute;    
+      width: 36px;
+      height: 36px;
+      right: 0;
+      top: 0px;
+      border-left: 1px solid #333;
+      &:after{
+          content: '';
+          position: absolute;
+          width: 4px;
+          height: 4px;
+          top: 14px;
+          left: 15px;
+          border-top: 1px solid #333;
+          border-right: 1px solid #333;
+          transform: rotate(135deg) scale(1.5);
+          display: block;
+          transition: .5s;
+      }
+  }
+    //border-bottom: 1px solid var(--border-color);
+}
+ul.menu-bottom li.level0 ul{
+    @media all and (max-width: 650px){
+        overflow: hidden;
+        max-height:0;
+        transition: all .4s linear;
+        width: 0;
+        margin-top: 0;
+        padding: 4px 15px;
+    }
+
+}
+ul.menu-bottom li.level0{
+    input:checked ~ ul{
+        width: 100%;
+        height: auto;
+        max-height: 300px;
+    }
+    input:checked + label{
+        &:after{
+            transform: rotate(-45deg);
+        }
+    }
+}
+

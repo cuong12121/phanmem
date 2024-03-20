@@ -1,0 +1,36 @@
+.block_products {
+	margin-bottom: 50px;
+	.block_title{
+		margin-bottom: 70px;
+	}
+	ul{
+		margin-bottom: 20px;
+	}
+	.btn{
+	    border: 1px solid #AF2A4A;
+	    color: #AF2A4A;
+	    border-radius: 0;
+	    max-width: 290px;
+	    margin: 0 auto;
+	    width: 100%;
+	    display: block;
+	    height: 36px;
+	    line-height: 36px;
+	    padding: 0;
+	    &:after{
+		    content: "";
+		    background: url(../images/il.png) no-repeat center center;
+		    width: 12px;
+		    height: 10px;
+		    display: inline-block;
+		    margin-left: 12px;
+	    }
+	    &:hover{
+	    	background:  #AF2A4A;
+	    	color: #fff;
+	    	&:after{
+			    background: url(../images/ilh.png) no-repeat center center;
+		    }
+	    }
+	}
+}
