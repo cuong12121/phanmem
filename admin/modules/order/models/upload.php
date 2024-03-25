@@ -14,6 +14,7 @@
 			$page = FSInput::get('page');
 			$this->limit = $limit;
 			$this -> table_name = 'fs_order_uploads';
+			$this -> check_note_code = '';
 		
 			parent::__construct();
 		}
