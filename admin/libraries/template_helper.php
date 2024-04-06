@@ -1847,7 +1847,7 @@ static function dt_edit_image_old($title,$name,$value,$width  = 0,$height = 0,$c
     				    }
     				    else{
     				        
-    				        $html .= '<a target="_blank" style="color: red;" href="javascript:void(0)">Lỗi File</a><br/>';
+    				        $html .= '<a target="_blank" style="color: red;" href="javascript:void(0)">Lỗi File 99</a><br/>';
     				    }
 					
 					}else{
