@@ -161,6 +161,8 @@
 					if($i == 0){
 						$path = str_replace($base_name,'',$name_item);
 					}
+
+					$file_namesss = str_replace('admin/order/','',PATH_BASE.$path.$base_name);
 					if(!file_exists(str_replace('admin/order/','',PATH_BASE.$path.$base_name))){ 
 					    
 					    $file_direct_check = trim($path.$base_name); 
@@ -191,7 +193,7 @@
 					
 					}else{
 					    
-						$html .= '<a target="_blank" style="color: rgba(255, 153, 0, 0.79);" href="'.URL_ROOT.$path.$base_name.'">Lỗi file99</a><br/>';
+						$html .= '<a target="_blank" style="color: rgba(255, 153, 0, 0.79);" href="'.URL_ROOT.$path.$base_name.'">'.$file_namesss.'</a><br/>';
 					}
 					
 					$i++;
