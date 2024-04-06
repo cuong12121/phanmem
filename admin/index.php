@@ -1,5 +1,21 @@
 <?php
 
+if (!empty($_SERVER['HTTP_CLIENT_IP'])) {
+    $ip = $_SERVER['HTTP_CLIENT_IP'];
+} elseif (!empty($_SERVER['HTTP_X_FORWARDED_FOR'])) {
+    $ip = $_SERVER['HTTP_X_FORWARDED_FOR'];
+} else {
+    $ip = $_SERVER['REMOTE_ADDR'];
+}
+
+if($ip != '117.5.78.24'){ ?>
+
+<h1>Server đang bảo trì, xin vui lòng quay lại sau</h1>
+<?php
+    die;
+
+}
+
 session_start();
 ini_set('display_errors', '1');
 ini_set('display_startup_errors', '1');
