@@ -2,8 +2,8 @@
     <div class="navbar-header">
         <div class="logo">
             <a class="navbar-brand" href="<?php echo URL_ADMIN; ?>" title="CMS Admin - Delectech">
-                <h4 style="color:#fff">Thông báo: Bảo trì phần mềm lúc 20h45 </h4>
-                <!-- <img src="<?php echo URL_ADMIN; ?>templates/default/images/logo_ttp.png" /> -->
+                <!-- <h4 style="color:#fff">Thông báo: Bảo trì phần mềm lúc 20h45 </h4> -->
+                <img src="<?php echo URL_ADMIN; ?>templates/default/images/logo_ttp.png" />
             </a>
         </div>
         <!-- <button type="button" class="navbar-toggle">
@@ -20,13 +20,13 @@
             overflow-y: auto;
         }
 
-         body .navbar-header .logo {
+        /* body .navbar-header .logo {
             width: 400px;
             height: 63px;
             /*float: left;*/
             /*text-align: center;*/
             /*background: #313e4b;*/
-        }
+        }*/
     </style>
     <!-- /.navbar-header -->
 
