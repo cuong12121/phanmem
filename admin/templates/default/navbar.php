@@ -2,7 +2,7 @@
     <div class="navbar-header">
         <div class="logo">
             <a class="navbar-brand" href="<?php echo URL_ADMIN; ?>" title="CMS Admin - Delectech">
-                <h4 style="color:#fff">Thông báo bảo trì phần mềm lúc 20h45 </h4>
+                <h4 style="color:#fff">Thông báo: Bảo trì phần mềm lúc 20h45 </h4>
                 <!-- <img src="<?php echo URL_ADMIN; ?>templates/default/images/logo_ttp.png" /> -->
             </a>
         </div>
