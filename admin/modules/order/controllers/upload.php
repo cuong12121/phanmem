@@ -247,7 +247,7 @@
 		    
 		    if (!empty($data->file_excel_drive)) {
 		        
-              return '<a style="color: rgba(255, 153, 0, 0.79);" target="_blink" href="' . $url . '">'.basename($url).'</a>';
+              return '<a style="color: rgba(255, 153, 0, 0.79);" target="_blink" href="' . $url . '">'.$data->file_excel_drive.'</a>';
               
             } else {
               	return '<a style="color: red;" target="_blink" href="javascript:void(0)">Lỗi file</a>';
