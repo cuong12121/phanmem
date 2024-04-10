@@ -37,10 +37,6 @@ class WarehousesControllersReport extends Controllers
 		$sort_direct = $this -> sort_direct;
 		$model  = $this -> model;
 		$list = $model->get_data();
-
-		var_dump($list);
-
-		die;
 		$warehouses = $model->get_records('1=1','fs_warehouses','*');
 		$supplier = $model->get_records('1=1','fs_supplier','*');
 		$pagination = $model->getPagination();

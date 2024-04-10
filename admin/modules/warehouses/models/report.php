@@ -739,7 +739,7 @@ function remove(){
 		$sql = $db->query_limit($query,$this->limit,$this->page);
 		$result = $db->getObjectList();
 
-		return $query;
+		return $result;
 	}
 	function get_categories_tree() {
 		global $db;
