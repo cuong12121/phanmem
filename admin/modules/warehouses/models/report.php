@@ -714,7 +714,14 @@ function remove(){
 	function get_data()
 	{
 		global $db;
-		$query = $this->setQuery();
+		// $query = $this->setQuery();
+
+		$query = "SELECT DISTINCT product_id as id,product_code,product_name, warehouses_name
+		FROM 
+		fs_warehouses_bill_detail_history AS a
+		WHERE 1=1 AND status = 4 AND amount > 0 AND warehouses_id = 1 AND type < 3    ORDER BY id DESC, created_time DESC";  
+
+		
 		if(!$query)
 			return array();
 
