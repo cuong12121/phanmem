@@ -13,8 +13,10 @@ $toolbar->setTitle(FSText :: _('Báo cáo xuất nhập kho') );
 
 	//	FILTER
 $filter_config  = array();
-$fitler_config['search'] = 1; 
-$fitler_config['filter_count'] = 0;	
+$fitler_config['search'] = 1;
+
+// add them search kho vao =1 neu bang 0 thi se khong co search kho, cu la bang 0
+$fitler_config['filter_count'] = 1;  	
 $fitler_config['text_count'] = 2;
 
 $text_from_date = array();
