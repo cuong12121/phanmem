@@ -27,6 +27,11 @@ class WarehousesModelsReport extends FSModels
 		// ordering
 		$ordering = "";
 		$where = "  ";
+
+		// phan tim kiem trong form khi co sesssion la bat dau tim kiem
+
+		// khong co la querry du lieu binh thuong
+
 		if (isset ( $_SESSION [$this->prefix . 'sort_field'] )) {
 			$sort_field = $_SESSION [$this->prefix . 'sort_field'];
 			$sort_direct = $_SESSION [$this->prefix . 'sort_direct'];
@@ -113,8 +118,14 @@ class WarehousesModelsReport extends FSModels
 				$where .= " AND ( product_name = '".$keysearch."'  OR a.product_code LIKE '%" . $keysearch . "%' OR a.product_id LIKE '%" . $keysearch . "%' )";
 			}
 		}
+		// khi khong co search thi chon kho ha noi
+		if(empty($where)){
+
+			$where = 'AND warehouses_id = 1';
+
+		}
 		
-		$query = " SELECT DISTINCT product_id as id,product_code,product_name
+		$query = " SELECT DISTINCT product_id as id,product_code,product_name,warehouses_name
 		FROM 
 		" . $this->table_name . " AS a
 		WHERE 1=1 AND status = 4 AND amount > 0 AND type < 3 " . $where . $ordering . " ";
@@ -714,12 +725,12 @@ function remove(){
 	function get_data()
 	{
 		global $db;
-		// $query = $this->setQuery();
+		$query = $this->setQuery();
 
-		$query = "SELECT DISTINCT product_id as id,product_code,product_name, warehouses_name
-		FROM 
-		fs_warehouses_bill_detail_history AS a
-		WHERE 1=1 AND status = 4 AND amount > 0 AND warehouses_id = 1 AND type < 3    ORDER BY id DESC, created_time DESC";  
+		// $query = "SELECT DISTINCT product_id as id,product_code,product_name, warehouses_name
+		// FROM 
+		// fs_warehouses_bill_detail_history AS a
+		// WHERE 1=1 AND status = 4 AND amount > 0 AND warehouses_id = 1 AND type < 3    ORDER BY id DESC, created_time DESC";  
 
 		
 		if(!$query)
