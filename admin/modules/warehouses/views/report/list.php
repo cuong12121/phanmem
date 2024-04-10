@@ -63,6 +63,7 @@ $list_config = array();
 
 $list_config[] = array('title'=>'Sản phẩm','field'=>'product_name','ordering'=> 1, 'type'=>'text','col_width' => '15%');
 $list_config[] = array('title'=>'Mã','field'=>'product_code','ordering'=> 1, 'type'=>'text','col_width' => '15%');
+$list_config[] = array('title'=>'Kho','field'=>'warehouses_name','ordering'=> 1, 'type'=>'text');
 $list_config[] = array('title'=>'SL Nhập','field'=>'id','ordering'=> 0, 'type'=>'text','arr_params'=>array('function'=>'show_import'));
 $list_config[] = array('title'=>'SL Xuất','field'=>'id','ordering'=> 0, 'type'=>'text','arr_params'=>array('function'=>'show_export'));
 // $list_config[] = array('title'=>'SL','field'=>'amount','ordering'=> 1, 'type'=>'text');
