@@ -136,78 +136,132 @@
 		
 	}
 
-	function view_pdf($controle,$id){
-		$model = $controle -> model;
-		$data = $model->get_record('id = ' .$id,'fs_order_uploads','id,file_pdf,total_page_pdf');
-		if(!$data-> file_pdf){
-			$html ='<strong style="color:red">Lỗi thiếu file</strong>';
-			return $html;
-		}
-		$link = $data-> file_pdf;
-		
-		$arr_name = explode('t,t',$link);
-		$html ="";
-		if(!empty($arr_name)){
-			$i=0;
-			foreach ($arr_name as $name_item) {
-				$base_name = basename($name_item);
-				if($i == 0){
-					$path = str_replace($base_name,'',$name_item);
-				}
-				if(!file_exists(str_replace('admin/order/','',PATH_BASE.$path.$base_name))){ 
-					$html .= '<a target="_blank" style="color: red;" href="javascript:void(0)">Lỗi  file</a><br/>';
-				}else{
-				    
-					$html .= '<a target="_blank" style="color: rgba(255, 153, 0, 0.79);" href="'.URL_ROOT.$path.$base_name.'">'.basename($link).'</a><br/>';
-				}
-				
-				$i++;
-			}
-		}else{
-		    
-			$html .= '<a style="color: rgba(255, 153, 0, 0.79);" target="_blink" href="'.URL_ROOT.$value.'">'.$value.'</a><br/>';
-		}
-
-		//kiểm tra page cod cắt đủ ko
-		$data_file_pdf = $model->get_records('record_id = ' .$id,'fs_order_uploads_page_pdf','id');
-		if($id > 3571800000000000000000000){
-			if(empty($data_file_pdf) || count($data_file_pdf) != $data -> total_page_pdf){
-				return '<a style="color: red;" target="_blink" href="' . $link . '">Lỗi không nhận đủ trang PDF, Vui lòng up lại file</a>';
-			}
-		}
-		
-	
-		$data_detail = $model->get_record('record_id = ' .$id,'fs_order_uploads_detail','id');
-		if(empty($data_detail)){
-		    
-		    if(!empty($link)){
-		        return '<a style="color: rgba(255, 153, 0, 0.79);" target="_blink" href="/'. $link .'">'.basename($link).'</a>';
-		    }
-		    else{
-		        return '<a style="color: red;" target="_blink" href="' . $link . '">Lỗi file</a>';
-		    }
+		function view_pdf($controle,$id){
+			$model = $controle -> model;
 			
-		}else{
-			return $html;
-		}
+			
+			$data = $model->get_record('id = ' .$id,'fs_order_uploads','id,file_pdf,total_page_pdf');
+			if(!$data-> file_pdf){
+				$html ='<strong style="color:red">Lỗi thiếu file</strong>';
+				return $html;
+			}
+			$link = $data-> file_pdf;
+			
+			
+			
+			$arr_name = explode('t,t',$link);
+			
+			
+			
+			$html ="";
+			if(!empty($arr_name)){
+				$i=0;
+				foreach ($arr_name as $name_item) {
+					$base_name = basename($name_item);
+					if($i == 0){
+						$path = str_replace($base_name,'',$name_item);
+					}
+
+					$file_namesss = str_replace('admin/order/','',PATH_BASE.$path.$base_name);
+					if(!file_exists(str_replace('admin/order/','',PATH_BASE.$path.$base_name))){ 
+					    
+					    $file_direct_check = trim($path.$base_name); 
+					    
+					    $checkfile = $model->get_record('file_name = "' .$base_name.'"','file_id_drive','id_file_drive,file_name ');
+					    
+					//     	$query = " SELECT " . $select . "
+					// 	  FROM " . $table_name . "
+					// 	  WHERE " . $where;
+						 
+			
+	    //             		global $db;
+	    //             		$db->query ( $query );
+	    //             		$result = $db->getObject ();
+					    
+					    if(!empty($checkfile)){
+					         $url = 'https://drive.dienmayai.com/get.php?mime=pdf&showfile='.$checkfile->id_file_drive;
+					         
+					        $html .= '<a target="_blank" style="color: rgba(255, 153, 0, 0.79);" href="'.$url.'">'.$base_name.'</a><br/>';
+					    }
+					    else{
+					        
+					        
+					        $html .= '<a target="_blank" style="color: red;" href="javascript:void(0)">'.$file_direct_check.'</a><br/>';
+					    }
+					    
+					
+					
+					}else{
+					    
+						$html .= '<a target="_blank" style="color: rgba(255, 153, 0, 0.79);" href="'.URL_ROOT.$path.$base_name.'">'.$base_name.'</a><br/>';
+					}
+					
+					$i++;
+				}
+			}else{
+			    
+				$html .= '<a style="color: rgba(255, 153, 0, 0.79);" target="_blink" href="'.URL_ROOT.$value.'">'.$value.'</a><br/>';
+			}
+
+			//kiểm tra page cod cắt đủ ko
+			$data_file_pdf = $model->get_records('record_id = ' .$id,'fs_order_uploads_page_pdf','id');
+			if($id > 3571800000000000000000000){
+				if(empty($data_file_pdf) || count($data_file_pdf) != $data -> total_page_pdf){
+					return '<a style="color: red;" target="_blink" href="' . $link . '">Lỗi không nhận đủ trang PDF, Vui lòng up lại file</a>';
+				}
+			}
+			
 		
-	}
+			$data_detail = $model->get_record('record_id = ' .$id,'fs_order_uploads_detail','id');
+			if(empty($data_detail)){
+			    
+			    if(!empty($link)){
+			        return '<a style="color: rgba(255, 153, 0, 0.79);" target="_blink" href="/'. $link .'">'.basename($link).'</a>';
+			    }
+			    else{
+			        return '<a style="color: red;" target="_blink" href="' . $link . '">Lỗi file</a>';
+			    }
+				
+			}else{
+				return $html;
+			}
+			
+		}
 
 	function view_excel($controle,$id){
 		$model = $controle -> model;
-		$data = $model->get_record('id = ' .$id,'fs_order_uploads','id,file_xlsx');
+		
+		
+		$data = $model->get_record('id = ' .$id,'fs_order_uploads','id,file_xlsx,file_excel_drive');
+		
+	
 		if(!$data-> file_xlsx){
 			$html ='<strong style="color:red">Lỗi thiếu file</strong>';
 			return $html;
 		}
 		$link = URL_ROOT.$data-> file_xlsx;
+		
 		if(!file_exists(str_replace('admin/order/','',PATH_BASE.$data-> file_xlsx))){
-			return '<a style="color: red;" target="_blink" href="javascript:void(0)">Lỗi file</a>';
+		    
+		    $url = 'https://drive.dienmayai.com/get.php??mime=excel&showfile='.$data->file_excel_drive;
+		    
+		    if (!empty($data->file_excel_drive)) {
+		        
+              return '<a style="color: rgba(255, 153, 0, 0.79);" target="_blink" href="' . $url . '">'.basename($data-> file_xlsx).'</a>';
+              
+            } else {
+              	return '<a style="color: red;" target="_blink" href="javascript:void(0)">Lỗi file</a>';
+            }
+		    
+		   
 		}
 
 		$data_detail = $model->get_record('record_id = ' .$id,'fs_order_uploads_detail','id');
+		
+		
 		if(empty($data_detail)){
-			return '<a style="color: red;" target="_blink" href="' . $link . '">Lỗi file</a>';
+		   
+			return '<a style="color: red;" target="_blink">Lỗi </a>';
 		}else{
 			return '<a style="color: rgba(255, 153, 0, 0.79);" target="_blink" href="' . $link . '">'.basename($data-> file_xlsx).'</a>';
 		}

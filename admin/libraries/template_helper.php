@@ -1766,29 +1766,50 @@ static function dt_edit_image_old($title,$name,$value,$width  = 0,$height = 0,$c
 	 * tag: input, textarea, editor
 	 * in case editor: width => size, height => rows
 	 */
-	public static function dt_edit_file($title,$name,$value,$comment='',$class_col1='col-md-2',$class_col2='col-md-10'){
+		public static function dt_edit_file($title,$name,$value,$drive_excel,$comment='',$class_col1='col-md-2',$class_col2='col-md-10'){
 		$html = '<div class="form-group">
-		<label class="'.$class_col1.' col-xs-12 control-label">'.$title.'</label>
-		<div class="'.$class_col2.'  col-xs-12">';
-		
-		if($value){
-			if(!file_exists(PATH_BASE.$value)){
-				$html .= '<a style="color: red;" href="javascript:void(0)">Lỗi file</a><br/>';
-			}else{
-				$html .= '<a style="color: rgba(255, 153, 0, 0.79);" href="'.URL_ROOT.$value.'">'.$value.'</a><br/>';
-			}
+			<label class="'.$class_col1.' col-xs-12 control-label">'.$title.'</label>
+			<div class="'.$class_col2.'  col-xs-12">';
 			
+			
+			
+			if($value){
+			    
+				if(!file_exists(PATH_BASE.$value)){
+				    
+				 //   check drive google excel
+				
+				     $url = 'https://drive.dienmayai.com/get.php??mime=excel&showfile='.$drive_excel;
+			   
+			    
+	    		    if (!empty($drive_excel)) {
+	    		        
+	                  $html .= '<a style="color: rgba(255, 153, 0, 0.79);" target="_blink" href="' . $url . '">'.$url.'</a><br/>';
+	                  
+	                } else {
+	                  	$html .= '<a style="color: red;" target="_blink" href="javascript:void(0)">Lỗi file11</a><br/>';
+	                }
+	                
+	                
+	        
+				}else{
+					$html .= '<a style="color: rgba(255, 153, 0, 0.79);" href="'.URL_ROOT.$value.'">'.$value.'</a><br/>';
+				}
+				
+			}
+				
+			$html .= '
+			<div class="fileUpload btn btn-primary ">
+			<span><i class="fa fa-cloud-upload"></i> Upload</span>
+			<input type="file" id="'.$name.'" class="upload" name="'.$name.'"  />
+			</div>';
+			
+			
+			if($comment)
+				$html .= '<p class="help-block">'.$comment.'</p>';
+			$html .= '</div></div>';
+			echo $html;
 		}
-		$html .= '
-		<div class="fileUpload btn btn-primary ">
-		<span><i class="fa fa-cloud-upload"></i> Upload</span>
-		<input type="file" id="'.$name.'" class="upload" name="'.$name.'"  />
-		</div>';
-		if($comment)
-			$html .= '<p class="help-block">'.$comment.'</p>';
-		$html .= '</div></div>';
-		echo $html;
-	}
 
 	public static function dt_edit_file_multiple($title,$name,$value,$comment='Giữ CTRL để chọn nhiều File tải lên',$class_col1='col-md-2',$class_col2='col-md-10'){
 		$html = '<div class="form-group">
@@ -1805,7 +1826,30 @@ static function dt_edit_image_old($title,$name,$value,$width  = 0,$height = 0,$c
 						$path = str_replace($base_name,'',$name_item);
 					}
 					if(!file_exists(PATH_BASE.$path.$base_name)){
-						$html .= '<a target="_blank" style="color: red;" href="javascript:void(0)">Lỗi file</a><br/>';
+					    
+					   // $checkfile = $model->get_record('file_name = "' .$base_name.'"','file_id_drive','id_file_drive,file_name ');
+				        global $db;
+				    	$query = '  SELECT id_file_drive,file_name FROM file_id_drive
+											WHERE `file_name` = "' .$base_name.'"';
+											$sql = $db->query($query);
+											$results =  $db->getObjectList();
+											
+						if(!empty($results) && count($results)>0){
+						    
+						    foreach ($results as $value){
+						        
+						        $url = 'https://drive.dienmayai.com/get.php?mime=pdf&showfile='.$value->id_file_drive;
+						        
+						         $html .= '<a target="_blank" style="color: rgba(255, 153, 0, 0.79);" href="'.$url.'">'.$base_name.'</a><br/>';
+						        
+						    }
+    				        
+    				    }
+    				    else{
+    				        
+    				        $html .= '<a target="_blank" style="color: red;" href="javascript:void(0)">Lỗi File</a><br/>';
+    				    }
+					
 					}else{
 						$html .= '<a target="_blank" style="color: rgba(255, 153, 0, 0.79);" href="'.URL_ROOT.$path.$base_name.'">'.$base_name.'</a><br/>';
 					}
