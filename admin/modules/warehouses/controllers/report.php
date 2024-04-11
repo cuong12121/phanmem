@@ -32,20 +32,35 @@ class WarehousesControllersReport extends Controllers
 
 	function display()
 	{
-		parent::display();
-		$sort_field = $this -> sort_field;
-		$sort_direct = $this -> sort_direct;
-		$model  = $this -> model;
-		$list = $model->get_data();
-		$warehouses = $model->get_records('1=1','fs_warehouses','*');
-		$supplier = $model->get_records('1=1','fs_supplier','*');
-		$pagination = $model->getPagination();
-		$breadcrumbs = array();
-		$breadcrumbs[] = array(0=>'Báo cáo xuất nhập kho', 1 => '');	
-		global $tmpl;
-		$tmpl->assign ( 'breadcrumbs', $breadcrumbs );
-		$tmpl->assign ( 'seo_title', 'Báo cáo xuất nhập kho');
-		include 'modules/'.$this->module.'/views/'.$this->view.'/list.php';
+
+		$excel =   !empty($_GET['excel'])?$_GET['excel']:'';
+
+		if(empty($excel)){
+
+			parent::display();
+			$sort_field = $this -> sort_field;
+			$sort_direct = $this -> sort_direct;
+			$model  = $this -> model;
+			$list = $model->get_data();
+			$warehouses = $model->get_records('1=1','fs_warehouses','*');
+			$supplier = $model->get_records('1=1','fs_supplier','*');
+			$pagination = $model->getPagination();
+			$breadcrumbs = array();
+			$breadcrumbs[] = array(0=>'Báo cáo xuất nhập kho', 1 => '');	
+			global $tmpl;
+			$tmpl->assign ( 'breadcrumbs', $breadcrumbs );
+			$tmpl->assign ( 'seo_title', 'Báo cáo xuất nhập kho');
+			include 'modules/'.$this->module.'/views/'.$this->view.'/list.php';
+
+
+		}
+		else{
+
+			echo '1';
+
+			die;
+		}
+			
 	}
 
 	function add()
