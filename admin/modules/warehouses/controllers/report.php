@@ -59,15 +59,7 @@ class WarehousesControllersReport extends Controllers
 
 			FSFactory::include_class('excel','excel');
 
-			// Tạo một workbook mới
-			$objPHPExcel = new PHPExcel();
-
-			// Thêm dữ liệu vào worksheet
-			$objPHPExcel->getActiveSheet()->setCellValue('A1', 'Hello World!');
-
-			// Lưu file Excel
-			$objWriter = PHPExcel_IOFactory::createWriter($objPHPExcel, 'Excel2007');
-			$objWriter->save('hello_world.xlsx');
+			$excel = FSExcel();
 
 		}
 			
