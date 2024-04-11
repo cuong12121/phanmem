@@ -59,7 +59,7 @@ class WarehousesControllersReport extends Controllers
 
 			FSFactory::include_class('excel','excel');
 
-			$filename = 'report-1';
+			$filename = 'report-2';
 
 			$excel = FSExcel();
 
@@ -110,10 +110,6 @@ class WarehousesControllersReport extends Controllers
 
 			$path_file =   PATH_ADMINISTRATOR.DS.str_replace('/',DS, $output['xls']);
 
-			var_dump($path_file);
-
-			die;
-
 			header("Pragma: public");
 			header("Expires: 0");
 			header("Cache-Control:no-cache, must-revalidate, post-check=0, pre-check=0");
@@ -123,8 +119,14 @@ class WarehousesControllersReport extends Controllers
 
 			header("Content-Transfer-Encoding: binary");
 
+			header("Content-Length: ".filesize($path_file));	
+
+			echo $link_excel = URL_ROOT.LINK_AMIN.'/export/excel/'. $filename.'.xls';
+			?>
+			<?php setRedirect($link_excel); ?>
+			<?php 
 			readfile($path_file);
-			
+
 
 		}
 			
