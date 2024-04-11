@@ -4,7 +4,12 @@
 
 <?php  
 global $toolbar;
-$toolbar->setTitle(FSText :: _('Báo cáo xuất nhập kho') );
+$toolbar->setTitle(FSText :: _('Báo cáo xuất nhập kho') );?>
+
+<a href="#"><button>xuất file excel</button></a>
+
+<?php
+
 	// $toolbar->addButton('duplicate',FSText :: _('Duplicate'),'','duplicate.png');
 	// $toolbar->addButton('save_all',FSText :: _('Save'),'','save.png'); 
 // $toolbar->addButton('add',FSText :: _('Add'),'','add.png'); 
