@@ -35,6 +35,10 @@ class WarehousesControllersReport extends Controllers
 
 		$excel =   !empty($_GET['excel'])?$_GET['excel']:'';
 
+		var_dump($excel);
+
+		die;
+
 		if(empty($excel)){
 
 			parent::display();
