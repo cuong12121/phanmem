@@ -108,18 +108,18 @@ class WarehousesControllersReport extends Controllers
 
 			$output = $excel->write_files();
 
-			$path_file =   PATH_ADMINISTRATOR.DS.str_replace('/',DS, $output['xls']);
+			// $path_file =   PATH_ADMINISTRATOR.DS.str_replace('/',DS, $output['xls']);
 
 			header("Pragma: public");
 			header("Expires: 0");
 			header("Cache-Control:no-cache, must-revalidate, post-check=0, pre-check=0");
 			header("Cache-Control: private",false);		
 			header("Content-type: application/force-download");		
-			header("Content-Disposition: attachment; filename=\"".$filename.'.xls'."\";" );
+		 	header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
+        	header('Content-Disposition: attachment;filename="'.$filename.'"');
 
-			header("Content-Transfer-Encoding: binary");
-
-			readfile($path_file);
+			
+			// readfile($path_file);
 			
 
 		}
