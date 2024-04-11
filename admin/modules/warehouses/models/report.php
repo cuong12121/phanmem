@@ -125,7 +125,7 @@ class WarehousesModelsReport extends FSModels
 
 		}
 		
-		$query = " SELECT DISTINCT product_id as id,product_code,product_name,warehouses_name
+		$query = " SELECT DISTINCT product_id as id,product_code,product_name,warehouses_name,created_time
 		FROM 
 		" . $this->table_name . " AS a
 		WHERE 1=1 AND status = 4 AND amount > 0 AND type < 3 " . $where . $ordering . " ";
