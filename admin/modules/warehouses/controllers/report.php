@@ -36,13 +36,18 @@ class WarehousesControllersReport extends Controllers
 		$excel =   !empty($_GET['excel'])?$_GET['excel']:'';
 
 
-		if(empty($excel)){
+		
 
 			parent::display();
 			$sort_field = $this -> sort_field;
 			$sort_direct = $this -> sort_direct;
 			$model  = $this -> model;
 			$list = $model->get_data();
+
+
+
+
+			if(empty($excel)){
 			$warehouses = $model->get_records('1=1','fs_warehouses','*');
 			$supplier = $model->get_records('1=1','fs_supplier','*');
 			$pagination = $model->getPagination();
@@ -52,9 +57,11 @@ class WarehousesControllersReport extends Controllers
 			$tmpl->assign ( 'breadcrumbs', $breadcrumbs );
 			$tmpl->assign ( 'seo_title', 'Báo cáo xuất nhập kho');
 			include 'modules/'.$this->module.'/views/'.$this->view.'/list.php';
+			}
 
 
-		}
+
+		
 		else{
 
 			FSFactory::include_class('excel','excel');
@@ -96,6 +103,24 @@ class WarehousesControllersReport extends Controllers
 			$excel->obj_php_excel->getActiveSheet()->setCellValue('D1', 'Kho');
 			$excel->obj_php_excel->getActiveSheet()->setCellValue('E1', 'SL Nhập');
 			$excel->obj_php_excel->getActiveSheet()->setCellValue('F1', 'SL Xuất');
+
+
+
+
+			foreach ($list as $item){
+					
+				
+				$key = isset($key)?($key+1):2;
+				$excel->obj_php_excel->getActiveSheet()->setCellValue('A'.$key, $item->created_time);
+				
+				$excel->obj_php_excel->getActiveSheet()->setCellValue('C'.$key, $item->product_name);
+				$excel->obj_php_excel->getActiveSheet()->setCellValue('D'.$key, $item->product_code);
+				$excel->obj_php_excel->getActiveSheet()->setCellValue('E'.$key, $item->warehouses_name);
+				$excel->obj_php_excel->getActiveSheet()->setCellValue('F'.$key, $item->description);
+				
+			
+			}
+
 
 			$excel->obj_php_excel->getActiveSheet()->setCellValue('A2', '7-4-2023');
 			//	$excel->obj_php_excel->getActiveSheet()->setCellValue('B1', 'Image');
