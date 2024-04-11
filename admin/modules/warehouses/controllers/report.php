@@ -63,7 +63,7 @@ class WarehousesControllersReport extends Controllers
 
 			$excel = FSExcel();
 
-			$excel = FSExcel();
+			
 			$excel->set_params(array('out_put_xls'=>'export/excel/'.$filename.'.xls','out_put_xlsx'=>'export/excel/'.$filename.'.xlsx'));
 			$style_header = array(
 				'fill' => array(
