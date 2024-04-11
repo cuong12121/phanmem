@@ -35,7 +35,7 @@ class WarehousesControllersReport extends Controllers
 
 		$excel =   !empty($_GET['excel'])?$_GET['excel']:'';
 
-		
+
 		if(empty($excel)){
 
 			parent::display();
@@ -57,9 +57,18 @@ class WarehousesControllersReport extends Controllers
 		}
 		else{
 
-			echo '1';
+			FSFactory::include_class('excel','excel');
 
-			die;
+			// Tạo một workbook mới
+			$objPHPExcel = new PHPExcel();
+
+			// Thêm dữ liệu vào worksheet
+			$objPHPExcel->getActiveSheet()->setCellValue('A1', 'Hello World!');
+
+			// Lưu file Excel
+			$objWriter = PHPExcel_IOFactory::createWriter($objPHPExcel, 'Excel2007');
+			$objWriter->save('hello_world.xlsx');
+
 		}
 			
 	}
