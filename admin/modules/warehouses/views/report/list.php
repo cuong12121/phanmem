@@ -74,7 +74,7 @@ $list_config[] = array('title'=>'SL Xuất','field'=>'id','ordering'=> 0, 'type'
 // $list_config[] = array('title'=>'Tổng tiền','field'=>'id','ordering'=> 1, 'type'=>'text','arr_params'=>array('function'=>'show_total'));
 // $list_config[] = array('title'=>'Ghi chú','field'=>'note','ordering'=> 1, 'type'=>'text');
 // $list_config[] = array('title'=>'Loại Chiết khấu','field'=>'discount_type','ordering'=> 1, 'type'=>'text','arr_params'=>array('function'=>'show_discount_type'),'no_col'=>9);
-// $list_config[] = array('title'=>'File excel','field'=>'file','ordering'=> 1, 'type'=>'text','arr_params'=>array('function'=>'show_file'));
+$list_config[] = array('title'=>'File excel','field'=>'file','ordering'=> 1, 'type'=>'text','arr_params'=>array('function'=>'show_file'));
 // $list_config[] = array('title'=>'Người tạo','field'=>'create_username','ordering'=> 1, 'type'=>'text');
 // $list_config[] = array('title'=>'Ghi chú','field'=>'note','ordering'=> 1, 'type'=>'text');
 // $list_config[] = array('title'=>'Tình trạng','field'=>'status','ordering'=> 1, 'type'=>'text','arr_params'=>array('function'=>'show_status'));
