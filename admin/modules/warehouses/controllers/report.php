@@ -59,7 +59,68 @@ class WarehousesControllersReport extends Controllers
 
 			FSFactory::include_class('excel','excel');
 
+			$filename = 'report-1';
+
 			$excel = FSExcel();
+
+			$excel = FSExcel();
+			$excel->set_params(array('out_put_xls'=>'export/excel/'.$filename.'.xls','out_put_xlsx'=>'export/excel/'.$filename.'.xlsx'));
+			$style_header = array(
+				'fill' => array(
+					'type' => PHPExcel_Style_Fill::FILL_SOLID,
+					'color' => array('rgb'=>'ffff00'),
+				),
+				'font' => array(
+					'bold' => true,
+				)
+			);
+			$style_header1 = array(
+				'font' => array(
+					'bold' => true,
+				)
+			);
+
+			$excel->obj_php_excel->getActiveSheet()->getColumnDimension('A')->setWidth(25);
+			$excel->obj_php_excel->getActiveSheet()->getColumnDimension('B')->setWidth(65);
+			$excel->obj_php_excel->getActiveSheet()->getColumnDimension('C')->setWidth(15);
+			$excel->obj_php_excel->getActiveSheet()->getColumnDimension('D')->setWidth(15);
+			$excel->obj_php_excel->getActiveSheet()->getColumnDimension('E')->setWidth(15);
+			$excel->obj_php_excel->getActiveSheet()->getColumnDimension('F')->setWidth(15);
+		
+
+
+			$excel->obj_php_excel->getActiveSheet()->setCellValue('A1', 'Ngày');
+			//	$excel->obj_php_excel->getActiveSheet()->setCellValue('B1', 'Image');
+			$excel->obj_php_excel->getActiveSheet()->setCellValue('B1', 'Sản phẩm');
+			$excel->obj_php_excel->getActiveSheet()->setCellValue('C1', 'Mã');
+			$excel->obj_php_excel->getActiveSheet()->setCellValue('D1', 'Kho');
+			$excel->obj_php_excel->getActiveSheet()->setCellValue('E1', 'SL Nhập');
+			$excel->obj_php_excel->getActiveSheet()->setCellValue('F1', 'SL Xuất');
+
+			$excel->obj_php_excel->getActiveSheet()->setCellValue('A2', '7-4-2023');
+			//	$excel->obj_php_excel->getActiveSheet()->setCellValue('B1', 'Image');
+			$excel->obj_php_excel->getActiveSheet()->setCellValue('B2', 'Khung quạt sưởi âm trần Luxury K60 (333O) kích thước 60X30 - Màu trắng - Không size');
+			$excel->obj_php_excel->getActiveSheet()->setCellValue('C2', '333R-WH-00');
+			$excel->obj_php_excel->getActiveSheet()->setCellValue('D2', 'Kho Hà Nội
+');
+			$excel->obj_php_excel->getActiveSheet()->setCellValue('E2', '0');
+			$excel->obj_php_excel->getActiveSheet()->setCellValue('F2', '3');
+
+			$output = $excel->write_files();
+
+			$path_file =   PATH_ADMINISTRATOR.DS.str_replace('/',DS, $output['xls']);
+
+			header("Pragma: public");
+			header("Expires: 0");
+			header("Cache-Control:no-cache, must-revalidate, post-check=0, pre-check=0");
+			header("Cache-Control: private",false);		
+			header("Content-type: application/force-download");		
+			header("Content-Disposition: attachment; filename=\"".$filename.'.xls'."\";" );
+
+			header("Content-Transfer-Encoding: binary");
+
+			readfile($path_file);
+			
 
 		}
 			
