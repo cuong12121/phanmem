@@ -61,7 +61,7 @@ $list_config = array();
 //$list_config[] = array('title'=>'Id / Thời gian','field'=>'id','ordering'=> 1, 'type'=>'text','arr_params'=>array('function'=>'show_record_id'));
 
 
-//$list_config[] = array('title'=>'Ngày','field'=>'created_time','type'=>'text','no_col'=>1);
+$list_config[] = array('title'=>'Ngày','field'=>'created_time','type'=>'text','no_col'=>1);
 
 $list_config[] = array('title'=>'Sản phẩm','field'=>'product_name','ordering'=> 1, 'type'=>'text','col_width' => '15%');
 $list_config[] = array('title'=>'Mã','field'=>'product_code','ordering'=> 1, 'type'=>'text','col_width' => '15%');
