@@ -297,6 +297,10 @@ function show_discount($controle,$discount){
 	return format_money($discount,' ','0');
 }
 
+function format_date($controle,$created_time){
+	return date_format($created_time,'m/d/yy H:i:s');
+}
+
 function show_status($controle,$status){
 	$class ='';
 	if($status == 2) {
