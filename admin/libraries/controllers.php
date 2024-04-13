@@ -100,7 +100,7 @@ class Controllers
 		
 		$permission = FSSecurity::check_permission_groups($this -> module, $this -> view, 'add');
         if(!$permission){
-            $msg = FSText::_("Bạn không có quyền thực hiện chức năng này");
+            $msg = FSText::_("Bạn không có quyền thực hiện chức năng này nhé");
             setRedirect(FSRoute::_('index.php?module='.$this -> module.'&view='.$this -> view.'&task=display'),$msg,'error');
         }
 
