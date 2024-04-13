@@ -147,9 +147,7 @@ function loadMainContent($module){
         $permission = FSSecurity::check_permission_groups($module, $view, $task);
         if (!$permission){
 
-            var_dump($task.', '. $view);
-
-            die;
+            
             echo FSText::_("Bạn không có quyền thực hiện chức năng này nhé");
             return;
         }
