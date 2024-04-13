@@ -33,7 +33,7 @@ class Controllers
 	
 		$permission = FSSecurity::check_permission_groups($this -> module, $this -> view, 'display');
         if(!$permission){
-            echo $msg = FSText::_("Bạn không có quyền thực hiện chức năng này");
+            echo $msg = FSText::_("Bạn không có quyền thực hiện chức năng này nhé");
             setRedirect(URL_ADMIN,$msg,'error');
             return false;
         }
