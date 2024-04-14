@@ -113,23 +113,25 @@ class WarehousesControllersReport extends Controllers
 				$key = isset($key)?($key+1):2;
 				$excel->obj_php_excel->getActiveSheet()->setCellValue('A'.$key, $item->created_time);
 				
-				$excel->obj_php_excel->getActiveSheet()->setCellValue('C'.$key, $item->product_name);
-				$excel->obj_php_excel->getActiveSheet()->setCellValue('D'.$key, $item->product_code);
-				$excel->obj_php_excel->getActiveSheet()->setCellValue('E'.$key, $item->warehouses_name);
-				$excel->obj_php_excel->getActiveSheet()->setCellValue('F'.$key, $item->description);
+				$excel->obj_php_excel->getActiveSheet()->setCellValue('B'.$key, $item->product_name);
+				$excel->obj_php_excel->getActiveSheet()->setCellValue('C'.$key, $item->product_code);
+				$excel->obj_php_excel->getActiveSheet()->setCellValue('D'.$key, $item->warehouses_name);
+
+				$excel->obj_php_excel->getActiveSheet()->setCellValue('E'.$key, '10');
+				$excel->obj_php_excel->getActiveSheet()->setCellValue('F'.$key, '10');
 				
 			
 			}
 
 
-			$excel->obj_php_excel->getActiveSheet()->setCellValue('A2', '7-4-2023');
-			//	$excel->obj_php_excel->getActiveSheet()->setCellValue('B1', 'Image');
-			$excel->obj_php_excel->getActiveSheet()->setCellValue('B2', 'Khung quạt sưởi âm trần Luxury K60 (333O) kích thước 60X30 - Màu trắng - Không size');
-			$excel->obj_php_excel->getActiveSheet()->setCellValue('C2', '333R-WH-00');
-			$excel->obj_php_excel->getActiveSheet()->setCellValue('D2', 'Kho Hà Nội
-');
-			$excel->obj_php_excel->getActiveSheet()->setCellValue('E2', '0');
-			$excel->obj_php_excel->getActiveSheet()->setCellValue('F2', '3');
+// 			$excel->obj_php_excel->getActiveSheet()->setCellValue('A2', '7-4-2023');
+// 			//	$excel->obj_php_excel->getActiveSheet()->setCellValue('B1', 'Image');
+// 			$excel->obj_php_excel->getActiveSheet()->setCellValue('B2', 'Khung quạt sưởi âm trần Luxury K60 (333O) kích thước 60X30 - Màu trắng - Không size');
+// 			$excel->obj_php_excel->getActiveSheet()->setCellValue('C2', '333R-WH-00');
+// 			$excel->obj_php_excel->getActiveSheet()->setCellValue('D2', 'Kho Hà Nội
+// ');
+// 			$excel->obj_php_excel->getActiveSheet()->setCellValue('E2', '0');
+// 			$excel->obj_php_excel->getActiveSheet()->setCellValue('F2', '3');
 
 			$output = $excel->write_files();
 
