@@ -64,6 +64,8 @@ class WarehousesControllersReport extends Controllers
 		
 		else{
 
+			$key =1;
+
 			FSFactory::include_class('excel','excel');
 
 			$filename = 'report-2';
@@ -111,6 +113,7 @@ class WarehousesControllersReport extends Controllers
 					
 				
 				$key = isset($key)?($key+1):2;
+				$key++;
 				$excel->obj_php_excel->getActiveSheet()->setCellValue('A'.$key, $item->created_time);
 				
 				$excel->obj_php_excel->getActiveSheet()->setCellValue('B'.$key, $item->product_name);
