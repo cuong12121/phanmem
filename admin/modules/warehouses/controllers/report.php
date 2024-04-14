@@ -65,9 +65,6 @@ class WarehousesControllersReport extends Controllers
 			include 'modules/'.$this->module.'/views/'.$this->view.'/list.php';
 			}
 
-
-
-		
 		else{
 
 			$key =1;
@@ -116,8 +113,14 @@ class WarehousesControllersReport extends Controllers
 
 
 			foreach ($list as $item){
-					
-				
+				$ids = 	$item->id;
+				$query = "SELECT SUM(amount) as amount FROM fs_warehouses_bill_detail_history as a WHERE type = 1 AND product_id = ".$ids." AND status = 4";
+
+				global $db;
+				$db->query ( $query );
+				$record = $db->getObject();
+
+
 				$key = isset($key)?($key+1):2;
 				$key++;
 				$excel->obj_php_excel->getActiveSheet()->setCellValue('A'.$key, $item->created_time);
@@ -127,8 +130,10 @@ class WarehousesControllersReport extends Controllers
 				$excel->obj_php_excel->getActiveSheet()->setCellValue('D'.$key, $item->warehouses_name);
 				// phần số lượng nhập: sẽ query lấy amout rồi tính tổng thì sẽ ra hiện tại đang demo là 10 sản phẩm 
 
-				$excel->obj_php_excel->getActiveSheet()->setCellValue('E'.$key, '10');
-				$excel->obj_php_excel->getActiveSheet()->setCellValue('F'.$key, '10');
+				$data_export = 
+
+				$excel->obj_php_excel->getActiveSheet()->setCellValue('E'.$key, $record->amount);
+				$excel->obj_php_excel->getActiveSheet()->setCellValue('F'.$key, $record->amount);
 				
 			
 			}
