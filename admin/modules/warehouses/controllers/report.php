@@ -116,9 +116,15 @@ class WarehousesControllersReport extends Controllers
 				$ids = 	$item->id;
 				$query = "SELECT SUM(amount) as amount FROM fs_warehouses_bill_detail_history as a WHERE type = 1 AND product_id = ".$ids." AND status = 4";
 
+				$querys = "SELECT SUM(amount) as amount FROM fs_warehouses_bill_detail_history as a WHERE type = 2 AND product_id = ".$ids." AND status = 4";
+
 				global $db;
 				$db->query ( $query );
 				$record = $db->getObject();
+
+				$db->query ( $querys );
+				$records = $db->getObject();
+
 
 
 				$key = isset($key)?($key+1):2;
@@ -133,7 +139,7 @@ class WarehousesControllersReport extends Controllers
 				$data_export = 
 
 				$excel->obj_php_excel->getActiveSheet()->setCellValue('E'.$key, $record->amount);
-				$excel->obj_php_excel->getActiveSheet()->setCellValue('F'.$key, $record->amount);
+				$excel->obj_php_excel->getActiveSheet()->setCellValue('F'.$key, $records->amount);
 				
 			
 			}
