@@ -119,12 +119,15 @@ class WarehousesControllersReport extends Controllers
 				$excel->obj_php_excel->getActiveSheet()->setCellValue('B'.$key, $item->product_name);
 				$excel->obj_php_excel->getActiveSheet()->setCellValue('C'.$key, $item->product_code);
 				$excel->obj_php_excel->getActiveSheet()->setCellValue('D'.$key, $item->warehouses_name);
+				// phần số lượng nhập: sẽ query lấy amout rồi tính tổng thì sẽ ra hiện tại đang demo là 10 sản phẩm 
 
 				$excel->obj_php_excel->getActiveSheet()->setCellValue('E'.$key, '10');
 				$excel->obj_php_excel->getActiveSheet()->setCellValue('F'.$key, '10');
 				
 			
 			}
+
+
 
 
 // 			$excel->obj_php_excel->getActiveSheet()->setCellValue('A2', '7-4-2023');
