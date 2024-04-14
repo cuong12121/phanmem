@@ -46,7 +46,9 @@ class WarehousesControllersReport extends Controllers
 			echo "<pre>";
 			   print_r($list);
 			echo "</pre>";
-			
+
+			die;
+
 
 
 
