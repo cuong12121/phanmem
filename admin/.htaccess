@@ -54,6 +54,17 @@ RewriteRule ^product/tables/add index.php?module=products&view=tables&task=add&%
 RewriteRule ^product/tables/edit/([0-9]*)$ index.php?module=products&view=tables&task=edit&id=$1&%{QUERY_STRING} [L]
 
 
+# show products api
+
+RewriteRule ^products/api$ index.php?module=products&view=apipd&%{QUERY_STRING} [L]
+
+RewriteRule ^products/trackingorder$ index.php?module=products&view=trackingorder&%{QUERY_STRING} [L]
+
+RewriteRule ^product/shop-detail/([0-9]*)$ index.php?module=products&view=shopdetail&id=$1&%{QUERY_STRING} [L]
+
+
+
+
 RewriteRule ^product/inventory-detail/([0-9]*)$ index.php?module=products&view=inventory_detail&id=$1&%{QUERY_STRING} [L]
 RewriteRule ^product/inventory$ index.php?module=products&view=inventory&%{QUERY_STRING} [L]
 
