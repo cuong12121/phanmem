@@ -116,13 +116,17 @@
 
 
 		function excel_nhat(){
+			 $model  = $this -> model;
+		    
+		    $combo_code = $model->show_product_combo(23538660);
+		    
 			// xóa các file cũ trong thư mục cho nhẹ server
 			$path_remove_file = PATH_ADMINISTRATOR.DS.'export'.DS.'excel'.DS.'order_item'.DS;
 			array_map('unlink', array_filter(
        		(array) array_merge(glob($path_remove_file."*"))));
 
 			FSFactory::include_class('excel','excel');
-			$model  = $this -> model;
+			
 			$filename = 'FILE_NHAT'.$this->file_export_name;
 			$filename = strtoupper($filename);
 			
@@ -142,6 +146,14 @@
 					}
 				}
 				$list = $arr_total_count;
+				
+				// echo "<pre>";
+    //               print_r($list);
+    //             echo "</pre>";
+				
+			
+				
+				// die;
 				// printr($arr_total_count);
 
 				$excel = FSExcel();
@@ -171,22 +183,31 @@
 				$excel->obj_php_excel->getActiveSheet()->getColumnDimension('C')->setWidth(10);
 				$excel->obj_php_excel->getActiveSheet()->getColumnDimension('D')->setWidth(10);
 				$excel->obj_php_excel->getActiveSheet()->getColumnDimension('E')->setWidth(5);
+				$excel->obj_php_excel->getActiveSheet()->getColumnDimension('F')->setWidth(40);
 		
 				$excel->obj_php_excel->getActiveSheet()->setCellValue('A2', 'Mã SKU');
 				$excel->obj_php_excel->getActiveSheet()->setCellValue('B2', 'Tên sản phẩm');
 				$excel->obj_php_excel->getActiveSheet()->setCellValue('C2', 'Mã màu');
 				$excel->obj_php_excel->getActiveSheet()->setCellValue('D2', 'Mã size');
+				
 				$excel->obj_php_excel->getActiveSheet()->setCellValue('E2', 'SL');
+				$excel->obj_php_excel->getActiveSheet()->setCellValue('F2', 'Mã con');
 
 				foreach ($list as $item){
 					$key = isset($key)?($key+1):3;
+					
+					$combo_code = $model->show_product_combo($item->product_id);
+				    $combo_code = $combo_code[0]->code_combo;
 					$excel->obj_php_excel->getActiveSheet()->setCellValue('A'.$key, $item->sku);
 					$excel->obj_php_excel->getActiveSheet()->setCellValue('B'.$key, $item->product_name);
 					$excel->obj_php_excel->getActiveSheet()->setCellValue('C'.$key, $item->color);
 					$excel->obj_php_excel->getActiveSheet()->setCellValueExplicit('D'.$key,$item->size,PHPExcel_Cell_DataType::TYPE_STRING);
 					$excel->obj_php_excel->getActiveSheet()->setCellValue('E'.$key, $item->count);
+					$excel->obj_php_excel->getActiveSheet()->setCellValue('F'.$key, $combo_code);
+					
 				}
-
+				
+              
 				$excel->obj_php_excel->getActiveSheet()->getRowDimension(1)->setRowHeight(20);
 				$excel->obj_php_excel->getActiveSheet()->getStyle('A1')->getFont()->setSize(12);
 				$excel->obj_php_excel->getActiveSheet()->getStyle('A1')->getFont()->setName('Arial');

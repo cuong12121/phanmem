@@ -393,6 +393,16 @@
 			return $result;
 		}
 
+		function show_product_combo($id_product){
+		    
+		    global $db;
+		    $query =  "SELECT code_combo FROM fs_products AS a where 1=1 AND id = ".$id_product;
+		    $sql  = $db->query($query);
+	        $result = $db->getObjectList();
+		    return $result;
+		    
+		}
+
 
 		function get_excel_tong(){
 			global $db;
