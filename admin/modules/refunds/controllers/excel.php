@@ -105,89 +105,153 @@
 			$fsFile = FSFactory::getClass('FsFiles');
 			$path = PATH_BASE.'files/excel/refunds';
 			$path = str_replace('/', DS,$path);
+			
 	        $excel = $fsFile -> upload_file("excel", $path ,100000000, '_'.time());
+	   
 	        if(	!$excel){
 				return false;
-			}else{
-				$file_path = $path.$excel;
+			}
+			else{
+			    $file_path = $path.$excel;
 				require_once("../libraries/PHPExcel-1.8/Classes/PHPExcel.php");
-				$objReader = PHPExcel_IOFactory::createReaderForFile($file_path);
-				$objReader->setLoadAllSheets();
-				$objexcel = $objReader->load($file_path);
-				$data_upload =$objexcel->getActiveSheet()->toArray('null',true,true,true);
-				
-
-				unset($heightRow);	
-				$heightRow=$objexcel->setActiveSheetIndex()->getHighestRow();
-				unset($j);
+				// Đọc file Excel
+                $objPHPExcel = PHPExcel_IOFactory::load($file_path);
+                
+               
+                
+                // Lấy sheet đầu tiên
+                $sheet = $objPHPExcel->getActiveSheet();
+                
+                $highestColumn = $sheet->getHighestColumn();
+                
+                $dem = 0;
+                
+                foreach ($sheet->getRowIterator() as $row) {
+                    $isEmpty = true;
+                    foreach ($row->getCellIterator() as $cell) {
+                        if (!is_null($cell->getValue())) {
+                            $isEmpty = false;
+                            break;
+                        }
+                    }
+                
+                    if (!$isEmpty) {
+                        $dem++;
+                    }
+                }
+                
+                $highestRow = $dem;
+                
+				// unset($heightRow);	
+				// $heightRow=$objexcel->setActiveSheetIndex()->getHighestRow();
+				// unset($j);
 
 				$count_ss = 0;
 				$i = 0;
 				$l = 0;
 				$row_error = "";
-				for($j=2;$j<=$heightRow;$j++){
-					$tracking_code = trim($data_upload[$j]['A']);
-					// printr($tracking_code);
-					if(!$tracking_code || $tracking_code == 'null' ){
-						// $l++;
-						// $row_error .= $j.",";
-						continue;
-					}
-					
-					$list = $model->get_records('tracking_code = "'.$tracking_code.'"','fs_order_uploads_detail','*');
-					// printr($list);
-
-					
-					if(empty($list)){
-						$l++;
-						$row_error .= $j.",";
-						continue;
-					}
-
 				
-
-					foreach ($list as $data) {
-						if($data-> is_print == 0){
-							continue;
-						}
-						if($data-> is_refund == 1){
-							$i++;
-							continue;
-						}
-						$add_id = $model->add_refund($data);
-
-						if($add_id){
-						
-							if($data-> is_package == 1){
-								$model->plus_money($data);
-							}
-
-							$row2 = array();
-							$row2['is_refund'] = 1;
-							$row2['date_refund'] = date('Y-m-d H:i:s');
-							$model-> _update($row2,'fs_order_uploads_detail','id ='.$data->id);
-							//nếu tất cả sản phẩm ở đơn này hoàn thì chuyển trạng thái hoàn ở lợi nhuận sang 1
-							$model->update_profits_refund($data);
-							// nếu sản phẩm của đơn này chưa bắn ra kho thì trừ tạm giữ đi
-							if($data-> is_shoot == 0){
-								$product_in_warehouse = $model->get_record('warehouses_id = ' . $data-> warehouse_id . ' AND product_id = '. $data-> product_id,'fs_warehouses_products');
-								$model->minus_quantity_product($data-> count,$product_in_warehouse);  //trừ tạm giữ đi
-							}
-							$i++;
-							
-							
-						}else{
-							$l++;
-							$row_error .= $j.",";
-							continue;
-						}
-
-					}
-
-
+				$data_tracking = [];
+				
+				$data_to_warehouses =[];
+				
+				
+				for ($row = 2; $row <= $highestRow; $row++) {
+                // Duyệt qua từng cột
+                    for ($column = 'A'; $column <= 'B'; $column++) {
+                
+                        if($column === 'A'){
+                            
+                            $tracking_code = trim($sheet->getCell($column . $row)->getValue());
+                            
+                            $data_tracking[] = $tracking_code;
+                            
+                        }
+                        else{
+                            $to_warehouses = trim($sheet->getCell($column . $row)->getValue());
+                            $data_to_warehouses[] = $to_warehouses;
+                            
+                        }
+                      
+                        
+                    }
+				    
 				}
+			
+				
+    			foreach($data_tracking as $key =>$tracking_code){
+                            
+                    $list = $model->get_records('tracking_code = "'.$tracking_code.'"','fs_order_uploads_detail','*');
+                    
+                    
+                
+    				// printr($list);
+    
+    				if(empty($list)){
+    					$l++;
+    					$row_error .= $row.",";
+    					continue;
+    				}
+    				
+    				
+    
+    				foreach ($list as $data) {
+    				    
+    				    
+    					if($data-> is_print == 0){
+    						continue;
+    					}
+    					
+    				
+    	
+    					if($data-> is_refund == 1){
+    						$i++;
+    						continue;
+    					}
+    					
+    					
+    					
+    					$add_id = $model->add_refund($data);
+    					
+    					if($add_id){
+    						if($data-> is_package == 1){
+    							$model->plus_money($data);
+    						}
+    
+    						$row2 = array();
+    						$row2['is_refund'] = 1;
+    						$row2['date_refund'] = date('Y-m-d H:i:s');
+    						
+    						$row2['to_warehouses'] = $data_to_warehouses[$key];
+    						
+    						$model-> _update($row2,'fs_order_uploads_detail','id ='.$data->id);
+    						//nếu tất cả sản phẩm ở đơn này hoàn thì chuyển trạng thái hoàn ở lợi nhuận sang 1
+    						$model->update_profits_refund($data);
+    						// nếu sản phẩm của đơn này chưa bắn ra kho thì trừ tạm giữ đi
+    						if($data-> is_shoot == 0){
+    							$product_in_warehouse = $model->get_record('warehouses_id = ' . $data-> warehouse_id . ' AND product_id = '. $data-> product_id,'fs_warehouses_products');
+    							$model->minus_quantity_product($data-> count,$product_in_warehouse);  //trừ tạm giữ đi
+    						}
+    						$i++;
+    						
+    					}
+    					
+    					else{
+    						$l++;
+    						$row_error .= $j.",";
+    						continue;
+    					}
+    				
+    				}
+                              
+    			} 
+    			
+            
 				$link = FSRoute::_('index.php?module=refunds&view=excel');
-				$message = 'Thành công '.$i.' dòng';
+				$message = 'Thành công '.$i.' dòng .';
+				
+				
+				
 				if($l > 0){
 					$message .= 'Lỗi dòng ở các dòng '.$row_error . ' kiểm tra lại mã có tồn tại không';
 				}

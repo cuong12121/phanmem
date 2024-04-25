@@ -80,6 +80,8 @@
 	$list_config[] = array('title'=>'Tổng số tiền','field'=>'total_price','ordering'=> 1, 'type'=>'format_money','col_width' => '10%','arr_params'=>array('size'=> 20));
 
 	$list_config[] = array('title'=>'Kho','field'=>'warehouse_id','type'=>'text','arr_params'=>array('function'=>'view_warehouse'));
+
+	$list_config[] = array('title'=>'Kho hoàn','field'=>'to_warehouses','ordering'=> 1, 'type'=>'text','col_width' => '8%','arr_params'=>array('size'=> 20));
 	$list_config[] = array('title'=>'Sàn','field'=>'platform_id','type'=>'text','arr_params'=>array('function'=>'view_platform'));
 	$list_config[] = array('title'=>'Shop','field'=>'shop_id','type'=>'text','arr_params'=>array('function'=>'view_shop'));
 
