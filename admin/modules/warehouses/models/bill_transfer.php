@@ -7,6 +7,7 @@ class WarehousesModelsBill_transfer extends FSModels
 	{
 		$this -> limit = 20;
 		$this -> view = 'bill';
+		$this -> table_name_product = 'fs_products';
 		// $this->table_category_name = 'fs_warehouses_categories';
 
 		$this -> table_name = 'fs_warehouses_bill_transfer';
@@ -101,6 +102,21 @@ class WarehousesModelsBill_transfer extends FSModels
 		" . $this->table_name . " AS a
 		WHERE 1=1 " . $where . $ordering . " ";
 		return $query;
+	}
+
+	function update_transfer_product($code, $number_product_stranfer){
+	    
+	    $query = "SELECT id FROM fs_products WHERE code = '".$code."'";
+	    
+	    global $db;
+	    
+	    $sql = $db->query ( $query );
+	    
+	    $product_id = $db->getResult();
+	    
+	    $data = ['product_transfer'=>$number_product_stranfer];
+	    
+	    $this-> _update($data,$this-> table_name_product,'id = '.$product_id);
 	}
 
 	function save($row = array(), $use_mysql_real_escape_string = 0) {
@@ -466,6 +482,9 @@ class WarehousesModelsBill_transfer extends FSModels
 		foreach ($data as $item) {
 			$row = array();
 			$row['bill_id'] = $id;
+
+			$update_transfer = $this->update_transfer_product($item[0], $item[1]);
+			
 			$product = $this-> get_record('code = "'.$item[0].'"','fs_products');
 
 			if(empty($product)) continue;

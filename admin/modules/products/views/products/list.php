@@ -72,6 +72,8 @@ $list_config[] = array('title'=>'Giá bán','field'=>'price','ordering'=> 1, 'ty
 $list_config[] = array('title'=>'Giá bán đóng gói','field'=>'price_pack','ordering'=> 1, 'type'=>'format_money','display_label'=>0,'arr_params'=>array('size'=>10));
 
 $list_config[] = array('title'=>'Giá bán thấp nhất','field'=>'price_min','ordering'=> 1, 'type'=>'format_money','display_label'=>0,'arr_params'=>array('size'=>10));
+$list_config[] = array('title'=>'Hàng chuyển kho','field'=>'product_transfer','ordering'=> 1, 'display_label'=>0, 'type'=>'text', 'arr_params'=>array('size'=>10));
+
 
 
 	//if(!empty($_SESSION [$this->prefix . 'filter1']) && $_SESSION [$this->prefix . 'filter1'] > 0){
