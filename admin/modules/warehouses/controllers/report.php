@@ -43,9 +43,9 @@ class WarehousesControllersReport extends Controllers
 			$sort_direct = $this -> sort_direct;
 			$model  = $this -> model;
 			$list = $model->get_data();
-			var_dump($list);
+			
 
-			die;
+			
 			// echo "<pre>";
 			//    print_r($list);
 			// echo "</pre>";
@@ -57,19 +57,20 @@ class WarehousesControllersReport extends Controllers
 
 
 			if(empty($excel)){
-			$warehouses = $model->get_records('1=1','fs_warehouses','*');
-			$supplier = $model->get_records('1=1','fs_supplier','*');
-			$pagination = $model->getPagination();
-			$breadcrumbs = array();
-			$breadcrumbs[] = array(0=>'Báo cáo xuất nhập kho', 1 => '');	
-			global $tmpl;
-			$tmpl->assign ( 'breadcrumbs', $breadcrumbs );
-			$tmpl->assign ( 'seo_title', 'Báo cáo xuất nhập kho');
-			include 'modules/'.$this->module.'/views/'.$this->view.'/list.php';
+				$list = $model->get_data();
+				$warehouses = $model->get_records('1=1','fs_warehouses','*');
+				$supplier = $model->get_records('1=1','fs_supplier','*');
+				$pagination = $model->getPagination();
+				$breadcrumbs = array();
+				$breadcrumbs[] = array(0=>'Báo cáo xuất nhập kho', 1 => '');	
+				global $tmpl;
+				$tmpl->assign ( 'breadcrumbs', $breadcrumbs );
+				$tmpl->assign ( 'seo_title', 'Báo cáo xuất nhập kho');
+				include 'modules/'.$this->module.'/views/'.$this->view.'/list.php';
 			}
 
 		else{
-
+			$list = $model->get_data_excel();
 			$key =1;
 
 			FSFactory::include_class('excel','excel');
