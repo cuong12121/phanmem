@@ -43,6 +43,9 @@ class WarehousesControllersReport extends Controllers
 			$sort_direct = $this -> sort_direct;
 			$model  = $this -> model;
 			$list = $model->get_data();
+			var_dump($list);
+
+			die;
 			// echo "<pre>";
 			//    print_r($list);
 			// echo "</pre>";
