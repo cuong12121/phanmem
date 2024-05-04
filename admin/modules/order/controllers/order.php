@@ -86,10 +86,12 @@
 
 	        // $string = "[" . trim($string) . "]";
 
-	        $info_data = $string;
-	        echo "<pre>";
-	        	print_r(json_decode($info_data));
-	        echo "</pre>";
+	        $info_data = json_decode($string);
+	        // echo "<pre>";
+	        // 	print_r(json_decode($info_data));
+	        // echo "</pre>";
+
+	        include 'modules/'.$this->module.'/views/'.$this->view.'/details.php';
 		}
 
 
