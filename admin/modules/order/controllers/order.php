@@ -61,6 +61,11 @@
 				echo "Chưa xác định";
 			}
 		}
+
+		public function details()
+		{
+			echo "hello world";
+		}
 		function showStatus($status){
 			$arr_status = $this -> arr_status;
 			echo @$arr_status[$status];
