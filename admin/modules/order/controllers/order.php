@@ -64,8 +64,35 @@
 
 		public function details()
 		{
-			echo "hello world";
+			$context = stream_context_create(array(
+	            'http' => array(
+	                
+	                'method' => 'GET',
+
+	                'header' => "Content-Type: application/x-www-form-urlencoded\r\n".
+	                            "token: 7ojTLYXnzV0EH1wRGxOmvLFga",
+	                'content' => $postData
+	            )
+	        ));
+
+	        // Send the request
+	        $response = file_get_contents('https://api.dienmayai.com/api/get-data-order-details', FALSE, $context);
+
+	        // Decode the response
+	     
+	        $string = str_replace('\\', '', $response);
+
+	        $string = rtrim($string, ',');
+
+	        // $string = "[" . trim($string) . "]";
+
+	        $info_data = $string;
+	        echo "<pre>";
+	        	var_dump($info_data);
+	        echo "</pre>";
 		}
+
+
 		function showStatus($status){
 			$arr_status = $this -> arr_status;
 			echo @$arr_status[$status];
