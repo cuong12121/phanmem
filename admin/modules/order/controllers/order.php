@@ -88,7 +88,7 @@
 
 	        $info_data = $string;
 	        echo "<pre>";
-	        	var_dump($info_data);
+	        	print_r($info_data);
 	        echo "</pre>";
 		}
 
