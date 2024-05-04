@@ -88,7 +88,7 @@
 
 	        $info_data = $string;
 	        echo "<pre>";
-	        	print_r($info_data);
+	        	print_r(json_decode($info_data));
 	        echo "</pre>";
 		}
 
