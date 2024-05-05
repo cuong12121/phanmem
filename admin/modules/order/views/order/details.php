@@ -45,8 +45,10 @@
 
 
         <?php 
-
-          
+            echo "<pre>";
+                var_dump($info_data);
+            echo "</pre>";
+            die;
         	if(!empty($info_data->data)){
         		$dem =0;
 
