@@ -30,13 +30,20 @@
     table tr:nth-child(1){
         background-color:skyblue;
     }
+    .form-search{
+        display: flex;
+    }
 </style>
-<form class="header__search" method="get" action="">
-    <input type="text" class="input-search ui-autocomplete-input" id="tags"  name="key" autocomplete="off" maxlength="100" required="" wfd-id="id0"> 
+<div class="form-search">
     
-    <div id="search-result"></div>
-    <button type="submit"> tìm kiếm </button> 
-</form>
+    <form class="header__search" method="get" action="">
+        <input type="text" class="input-search ui-autocomplete-input" id="tags"  name="key" autocomplete="off" maxlength="100" required="" wfd-id="id0"> 
+        
+        <div id="search-result"></div>
+        <button type="submit"> tìm kiếm </button> 
+    </form>
+</div>
+
 <table>
         <tr>
             <th>STT</th>
