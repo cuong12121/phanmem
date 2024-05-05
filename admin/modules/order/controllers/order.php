@@ -86,7 +86,7 @@
 
 	        // $string = "[" . trim($string) . "]";
 
-	        $info_data = json_decode($string);
+	        $info_data = $string;
 
 
 	        echo "<pre>";

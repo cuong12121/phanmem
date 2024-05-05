@@ -35,15 +35,11 @@
 
         <?php 
 
-            echo '<pre>';
-
-                print_r($info_data['data']);
-            echo '</pre>';
-            die;
-        	if(!empty($info_data['data'])){
+          
+        	if(!empty($info_data->data)){
         		$dem =0;
 
-        		foreach ($info_data['data'] as $key => $value) {
+        		foreach ($info_data->data as $key => $value) {
         			$dem++;
 
 
