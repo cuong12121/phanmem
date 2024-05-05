@@ -33,6 +33,9 @@
     .form-search{
         display: flex;
     }
+    #tags{
+        margin-right: 15px;
+    }
 </style>
 <div class="form-search">
     
