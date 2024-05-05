@@ -93,7 +93,7 @@
                 if($get_page !=1):
             ?>
             <li class="page-item">
-                <a class="page-link" href="?page = <?= intval($get_page)-1 ?>" aria-label="Previous">
+                <a class="page-link" href="?page=<?= intval($get_page)-1 ?>" aria-label="Previous">
                 <span aria-hidden="true">&laquo;</span>
                 </a>
             </li>
@@ -115,7 +115,7 @@
 
 
             <li class="page-item">
-                <a class="page-link" href="?page = <?= intval($get_page)+3 ?>" aria-label="Next">
+                <a class="page-link" href="?page=<?= intval($get_page)+3 ?>" aria-label="Next">
                 <span aria-hidden="true">&raquo;</span>
                 </a>
             </li>
