@@ -30,8 +30,8 @@
     table tr:nth-child(1){
         background-color:skyblue;
     }
-    tr td{
-        font-size: 24px;
+    .code{
+        font-size: 30px;
     }
 </style>
 <table>
@@ -60,7 +60,7 @@
 
         <tr>
             <td><?= $dem ?></td>
-            <td><?= $value->tracking_code  ?></td>
+            <td><span class="code"><?= $value->tracking_code  ?></span></td>
            
         </tr>
 
