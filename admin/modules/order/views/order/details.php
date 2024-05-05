@@ -87,11 +87,20 @@
 
     <nav aria-label="Page navigation example">
         <ul class="pagination">
+
+            <?php 
+
+                if($get_page !=1):
+            ?>
             <li class="page-item">
-                <a class="page-link" href="#" aria-label="Previous">
+                <a class="page-link" href="?page = <?= intval($get_page)-1 ?>" aria-label="Previous">
                 <span aria-hidden="true">&laquo;</span>
                 </a>
             </li>
+
+            <?php
+                endif;
+            ?>
 
             <?php 
                 for ($i = $get_page; $i < 3+intval($get_page); $i++) :
@@ -104,8 +113,9 @@
             endfor;    
             ?>
 
+
             <li class="page-item">
-                <a class="page-link" href="#" aria-label="Next">
+                <a class="page-link" href="?page = <?= intval($get_page)+3 ?>" aria-label="Next">
                 <span aria-hidden="true">&raquo;</span>
                 </a>
             </li>
