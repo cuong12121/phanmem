@@ -111,13 +111,15 @@
 	        // Send the request
 	        $response = file_get_contents('https://api.dienmayai.com/api/search-data-order-details?search='.$search, FALSE, $context);
 
-	        var_dump($response);
-
-	        die;
+	       
 
 
 
 	        $info_data = json_decode($response);
+
+	         var_dump($info_data);
+
+	        die;
 
 	        include 'modules/'.$this->module.'/views/'.$this->view.'/details.php';
 
