@@ -33,8 +33,9 @@
 </style>
 <form class="header__search" method="get" action="">
     <input type="text" class="input-search ui-autocomplete-input" id="tags"  name="key" autocomplete="off" maxlength="100" required="" wfd-id="id0"> 
-    <button type="submit"> <i class="icon-search"></i> </button> 
+    
     <div id="search-result"></div>
+    <button type="submit"> tìm kiếm </button> 
 </form>
 <table>
         <tr>
