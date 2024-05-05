@@ -90,7 +90,7 @@
 
 
 	        echo "<pre>";
-	        	print_r(json_decode($info_data));
+	        	print_r($info_data);
 	        echo "</pre>";
 	        die;
 	        include 'modules/'.$this->module.'/views/'.$this->view.'/details.php';
