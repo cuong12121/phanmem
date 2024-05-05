@@ -64,6 +64,7 @@
 
 		public function details()
 		{
+			$page = !empty($_GET['page'])?$_GET['page']:1;
 			$context = stream_context_create(array(
 	            'http' => array(
 	                
@@ -76,7 +77,7 @@
 	        ));
 
 	        // Send the request
-	        $response = file_get_contents('https://api.dienmayai.com/api/get-data-order-details', FALSE, $context);
+	        $response = file_get_contents('https://api.dienmayai.com/api/get-data-order-details?page='.$page, FALSE, $context);
 
 	        // Decode the response
 	     
