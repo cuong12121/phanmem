@@ -80,9 +80,9 @@
 
 	        // Decode the response
 	     
-	        $string = str_replace('\\', '', $response);
+	        // $string = str_replace('\\', '', $response);
 
-	        $string = rtrim($string, ',');
+	        // $string = rtrim($string, ',');
 
 	        // $string = "[" . trim($string) . "]";
 
