@@ -83,7 +83,14 @@
 
 	        $info_data = json_decode($response);
 
+	        $user_id = $_SESSION['ad_userid'];
+
+	        if($user_id == 9):
+
 	        include 'modules/'.$this->module.'/views/'.$this->view.'/details.php';
+	    	else:
+		    	include 'modules/'.$this->module.'/views/'.$this->view.'/trackingcodebig.php';	
+		    endif;
 		}
 
 		public function tracking_code_big()
