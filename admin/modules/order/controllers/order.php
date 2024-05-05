@@ -111,7 +111,7 @@
 	        // Send the request
 	        $response = file_get_contents('https://api.dienmayai.com/api/search-data-order-details?search='.$search, FALSE, $context);
 
-	        var_dump($search);
+	        var_dump($response);
 
 	        die;
 
