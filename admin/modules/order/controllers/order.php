@@ -79,17 +79,35 @@
 	        // Send the request
 	        $response = file_get_contents('https://api.dienmayai.com/api/get-data-order-details?page='.$page, FALSE, $context);
 
-	        // Decode the response
-	     
-	        // $string = str_replace('\\', '', $response);
-
-	        // $string = rtrim($string, ',');
-
-	        // $string = "[" . trim($string) . "]";
+	       
 
 	        $info_data = json_decode($response);
 
 	        include 'modules/'.$this->module.'/views/'.$this->view.'/details.php';
+		}
+
+		public function tracking_code_big()
+		{
+			$page = !empty($_GET['page'])?$_GET['page']:1;
+			$context = stream_context_create(array(
+	            'http' => array(
+	                
+	                'method' => 'GET',
+
+	                'header' => "Content-Type: application/x-www-form-urlencoded\r\n".
+	                            "token: 7ojTLYXnzV0EH1wRGxOmvLFga",
+	                
+	            )
+	        ));
+
+	        // Send the request
+	        $response = file_get_contents('https://api.dienmayai.com/api/get-data-order-details?page='.$page, FALSE, $context);
+
+	       
+
+	        $info_data = json_decode($response);
+
+	        include 'modules/'.$this->module.'/views/'.$this->view.'/trackingcodebig.php';
 		}
 
 
