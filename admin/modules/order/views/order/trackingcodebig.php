@@ -31,7 +31,7 @@
         background-color:skyblue;
     }
     .code{
-        font-size: 30px;
+        font-size: 130px;
     }
 </style>
 <table>
