@@ -40,6 +40,7 @@
             <th>Số lượng</th>
             <th>Id đơn hàng</th>
             <th>Tracking code</th>
+            <th>Ngày đánh đơn</th>
             <th>Thành tiền</th>
         </tr>
 
@@ -68,6 +69,7 @@
             <td><?= $value->count  ?></td>
             <td><?= $value->record_id  ?></td>
             <td><?= $value->tracking_code  ?></td>
+            <td><?= date("d/m/Y", strtotime($value->date));  ?></td>
             <td><?=  number_format((float)$value->total_price, 0, ',', '.') ?>đ</td>
         </tr>
 
