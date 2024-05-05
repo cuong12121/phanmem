@@ -105,6 +105,12 @@ if(isset($num_child[$item->parent_id]) && ($num_child[$item->parent_id] >= 1) )
 echo '</li>';
 }
 ?>
+
+<li>
+  <a id="li_menu_500" href="https://dienmayai.com/admin/order/detail" class="li_menu_0 header ">
+    <span class="text">chi tiết đơn hàng</span>          
+  </a>
+</li>
 </ul>
 <script>
 
