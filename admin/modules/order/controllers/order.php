@@ -86,13 +86,8 @@
 
 	        // $string = "[" . trim($string) . "]";
 
-	        $info_data = $string;
+	        $info_data = json_decode($string);
 
-
-	        echo "<pre>";
-	        	print_r($info_data->data);
-	        echo "</pre>";
-	        die;
 	        include 'modules/'.$this->module.'/views/'.$this->view.'/details.php';
 		}
 
