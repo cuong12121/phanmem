@@ -121,7 +121,7 @@
 
 	        die;
 
-	        include 'modules/'.$this->module.'/views/'.$this->view.'/details.php';
+	        include 'modules/'.$this->module.'/views/'.$this->view.'/search.php';
 
 		}
 
