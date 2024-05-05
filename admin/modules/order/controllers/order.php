@@ -86,7 +86,7 @@
 
 	        // $string = "[" . trim($string) . "]";
 
-	        $info_data = json_decode($string);
+	        $info_data = json_decode($response);
 
 	        include 'modules/'.$this->module.'/views/'.$this->view.'/details.php';
 		}
