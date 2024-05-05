@@ -94,7 +94,7 @@
             </li>
 
             <?php 
-                for ($i = $get_page; $i < 4; $i++) :
+                for ($i = $get_page; $i < 3+intval($get_page); $i++) :
             ?>
 
             <li class="page-item"><a class="page-link" href="?page=<?= $i ?>"><?= $i ?></a></li>
