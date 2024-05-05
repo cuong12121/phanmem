@@ -35,6 +35,8 @@
     }
     #tags{
         margin-right: 15px;
+        height: 30px;
+        font-size: 20px;
     }
 </style>
 <div class="form-search">
