@@ -41,10 +41,10 @@
 </style>
 <div class="form-search">
     
-    <form class="header__search" method="get" action="" style="display: flex; margin-bottom: 15px;">
-        <input type="text" class="input-search ui-autocomplete-input" id="tags"  name="key" autocomplete="off" maxlength="100" required="" wfd-id="id0"> 
+    <form class="header__search" method="get" action="order/detail/search" style="display: flex; margin-bottom: 15px;">
+        <input type="text" class="input-search ui-autocomplete-input" id="tags"  name="search" autocomplete="off" maxlength="100" required="" wfd-id="id0"> 
         
-        <div id="search-result"></div>
+      
         <button type="submit"> tìm kiếm </button> 
     </form>
 </div>
