@@ -31,8 +31,15 @@
             <th>Thành tiền</th>
         </tr>
 
+
+
         <?php 
 
+            echo '<pre>';
+
+                print_r($info_data['data']);
+            echo '</pre>';
+            die;
         	if(!empty($info_data['data'])){
         		$dem =0;
 
