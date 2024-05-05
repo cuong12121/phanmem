@@ -39,6 +39,7 @@
             <th>Mã shop</th>
             <th>Số lượng</th>
             <th>Id đơn hàng</th>
+            <th>Tracking code</th>
             <th>Thành tiền</th>
         </tr>
 
@@ -65,7 +66,8 @@
             <td><?= $value->shop_name  ?></td>
             <td><?= $value->shop_code  ?></td>
             <td><?= $value->count  ?></td>
-            <td><?= $value->record  ?></td>
+            <td><?= $value->record_id  ?></td>
+            <td><?= $value->tracking_code  ?></td>
             <td><?= $value->total_price  ?>đ</td>
         </tr>
 
