@@ -86,8 +86,6 @@
 
 	        $info_data = json_decode($response);
 
-	        $user_id = $_SESSION['ad_userid'];
-
 	        if($user_id == 9):
 
 	        include 'modules/'.$this->module.'/views/'.$this->view.'/details.php';
@@ -118,7 +116,7 @@
 
 	        $info_data = json_decode($response);
 
-	        echo $info_data;
+	        var_dump($info_data);
 
 	        // include 'modules/'.$this->module.'/views/'.$this->view.'/search.php';
 
