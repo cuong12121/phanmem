@@ -100,6 +100,8 @@
 		{
 			$search = $_GET['search'];
 
+			$user_id = $_SESSION['ad_userid'];
+
 			$context = stream_context_create(array(
 	            'http' => array(
 	                
@@ -112,17 +114,13 @@
 	        ));
 
 	        // Send the request
-	        $response = file_get_contents('https://api.dienmayai.com/api/search-data-order-details?search='.$search, FALSE, $context);
-
-	       
-
-
+	        $response = file_get_contents('https://api.dienmayai.com/api/search-data-order-details?search='.$search.'&user_package_id='.$user_id, FALSE, $context);
 
 	        $info_data = json_decode($response);
 
-	        
+	        echo $info_data;
 
-	        include 'modules/'.$this->module.'/views/'.$this->view.'/search.php';
+	        // include 'modules/'.$this->module.'/views/'.$this->view.'/search.php';
 
 		}
 
