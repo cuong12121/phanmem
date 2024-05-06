@@ -116,7 +116,8 @@
 
 	        $info_data = json_decode($response);
 
-	        var_dump($response);
+
+	        echo($response);
 
 	        // include 'modules/'.$this->module.'/views/'.$this->view.'/search.php';
 
