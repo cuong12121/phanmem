@@ -45,7 +45,7 @@
         <input type="text" class="input-search ui-autocomplete-input" id="tags"  name="search" autocomplete="off" maxlength="100" required="" wfd-id="id0"> 
         
       
-        <button type="submit"> tìm kiếm </button> 
+        <button type="submit"> bắn đơn </button> 
     </form>
 </div>
 <?php
