@@ -65,6 +65,9 @@
 		public function details()
 		{
 			$page = !empty($_GET['page'])?$_GET['page']:1;
+
+			$user_id = $_SESSION['ad_userid'];
+
 			$context = stream_context_create(array(
 	            'http' => array(
 	                
@@ -77,7 +80,7 @@
 	        ));
 
 	        // Send the request
-	        $response = file_get_contents('https://api.dienmayai.com/api/get-data-order-details?page='.$page, FALSE, $context);
+	        $response = file_get_contents('https://api.dienmayai.com/api/get-data-order-details?page='.$page.'&id_user='.$user_id, FALSE, $context);
 
 	       
 
