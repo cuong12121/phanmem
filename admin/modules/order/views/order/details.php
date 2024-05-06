@@ -51,7 +51,7 @@
 <?php
     $date = date('d-m-Y');
 ?>
-<h2>Danh sách đơn đã đóng trong ngày <?= $date ?></h2>
+<h2>Danh sách đơn đã đóng mới nhất của  <?=  @$_SESSION ['ad_username'] ?></h2>
 
 <table>
         <tr>
