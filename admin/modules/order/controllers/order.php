@@ -114,12 +114,13 @@
 	        // Send the request
 	        $response = file_get_contents('https://api.dienmayai.com/api/search-data-order-details?search='.$search.'&user_package_id='.$user_id, FALSE, $context);
 
-	        $info_data = json_decode($response);
+
+	        $datas = file_get_contents('https://api.dienmayai.com/api/get-data-order-details?page='.$page.'&id_user='.$user_id, FALSE, $context);
 
 
-	        echo($response);
+	        $info_data = json_decode($datas);
 
-	        // include 'modules/'.$this->module.'/views/'.$this->view.'/search.php';
+	       	include 'modules/'.$this->module.'/views/'.$this->view.'/details.php';
 
 		}
 

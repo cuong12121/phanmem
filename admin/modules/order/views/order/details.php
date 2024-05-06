@@ -45,11 +45,19 @@
         <input type="text" class="input-search ui-autocomplete-input" id="tags"  name="search" autocomplete="off" maxlength="100" required="" wfd-id="id0"> 
         
       
-        <button type="submit"> bắn đơn </button> 
+        <button type="submit">Bắn đơn </button> 
     </form>
 </div>
 <?php
     $date = date('d-m-Y');
+    if(!empty($search) && !empty($response)):
+?>
+
+<h3 style="color: red"><?= $response ?> </h3>
+
+<?php
+
+    endif;
 ?>
 <h2>Danh sách đơn đã đóng mới nhất của  <?=  @$_SESSION ['ad_username'] ?></h2>
 
