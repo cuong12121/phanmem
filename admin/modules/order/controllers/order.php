@@ -100,10 +100,6 @@
 
 			$user_id = $_SESSION['ad_userid'];
 
-			var_dump(1);
-
-			die;
-
 			$context = stream_context_create(array(
 	            'http' => array(
 	                
