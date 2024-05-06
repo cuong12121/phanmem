@@ -98,6 +98,8 @@
 		{
 			$search = $_GET['search'];
 
+			$page =1;
+
 			$user_id = $_SESSION['ad_userid'];
 
 			$context = stream_context_create(array(
