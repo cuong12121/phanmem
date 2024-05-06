@@ -48,6 +48,10 @@
         <button type="submit"> tìm kiếm </button> 
     </form>
 </div>
+<?php
+    $date = date('d-m-Y');
+?>
+<h2>Danh sách đơn đã đóng trong ngày <?= $date ?></h2>
 
 <table>
         <tr>
@@ -59,6 +63,7 @@
             <th>Id đơn hàng</th>
             <th>Tracking code</th>
             <th>Ngày đánh đơn</th>
+            <th>Thời gian đóng đơn hàng</th>
             <th>Thành tiền</th>
         </tr>
 
@@ -88,6 +93,8 @@
             <td><?= $value->record_id  ?></td>
             <td><?= $value->tracking_code  ?></td>
             <td><?= date("d/m/Y", strtotime($value->date));  ?></td>
+            <td><?= date("d/m/Y,H:i:s", strtotime($value->date_package));  ?></td>
+            
             <td><?=  number_format((float)$value->total_price, 0, ',', '.') ?>đ</td>
         </tr>
 

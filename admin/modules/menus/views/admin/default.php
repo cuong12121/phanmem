@@ -108,7 +108,7 @@ echo '</li>';
 
 <li>
   <a id="li_menu_500" href="https://dienmayai.com/admin/order/detail" class="li_menu_0 header ">
-    <span class="text">Chi tiết đơn hàng</span>          
+    <span class="text">Đóng đơn</span>          
   </a>
 </li>
 </ul>
