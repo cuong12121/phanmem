@@ -17,6 +17,8 @@ class ContactControllersServices_centers extends FSControllers {
 
 	    var_dump($check);
 
+	    die;
+
 		// var_dump(1);die;
 		// $model = $this->model;
 		// $list=$model->get_address_list();
