@@ -54,9 +54,9 @@
 <?php
     $date = date('d-m-Y');
 
-    session_start();
+    
 
-    $notification = $_SESSION['notification'];
+    $notification = !empty($_SESSION['notification'])?$_SESSION['notification']:'';
 
     if(!empty($notification)):
 ?>
