@@ -115,7 +115,7 @@
 		    	$check = $redis->get("refresh");
 		    }
 
-		    return 1;
+		    return $check;
 		   
 		}
 
