@@ -131,7 +131,7 @@
 
                             window.location.reload()
                         }
-                        console.log(1);
+                        console.log(response);
 
                        
                     }
