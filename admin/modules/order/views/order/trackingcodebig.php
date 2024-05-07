@@ -127,7 +127,12 @@
                     type: 'GET',
                     success: function(response){
 
-                        console.log(response);
+                        if(response==1){
+                            
+                            window.location.reload()
+                        }
+
+                       
                     }
                 });
             }
@@ -135,9 +140,9 @@
             // Load realtime data initially
             loadRealtimeData();
 
-            // // Load realtime data every 5 seconds
-            // setInterval(function(){
-            //     loadRealtimeData();
-            // }, 2000);
+            // Load realtime data every 5 seconds
+            setInterval(function(){
+                loadRealtimeData();
+            }, 2000);
         });
     </script>
