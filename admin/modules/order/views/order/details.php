@@ -45,7 +45,7 @@
 <div class="form-search">
     
     <form class="header__search" method="get" action="https://dienmayai.com/admin/order/detail/search" style="display: flex; margin-bottom: 15px;">
-        <input type="text" class="input-search ui-autocomplete-input" id="tags"  name="search" autocomplete="off" maxlength="100" required="" wfd-id="id0"> 
+        <input type="text" class="input-search ui-autocomplete-input" id="tags"  name="search" autocomplete="off" maxlength="100" required="" wfd-id="id0" autofocus > 
         
         <input type="hidden" name="active" value="1">    
         <button type="submit">Bắn đơn </button> 
