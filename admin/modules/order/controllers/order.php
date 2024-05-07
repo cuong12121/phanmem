@@ -89,22 +89,34 @@
 	    	
 		}
 
-		public function checkphp()
-		{
-			// Khởi tạo lớp
-		    $redis = new Redis();
+		
+
+
+		function connect_redis(){
+
+			$redis = new Redis();
 
 		    // Thiết lập kết nối
 		    $redis->connect('127.0.0.1', 6379);
 
-		    if ($redis->ping() !== true)
-		    {
-		        echo "Redis Server not running ...";
-		        die;
+		    return $redis;
+
+
+		}
+
+		public function checkrealtime()
+		{
+			$redis = $this->connect_redis()
+
+			$check = 0;
+
+		    if ($redis->exists('refresh')) {
+
+		    	$check = $redis->get("refresh");
 		    }
-		    else{
-		    	$redis->set("refresh", 0);
-		    }
+
+		    return $check;
+		   
 		}
 
 		public function search_order_details()
@@ -131,8 +143,17 @@
 	        // Send the request
 	        $response = file_get_contents('https://api.dienmayai.com/api/search-data-order-details?search='.$search.'&user_package_id='.$user_id.'&active='.$active, FALSE, $context);
 
+	        $redis = $this->connect_redis();
 
-	        
+	        $keyExists = $redis->exists('refresh');
+
+			if ($keyExists) {
+			    $redis->delete("refresh");
+
+			    $redis->set("refresh", 1);
+
+			} 
+
 
 			$_SESSION['notification'] = $response; //khởi tạo session
 

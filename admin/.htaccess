@@ -170,7 +170,7 @@ RewriteRule ^order/trackings$ index.php?module=order&view=order&task=tracking_co
 
 RewriteRule ^order/detail/search$ index.php?module=order&view=order&task=search_order_details&%{QUERY_STRING} [L]
 
-RewriteRule ^order/detail/check$ index.php?module=order&view=order&task=checkphp&%{QUERY_STRING} [L]
+RewriteRule ^order/detail/check$ index.php?module=order&view=order&task=checkrealtime&%{QUERY_STRING} [L]
 
 
 RewriteRule ^order/upload/add index.php?module=order&view=upload&task=add&%{QUERY_STRING} [L]

@@ -114,3 +114,27 @@
             </li>
         </ul>
     </nav>
+
+    <script>
+        $(document).ready(function(){
+            // Function to load realtime data
+            function loadRealtimeData(){
+                $.ajax({
+                    url: 'https://dienmayai.com/admin/order/detail/check', // Đường dẫn tới tập tin PHP xử lý dữ liệu
+                    type: 'GET',
+                    success: function(response){
+
+                        console.log(response);
+                    }
+                });
+            }
+
+            // Load realtime data initially
+            loadRealtimeData();
+
+            // Load realtime data every 5 seconds
+            setInterval(function(){
+                loadRealtimeData();
+            }, 2000);
+        });
+    </script>
