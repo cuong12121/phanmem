@@ -73,6 +73,7 @@
             <th>Ngày đánh đơn</th>
             <th>Thời gian đóng đơn hàng</th>
             <th>Thành tiền</th>
+            <th>Hoàn đơn</th>
         </tr>
 
 
@@ -104,6 +105,9 @@
             <td><?= date("d/m/Y,H:i:s", strtotime($value->date_package));  ?></td>
             
             <td><?=  number_format((float)$value->total_price, 0, ',', '.') ?>đ</td>
+            <td>
+                <a href="javascript:void(0)">Hoàn đơn</a>
+            </td>
         </tr>
 
         <?php 
