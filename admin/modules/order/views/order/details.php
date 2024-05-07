@@ -38,6 +38,9 @@
         height: 30px;
         font-size: 20px;
     }
+    .return a{
+        color: red;
+    }
 </style>
 <div class="form-search">
     
@@ -113,7 +116,7 @@
             <td><?= $date_time_package  ?></td>
             
             <td><?=  number_format((float)$value->total_price, 0, ',', '.') ?>đ</td>
-            <td>
+            <td class="return">
                 <?php
                     if($now=== $date_package):
                 ?>    
