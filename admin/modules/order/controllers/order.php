@@ -89,6 +89,11 @@
 	    	
 		}
 
+		public function checkphp()
+		{
+			phpinfo();
+		}
+
 		public function search_order_details()
 		{
 			$search = $_GET['search'];
