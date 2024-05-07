@@ -80,7 +80,9 @@
             <th>Số lượng</th>
             <th>Id đơn hàng</th>
             <th>Tracking code</th>
+            <th>Người đánh đơn</th>
             <th>Ngày đánh đơn</th>
+
             <th>Thời gian đóng đơn hàng</th>
             <th>Thành tiền</th>
             <th>Hoàn đơn</th>
@@ -112,6 +114,7 @@
             <td><?= $value->count  ?></td>
             <td><?= $value->record_id  ?></td>
             <td><?= $value->tracking_code  ?></td>
+            <td><?= $user_id ?></td>
             <td><?= date("d/m/Y", strtotime($value->date));  ?></td>
 
             <?php  
