@@ -2,6 +2,8 @@
 class ContactControllersServices_centers extends FSControllers {
 	
 	function display(){
+
+		var_dump(1);die;
 		$model = $this->model;
 		$list=$model->get_address_list();
 		$regions = $model->get_regions();

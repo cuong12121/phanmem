@@ -118,7 +118,7 @@
         </ul>
     </nav>
 
-   <!--  <script>
+    <script>
         $(document).ready(function(){
             // Function to load realtime data
             function loadRealtimeData(){
@@ -127,7 +127,7 @@
                     type: 'GET',
                     success: function(response){
 
-                        console.log(response);
+                        console.log(1);
                     }
                 });
             }
@@ -135,9 +135,9 @@
             // Load realtime data initially
             loadRealtimeData();
 
-            // Load realtime data every 5 seconds
-            setInterval(function(){
-                loadRealtimeData();
-            }, 2000);
+            // // Load realtime data every 5 seconds
+            // setInterval(function(){
+            //     loadRealtimeData();
+            // }, 2000);
         });
-    </script> -->
+    </script>
