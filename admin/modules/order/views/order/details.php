@@ -114,7 +114,7 @@
             <td><?= $value->count  ?></td>
             <td><?= $value->record_id  ?></td>
             <td><?= $value->tracking_code  ?></td>
-            <td><?= $user_id ?></td>
+            <td><?= @$_SESSION ['ad_username'] ?></td>
             <td><?= date("d/m/Y", strtotime($value->date));  ?></td>
 
             <?php  
