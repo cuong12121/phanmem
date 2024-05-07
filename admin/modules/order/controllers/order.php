@@ -91,7 +91,20 @@
 
 		public function checkphp()
 		{
-			phpinfo();
+			// Khởi tạo lớp
+		    $redis = new Redis();
+
+		    // Thiết lập kết nối
+		    $redis->connect('127.0.0.1', 6379);
+
+		    if ($redis->ping() !== true)
+		    {
+		        echo "Redis Server not running ...";
+		        die;
+		    }
+		    else{
+		    	echo "kết nối thành công";
+		    }
 		}
 
 		public function search_order_details()
