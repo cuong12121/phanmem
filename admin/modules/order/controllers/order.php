@@ -116,13 +116,13 @@
 	        // Send the request
 	        $response = file_get_contents('https://api.dienmayai.com/api/search-data-order-details?search='.$search.'&user_package_id='.$user_id, FALSE, $context);
 
+	        session_start(); //chạy session
 
-	        $datas = file_get_contents('https://api.dienmayai.com/api/get-data-order-details?page='.$page.'&id_user='.$user_id, FALSE, $context);
+			$_SESSION['notification'] = $response; //khởi tạo session
 
+			// unset($_SESSION['name']); // Huỷ session name
 
-	        $info_data = json_decode($datas);
-
-	       	include 'modules/'.$this->module.'/views/'.$this->view.'/details.php';
+	      	header("Location: https://dienmayai.com/admin/order/detail");
 
 		}
 

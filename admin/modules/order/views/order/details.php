@@ -39,7 +39,7 @@
         font-size: 20px;
     }
     .return a{
-        color: red;
+        color: red !important;
     }
 </style>
 <div class="form-search">
@@ -53,14 +53,21 @@
 </div>
 <?php
     $date = date('d-m-Y');
-    if(!empty($search) && !empty($response)):
+
+    session_start();
+
+    $notification = $_SESSION['notification'];
+
+    if(!empty($notification)):
 ?>
 
-<h3 style="color: red"><?= $response ?> </h3>
+<h3 style="color: red"><?= $notification ?> </h3>
 
 <?php
 
     endif;
+
+    unset($_SESSION['notification']);
 ?>
 <h2>Danh sách đơn đã đóng mới nhất của  <?=  @$_SESSION ['ad_username'] ?></h2>
 
