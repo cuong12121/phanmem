@@ -12,4 +12,4 @@ if ($redis->exists('refresh')) {
 	$check = $redis->get("refresh");
 }
 
-return $check;
+echo $check;
