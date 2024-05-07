@@ -12,7 +12,7 @@ if ($redis->exists('refresh')) {
 	$check = $redis->get("refresh");
 
 	if($check ==1){
-		$redis->delete("refresh");
+		
 		$redis->set("refresh", 0);
 	}
 }
