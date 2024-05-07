@@ -41,6 +41,9 @@
     .return a{
         color: red !important;
     }
+    .mobile{
+        display: none;
+    }
 
     @media only screen and (max-width: 600px) {
         #tags {
@@ -48,6 +51,7 @@
             height: 50px;
             font-size: 26px;
         }
+
     }
 </style>
 <div class="form-search">
@@ -116,7 +120,14 @@
         ?>
 
         <tr>
-            <td><?= $dem ?></td>
+            <td>
+                <?= $dem ?>
+                <div class="mobile">
+
+                    <a href="https://dienmayai.com/admin/order/detail/search?search=<?= $value->id ?>&active=0">Hoàn đơn</a>
+                </div>
+                    
+            </td>
             <td><?= $value->tracking_code  ?></td>
             <td><?= $value->product_name  ?></td>
             <td><?= $value->shop_name  ?></td>
