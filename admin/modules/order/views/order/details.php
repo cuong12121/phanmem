@@ -124,7 +124,7 @@
         <tr>
             <td>
                 <?= $dem ?>
-                <div class="mobile">
+                <div class="mobile" style="color: red">
 
                     <a href="https://dienmayai.com/admin/order/detail/search?search=<?= $value->id ?>&active=0">Hoàn đơn</a>
                 </div>
