@@ -106,7 +106,7 @@
 
 		public function checkrealtime()
 		{
-			$redis = $this->connect_redis()
+			$redis = $this->connect_redis();
 
 			$check = 0;
 
