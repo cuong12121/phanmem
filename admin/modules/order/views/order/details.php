@@ -125,12 +125,12 @@
             <td><?=  number_format((float)$value->total_price, 0, ',', '.') ?>đ</td>
             <td class="return">
                 <?php
-                    if($now=== $date_package):
+                    if($now=== $date_package){
                 ?>    
                 <a href="https://dienmayai.com/admin/order/detail/search?search=<?= $value-> ?>&active=0">Hoàn đơn</a>
 
                 <?php 
-                    endif;
+                   }
                 ?>
             </td>
         </tr>
