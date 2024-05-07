@@ -81,9 +81,7 @@
 
 	        // Send the request
 	        $response = file_get_contents('https://api.dienmayai.com/api/get-data-order-details?page='.$page.'&id_user='.$user_id, FALSE, $context);
-
 	       
-
 	        $info_data = json_decode($response);
 
 	        if($user_id == 9):
