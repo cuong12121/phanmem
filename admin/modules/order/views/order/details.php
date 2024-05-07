@@ -41,10 +41,12 @@
     .return a{
         color: red !important;
     }
-    .mobile{
-        display: none;
-    }
 
+    @media only screen and (min-width: 601px) {
+        .mobile{
+            display: none;
+        }
+    }        
     @media only screen and (max-width: 600px) {
         #tags {
             margin-right: 15px;
