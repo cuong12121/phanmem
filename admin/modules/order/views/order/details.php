@@ -116,7 +116,7 @@
 
             <?php  
                 $date_time_package = date("d/m/Y,H:i:s", strtotime($value->date_package)); 
-                $date_package = date("d/m/Y", strtotime($value->date_package))
+                $date_package = date("d/m/Y", strtotime($value->date_package));
 
             ?>
 
