@@ -3,17 +3,31 @@ class ContactControllersServices_centers extends FSControllers {
 	
 	function display(){
 
-		var_dump(1);die;
-		$model = $this->model;
-		$list=$model->get_address_list();
-		$regions = $model->get_regions();
-		$manufactories = $model->get_manufactories();
-		$breadcrumbs = array ();
-		$breadcrumbs [] = array (0 => FSText::_ ( 'Trung tâm bảo hành' ), 1 => '' );
-		global $tmpl;
-		$tmpl->assign ( 'breadcrumbs', $breadcrumbs );
-		$tmpl -> set_seo_special();
-		include 'modules/'.$this->module.'/views/'.$this->view.'/'.'default.php';
+		$redis = new Redis();
+
+		// Thiết lập kết nối
+		$redis->connect('127.0.0.1', 6379);
+
+		$check =0;
+
+		if ($redis->exists('refresh')) {
+
+	    	$check = $redis->get("refresh");
+	    }
+
+	    return $check;
+
+		// var_dump(1);die;
+		// $model = $this->model;
+		// $list=$model->get_address_list();
+		// $regions = $model->get_regions();
+		// $manufactories = $model->get_manufactories();
+		// $breadcrumbs = array ();
+		// $breadcrumbs [] = array (0 => FSText::_ ( 'Trung tâm bảo hành' ), 1 => '' );
+		// global $tmpl;
+		// $tmpl->assign ( 'breadcrumbs', $breadcrumbs );
+		// $tmpl -> set_seo_special();
+		// include 'modules/'.$this->module.'/views/'.$this->view.'/'.'default.php';
 	}
 		
 		/* 
