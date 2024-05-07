@@ -41,6 +41,14 @@
     .return a{
         color: red !important;
     }
+
+    @media only screen and (max-width: 600px) {
+        #tags {
+            margin-right: 15px;
+            height: 50px;
+            font-size: 26px;
+        }
+    }
 </style>
 <div class="form-search">
     
