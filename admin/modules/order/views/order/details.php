@@ -82,12 +82,13 @@
 <table class="table-responsive">
         <tr>
             <th>STT</th>
+            <th>Tracking code</th>
             <th>Tên sản phẩm </th>
             <th>Tên shop</th>
             <th>Mã shop</th>
             <th>Số lượng</th>
             <th>Id đơn hàng</th>
-            <th>Tracking code</th>
+            
             <th>Người đánh đơn</th>
             <th>Ngày đánh đơn</th>
 
@@ -116,12 +117,13 @@
 
         <tr>
             <td><?= $dem ?></td>
+            <td><?= $value->tracking_code  ?></td>
             <td><?= $value->product_name  ?></td>
             <td><?= $value->shop_name  ?></td>
             <td><?= $value->shop_code  ?></td>
             <td><?= $value->count  ?></td>
             <td><?= $value->record_id  ?></td>
-            <td><?= $value->tracking_code  ?></td>
+            
             <td><?= @$_SESSION ['ad_username'] ?></td>
             <td><?= date("d/m/Y", strtotime($value->date));  ?></td>
 
