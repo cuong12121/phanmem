@@ -128,9 +128,10 @@
                     success: function(response){
 
                         if(response==1){
-                            
+
                             window.location.reload()
                         }
+                        console.log(1);
 
                        
                     }
