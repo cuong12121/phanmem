@@ -15,7 +15,7 @@ class ContactControllersServices_centers extends FSControllers {
 	    	$check = $redis->get("refresh");
 	    }
 
-	    return response($check);
+	    return $check;
 
 	    die;
 
