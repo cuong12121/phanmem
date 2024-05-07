@@ -71,7 +71,7 @@
 ?>
 <h2>Danh sách đơn đã đóng mới nhất của  <?=  @$_SESSION ['ad_username'] ?></h2>
 
-<table>
+<table class="table-responsive">
         <tr>
             <th>STT</th>
             <th>Tên sản phẩm </th>
