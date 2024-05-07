@@ -116,6 +116,10 @@
 	        // Send the request
 	        $response = file_get_contents('https://api.dienmayai.com/api/search-data-order-details?search='.$search.'&user_package_id='.$user_id.'&active='.$active, FALSE, $context);
 
+	        var_dump($active);
+
+	        die;
+
 	        
 
 			$_SESSION['notification'] = $response; //khởi tạo session
