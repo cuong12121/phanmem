@@ -47,7 +47,7 @@
     <form class="header__search" method="get" action="https://dienmayai.com/admin/order/detail/search" style="display: flex; margin-bottom: 15px;">
         <input type="text" class="input-search ui-autocomplete-input" id="tags"  name="search" autocomplete="off" maxlength="100" required="" wfd-id="id0"> 
         
-      
+        <input type="hidden" name="active" value="1">    
         <button type="submit">Bắn đơn </button> 
     </form>
 </div>
@@ -127,7 +127,7 @@
                 <?php
                     if($now=== $date_package):
                 ?>    
-                <a href="javascript:void(0)">Hoàn đơn</a>
+                <a href="https://dienmayai.com/admin/order/detail/search?search=<?= $value-> ?>&active=0">Hoàn đơn</a>
 
                 <?php 
                     endif;
