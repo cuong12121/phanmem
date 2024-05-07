@@ -118,7 +118,7 @@
         </ul>
     </nav>
 
-    <script>
+   <!--  <script>
         $(document).ready(function(){
             // Function to load realtime data
             function loadRealtimeData(){
@@ -140,4 +140,4 @@
                 loadRealtimeData();
             }, 2000);
         });
-    </script>
+    </script> -->
