@@ -84,12 +84,9 @@
 	       
 	        $info_data = json_decode($response);
 
-	        if($user_id == 9):
 
 	        include 'modules/'.$this->module.'/views/'.$this->view.'/details.php';
-	    	else:
-		    	include 'modules/'.$this->module.'/views/'.$this->view.'/trackingcodebig.php';	
-		    endif;
+	    	
 		}
 
 		public function search_order_details()
@@ -116,7 +113,7 @@
 	        // Send the request
 	        $response = file_get_contents('https://api.dienmayai.com/api/search-data-order-details?search='.$search.'&user_package_id='.$user_id.'&active='.$active, FALSE, $context);
 
-	      
+
 	        
 
 			$_SESSION['notification'] = $response; //khởi tạo session
