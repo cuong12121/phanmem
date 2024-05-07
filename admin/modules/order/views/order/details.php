@@ -79,6 +79,7 @@
 
 
         <?php 
+            $now = date("d/m/Y");
             // echo "<pre>";
             //     var_dump($info_data);
             // echo "</pre>";
@@ -102,11 +103,25 @@
             <td><?= $value->record_id  ?></td>
             <td><?= $value->tracking_code  ?></td>
             <td><?= date("d/m/Y", strtotime($value->date));  ?></td>
-            <td><?= date("d/m/Y,H:i:s", strtotime($value->date_package));  ?></td>
+
+            <?php  
+                $date_time_package = date("d/m/Y,H:i:s", strtotime($value->date_package)); 
+                $date_package = date("d/m/Y", strtotime($value->date_package))
+
+            ?>
+
+            <td><?= $date_time_package  ?></td>
             
             <td><?=  number_format((float)$value->total_price, 0, ',', '.') ?>đ</td>
             <td>
+                <?php
+                    if($now=== $date_package):
+                ?>    
                 <a href="javascript:void(0)">Hoàn đơn</a>
+
+                <?php 
+                    endif;
+                ?>
             </td>
         </tr>
 
