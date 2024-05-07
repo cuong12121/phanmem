@@ -103,7 +103,7 @@
 		        die;
 		    }
 		    else{
-		    	echo "kết nối thành công";
+		    	$redis->set("refresh", 0);
 		    }
 		}
 
