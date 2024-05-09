@@ -3,7 +3,12 @@
 	TemplateHelper::dt_edit_text(FSText :: _('Name'),'name',@$data -> name);
 
 	?>
-	
+	<?php 
+					echo "<pre>";
+						var_dump($data);
+					echo "</pre>";
+					die;
+				?>
 	<div>
 		<label for="parent" class="col-md-2 col-xs-12 ">Kho cha</label>
 
