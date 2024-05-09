@@ -23,7 +23,7 @@
 			  		$checked = '';
 			  		foreach ($datas as $key => $value) :
 			  			if(!empty($data->id)):
-			  				$checked = $value->id == $data->parent?'checked':'';
+			  				$checked = $value->id == $data->parent?'selected':'';
 			  			endif;	
 			  			# code...
 			  		
