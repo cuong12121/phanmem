@@ -9,7 +9,7 @@
 		<div class="col-md-10 col-xs-12">	
 			<select name="parent" id="parent" class="form-control">
 
-			  	<option value="0">Không chọn</option>
+			  	<option value="0"><?= $data->parent?></option>
 
 			  	<?php 
 			  		$checked = '';
