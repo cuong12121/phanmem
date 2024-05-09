@@ -16,7 +16,7 @@
 			  			# code...
 			  		
 			  	?>
-			  	<option value="<?= $value->id ?>" <?= $value->id== $data->parent?'checked':''  ?>> <?= $value->name ?></option>
+			  	<option value="<?= $value->id ?>"> <?= $value->name ?></option>
 			  	<?php 
 			  		endforeach;
 			  	?>
