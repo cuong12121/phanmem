@@ -5,7 +5,7 @@
 	?>
 	<label for="parent">Kho cha</label>
 
-	<select name="cars" id="cars">
+	<select name="parent" id="parent" class="form-control">
 
 	  	<option value="0">Kho Hà Nội</option>
 	  	<option value="0">Kho Sài Gòn</option>
