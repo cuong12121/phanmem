@@ -4,7 +4,7 @@
 
 	?>
 	<div>
-		<label for="parent" class="col-md-2 col-xs-12 control-label">Kho cha</label>
+		<label for="parent" class="col-md-2 col-xs-12 ">Kho cha</label>
 
 		<div class="col-md-10 col-xs-12">	
 			<select name="parent" id="parent" class="form-control">
