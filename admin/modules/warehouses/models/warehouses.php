@@ -59,6 +59,12 @@ class WarehousesModelsWarehouses extends FSModels
 	
 
 	function save($row = array(), $use_mysql_real_escape_string = 0) {
+
+		echo "<pre>";
+
+		var_dump($row);
+		echo "</pre>";
+		die;
 		$id = parent::save ( $row );
 		$data_sync = array();
 		$data_sync[] = array('field_check' => 'warehouses_id','tablenames' =>array('fs_warehouses_products', 'fs_warehouses_positions_products', 'fs_warehouses_positions_categories', 'fs_warehouses_positions','fs_warehouses_damaged_products_detail','fs_warehouses_damaged_products','fs_warehouses_check','fs_warehouses_bill_positions','fs_warehouses_bill','fs_warehouses_bill_buy') ,'field_sync' => array('warehouses_name' => 'name'));
