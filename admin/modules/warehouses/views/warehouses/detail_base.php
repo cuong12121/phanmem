@@ -5,7 +5,7 @@
 	?>
 	<?php 
 					echo "<pre>";
-						var_dump($data);
+						var_dump($data->parent);
 					echo "</pre>";
 					die;
 				?>
