@@ -12,11 +12,15 @@
 			  	<option value="0">Không chọn</option>
 
 			  	<?php 
+			  		$checked = '';
 			  		foreach ($datas as $key => $value) :
+			  			if(!empty($data->id)):
+			  				$checked = $value->id == $data->parent?'checked':''
+			  			endif;	
 			  			# code...
 			  		
 			  	?>
-			  	<option value="<?= $value->id ?>"> <?= $value->name ?></option>
+			  	<option value="<?= $value->id ?>" <?= $checked  ?>> <?= $value->name ?></option>
 			  	<?php 
 			  		endforeach;
 			  	?>
