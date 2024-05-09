@@ -8,7 +8,7 @@
 	<select name="parent" id="parent" class="form-control">
 
 	  	<option value="0">Kho Hà Nội</option>
-	  	<option value="0">Kho Sài Gòn</option>
+	  	<option value="1">Kho Sài Gòn</option>
 	  	
 	</select>
 
