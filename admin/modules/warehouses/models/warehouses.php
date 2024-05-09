@@ -126,6 +126,16 @@ class WarehousesModelsWarehouses extends FSModels
 		$list = $tree -> indentRows2($result);
 		return $list;
 	}
+
+	function get_data_parent(){
+		global $db;
+		$sql = " SELECT id, name
+		FROM  fs_warehouses WHERE parent = 0";
+		$db->query ( $sql );
+		$result = $db->getObjectList();
+		return $result;
+	}
+
 	function get_categories_filter() {
 		global $db;
 		$sql = " SELECT id, name, parent_id AS parent_id 
