@@ -55,7 +55,11 @@ class WarehousesControllersWarehouses extends Controllers
 	{
 		$ids = FSInput::get('id',array(),'array');
 		$id = $ids[0];
+
 		$model = $this -> model;
+
+		$datas = $model->get_data_parent();
+		
 		$data = $model->get_record_by_id($id);
 
 		$breadcrumbs = array();
