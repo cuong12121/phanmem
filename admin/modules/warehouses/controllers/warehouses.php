@@ -37,7 +37,7 @@ class WarehousesControllersWarehouses extends Controllers
 		$model = $this -> model;
 		$categories = $model->get_categories_tree();
 		$maxOrdering = $model->getMaxOrdering();
-		$data = $model->get_data_parent();
+		$datas = $model->get_data_parent();
 
 		$categories_product = $model->get_categories_product_tree();
 		$categories_filter = $model->get_categories_filter();
