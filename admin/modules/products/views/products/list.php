@@ -241,34 +241,28 @@ TemplateHelper::genarate_form_liting(clone $this,$this->module,$this -> view,$li
             $('.form-horizontal').scroll(function() {
               // Lấy vị trí cuộn hiện tại của trang
               var scrollPosition = $(this).scrollTop();
-              
-              if(scrollPosition>=200){
-                    if(!$('.table-bordered thead').hasClass('scrolltable')){
-                        
-                        $('.table-bordered thead').addClass('scrolltable');
-                        
-                        
-                        $('.scrolltable tr th').addClass('remove_border');
 
-                        
-                    }  
-                  
-              }
-              else{
-                  if($('.table-bordered thead').hasClass('scrolltable')){
+              	if(scrollPosition>=200){
+              		$('.scrolltable').show();
+
+              	} 
+              	else{
+              		$('.scrolltable').hide();
+              	}	
+              
+           
+                if(!$('.table-bordered thead').hasClass('scrolltable')){
                     
-                    $('.scrolltable tr th').removeClass('remove_border');
-                        
-                     $('.table-bordered thead').removeClass('scrolltable');
-                      
-                     
-                      
-                  }
-              }
-        
+                    $('.table-bordered thead').addClass('scrolltable');
+                    
+                    
+                    $('.scrolltable tr th').addClass('remove_border');
+
+                }  
+                  
+           
              
-            });
-          });
+        });
 </script>
 
 
