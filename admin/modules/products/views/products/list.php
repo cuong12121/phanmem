@@ -260,7 +260,7 @@ TemplateHelper::genarate_form_liting(clone $this,$this->module,$this -> view,$li
 
                 }  
                   
-           
+           	}
              
         });
 </script>
