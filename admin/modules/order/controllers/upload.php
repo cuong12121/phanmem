@@ -186,7 +186,7 @@
 					    else{
 					        
 					        
-					        $html .= '<a target="_blank" style="color: green;" href="javascript:void(0)">'.$file_direct_check.'</a><br/>';
+					        $html .= '<a target="_blank" style="color: green;" href="javascript:void(0)">'.PATH_BASE.$path.$base_name.'</a><br/>';
 					    }
 					    
 					
