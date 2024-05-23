@@ -189,7 +189,7 @@
 					        	$html .= '<a target="_blank" style="color: rgba(255, 153, 0, 0.79);" href="'.$convert_url_vietnam.'">'.$base_name.'</a><br/>';
 					        }
 					        else{
-					        	 $html .= '<a target="_blank" style="color: red;" href="javascript:void(0)">'.PATH_BASE.$path.$base_name.'</a><br/>';
+					        	 $html .= '<a target="_blank" style="color: red;" href="javascript:void(0)">'.$convert_url_vietnam.'</a><br/>';
 					        }
 					        
 					       
