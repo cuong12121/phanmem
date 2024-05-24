@@ -197,17 +197,18 @@
 
 					        	$headers = @get_headers($convert_url_vietnam);
 
-					        	$exit = 'không tồn tại';
-
 								if(strpos($headers[0],'404') === false)
 
 								{
-									$exit = 'tồn tại';
+									$html .= '<a target="_blank" style="color: rgba(255, 153, 0, 0.79);" href="'.$convert_url_vietnam.'">'.$base_name.'</a><br/>';
 								  
 
 								}
+								else{
+									 $html .= '<a target="_blank" style="color: red;" href="'.$convert_url_vietnam.'">File không tồn tại</a><br/>';
+								}
 
-					        	 $html .= '<a target="_blank" style="color: red;" href="'.$convert_url_vietnam.'">'.$exit.'</a><br/>';
+					        	
 					        }
 					        
 					       
