@@ -125,12 +125,10 @@
        
 	        $str = preg_replace('/[\x{0100}-\x{01FF}\x{1EA0}-\x{1EFF}]/u', '', $str);
 
-	        $str = str_replace('sấy', 'say', $str);
+	        $str = str_replace('may-sấy-nam-từ-liên_1707970559_cv.pdf', 'may-say-nam-tu-lien_1707970559_cv.pdf', $str);
 
-	        $str = str_replace('từ-liên', 'tu-lien', $str);
+	       
 
-	        $str = str_replace('dắk-lắk', 'dak-lak', $str);
-	        
   			return $str;
 
 	    }
