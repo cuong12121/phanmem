@@ -196,7 +196,7 @@
 					        else{
 
 					        	var_dump(file_exists($convert_url_vietnam));
-					        	 $html .= '<a target="_blank" style="color: red;" href="'.$convert_url_vietnam.'">'.$convert_url_vietnam.'</a><br/>';
+					        	 $html .= '<a target="_blank" style="color: red;" href="'.$convert_url_vietnam.'">'.file_exists($convert_url_vietnam).'</a><br/>';
 					        }
 					        
 					       
