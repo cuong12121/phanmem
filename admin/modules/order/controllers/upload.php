@@ -187,7 +187,7 @@
 					    }
 					    else{
 
-					    	$html .= '<a target="_blank" style="color: red;" href="'.$url.'">'.$url.'</a><br/>';
+					    	$html .= '<a target="_blank" style="color: red;" href="'.$file_namesss.'">'.$file_namesss.'</a><br/>';
 
 					       
 					    }
