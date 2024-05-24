@@ -123,56 +123,8 @@
 		function convertSlug($str)
         {
        
-	         $str = mb_strtolower($str, 'UTF-8');
-		  $vietnamese_accents = array(
-		    'à' => 'a',
-		    'á' => 'a',
-		    'ả' => 'a',
-		    'ã' => 'a',
-		    'ạ' => 'a',
-		    'ắ' => 'a',
-		    'ằ' => 'a',
-		    'ẵ' => 'a',
-		    'ặ' => 'a',
-		    'è' => 'e',
-		    'é' => 'e',
-		    'ẻ' => 'e',
-		    'ẽ' => 'e',
-		    'ẹ' => 'e',
-		    'ê' => 'e',
-		    'ế' => 'e',
-		    'ề' => 'e',
-		    'ễ' => 'e',
-		    'ặ' => 'e',
-		    'ì' => 'i',
-		    'í' => 'i',
-		    'ỉ' => 'i',
-		    'ĩ' => 'i',
-		    'ị' => 'i',
-		    'ò' => 'o',
-		    'ó' => 'o',
-		    'ỏ' => 'o',
-		    'õ' => 'o',
-		    'ọ' => 'o',
-		    'ô' => 'o',
-		    'ố' => 'o',
-		    'ồ' => 'o',
-		    'ỗ' => 'o',
-		    'ộ' => 'o',
-		    'ù' => 'u',
-		    'ú' => 'u',
-		    'ủ' => 'u',
-		    'ũ' => 'u',
-		    'ụ' => 'u',
-		    'ỳ' => 'y',
-		    'ý' => 'y',
-		    'ỷ' => 'y',
-		    'ỹ' => 'y',
-		    'ỵ' => 'y',
-		    'đ' => 'd',
-		  );
-		  $str = str_replace(array_keys($vietnamese_accents), array_values($vietnamese_accents), $str);
-		  return $str;
+	        $str = preg_replace('/[\x{0100}-\x{01FF}\x{1EA0}-\x{1EFF}]/u', '', $str);
+  			return $str;
 
 	    }
 
