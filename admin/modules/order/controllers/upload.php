@@ -218,7 +218,7 @@
 					        $html .= '<a target="_blank" style="color: rgba(255, 153, 0, 0.79);" href="'.$url.'">'.$base_name.'</a><br/>';
 					    }
 					    else{
-					    	$convert_url_vietnam = $this->convertSlug(URL_ROOT.$path.$base_name);
+					    	$convert_url_vietnam = convertSlug(URL_ROOT.$path.$base_name);
 					        if(file_exists($convert_url_vietnam)){
 					        	$html .= '<a target="_blank" style="color: rgba(255, 153, 0, 0.79);" href="'.$convert_url_vietnam.'">'.$base_name.'</a><br/>';
 					        }
