@@ -226,7 +226,7 @@
 					        // 	 $html .= '<a target="_blank" style="color: red;" href="javascript:void(0)">'.$convert_url_vietnam.'</a><br/>';
 					        // }
 					        
-					       $html .= '<a target="_blank" style="color: red;" href="javascript:void(0)">'.$convert_url_vietnam.'</a><br/>';
+					       $html .= '<a target="_blank" style="color: red;" href="javascript:void(0)">'.$base_name.'</a><br/>';
 					    }
 					    
 					
