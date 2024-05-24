@@ -127,7 +127,7 @@
 
 	        $str = str_replace('may-sấy-nam-từ-liên_1707970559_cv.pdf', 'may-say-nam-tu-lien_1707970559_cv.pdf', $str);
 
-	       
+	        $str = str_replace('may-sấy-toc-dắk-lắk_1707970141_cv.pdf', 'may-say-toc-dak-lak_1707970141_cv.pdf', $str);
 
   			return $str;
 
