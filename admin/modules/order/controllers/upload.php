@@ -187,33 +187,11 @@
 					    }
 					    else{
 
-					    	$convert_basename = $model->convertSlug($base_name);
-					    	$convert_url_vietnam = URL_ROOT.$path.$convert_basename;
-					    	
-					        if(file_exists($convert_url_vietnam)){
-					        	$html .= '<a target="_blank" style="color: rgba(255, 153, 0, 0.79);" href="'.$convert_url_vietnam.'">'.$base_name.'</a><br/>';
-					        }
-					        else{
+					    	$html .= '<a target="_blank" style="color: red;" href="'.$url.'">'.$url.'</a><br/>';
 
-					        	$headers = @get_headers($convert_url_vietnam);
-
-								if(strpos($headers[0],'404') === false)
-
-								{
-									$html .= '<a target="_blank" style="color: rgba(255, 153, 0, 0.79);" href="'.$convert_url_vietnam.'">'.$base_name.'</a><br/>';
-								  
-
-								}
-								else{
-									 $html .= '<a target="_blank" style="color: red;" href="'.$convert_url_vietnam.'">File không tồn tại</a><br/>';
-								}
-
-					        	
-					        }
-					        
 					       
 					    }
-					    
+					 
 					
 					
 					}else{
