@@ -202,7 +202,7 @@
 								if(strpos($headers[0],'404') === false)
 
 								{
-									$exit = 'tồn tại'
+									$exit = 'tồn tại';
 								  
 
 								}
