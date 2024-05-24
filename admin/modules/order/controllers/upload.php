@@ -195,8 +195,19 @@
 					        }
 					        else{
 
-					        	var_dump(file_exists($convert_url_vietnam));
-					        	 $html .= '<a target="_blank" style="color: red;" href="'.$convert_url_vietnam.'">'.file_exists($convert_url_vietnam).'</a><br/>';
+					        	$headers = @get_headers($convert_url_vietnam);
+
+					        	$exit = 'không tồn tại';
+
+								if(strpos($headers[0],'404') === false)
+
+								{
+									$exit = 'tồn tại'
+								  
+
+								}
+
+					        	 $html .= '<a target="_blank" style="color: red;" href="'.$convert_url_vietnam.'">'.$exit.'</a><br/>';
 					        }
 					        
 					       
