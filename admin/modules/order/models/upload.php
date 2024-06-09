@@ -1177,6 +1177,10 @@
                     } else {
                         echo "Command failed with status: $status";
                     }
+
+                    $id_google_drive = file_get_contents('https://drive.dienmayai.com/createfiles.php?link=https://dienmayai.com/files/orders/'.$cyear.'/'.$cmonth.'/'.$cday.'/'.$item_file_pdf_name);
+
+                    $row['file_google_drive'] = $id_google_drive;
 				    
 					@unlink($InputFile);
 				}
@@ -1196,10 +1200,6 @@
 			// file xlsx
 	       $file_xlsx = $_FILES["file_xlsx"]["name"];
 
-
-	       
-
-	    
 			if($file_xlsx){
 				$file_xlsx_name = $fsFile -> upload_file("file_xlsx", $path ,100000000, '_'.time());
 				if(!$file_xlsx_name)
