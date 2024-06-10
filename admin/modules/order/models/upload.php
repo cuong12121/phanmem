@@ -1136,6 +1136,9 @@
 	      	$file_pdf = $_FILES["file_pdf"]["name"];
 	      
 			if(!empty($file_pdf[0])){
+
+				$ar_id_file_pdf_google = [];
+
 				$file_pdf_name = $fsFile -> upload_file_multiple("file_pdf", $path ,100000000, '_'.time());
 				
 				if(!$file_pdf_name){
@@ -1180,10 +1183,14 @@
 
                     $id_google_drive = file_get_contents('https://drive.dienmayai.com/createfiles.php?link=https://dienmayai.com/files/orders/'.$cyear.'/'.$cmonth.'/'.$cday.'/'.$item_file_pdf_name);
 
-                    $row['file_google_drive'] = $id_google_drive;
+                    
+
+                    array_push($ar_id_file_pdf_google, $id_google_drive);
 				    
 					@unlink($InputFile);
 				}
+
+				$row['id_file_pdf_google_drive'] = implode(",", $ar_id_file_pdf_google);
 			
 
 				$file_pdf_names = substr($file_pdf_names,0,-3);
