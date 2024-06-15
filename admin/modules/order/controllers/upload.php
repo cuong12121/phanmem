@@ -181,7 +181,7 @@
 	    //             		$result = $db->getObject ();
 
 					    // check tháng 3
-					    if( $checkfile->id>189222 && $checkfile->id< 199425){
+					    if( $id>189222 && $id< 199425){
 
 					    	$paths = str_replace('files/orders/2024','', $path); 
 					    	$url =  'https://cachsuadienmay.vn/public/'.$paths.$base_name;
