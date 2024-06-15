@@ -185,8 +185,10 @@
 
 					    	$paths = str_replace('files/orders/2024','', $path); 
 					    	$url =  'https://cachsuadienmay.vn/public/'.$paths.urlencode($base_name);
+
+					    	$pathInfo = parse_url($url, PHP_URL_PATH);
 						         
-						    $html .= '<a target="_blank" style="color: rgba(255, 153, 0, 0.79);" href="'.$url.'">'.urlencode($base_name).'</a><br/>';
+						    $html .= '<a target="_blank" style="color: rgba(255, 153, 0, 0.79);" href="'.$url.'">'.urlencode($pathInfo).'</a><br/>';
 					    }
 					    else{
 					    	if(!empty($checkfile)){
