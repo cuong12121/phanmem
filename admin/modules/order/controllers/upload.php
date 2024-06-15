@@ -188,7 +188,7 @@
 
 					    	$pathInfo = parse_url($url, PHP_URL_PATH);
 						         
-						    $html .= '<a target="_blank" style="color: rgba(255, 153, 0, 0.79);" href="'.$url.'">'.urlencode($pathInfo).'</a><br/>';
+						    $html .= '<a target="_blank" style="color: rgba(255, 153, 0, 0.79);" href="'.$url.'">'.$base_name.'</a><br/>';
 					    }
 					    else{
 					    	if(!empty($checkfile)){
