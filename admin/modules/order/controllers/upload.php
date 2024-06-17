@@ -184,7 +184,7 @@
 					    if( $id>189222 && $id< 199425){
 
 					    	$paths = str_replace('files/orders/2024','', $path); 
-					    	$url =  'https://cachsuadienmay.vn/public/'.$paths.urlencode($base_name);
+					    	$url =  'https://cachsuadienmay.vn/public/uploads'.$paths.urlencode($base_name);
 
 					    	$pathInfo = parse_url($url, PHP_URL_PATH);
 						         
