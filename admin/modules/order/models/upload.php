@@ -1212,6 +1212,10 @@
 				if(!$file_xlsx_name)
 					return false;
 				$row['file_xlsx'] = 'files/orders/'.$cyear.'/'.$cmonth.'/'.$cday.'/'.$file_xlsx_name;
+
+				 $id_google_excel = file_get_contents('https://drive.dienmayai.com/createfiles.php?link=https://dienmayai.com/files/orders/'.$cyear.'/'.$cmonth.'/'.$cday.'/'.$file_xlsx_name);
+
+				$row['file_excel_drive'] = $id_google_excel;
 			}
 
 			// đổi khung giờ fake sang khung giờ bán thì phải check giá min lại bằng cách bắt nhập lại
