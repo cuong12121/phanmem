@@ -121,11 +121,18 @@
 
 		public function search_order_details()
 		{
-			$search = $_GET['search'];
+
+			$define_id = ['&'=>208, '#'=>9];
+
+			$searchs = trim($_GET['search']);
+
+			$kytudefine = substr(trim($searchs), -1);
+
+			$search = str_replace($kytudefine, '', $searchs);
 
 			$page =1;
 
-			$user_id = $_SESSION['ad_userid'];
+			$user_id = $define_id[$kytudefine];
 
 			$active =$_GET['active'];
 
