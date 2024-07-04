@@ -332,7 +332,11 @@
 
                 $list_ar_str = implode(',', $list_Ar);
 
-                $model->prints_auto($list_ar_str, $data_info);
+                var_dump($list_ar_str);
+
+                die;
+
+                // $model->prints_auto($list_ar_str, $data_info);
 
 
             }
