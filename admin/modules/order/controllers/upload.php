@@ -180,10 +180,6 @@
 
 	                $list_ar_str = implode(',', $list_Ar);
 
-	                var_dump($list_ar_str);
-
-	                die;
-
 	                // $model->prints_auto($list_ar_str, $data_info);
 
 

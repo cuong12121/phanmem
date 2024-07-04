@@ -2108,22 +2108,17 @@
 		function prints_auto($str_id,$data)
         {
             if(!empty($str_id) && !empty($data)){
-                $link = 'index.php?module='.$this -> module.'&view='.$this -> view;
-                $page = FSInput::get('page',0);
-                if($page > 1){
-                    $link .= '&page='.$page;
-                }
-
-                $link = FSRoute::_('index.php?module='.$this -> module.'&view='.$this -> view);
-           
-                $str_ids = '215518, 215519';
+                
                 // $str_ids = implode(',',$ids);
                 $list = $this->get_records('id IN ('.$str_ids.')','fs_order_uploads');
 
                 //kiểm tra các file pdf với excel có tồn tại hay không
                 foreach ($list as $item){
                     if(!$item-> file_pdf || !$item-> file_xlsx){
-                        setRedirect($link,FSText :: _('Đơn chọn in thiếu file tải lên !'),'error');
+
+                    	echo "Đơn chọn in thiếu file tải lên";
+                        
+                        die;
                     }
 
                     $arr_name = explode('t,t',$item-> file_pdf);
@@ -2137,18 +2132,28 @@
                             }
                             $html .= '<a target="_blank" style="color: rgba(255, 153, 0, 0.79);" href="'.URL_ROOT.$path.$base_name.'">'.$base_name.'</a><br/>';
                             if(!file_exists(PATH_BASE.$path.$base_name)) {   
-                                setRedirect($link,FSText :: _('File PDF lỗi, vui lòng up lại file'),'error');
+                               	
+                               	echo "File PDF lỗi, vui lòng up lại file";
+
+                               	die;
                             }
                             $i++;
                         }
                     }else{
                         if(!file_exists(PATH_BASE.$item-> file_pdf)) {   
-                            setRedirect($link,FSText :: _('File PDF lỗi, vui lòng up lại file'),'error');
+
+                            echo "File PDF lỗi, vui lòng up lại file";
+
+                            die;
                         }
                     }
 
                     if(!file_exists(PATH_BASE.$item-> file_xlsx)) {   
-                        setRedirect($link,FSText :: _('File xlsx lỗi, vui lòng up lại file'),'error');
+
+                    	echo "File xlsx lỗi, vui lòng up lại file";
+
+                        die;
+                     
                     }
                 }
             
