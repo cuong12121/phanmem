@@ -1862,18 +1862,18 @@
 				$userid = $_SESSION['userid'];
 
 
-				if($userid ==9){
-					$str_ids ='226199,226198';
-				}
+				// if($userid ==9){
+				// 	$str_ids ='226199,226198';
+				// }
 
 				// $str_ids = implode(',',$ids);
 				$list = $this->get_records('id IN ('.$str_ids.')','fs_order_uploads');
 
-				if($userid ==9){
+				// if($userid ==9){
 
-					echo '<pre>'; var_dump($list); echo'</pre>';
-					die;
-				}	
+				// 	echo '<pre>'; var_dump($list); echo'</pre>';
+				// 	die;
+				// }	
 				
 				//kiểm tra các file pdf với excel có tồn tại hay không
 				foreach ($list as $item){
