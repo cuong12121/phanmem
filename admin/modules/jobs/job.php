@@ -8,8 +8,8 @@ $data = ["username"=>$username, "password"=>$password, "action"=>"login"]; //xem
 
 // URL đăng nhập và trang đích
 $loginUrl = "https://dienmayai.com/admin/login.php";
-// $targetUrl = "https://dienmayai.com/admin/module/jobs/job.php";
-$targetUrl = "https://dienmayai.com/admin/order/upload";
+$targetUrl = "https://dienmayai.com/admin/modules/jobs/job.php";
+// $targetUrl = "https://dienmayai.com/admin/order/upload";
 
 // Khởi tạo cURL session
 $ch = curl_init($loginUrl);
