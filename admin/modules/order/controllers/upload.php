@@ -135,6 +135,62 @@
 				setRedirect($link,FSText :: _('Không có đơn nào được in, vui lòng kiểm tra lại file đã nhập lên có khớp nhau không'),'error');	
 			}
 		}
+
+		function print_auto(){
+
+			global $db;
+
+			$model  = $this -> model;
+
+	        $platform = [1,2,3,4,6,8,9,10,11];
+
+	        // chạy đơn lúc 7h10
+
+	        $H = date('G');
+
+	        $house_id = $H<8?13:18;
+
+	        $data_info = [];
+
+	        for($i=1; $i<3; $i++){
+
+	            foreach ($platform as  $platforms) {
+	                
+	                 $query =  "SELECT id FROM fs_order_uploads AS a WHERE 1=1 AND warehouse_id = ".$i." AND house_id = ".$house_id." AND platform_id = ".$platforms." AND date ='".date('Y-m-d')."' ORDER BY created_time DESC , id DESC";
+
+	                $sql = $db->query ($query);
+	                $result = $db->getObjectList ();
+
+	                $list_Ar = [];
+
+	                if(!empty($result)){
+
+	                    foreach ($result as $key => $value) {
+	                   
+	                        array_push($list_Ar, $value->id);
+	                    }
+
+	                } 
+
+	                $data_info['house_id'] = $house_id;
+
+	                $data_info['platforms'] = $platforms;
+
+	                $data_info['warehouse_id'] = $i;
+
+	                $list_ar_str = implode(',', $list_Ar);
+
+	                var_dump($list_ar_str);
+
+	                die;
+
+	                // $model->prints_auto($list_ar_str, $data_info);
+
+
+	            }
+	        }    
+
+		}
 		
 	}
 
@@ -288,61 +344,7 @@
 		
 	}
 
-	function print_auto(){
 
-		global $db;
-
-		$model  = $this -> model;
-
-        $platform = [1,2,3,4,6,8,9,10,11];
-
-        // chạy đơn lúc 7h10
-
-        $H = date('G');
-
-        $house_id = $H<8?13:18;
-
-        $data_info = [];
-
-        for($i=1; $i<3; $i++){
-
-            foreach ($platform as  $platforms) {
-                
-                 $query =  "SELECT id FROM fs_order_uploads AS a WHERE 1=1 AND warehouse_id = ".$i." AND house_id = ".$house_id." AND platform_id = ".$platforms." AND date ='".date('Y-m-d')."' ORDER BY created_time DESC , id DESC";
-
-                $sql = $db->query ($query);
-                $result = $db->getObjectList ();
-
-                $list_Ar = [];
-
-                if(!empty($result)){
-
-                    foreach ($result as $key => $value) {
-                   
-                        array_push($list_Ar, $value->id);
-                    }
-
-                } 
-
-                $data_info['house_id'] = $house_id;
-
-                $data_info['platforms'] = $platforms;
-
-                $data_info['warehouse_id'] = $i;
-
-                $list_ar_str = implode(',', $list_Ar);
-
-                var_dump($list_ar_str);
-
-                die;
-
-                // $model->prints_auto($list_ar_str, $data_info);
-
-
-            }
-        }    
-
-	}
 		
 
 	function view_print($controle,$id){
