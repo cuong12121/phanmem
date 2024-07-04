@@ -180,7 +180,7 @@
 
 	                $list_ar_str = implode(',', $list_Ar);
 
-	                // $model->prints_auto($list_ar_str, $data_info);
+	                $model->prints_auto($list_ar_str, $data_info);
 
 
 	            }
