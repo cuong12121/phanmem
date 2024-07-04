@@ -1858,6 +1858,13 @@
 					setRedirect($link,FSText :: _('Vui lòng chọn lọc khung ngày, giờ, kho, sàn trước khi in!'),'error');
 				}
 
+				// test phần kiểm tra in với userid là admin 
+				$userid = $_SESSION['userid'];
+
+
+				if($userid ==9){
+					$str_ids ='226199,226198';
+				}
 
 				// $str_ids = implode(',',$ids);
 				$list = $this->get_records('id IN ('.$str_ids.')','fs_order_uploads');
