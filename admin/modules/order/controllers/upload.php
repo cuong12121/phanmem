@@ -194,10 +194,11 @@
 		
 	}
 
+	// phần này bên ngoài class chưa rõ lý do
+
 		function view_pdf($controle,$id){
 			$model = $controle -> model;
-			
-			
+
 			$data = $model->get_record('id = ' .$id,'fs_order_uploads','id,file_pdf,total_page_pdf');
 			if(!$data-> file_pdf){
 				$html ='<strong style="color:red">Lỗi thiếu file</strong>';
@@ -205,11 +206,7 @@
 			}
 			$link = $data-> file_pdf;
 			
-			
-			
 			$arr_name = explode('t,t',$link);
-			
-			
 			
 			$html ="";
 			if(!empty($arr_name)){
