@@ -115,7 +115,7 @@ class WarehousesModelsCheck extends FSModels
 					$row['amount'] = $check_exist-> amount_deliver + $product-> reality;
 					$this-> _update($row,'fs_warehouses_products','id = '.$check_exist-> id);
 
-					var_dump($this-> _update($row,'fs_warehouses_products','id = '.$check_exist-> id));
+					var_dump($check_exist-> id);
 
 					die;
 				} else {
