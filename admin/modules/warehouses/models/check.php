@@ -166,9 +166,10 @@ class WarehousesModelsCheck extends FSModels
 			}
 			
 		}
+		return $id;
 	}
 
-	return $id;
+	
 }
 
 
