@@ -124,12 +124,9 @@ class WarehousesModelsCheck extends FSModels
 					$this-> _add($row,'fs_warehouses_products');
 				}
 
-				if(empty($check_exist-> amount)){
-					echo $product-> product_id.'<br>';
-				}
-
+			
 				$row_10 = array();
-				$row_10['amount'] = $product-> reality - $check_exist-> amount;
+				$row_10['amount'] = $product-> reality -  !empty($check_exist-> amount)?$check_exist-> amount:0;
 				$row_10['ton'] = $row['amount'];
 				$row_10['type'] = 5;
 				$row_10['type_action_name'] = "Kiểm kho";
