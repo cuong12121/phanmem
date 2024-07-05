@@ -94,6 +94,14 @@ class WarehousesModelsCheck extends FSModels
 		return $query;
 	}
 
+
+	public function showlist($id)
+	{
+		$list_products = $this-> get_records('bill_id = '.$id,$this -> table_name_detail,'*');
+
+		return $list_products;
+	}
+
 	function save($row = array(), $use_mysql_real_escape_string = 0) {
 
 
@@ -181,6 +189,8 @@ function add_products_warehouses($id) {
 	$list_products = $this-> get_records('bill_id = '.$id,$this -> table_name_detail,'*');
 
 	$warehouses = $this-> get_record('id = '.$bill-> warehouses_id,'fs_warehouses','*');
+
+
 
 	if(!empty($list_products)) {
 
