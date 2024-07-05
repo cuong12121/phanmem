@@ -144,6 +144,8 @@
 
 	        $platform = [1,2,3,4,6,8,9,10,11];
 
+	        $data_order = [];
+
 	        // chạy đơn lúc 7h10
 
 	        $H = date('G');
@@ -180,11 +182,15 @@
 
 	                $list_ar_str = implode(',', $list_Ar);
 
-	                $model->prints_auto($list_ar_str, $data_info);
+	                array_push($data_order, $list_ar_str);
+
+	                // $model->prints_auto($list_ar_str, $data_info);
 
 
 	            }
-	        }    
+	        } 
+
+	        print_r($data_order);   
 
 		}
 		
