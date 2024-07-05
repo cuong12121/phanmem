@@ -126,6 +126,9 @@ class WarehousesModelsCheck extends FSModels
 
 		// }
 
+		var_dump($style_import);
+		die;
+
 		if($style_import == 2 && @$name_excel) {
 			$row['file'] = $this-> path_excel_name.$excel;
 			$row['file_name'] = $name_excel;
