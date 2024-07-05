@@ -124,6 +124,12 @@ class WarehousesModelsCheck extends FSModels
 					$this-> _add($row,'fs_warehouses_products');
 				}
 
+				if(empty($check_exist-> amount)){
+					echo $product-> product_id;
+
+					die;
+				}
+
 				$row_10 = array();
 				$row_10['amount'] = $product-> reality - $check_exist-> amount;
 				$row_10['ton'] = $row['amount'];
