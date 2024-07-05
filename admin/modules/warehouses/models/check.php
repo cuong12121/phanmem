@@ -96,8 +96,7 @@ class WarehousesModelsCheck extends FSModels
 
 	function save($row = array(), $use_mysql_real_escape_string = 0) {
 
-		var_dump($style_import);
-		die;
+
 		
 		$id_old = FSInput::get ('id');
 		// $status = FSInput::get ('status');
