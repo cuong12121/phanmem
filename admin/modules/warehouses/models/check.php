@@ -160,6 +160,10 @@ class WarehousesModelsCheck extends FSModels
 
 		if($status == 4) {
 			if($id_old) {
+
+				var_dump(1);
+
+				die;
 				$this -> add_products_warehouses($id_old); // cập nhật tồn kho khi hoàn thành
 			} else {
 				$this -> add_products_warehouses($id); // cập nhật tồn kho khi hoàn thành
