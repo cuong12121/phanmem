@@ -100,9 +100,6 @@ class WarehousesModelsCheck extends FSModels
 		
 		$id_old = FSInput::get ('id');
 
-		var_dump($id_old);
-
-		die;
 		// $status = FSInput::get ('status');
 
 		if($id_old) {
