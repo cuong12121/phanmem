@@ -60,32 +60,23 @@ class WarehousesControllersCheck extends Controllers
 	}
 
 	function edit(){
+		$ids = FSInput::get('id',array(),'array');
+		$id = $ids[0];
 		$model = $this -> model;
+		$data = $model->get_record_by_id($id);
 
-		$id = 2;
-		 $list = $model->showlist($id);
+		$list_products = $model-> get_records('bill_id = '.$id,'fs_warehouses_check_detail','*');
 
-		echo'<pre>'; var_dump($list); echo'</pre>';
+		$warehouses = $model->get_records('1=1','fs_warehouses','*');
 
-		die;
-
-		// $ids = FSInput::get('id',array(),'array');
-		// $id = $ids[0];
-		// $model = $this -> model;
-		// $data = $model->get_record_by_id($id);
-
-		// $list_products = $model-> get_records('bill_id = '.$id,'fs_warehouses_check_detail','*');
-
-		// $warehouses = $model->get_records('1=1','fs_warehouses','*');
-
-		// $breadcrumbs = array();
-		// $breadcrumbs[] = array(0=>'Danh sách Kiểm kho', 1 => 
-		// 	FSRoute::_("index.php?module=".$this-> module."&view=".$this-> view));	
-		// global $tmpl;
-		// $tmpl->assign ( 'breadcrumbs', $breadcrumbs );
+		$breadcrumbs = array();
+		$breadcrumbs[] = array(0=>'Danh sách Kiểm kho', 1 => 
+			FSRoute::_("index.php?module=".$this-> module."&view=".$this-> view));	
+		global $tmpl;
+		$tmpl->assign ( 'breadcrumbs', $breadcrumbs );
 
 
-		// include 'modules/'.$this->module.'/views/'.$this->view.'/detail.php';
+		include 'modules/'.$this->module.'/views/'.$this->view.'/detail.php';
 	}
 
 	function print(){
