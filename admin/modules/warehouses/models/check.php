@@ -97,9 +97,59 @@ class WarehousesModelsCheck extends FSModels
 
 	public function showlist($id)
 	{
+
+		$bill = $this-> get_record('id = '.$id,$this -> table_name,'*');
+
 		$list_products = $this-> get_records('bill_id = '.$id,$this -> table_name_detail,'*');
 
-		return $list_products;
+		$warehouses = $this-> get_record('id = '.$bill-> warehouses_id,'fs_warehouses','*');
+
+
+
+		if(!empty($list_products)) {
+
+			foreach ($list_products as $product) {
+				$check_exist = $this-> get_record('product_id = '.$product-> product_id.' AND warehouses_id = '.$bill-> warehouses_id,'fs_warehouses_products','*');
+				if(!empty($check_exist)) {
+					$row = array();
+					$row['amount'] = $check_exist-> amount_deliver + $product-> reality;
+					$this-> _update($row,'fs_warehouses_products','id = '.$check_exist-> id);
+				} else {
+					$row = array();
+					$row['product_id'] = $product-> product_id;
+					$row['warehouses_id'] = $bill-> warehouses_id;
+					$row['warehouses_name'] = $warehouses-> name;
+					$row['amount'] = $product-> reality;
+
+					$this-> _add($row,'fs_warehouses_products');
+				}
+
+				$row_10 = array();
+				$row_10['amount'] = $product-> reality - $check_exist-> amount;
+				$row_10['ton'] = $row['amount'];
+				$row_10['type'] = 5;
+				$row_10['type_action_name'] = "Kiểm kho";
+				$row_10['bill_id'] = $id;
+				$row_10['bill_detail_id'] = $product-> id;
+				$row_10['product_id']   = $product-> product_id;
+				$info_product = $this->get_record('id = '.$product-> product_id,'fs_products');
+
+				$row_10['product_code'] = $info_product-> code;
+				$row_10['product_name'] = $info_product-> name;
+
+				$row_10['warehouses_id'] = $bill-> warehouses_id;
+				$row_10['warehouses_name'] = $bill-> warehouses_name;
+				
+				$row_10['note'] = $bill-> note;
+				$row_10['status'] = 4;
+				$row_10['time_add'] = date('Y-m-d H:i:s');
+				$row_10['created_time'] = date('Y-m-d H:i:s');
+
+				// $rs_add = $this-> _add($row_10,'fs_warehouses_bill_detail_history');
+			}
+		}
+
+		return $row_10;
 	}
 
 	function save($row = array(), $use_mysql_real_escape_string = 0) {
