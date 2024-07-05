@@ -85,7 +85,7 @@ class WarehousesControllersCheck extends Controllers
 		$tmpl->assign ( 'breadcrumbs', $breadcrumbs );
 
 
-		// include 'modules/'.$this->module.'/views/'.$this->view.'/detail.php';
+		include 'modules/'.$this->module.'/views/'.$this->view.'/detail.php';
 	}
 
 	function print(){
