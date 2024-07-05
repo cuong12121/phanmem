@@ -145,7 +145,7 @@ class WarehousesModelsCheck extends FSModels
 
 		$id = parent::save ( $row );
 
-		// echo $id;die;
+		echo $id;die;
 
 		if($id) {
 		if(($id && !$id_old) || @$status_last == 1) { // tạo mới hoặc sửa phiếu tạm
@@ -160,10 +160,6 @@ class WarehousesModelsCheck extends FSModels
 
 		if($status == 4) {
 			if($id_old) {
-
-				var_dump(1);
-
-				die;
 				$this -> add_products_warehouses($id_old); // cập nhật tồn kho khi hoàn thành
 			} else {
 				$this -> add_products_warehouses($id); // cập nhật tồn kho khi hoàn thành
