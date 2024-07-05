@@ -94,80 +94,80 @@ class WarehousesModelsCheck extends FSModels
 		return $query;
 	}
 
-	function save($row = array(), $use_mysql_real_escape_string = 0) {
+	// function save($row = array(), $use_mysql_real_escape_string = 0) {
 
 
 		
-		$id_old = FSInput::get ('id');
+	// 	$id_old = FSInput::get ('id');
 
-		// $status = FSInput::get ('status');
+	// 	// $status = FSInput::get ('status');
 
-		// var_dump($status);
+	// 	// var_dump($status);
 
-		if($id_old) {
-			$check_data = $this-> get_record('id = '.$id_old,$this -> table_name,'*');
-			$status_last = $check_data-> status;
-		}
+	// 	if($id_old) {
+	// 		$check_data = $this-> get_record('id = '.$id_old,$this -> table_name,'*');
+	// 		$status_last = $check_data-> status;
+	// 	}
 
-		$warehouses_id = FSInput::get ('warehouses_id');
-		if($warehouses_id) {
-			$warehouses = $this-> get_record('id = '.$warehouses_id,'fs_warehouses','id,name');
-			$row['warehouses_name'] = $warehouses-> name;
-		}
+	// 	$warehouses_id = FSInput::get ('warehouses_id');
+	// 	if($warehouses_id) {
+	// 		$warehouses = $this-> get_record('id = '.$warehouses_id,'fs_warehouses','id,name');
+	// 		$row['warehouses_name'] = $warehouses-> name;
+	// 	}
 
 
-		$status = FSInput::get ('status');
-		$style_import = FSInput::get ('style_import');
+	// 	$status = FSInput::get ('status');
+	// 	$style_import = FSInput::get ('style_import');
 
-		// $file_excel = FSInput::get ('file_excel');
+	// 	// $file_excel = FSInput::get ('file_excel');
 
-		// if($file_excel) {
-		if($style_import == 2){
-			$fsFile = FSFactory::getClass('FsFiles');
-			$excel = $fsFile -> uploadExcel('file_excel', $this-> path_excel,200000000, '_'.time());
-			$excel_arr = explode("/", $excel);
-			$name_excel = $excel_arr[count($excel_arr) - 1];
-		}
+	// 	// if($file_excel) {
+	// 	if($style_import == 2){
+	// 		$fsFile = FSFactory::getClass('FsFiles');
+	// 		$excel = $fsFile -> uploadExcel('file_excel', $this-> path_excel,200000000, '_'.time());
+	// 		$excel_arr = explode("/", $excel);
+	// 		$name_excel = $excel_arr[count($excel_arr) - 1];
+	// 	}
 
-		// }
+	// 	// }
 
 		
 
-		if($style_import == 2 && @$name_excel) {
-			$row['file'] = $this-> path_excel_name.$excel;
-			$row['file_name'] = $name_excel;
-			if(!empty($check_data)) {
-				unlink($this-> path_excel.$check_data-> file);
-			}
-		}
+	// 	if($style_import == 2 && @$name_excel) {
+	// 		$row['file'] = $this-> path_excel_name.$excel;
+	// 		$row['file_name'] = $name_excel;
+	// 		if(!empty($check_data)) {
+	// 			unlink($this-> path_excel.$check_data-> file);
+	// 		}
+	// 	}
 
-		// echo $this-> path_excel_name.$excel;die;
+	// 	// echo $this-> path_excel_name.$excel;die;
 
-		$id = parent::save ( $row );
+	// 	$id = parent::save ( $row );
 
-		echo $id;die;
+	// 	// echo $id;die;
 
-		if($id) {
-		if(($id && !$id_old) || @$status_last == 1) { // tạo mới hoặc sửa phiếu tạm
-			if($style_import == 1) {
-				// danh sách sp trong bill nhập tay
-				$this -> add_products_detail($id); 
-			} elseif($style_import == 2 && @$excel) {
-			// danh sách sp trong bill nhập excel
-				$this -> add_products_detail_excel($id,$warehouses_id,$excel); 
-			}
-		}
+	// 	if($id) {
+	// 	if(($id && !$id_old) || @$status_last == 1) { // tạo mới hoặc sửa phiếu tạm
+	// 		if($style_import == 1) {
+	// 			// danh sách sp trong bill nhập tay
+	// 			$this -> add_products_detail($id); 
+	// 		} elseif($style_import == 2 && @$excel) {
+	// 		// danh sách sp trong bill nhập excel
+	// 			$this -> add_products_detail_excel($id,$warehouses_id,$excel); 
+	// 		}
+	// 	}
 
-		if($status == 4) {
-			if($id_old) {
-				$this -> add_products_warehouses($id_old); // cập nhật tồn kho khi hoàn thành
-			} else {
-				$this -> add_products_warehouses($id); // cập nhật tồn kho khi hoàn thành
-			}
+	// 	if($status == 4) {
+	// 		if($id_old) {
+	// 			$this -> add_products_warehouses($id_old); // cập nhật tồn kho khi hoàn thành
+	// 		} else {
+	// 			$this -> add_products_warehouses($id); // cập nhật tồn kho khi hoàn thành
+	// 		}
 			
-		}
-		return $id;
-	}
+	// 	}
+	// 	return $id;
+	// }
 
 	
 }
