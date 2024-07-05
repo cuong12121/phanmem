@@ -114,6 +114,10 @@ class WarehousesModelsCheck extends FSModels
 					$row = array();
 					$row['amount'] = $check_exist-> amount_deliver + $product-> reality;
 					$this-> _update($row,'fs_warehouses_products','id = '.$check_exist-> id);
+
+					var_dump($this-> _update($row,'fs_warehouses_products','id = '.$check_exist-> id));
+
+					die;
 				} else {
 					$row = array();
 					$row['product_id'] = $product-> product_id;
@@ -146,7 +150,7 @@ class WarehousesModelsCheck extends FSModels
 				$row_10['time_add'] = date('Y-m-d H:i:s');
 				$row_10['created_time'] = date('Y-m-d H:i:s');
 
-				// $rs_add = $this-> _add($row_10,'fs_warehouses_bill_detail_history');
+				$rs_add = $this-> _add($row_10,'fs_warehouses_bill_detail_history');
 			}
 		}
 
