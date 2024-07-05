@@ -125,9 +125,7 @@ class WarehousesModelsCheck extends FSModels
 				}
 
 				if(empty($check_exist-> amount)){
-					echo $product-> product_id;
-
-					die;
+					echo $product-> product_id.'<br>';
 				}
 
 				$row_10 = array();
