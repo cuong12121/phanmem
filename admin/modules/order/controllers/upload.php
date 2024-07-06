@@ -187,7 +187,7 @@
 
 	                if(!empty($list_ar_str)){
 
-	                	array_push($info_house, $data_info)
+	                	array_push($info_house, $data_info);
 
 	                	array_push($data_order, $list_ar_str);
 
@@ -204,7 +204,7 @@
 	        echo "<pre>";print_r($data_order); echo "</pre>";
 
 	        echo'<br>';
-	        
+
 	        echo "<pre>";print_r($info_house); echo "</pre>";
 	       
 
