@@ -193,7 +193,7 @@
 	            }
 	        } 
 
-	        print_r($data_order);
+	        echo "<pre>";print_r($data_order); echo "</pre>";
 
 	       
 
