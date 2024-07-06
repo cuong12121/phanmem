@@ -2195,7 +2195,7 @@
                     $item_page_pdf-> content = str_replace('(**) 1','(**)1 ',$item_page_pdf-> content);
                     
 
-                    if($_SESSION[$this -> prefix.'filter2'] == 1){
+                    if($data['platforms'] == 1){
                         //check xem file này có lỗi mã đầu nhảy xuống cuối ko.
                         $lzd_content_arr = explode('Lut Bu Chnh.',$item_page_pdf-> content);
                         if(!empty($lzd_content_arr[1])){
@@ -2215,7 +2215,7 @@
                     }
 
                     //// c067-S1-02-QSF-200g-tom-ha-tien fix lỗi hải sản
-                    if($_SESSION[$this -> prefix.'filter0'] == 1){
+                    if($data['house_id'] == 1){
 
                         preg_match('/[A-Za-z0-9][A-Za-z0-9][A-Za-z0-9][A-Za-z0-9]+-[A-Za-z0-9][A-Za-z0-9]+-[A-Za-z0-9][A-Za-z0-9]+-[A-Za-z0-9][A-Za-z0-9]+-/', $item_page_pdf-> content, $b);
 
