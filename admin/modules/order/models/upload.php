@@ -2105,7 +2105,7 @@
 			return 0;
 		}
 
-		function prints_auto($str_id,$data)
+		function prints_auto($str_ids,$data)
         {
             if(!empty($str_id) && !empty($data)){
                 
