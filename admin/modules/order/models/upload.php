@@ -2272,6 +2272,7 @@
                 //KO TÌM THẤY THÌ THỨ TỰ  = VỊ TRÍ THỨ ID - 1
                 $get_list_page_pdf = $this->get_records('record_id IN ('.$str_ids.') AND ISNULL(find_pdf)','fs_order_uploads_page_pdf','id,content,find_pdf','id ASC');
 
+
                 foreach ($get_list_page_pdf as $item_page_pdf){
                     // if(!$item_page_pdf-> find_pdf || $item_page_pdf-> find_pdf ==''){
                         $id_check = $item_page_pdf-> id - 1;
@@ -2296,6 +2297,11 @@
 
                 $name_pdf = "";
                 $get_list_page_pdf = $this->get_records('record_id IN ('.$str_ids.')','fs_order_uploads_page_pdf','id,file_pdf,record_id,code,find_pdf,ordering,sku_fisrt,sku_last','ordering ASC,id ASC');
+
+                var_dump($get_list_page_pdf);
+
+                die;
+
                 // dd($get_list_page_pdf);
 
                 $pdf = new PDFMerger;
@@ -2333,32 +2339,25 @@
 
                 // $path_print = "files/prinr/".$name_pdf;
 
-                // $path_pdf_merge_soft.$name_pdf.
-
+                $pdf->merge('file',$path_pdf_merge_soft.$name_pdf.'.pdf');
                 
+                // lưu lại lịch sử in
+                $row2 = array();
+                $row2['total_file'] = count($get_list_page_pdf);
+                $row2['total_file_success'] = $i;
+                $row2['created_time'] = date('Y-m-d H:i:s');
+                $row2['action_username'] = 'admin';
+                $row2['action_userid'] = 9;
+                $row2['file_pdf'] = $path_pdf_merge_soft.$name_pdf.'.pdf';
 
-                // $pdf->merge('file',$path_pdf_merge_soft.$name_pdf.'.pdf');
+                $row2['house_id'] = $data['house_id'];
+                $row2['warehouse_id'] = $data['warehouse_id'];
+                $row2['platform_id'] = $data['platforms'];
 
-                print_r($path_pdf_merge_soft.$name_pdf.'.pdf');
-
-    
-                //lưu lại lịch sử in
-                // $row2 = array();
-                // $row2['total_file'] = count($get_list_page_pdf);
-                // $row2['total_file_success'] = $i;
-                // $row2['created_time'] = date('Y-m-d H:i:s');
-                // $row2['action_username'] = 'admin';
-                // $row2['action_userid'] = 9;
-                // $row2['file_pdf'] = $path_pdf_merge_soft.$name_pdf.'.pdf';
-
-                // $row2['house_id'] = $data['house_id'];
-                // $row2['warehouse_id'] = $data['warehouse_id'];
-                // $row2['platform_id'] = $data['platforms'];
-
-                // $row2['date_select_from'] =  date('Y-m-d');
-                // $row2['date_select_to'] = date('Y-m-d');;
-                // $this->_add($row2,'fs_order_uploads_history_prints');
-                // return $i;
+                $row2['date_select_from'] =  date('Y-m-d');
+                $row2['date_select_to'] = date('Y-m-d');;
+                $this->_add($row2,'fs_order_uploads_history_prints');
+                return $i;
             }
             return 0;
         }
