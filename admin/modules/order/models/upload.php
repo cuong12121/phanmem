@@ -2298,9 +2298,11 @@
                 $name_pdf = "";
                 $get_list_page_pdf = $this->get_records('record_id IN ('.$str_ids.')','fs_order_uploads_page_pdf','id,file_pdf,record_id,code,find_pdf,ordering,sku_fisrt,sku_last','ordering ASC,id ASC');
 
+                echo "<pre>"; var_dump($get_list_page_pdf);echo "</pre>"; 
+
                 // var_dump($get_list_page_pdf);
 
-                // die;
+                die;
 
                 // dd($get_list_page_pdf);
 
@@ -2340,7 +2342,7 @@
                 // $path_print = "files/prinr/".$name_pdf;
 
                 $pdf->merge('file',$path_pdf_merge_soft.$name_pdf.'.pdf');
-                
+
                 // lưu lại lịch sử in
                 $row2 = array();
                 $row2['total_file'] = count($get_list_page_pdf);
