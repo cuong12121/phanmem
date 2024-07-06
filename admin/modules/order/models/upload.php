@@ -2335,9 +2335,9 @@
 
                 // $path_pdf_merge_soft.$name_pdf.
 
-                $pdf->merge('file',$path_print.'.pdf');
+                // $pdf->merge('file',$path_pdf_merge_soft.$name_pdf.'.pdf');
 
-                print_r($path_print.'.pdf');
+                print_r($path_pdf_merge_soft.$name_pdf.'.pdf');
 
     
                 //lưu lại lịch sử in
