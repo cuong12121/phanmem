@@ -184,13 +184,15 @@
 
 	                array_push($data_order, $list_ar_str);
 
-	                $model->prints_auto($list_ar_str, $data_info);
+	                
+
+	                // $model->prints_auto($list_ar_str, $data_info);
 
 
 	            }
 	        } 
 
-	        // print_r($data_order);   
+	        print_r($data_order);   
 
 		}
 		
