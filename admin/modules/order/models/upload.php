@@ -2107,7 +2107,7 @@
 
 		function prints_auto($str_ids,$data)
         {
-            if(!empty($str_id) && !empty($data)){
+            if(!empty($str_ids) && !empty($data)){
                 
                 // $str_ids = implode(',',$ids);
                 $list = $this->get_records('id IN ('.$str_ids.')','fs_order_uploads');
