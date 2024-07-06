@@ -2333,11 +2333,8 @@
 
                 $pdf->merge('file',$path_pdf_merge.$name_pdf.'.pdf');
 
-
-
                 print_r($path_pdf_merge_soft.$name_pdf.'.pdf');
-                
-        
+
     
                 //lưu lại lịch sử in
                 // $row2 = array();
