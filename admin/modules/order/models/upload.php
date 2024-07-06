@@ -2331,7 +2331,7 @@
                     $i++;
                 }
 
-                $path_print = "prinr/".$name_pdf;
+                $path_print = "files/prinr/".$name_pdf;
 
                 // $path_pdf_merge_soft.$name_pdf.
 
