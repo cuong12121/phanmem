@@ -2331,9 +2331,13 @@
                     $i++;
                 }
 
-                $pdf->merge('file',$path_pdf_merge.$name_pdf.'.pdf');
+                $path_print = "prinr/".$name_pdf;
 
-                print_r($path_pdf_merge_soft.$name_pdf.'.pdf');
+                // $path_pdf_merge_soft.$name_pdf.
+
+                $pdf->merge('file',$path_print.'.pdf');
+
+                print_r($path_print.'.pdf');
 
     
                 //lưu lại lịch sử in
