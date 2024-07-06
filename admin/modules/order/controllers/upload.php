@@ -182,9 +182,14 @@
 
 	                $list_ar_str = implode(',', $list_Ar);
 
-	                array_push($data_order, $list_ar_str);
+	               
 
-	                
+	                if(!empty($list_ar_str)){
+	                	
+	                	 array_push($data_order, $list_ar_str);
+	                }
+
+
 
 	                // $model->prints_auto($list_ar_str, $data_info);
 
