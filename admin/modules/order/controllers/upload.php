@@ -212,11 +212,11 @@
 
 	        $model->prints_auto($list_ar_str, $data_info);
 
-	        echo "<pre>";print_r($data_order); echo "</pre>";
+	        // echo "<pre>";print_r($data_order); echo "</pre>";
 
-	        echo'<br>';
+	        // echo'<br>';
 
-	        echo "<pre>";print_r($info_house); echo "</pre>";
+	        // echo "<pre>";print_r($info_house); echo "</pre>";
 	       
 
 		}
