@@ -199,13 +199,13 @@
 	            }
 	        } 
 
+	        print_r($data_order[0]);
 
+	        // echo "<pre>";print_r($data_order); echo "</pre>";
 
-	        echo "<pre>";print_r($data_order); echo "</pre>";
+	        // echo'<br>';
 
-	        echo'<br>';
-
-	        echo "<pre>";print_r($info_house); echo "</pre>";
+	        // echo "<pre>";print_r($info_house); echo "</pre>";
 	       
 
 		}
