@@ -150,7 +150,7 @@
 
 	        $H = date('G');
 
-	        $house_id = $H<8?13:18;
+	        $house_id = 13; //$H<8?13:18 ;
 
 	        $data_info = [];
 
