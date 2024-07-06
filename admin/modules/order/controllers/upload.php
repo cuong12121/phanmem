@@ -146,6 +146,8 @@
 
 	        $data_order = [];
 
+	        $info_house = [];
+
 	        // chạy đơn lúc 7h10
 
 	        $H = date('G');
@@ -185,16 +187,25 @@
 
 	                if(!empty($list_ar_str)){
 
+	                	array_push($info_house, $data_info)
+
 	                	array_push($data_order, $list_ar_str);
 
-	                	 // $model->prints_auto($list_ar_str, $data_info);
+
+
+	                	 $model->prints_auto($list_ar_str, $data_info);
 	                }
 
 	            }
 	        } 
 
+
+
 	        echo "<pre>";print_r($data_order); echo "</pre>";
 
+	        echo'<br>';
+	        
+	        echo "<pre>";print_r($info_house); echo "</pre>";
 	       
 
 		}
