@@ -2318,7 +2318,7 @@
                     $file_path_pdf = PATH_BASE.$item_page_pdf-> file_pdf;
                     $file_path_pdf = str_replace('/', DS,$file_path_pdf);
 
-                    echo $file_path_pdf;
+                    echo $file_path_pdf.'<br>';
 
                     // $pdf->addPDF($file_path_pdf, 'all');
                     // if($j==1){
