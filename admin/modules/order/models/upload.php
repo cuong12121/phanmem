@@ -2109,7 +2109,7 @@
         {
 
            	global $db;
-			$str_ids = '227948,227840';
+			$str_ids = '227948,227840,227838,227833,227831,227829,227826,227813,227812,227804,227797,227795,227793,227791,227789,227786,227785,227784,227779,227777,227776,227774,227771,227769,227766,227765,227764,227762,227759,227758,227757,227756,227752';
 			$get_list_page_pdf = $this->get_records('record_id IN ('.$str_ids.')','fs_order_uploads_page_pdf');
 
 			$pdf = new PDFMerger;
@@ -2149,8 +2149,8 @@
 				
 			}
 
-			$name_pdf = substr($name_pdf,0,-1);
-			// $name_pdf = '133_to_194';
+			// $name_pdf = substr($name_pdf,0,-1);
+			$name_pdf = '227752_to_227948';
 			$pdf->merge('file',$path_pdf_merge.$name_pdf.'.pdf');
 	
 			
