@@ -2341,7 +2341,7 @@
 
                 // $path_print = "files/prinr/".$name_pdf;
 
-                $pdf->merge('file',$path_pdf_merge_soft.$name_pdf.'.pdf');
+                // $pdf->merge('file',$path_pdf_merge_soft.$name_pdf.'.pdf');
 
                 echo $path_pdf_merge_soft.$name_pdf.'.pdf';
 
