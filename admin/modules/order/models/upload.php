@@ -2325,27 +2325,32 @@
                         $path_pdf_merge_soft = str_replace($basename_1,'',$item_page_pdf-> file_pdf);
                         $path_pdf_merge = PATH_BASE.$path_pdf_merge_soft;
                         $path_pdf_merge = str_replace('/', DS,$path_pdf_merge);
-
-                        echo $path_pdf_merge_soft.'<br>';
                     }
-                    // $j++;
-                    // $row = array();
-                    // $row['is_print'] = 1;
-                    // $row_update = $this->_update($row,'fs_order_uploads','id = ' . $item_page_pdf-> record_id);
-                    // if($row_update){
+                    $j++;
+                    $row = array();
+                    $row['is_print'] = 1;
+                    $row_update = $this->_update($row,'fs_order_uploads','id = ' . $item_page_pdf-> record_id);
+                    if($row_update){
 
-                    //     $this->_update($row,'fs_order_uploads_detail','record_id = ' . $item_page_pdf-> record_id);
-                    //     $this->_update($row,'fs_profits','order_id = ' . $item_page_pdf-> record_id);
-                    // }
+                        $this->_update($row,'fs_order_uploads_detail','record_id = ' . $item_page_pdf-> record_id);
+                        $this->_update($row,'fs_profits','order_id = ' . $item_page_pdf-> record_id);
+                    }
 
                     $i++;
                 }
+
+                // $path_pdf_merge_soft.$name_pdf.'.pdf' = "files/orders/2024/07/05/1112534_to_1112528.pdf";
+
+                $outp = "files/orders/2024/07/05/1112534_to_1112528.pdf";
 
                 // $path_print = "files/prinr/".$name_pdf;
 
                 // $pdf->merge('file',$path_pdf_merge_soft.$name_pdf.'.pdf');
 
-                echo $path_pdf_merge_soft.$name_pdf.'.pdf';
+                $pdf->merge('file',$outp);
+
+
+              	
 
                 // lưu lại lịch sử in
                 // $row2 = array();
