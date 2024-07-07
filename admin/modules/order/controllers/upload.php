@@ -160,7 +160,7 @@
 
 	            foreach ($platform as  $platforms) {
 	                
-	                 $query =  "SELECT id FROM fs_order_uploads AS a WHERE 1=1 AND warehouse_id = ".$i." AND house_id = ".$house_id." AND platform_id = ".$platforms." AND date ='".date('Y-m-d')."' ORDER BY created_time DESC , id DESC";
+	                 $query =  "SELECT id FROM fs_order_uploads AS a WHERE 1=1 AND warehouse_id = ".$i." AND house_id = ".$house_id." AND platform_id = ".$platforms." AND date ='2024-07-06' ORDER BY created_time DESC , id DESC";
 
 	                $sql = $db->query ($query);
 	                $result = $db->getObjectList ();
