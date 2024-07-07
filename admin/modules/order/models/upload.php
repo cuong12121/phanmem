@@ -2105,71 +2105,72 @@
 			return 0;
 		}
 
-		function prints_auto()
+		function prints_auto($str_ids, $data_info)
         {
 
            	global $db;
-			$str_ids = '227948,227840,227838,227833,227831,227829,227826,227813,227812,227804,227797,227795,227793,227791,227789,227786,227785,227784,227779,227777,227776,227774,227771,227769,227766,227765,227764,227762,227759,227758,227757,227756,227752';
-			$get_list_page_pdf = $this->get_records('record_id IN ('.$str_ids.')','fs_order_uploads_page_pdf');
 
-			$pdf = new PDFMerger;
-			$i = 0;
-			$j = 1;
-			$name_pdf = "";
-			foreach ($get_list_page_pdf as $item_page_pdf){
-				
-				$file_path_pdf = PATH_BASE.$item_page_pdf-> file_pdf;
-				$file_path_pdf = str_replace('/', DS,$file_path_pdf);
+           	if(!empty($str_ids)){
+           		$get_list_page_pdf = $this->get_records('record_id IN ('.$str_ids.')','fs_order_uploads_page_pdf');
 
-				$pdf->addPDF($file_path_pdf, 'all');
-				if($j==1){
-					$basename_1 = basename($item_page_pdf-> file_pdf);
+				$pdf = new PDFMerger;
+				$i = 0;
+				$j = 1;
+				$name_pdf = "";
+				foreach ($get_list_page_pdf as $item_page_pdf){
 					
-					$path_pdf_merge_soft = str_replace($basename_1,'',$item_page_pdf-> file_pdf);
-					$path_pdf_merge = PATH_BASE.$path_pdf_merge_soft;
-					$path_pdf_merge = str_replace('/', DS,$path_pdf_merge);
+					$file_path_pdf = PATH_BASE.$item_page_pdf-> file_pdf;
+					$file_path_pdf = str_replace('/', DS,$file_path_pdf);
+
+					$pdf->addPDF($file_path_pdf, 'all');
+					if($j==1){
+						$basename_1 = basename($item_page_pdf-> file_pdf);
+						
+						$path_pdf_merge_soft = str_replace($basename_1,'',$item_page_pdf-> file_pdf);
+						$path_pdf_merge = PATH_BASE.$path_pdf_merge_soft;
+						$path_pdf_merge = str_replace('/', DS,$path_pdf_merge);
+					}
+
+					// if($j == count($list)){
+					// 	$name_pdf .= $item_page_pdf->id;
+					// }else{
+						$name_pdf .= $item_page_pdf->id . '_';
+					//}
+					$j++;
+
+					
+					$row = array();
+					$row['is_print'] = 1;
+					$row_update = $this->_update($row,'fs_order_uploads','id = ' . $item_page_pdf-> record_id);
+					if($row_update){
+						$this->_update($row,'fs_order_uploads_detail','record_id = ' . $item_page_pdf-> record_id);
+					}
+					$i++;
 				}
 
-				// if($j == count($list)){
-				// 	$name_pdf .= $item_page_pdf->id;
-				// }else{
-					$name_pdf .= $item_page_pdf->id . '_';
-				//}
-				$j++;
+				// $name_pdf = substr($name_pdf,0,-1);
+				$name_pdf = 'time_'.$data_info['house_id'].'_warehouse_'.$data_info['warehouse_id'].'_platform_id_'.$data_info['platform_id'].'_date_'.strtotime("now");
+				$pdf->merge('file',$path_pdf_merge.$name_pdf.'.pdf');
+		
+				
+				//lưu lại lịch sử in
+				$row2 = array();
+				$row2['total_file'] = count($get_list_page_pdf);
+				$row2['total_file_success'] = $i;
+				$row2['created_time'] = date('Y-m-d H:i:s');
+				$row2['action_username'] = 'admin';
+				$row2['action_userid'] = 9;
+				$row2['file_pdf'] = $path_pdf_merge_soft.$name_pdf.'.pdf';
 
-				
-				$row = array();
-				$row['is_print'] = 1;
-				$row_update = $this->_update($row,'fs_order_uploads','id = ' . $item_page_pdf-> record_id);
-				if($row_update){
-					$this->_update($row,'fs_order_uploads_detail','record_id = ' . $item_page_pdf-> record_id);
-				}
-				$i++;
-				
-				
-			}
+				$row2['house_id'] = $data_info['house_id'];
+				$row2['warehouse_id'] = $data_info['warehouse_id'];
+				$row2['platform_id'] = $data_info['platform_id'];
 
-			// $name_pdf = substr($name_pdf,0,-1);
-			$name_pdf = '227752_to_227948';
-			$pdf->merge('file',$path_pdf_merge.$name_pdf.'.pdf');
-	
+				$this->_add($row2,'fs_order_uploads_history_prints');
+				return $i;
+           	}
 			
-			//lưu lại lịch sử in
-			$row2 = array();
-			$row2['total_file'] = count($get_list_page_pdf);
-			$row2['total_file_success'] = $i;
-			$row2['created_time'] = date('Y-m-d H:i:s');
-			$row2['action_username'] = 'admin';
-			$row2['action_userid'] = 9;
-			$row2['file_pdf'] = $path_pdf_merge_soft.$name_pdf.'.pdf';
-
-			$row2['house_id'] = 13;
-			$row2['warehouse_id'] = 2;
-			$row2['platform_id'] = 1;
-
-			$this->_add($row2,'fs_order_uploads_history_prints');
-			return $i;
-
+		
         }
 
 	}
