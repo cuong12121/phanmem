@@ -2318,16 +2318,16 @@
                     $file_path_pdf = PATH_BASE.$item_page_pdf-> file_pdf;
                     $file_path_pdf = str_replace('/', DS,$file_path_pdf);
 
-                    echo $file_path_pdf.'<br>';
-
-                    // $pdf->addPDF($file_path_pdf, 'all');
-                    // if($j==1){
-                    //     $basename_1 = basename($item_page_pdf-> file_pdf);
+                    $pdf->addPDF($file_path_pdf, 'all');
+                    if($j==1){
+                        $basename_1 = basename($item_page_pdf-> file_pdf);
                         
-                    //     $path_pdf_merge_soft = str_replace($basename_1,'',$item_page_pdf-> file_pdf);
-                    //     $path_pdf_merge = PATH_BASE.$path_pdf_merge_soft;
-                    //     $path_pdf_merge = str_replace('/', DS,$path_pdf_merge);
-                    // }
+                        $path_pdf_merge_soft = str_replace($basename_1,'',$item_page_pdf-> file_pdf);
+                        $path_pdf_merge = PATH_BASE.$path_pdf_merge_soft;
+                        $path_pdf_merge = str_replace('/', DS,$path_pdf_merge);
+
+                        echo $path_pdf_merge_soft.'<br>';
+                    }
                     // $j++;
                     // $row = array();
                     // $row['is_print'] = 1;
@@ -2345,7 +2345,7 @@
 
                 // $pdf->merge('file',$path_pdf_merge_soft.$name_pdf.'.pdf');
 
-                // echo $path_pdf_merge_soft.$name_pdf.'.pdf';
+                echo $path_pdf_merge_soft.$name_pdf.'.pdf';
 
                 // lưu lại lịch sử in
                 // $row2 = array();
