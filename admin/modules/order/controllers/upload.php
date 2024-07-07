@@ -138,79 +138,79 @@
 
 		function print_auto(){
 
-			global $db;
+			// global $db;
 
 			$model  = $this -> model;
 
-	        $platform = [1,2,3,4,6,8,9,10,11];
+	        // $platform = [1,2,3,4,6,8,9,10,11];
 
-	        $data_order = [];
+	        // $data_order = [];
 
-	        $info_house = [];
+	        // $info_house = [];
 
-	        // chạy đơn lúc 7h10
+	        // // chạy đơn lúc 7h10
 
-	        $H = date('G');
+	        // $H = date('G');
 
-	        $house_id = 13; //$H<8?13:18 ;
+	        // $house_id = 13; //$H<8?13:18 ;
 
-	        $data_info = [];
+	        // $data_info = [];
 
-	        for($i=1; $i<3; $i++){
+	        // for($i=1; $i<3; $i++){
 
-	            foreach ($platform as  $platforms) {
+	        //     foreach ($platform as  $platforms) {
 	                
-	                 $query =  "SELECT id FROM fs_order_uploads AS a WHERE 1=1 AND warehouse_id = ".$i." AND house_id = ".$house_id." AND platform_id = ".$platforms." AND date ='2024-07-06' ORDER BY created_time DESC , id DESC";
+	        //          $query =  "SELECT id FROM fs_order_uploads AS a WHERE 1=1 AND warehouse_id = ".$i." AND house_id = ".$house_id." AND platform_id = ".$platforms." AND date ='2024-07-06' ORDER BY created_time DESC , id DESC";
 
-	                $sql = $db->query ($query);
-	                $result = $db->getObjectList ();
+	        //         $sql = $db->query ($query);
+	        //         $result = $db->getObjectList ();
 
-	                $list_Ar = [];
+	        //         $list_Ar = [];
 
-	                if(!empty($result)){
+	        //         if(!empty($result)){
 
-	                    foreach ($result as $key => $value) {
+	        //             foreach ($result as $key => $value) {
 	                   
-	                        array_push($list_Ar, $value->id);
-	                    }
+	        //                 array_push($list_Ar, $value->id);
+	        //             }
 
-	                } 
+	        //         } 
 
-	                $data_info['house_id'] = $house_id;
+	        //         $data_info['house_id'] = $house_id;
 
-	                $data_info['platforms'] = $platforms;
+	        //         $data_info['platforms'] = $platforms;
 
-	                $data_info['warehouse_id'] = $i;
+	        //         $data_info['warehouse_id'] = $i;
 
-	                $list_ar_str = implode(',', $list_Ar);
-
-
-	                if(!empty($list_ar_str)){
-
-	                	array_push($info_house, $data_info);
-
-	                	array_push($data_order, $list_ar_str);
+	        //         $list_ar_str = implode(',', $list_Ar);
 
 
+	        //         if(!empty($list_ar_str)){
 
-	                	 // $model->prints_auto($list_ar_str, $data_info);
-	                }
+	        //         	array_push($info_house, $data_info);
 
-	            }
-	        } 
-
-	        // print_r($data_order[0]);
-
-	        $list_ar_str = "227948,227840,227838,227833,227831,227829,227826,227813,227812,227804,227797,227795,227793,227791,227789,227786,227785,227784,227779,227777,227776,227774,227771,227769,227766,227765,227764,227762,227759,227758,227757,227756,227752";
-
-	        $data_info['house_id'] = 13;
-
-	        $data_info['platforms'] = 2;
-
-	        $data_info['warehouse_id'] = 1;
+	        //         	array_push($data_order, $list_ar_str);
 
 
-	        $model->prints_auto($list_ar_str, $data_info);
+
+	        //         	 // $model->prints_auto($list_ar_str, $data_info);
+	        //         }
+
+	        //     }
+	        // } 
+
+	        // // print_r($data_order[0]);
+
+	        // $list_ar_str = "227948,227840,227838,227833,227831,227829,227826,227813,227812,227804,227797,227795,227793,227791,227789,227786,227785,227784,227779,227777,227776,227774,227771,227769,227766,227765,227764,227762,227759,227758,227757,227756,227752";
+
+	        // $data_info['house_id'] = 13;
+
+	        // $data_info['platforms'] = 2;
+
+	        // $data_info['warehouse_id'] = 1;
+
+
+	        $model->prints_auto();
 
 	        // echo "<pre>";print_r($data_order); echo "</pre>";
 
