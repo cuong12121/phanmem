@@ -145,17 +145,17 @@
 			$model  = $this -> model;
 
 
-			$list_ar_str = "228265,228255";
-			$data_info['house_id'] = 11;
+			// $list_ar_str = "228265,228255";
+			// $data_info['house_id'] = 11;
 
-	        $data_info['platform_id'] = 10;
+	        // $data_info['platform_id'] = 10;
 
-	        $data_info['warehouse_id'] = 1;
+	        // $data_info['warehouse_id'] = 1;
 
 
-	        $model->prints_auto($list_ar_str, $data_info);
+	        // $model->prints_auto($list_ar_str, $data_info);
 
-	        die;
+	        // die;
 
 
 
@@ -169,7 +169,7 @@
 
 	        $H = date('G');
 
-	        $house_id = 11;//$H<8?13:18 
+	        $house_id = 10;//$H<8?13:18 
 
 	        $data_info = [];
 
