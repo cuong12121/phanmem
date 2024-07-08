@@ -2123,6 +2123,10 @@
 				$j = 1;
 				$name_pdf = "";
 
+				echo"<pre>";  var_dump($get_list_page_pdf); echo "</pre>";
+
+				die;
+
 
 				if(!empty($get_list_page_pdf)){
 
