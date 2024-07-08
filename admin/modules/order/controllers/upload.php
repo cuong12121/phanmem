@@ -160,7 +160,7 @@
 
 	            foreach ($platform as  $platforms) {
 	                
-	                 $query =  "SELECT id FROM fs_order_uploads AS a WHERE 1=1 AND warehouse_id = ".$i." AND house_id = ".$house_id." AND platform_id = ".$platforms." AND date ='2024-07-06' ORDER BY created_time DESC , id DESC";
+	                 $query =  "SELECT id FROM fs_order_uploads AS a WHERE 1=1 AND warehouse_id = ".$i." AND house_id = ".$house_id." AND platform_id = ".$platforms." AND date ='".date('Y-m-d')."' ORDER BY created_time DESC , id DESC";
 
 	                $sql = $db->query ($query);
 	                $result = $db->getObjectList ();
@@ -187,11 +187,11 @@
 
 	                if(!empty($list_ar_str)){
 
-	                	// array_push($info_house, $data_info);
+	                	array_push($info_house, $data_info);
 
-	                	// array_push($data_order, $list_ar_str);
+	                	array_push($data_order, $list_ar_str);
 
-	                	$model->prints_auto($list_ar_str, $data_info);
+	                	// $model->prints_auto($list_ar_str, $data_info);
 	                }
 
 	            }
@@ -210,11 +210,11 @@
 
 	        // $model->prints_auto($list_ar_str, $data_info);
 
-	        // echo "<pre>";print_r($data_order); echo "</pre>";
+	        echo "<pre>";print_r($data_order); echo "</pre>";
 
-	        // echo'<br>';
+	        echo'<br>';
 
-	        // echo "<pre>";print_r($info_house); echo "</pre>";
+	        echo "<pre>";print_r($info_house); echo "</pre>";
 	       
 
 		}
