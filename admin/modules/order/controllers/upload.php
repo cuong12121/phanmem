@@ -145,10 +145,10 @@
 			$model  = $this -> model;
 
 
-			$list_ar_str = "228296,228294,228291,228290,228283";
+			$list_ar_str = "228352,228329,228323";
 			$data_info['house_id'] = 18;
 
-	        $data_info['platform_id'] = 1;
+	        $data_info['platform_id'] = 9;
 
 	        $data_info['warehouse_id'] = 1;
 
