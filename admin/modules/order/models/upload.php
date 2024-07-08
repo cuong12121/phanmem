@@ -2117,6 +2117,10 @@
 				$i = 0;
 				$j = 1;
 				$name_pdf = "";
+
+				echo"<pre>";var_dump(expression); echo"</pre>";
+
+				die;
 				foreach ($get_list_page_pdf as $item_page_pdf){
 					
 					$file_path_pdf = PATH_BASE.$item_page_pdf-> file_pdf;
@@ -2147,10 +2151,10 @@
 					}
 					$i++;
 					echo $path_pdf_merge;
-				die;
+				
 				}
 
-
+				die;
 
 				// $name_pdf = substr($name_pdf,0,-1);
 				$name_pdf = 'time_'.$data_info['house_id'].'_warehouse_'.$data_info['warehouse_id'].'_platform_id_'.$data_info['platform_id'].'_date_'.strtotime("now");
