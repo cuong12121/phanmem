@@ -2118,7 +2118,7 @@
 				$j = 1;
 				$name_pdf = "";
 
-				echo"<pre>";var_dump(expression); echo"</pre>";
+				echo"<pre>";var_dump($get_list_page_pdf); echo"</pre>";
 
 				die;
 				foreach ($get_list_page_pdf as $item_page_pdf){
