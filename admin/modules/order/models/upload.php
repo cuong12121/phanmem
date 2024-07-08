@@ -2122,9 +2122,7 @@
 				$j = 1;
 				$name_pdf = "";
 
-				echo"<pre>";  var_dump($get_list_page_pdf); echo "</pre>";
-
-				die;
+				
 				foreach ($list as $item){
 					//xóa hết các file page pdf trước khi chạy split_page_pdf_tiki
 					$this -> _remove('record_id  = '.$item-> id,'fs_order_uploads_page_pdf');
