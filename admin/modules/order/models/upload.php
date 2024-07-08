@@ -2110,6 +2110,10 @@
 
            	global $db;
 
+           	echo $str_ids;
+
+           	die;
+
            	if(!empty($str_ids)){
            		$get_list_page_pdf = $this->get_records('record_id IN ('.$str_ids.')','fs_order_uploads_page_pdf');
 
