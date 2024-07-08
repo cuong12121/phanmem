@@ -155,7 +155,7 @@
 
 	        $model->prints_auto($list_ar_str, $data_info);
 
-	        // die;
+	        die;
 
 
 
