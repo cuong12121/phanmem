@@ -2115,9 +2115,8 @@
            	// die;
 
            	if(!empty($str_ids)){
-           		$get_list_page_pdf = $this->get_records('record_id IN ('.$str_ids.')','fs_order_uploads_page_pdf');
+           		$list = $this->get_records('id IN ('.$str_ids.')','fs_order_uploads');
 
-           		
 				$pdf = new PDFMerger;
 				$i = 0;
 				$j = 1;
@@ -2126,7 +2125,154 @@
 				echo"<pre>";  var_dump($get_list_page_pdf); echo "</pre>";
 
 				die;
+				foreach ($list as $item){
+					//xóa hết các file page pdf trước khi chạy split_page_pdf_tiki
+					$this -> _remove('record_id  = '.$item-> id,'fs_order_uploads_page_pdf');
+					// xứ lý chém page nhỏ của mỗi file
+					if($item-> platform_id == 3){
+						$count_split = $this->split_page_pdf_tiki($item-> file_pdf,$item-> id);
+					}else{
+						$count_split = $this->split_page_pdf($item-> file_pdf,$item-> id);
+					}
+					//xử lí tìm nội dung pdf có code(mã đơn hàng) là gì
+					$list_detail = $this->get_records('record_id = '.$item->id,'fs_order_uploads_detail','DISTINCT find_pdf','sku_fisrt ASC,ABS(sku_fisrt),sku_last ASC,ABS(sku_last),color ASC,ABS(color),size ASC,ABS(size)');
+	
+					if(!empty($list_detail)){
+						//$stt = 0;
+						foreach ($list_detail as $it_detail) {
+							$check_find_pdf = $this->get_record('content like "%'.$it_detail-> find_pdf.'%" AND record_id = '.$item->id,'fs_order_uploads_page_pdf');
+							if(!empty($check_find_pdf)){
+								$row_3 = array();
+								$row_3['find_pdf'] = $it_detail-> find_pdf;
+							
+								$this->_update($row_3,'fs_order_uploads_page_pdf','id = '.$check_find_pdf-> id);
+								
+							}
+						}
+					}
+				}
 
+				
+
+
+				//tìm số thứ tự theo cấu trúc tên sản phẩm đầu tiên
+				$get_list_page_pdf = $this->get_records('record_id IN ('.$str_ids.')','fs_order_uploads_page_pdf','id,content,find_pdf','id ASC');
+
+				foreach ($get_list_page_pdf as $item_page_pdf){
+					if(!$item_page_pdf-> content){
+						continue;
+					}
+					$item_page_pdf-> content = str_replace('(**) 1','(**)1 ',$item_page_pdf-> content);
+					
+
+					if($_SESSION[$this -> prefix.'filter2'] == 1){
+						//check xem file này có lỗi mã đầu nhảy xuống cuối ko.
+						$lzd_content_arr = explode('Lut Bu Chnh.',$item_page_pdf-> content);
+						if(!empty($lzd_content_arr[1])){
+							preg_match_all('/[A-Za-z0-9][A-Za-z0-9][A-Za-z0-9][A-Za-z0-9]+-[A-Za-z][A-Za-z]+-[A-Za-z0-9][A-Za-z0-9]+-[A-Za-z0-9][A-Za-z0-9]+-/', $item_page_pdf-> content, $b);
+							if(!empty($b[0])){
+								$b[0] = $b[0][count($b[0]) - 1];
+							}else{
+								preg_match('/[A-Za-z0-9][A-Za-z0-9][A-Za-z0-9][A-Za-z0-9]+-[A-Za-z][A-Za-z]+-[A-Za-z0-9][A-Za-z0-9]+-[A-Za-z0-9][A-Za-z0-9]+-/', $item_page_pdf-> content, $b);
+							}
+							
+						}else{
+							preg_match('/[A-Za-z0-9][A-Za-z0-9][A-Za-z0-9][A-Za-z0-9]+-[A-Za-z][A-Za-z]+-[A-Za-z0-9][A-Za-z0-9]+-[A-Za-z0-9][A-Za-z0-9]+-/', $item_page_pdf-> content, $b);
+						}
+
+					}else{
+						preg_match('/[A-Za-z0-9][A-Za-z0-9][A-Za-z0-9][A-Za-z0-9]+-[A-Za-z][A-Za-z]+-[A-Za-z0-9][A-Za-z0-9]+-[A-Za-z0-9][A-Za-z0-9]+-/', $item_page_pdf-> content, $b);
+					}
+
+					//// c067-S1-02-QSF-200g-tom-ha-tien fix lỗi hải sản
+					if($_SESSION[$this -> prefix.'filter0'] == 1){
+
+						preg_match('/[A-Za-z0-9][A-Za-z0-9][A-Za-z0-9][A-Za-z0-9]+-[A-Za-z0-9][A-Za-z0-9]+-[A-Za-z0-9][A-Za-z0-9]+-[A-Za-z0-9][A-Za-z0-9]+-/', $item_page_pdf-> content, $b);
+
+						if(empty($b[0])){
+							preg_match('/[A-Za-z0-9][A-Za-z0-9][A-Za-z0-9][A-Za-z0-9]+-[A-Za-z0-9][A-Za-z0-9]+-[A-Za-z0-9][A-Za-z0-9]+-[A-Za-z0-9][A-Za-z0-9][A-Za-z0-9]+-/', $item_page_pdf-> content, $b);
+						}
+					}
+
+					// 425M-BL-00-BOS fix lỗi
+					
+					if(empty($b[0])){
+						preg_match('/[A-Za-z0-9][A-Za-z0-9][A-Za-z0-9][A-Za-z0-9]+-[A-Za-z][A-Za-z]+-[A-Za-z0-9][A-Za-z0-9]+-/', $item_page_pdf-> content, $b);
+					}
+
+					
+
+					if(empty($b[0])){
+						preg_match('/[A-Za-z0-9][A-Za-z0-9][A-Za-z0-9][A-Za-z0-9]+-[A-Za-z0-9][A-Za-z0-9]+-[A-Za-z0-9][A-Za-z0-9]+-[A-Za-z0-9][A-Za-z0-9]+-/', $item_page_pdf-> content, $b);
+					}
+					
+					if(empty($b[0])){
+						preg_match('/[A-Za-z0-9][A-Za-z0-9][A-Za-z0-9][A-Za-z0-9]+-[A-Za-z0-9][A-Za-z0-9]+-[A-Za-z0-9][A-Za-z0-9]+-/', $item_page_pdf-> content, $b);
+					}
+
+					if(empty($b[0])){
+						continue;
+					}
+					
+					$arr_c = explode('-', $b[0]);
+					if(empty($arr_c[0])){
+						continue;
+					}
+
+					$sku_split = str_split($arr_c[0],3);
+					$row_11 = array();
+					$row_11['sku_fisrt'] = @$sku_split[0];
+					$row_11['sku_last'] = @$sku_split[1];
+					$this->_update($row_11,'fs_order_uploads_page_pdf','id = '. $item_page_pdf-> id);
+				}
+				// update_stt
+				
+				$list_detail_soft = $this->get_records('record_id IN ('.$str_ids.') AND sku_fisrt IS NOT NULL','fs_order_uploads_page_pdf','id,content,find_pdf','sku_fisrt ASC,ABS(sku_fisrt),sku_last ASC,ABS(sku_last)');
+
+				$stt = 0;
+
+				foreach ($list_detail_soft as $it_detail_soft){
+					$row_4 = array();
+					$row_4['ordering'] = $stt;
+					$stt++;
+					$this->_update($row_4,'fs_order_uploads_page_pdf','id = '. $it_detail_soft-> id);
+				}
+
+				
+				//KO TÌM THẤY THÌ THỨ TỰ  = VỊ TRÍ THỨ ID - 1
+				$get_list_page_pdf = $this->get_records('record_id IN ('.$str_ids.') AND ISNULL(find_pdf)','fs_order_uploads_page_pdf','id,content,find_pdf','id ASC');
+
+				foreach ($get_list_page_pdf as $item_page_pdf){
+					// if(!$item_page_pdf-> find_pdf || $item_page_pdf-> find_pdf ==''){
+						$id_check = $item_page_pdf-> id - 1;
+						$ordering_before = $this->get_record('id = '. $id_check . ' AND record_id IN ('.$str_ids.')','fs_order_uploads_page_pdf','id,ordering');
+						if(!empty($ordering_before)){
+							$row_44 = array();
+							$row_44['ordering'] = $ordering_before-> ordering;
+							$this->_update($row_44,'fs_order_uploads_page_pdf','id = '.$item_page_pdf-> id);
+						}
+						
+					// }
+				}
+				
+				// chuyển các mã lỗi ko thấy ordering về 5000  để cho xuống cuối
+				$row_10 = array();
+				$row_10['ordering'] = 5000;
+				$this->_update($row_10,'fs_order_uploads_page_pdf','record_id IN ('.$str_ids.') AND ISNULL(content)');
+
+				//ghép file pdf
+				$i = 0;
+				$j = 1;
+
+				$name_pdf = "";
+				$get_list_page_pdf = $this->get_records('record_id IN ('.$str_ids.')','fs_order_uploads_page_pdf','id,file_pdf,record_id,code,find_pdf,ordering,sku_fisrt,sku_last','ordering ASC,id ASC');
+
+				echo"<pre>"; var_dump($get_list_page_pdf); echo"</pre>";
+
+				die;
+
+
+				// đoạn này là bắt đầu in
 
 				if(!empty($get_list_page_pdf)){
 
