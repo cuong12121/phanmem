@@ -145,18 +145,17 @@
 			$model  = $this -> model;
 
 
-			// $list_ar_str = "228176,228114,228056,228048";
+			$list_ar_str = "228207,228201,228199,228197,228172,228164,228162,228151,228132,228105,228095,228072,228063,228062,228053,228037,228031,228029,228010";
+			$data_info['house_id'] = 13;
 
-			// $data_info['house_id'] = 13;
+	        $data_info['platform_id'] = 1;
 
-	        // $data_info['platform_id'] = 9;
-
-	        // $data_info['warehouse_id'] = 1;
+	        $data_info['warehouse_id'] = 2;
 
 
-	        // $model->prints_auto($list_ar_str, $data_info);
+	        $model->prints_auto($list_ar_str, $data_info);
 
-	        // die;
+	        die;
 
 
 
