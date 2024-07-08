@@ -2118,64 +2118,75 @@
 				$j = 1;
 				$name_pdf = "";
 
-				echo"<pre>";var_dump($get_list_page_pdf); echo"</pre>";
+				// echo"<pre>";var_dump($get_list_page_pdf); echo"</pre>";
 
-				die;
-				foreach ($get_list_page_pdf as $item_page_pdf){
+				// die;
+
+				if(!empty($get_list_page_pdf)){
+
+					foreach ($get_list_page_pdf as $item_page_pdf){
 					
-					$file_path_pdf = PATH_BASE.$item_page_pdf-> file_pdf;
-					$file_path_pdf = str_replace('/', DS,$file_path_pdf);
+						$file_path_pdf = PATH_BASE.$item_page_pdf-> file_pdf;
+						$file_path_pdf = str_replace('/', DS,$file_path_pdf);
 
-					$pdf->addPDF($file_path_pdf, 'all');
-					if($j==1){
-						$basename_1 = basename($item_page_pdf-> file_pdf);
+						$pdf->addPDF($file_path_pdf, 'all');
+						if($j==1){
+							$basename_1 = basename($item_page_pdf-> file_pdf);
+							
+							$path_pdf_merge_soft = str_replace($basename_1,'',$item_page_pdf-> file_pdf);
+							$path_pdf_merge = PATH_BASE.$path_pdf_merge_soft;
+							$path_pdf_merge = str_replace('/', DS,$path_pdf_merge);
+						}
+
+						// if($j == count($list)){
+						// 	$name_pdf .= $item_page_pdf->id;
+						// }else{
+							$name_pdf .= $item_page_pdf->id . '_';
+						//}
+						$j++;
+
 						
-						$path_pdf_merge_soft = str_replace($basename_1,'',$item_page_pdf-> file_pdf);
-						$path_pdf_merge = PATH_BASE.$path_pdf_merge_soft;
-						$path_pdf_merge = str_replace('/', DS,$path_pdf_merge);
-					}
-
-					// if($j == count($list)){
-					// 	$name_pdf .= $item_page_pdf->id;
-					// }else{
-						$name_pdf .= $item_page_pdf->id . '_';
-					//}
-					$j++;
-
+						$row = array();
+						$row['is_print'] = 1;
+						$row_update = $this->_update($row,'fs_order_uploads','id = ' . $item_page_pdf-> record_id);
+						if($row_update){
+							$this->_update($row,'fs_order_uploads_detail','record_id = ' . $item_page_pdf-> record_id);
+						}
+						$i++;
+						echo $path_pdf_merge;
 					
-					$row = array();
-					$row['is_print'] = 1;
-					$row_update = $this->_update($row,'fs_order_uploads','id = ' . $item_page_pdf-> record_id);
-					if($row_update){
-						$this->_update($row,'fs_order_uploads_detail','record_id = ' . $item_page_pdf-> record_id);
 					}
-					$i++;
-					echo $path_pdf_merge;
-				
+
+					die;
+
+					// $name_pdf = substr($name_pdf,0,-1);
+					$name_pdf = 'time_'.$data_info['house_id'].'_warehouse_'.$data_info['warehouse_id'].'_platform_id_'.$data_info['platform_id'].'_date_'.strtotime("now");
+					$pdf->merge('file',$path_pdf_merge.$name_pdf.'.pdf');
+			
+					
+					//lưu lại lịch sử in
+					$row2 = array();
+					$row2['total_file'] = count($get_list_page_pdf);
+					$row2['total_file_success'] = $i;
+					$row2['created_time'] = date('Y-m-d H:i:s');
+					$row2['action_username'] = 'admin';
+					$row2['action_userid'] = 9;
+					$row2['file_pdf'] = $path_pdf_merge_soft.$name_pdf.'.pdf';
+
+					$row2['house_id'] = $data_info['house_id'];
+					$row2['warehouse_id'] = $data_info['warehouse_id'];
+					$row2['platform_id'] = $data_info['platform_id'];
+
+					$this->_add($row2,'fs_order_uploads_history_prints');
+					return $i;
+
 				}
+				else{
+					echo "không tồn tại get_list_page_pdf";
 
-				die;
-
-				// $name_pdf = substr($name_pdf,0,-1);
-				$name_pdf = 'time_'.$data_info['house_id'].'_warehouse_'.$data_info['warehouse_id'].'_platform_id_'.$data_info['platform_id'].'_date_'.strtotime("now");
-				$pdf->merge('file',$path_pdf_merge.$name_pdf.'.pdf');
-		
+					die;
+				}
 				
-				//lưu lại lịch sử in
-				$row2 = array();
-				$row2['total_file'] = count($get_list_page_pdf);
-				$row2['total_file_success'] = $i;
-				$row2['created_time'] = date('Y-m-d H:i:s');
-				$row2['action_username'] = 'admin';
-				$row2['action_userid'] = 9;
-				$row2['file_pdf'] = $path_pdf_merge_soft.$name_pdf.'.pdf';
-
-				$row2['house_id'] = $data_info['house_id'];
-				$row2['warehouse_id'] = $data_info['warehouse_id'];
-				$row2['platform_id'] = $data_info['platform_id'];
-
-				$this->_add($row2,'fs_order_uploads_history_prints');
-				return $i;
            	}
 			
 		
