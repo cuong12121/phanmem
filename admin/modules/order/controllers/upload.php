@@ -193,6 +193,8 @@
 
 	                } 
 
+	                $list_ar_str = implode(',', $list_Ar);
+
 	                if(!empty($list_ar_str)){
 	                	$data_info['house_id'] = $house_id;
 
