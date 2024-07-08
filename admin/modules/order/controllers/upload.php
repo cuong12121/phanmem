@@ -138,9 +138,27 @@
 
 		function print_auto(){
 
+
+
 			global $db;
 
 			$model  = $this -> model;
+
+
+			$list_ar_str = "228208,228198,228169,228127,228098,228093,228068,228067,228054,228028";
+
+			$data_info['house_id'] = 13;
+
+	        $data_info['platform_id'] = 1;
+
+	        $data_info['warehouse_id'] = 1;
+
+
+	        $model->prints_auto($list_ar_str, $data_info);
+
+	        die;
+
+
 
 	        $platform = [1,2,3,4,6,8,9,10,11];
 
@@ -220,6 +238,8 @@
 		}
 		
 	}
+
+
 
 	// phần này bên ngoài class chưa rõ lý do
 
