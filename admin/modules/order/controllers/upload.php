@@ -201,15 +201,21 @@
 
 	                $list_ar_str = implode(',', $list_Ar);
 
+	                $data_info['list_ar_str'] = $list_ar_str;
 
-	                if(!empty($list_ar_str)){
+	                $data_info['date'] = date('Y-m-d');
 
-	                	array_push($info_house, $data_info);
+	                DB::table('check_auto_print')->insert($data_info);
 
-	                	array_push($data_order, $list_ar_str);
 
-	                	// $model->prints_auto($list_ar_str, $data_info);
-	                }
+	                // if(!empty($list_ar_str)){
+
+	                // 	array_push($info_house, $data_info);
+
+	                // 	array_push($data_order, $list_ar_str);
+
+	                // 	// $model->prints_auto($list_ar_str, $data_info);
+	                // }
 
 	            }
 	        } 
