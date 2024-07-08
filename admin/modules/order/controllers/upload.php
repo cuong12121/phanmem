@@ -178,7 +178,7 @@
 
 	                $data_info['house_id'] = $house_id;
 
-	                $data_info['platforms'] = $platforms;
+	                $data_info['platform_id'] = $platforms;
 
 	                $data_info['warehouse_id'] = $i;
 
