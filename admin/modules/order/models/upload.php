@@ -2117,17 +2117,12 @@
            	if(!empty($str_ids)){
            		$get_list_page_pdf = $this->get_records('record_id IN ("'.$str_ids.'")','fs_order_uploads_page_pdf');
 
-           		var_dump($get_list_page_pdf);
-           		die;
-
+           		
 				$pdf = new PDFMerger;
 				$i = 0;
 				$j = 1;
 				$name_pdf = "";
 
-				// echo"<pre>";var_dump($get_list_page_pdf); echo"</pre>";
-
-				// die;
 
 				if(!empty($get_list_page_pdf)){
 
@@ -2188,11 +2183,7 @@
 					return $i;
 
 				}
-				else{
-					echo "không tồn tại get_list_page_pdf";
-
-					die;
-				}
+				
 				
            	}
 			
