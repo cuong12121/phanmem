@@ -209,8 +209,8 @@
 		                $data_info['date'] = date('Y-m-d');
 
 		                $sql = " INSERT INTO check_auto_print
-	     							(list_ar_str, platform_id, warehouse_id, date)
-	     							VALUES ('$list_ar_str','$platforms','$i','')
+	     							(list_ar_str, platform_id, warehouse_id, house_id)
+	     							VALUES ('$list_ar_str','$platforms','$i','$house_id')
 	    							";
 	    				
 	    				$db->insert($sql);
