@@ -2148,6 +2148,9 @@
 					$i++;
 				}
 
+				echo $path_pdf_merge;
+				die;
+
 				// $name_pdf = substr($name_pdf,0,-1);
 				$name_pdf = 'time_'.$data_info['house_id'].'_warehouse_'.$data_info['warehouse_id'].'_platform_id_'.$data_info['platform_id'].'_date_'.strtotime("now");
 				$pdf->merge('file',$path_pdf_merge.$name_pdf.'.pdf');
