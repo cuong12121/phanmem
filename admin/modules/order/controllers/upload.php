@@ -193,24 +193,28 @@
 
 	                } 
 
-	                $data_info['house_id'] = $house_id;
+	                if(!empty($list_ar_str)){
+	                	$data_info['house_id'] = $house_id;
 
-	                $data_info['platform_id'] = $platforms;
+		                $data_info['platform_id'] = $platforms;
 
-	                $data_info['warehouse_id'] = $i;
+		                $data_info['warehouse_id'] = $i;
 
-	                $list_ar_str = implode(',', $list_Ar);
+		                $list_ar_str = implode(',', $list_Ar);
 
-	                $data_info['list_ar_str'] = $list_ar_str;
+		                $data_info['list_ar_str'] = $list_ar_str;
 
-	                $data_info['date'] = date('Y-m-d');
+		                $data_info['date'] = date('Y-m-d');
 
-	                $sql = " INSERT INTO check_auto_print
-     							(list_ar_str, platform_id, warehouse_id, date)
-     							VALUES ('$list_ar_str','$platforms','$i','')
-    							";
-    				
-    				$db->insert($sql);
+		                $sql = " INSERT INTO check_auto_print
+	     							(list_ar_str, platform_id, warehouse_id, date)
+	     							VALUES ('$list_ar_str','$platforms','$i','')
+	    							";
+	    				
+	    				$db->insert($sql);
+	                }
+
+	                
 
 	             
 
