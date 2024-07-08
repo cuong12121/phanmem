@@ -169,7 +169,7 @@
 
 	        $H = date('G');
 
-	        $house_id = 11;//$H<8?13:18 
+	        $house_id = 19;//$H<8?13:18 
 
 	        $data_info = [];
 
@@ -205,8 +205,14 @@
 
 	                $data_info['date'] = date('Y-m-d');
 
-	                DB::table('check_auto_print')->insert($data_info);
+	                $sql = " INSERT INTO check_auto_print
+     							(list_ar_str, platform_id, warehouse_id, date)
+     							VALUES ('$list_ar_str','$platforms','$i','')
+    							";
+    				
+    				$db->insert($sql);
 
+	             
 
 	                // if(!empty($list_ar_str)){
 
@@ -233,16 +239,21 @@
 
 	        // $model->prints_auto($list_ar_str, $data_info);
 
-	        echo "<pre>";print_r($data_order); echo "</pre>";
+	        // echo "<pre>";print_r($data_order); echo "</pre>";
 
-	        echo'<br>';
+	        // echo'<br>';
 
-	        echo "<pre>";print_r($info_house); echo "</pre>";
+	        // echo "<pre>";print_r($info_house); echo "</pre>";
 	       
 
 		}
 		
 	}
+
+	// public function print_auto_after($value='')
+	// {
+		
+	// }
 
 
 
