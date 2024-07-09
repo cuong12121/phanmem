@@ -75,7 +75,7 @@
 
             $sqls = " SELECT username,id FROM  fs_users";
 
-            $db->query ( $sql );
+            $db->query ( $sqls );
             $names = $db->getObject();
               
         ?>
