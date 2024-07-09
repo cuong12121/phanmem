@@ -160,10 +160,6 @@
 
 	        $response = file_get_contents('https://api.dienmayai.com/api/search-data-user-id-package?name='.$name.'&date1='.$date1.'&date2='.$date2, FALSE, $context);
 
-	        var_dump($response);
-
-	        die;
-	       
 	        $info_data = json_decode($response);
 
 
