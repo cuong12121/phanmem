@@ -165,10 +165,10 @@
 
             
             $now = date("d/m/Y");
-            echo "<pre>";
-                var_dump($info_data);
-            echo "</pre>";
-            die;
+            // echo "<pre>";
+            //     var_dump($info_data);
+            // echo "</pre>";
+            // die;
         	if(!empty($info_data->data)){
         		$dem =0;
 
