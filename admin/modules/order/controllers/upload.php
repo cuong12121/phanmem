@@ -146,95 +146,116 @@
 
 			global $db;
 
-			$model  = $this -> model;
+			if($run==="1"){
+				$model  = $this -> model;
 
+		        $platform = [1,2,3,4,6,8,9,10,11];
 
-			$list_ar_str = "228534,228531,228530,228474";
-			$data_info['house_id'] = 13;
+		        $data_order = [];
 
-	        $data_info['platform_id'] = 9;
+		        $info_house = [];
 
-	        $data_info['warehouse_id'] = 2;
+		        // chạy đơn lúc 7h10
 
+		        $H = date('G');
 
-	        $model->prints_auto($list_ar_str, $data_info);
+		        $house_id = 13;//$H<8?13:18 
 
-	        die;
+		        $data_info = [];
 
+		        for($i=1; $i<3; $i++){
 
+		            foreach ($platform as  $platforms) {
+		                
+		                 $query =  "SELECT id FROM fs_order_uploads AS a WHERE 1=1 AND warehouse_id = ".$i." AND house_id = ".$house_id." AND platform_id = ".$platforms." AND date ='".date('Y-m-d')."' ORDER BY created_time DESC , id DESC";
 
-	        $platform = [1,2,3,4,6,8,9,10,11];
+		                $sql = $db->query ($query);
+		                $result = $db->getObjectList ();
 
-	        $data_order = [];
+		                $list_Ar = [];
 
-	        $info_house = [];
+		                if(!empty($result)){
 
-	        // chạy đơn lúc 7h10
+		                    foreach ($result as $key => $value) {
+		                   
+		                        array_push($list_Ar, $value->id);
+		                    }
 
-	        $H = date('G');
-
-	        $house_id = 13;//$H<8?13:18 
-
-	        $data_info = [];
-
-	        for($i=1; $i<3; $i++){
-
-	            foreach ($platform as  $platforms) {
-	                
-	                 $query =  "SELECT id FROM fs_order_uploads AS a WHERE 1=1 AND warehouse_id = ".$i." AND house_id = ".$house_id." AND platform_id = ".$platforms." AND date ='".date('Y-m-d')."' ORDER BY created_time DESC , id DESC";
-
-	                $sql = $db->query ($query);
-	                $result = $db->getObjectList ();
-
-	                $list_Ar = [];
-
-	                if(!empty($result)){
-
-	                    foreach ($result as $key => $value) {
-	                   
-	                        array_push($list_Ar, $value->id);
-	                    }
-
-	                } 
-
-	                $list_ar_str = implode(',', $list_Ar);
-
-	                if(!empty($list_ar_str)){
-	                	$data_info['house_id'] = $house_id;
-
-		                $data_info['platform_id'] = $platforms;
-
-		                $data_info['warehouse_id'] = $i;
+		                } 
 
 		                $list_ar_str = implode(',', $list_Ar);
 
-		                $data_info['list_ar_str'] = $list_ar_str;
+		                if(!empty($list_ar_str)){
+		                	$data_info['house_id'] = $house_id;
 
-		                $data_info['date'] = date('Y-m-d');
+			                $data_info['platform_id'] = $platforms;
 
-		                $sql = " INSERT INTO check_auto_print
-	     							(list_ar_str, platform_id, warehouse_id, house_id)
-	     							VALUES ('$list_ar_str','$platforms','$i','$house_id')
-	    							";
-	    				
-	    				$db->insert($sql);
-	                }
+			                $data_info['warehouse_id'] = $i;
 
-	                
+			                $list_ar_str = implode(',', $list_Ar);
 
-	             
+			                $data_info['list_ar_str'] = $list_ar_str;
 
-	                // if(!empty($list_ar_str)){
+			                $data_info['date'] = date('Y-m-d');
 
-	                // 	array_push($info_house, $data_info);
+			                $sql = " INSERT INTO check_auto_print
+		     							(list_ar_str, platform_id, warehouse_id, house_id)
+		     							VALUES ('$list_ar_str','$platforms','$i','$house_id')
+		    							";
+		    				
+		    				$db->insert($sql);
+		                }
 
-	                // 	array_push($data_order, $list_ar_str);
+		                
 
-	                // 	// $model->prints_auto($list_ar_str, $data_info);
-	                // }
+		             
 
-	            }
-	        } 
+		                // if(!empty($list_ar_str)){
+
+		                // 	array_push($info_house, $data_info);
+
+		                // 	array_push($data_order, $list_ar_str);
+
+		                // 	// $model->prints_auto($list_ar_str, $data_info);
+		                // }
+
+		            }
+		        } 
+			}
+			elseif($run==="2"){
+
+				global $db;
+
+				
+	    		$query = 'SELECT * FROM check_auto_print WHERE active = 0';
+	    		$db->query($query);
+
+	     		$result = $db->getObjectList();
+
+	     		foreach ($result as  $value) {
+	     			
+	     			echo $value->list_ar_str.'<br>';
+	     		}
+
+				// $list_ar_str = "228534,228531,228530,228474";
+
+				// $data_info['house_id'] = 13;
+
+		        // $data_info['platform_id'] = 9;
+
+		        // $data_info['warehouse_id'] = 2;
+
+
+		        // $model->prints_auto($list_ar_str, $data_info);
+
+		        // die;
+
+			}
+			else{
+				echo "print bị lỗi";
+			}
+
+			
 
 	        // print_r($data_order[0]);
 
