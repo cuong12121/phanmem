@@ -77,10 +77,6 @@
 
             $db->query ( $sqls );
             $names = $db->getObjectList ();
-
-            var_dump($names[0]->username);
-
-            die;
               
         ?>
 
@@ -90,7 +86,7 @@
             <?php
                 foreach($names as $val){
             ?>
-                <option value="<?= $val['id'] ?>"><?= @$val['username'] ?></option>
+                <option value="<?= $val->id ?>"><?= @$val->username ?></option>
 
             <?php
                 }
