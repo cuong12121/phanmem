@@ -82,6 +82,154 @@
 			include 'modules/'.$this->module.'/views/'.$this->view.'/detail.php';
 		}
 
+		function test()
+		{
+			$model  = $this -> model;
+			
+			$file = !empty($_GET['file'])?$_GET['file']:'sp4.pdf';
+		   
+		    $path = PATH_BASE.'files/'.$file;
+
+		    $test =  $model->showDataExcel($path);
+		   
+		    $filePDF = ['kgh-vnpost_1719639461_cv.pdf','kgh-spx_1719639461_cv.pdf','kgh-ghn_1719639461_cv.pdf'];
+
+		    $data_pdf = $this->dataPDF($filePDF);
+
+		    $checkMVD =  array_diff($data_pdf['mavandon'], $test['maVanDon']);
+
+		    $checkSku =  array_diff($data_pdf['sku'], $test['Sku']);
+
+		    // echo"<pre>"; var_dump($data_pdf['sku']); echo"</pre>"; echo "<br>"; echo"<pre>";var_dump($test['Sku']); echo"</pre>";
+
+		    // die;
+
+		    if(empty($checkMVD) && empty($checkSku)){
+
+		    	echo "đơn hàng không bị lỗi";
+		    }
+		    else{
+
+		    	if(!empty($checkMVD)){
+
+		    		// print_r($checkMVD);
+		    		echo 'kiểm tra lại các mã vận đơn sau ở file pdf <br>'. implode("<br>",$checkMVD). '<br>
+		    		 không giống với file excel';
+		    	}
+
+		    	if(!empty($checkSku)){
+
+		    		echo 'kiểm tra lại sku sau ở file pdf <br>'. implode("<br>",$checkSku). '<br>
+		    		 không giống với file excel';
+		    	}
+		    }
+
+		   
+		}
+
+		function returnDataPDF($path)
+		{
+			$model  = $this -> model;
+
+			$data  = [];
+
+			$datas = shell_exec('pdftk '.$path.' dump_data | grep NumberOfPages');
+
+		    $number_page = intval(str_replace('NumberOfPages: ', '', $datas));
+
+		   	if($number_page>0){
+
+		   		for($i =0; $i<$number_page; $i++){
+
+		   			$page = $i+1;
+
+		   			$mvd = $model->contendTextFindMvd($path,$page);
+
+				    $sku = $model->contendTextFindSku($path,$page);
+
+				    $data['mavandon'][$i] = $mvd[0]??'';
+
+				    $data['sku'][$i] = $sku[0]??'';
+
+		   		}
+
+		   	}
+
+		   	return $data;
+		}
+
+		function dataPDF($files)
+		{
+
+			$all_data = [];
+
+			$mvd = [];
+
+			$sku = [];
+
+
+
+			$dem = 0;
+
+			$dems =0;
+
+			$model = $this -> model;
+
+			foreach ($files as $key => $value) {
+				
+				$file  = $value;
+		   
+			    $path  = PATH_BASE.'files/'.$file;
+				
+				$data  = $this->returnDataPDF($path);
+	
+			    array_push($all_data, $data);
+
+
+
+			}
+			if(count($all_data)){
+
+				
+
+				foreach ($all_data as $key => $vals) {
+
+
+					if(count($vals['mavandon'])>0){
+
+						foreach ($vals['mavandon'] as $key => $value) {
+							$dem++;
+
+							$mvd[$dem] = $value;
+						
+						}
+
+					}
+
+					if(count($vals['sku'])>0){
+
+						foreach ($vals['sku'] as $key => $vals) {
+							$dems ++;
+
+							$sku[$dems] = $vals;
+							
+
+						}
+
+					}
+					
+				}
+
+			}
+
+			$result['mavandon'] = $mvd;
+
+			$result['sku'] = $sku;
+
+			return $result;
+
+		}
+
 		function fix_uploads_page_pdf(){
 			$model = $this -> model;
 			$model->fix_uploads_page_pdf();

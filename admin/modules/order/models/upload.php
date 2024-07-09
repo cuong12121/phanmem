@@ -133,6 +133,102 @@
 
 	    }
 
+	    function convertContentCheck($content){
+
+        	// if(empty($b[0])){
+        	// 	preg_match_all('/[A-Z-0-9]{1}[A-Za-z0-9]{1}[A-Za-z0-9]{1}[A-Za-z0-9]{1}+\s*-\s*[A-Za-z0-9][A-Za-z0-9][A-Za-z0-9][A-Za-z0-9][A-Za-z0-9][A-Za-z0-9][A-Za-z0-9][A-Za-z0-9][A-Za-z0-9]+-[A-Za-z0-9]+[[0-9]{1,2}|0]/', $content, $b);
+        	// }
+
+        	
+        	if(empty($b[0])){
+        		preg_match_all('/[A-Z-0-9]{1}[A-Za-z0-9]{1}[A-Za-z0-9]{1}[A-Za-z0-9]{1}+\s*-\s*[A-Za-z0-9][A-Za-z0-9]+-+\s[A-Za-z0-9][A-Za-z0-9]+\s*-\s*[A-Za-z0-9][A-Za-z0-9][A-Za-z0-9]+\s*-\s*[A-Za-z0-9][A-Za-z0-9]+\s*-\s*[A-Za-z0-9][A-Za-z0-9][0-9]/', $content, $b);
+        	}
+
+        	if(empty($b[0])){
+        		preg_match_all('/[A-Z-0-9]{1}[A-Za-z0-9]{1}[A-Za-z0-9]{1}[A-Za-z0-9]{1}+\s*-\s*[A-Za-z0-9][A-Za-z0-9]+\s*-\s*[A-Za-z0-9][A-Za-z0-9]+\s*-\s*[A-Za-z0-9][A-Za-z0-9][A-Za-z0-9]+\s*-\s*[A-Za-z0-9][A-Za-z0-9]+\s*-\s*[[0-9]{1,2}|0]/', $content, $b);
+        	}
+            // xóa khoảng trắng trong chuỗi trả về của hàm trên
+            $b = array_map(function($match) {
+                return preg_replace('/\s+/', '', $match);
+            }, $b);
+
+
+        	return $b;
+
+        } 	
+
+        function convertContentCheckExcel($content){
+
+            // if(empty($b[0])){
+            //  preg_match_all('/[A-Z-0-9]{1}[A-Za-z0-9]{1}[A-Za-z0-9]{1}[A-Za-z0-9]{1}+\s*-\s*[A-Za-z0-9][A-Za-z0-9][A-Za-z0-9][A-Za-z0-9][A-Za-z0-9][A-Za-z0-9][A-Za-z0-9][A-Za-z0-9][A-Za-z0-9]+-[A-Za-z0-9]+[[0-9]{1,2}|0]/', $content, $b);
+            // }
+
+
+            if(empty($b[0])){
+                preg_match_all('/[A-Z-0-9]{1}[A-Za-z0-9]{1}[A-Za-z0-9]{1}[A-Za-z0-9]{1}+\s*-\s*[A-Za-z0-9][A-Za-z0-9]+\s*-\s*[A-Za-z0-9][A-Za-z0-9]+\s*-\s*[A-Za-z0-9][A-Za-z0-9][A-Za-z0-9]+\s*-\s*[A-Za-z0-9][A-Za-z0-9]+\s*-\s*[[0-9]{1,3}|0]/', $content, $b);
+            }
+
+             if(empty($b[0])){
+                preg_match_all('/[A-Z-0-9]{1}[A-Za-z0-9]{1}[A-Za-z0-9]{1}[A-Za-z0-9]{1}+\s*-\s*[A-Za-z0-9][A-Za-z0-9]+\s*-\s*[A-Za-z0-9][A-Za-z0-9]+\s*-\s*[A-Za-z0-9][A-Za-z0-9][A-Za-z0-9]+\s*-\s*[A-Za-z0-9][A-Za-z0-9]+\s*-\s*[[0-9]{1,2}|0]/', $content, $b);
+            }
+         
+            return $b;
+        }   
+
+        public function showDataExcel($file_path)
+        {
+            // $files = 'ex2.xlsx';
+            // $file_path = PATH_BASE.'files/'.$files;
+            require_once("../libraries/PHPExcel-1.8/Classes/PHPExcel.php");
+            $objReader = PHPExcel_IOFactory::createReaderForFile($file_path);
+            // $data = new PHPExcel_IOFactory();
+            // $data->setOutputEncoding('UTF-8');
+            $objReader->setLoadAllSheets();
+            $objexcel = $objReader->load($file_path);
+            $data =$objexcel->getActiveSheet()->toArray('null',true,true,true);
+            // $data->load($file_path);
+            unset($heightRow);  
+            $heightRow=$objexcel->setActiveSheetIndex()->getHighestRow();
+            // printr($data);
+            unset($j);
+
+
+
+            $link = FSRoute::_('index.php?module=order&view=upload&task=add');
+             $row = array();
+
+             $k=0;
+
+             $skus = [];
+            //chạy vòng đầu để check lỗi trước
+            for($j=2;$j<=$heightRow;$j++){
+                
+               
+                $row['maVanDon'][$k] = trim($data[$j]['F']);
+
+
+                $sku =   $this->convertContentCheckExcel(trim($data[$j]['S']));
+
+                $skuss = ($sku)[0];
+
+                
+
+
+                $skus[$k] = $skuss[0];
+
+               
+                $k++;
+
+            }  
+
+
+
+            $row['Sku'] = $skus;
+
+            return($row);  
+        }
+
+
 		function upload_excel_shopee($file_path,$result_id,$shop_code,$house_id){
 			require_once("../libraries/PHPExcel-1.8/Classes/PHPExcel.php");
 			$objReader = PHPExcel_IOFactory::createReaderForFile($file_path);
@@ -835,6 +931,24 @@
 			}
 			return $count_ss;
 		}
+
+		function contendTextFindMvd($filePath,$page)
+		{
+		 	$data = shell_exec('pdftotext -layout -f '.$page.' -l '.$page.' '.$filePath.' -');
+
+		 	$mavd = $this->findMVD($data);
+
+		 	return $mavd;
+		} 
+
+		function contendTextFindSku($filePath, $page)
+		{
+		 	$data = shell_exec('pdftotext  -raw -f '.$page.' -l '.$page.' '.$filePath.' - | cat');
+
+		 	$Sku = $this->convertContentCheck($data);
+
+		 	return $Sku[0]??'';
+		} 
 
 
 		function upload_excel_viettel($file_path,$result_id){
