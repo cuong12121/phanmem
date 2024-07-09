@@ -140,9 +140,9 @@
 
 			$run =  !empty($_GET['run'])?$_GET['run']:'';
 
-			echo $run;
+			// echo $run;
 
-			die;
+			// die;
 
 			global $db;
 
