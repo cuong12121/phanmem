@@ -77,6 +77,10 @@
 
             $db->query ( $sqls );
             $names = $db->getObject();
+
+            var_dump($names);
+
+            die;
               
         ?>
 
