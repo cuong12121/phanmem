@@ -145,12 +145,12 @@
 			$model  = $this -> model;
 
 
-			$list_ar_str = "228532,228529,228475";
+			$list_ar_str = "228543,228528,228526,228493,228489,228486,228482,228477,228468,228463,228430";
 			$data_info['house_id'] = 13;
 
-	        $data_info['platform_id'] = 9;
+	        $data_info['platform_id'] = 1;
 
-	        $data_info['warehouse_id'] = 1;
+	        $data_info['warehouse_id'] = 2;
 
 
 	        $model->prints_auto($list_ar_str, $data_info);
