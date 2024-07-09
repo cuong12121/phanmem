@@ -139,6 +139,8 @@
 
 			$date1 = !empty($_GET['date1'])?$_GET['date1']:'';
 
+			$user_id =9;
+
 			
 
 			$context = stream_context_create(array(
