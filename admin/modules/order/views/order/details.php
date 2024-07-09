@@ -70,11 +70,29 @@
     
     <form class="header__search" method="get" action="#" style="display: flex; margin-bottom: 15px;">
 
-        <select>
-            <option>Tên người dùng</option>
-            <option>admin</option>
+        <?php 
+            global $db;
+
+            $sqls = " SELECT username,id FROM  fs_users";
+
+            $db->query ( $sql );
+            $names = $db->getObject();
+              
+        ?>
+
+        <select name="name">
+
+            <option value ="0">Tên người dùng</option>
+            <?php
+                foreach($names as $val){
+            ?>
+                <option value="<?= $val->id ?>"><?= @$val->username ?></option>
+
+            <?php
+                }
+            ?>
         </select>
-        <input type="datetime-local" class="input-search ui-autocomplete-input"   name="date" autocomplete="off" maxlength="100" required="" wfd-id="id0" autofocus > 
+        <input type="date" class="input-search ui-autocomplete-input"   name="date" autocomplete="off" maxlength="100" required="" > 
         
         <input type="hidden" name="active" value="1">    
         <button type="submit">Tìm kiếm </button> 
@@ -83,7 +101,7 @@
 <?php
     $date = date('d-m-Y');
 
-    global $db;
+   
 
     
 
