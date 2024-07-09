@@ -95,7 +95,7 @@
 
 		    $test =  $model->showDataExcel($path_run_excel);
 
-		    echo $path_run_excel;
+		    echo"<pre>";print_r($test); echo"</pre>";
 
 		    die;
 
