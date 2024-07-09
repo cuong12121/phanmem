@@ -66,7 +66,7 @@
     </form>
 </div>
 <?php 
-
+     global $db;
     if($user_id !=9):
    
 ?>
@@ -75,7 +75,7 @@
     <form class="header__search" method="get" action="https://dienmayai.com/admin/order/detail/search/package" style="display: flex; margin-bottom: 15px;">
 
         <?php 
-            global $db;
+           
 
             $sqls = " SELECT username,id FROM  fs_users";
 
