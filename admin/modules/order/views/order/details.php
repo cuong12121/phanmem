@@ -77,10 +77,6 @@
 
             $db->query ( $sqls );
             $names = $db->getObjectList ();
-
-            var_dump($names);
-
-            die;
               
         ?>
 
