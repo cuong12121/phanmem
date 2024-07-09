@@ -67,7 +67,7 @@
 </div>
 <?php 
      global $db;
-    if($user_id !=9):
+    if($user_id ==='9'):
    
 ?>
 <div class="form-search">
