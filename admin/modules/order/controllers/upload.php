@@ -138,7 +138,11 @@
 
 		function print_auto(){
 
+			$run =  !empty($_GET['run'])?$_GET['run']:'';
 
+			echo $run;
+
+			die;
 
 			global $db;
 
