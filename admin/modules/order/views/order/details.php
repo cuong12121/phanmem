@@ -142,7 +142,7 @@
             <?php 
 
                 $sql = " SELECT username FROM  fs_users WHERE id = '$value->user_package_id'";
-                $name = $db->getResult($query);
+                $name = $db->getResult($sql);
             ?>
             
             <td><?= $name ?></td>
