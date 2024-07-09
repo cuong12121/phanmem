@@ -90,7 +90,7 @@
             <?php
                 foreach($names as $val){
             ?>
-                <option value="<?= $val->id ?>"><?= @$val->username ?></option>
+                <option value="<?= $val['id'] ?>"><?= @$val['username'] ?></option>
 
             <?php
                 }
