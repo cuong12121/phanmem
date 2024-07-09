@@ -65,6 +65,21 @@
         <button type="submit">Bắn đơn </button> 
     </form>
 </div>
+
+<div class="form-search">
+    
+    <form class="header__search" method="get" action="#" style="display: flex; margin-bottom: 15px;">
+
+        <select>
+            <option>Tên người dùng</option>
+            <option>admin</option>
+        </select>
+        <input type="datetime-local" class="input-search ui-autocomplete-input"   name="date" autocomplete="off" maxlength="100" required="" wfd-id="id0" autofocus > 
+        
+        <input type="hidden" name="active" value="1">    
+        <button type="submit">Tìm kiếm </button> 
+    </form>
+</div>
 <?php
     $date = date('d-m-Y');
 
