@@ -96,8 +96,10 @@
                 }
             ?>
         </select>
-        <label>Ngày</label>
+        <label>từ</label>
         <input type="date" class="input-search ui-autocomplete-input"   name="date1" autocomplete="off" maxlength="100" required="" > 
+         <label>đến</label>
+        <input type="date" class="input-search ui-autocomplete-input"   name="date2" autocomplete="off" maxlength="100" required="" > 
        
         <button type="submit">Tìm kiếm </button> 
     </form>
