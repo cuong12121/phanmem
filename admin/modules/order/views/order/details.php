@@ -117,8 +117,21 @@
     endif;
 
     unset($_SESSION['notification']);
+
+
 ?>
-<h2>Danh sách đơn đã đóng mới nhất của  <?=  @$_SESSION ['ad_username'] ?></h2>
+
+<?php 
+
+    if($user_id !=9):
+   
+?>
+    <h2>Danh sách đơn đã đóng mới nhất của  <?=  @$_SESSION ['ad_username'] ?></h2>
+
+<?php
+    endif
+
+?>
 
 <table class="table-responsive">
         <tr>
