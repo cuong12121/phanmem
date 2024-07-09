@@ -138,8 +138,14 @@
             <td><?= $value->shop_code  ?></td>
             <td><?= $value->count  ?></td>
             <td><?= $value->record_id  ?></td>
+
+            <?php 
+
+                $sql = " SELECT username FROM  fs_users WHERE id = '$value->user_package_id'";
+                $name = $db->getResult($query);
+            ?>
             
-            <td><?= $value->user_package_id ?></td>
+            <td><?= $name ?></td>
             <td><?= date("d/m/Y", strtotime($value->date));  ?></td>
 
             <?php  
