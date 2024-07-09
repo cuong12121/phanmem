@@ -78,7 +78,7 @@
             $db->query ( $sqls );
             $names = $db->getObjectList ();
 
-            var_dump($names[0]);
+            var_dump($names[0]->username);
 
             die;
               
