@@ -157,6 +157,10 @@
 	        // Send the request
 
 	        $response = file_get_contents('https://api.dienmayai.com/api/search-data-user-id-package?name='.$name.'&date1='.$date1, FALSE, $context);
+
+	        var_dump($response);
+
+	        die;
 	       
 	        $info_data = json_decode($response);
 
