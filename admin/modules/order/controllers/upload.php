@@ -85,18 +85,21 @@
 		function test()
 		{
 			$model  = $this -> model;
-
-			// echo "1";
-
-			// die;
-			
-			// $file = !empty($_GET['file'])?$_GET['file']:'sp4.pdf';
 		   
 		    $path = 'https://drive.dienmayai.com/get.php?mime=xls&showfile=13_FCeLH4nFYqW9y96q7a8D1oAfd6m6bA';
 
-		    $test =  $model->showDataExcel($path);
+		    $path_run_excel = PATH_BASE.'files/print/excel1.xlsx';
+
+		    file_put_contents($path_run_excel, file_get_contents('https://drive.dienmayai.com/get.php?mime=xls&showfile=13_FCeLH4nFYqW9y96q7a8D1oAfd6m6bA'));
+
+
+		    $test =  $model->showDataExcel($path_run_excel);
+
+		    $path_run_pdf = PATH_BASE.'files/print/pdf1.pdf';
+
+		    file_put_contents($path_run_pdf, file_get_contents('https://drive.dienmayai.com/get.php?mime=pdf&showfile=1AZAh5AC31RaGtSi_6GaW0ElSpkhnH04z'));
 		   
-		    $filePDF = ['https://drive.dienmayai.com/get.php?mime=pdf&showfile=1AZAh5AC31RaGtSi_6GaW0ElSpkhnH04z'];
+		    $filePDF = [$path_run_pdf];
 
 		    $data_pdf = $this->dataPDF($filePDF);
 
