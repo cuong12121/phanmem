@@ -2110,6 +2110,8 @@
 
            	global $db;
 
+           	$pdf = new PDFMerger;
+
            	// echo $str_ids;
 
            	// die;
@@ -2117,7 +2119,7 @@
            	if(!empty($str_ids)){
            		$list = $this->get_records('id IN ('.$str_ids.')','fs_order_uploads');
 
-				$pdf = new PDFMerger;
+				
 				$i = 0;
 				$j = 1;
 				$name_pdf = "";
