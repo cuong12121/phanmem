@@ -225,9 +225,11 @@
 				global $db;
 
 	    		$query = 'SELECT * FROM check_auto_print WHERE active = 0';
-	    		$db->query($query);
+	    		
+	     		$sql = $db->query($query);
 
-	     		$result = $db->fetch_array();
+   				$result = $db->getObjectListByKey('id');
+     			
 
 	     		echo "<pre>"; var_dump($result); echo "</pre>";
 
