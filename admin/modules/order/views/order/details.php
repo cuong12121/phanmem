@@ -65,10 +65,14 @@
         <button type="submit">Bắn đơn </button> 
     </form>
 </div>
+<?php 
 
+    if($user_id !=9):
+   
+?>
 <div class="form-search">
     
-    <form class="header__search" method="get" action="#" style="display: flex; margin-bottom: 15px;">
+    <form class="header__search" method="get" action="https://dienmayai.com/admin/order/detail/search/package" style="display: flex; margin-bottom: 15px;">
 
         <?php 
             global $db;
@@ -92,18 +96,20 @@
                 }
             ?>
         </select>
-        <input type="date" class="input-search ui-autocomplete-input"   name="date" autocomplete="off" maxlength="100" required="" > 
-        
-        <input type="hidden" name="active" value="1">    
+        <label>Ngày</label>
+        <input type="date" class="input-search ui-autocomplete-input"   name="date1" autocomplete="off" maxlength="100" required="" > 
+       
         <button type="submit">Tìm kiếm </button> 
     </form>
 </div>
 <?php
+    endif;
+
+?>
+
+<?php
+
     $date = date('d-m-Y');
-
-   
-
-    
 
     $notification = !empty($_SESSION['notification'])?$_SESSION['notification']:'';
 

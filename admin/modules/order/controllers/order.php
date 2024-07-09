@@ -133,6 +133,36 @@
 		   
 		}
 
+		function search_order_by_Name()
+		{
+			$name = !empty($_GET['name'])?$_GET['name']:'';
+
+			$date1 = !empty($_GET['date1'])?$_GET['date1']:'';
+
+			
+
+			$context = stream_context_create(array(
+	            'http' => array(
+	                
+	                'method' => 'GET',
+
+	                'header' => "Content-Type: application/x-www-form-urlencoded\r\n".
+	                            "token: 7ojTLYXnzV0EH1wRGxOmvLFga",
+	                
+	            )
+	        ));
+
+	        // Send the request
+
+	        $response = file_get_contents('https://api.dienmayai.com/api/search-data-user-id-package?name='.$name.'&date1='.$date1, FALSE, $context);
+	       
+	        $info_data = json_decode($response);
+
+
+	        include 'modules/'.$this->module.'/views/'.$this->view.'/details.php';
+
+		}
+
 		public function search_order_details()
 		{
 
