@@ -230,10 +230,9 @@
 
    				$result = $db->getObjectListByKey('id');
      			
+	     		// echo "<pre>"; var_dump($result); echo "</pre>";
 
-	     		echo "<pre>"; var_dump($result); echo "</pre>";
-
-	     		die;
+	     		// die;
 
 	     		if(!empty($result)){
 	     			foreach ($result as  $value) {
