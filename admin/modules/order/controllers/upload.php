@@ -95,10 +95,6 @@
 
 		    $test =  $model->showDataExcel($path_run_excel);
 
-		    echo"<pre>";print_r($test); echo"</pre>";
-
-		    die;
-
 		    $path_run_pdf = PATH_BASE.'files/print/pdf1.pdf';
 
 		    file_put_contents($path_run_pdf, file_get_contents('https://drive.dienmayai.com/get.php?mime=pdf&showfile=1AZAh5AC31RaGtSi_6GaW0ElSpkhnH04z'));
