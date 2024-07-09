@@ -140,10 +140,6 @@
 
 			$run =  !empty($_GET['run'])?$_GET['run']:'';
 
-			// echo $run;
-
-			// die;
-
 			global $db;
 
 			if($run==="1"){
@@ -159,7 +155,7 @@
 
 		        $H = date('G');
 
-		        $house_id = 13;//$H<8?13:18 
+		        $house_id = $H<8?13:18; 
 
 		        $data_info = [];
 
@@ -232,30 +228,36 @@
 
 	     		$result = $db->getObjectList();
 
-	     		foreach ($result as  $value) {
-	     			
-	     			echo $value->list_ar_str.'<br>';
+	     		if(!empty($result)){
+	     			foreach ($result as  $value) {
+
+		     			$id = $value->id;
+		     			
+		     			$list_ar_str = $value->list_ar_str;
+
+						$data_info['house_id'] = $value->house_id;
+
+				        $data_info['platform_id'] = $value->platform_id;
+
+				        $data_info['warehouse_id'] = $value->warehouse_id;
+
+
+				        $model->prints_auto($list_ar_str, $data_info);
+
+				        $sql= "UPDATE check_auto_print SET active='1'  WHERE `id`=".$id;
+
+	          			$db->query($sql);
+
+	          			echo "update thành công id ".$id ;
+
+		     		}
 	     		}
-
-				// $list_ar_str = "228534,228531,228530,228474";
-
-				// $data_info['house_id'] = 13;
-
-		        // $data_info['platform_id'] = 9;
-
-		        // $data_info['warehouse_id'] = 2;
-
-
-		        // $model->prints_auto($list_ar_str, $data_info);
-
-		        // die;
 
 			}
 			else{
 				echo "print bị lỗi";
 			}
 
-			
 
 	        // print_r($data_order[0]);
 

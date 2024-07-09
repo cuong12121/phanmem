@@ -80,12 +80,21 @@
 	        ));
 
 	        // Send the request
-	        $response = file_get_contents('https://api.dienmayai.com/api/get-data-order-details?page='.$page.'&id_user='.$user_id, FALSE, $context);
+
+	        if($user_id==9){
+	        	$link_api = 'https://api.dienmayai.com/api/get-data-order-details?page='.$page;
+	        }
+	        else{
+	        	$link_api ='https://api.dienmayai.com/api/get-data-order-details?page='.$page.'&id_user='.$user_id;
+	        }
+
+	        $response = file_get_contents($link_api, FALSE, $context);
 	       
 	        $info_data = json_decode($response);
 
 
 	        include 'modules/'.$this->module.'/views/'.$this->view.'/details.php';
+	        
 	    	
 		}
 
