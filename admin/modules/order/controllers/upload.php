@@ -86,16 +86,16 @@
 		{
 			$model  = $this -> model;
 		   
-		    $path = 'https://drive.dienmayai.com/get.php?mime=xls&showfile=13_FCeLH4nFYqW9y96q7a8D1oAfd6m6bA';
+		    $path = 'files/orders/2024/07/09/kat-2_1720520511.xlsx';
 
-		    $path_run_excel = PATH_BASE.'files/print/excel1.xlsx';
+		    $path_run_excel = PATH_BASE.'files/print/excel2.xlsx';
 
-		    file_put_contents($path_run_excel, file_get_contents('https://drive.dienmayai.com/get.php?mime=xls&showfile=13_FCeLH4nFYqW9y96q7a8D1oAfd6m6bA'));
+		    file_put_contents($path_run_excel, file_get_contents('https://dienmayai.com/files/orders/2024/07/09/kat-2_1720520511.xlsx'));
 
 
 		    $test =  $model->showDataExcel($path_run_excel);
 
-		    echo"<pre>"; print_r($test);echo"</pre>";
+		    echo $path_run_excel;
 
 		    die;
 
