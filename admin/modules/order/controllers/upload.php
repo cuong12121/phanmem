@@ -242,14 +242,22 @@
 
 				        $data_info['warehouse_id'] = $value->warehouse_id;
 
+				        try 
+						{
 
-				        $model->prints_auto($list_ar_str, $data_info);
+							$model->prints_auto($list_ar_str, $data_info);
 
-				        $sql= "UPDATE check_auto_print SET active='1'  WHERE `id`=".$id;
+						    $sql= "UPDATE check_auto_print SET active='1'  WHERE `id`=".$id;
 
-	          			$db->query($sql);
+		          			$db->query($sql);
 
-	          			echo "update thành công id ".$id ;
+		          			echo "update thành công id ".$id ;
+						} 
+						catch (Exception $e) 
+						{    
+						    echo 'Message: ' .$e->getMessage();
+						}
+				        
 
 		     		}
 	     		}
