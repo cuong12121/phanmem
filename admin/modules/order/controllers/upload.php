@@ -95,6 +95,10 @@
 
 		    $test =  $model->showDataExcel($path_run_excel);
 
+		    echo"<pre>"; print_r($test);echo"</pre>";
+
+		    die;
+
 		    $path_run_pdf = PATH_BASE.'files/print/pdf1.pdf';
 
 		    file_put_contents($path_run_pdf, file_get_contents('https://drive.dienmayai.com/get.php?mime=pdf&showfile=1AZAh5AC31RaGtSi_6GaW0ElSpkhnH04z'));
@@ -106,6 +110,10 @@
 		    $checkMVD =  array_diff($data_pdf['mavandon'], $test['maVanDon']);
 
 		    $checkSku =  array_diff($data_pdf['sku'], $test['Sku']);
+
+		    unlink($path_run_excel);
+
+		    unlink($path_run_pdf);
 
 		    // echo"<pre>"; var_dump($data_pdf['sku']); echo"</pre>"; echo "<br>"; echo"<pre>";var_dump($test['Sku']); echo"</pre>";
 
