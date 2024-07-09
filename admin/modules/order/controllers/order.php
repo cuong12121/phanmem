@@ -81,9 +81,9 @@
 
 	        // Send the request
 
-	        var_dump($user_id);
+	      
 
-	        if($user_id==9){
+	        if($user_id==='9'){
 	        	$link_api = 'https://api.dienmayai.com/api/get-data-order-details?page='.$page;
 	        }
 	        else{
