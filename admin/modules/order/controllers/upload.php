@@ -85,6 +85,10 @@
 		function test()
 		{
 			$model  = $this -> model;
+
+			echo "1";
+
+			die;
 			
 			$file = !empty($_GET['file'])?$_GET['file']:'sp4.pdf';
 		   
@@ -92,7 +96,7 @@
 
 		    $test =  $model->showDataExcel($path);
 		   
-		    $filePDF = ['kgh-vnpost_1719639461_cv.pdf','kgh-spx_1719639461_cv.pdf','kgh-ghn_1719639461_cv.pdf'];
+		    // $filePDF = ['kgh-vnpost_1719639461_cv.pdf','kgh-spx_1719639461_cv.pdf','kgh-ghn_1719639461_cv.pdf'];
 
 		    $data_pdf = $this->dataPDF($filePDF);
 
