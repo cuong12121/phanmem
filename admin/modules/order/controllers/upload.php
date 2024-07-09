@@ -227,7 +227,11 @@
 	    		$query = 'SELECT * FROM check_auto_print WHERE active = 0';
 	    		$db->query($query);
 
-	     		$result = $db->getObjectList();
+	     		$result = $db->fetch_array();
+
+	     		echo "<pre>"; var_dump($result); echo "</pre>";
+
+	     		die;
 
 	     		if(!empty($result)){
 	     			foreach ($result as  $value) {
