@@ -2265,9 +2265,9 @@
 				$name_pdf = "";
 				$get_list_page_pdf = $this->get_records('record_id IN ('.$str_ids.')','fs_order_uploads_page_pdf','id,file_pdf,record_id,code,find_pdf,ordering,sku_fisrt,sku_last','ordering ASC,id ASC');
 
-				echo"<pre>"; var_dump($get_list_page_pdf); echo"</pre>";
+				// echo"<pre>"; var_dump($get_list_page_pdf); echo"</pre>";
 
-				die;
+				// die;
 
 
 				// đoạn này là bắt đầu in
