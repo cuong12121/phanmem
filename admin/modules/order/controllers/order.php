@@ -92,8 +92,7 @@
 	        	$link_api ='https://api.dienmayai.com/api/get-data-order-details?page='.$page.'&id_user='.$user_id;
 	        }
 
-	        var_dump($link_api);
-
+	      
 	        $response = file_get_contents($link_api, FALSE, $context);
 	       
 	        $info_data = json_decode($response);

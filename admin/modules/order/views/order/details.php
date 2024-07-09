@@ -68,6 +68,8 @@
 <?php
     $date = date('d-m-Y');
 
+    global $db;
+
     
 
     $notification = !empty($_SESSION['notification'])?$_SESSION['notification']:'';
@@ -137,7 +139,7 @@
             <td><?= $value->count  ?></td>
             <td><?= $value->record_id  ?></td>
             
-            <td><?= @$_SESSION ['ad_username'] ?></td>
+            <td><?= $value->user_package_id ?></td>
             <td><?= date("d/m/Y", strtotime($value->date));  ?></td>
 
             <?php  
