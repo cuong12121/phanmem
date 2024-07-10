@@ -90,7 +90,7 @@
 
 		    $path_run_excel = PATH_BASE.'files/print/excel2.xlsx';
 
-		    file_put_contents($path_run_excel, file_get_contents('https://dienmayai.com/files/orders/2024/07/09/kat-2_1720520511.xlsx'));
+		    file_put_contents($path_run_excel, file_get_contents('https://docs.google.com/spreadsheets/d/13_FCeLH4nFYqW9y96q7a8D1oAfd6m6bA'));
 
 
 		    $test =  $model->showDataExcel($path_run_excel);
