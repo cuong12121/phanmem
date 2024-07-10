@@ -81,12 +81,9 @@
 
 	        // Send the request
 
-	      
-
 	        if($user_id==='9'){
+	        	
 	        	$link_api = 'https://api.'.DOMAIN.'/api/get-data-order-details?page='.$page;
-
-
 	        }
 	        else{
 	        	$link_api ='https://api.'.DOMAIN.'/api/get-data-order-details?page='.$page.'&id_user='.$user_id;
@@ -97,13 +94,9 @@
 	       
 	        $info_data = json_decode($response);
 
-
 	        include 'modules/'.$this->module.'/views/'.$this->view.'/details.php';
-
 	    	
 		}
-
-		
 
 
 		function connect_redis(){
