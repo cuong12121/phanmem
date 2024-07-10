@@ -84,12 +84,12 @@
 	      
 
 	        if($user_id==='9'){
-	        	$link_api = 'https://api.dienmayai.com/api/get-data-order-details?page='.$page;
+	        	$link_api = 'https://api.'.DOMAIN.'/api/get-data-order-details?page='.$page;
 
 
 	        }
 	        else{
-	        	$link_api ='https://api.dienmayai.com/api/get-data-order-details?page='.$page.'&id_user='.$user_id;
+	        	$link_api ='https://api.'.DOMAIN.'/api/get-data-order-details?page='.$page.'&id_user='.$user_id;
 	        }
 
 	      
@@ -158,7 +158,7 @@
 
 	        // Send the request
 
-	        $response = file_get_contents('https://api.dienmayai.com/api/search-data-user-id-package?name='.$name.'&date1='.$date1.'&date2='.$date2, FALSE, $context);
+	        $response = file_get_contents('https://api.'.DOMAIN.'/api/search-data-user-id-package?name='.$name.'&date1='.$date1.'&date2='.$date2, FALSE, $context);
 
 	        $info_data = json_decode($response);
 
@@ -197,7 +197,7 @@
 	        
 
 	        // Send the request
-	        $response = file_get_contents('https://api.dienmayai.com/api/search-data-order-details?search='.$search.'&user_package_id='.$user_id.'&active='.$active, FALSE, $context);
+	        $response = file_get_contents('https://api.'.DOMAIN.'/api/search-data-order-details?search='.$search.'&user_package_id='.$user_id.'&active='.$active, FALSE, $context);
 
 	        $redis = $this->connect_redis();
 
@@ -215,7 +215,7 @@
 
 			// unset($_SESSION['name']); // Huỷ session name
 
-	      	header("Location: https://dienmayai.com/admin/order/detail");
+	      	header("Location: https://".DOMAIN."/admin/order/detail");
 
 		}
 
@@ -234,7 +234,7 @@
 	        ));
 
 	        // Send the request
-	        $response = file_get_contents('https://api.dienmayai.com/api/get-data-order-details?page='.$page, FALSE, $context);
+	        $response = file_get_contents('https://api.'.DOMAIN.'/api/get-data-order-details?page='.$page, FALSE, $context);
 
 	       
 

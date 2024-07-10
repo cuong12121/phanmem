@@ -25,6 +25,7 @@
 	$path = str_replace(DS.$folder_admin.DS,DS, $path);
 	
 	define('PATH_BASE', $path);
+	define('DOMAIN', 'dienmayai.com');
 	define('IS_REWRITE', 1);
 	define('WRITE_LOG_MYSQL',0);
 	define('LINK_AMIN', 'admin');
