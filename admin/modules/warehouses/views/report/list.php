@@ -6,7 +6,7 @@
 global $toolbar;
 $toolbar->setTitle(FSText :: _('Báo cáo xuất nhập kho') );?>
 
-<a href="https://dienmayai.com/admin/warehouses/report?excel=1"><button>xuất file excel</button></a>
+<a href="https://".DOMAIN."/admin/warehouses/report?excel=1"><button>xuất file excel</button></a>
 
 <?php
 

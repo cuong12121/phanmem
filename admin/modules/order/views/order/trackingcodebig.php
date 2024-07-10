@@ -123,7 +123,7 @@
             // Function to load realtime data
             function loadRealtimeData(){
                 $.ajax({
-                    url: 'https://dienmayai.com/rediss.php', // Đường dẫn tới tập tin PHP xử lý dữ liệu
+                    url: 'https://'.DOMAIN.'/rediss.php', // Đường dẫn tới tập tin PHP xử lý dữ liệu
                     type: 'GET',
                     success: function(response){
 

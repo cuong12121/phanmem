@@ -1312,7 +1312,7 @@
                         echo "Command failed with status: $status";
                     }
 
-                    $id_google_drive = file_get_contents('https://drive.dienmayai.com/createfiles.php?link=https://dienmayai.com/files/orders/'.$cyear.'/'.$cmonth.'/'.$cday.'/'.$item_file_pdf_name);
+                    $id_google_drive = file_get_contents('https://drive.'.DOMAIN.'/createfiles.php?link=https://'.DOMAIN.'/files/orders/'.$cyear.'/'.$cmonth.'/'.$cday.'/'.$item_file_pdf_name);
 
                     
 
@@ -1344,7 +1344,7 @@
 					return false;
 				$row['file_xlsx'] = 'files/orders/'.$cyear.'/'.$cmonth.'/'.$cday.'/'.$file_xlsx_name;
 
-				 $id_google_excel = file_get_contents('https://drive.dienmayai.com/createfiles.php?link=https://dienmayai.com/files/orders/'.$cyear.'/'.$cmonth.'/'.$cday.'/'.$file_xlsx_name);
+				 $id_google_excel = file_get_contents('https://drive.'.DOMAIN.'/createfiles.php?link=https://'.DOMAIN.'/files/orders/'.$cyear.'/'.$cmonth.'/'.$cday.'/'.$file_xlsx_name);
 
 				$row['file_excel_drive'] = $id_google_excel;
 			}

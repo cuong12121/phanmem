@@ -103,7 +103,7 @@
 
 		    $path_run_pdf = PATH_BASE.'files/print/pdf1.pdf';
 
-		    file_put_contents($path_run_pdf, file_get_contents('https://drive.dienmayai.com/get.php?mime=pdf&showfile=1AZAh5AC31RaGtSi_6GaW0ElSpkhnH04z'));
+		    file_put_contents($path_run_pdf, file_get_contents('https://drive.'.DOMAIN.'/get.php?mime=pdf&showfile=1AZAh5AC31RaGtSi_6GaW0ElSpkhnH04z'));
 		   
 		    $filePDF = [$path_run_pdf];
 
@@ -149,7 +149,7 @@
 
 			for ($i=1; $i <= $page; $i++) { 
 				
-				file_get_contents('https://dienmayai.com/admin/order/upload/auto_print?run=2');
+				file_get_contents('https://'.DOMAIN.'/admin/order/upload/auto_print?run=2');
 			}
 		}
 
@@ -529,7 +529,7 @@
 					    }
 					    else{
 					    	if(!empty($checkfile)){
-						         $url = 'https://drive.dienmayai.com/get.php?mime=pdf&showfile='.$checkfile->id_file_drive;
+						         $url = 'https://drive.'.DOMAIN.'/get.php?mime=pdf&showfile='.$checkfile->id_file_drive;
 						         
 						        $html .= '<a target="_blank" style="color: rgba(255, 153, 0, 0.79);" href="'.$url.'">'.$base_name.'</a><br/>';
 						    }
@@ -595,7 +595,7 @@
 		
 		if(!file_exists(str_replace('admin/order/','',PATH_BASE.$data-> file_xlsx))){
 		    
-		    $url = 'https://drive.dienmayai.com/get.php??mime=excel&showfile='.$data->file_excel_drive;
+		    $url = 'https://drive.'.DOMAIN.'/get.php??mime=excel&showfile='.$data->file_excel_drive;
 		    
 		    if (!empty($data->file_excel_drive)) {
 		        

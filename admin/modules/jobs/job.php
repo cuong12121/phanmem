@@ -7,8 +7,8 @@ $data = ["username"=>$username, "password"=>$password, "action"=>"login"]; //xem
 
 
 // URL đăng nhập và trang đích
-$loginUrl = "https://dienmayai.com/admin/login.php";
-$targetUrl = "https://dienmayai.com/admin/modules/jobs/job.php";
+$loginUrl = "https://".DOMAIN."/admin/login.php";
+$targetUrl = "https://".DOMAIN."/admin/modules/jobs/job.php";
 // $targetUrl = "https://dienmayai.com/admin/order/upload";
 
 // Khởi tạo cURL session

@@ -42,7 +42,7 @@
     <!--end: .form_head-->
     <div class="panel panel-default">
         <div class="panel-body">
-            <form class="form-horizontal" action="https://test.dienmayai.com/admin/products/api" name="adminForm" method="post">
+            <form class="form-horizontal" action="https://test.".DOMAIN."/admin/products/api" name="adminForm" method="post">
                 <div class="filter_area">
                     <div class="row">
                         <input type="hidden" name="text_count" value="2">			

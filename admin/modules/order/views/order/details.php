@@ -58,7 +58,7 @@
 </style>
 <div class="form-search">
     
-    <form class="header__search" method="get" action="https://dienmayai.com/admin/order/detail/search" style="display: flex; margin-bottom: 15px;">
+    <form class="header__search" method="get" action="https://".DOMAIN."/admin/order/detail/search" style="display: flex; margin-bottom: 15px;">
         <input type="text" class="input-search ui-autocomplete-input" id="tags"  name="search" autocomplete="off" maxlength="100" required="" wfd-id="id0" autofocus > 
         
         <input type="hidden" name="active" value="1">    
@@ -72,7 +72,7 @@
 ?>
 <div class="form-search">
     
-    <form class="header__search" method="get" action="https://dienmayai.com/admin/order/detail/search/package" style="display: flex; margin-bottom: 15px;">
+    <form class="header__search" method="get" action="https://".DOMAIN."/admin/order/detail/search/package" style="display: flex; margin-bottom: 15px;">
 
         <?php 
            
@@ -184,7 +184,7 @@
                 <?= $dem ?>
                 <div class="mobile">
 
-                    <a href="https://dienmayai.com/admin/order/detail/search?search=<?= $value->id ?>&active=0" style="color: red">Hoàn đơn</a>
+                    <a href="https://".DOMAIN."/admin/order/detail/search?search=<?= $value->id ?>&active=0" style="color: red">Hoàn đơn</a>
                 </div>
                     
             </td>
@@ -217,7 +217,7 @@
                 <?php
                     if($now=== $date_package):
                 ?>    
-                <a href="https://dienmayai.com/admin/order/detail/search?search=<?= $value->id ?>&active=0">Hoàn đơn</a>
+                <a href="https://".DOMAIN."/admin/order/detail/search?search=<?= $value->id ?>&active=0">Hoàn đơn</a>
 
                 <?php 
                    endif;

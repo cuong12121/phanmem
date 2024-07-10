@@ -1779,7 +1779,7 @@ static function dt_edit_image_old($title,$name,$value,$width  = 0,$height = 0,$c
 				    
 				 //   check drive google excel
 				
-				     $url = 'https://drive.dienmayai.com/get.php??mime=excel&showfile='.$drive_excel;
+				     $url = 'https://drive.'.DOMAIN.'/get.php??mime=excel&showfile='.$drive_excel;
 			   
 			    
 	    		    if (!empty($drive_excel)) {
@@ -1838,7 +1838,7 @@ static function dt_edit_image_old($title,$name,$value,$width  = 0,$height = 0,$c
 						    
 						    foreach ($results as $value){
 						        
-						        $url = 'https://drive.dienmayai.com/get.php?mime=pdf&showfile='.$value->id_file_drive;
+						        $url = 'https://drive.'.DOMAIN.'/get.php?mime=pdf&showfile='.$value->id_file_drive;
 						        
 						         $html .= '<a target="_blank" style="color: rgba(255, 153, 0, 0.79);" href="'.$url.'">'.$base_name.'</a><br/>';
 						        
