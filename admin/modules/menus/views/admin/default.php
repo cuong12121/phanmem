@@ -107,13 +107,13 @@ echo '</li>';
 ?>
 
 <li>
-  <a id="li_menu_500" href="https://".DOMAIN."/admin/order/detail" class="li_menu_0 header ">
+  <a id="li_menu_500" href="https://<?= DOMAIN ?>/admin/order/detail" class="li_menu_0 header ">
     <span class="text">Đóng đơn</span>          
   </a>
   
 </li>
 <li>
-  <a id="li_menu_501" href="https://".DOMAIN."/admin/order/trackings" class="li_menu_0 header ">
+  <a id="li_menu_501" href="https://<?= DOMAIN ?>/admin/order/trackings" class="li_menu_0 header ">
     <span class="text">tracking</span>          
   </a>
 </li>
