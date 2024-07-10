@@ -27,7 +27,7 @@ class FSSecurity
 		$module = strtolower($module);
 		$view = strtolower($view);
 		$task = strtolower($task);
-		if($module == 'home' || $task == 'cancel' || $_SESSION['ad_groupid'] == 4 || $_SESSION['ad_userid'] == 9 || $_SESSION['ad_userid'] == 6 || $task == 'logout' ||  $task == 'ajax_set_ss_search_multipe' ||  $task == 'ajax_unset_ss' ||  $task == 'ajax_get_product_name'){
+		if($module == 'home' || $task == 'cancel' || $_SESSION['ad_groupid'] == 4  || $_SESSION['ad_groupid'] == 5 || $_SESSION['ad_userid'] == 9 || $_SESSION['ad_userid'] == 6 || $task == 'logout' ||  $task == 'ajax_set_ss_search_multipe' ||  $task == 'ajax_unset_ss' ||  $task == 'ajax_get_product_name'){
 			return true;
 		}
 		if(!isset($_SESSION['ad_userid']) || !isset($_SESSION['ad_groupid'])){
