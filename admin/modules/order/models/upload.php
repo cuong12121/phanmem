@@ -120,14 +120,7 @@
 			return $query;
 		}
 
-		function runAutoPrintPage(){
-			$page = $_GET['page'];
-
-			for ($i=1; $i <= $page; $i++) { 
-				
-				file_get_contents('https://dienmayai.com/admin/order/upload/auto_print?run=2');
-			}
-		}
+		
 
 		function convertSlug($str)
         {
