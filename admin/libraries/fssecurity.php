@@ -148,7 +148,7 @@ class FSSecurity
 					return false;
 				}
 			}else{
-				if(($task == 'display' || $task =='detail' || $task == 'permission' ) && (float)$permission < 6)
+				if(($task == 'display' || $task =='detail' || $task == 'permission' ) && (float)$permission < 3)
 					return false;
 
 				if(($task == 'save' || $task =='add' || $task == 'edit' || $task== 'apply' || $task =='hot' || $task == 'unhot'  ||  $task =='home' || $task == 'unhome'|| $task== 'save_new' || $task== 'duplicate' ||  $task== 'save_all' || $task== 'permission_save'|| $task== 'permission_apply' || $task == 'published' ) && (float)$permission < 5){
