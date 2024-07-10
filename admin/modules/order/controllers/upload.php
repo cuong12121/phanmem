@@ -90,12 +90,14 @@
 
 		    $path_run_excel = PATH_BASE.'files/print/excel2.xlsx';
 
-		    file_put_contents($path_run_excel, file_get_contents('https://docs.google.com/spreadsheets/d/13_FCeLH4nFYqW9y96q7a8D1oAfd6m6bA'));
+		    $push = file_put_contents($path_run_excel, file_get_contents('https://docs.google.com/spreadsheets/d/13_FCeLH4nFYqW9y96q7a8D1oAfd6m6bA'));
 
 
-		    $test =  $model->showDataExcel($path_run_excel);
+		    // $test =  $model->showDataExcel($path_run_excel);
 
-		    echo "<pre>";print_r($test);echo "<pre>";
+		    // echo "<pre>";print_r($test);echo "<pre>";
+
+		    var_dump($push);
 
 		    die;
 
