@@ -386,7 +386,7 @@
 
 		        $H = date('G');
 
-		        $house_id = 11// $H<8?13:18; 
+		        $house_id = 11;// $H<8?13:18; 
 
 		        $data_info = [];
 
