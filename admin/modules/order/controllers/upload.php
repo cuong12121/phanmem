@@ -137,14 +137,7 @@
 		    $filePDF = [$savePath_pdf];
 		    $data_pdf = $this->dataPDF($filePDF);
 
-		    print_r($data_pdf['mavandon']);
-
-		    echo "<br>";
-
-		    print_r($test['maVanDon']);
-
-		    die;
-
+		 
 		    $checkMVD =  array_diff($data_pdf['mavandon'], $test['maVanDon']);
 
 		    $checkSku =  array_diff($data_pdf['sku'], $test['Sku']);
