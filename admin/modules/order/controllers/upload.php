@@ -134,19 +134,13 @@
 		    $filePDF = [$savePath_pdf];
 		    $data_pdf = $this->dataPDF($filePDF);
 
-
-		    echo"<pre>"; var_dump($data_pdf['mavandon']);echo"<pre>";
-		    die;
-
 		    $checkMVD =  array_diff($data_pdf['mavandon'], $test['maVanDon']);
 
 		    $checkSku =  array_diff($data_pdf['sku'], $test['Sku']);
 
-		    
-
 		    unlink($savePath_excel);
 
-		    unlink($path_run_pdf);
+		    unlink($savePath_pdf);
 
 		    // echo"<pre>"; var_dump($data_pdf['sku']); echo"</pre>"; echo "<br>"; echo"<pre>";var_dump($test['Sku']); echo"</pre>";
 
@@ -157,21 +151,24 @@
 		    	echo "đơn hàng không bị lỗi";
 		    }
 		    else{
+		    	echo "đơn hàng bị lỗi";
+		    }
+		    // else{
 
-		    	if(!empty($checkMVD)||!empty($checkSku)){
+		    // 	if(!empty($checkMVD)||!empty($checkSku)){
 
-		    			$sql = " INSERT INTO run_check_file_order_pdf_excel
-							(`pdf_link`,excel_link,record_id, mvd_pdf,sku_pdf)
-							VALUES ('$ip_address','$page','$time')
-							";
-						$db->query($sql);
+		    // 			$sql = " INSERT INTO run_check_file_order_pdf_excel
+			// 				(`pdf_link`,excel_link,record_id, mvd_pdf,sku_pdf)
+			// 				VALUES ('$ip_address','$page','$time')
+			// 				";
+			// 			$db->query($sql);
 
 		    	
 		    		
-		    	}
+		    // 	}
 
 		 
-		    }
+		    // }
 
 		   
 		}
