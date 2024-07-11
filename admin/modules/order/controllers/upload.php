@@ -136,6 +136,10 @@
 
 		    print_r($data_pdf['mavandon']);
 
+		    echo "<br>";
+
+		    print_r($test['mavandon']);
+
 		    die;
 
 		    $checkMVD =  array_diff($data_pdf['mavandon'], $test['maVanDon']);
