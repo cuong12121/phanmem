@@ -115,7 +115,7 @@
 		    $savePath_pdf = PATH_BASE.'files/print/pdf1.pdf';
 
 
-		    $path_run_pdf ='https://drive.'.DOMAIN.'/get.php?mime=pdf&showfile='.$file_pdf_run
+		    $path_run_pdf ='https://drive.'.DOMAIN.'/get.php?mime=pdf&showfile='.$file_pdf_run;
 
 		     $chs = curl_init($path_run_pdf);
 		    curl_setopt($chs, CURLOPT_RETURNTRANSFER, true);
