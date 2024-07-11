@@ -134,6 +134,10 @@
 		    $filePDF = [$savePath_pdf];
 		    $data_pdf = $this->dataPDF($filePDF);
 
+		    print_r($test['maVanDon']);
+
+		    die;
+
 		    $checkMVD =  array_diff($data_pdf['mavandon'], $test['maVanDon']);
 
 		    $checkSku =  array_diff($data_pdf['sku'], $test['Sku']);
@@ -151,6 +155,8 @@
 		    	echo "đơn hàng không bị lỗi";
 		    }
 		    else{
+
+
 		    	echo "đơn hàng bị lỗi";
 		    }
 		    // else{
