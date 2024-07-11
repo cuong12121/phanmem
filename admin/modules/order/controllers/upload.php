@@ -88,16 +88,19 @@
 		   
 		    $path = 'files/orders/2024/07/09/kat-2_1720520511.xlsx';
 
-		    $path_run_excel = PATH_BASE.'files/print/excel2.xlsx';
-
-		    $push = file_put_contents($path_run_excel, file_get_contents('https://docs.google.com/spreadsheets/d/13_FCeLH4nFYqW9y96q7a8D1oAfd6m6bA'));
+		    $path_run_excel = 'https://drive.'.DOMAIN.'/file_upload/excel22.xlsx';
 
 
-		    // $test =  $model->showDataExcel($path_run_excel);
+		    $path_excel = 'https://drive.'.DOMAIN.'/convert_excel.php?file=13_FCeLH4nFYqW9y96q7a8D1oAfd6m6bA';
 
-		    // echo "<pre>";print_r($test);echo "<pre>";
+		    file_get_contents($path_excel);
 
-		    var_dump($push);
+
+		    $test =  $model->showDataExcel($path_run_excel);
+
+		    echo "<pre>";print_r($test);echo "<pre>";
+
+		    // var_dump($push);
 
 		    die;
 
@@ -145,12 +148,18 @@
 		}
 
 		function runAutoPrintPage(){
-			$page = $_GET['page'];
+			global $db;
 
-			for ($i=1; $i <= $page; $i++) { 
+			$query =  "SELECT id FROM check_auto_print WHERE active = 1";
+
+			$dem = $db->getTotal($query);
+
+			// for ($i=1; $i <= $dem; $i++) { 
 				
-				file_get_contents('https://'.DOMAIN.'/admin/order/upload/auto_print?run=2');
-			}
+			// 	file_get_contents('https://'.DOMAIN.'/admin/order/upload/auto_print?run=2');
+
+			// 	sleep(40);
+			// }
 		}
 
 		function returnDataPDF($path)
