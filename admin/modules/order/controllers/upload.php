@@ -90,9 +90,12 @@
 		function test()
 		{
 			
+
+			$file_exc = '1P_j4kXz0cCLw2l3PWZKGS_bU8N8J2WVN';
+			$file_pdf_run = '1-I91v-roZKWfCGBm-C27NVsp4W_iiPKC';
 			$model  = $this -> model;
 		    $path_run_excel = 'https://drive.'.DOMAIN.'/file_upload/excel22.xlsx';
-		    $path_excel = 'https://drive.'.DOMAIN.'/convert_excel.php?id_file=1P_j4kXz0cCLw2l3PWZKGS_bU8N8J2WVN';
+		    $path_excel = 'https://drive.'.DOMAIN.'/convert_excel.php?id_file='.$file_exc;
 		    $savePath_excel = PATH_BASE.'files/print/excel22.xlsx';
 		   	$ch = curl_init($path_run_excel);
 		    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
@@ -108,12 +111,19 @@
 		    }
 		    $test =  $model->showDataExcel($savePath_excel);
 		    $path_run_pdf = PATH_BASE.'files/print/pdf1.pdf';
-		    file_put_contents($path_run_pdf, file_get_contents('https://drive.'.DOMAIN.'/get.php?mime=pdf&showfile=1-I91v-roZKWfCGBm-C27NVsp4W_iiPKC'));
+		    file_put_contents($path_run_pdf, file_get_contents('https://drive.'.DOMAIN.'/get.php?mime=pdf&showfile='.$file_pdf_run));
 		    $filePDF = [$path_run_pdf];
 		    $data_pdf = $this->dataPDF($filePDF);
+
+
+		    echo"<pre>"; var_dump($test['maVanDon']);echo"<pre>";
+		    die;
+
 		    $checkMVD =  array_diff($data_pdf['mavandon'], $test['maVanDon']);
 
 		    $checkSku =  array_diff($data_pdf['sku'], $test['Sku']);
+
+		    
 
 		    unlink($savePath_excel);
 
@@ -129,18 +139,19 @@
 		    }
 		    else{
 
-		    	if(!empty($checkMVD)){
+		    	if(!empty($checkMVD)||!empty($checkSku)){
 
-		    		// print_r($checkMVD);
-		    		echo 'kiểm tra lại các mã vận đơn sau ở file pdf <br>'. implode("<br>",$checkMVD). '<br>
-		    		 không giống với file excel';
+		    			$sql = " INSERT INTO run_check_file_order_pdf_excel
+							(`pdf_link`,excel_link,record_id, mvd_pdf,sku_pdf)
+							VALUES ('$ip_address','$page','$time')
+							";
+						$db->query($sql);
+
+		    	
+		    		
 		    	}
 
-		    	if(!empty($checkSku)){
-
-		    		echo 'kiểm tra lại sku sau ở file pdf <br>'. implode("<br>",$checkSku). '<br>
-		    		 không giống với file excel';
-		    	}
+		 
 		    }
 
 		   
