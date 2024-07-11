@@ -97,6 +97,7 @@
 		    $path_run_excel = 'https://drive.'.DOMAIN.'/file_upload/excel22.xlsx';
 		    $path_excel = 'https://drive.'.DOMAIN.'/convert_excel.php?id_file='.$file_exc;
 		    $savePath_excel = PATH_BASE.'files/print/excel22.xlsx';
+
 		   	$ch = curl_init($path_run_excel);
 		    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 		    curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
@@ -109,10 +110,28 @@
 
 		        die;
 		    }
+
 		    $test =  $model->showDataExcel($savePath_excel);
-		    $path_run_pdf = PATH_BASE.'files/print/pdf1.pdf';
-		    file_put_contents($path_run_pdf, file_get_contents('https://drive.'.DOMAIN.'/get.php?mime=pdf&showfile='.$file_pdf_run));
-		    $filePDF = [$path_run_pdf];
+		    $savePath_pdf = PATH_BASE.'files/print/pdf1.pdf';
+
+
+		    $path_run_pdf ='https://drive.'.DOMAIN.'/get.php?mime=pdf&showfile='.$file_pdf_run
+
+		     $chs = curl_init($path_run_pdf);
+		    curl_setopt($chs, CURLOPT_RETURNTRANSFER, true);
+		    curl_setopt($chs, CURLOPT_FOLLOWLOCATION, true);
+		    $datas = curl_exec($chs);
+		    curl_close($chs);
+		    if ($datas) {
+		        file_put_contents($savePath_pdf, $datas);
+		    } else {
+		        throw new Exception("Không thể tải tệp từ URL.");
+
+		        die;
+		    }
+
+
+		    $filePDF = [$savePath_pdf];
 		    $data_pdf = $this->dataPDF($filePDF);
 
 
