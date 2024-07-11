@@ -91,8 +91,8 @@
 		{
 			
 
-			$file_exc = '1P_j4kXz0cCLw2l3PWZKGS_bU8N8J2WVN';
-			$file_pdf_run = '1-I91v-roZKWfCGBm-C27NVsp4W_iiPKC';
+			$file_exc = '1FdyRSbVhTYInQXYlFGwd3cw8XCqLDHG4';
+			$file_pdf_run = '1MAAUbenZq2QqUFKujJ_5-KKDSMQXERpp';
 			$model  = $this -> model;
 		    $path_run_excel = 'https://drive.'.DOMAIN.'/file_upload/excel22.xlsx';
 		    $path_excel = 'https://drive.'.DOMAIN.'/convert_excel.php?id_file='.$file_exc;
