@@ -151,6 +151,8 @@
 		function runAutoPrintPage(){
 			global $db;
 
+			$model  = $this -> model;
+
 			$query =  "SELECT id FROM check_auto_print WHERE active = 0";
 
 			$dem = $db->getTotal($query);
