@@ -116,7 +116,7 @@
 		    $data_pdf = $this->dataPDF($filePDF);
 
 
-		    echo"<pre>"; var_dump($test['maVanDon']);echo"<pre>";
+		    echo"<pre>"; var_dump($data_pdf['mavandon']);echo"<pre>";
 		    die;
 
 		    $checkMVD =  array_diff($data_pdf['mavandon'], $test['maVanDon']);
