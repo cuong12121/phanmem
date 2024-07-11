@@ -158,10 +158,54 @@
 		
 			for ($i=1; $i <= $dem; $i++) { 
 				
-				file_get_contents('https://'.DOMAIN.'/admin/order/upload/auto_print?run=2');
+				$querys = 'SELECT * FROM check_auto_print WHERE active = 0';
+	    		
+	     		$sql = $db->query($querys);
 
-				sleep(30);
+   				$result = $db->getObjectListByKey('id');
+     			
+
+	     		if(!empty($result)){
+	     			foreach ($result as  $value) {
+
+		     			$id = $value->id;
+		     			
+		     			$list_ar_str = $value->list_ar_str;
+
+						$data_info['house_id'] = $value->house_id;
+
+				        $data_info['platform_id'] = $value->platform_id;
+
+				        $data_info['warehouse_id'] = $value->warehouse_id;
+
+				        try 
+						{
+
+							$model->prints_auto($list_ar_str, $data_info);
+
+						    $sql= "UPDATE check_auto_print SET active='1'  WHERE `id`=".$id;
+
+		          			$db->query($sql);
+
+		          			echo "update thành công id ".$id ;
+						} 
+						catch (Exception $e) 
+						{    
+						    echo 'Message: ' .$e->getMessage();
+						}
+				        
+
+		     		}
+	     		}
+
+
+
+				sleep(10);
 			}
+			// $query_string = "delete from check_auto_print  WHERE `active`= 1";
+			$query_string =  "DELETE FROM check_auto_print WHERE `active` = 1";
+
+			$db->query($query_string);
 		}
 
 		function returnDataPDF($path)
@@ -342,7 +386,7 @@
 
 		        $H = date('G');
 
-		        $house_id = $H<8?13:18; 
+		        $house_id = 11// $H<8?13:18; 
 
 		        $data_info = [];
 
