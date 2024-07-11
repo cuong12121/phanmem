@@ -163,7 +163,7 @@
 		public function search_order_details()
 		{
 
-			$define_id = ['&'=>208, '#'=>9];
+			$define_id = ['$'=>252, '@'=>253, '%'=>254,'?'=>255];
 
 			$searchs = trim($_GET['search']);
 
