@@ -237,9 +237,9 @@
 				sleep(10);
 			}
 			// $query_string = "delete from check_auto_print  WHERE `active`= 1";
-			$query_string =  "DELETE FROM check_auto_print WHERE `active` = 1";
+			// $query_string =  "DELETE FROM check_auto_print WHERE `active` = 1";
 
-			$db->query($query_string);
+			// $db->query($query_string);
 		}
 
 		function returnDataPDF($path)
