@@ -82,26 +82,23 @@
 			include 'modules/'.$this->module.'/views/'.$this->view.'/detail.php';
 		}
 
+		function run_check_pdf_excel($value='')
+		{
+			
+		}
+
 		function test()
 		{
 			
 			$model  = $this -> model;
-		   
-		    $path = 'files/orders/2024/07/09/kat-2_1720520511.xlsx';
-
 		    $path_run_excel = 'https://drive.'.DOMAIN.'/file_upload/excel22.xlsx';
-
-
-		    $path_excel = 'https://drive.'.DOMAIN.'/convert_excel.php?id_file=13_FCeLH4nFYqW9y96q7a8D1oAfd6m6bA';
-
+		    $path_excel = 'https://drive.'.DOMAIN.'/convert_excel.php?id_file=1P_j4kXz0cCLw2l3PWZKGS_bU8N8J2WVN';
 		    $savePath = PATH_BASE.'files/print/excel22.xlsx';
-
 		   	$ch = curl_init($path_run_excel);
 		    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 		    curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
 		    $data = curl_exec($ch);
 		    curl_close($ch);
-
 		    if ($data) {
 		        file_put_contents($savePath, $data);
 		    } else {
@@ -109,24 +106,11 @@
 
 		        die;
 		    }
-
-
 		    $test =  $model->showDataExcel($savePath);
-
-		    echo "<pre>";print_r($test);echo "<pre>";
-
-		    // var_dump($push);
-
-		    die;
-
 		    $path_run_pdf = PATH_BASE.'files/print/pdf1.pdf';
-
-		    file_put_contents($path_run_pdf, file_get_contents('https://drive.'.DOMAIN.'/get.php?mime=pdf&showfile=1AZAh5AC31RaGtSi_6GaW0ElSpkhnH04z'));
-		   
+		    file_put_contents($path_run_pdf, file_get_contents('https://drive.'.DOMAIN.'/get.php?mime=pdf&showfile=1-I91v-roZKWfCGBm-C27NVsp4W_iiPKC'));
 		    $filePDF = [$path_run_pdf];
-
 		    $data_pdf = $this->dataPDF($filePDF);
-
 		    $checkMVD =  array_diff($data_pdf['mavandon'], $test['maVanDon']);
 
 		    $checkSku =  array_diff($data_pdf['sku'], $test['Sku']);
