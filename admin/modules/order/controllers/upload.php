@@ -91,7 +91,7 @@
 		    $path_run_excel = 'https://drive.'.DOMAIN.'/file_upload/excel22.xlsx';
 
 
-		    $path_excel = 'https://drive.'.DOMAIN.'/convert_excel.php?file=13_FCeLH4nFYqW9y96q7a8D1oAfd6m6bA';
+		    $path_excel = 'https://drive.'.DOMAIN.'/convert_excel.php?id_file=13_FCeLH4nFYqW9y96q7a8D1oAfd6m6bA';
 
 		    file_get_contents($path_excel);
 
