@@ -1,5 +1,5 @@
 <?php
-	include 'PDFMerger-tcpdf/PDFMerger.php';
+	require_once 'PDFMerger-tcpdf/PDFMerger.php';
 	use PDFMerger\PDFMerger;
 	include 'fpdf/fpdf.php';
    	include 'fpdi/src/autoload.php';
