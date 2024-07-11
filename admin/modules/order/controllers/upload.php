@@ -138,7 +138,7 @@
 
 		    echo "<br>";
 
-		    print_r($test['mavandon']);
+		    print_r($test['maVanDon']);
 
 		    die;
 
