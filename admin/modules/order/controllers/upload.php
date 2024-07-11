@@ -134,7 +134,7 @@
 		    $filePDF = [$savePath_pdf];
 		    $data_pdf = $this->dataPDF($filePDF);
 
-		    print_r($test['maVanDon']);
+		    print_r($data_pdf['mavandon']);
 
 		    die;
 
