@@ -93,20 +93,20 @@
 			$model  = $this -> model;
 		    $path_run_excel = 'https://drive.'.DOMAIN.'/file_upload/excel22.xlsx';
 		    $path_excel = 'https://drive.'.DOMAIN.'/convert_excel.php?id_file=1P_j4kXz0cCLw2l3PWZKGS_bU8N8J2WVN';
-		    $savePath = PATH_BASE.'files/print/excel22.xlsx';
+		    $savePath_excel = PATH_BASE.'files/print/excel22.xlsx';
 		   	$ch = curl_init($path_run_excel);
 		    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 		    curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
 		    $data = curl_exec($ch);
 		    curl_close($ch);
 		    if ($data) {
-		        file_put_contents($savePath, $data);
+		        file_put_contents($savePath_excel, $data);
 		    } else {
 		        throw new Exception("Không thể tải tệp từ URL.");
 
 		        die;
 		    }
-		    $test =  $model->showDataExcel($savePath);
+		    $test =  $model->showDataExcel($savePath_excel);
 		    $path_run_pdf = PATH_BASE.'files/print/pdf1.pdf';
 		    file_put_contents($path_run_pdf, file_get_contents('https://drive.'.DOMAIN.'/get.php?mime=pdf&showfile=1-I91v-roZKWfCGBm-C27NVsp4W_iiPKC'));
 		    $filePDF = [$path_run_pdf];
@@ -115,7 +115,7 @@
 
 		    $checkSku =  array_diff($data_pdf['sku'], $test['Sku']);
 
-		    unlink($path_run_excel);
+		    unlink($savePath_excel);
 
 		    unlink($path_run_pdf);
 
