@@ -277,7 +277,7 @@
 				foreach ($all_data as $key => $vals) {
 
 
-					if(count($vals['mavandon'])>0){
+					if(!empty($vals['mavandon'])&&count($vals['mavandon'])>0){
 
 						foreach ($vals['mavandon'] as $key => $value) {
 							$dem++;
@@ -288,7 +288,7 @@
 
 					}
 
-					if(count($vals['sku'])>0){
+					if(!empty($vals['sku'])&&count($vals['sku'])>0){
 
 						foreach ($vals['sku'] as $key => $vals) {
 							$dems ++;
