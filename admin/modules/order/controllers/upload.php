@@ -94,10 +94,24 @@
 
 		    $path_excel = 'https://drive.'.DOMAIN.'/convert_excel.php?id_file=13_FCeLH4nFYqW9y96q7a8D1oAfd6m6bA';
 
-		    file_get_contents($path_excel);
+		    $savePath = PATH_BASE.'files/print/excel22.xlsx';
+
+		   	$ch = curl_init($path_run_excel);
+		    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+		    curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
+		    $data = curl_exec($ch);
+		    curl_close($ch);
+
+		    if ($data) {
+		        file_put_contents($savePath, $data);
+		    } else {
+		        throw new Exception("Không thể tải tệp từ URL.");
+
+		        die;
+		    }
 
 
-		    $test =  $model->showDataExcel($path_run_excel);
+		    $test =  $model->showDataExcel($savePath);
 
 		    echo "<pre>";print_r($test);echo "<pre>";
 
