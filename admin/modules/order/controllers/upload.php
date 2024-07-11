@@ -194,6 +194,7 @@
 						catch (Exception $e) 
 						{    
 						    echo 'Message: ' .$e->getMessage();
+						     continue;
 						}
 				        
 
