@@ -84,10 +84,7 @@
 
 		function test()
 		{
-			$this->runAutoPrintPage();
-
-			die;
-
+			
 			$model  = $this -> model;
 		   
 		    $path = 'files/orders/2024/07/09/kat-2_1720520511.xlsx';
@@ -154,18 +151,17 @@
 		function runAutoPrintPage(){
 			global $db;
 
-			$query =  "SELECT id FROM check_auto_print WHERE active = 1";
+			$query =  "SELECT id FROM check_auto_print WHERE active = 0";
 
 			$dem = $db->getTotal($query);
 
-			var_dump($dem);
-
-			// for ($i=1; $i <= $dem; $i++) { 
+		
+			for ($i=1; $i <= $dem; $i++) { 
 				
-			// 	file_get_contents('https://'.DOMAIN.'/admin/order/upload/auto_print?run=2');
+				file_get_contents('https://'.DOMAIN.'/admin/order/upload/auto_print?run=2');
 
-			// 	sleep(40);
-			// }
+				sleep(30);
+			}
 		}
 
 		function returnDataPDF($path)
