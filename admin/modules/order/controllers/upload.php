@@ -94,9 +94,11 @@
 			$file_exc = '1FdyRSbVhTYInQXYlFGwd3cw8XCqLDHG4';
 			$file_pdf_run = '1MAAUbenZq2QqUFKujJ_5-KKDSMQXERpp';
 			$model  = $this -> model;
-		    $path_run_excel = 'https://drive.'.DOMAIN.'/file_upload/downloaded1.xlsx';
+		    $path_run_excel =   'https://drive.'.DOMAIN.'/file_upload/downloaded1.xlsx';
 		    $path_excel = 'https://drive.'.DOMAIN.'/convert_excel.php?id_file='.$file_exc;
 		    $savePath_excel = PATH_BASE.'files/print/excel22.xlsx';
+
+		    file_get_contents($path_excel);
 
 		   	$ch = curl_init($path_run_excel);
 		    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
