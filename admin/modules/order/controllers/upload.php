@@ -84,6 +84,10 @@
 
 		function test()
 		{
+			$this->runAutoPrintPage();
+
+			die;
+
 			$model  = $this -> model;
 		   
 		    $path = 'files/orders/2024/07/09/kat-2_1720520511.xlsx';
@@ -153,6 +157,8 @@
 			$query =  "SELECT id FROM check_auto_print WHERE active = 1";
 
 			$dem = $db->getTotal($query);
+
+			var_dump($dem);
 
 			// for ($i=1; $i <= $dem; $i++) { 
 				
