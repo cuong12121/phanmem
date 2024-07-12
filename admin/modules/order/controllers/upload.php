@@ -86,23 +86,25 @@
 		{
 			global $db;
 			$date = date('Y-m-d');
-			$query = " SELECT id,file_excel_drive,file_pdf,file_xlsx,file_excel_drive FROM  fs_order_uploads WHERE 1=1 AND platform_id = 2 AND date = '$date'"; 
+			$query = " SELECT id,file_excel_drive,file_pdf,file_xlsx,id_file_pdf_google_drive FROM  fs_order_uploads WHERE 1=1 AND platform_id = 2 AND date = '$date'"; 
 			$sql = $db->query ($query);
 		    $result = $db->getObjectList ();
 
-		    var_dump($query);
-
-		    echo "<pre>"; var_dump($result); echo"</pre>";
-
+		    if(!empty($result)){
+		    	foreach ($result as $key => $value) {
+		    		
+		    		$this->	test($value->file_xlsx,$value->file_pdf,$value->id,$value->id_file_pdf_google_drive, $value->file_excel_drive);
+		    	}
+		    }
 
 		}
 
-		function test()
+		function test($file_xlsx,$file_pdf,$id,$id_file_pdf_google_drive,$file_excel_drive)
 		{
 			
 
-			$file_exc = '1FdyRSbVhTYInQXYlFGwd3cw8XCqLDHG4';
-			$file_pdf_run = '1MAAUbenZq2QqUFKujJ_5-KKDSMQXERpp';
+			$file_exc = $file_excel_drive;
+			
 			$model  = $this -> model;
 		    $path_run_excel =   'https://drive.'.DOMAIN.'/file_upload/downloaded1.xlsx';
 
@@ -125,82 +127,79 @@
 		    }
 
 		    $test =  $model->showDataExcel($savePath_excel);
-		    $savePath_pdf = PATH_BASE.'files/print/pdf1.pdf';
+
+		    $ar_file_pdf_run = explode(',', $id_file_pdf_google_drive);
+
+		    $ar_savePath_pdf = [];
+
+		    if(!empty($ar_file_pdf_run)){
+
+		    	foreach ($ar_file_pdf_run as $key => $vals) {
+
+		    		$file_pdf_run = $vals;
+				    $savePath_pdf = PATH_BASE.'files/print/pdf'.'.pdf';
 
 
-		    $path_run_pdf ='https://drive.'.DOMAIN.'/get.php?mime=pdf&showfile='.$file_pdf_run;
+				    $path_run_pdf ='https://drive.'.DOMAIN.'/get.php?mime=pdf&showfile='.$file_pdf_run;
 
-		     $chs = curl_init($path_run_pdf);
-		    curl_setopt($chs, CURLOPT_RETURNTRANSFER, true);
-		    curl_setopt($chs, CURLOPT_FOLLOWLOCATION, true);
-		    $datas = curl_exec($chs);
-		    curl_close($chs);
-		    if ($datas) {
-		        file_put_contents($savePath_pdf, $datas);
-		    } else {
-		        throw new Exception("Không thể tải tệp từ URL.");
+				     $chs = curl_init($path_run_pdf);
+				    curl_setopt($chs, CURLOPT_RETURNTRANSFER, true);
+				    curl_setopt($chs, CURLOPT_FOLLOWLOCATION, true);
+				    $datas = curl_exec($chs);
+				    curl_close($chs);
+				    if ($datas) {
+				        file_put_contents($savePath_pdf, $datas);
+				    } else {
+				        throw new Exception("Không thể tải tệp từ URL.");
+				        die;
+				    }
 
-		        die;
+				    array_push($ar_savePath_pdf, $savePath_pdf);
+		    	}
+
+		    	
 		    }
-
-
-		    $filePDF = [$savePath_pdf];
-		    $data_pdf = $this->dataPDF($filePDF);
-
-		 
-		    $checkMVD =  array_diff($data_pdf['mavandon'], $test['maVanDon']);
-
-		    $checkSku =  array_diff($data_pdf['sku'], $test['Sku']);
 
 		    unlink($savePath_excel);
 
-		    unlink($savePath_pdf);
+		    
+		    $filePDF = $ar_savePath_pdf;
 
-		    // echo"<pre>"; var_dump($data_pdf['sku']); echo"</pre>"; echo "<br>"; echo"<pre>";var_dump($test['Sku']); echo"</pre>";
+		    if(!empty($filePDF)){
 
-		    // die;
+		    	 $data_pdf = $this->dataPDF($filePDF);
 
-		    if(empty($checkMVD) && empty($checkSku)){
+			    $checkMVD =  array_diff($data_pdf['mavandon'], $test['maVanDon']);
 
-		    	echo "đơn hàng không bị lỗi";
+			    $checkSku =  array_diff($data_pdf['sku'], $test['Sku']);
+
+			  
+			    foreach ($filePDF as $filePDFs) {
+			    	
+			    	unlink($filePDFs);
+			    }
+
+			    if(!empty($checkMVD)|| !empty($checkSku)){
+
+			    	$erMVD = '';
+			    	$erSku = '';
+
+			    	if(!empty($checkMVD)){
+
+			    		$erMVD = implode(',', $checkMVD);
+			    	}
+
+			    	if(!empty($checkSku)){
+
+			    		$erMVD = implode(',', $checkSku);
+			    	}
+
+		 			$sql = " INSERT INTO run_check_file_order_pdf_excel
+					(`pdf_link`,excel_link,record_id, mvd_pdf,sku_pdf)
+					VALUES ('$file_pdf','$file_xlsx','$id', '$checkMVD', '$checkSku')";
+			    	
+			    }
 		    }
-		    else{
-
-		    	$erMVD = '';
-		    	$erSku = '';
-
-		    	if(!empty($checkMVD)){
-
-		    		$erMVD = implode(',', $checkMVD);
-		    	}
-
-		    	if(!empty($checkSku)){
-
-		    		$erMVD = implode(',', $checkSku);
-		    	}
-
-	 			$sql = " INSERT INTO run_check_file_order_pdf_excel
-				(`pdf_link`,excel_link,record_id, mvd_pdf,sku_pdf)
-				VALUES ('$ip_address','$page','$time', '$checkMVD', '$checkSku')";
-		    	
-		    }
-		    // else{
-
-		    // 	if(!empty($checkMVD)||!empty($checkSku)){
-
-		    // 			$sql = " INSERT INTO run_check_file_order_pdf_excel
-			// 				(`pdf_link`,excel_link,record_id, mvd_pdf,sku_pdf)
-			// 				VALUES ('$ip_address','$page','$time')
-			// 				";
-			// 			$db->query($sql);
-
-		    	
-		    		
-		    // 	}
-
-		 
-		    // }
-
 		   
 		}
 
