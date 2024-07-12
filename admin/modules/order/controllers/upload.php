@@ -90,6 +90,8 @@
 			$sql = $db->query ($query);
 		    $result = $db->getObjectList ();
 
+		    var_dump($query);
+
 		    echo "<pre>"; var_dump($result); echo"</pre>";
 
 
