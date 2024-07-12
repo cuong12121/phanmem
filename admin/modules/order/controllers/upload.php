@@ -86,7 +86,7 @@
 		{
 			global $db;
 			$date = date('Y-m-d');
-			$query = " SELECT file_excel_drive,file_pdf,file_xlsx,file_excel_drive FROM  fs_order_uploads WHERE 1=1 AND platform_id = 2 AND date = '$date'"; 
+			$query = " SELECT id,file_excel_drive,file_pdf,file_xlsx,file_excel_drive FROM  fs_order_uploads WHERE 1=1 AND platform_id = 2 AND date = '$date'"; 
 			$sql = $db->query ($query);
 		    $result = $db->getObjectList ();
 
