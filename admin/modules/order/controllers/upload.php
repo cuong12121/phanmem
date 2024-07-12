@@ -86,7 +86,7 @@
 		{
 			global $db;
 			$date = date('Y-m-d');
-			$query = " SELECT id,alias FROM  fs_order_uploads HERE 1=1 AND platform_id = 2 AND date = $date"; 
+			$query = " SELECT id,alias FROM  fs_order_uploads WHERE 1=1 AND platform_id = 2 AND date = $date"; 
 			$sql = $db->query ($query);
 		    $result = $db->getObjectList ();
 
