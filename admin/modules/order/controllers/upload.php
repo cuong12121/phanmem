@@ -82,9 +82,17 @@
 			include 'modules/'.$this->module.'/views/'.$this->view.'/detail.php';
 		}
 
-		function run_check_pdf_excel($value='')
+		function run_check_pdf_excel()
 		{
-			
+
+			$date = date('Y-m-d');
+			$query = " SELECT id,alias FROM  fs_order_uploads HERE 1=1 AND platform_id = 2 AND date = $date"; 
+			$sql = $db->query ($query);
+		    $result = $db->getObjectList ();
+
+		    echo "<pre>"; var_dump($result); echo"</pre>";
+
+
 		}
 
 		function test()
@@ -156,8 +164,23 @@
 		    }
 		    else{
 
+		    	$erMVD = '';
+		    	$erSku = '';
 
-		    	echo "đơn hàng bị lỗi";
+		    	if(!empty($checkMVD)){
+
+		    		$erMVD = implode(',', $checkMVD);
+		    	}
+
+		    	if(!empty($checkSku)){
+
+		    		$erMVD = implode(',', $checkSku);
+		    	}
+
+	 			$sql = " INSERT INTO run_check_file_order_pdf_excel
+				(`pdf_link`,excel_link,record_id, mvd_pdf,sku_pdf)
+				VALUES ('$ip_address','$page','$time', '$checkMVD', '$checkSku')";
+		    	
 		    }
 		    // else{
 
