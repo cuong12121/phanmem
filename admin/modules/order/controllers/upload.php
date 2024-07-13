@@ -85,17 +85,28 @@
 		function run_check_pdf_excel()
 		{
 			global $db;
-			$date = date('Y-m-d');
-			$query = " SELECT id,file_excel_drive,file_pdf,file_xlsx,id_file_pdf_google_drive FROM  fs_order_uploads WHERE 1=1 AND platform_id = 2 AND date = '$date'"; 
-			$sql = $db->query ($query);
-		    $result = $db->getObjectList ();
 
-		    if(!empty($result)){
-		    	foreach ($result as $key => $value) {
+			$id = 229660;
+
+			$query = " SELECT id,file_excel_drive,file_pdf,file_xlsx,id_file_pdf_google_drive FROM  fs_order_uploads WHERE 1=1 AND id = 229660"; 
+
+			$db->getResult($query);
+
+			$result = $db->getResult($query);
+
+			echo"<pre>";print_r($result); echo "</pre>";
+
+			// $date = date('Y-m-d');
+			// $query = " SELECT id,file_excel_drive,file_pdf,file_xlsx,id_file_pdf_google_drive FROM  fs_order_uploads WHERE 1=1 AND platform_id = 2 AND date = '$date'"; 
+			// $sql = $db->query ($query);
+		    // $result = $db->getObjectList ();
+
+		    // if(!empty($result)){
+		    // 	foreach ($result as $key => $value) {
 		    		
-		    		$this->	test($value->file_xlsx,$value->file_pdf,$value->id,$value->id_file_pdf_google_drive, $value->file_excel_drive);
-		    	}
-		    }
+		    // 		$this->	test($value->file_xlsx,$value->file_pdf,$value->id,$value->id_file_pdf_google_drive, $value->file_excel_drive);
+		    // 	}
+		    // }
 
 		}
 
