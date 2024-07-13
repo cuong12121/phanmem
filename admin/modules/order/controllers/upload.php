@@ -177,7 +177,7 @@
 
 					 	echo "Error: " . $error_msg.'<br>';
 
-					 	print_r($info);
+					 	print_r($info['http_code']);
 					}
 
 					die;
