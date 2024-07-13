@@ -178,6 +178,8 @@
 					 	echo "Error: " . $error_msg.'<br>';
 
 					 	print_r($info['http_code']);
+
+					 	echo  $path_run_pdf;
 					}
 
 					die;
