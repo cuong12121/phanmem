@@ -172,7 +172,7 @@
 				    if ($datas) {
 				        file_put_contents($savePath_pdf, $datas);
 				    } else {
-				        throw new Exception("Không thể tải tệp từ URL.");
+				        throw new Exception("Không thể tải pdf tệp từ URL.");
 				        die;
 				    }
 
