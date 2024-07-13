@@ -130,7 +130,7 @@
 			$model  = $this -> model;
 		    $path_run_excel =   'https://drive.'.DOMAIN.'/file_upload/downloaded1.xlsx';
 
-		    $path_excel = 'https://drive.'.DOMAIN.'/get.php?mime=xlsx&showfile='.$file_exc;
+		    $path_excel = 'https://drive.'.DOMAIN.'/get.php?mime=xlsx&showfile='.trim($file_exc);
 		    $savePath_excel = PATH_BASE.'files/print/excel22.xlsx';
 
 		    file_get_contents($path_excel);
@@ -158,7 +158,7 @@
 
 		    	foreach ($ar_file_pdf_run as $key => $vals) {
 
-		    		$file_pdf_run = $vals;
+		    		$file_pdf_run = trim($vals);
 		    		$stt = intval($key)+1;
 				    $savePath_pdf = PATH_BASE.'files/print/'.$stt.'pdf'.'.pdf';
 
@@ -169,23 +169,6 @@
 				    curl_setopt($chs, CURLOPT_RETURNTRANSFER, true);
 				    curl_setopt($chs, CURLOPT_FOLLOWLOCATION, true);
 				    $datas = curl_exec($chs);
-
-				    if (curl_errno($chs)) {
-					  	$error_msg = curl_error($chs);
-
-					  	$info = curl_getinfo($chs);
-
-					 	echo "Error: " . $error_msg.'<br>';
-
-					 	print_r($info['http_code']);
-
-					 	echo  $path_run_pdf;
-					}
-
-					die;
-
-
-
 
 				    curl_close($chs);
 				    if ($datas) {
