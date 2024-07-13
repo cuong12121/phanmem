@@ -159,7 +159,7 @@
 		    	foreach ($ar_file_pdf_run as $key => $vals) {
 
 		    		$file_pdf_run = $vals;
-				    $savePath_pdf = PATH_BASE.'files/print/'.$key+1.'pdf'.'.pdf';
+				    $savePath_pdf = PATH_BASE.'files/print/'.$key.'pdf'.'.pdf';
 
 				    echo $vals; 
 				    die;
@@ -172,7 +172,7 @@
 				    curl_setopt($chs, CURLOPT_FOLLOWLOCATION, true);
 				    $datas = curl_exec($chs);
 
-				    
+
 				    curl_close($chs);
 				    if ($datas) {
 				        file_put_contents($savePath_pdf, $datas);
