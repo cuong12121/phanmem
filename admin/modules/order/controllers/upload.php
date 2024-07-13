@@ -90,9 +90,9 @@
 
 			$query = " SELECT id,file_excel_drive,file_pdf,file_xlsx,id_file_pdf_google_drive FROM  fs_order_uploads WHERE 1=1 AND id = 229660"; 
 
-			$db->getResult($query);
+			// $db->getResult($query);
 
-			$result = $db->getResult($query);
+			$result = $db->getObject($query);
 
 			echo"<pre>";print_r($result); echo "</pre>";
 
