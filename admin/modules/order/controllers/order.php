@@ -81,7 +81,7 @@
 
 	        // Send the request
 
-	        if($user_id==='9'){
+	        if($user_id==='9'||$user_id==='261'){
 	        	
 	        	$link_api = 'https://api.'.DOMAIN.'/api/get-data-order-details?page='.$page;
 	        }
@@ -163,7 +163,7 @@
 		public function search_order_details()
 		{
 
-			$define_id = ['$'=>252, '@'=>253, '%'=>254,'?'=>255, '+'=>251, '&'=>9];
+			$define_id = ['$'=>252, '@'=>253, '%'=>254,'?'=>255, '+'=>251, '&'=>9,'#'=>256, '*'=>257,'/'=>258,'>'=>259,'<'=>260];
 
 			$searchs = trim($_GET['search']);
 
