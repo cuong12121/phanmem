@@ -177,7 +177,7 @@
 
 					 	echo "Error: " . $error_msg.'<br>';
 
-					 	echo  "info: " . $info;
+					 	print_r($info);
 					}
 
 					die;
