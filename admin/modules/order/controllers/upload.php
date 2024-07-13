@@ -159,11 +159,8 @@
 		    	foreach ($ar_file_pdf_run as $key => $vals) {
 
 		    		$file_pdf_run = $vals;
-				    $savePath_pdf = PATH_BASE.'files/print/'.$key.'pdf'.'.pdf';
-
-				    echo $vals; 
-				    die;
-
+		    		$stt = intval($key)+1;
+				    $savePath_pdf = PATH_BASE.'files/print/'.$stt.'pdf'.'.pdf';
 
 				    $path_run_pdf ='https://drive.'.DOMAIN.'/get.php?mime=pdf&showfile='.$file_pdf_run;
 
@@ -171,6 +168,10 @@
 				    curl_setopt($chs, CURLOPT_RETURNTRANSFER, true);
 				    curl_setopt($chs, CURLOPT_FOLLOWLOCATION, true);
 				    $datas = curl_exec($chs);
+
+				    var_dump($datas);
+
+				    die;
 
 
 				    curl_close($chs);
