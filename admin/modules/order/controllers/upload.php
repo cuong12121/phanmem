@@ -137,7 +137,7 @@
 		    	foreach ($ar_file_pdf_run as $key => $vals) {
 
 		    		$file_pdf_run = $vals;
-				    $savePath_pdf = PATH_BASE.'files/print/pdf'.'.pdf';
+				    $savePath_pdf = PATH_BASE.'files/print/'.$key.'pdf'.'.pdf';
 
 
 				    $path_run_pdf ='https://drive.'.DOMAIN.'/get.php?mime=pdf&showfile='.$file_pdf_run;
