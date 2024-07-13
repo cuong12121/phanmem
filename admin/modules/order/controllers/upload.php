@@ -126,6 +126,8 @@
 			
 
 			$file_exc = $file_excel_drive;
+
+			$date = date('Y-m-d');
 			
 			$model  = $this -> model;
 		    $path_run_excel =   'https://drive.'.DOMAIN.'/file_upload/downloaded1.xlsx';
@@ -219,8 +221,8 @@
 			    	}
 
 		 			$sql = " INSERT INTO run_check_file_order_pdf_excel
-					(`pdf_link`,excel_link,record_id, mvd_pdf,sku_pdf)
-					VALUES ('$file_pdf','$file_xlsx','$id', '$checkMVD', '$checkSku')";
+					(`pdf_link`,excel_link,record_id, mvd_pdf,sku_pdf,created_at)
+					VALUES ('$file_pdf','$file_xlsx','$id', '$checkMVD', '$checkSku','$date')";
 			    	
 			    }
 		    }
