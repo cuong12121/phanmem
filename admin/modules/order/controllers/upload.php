@@ -92,9 +92,20 @@
 
 			// $db->getResult($query);
 
-			$result = $db->getObject($query);
+			$value = $db->getObject($query);
 
-			echo"<pre>";print_r($result); echo "</pre>";
+			try {
+				$this->	test($value->file_xlsx,$value->file_pdf,$value->id,$value->id_file_pdf_google_drive, $value->file_excel_drive);
+				echo "thành công";
+			} catch (Exception $e) {
+				echo $e->getMessage();
+			}
+
+			
+
+			
+
+			die;
 
 			// $date = date('Y-m-d');
 			// $query = " SELECT id,file_excel_drive,file_pdf,file_xlsx,id_file_pdf_google_drive FROM  fs_order_uploads WHERE 1=1 AND platform_id = 2 AND date = '$date'"; 
