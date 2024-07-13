@@ -163,15 +163,16 @@
 				    $savePath_pdf = PATH_BASE.'files/print/'.$stt.'pdf'.'.pdf';
 
 				    $path_run_pdf ='https://drive.'.DOMAIN.'/get.php?mime=pdf&showfile='.$file_pdf_run;
+				     var_dump($path_run_pdf);
+
+				    die;
 
 				     $chs = curl_init($path_run_pdf);
 				    curl_setopt($chs, CURLOPT_RETURNTRANSFER, true);
 				    curl_setopt($chs, CURLOPT_FOLLOWLOCATION, true);
 				    $datas = curl_exec($chs);
 
-				    var_dump($datas);
 
-				    die;
 
 
 				    curl_close($chs);
