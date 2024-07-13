@@ -94,16 +94,14 @@
 
 			$value = $db->getObject($query);
 
+			$platform_id =1; //shopee
+
 			try {
-				$this->	test($value->file_xlsx,$value->file_pdf,$value->id,$value->id_file_pdf_google_drive, $value->file_excel_drive);
+				$this->	test($value->file_xlsx,$value->file_pdf,$value->id,$value->id_file_pdf_google_drive, $value->file_excel_drive,$platform_id);
 				echo "thành công";
 			} catch (Exception $e) {
 				echo $e->getMessage();
 			}
-
-			
-
-			
 
 			die;
 
@@ -121,7 +119,7 @@
 
 		}
 
-		function test($file_xlsx,$file_pdf,$id,$id_file_pdf_google_drive,$file_excel_drive)
+		function test($file_xlsx,$file_pdf,$id,$id_file_pdf_google_drive,$file_excel_drive,$platform_id)
 		{
 			
 
@@ -221,8 +219,8 @@
 			    	}
 
 		 			$sql = " INSERT INTO run_check_file_order_pdf_excel
-					(`pdf_link`,excel_link,record_id, mvd_pdf,sku_pdf,created_at)
-					VALUES ('$file_pdf','$file_xlsx','$id', '$checkMVD', '$checkSku','$date')";
+					(`pdf_link`,excel_link,record_id, mvd_pdf,sku_pdf,created_at,platform_id)
+					VALUES ('$file_pdf','$file_xlsx','$id', '$checkMVD', '$checkSku','$date', '$platform_id')";
 			    	
 			    }
 		    }
