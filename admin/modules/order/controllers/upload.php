@@ -161,6 +161,9 @@
 		    		$file_pdf_run = $vals;
 				    $savePath_pdf = PATH_BASE.'files/print/'.$key.'pdf'.'.pdf';
 
+				    echo $savePath_pdf; 
+				    die;
+
 
 				    $path_run_pdf ='https://drive.'.DOMAIN.'/get.php?mime=pdf&showfile='.$file_pdf_run;
 
