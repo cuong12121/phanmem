@@ -171,7 +171,7 @@
 				    $datas = curl_exec($chs);
 
 				    if (curl_errno($chs)) {
-					  $error_msg = curl_error($ch);
+					  $error_msg = curl_error($chs);
 					  echo "Error: " . $error_msg;
 					}
 
