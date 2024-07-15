@@ -346,9 +346,17 @@
 
 			$excel_row = $excel_kytu[$platform_id];
 
-			var_dump($excel_row);
+			// convert platform
 
-			die;
+			if($platform_id ==2){
+
+				$platform_id =1;
+
+			}
+
+		
+
+			var_dump($excel_row);
 
 		    $test =  $model->showDataExcel($savePath_excel, $excel_row[0], $excel_row[1]);
 
