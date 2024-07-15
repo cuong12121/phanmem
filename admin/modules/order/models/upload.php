@@ -135,6 +135,20 @@
 
 	    }
 
+	    function convertContentLazada($content){
+            
+            if(empty($b[0])){
+                preg_match_all('/[A-Z-0-9]{1}[A-Za-z0-9]{1}[A-Za-z0-9]{1}[A-Za-z0-9]{1}+\s*-\s*[A-Za-z0-9][A-Za-z0-9]+\s*-\s*[A-Za-z0-9][A-Za-z0-9]+\s*-\s*[A-Za-z0-9][A-Za-z0-9][A-Za-z0-9]+\s*-\s*[A-Za-z0-9][A-Za-z0-9]+\s*-\s*[0-9][0-9][0-9]/', $content, $b);
+            }    
+            return $b;
+        }
+
+        function convertContentviettel($content){
+            
+            preg_match_all('/[0-9][0-9][0-9][A-Za-z]+-[A-Za-z0-9][A-Za-z0-9]+-[A-Za-z0-9][A-Za-z0-9]+-[A-Za-z0-9][A-Za-z0-9][A-Za-z0-9]+-[A-Za-z0-9][A-Za-z0-9]+-[A-Za-z0-9][A-Za-z0-9][A-Za-z0-9]/', $content, $b);
+            	return $b;
+        }
+
 	    function findMVD($content){
 		    
             // $text = trim(PdfToText::getText($filePath));
@@ -152,20 +166,40 @@
             
 		}   
 
+		function convertContenttiktok($content){
+            
+          
+            
+            if(empty($b[0])){
+            	preg_match_all('/[0-9][0-9][0-9][A-Za-z]+-[A-Za-z0-9][A-Za-z0-9]+-[A-Za-z0-9][A-Za-z0-9]+-[A-Za-z0-9][A-Za-z0-9][A-Za-z0-9]+-[A-Za-z0-9][A-Za-z0-9]+-[0-9][0-9][0-9]/', $content, $b);
+            }
+            if(empty($b[0])){
+            	preg_match_all('/[A-Za-z0-9]+-[A-Za-z0-9][A-Za-z0-9]+-[A-Za-z0-9][A-Za-z0-9]+-[A-Za-z0-9][A-Za-z0-9][A-Za-z0-9]+-[A-Za-z0-9][A-Za-z0-9][A-Za-z0-9]/', $content, $b);
+            }
+            
+            return $b;
+        }
+
 	    function convertContentCheck($content){
 
         	// if(empty($b[0])){
         	// 	preg_match_all('/[A-Z-0-9]{1}[A-Za-z0-9]{1}[A-Za-z0-9]{1}[A-Za-z0-9]{1}+\s*-\s*[A-Za-z0-9][A-Za-z0-9][A-Za-z0-9][A-Za-z0-9][A-Za-z0-9][A-Za-z0-9][A-Za-z0-9][A-Za-z0-9][A-Za-z0-9]+-[A-Za-z0-9]+[[0-9]{1,2}|0]/', $content, $b);
         	// }
 
+            if(empty($b[0])){
+                preg_match_all('/[A-Z-0-9]{1}[A-Za-z0-9]{1}[A-Za-z0-9]{1}[A-Za-z0-9]{1}+\s*-\s*[A-Za-z0-9][A-Za-z0-9]+\s*-\s*[A-Za-z0-9][A-Za-z0-9]+\s*-\s*[A-Za-z0-9][A-Za-z0-9][A-Za-z0-9]+\s*-\s*[A-Za-z0-9][A-Za-z0-9]+\s*-\s*[[0-9]{1,3}|0]/', $content, $b);
+            }
+
+            if(empty($b[0])){
+                preg_match_all('/[A-Z-0-9]{1}[A-Za-z0-9]{1}[A-Za-z0-9]{1}[A-Za-z0-9]{1}+\s*-\s*[A-Za-z0-9][A-Za-z0-9]+\s*-\s*[A-Za-z0-9][A-Za-z0-9]+\s*-\s*[A-Za-z0-9][A-Za-z0-9][A-Za-z0-9]+\s*-\s*[A-Za-z0-9][A-Za-z0-9]+\s*-\s*[[0-9]{1,2}|0]/', $content, $b);
+            }
+
         	
         	if(empty($b[0])){
         		preg_match_all('/[A-Z-0-9]{1}[A-Za-z0-9]{1}[A-Za-z0-9]{1}[A-Za-z0-9]{1}+\s*-\s*[A-Za-z0-9][A-Za-z0-9]+-+\s[A-Za-z0-9][A-Za-z0-9]+\s*-\s*[A-Za-z0-9][A-Za-z0-9][A-Za-z0-9]+\s*-\s*[A-Za-z0-9][A-Za-z0-9]+\s*-\s*[A-Za-z0-9][A-Za-z0-9][0-9]/', $content, $b);
         	}
 
-        	if(empty($b[0])){
-        		preg_match_all('/[A-Z-0-9]{1}[A-Za-z0-9]{1}[A-Za-z0-9]{1}[A-Za-z0-9]{1}+\s*-\s*[A-Za-z0-9][A-Za-z0-9]+\s*-\s*[A-Za-z0-9][A-Za-z0-9]+\s*-\s*[A-Za-z0-9][A-Za-z0-9][A-Za-z0-9]+\s*-\s*[A-Za-z0-9][A-Za-z0-9]+\s*-\s*[[0-9]{1,2}|0]/', $content, $b);
-        	}
+        	
             // xóa khoảng trắng trong chuỗi trả về của hàm trên
             $b = array_map(function($match) {
                 return preg_replace('/\s+/', '', $match);
@@ -194,7 +228,7 @@
             return $b;
         }   
 
-        public function showDataExcel($file_path)
+        public function showDataExcel($file_path,$sku, $mvd)
         {
             // $files = 'ex2.xlsx';
             // $file_path = PATH_BASE.'files/'.$files;
@@ -222,16 +256,11 @@
             //chạy vòng đầu để check lỗi trước
             for($j=2;$j<=$heightRow;$j++){
                 
-               
-                $row['maVanDon'][$k] = trim($data[$j]['F']);
+                $row['maVanDon'][$k] = trim($data[$j][$mvd]);
 
-
-                $sku =   $this->convertContentCheckExcel(trim($data[$j]['S']));
+                $sku =   $this->convertContentCheckExcel(trim($data[$j][$sku]));
 
                 $skuss = ($sku)[0];
-
-                
-
 
                 $skus[$k] = $skuss[0];
 
@@ -240,13 +269,10 @@
 
             }  
 
-
-
             $row['Sku'] = $skus;
 
             return($row);  
         }
-
 
 		function upload_excel_shopee($file_path,$result_id,$shop_code,$house_id){
 			require_once("../libraries/PHPExcel-1.8/Classes/PHPExcel.php");

@@ -88,7 +88,7 @@
 
 			$id = 229660;
 
-			$query = " SELECT id,file_excel_drive,file_pdf,file_xlsx,id_file_pdf_google_drive FROM  fs_order_uploads WHERE 1=1 AND id = 229660"; 
+			$query = " SELECT id,file_excel_drive,file_pdf,file_xlsx,id_file_pdf_google_drive,user_id FROM  fs_order_uploads WHERE 1=1 AND id = 229660"; 
 
 			// $db->getResult($query);
 
@@ -119,7 +119,193 @@
 
 		}
 
-		function test($file_xlsx,$file_pdf,$id,$id_file_pdf_google_drive,$file_excel_drive,$platform_id)
+		function dataPDFLazada($file)
+		{
+			$model  = $this -> model;
+
+			
+
+			$filePath =  $file;
+
+
+			$number_page = shell_exec('pdftk '.$filePath.' dump_data | grep NumberOfPages');
+
+
+
+			$number_page = str_replace('NumberOfPages:', '', $number_page);
+
+
+			$data = [];
+
+
+			if( intval($number_page)>0){
+				
+				for ($i=1; $i<=$number_page; $i++) {
+					
+
+					$datas = shell_exec('pdftotext  -raw -f '.$i.' -l '.$i.' '.$filePath.' -');
+
+					
+					$data_convert = $model->convertContentLazada($datas);
+
+				    $pattern = "/\d{10}VNA/";
+
+					// Kiểm tra và lấy chuỗi phù hợp
+					if (preg_match($pattern, $datas, $matches)) {
+					    // In chuỗi phù hợp
+
+					    $known = $matches[0];
+					  
+					   	$pattern = "/(.*?)" . preg_quote($known) . "/";
+
+						// Kiểm tra và lấy phần chuỗi trước chuỗi đã biết
+						if (preg_match($pattern, $datas, $matchess)) {
+						    // In phần chuỗi phù hợp
+						    // echo "Phần chuỗi trước '$known' là: " . $matchess[1];
+
+						    $results = $matchess[1].$known;
+
+						    $data['mavandon'][] = $results;
+
+						     $data['sku'][] =  $replaced_string = preg_replace('/\s/', '', @$data_convert[0][0]); 
+
+						    // array_push($data, $results);
+						}
+					}
+
+				}
+
+			}
+			return $data;
+		}
+
+		function dataPDFViettel($filePath){
+
+			$model  = $this -> model;
+
+			$number_page = shell_exec('pdftk '.$filePath.' dump_data | grep NumberOfPages');
+
+			$number_page = str_replace('NumberOfPages:', '', $number_page);
+
+			
+
+			$data = [];
+
+			for ($i=1; $i <= intval($number_page); $i++) { 
+				
+				$datas = shell_exec('pdftotext  -raw -f '.$i.' -l '.$i.' '.$filePath.' -');
+
+				// // thay thế ký tự xuống dòng bằng chuỗi rỗng
+
+				$datas =  preg_replace("/\r?\n/", '', $datas);
+
+				$mau_regex = '/\d{13}/'; // s cho phép . khớp với cả newline
+
+				if (preg_match($mau_regex, $datas, $matches)) {
+
+					$data['mavandon'][] = $matches[0];
+				   
+				} 
+
+				$data_convert = $model->convertContentviettel($datas);
+
+				// $data_convert = $model->convertContentCheck($datas);
+
+				$data['sku'][] =  $data_convert[0][0];
+			
+			}
+
+			return $data;
+
+		}
+
+		function dataPDFTiktok($filePath)
+		{
+			$model  = $this -> model;
+
+
+			$number_page = shell_exec('pdftk '.$filePath.' dump_data | grep NumberOfPages');
+
+			$number_page = str_replace('NumberOfPages:', '', $number_page);
+
+			$data = [];
+
+			for ($i=0; $i < intval($number_page); $i++) { 
+				
+				$datas = shell_exec('pdftotext  -raw -f '.$i.' -l '.$i.' '.$filePath.' -');
+
+				// echo $datas;
+
+				// die;
+
+				// // thay thế ký tự xuống dòng bằng chuỗi rỗng
+
+				$datas =  preg_replace("/\r?\n/", '', $datas);
+
+				$mau_regex = '/(\d+)Người gửi/'; // s cho phép . khớp với cả newline
+
+				if (preg_match($mau_regex, $datas, $matches)) {
+
+					$data['mavandon'][] = $matches[1];
+				   
+				} 
+
+				$data_convert = $model->convertContenttiktok($datas);
+
+				$data['sku'][] =  $data_convert[0];
+
+			
+			}
+			return $data;
+			
+		}
+
+		function dataPDFBest($filePath)
+		{
+
+			$model  = $this -> model;
+
+
+			$number_page = shell_exec('pdftk '.$filePath.' dump_data | grep NumberOfPages');
+
+			$number_page = str_replace('NumberOfPages:', '', $number_page);
+
+			$data = [];
+
+			for ($i=1; $i <= intval($number_page); $i++) { 
+				
+				$datas = shell_exec('pdftotext  -raw -f '.$i.' -l '.$i.' '.$filePath.' -');
+
+
+				// // thay thế ký tự xuống dòng bằng chuỗi rỗng
+
+				$datas =  preg_replace("/\r?\n/", '', $datas);
+
+
+				$mau_regex = '/\d{14}/'; // s cho phép . khớp với cả newline
+
+				if (preg_match($mau_regex, $datas, $matches)) {
+
+					$data['mavandon'][] = $matches[0];
+				   
+				} 
+
+				$data_convert = $model->convertContentCheck($datas);
+
+				$data['sku'][] =  $data_convert[0][0];
+
+			
+			}
+
+
+			return $data;
+
+
+		}
+
+
+
+		function test($file_xlsx,$file_pdf,$id,$id_file_pdf_google_drive,$file_excel_drive,$platform_id,$user_id)
 		{
 			
 
@@ -148,7 +334,19 @@
 		        die;
 		    }
 
-		    $test =  $model->showDataExcel($savePath_excel);
+		    $excel_kytu[1] = ['F','S'];
+
+			$excel_kytu[2] = ['F','BG'];
+
+			$excel_kytu[4] = ['L','D'];
+
+			$excel_kytu[3] = ['L','D'];
+
+			$excel_kytu[5] = ['L','D'];
+
+			$excel_row = $excel_kytu[$platform_id];
+
+		    $test =  $model->showDataExcel($savePath_excel, $excel_row[0], $excel_row[1]);
 
 		    $ar_file_pdf_run = explode(',', $id_file_pdf_google_drive);
 
@@ -193,12 +391,26 @@
 
 		    	 $data_pdf = $this->dataPDF($filePDF);
 
-			    $checkMVD =  array_diff($data_pdf['mavandon'], $test['maVanDon']);
+			    $checkMVD =  array_diff($test['maVanDon'], $data_pdf['mavandon']);
 
-			    $checkSku =  array_diff($data_pdf['sku'], $test['Sku']);
+			    $checkSku =  array_diff($test['Sku'], $data_pdf['sku']);
+
+			    //check file pdf là hình ảnh
+			    $pdf_text = 1//1 là ban đầu file đọc được
 
 			  
 			    foreach ($filePDF as $filePDFs) {
+
+			    	$check_pdf_image = shell_exec('pdftotext -f 1 -l 1 '.$filePDFs.' -');
+
+			    	if(empty(substr($check_pdf_image, 1))){
+
+			    		$pdf_text = 0; //0 là 0 đọc được
+
+
+			    	}
+
+			    	// xóa file kiểm tra đỡ chật ổ cứng
 			    	
 			    	unlink($filePDFs);
 			    }
@@ -219,8 +431,8 @@
 			    	}
 
 		 			$sql = " INSERT INTO run_check_file_order_pdf_excel
-					(`pdf_link`,excel_link,record_id, mvd_pdf,sku_pdf,created_at,platform_id)
-					VALUES ('$file_pdf','$file_xlsx','$id', '$checkMVD', '$checkSku','$date', '$platform_id')";
+					(`pdf_link`,excel_link,record_id, mvd_pdf,sku_pdf,created_at,platform_id,pdf_text,user_id)
+					VALUES ('$file_pdf','$file_xlsx','$id', '$checkMVD', '$checkSku','$date', '$platform_id','$pdf_text','$user_id')";
 			    	
 			    }
 		    }
