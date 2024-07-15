@@ -389,7 +389,7 @@
 
 		    if(!empty($filePDF)){
 
-		    	 $data_pdf = $this->dataPDF($filePDF);
+		    	 $data_pdf = $this->dataPDF($filePDF, $platform_id);
 
 			    $checkMVD =  array_diff($test['maVanDon'], $data_pdf['mavandon']);
 
@@ -522,9 +522,9 @@
 
 				    $sku = $model->contendTextFindSku($path,$page);
 
-				    $data['mavandon'][$i] = $mvd[0]??'';
+				    $data['mavandon'][] = $mvd[0]??'';
 
-				    $data['sku'][$i] = $sku[0]??'';
+				    $data['sku'][] = $sku[0]??'';
 
 		   		}
 
@@ -533,7 +533,7 @@
 		   	return $data;
 		}
 
-		function dataPDF($files)
+		function dataPDF($files, $platforms)
 		{
 
 			$all_data = [];
@@ -550,48 +550,70 @@
 
 			$model = $this -> model;
 
+
 			foreach ($files as $key => $value) {
 				
 				$file  = $value;
 		   
-			    $path  = $file;
-				
-				$data  = $this->returnDataPDF($path);
-	
+			    $path  = PATH_BASE.'files/'.trim($file);
+
+			    switch ($platforms) {
+			    	case 5:
+			    		$data  = $this->dataPDFBest($path);
+			    		break;
+
+			    	case 2:		
+			    		$data = $this->dataPDFLazada($path);
+			    		break;
+
+			    	case 3:		
+			    		$data = $this->dataPDFViettel($path);
+			    		break;
+			    	case 4:		
+			    		$data = $this->dataPDFTiktok($path);	
+			    		break;
+
+			    	default:
+			    		
+			    		// shopee
+			    		$data  = $this->returnDataPDF($path);
+			    	
+			    }
+
 			    array_push($all_data, $data);
 
-
-
 			}
-			if(count($all_data)){
-
-				
+	
+			if(!empty($all_data) && count($all_data)>0){
 
 				foreach ($all_data as $key => $vals) {
 
+					
+					if(!empty($vals['mavandon'])  && !empty($vals['sku'])){
+						if(count($vals['mavandon'])>0){
 
-					if(!empty($vals['mavandon'])&&count($vals['mavandon'])>0){
+							foreach ($vals['mavandon'] as $key => $value) {
+								$dem++;
 
-						foreach ($vals['mavandon'] as $key => $value) {
-							$dem++;
-
-							$mvd[$dem] = $value;
-						
-						}
-
-					}
-
-					if(!empty($vals['sku'])&&count($vals['sku'])>0){
-
-						foreach ($vals['sku'] as $key => $vals) {
-							$dems ++;
-
-							$sku[$dems] = $vals;
+								$mvd[$dem] = $value;
 							
+							}
 
 						}
 
+						if(count($vals['sku'])>0){
+
+							foreach ($vals['sku'] as $key => $vals) {
+								$dems ++;
+
+								$sku[$dems] = $vals;
+								
+
+							}
+
+						}
 					}
+					
 					
 				}
 
@@ -603,6 +625,9 @@
 
 			return $result;
 
+			 // echo'<pre>'; var_dump($result); echo '</pre>';
+
+			
 		}
 
 		function fix_uploads_page_pdf(){
