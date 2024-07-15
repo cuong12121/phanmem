@@ -441,12 +441,12 @@
 
 			    	if(!empty($checkSku)){
 
-			    		$erMVD = implode(',', $checkSku);
+			    		$erSKU = implode(',', $checkSku);
 			    	}
 
 		 			$sql = " INSERT INTO run_check_file_order_pdf_excel
 					(`pdf_link`,excel_link,record_id, mvd_pdf,sku_pdf,created_at,platform_id,pdf_text,user_id)
-					VALUES ('$file_pdf','$file_xlsx','$id', '$checkMVD', '$checkSku','$date', '$platform_id','$pdf_text','$user_id')";
+					VALUES ('$file_pdf','$file_xlsx','$id', '$erMVD', '$erSKU','$date', '$platform_id','$pdf_text','$user_id')";
 			    	
 			    }
 		    }
