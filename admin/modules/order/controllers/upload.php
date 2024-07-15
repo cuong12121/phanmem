@@ -357,7 +357,7 @@
 
 			var_dump($excel_row);
 
-			die;
+		
 
 
 		    $test =  $model->showDataExcel($savePath_excel, $excel_row[0], $excel_row[1]);
