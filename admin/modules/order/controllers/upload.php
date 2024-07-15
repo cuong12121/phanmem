@@ -97,7 +97,7 @@
 			$platform_id =1; //shopee
 
 			try {
-				$this->	test($value->file_xlsx,$value->file_pdf,$value->id,$value->id_file_pdf_google_drive, $value->file_excel_drive,$platform_id);
+				$this->	test($value->file_xlsx,$value->file_pdf,$value->id,$value->id_file_pdf_google_drive, $value->file_excel_drive,$value->platform_id, $value->user_id);
 				echo "thành công";
 			} catch (Exception $e) {
 				echo $e->getMessage();
