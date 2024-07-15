@@ -334,6 +334,15 @@
 		        die;
 		    }
 
+		    // convert platform
+
+		    if($platform_id ==2){
+
+				$platform_id =1;
+
+			}
+
+
 		    $excel_kytu[1] = ['F','S'];
 
 			$excel_kytu[2] = ['F','BG'];
@@ -346,21 +355,6 @@
 
 			$excel_row = $excel_kytu[$platform_id];
 
-			// convert platform
-
-			if($platform_id ==2){
-
-				$platform_id =1;
-
-			}
-
-
-
-			var_dump($excel_row);
-
-			var_dump($platform_id);
-
-			die;
 
 		    $test =  $model->showDataExcel($savePath_excel, $excel_row[0], $excel_row[1]);
 
