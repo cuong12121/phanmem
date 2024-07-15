@@ -396,7 +396,7 @@
 			    $checkSku =  array_diff($test['Sku'], $data_pdf['sku']);
 
 			    //check file pdf là hình ảnh
-			    $pdf_text = 1//1 là ban đầu file đọc được
+			    $pdf_text = 1;//1 là ban đầu file đọc được
 
 			  
 			    foreach ($filePDF as $filePDFs) {
