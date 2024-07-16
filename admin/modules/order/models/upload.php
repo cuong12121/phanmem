@@ -268,6 +268,10 @@
 
 	                $sku =   $this->convertContentCheckExcel(trim($data[$j][$sku]));
 
+	                echo "<pre>"; var_dump($sku); echo "</pre>";
+
+	                die;
+
 	                $skuss = ($sku)[0];
 
 	                $skus[$k] = $skuss[0];
