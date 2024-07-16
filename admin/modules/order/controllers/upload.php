@@ -95,9 +95,9 @@
 
 			foreach ($values as $key => $value) {
 
-				echo"<pre>"; echo"$value->id"; echo"</pre>";
+				echo $value->id.'<br>';
 					
-				$this->	test($value->file_xlsx,$value->file_pdf,$value->id,$value->id_file_pdf_google_drive, $value->file_excel_drive,$value->platform_id, $value->user_id);
+				// $this->	test($value->file_xlsx,$value->file_pdf,$value->id,$value->id_file_pdf_google_drive, $value->file_excel_drive,$value->platform_id, $value->user_id);
 				
 				
 			}
