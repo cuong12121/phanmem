@@ -94,9 +94,14 @@
 
 				$query = " SELECT id,file_excel_drive,file_pdf,file_xlsx,id_file_pdf_google_drive,user_id,platform_id FROM  fs_order_uploads WHERE 1=1 AND id = $ar[$i]"; 
 
-				$values = $db->getObjectList($query);
+				$sql = $db->query ($query);
 
-				
+		    	$result = $db->getObjectList ();
+
+		    	foreach ($result as $key => $value) {
+		    		
+		    		$this->	test($value->file_xlsx,$value->file_pdf,$value->id,$value->id_file_pdf_google_drive, $value->file_excel_drive);
+		    	}
 			}
 
 			// $date = date('Y-m-d');
