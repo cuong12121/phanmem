@@ -88,20 +88,23 @@
 
 			$query = " SELECT id,file_excel_drive,file_pdf,file_xlsx,id_file_pdf_google_drive,user_id,platform_id FROM  fs_order_uploads WHERE 1=1 AND date = '2024-07-16' AND platform_id=2"; 
 
-
-
 			// $db->getResult($query);
 
 			$values = $db->getObjectList($query);
 
+
+			echo "<pre>"; print_r($values); echo"</pre>";
+
+			die;
+
 				foreach ($values as $key => $value) {
-					try {
-					$this->	test($value->file_xlsx,$value->file_pdf,$value->id,$value->id_file_pdf_google_drive, $value->file_excel_drive,$value->platform_id, $value->user_id);
-					echo "thành công";
-				} catch (Exception $e) {
-					echo $e->getMessage();
+						try {
+						$this->	test($value->file_xlsx,$value->file_pdf,$value->id,$value->id_file_pdf_google_drive, $value->file_excel_drive,$value->platform_id, $value->user_id);
+						echo "thành công";
+					} catch (Exception $e) {
+						echo $e->getMessage();
+					}
 				}
-			}
 
 		
 			die;
