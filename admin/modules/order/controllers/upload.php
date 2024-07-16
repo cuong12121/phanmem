@@ -362,9 +362,6 @@
 
 			$excel_row = $excel_kytu[$platform_id];
 
-			var_dump($savePath_excel);
-
-			die;
 
 		    $test =  $model->showDataExcel($savePath_excel, $excel_row[0], $excel_row[1]);
 
