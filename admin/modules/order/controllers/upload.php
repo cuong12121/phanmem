@@ -90,21 +90,6 @@
 
 			$query = " SELECT id,file_excel_drive,file_pdf,file_xlsx,id_file_pdf_google_drive,user_id,platform_id FROM  fs_order_uploads WHERE 1=1 AND id = 230218"; 
 
-			$value = $db->getObjectList($query);
-
-			echo "<pre>";var_dump($value); echo"</pre>";
-
-			die;
-
-
-			$this->	test($value->file_xlsx,$value->file_pdf,$value->id,$value->id_file_pdf_google_drive, $value->file_excel_drive,$value->platform_id, $value->user_id);
-
-			die;
-
-
-
-			
-
 			$values = $db->getObjectList($query);
 
 			$dem = 0;

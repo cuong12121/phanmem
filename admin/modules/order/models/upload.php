@@ -253,15 +253,18 @@
              $k=0;
 
              $skus = [];
+
+            var_dump(trim($data[2][$mvd]));
+
+            die;
+
             //chạy vòng đầu để check lỗi trước
             for($j=2;$j<=$heightRow;$j++){
 
             	if(!empty($data[$j][$mvd])){
             		$row['maVanDon'][$k] = trim($data[$j][$mvd]);
 
-            		var_dump($row['maVanDon'][$k]);
-
-            		die;
+            		
 
 	                $sku =   $this->convertContentCheckExcel(trim($data[$j][$sku]));
 
