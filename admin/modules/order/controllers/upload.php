@@ -92,7 +92,7 @@
 
 			$value = $db->getResult($query);
 
-			var_dump($value->file_xlsx);
+			echo "<pre>";var_dump($value); echo"</pre>";
 
 			die;
 
