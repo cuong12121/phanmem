@@ -334,24 +334,20 @@
 		        die;
 		    }
 
-		    // convert platform
+		
+		    $excel_kytu[2] = ['S','F'];
 
-		    if($platform_id ==2){
+		    $excel_kytu[11] = ['L','D'];
 
-				$platform_id =1;
-
-			}
-
-
-		    $excel_kytu[1] = ['S','F'];
-
-			$excel_kytu[2] = ['F','BG'];
+			$excel_kytu[1] = ['F','BG'];
 
 			$excel_kytu[4] = ['L','D'];
 
-			$excel_kytu[3] = ['L','D'];
+			$excel_kytu[9] = ['L','D'];
 
-			$excel_kytu[5] = ['L','D'];
+			$excel_kytu[10] = ['L','D'];
+
+			$excel_kytu[8] = ['L','D'];
 
 			$excel_row = $excel_kytu[$platform_id];
 
@@ -567,18 +563,21 @@
 			    $path  = PATH_BASE.'files/'.trim($file);
 
 			    switch ($platforms) {
-			    	case 5:
+			    	case 8:
 			    		$data  = $this->dataPDFBest($path);
 			    		break;
 
-			    	case 2:		
+			    	case 1:		
 			    		$data = $this->dataPDFLazada($path);
 			    		break;
 
-			    	case 3:		
+			    	case 4:		
+			    		$data = $this->dataPDFLazada($path);
+			    		break;	
+			    	case 10:		
 			    		$data = $this->dataPDFViettel($path);
 			    		break;
-			    	case 4:		
+			    	case 9:		
 			    		$data = $this->dataPDFTiktok($path);	
 			    		break;
 
