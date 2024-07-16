@@ -62,6 +62,22 @@
 			}
 		}
 
+		function showCheckErrorFile()
+		{
+			global $db;
+
+			// $query = " SELECT * FROM run_check_file_order_pdf_excel
+   			// 			  WHERE user_id = 208";
+
+			$query = " SELECT * FROM run_check_file_order_pdf_excel";
+
+   			$sql = $db->query_limit($query, 10, 1);
+			$result = $db->getObjectList();	
+
+			include 'modules/'.$this->module.'/views/'.$this->view.'/list-err.php';		  
+  
+		}
+
 		public function details()
 		{
 			$page = !empty($_GET['page'])?$_GET['page']:1;
