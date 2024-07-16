@@ -94,16 +94,17 @@
 
 
 			foreach ($values as $key => $value) {
-
-				echo $value->id.'<br>';
 					
-				// $this->	test($value->file_xlsx,$value->file_pdf,$value->id,$value->id_file_pdf_google_drive, $value->file_excel_drive,$value->platform_id, $value->user_id);
-				
+				$this->	test($value->file_xlsx,$value->file_pdf,$value->id,$value->id_file_pdf_google_drive, $value->file_excel_drive,$value->platform_id, $value->user_id);
+
+				echo $value->id;
+
+				die;
 				
 			}
 
 		
-			die;
+			
 
 			// $date = date('Y-m-d');
 			// $query = " SELECT id,file_excel_drive,file_pdf,file_xlsx,id_file_pdf_google_drive FROM  fs_order_uploads WHERE 1=1 AND platform_id = 2 AND date = '$date'"; 
