@@ -325,7 +325,7 @@
 		    $path_run_excel =   'https://drive.'.DOMAIN.'/file_upload/downloaded1.xlsx';
 
 		    $path_excel = 'https://drive.'.DOMAIN.'/get.php?mime=xlsx&showfile='.trim($file_exc);
-		    $savePath_excel = PATH_BASE.'files/print/excel22.xlsx';
+		    $savePath_excel = PATH_BASE.'files/print/excel'.$id.'.xlsx';
 
 		    file_get_contents($path_excel);
 
