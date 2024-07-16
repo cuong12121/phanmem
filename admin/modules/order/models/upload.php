@@ -282,7 +282,7 @@
 
             }  
 
-          var_dump();
+          var_dump($row);
 
             		die;
             return($row);  
