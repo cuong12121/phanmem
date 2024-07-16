@@ -90,19 +90,29 @@
 
 			$ar = [230527, 230524,230522,230517,230511,230509,230508,230507,230505,230504,230503];
 
+			$dem = 0;
+
 			for ($i=0; $i < count($ar); $i++) { 
 
+				$dem++;
+				
 				$query = " SELECT id,file_excel_drive,file_pdf,file_xlsx,id_file_pdf_google_drive,user_id,platform_id FROM  fs_order_uploads WHERE 1=1 AND id = $ar[$i]"; 
 
-				$sql = $db->query ($query);
+				$values = $db->getObjectList($query);
 
-		    	$result = $db->getObjectList ();
+				foreach ($values as $key => $value) {
 
-		    	foreach ($result as $key => $value) {
-		    		
-		    		$this->	test($value->file_xlsx,$value->file_pdf,$value->id,$value->id_file_pdf_google_drive, $value->file_excel_drive);
-		    	}
+					$dem++;
+						
+					$this->	test($value->file_xlsx,$value->file_pdf,$value->id,$value->id_file_pdf_google_drive, $value->file_excel_drive,$value->platform_id, $value->user_id);
+
+					
+
+				}
+				echo $ar[$i]."\n";
+
 			}
+			
 
 			// $date = date('Y-m-d');
 			// $query = " SELECT id,file_excel_drive,file_pdf,file_xlsx,id_file_pdf_google_drive FROM  fs_order_uploads WHERE 1=1 AND platform_id = 2 AND date = '$date'"; 
