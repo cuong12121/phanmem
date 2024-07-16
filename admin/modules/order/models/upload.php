@@ -254,9 +254,9 @@
 
              $skus = [];
 
-            var_dump(trim($data[2][$mvd]));
+            // var_dump(trim($data[2][$mvd]));
 
-            die;
+            // die;
 
             //chạy vòng đầu để check lỗi trước
             for($j=2;$j<=$heightRow;$j++){
@@ -279,6 +279,8 @@
             }  
 
             $row['Sku'] = $skus;
+
+            var_dump($row);
 
             return($row);  
         }
