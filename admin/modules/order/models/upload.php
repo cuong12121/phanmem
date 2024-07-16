@@ -268,7 +268,7 @@
 
 	                $sku =   $this->convertContentCheckExcel(trim($data[$j][$sku]));
 
-	                echo "<pre>"; var_dump(trim($data[$j][$sku])); echo "</pre>";
+	                echo "<pre>"; var_dump($sku); echo "</pre>";
 
 	                die;
 
