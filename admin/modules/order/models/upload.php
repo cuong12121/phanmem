@@ -280,9 +280,6 @@
 
             $row['Sku'] = $skus;
 
-            var_dump($row);
-
-            die;
 
             return($row);  
         }
