@@ -86,11 +86,11 @@
 		{
 			global $db;
 
-			$query = " SELECT id,file_excel_drive,file_pdf,file_xlsx,id_file_pdf_google_drive,user_id,platform_id FROM  fs_order_uploads WHERE 1=1 AND date = '2024-07-16' AND platform_id=2"; 
+			// $query = " SELECT id,file_excel_drive,file_pdf,file_xlsx,id_file_pdf_google_drive,user_id,platform_id FROM  fs_order_uploads WHERE 1=1 AND date = '2024-07-16' AND platform_id=2"; 
 
 			$query = " SELECT id,file_excel_drive,file_pdf,file_xlsx,id_file_pdf_google_drive,user_id,platform_id FROM  fs_order_uploads WHERE 1=1 AND id = 230218"; 
 
-			$value = $db->getResult($query);
+			$value = $db->getObjectList($query);
 
 			echo "<pre>";var_dump($value); echo"</pre>";
 
