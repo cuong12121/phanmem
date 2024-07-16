@@ -264,13 +264,7 @@
             	if(!empty($data[$j][$mvd])){
             		$row['maVanDon'][$k] = trim($data[$j][$mvd]);
 
-            		
-
-	                // $sku =   $this->convertContentCheckExcel(trim($data[$j][$skus]));
-
-	                echo "<pre>"; var_dump(trim($data[$j][$sku_row])); echo "</pre>";
-
-	                die;
+	                $sku =   $this->convertContentCheckExcel(trim($data[$j][$sku_row]));
 
 	                $skuss = ($sku)[0];
 
