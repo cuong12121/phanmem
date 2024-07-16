@@ -362,7 +362,7 @@
 
 			$excel_row = $excel_kytu[$platform_id];
 
-			var_dump($excel_row);
+			var_dump($savePath_excel);
 
 			die;
 
