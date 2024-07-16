@@ -88,13 +88,19 @@
 
 			$id = 229660;
 
-			$query = " SELECT id,file_excel_drive,file_pdf,file_xlsx,id_file_pdf_google_drive,user_id,platform_id FROM  fs_order_uploads WHERE 1=1 AND id = 229660"; 
+			$query = " SELECT id,file_excel_drive,file_pdf,file_xlsx,id_file_pdf_google_drive,user_id,platform_id FROM  fs_order_uploads WHERE 1=1 AND date = '2024-07-17' AND platform_id=2"; 
+
+
 
 			// $db->getResult($query);
 
-			$value = $db->getObject($query);
+			$value = $db->getObjectList($query);
 
-			$platform_id =1; //shopee
+			echo "<pre>";var_dump($value); echo "</pre>";
+
+			die;
+
+			// $platform_id =1; //shopee
 
 			try {
 				$this->	test($value->file_xlsx,$value->file_pdf,$value->id,$value->id_file_pdf_google_drive, $value->file_excel_drive,$value->platform_id, $value->user_id);
