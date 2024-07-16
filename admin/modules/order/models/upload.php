@@ -282,9 +282,6 @@
 
             }  
 
-          var_dump($row);
-
-            		die;
             return($row);  
         }
 
