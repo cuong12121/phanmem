@@ -228,7 +228,7 @@
             return $b;
         }   
 
-        public function showDataExcel($file_path,$sku, $mvd)
+        public function showDataExcel($file_path,$skus, $mvd)
         {
             // $files = 'ex2.xlsx';
             // $file_path = PATH_BASE.'files/'.$files;
@@ -266,9 +266,9 @@
 
             		
 
-	                $sku =   $this->convertContentCheckExcel(trim($data[$j][$sku]));
+	                $sku =   $this->convertContentCheckExcel(trim($data[$j][$skus]));
 
-	                echo "<pre>"; var_dump($sku); echo "</pre>";
+	                echo "<pre>"; var_dump($skus); echo "</pre>";
 
 	                die;
 
