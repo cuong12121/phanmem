@@ -93,18 +93,14 @@
 			$values = $db->getObjectList($query);
 
 
-			echo "<pre>"; print_r($values); echo"</pre>";
+			foreach ($values as $key => $value) {
 
-			die;
-
-				foreach ($values as $key => $value) {
-						try {
-						$this->	test($value->file_xlsx,$value->file_pdf,$value->id,$value->id_file_pdf_google_drive, $value->file_excel_drive,$value->platform_id, $value->user_id);
-						echo "thành công";
-					} catch (Exception $e) {
-						echo $e->getMessage();
-					}
-				}
+				echo"<pre>"; echo"$value->id"; echo"</pre>";
+					
+				$this->	test($value->file_xlsx,$value->file_pdf,$value->id,$value->id_file_pdf_google_drive, $value->file_excel_drive,$value->platform_id, $value->user_id);
+				
+				
+			}
 
 		
 			die;
