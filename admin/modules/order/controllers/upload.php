@@ -88,9 +88,9 @@
 
 			// $query = " SELECT id,file_excel_drive,file_pdf,file_xlsx,id_file_pdf_google_drive,user_id,platform_id FROM  fs_order_uploads WHERE 1=1 AND date = '2024-07-16' AND platform_id=2"; 
 
-			// $ar = [230527, 230524,230522,230517,230511,230509,230508,230507,230505,230504,230503];
+			$ar = [230527, 230524,230522,230517,230511,230509,230508,230507,230505,230504,230503];
 
-			$ar = [230517];
+		
 
 			$dem = 0;
 
