@@ -92,6 +92,11 @@
 
 			$value = $db->getResult($query);
 
+			var_dump($value->file_xlsx);
+
+			die;
+
+
 			$this->	test($value->file_xlsx,$value->file_pdf,$value->id,$value->id_file_pdf_google_drive, $value->file_excel_drive,$value->platform_id, $value->user_id);
 
 			die;
