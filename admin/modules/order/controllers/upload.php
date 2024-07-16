@@ -103,11 +103,10 @@
 
 				echo $value->id."\n";
 
-
+				if($dem===2){
 					die;
+				}
 
-		
-				
 			}
 
 		
