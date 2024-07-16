@@ -255,17 +255,19 @@
              $skus = [];
             //chạy vòng đầu để check lỗi trước
             for($j=2;$j<=$heightRow;$j++){
-                
-                $row['maVanDon'][$k] = trim($data[$j][$mvd]);
 
-                $sku =   $this->convertContentCheckExcel(trim($data[$j][$sku]));
+            	if(!empty($data[$j][$mvd])){
+            		$row['maVanDon'][$k] = trim($data[$j][$mvd]);
 
-                $skuss = ($sku)[0];
+	                $sku =   $this->convertContentCheckExcel(trim($data[$j][$sku]));
 
-                $skus[$k] = $skuss[0];
+	                $skuss = ($sku)[0];
 
-               
-                $k++;
+	                $skus[$k] = $skuss[0];
+
+	               
+	                $k++;
+            	}
 
             }  
 

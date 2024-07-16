@@ -103,7 +103,7 @@
 
 				echo $value->id."\n";
 
-				if($dem===10){
+				if($dem===4){
 					die;
 				}
 
