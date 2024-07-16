@@ -88,29 +88,16 @@
 
 			// $query = " SELECT id,file_excel_drive,file_pdf,file_xlsx,id_file_pdf_google_drive,user_id,platform_id FROM  fs_order_uploads WHERE 1=1 AND date = '2024-07-16' AND platform_id=2"; 
 
-			$query = " SELECT id,file_excel_drive,file_pdf,file_xlsx,id_file_pdf_google_drive,user_id,platform_id FROM  fs_order_uploads WHERE 1=1 AND id = 230218"; 
+			$ar = [230527, 230524,230522,230517,230511,230509,230508,230507,230505,230504,230503];
 
-			$values = $db->getObjectList($query);
+			for ($i=0; $i < count($ar); $i++) { 
 
-			$dem = 0;
+				$query = " SELECT id,file_excel_drive,file_pdf,file_xlsx,id_file_pdf_google_drive,user_id,platform_id FROM  fs_order_uploads WHERE 1=1 AND id = $ar[$i]"; 
 
+				$values = $db->getObjectList($query);
 
-			foreach ($values as $key => $value) {
-
-				$dem++;
-					
-				$this->	test($value->file_xlsx,$value->file_pdf,$value->id,$value->id_file_pdf_google_drive, $value->file_excel_drive,$value->platform_id, $value->user_id);
-
-				echo $value->id."\n";
-
-				if($dem===4){
-					die;
-				}
-
+				
 			}
-
-		
-			
 
 			// $date = date('Y-m-d');
 			// $query = " SELECT id,file_excel_drive,file_pdf,file_xlsx,id_file_pdf_google_drive FROM  fs_order_uploads WHERE 1=1 AND platform_id = 2 AND date = '$date'"; 
