@@ -274,13 +274,15 @@
 
 	                $skus[$k] = $skuss[0];
 
+	                 $row['Sku'] = $skus;
+
 	               
 	                $k++;
             	}
 
             }  
 
-          var_dump($row);
+          var_dump();
 
             		die;
             return($row);  
