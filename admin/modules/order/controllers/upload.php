@@ -101,7 +101,7 @@
 			if(count($ar)>0){
 				for ($i=0; $i < count($ar); $i++) { 
 
-					$dem++;
+					
 					
 					$query = " SELECT id,file_excel_drive,file_pdf,file_xlsx,id_file_pdf_google_drive,user_id,platform_id FROM  fs_order_uploads WHERE 1=1 AND id = $ar[$i]"; 
 
