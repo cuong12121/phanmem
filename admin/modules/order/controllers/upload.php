@@ -372,13 +372,12 @@
 
 			$excel_row = $excel_kytu[$platform_id];
 
-			var_dump($excel_row);
-
-		    die;
-
-
 
 		    $test =  $model->showDataExcel($savePath_excel, $excel_row[0], $excel_row[1]);
+
+		    var_dump($test);
+
+		    die;
 
 
 		    $ar_file_pdf_run = explode(',', $id_file_pdf_google_drive);
