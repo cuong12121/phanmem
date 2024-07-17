@@ -95,7 +95,7 @@
 			// $ar = [230551];
 
 			foreach ($query_ar_id as $key => $query_ar_ids) {
-				array_push($ar, $query_ar_ids->id)
+				array_push($ar, $query_ar_ids->id);
 
 			}	
 			$dem = 0;
