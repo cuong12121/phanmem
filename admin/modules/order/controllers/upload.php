@@ -86,32 +86,42 @@
 		{
 			global $db;
 
-			// $query = " SELECT id,file_excel_drive,file_pdf,file_xlsx,id_file_pdf_google_drive,user_id,platform_id FROM  fs_order_uploads WHERE 1=1 AND date = '2024-07-16' AND platform_id=2"; 
+			$querys = " SELECT id FROM  fs_order_uploads WHERE 1=1 AND date = '2024-07-17' AND platform_id=1"; 
 
-			$ar = [230527, 230524,230522,230517,230511,230509,230508,230507,230505,230504,230503];
+			$query_ar_id = $db->getObjectList($querys);
 
+			$ar = [];
+
+			foreach ($query_ar_id as $key => $query_ar_ids) {
+				array_push($ar, $query_ar_ids->id)
+
+			}	
 			$dem = 0;
 
-			for ($i=0; $i < count($ar); $i++) { 
-
-				$dem++;
-				
-				$query = " SELECT id,file_excel_drive,file_pdf,file_xlsx,id_file_pdf_google_drive,user_id,platform_id FROM  fs_order_uploads WHERE 1=1 AND id = $ar[$i]"; 
-
-				$values = $db->getObjectList($query);
-
-				foreach ($values as $key => $value) {
+			if(count($ar)>0){
+				for ($i=0; $i < count($ar); $i++) { 
 
 					$dem++;
-						
-					$this->	test($value->file_xlsx,$value->file_pdf,$value->id,$value->id_file_pdf_google_drive, $value->file_excel_drive,$value->platform_id, $value->user_id);
-
 					
+					$query = " SELECT id,file_excel_drive,file_pdf,file_xlsx,id_file_pdf_google_drive,user_id,platform_id FROM  fs_order_uploads WHERE 1=1 AND id = $ar[$i]"; 
+
+					$values = $db->getObjectList($query);
+
+					foreach ($values as $key => $value) {
+
+						$dem++;
+							
+						$this->	test($value->file_xlsx,$value->file_pdf,$value->id,$value->id_file_pdf_google_drive, $value->file_excel_drive,$value->platform_id, $value->user_id);
+
+						
+
+					}
+					echo $ar[$i]."\n";
 
 				}
-				echo $ar[$i]."\n";
-
 			}
+
+			
 			
 
 			// $date = date('Y-m-d');
