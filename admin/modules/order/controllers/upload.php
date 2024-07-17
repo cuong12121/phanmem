@@ -158,7 +158,7 @@
 
 			$data = [];
 
-			var_dump($number_page);
+			var_dump('pdftotext  -raw -f 1 -l  1 '.$filePath.' -');
 
 					die;
 
