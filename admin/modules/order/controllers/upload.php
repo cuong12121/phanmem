@@ -158,11 +158,6 @@
 
 			$data = [];
 
-			var_dump('pdftotext  -raw -f 1 -l  1 '.$filePath.' -');
-
-					die;
-
-
 			if( intval($number_page)>0){
 				
 				for ($i=1; $i<=$number_page; $i++) {
@@ -170,9 +165,6 @@
 
 					$datas = shell_exec('pdftotext  -raw -f '.$i.' -l '.$i.' '.$filePath.' -');
 
-
-
-					
 					$data_convert = $model->convertContentLazada($datas);
 
 				    $pattern = "/\d{10}VNA/";
@@ -199,6 +191,8 @@
 						    // array_push($data, $results);
 						}
 					}
+
+					var_dump($data);
 
 				}
 
