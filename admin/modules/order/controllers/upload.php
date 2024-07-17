@@ -372,7 +372,7 @@
 
 			$excel_row = $excel_kytu[$platform_id];
 
-			var_dump($excel_kytu);
+			var_dump($excel_row);
 
 		    die;
 
