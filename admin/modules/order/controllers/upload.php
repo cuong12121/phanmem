@@ -166,6 +166,10 @@
 
 					$datas = shell_exec('pdftotext  -raw -f '.$i.' -l '.$i.' '.$filePath.' -');
 
+					var_dump($datas);
+
+					die;
+
 					
 					$data_convert = $model->convertContentLazada($datas);
 
@@ -419,11 +423,6 @@
 		    if(!empty($filePDF)){
 
 		    	 $data_pdf = $this->dataPDF($filePDF, $platform_id);
-
-		    	 var_dump($platform_id);
-
-		    	die;
-
 
 			    $checkMVD =  array_diff($test['maVanDon'], $data_pdf['mavandon']);
 
