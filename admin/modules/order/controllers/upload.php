@@ -590,7 +590,7 @@
 				
 				$file  = $value;
 		   
-			    $path  = PATH_BASE.'files/'.trim($file);
+			    $path  = $file;
 
 			    switch ($platforms) {
 			    	case 8:
