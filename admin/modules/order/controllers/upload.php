@@ -86,18 +86,18 @@
 		{
 			global $db;
 
-			// $querys = " SELECT id FROM  fs_order_uploads WHERE 1=1 AND date = '2024-07-17' AND platform_id=1"; 
+			$querys = " SELECT id FROM  fs_order_uploads WHERE 1=1 AND date = '2024-07-17' AND platform_id=1"; 
 
-			// $query_ar_id = $db->getObjectList($querys);
+			$query_ar_id = $db->getObjectList($querys);
 
-			$ar = [230551,230577,230581];
+			$ar = [];
 
 			// $ar = [230551];
 
-			// foreach ($query_ar_id as $key => $query_ar_ids) {
-			// 	array_push($ar, $query_ar_ids->id)
+			foreach ($query_ar_id as $key => $query_ar_ids) {
+				array_push($ar, $query_ar_ids->id)
 
-			// }	
+			}	
 			$dem = 0;
 
 			if(count($ar)>0){
