@@ -90,7 +90,9 @@
 
 			// $query_ar_id = $db->getObjectList($querys);
 
-			$ar = [230551,230577,230581];
+			// $ar = [230551,230577,230581];
+
+			$ar = [230551];
 
 			// foreach ($query_ar_id as $key => $query_ar_ids) {
 			// 	array_push($ar, $query_ar_ids->id)
