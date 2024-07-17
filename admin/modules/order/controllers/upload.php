@@ -158,6 +158,10 @@
 
 			$data = [];
 
+			var_dump($number_page);
+
+					die;
+
 
 			if( intval($number_page)>0){
 				
@@ -166,9 +170,7 @@
 
 					$datas = shell_exec('pdftotext  -raw -f '.$i.' -l '.$i.' '.$filePath.' -');
 
-					var_dump($datas);
 
-					die;
 
 					
 					$data_convert = $model->convertContentLazada($datas);
