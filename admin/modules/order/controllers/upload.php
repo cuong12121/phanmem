@@ -192,9 +192,7 @@
 						}
 					}
 
-					echo '<pre>';var_dump($data); echo'</pre>';
 
-					die;
 
 				}
 
@@ -421,6 +419,10 @@
 		    if(!empty($filePDF)){
 
 		    	 $data_pdf = $this->dataPDF($filePDF, $platform_id);
+
+		    	var_dump($data_pdf);
+
+		    	die;
 
 			    $checkMVD =  array_diff($test['maVanDon'], $data_pdf['mavandon']);
 
