@@ -375,9 +375,6 @@
 
 		    $test =  $model->showDataExcel($savePath_excel, $excel_row[0], $excel_row[1]);
 
-		    var_dump($test);
-
-		    die;
 
 
 		    $ar_file_pdf_run = explode(',', $id_file_pdf_google_drive);
@@ -422,6 +419,11 @@
 		    if(!empty($filePDF)){
 
 		    	 $data_pdf = $this->dataPDF($filePDF, $platform_id);
+
+		    	 var_dump($data_pdf);
+
+		    	die;
+
 
 			    $checkMVD =  array_diff($test['maVanDon'], $data_pdf['mavandon']);
 
