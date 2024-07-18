@@ -422,11 +422,11 @@
 
 		    	$data_pdf = $this->dataPDF($filePDF, $platform_id);
 
-		    	// echo "<pre>";var_dump($data_pdf); echo"</pre>";
+		    	echo "<pre>";var_dump($data_pdf); echo"</pre>";
 
 		    
 
-		    	// die;
+		    	die;
 
 
 
