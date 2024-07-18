@@ -364,7 +364,7 @@
 
 			$excel_kytu[1] = ['F','BG'];
 
-			$excel_kytu[3] = ['L','D'];
+			$excel_kytu[4] = ['L','D'];
 
 			$excel_kytu[9] = ['L','D'];
 
