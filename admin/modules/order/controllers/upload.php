@@ -92,12 +92,14 @@
 
 			// $ar = [];
 
-			$ar = [230596];
+			$id= !empty($_GET['id'])?$_GET['id']:230577;
 
-			foreach ($query_ar_id as $key => $query_ar_ids) {
-				array_push($ar, $query_ar_ids->id);
+			$ar = [$id];
 
-			}	
+			// foreach ($query_ar_id as $key => $query_ar_ids) {
+			// 	array_push($ar, $query_ar_ids->id);
+
+			// }	
 			$dem = 0;
 
 			if(count($ar)>0){
