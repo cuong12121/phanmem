@@ -234,6 +234,10 @@
 
         public function showDataExcel($file_path,$sku_row, $mvd)
         {
+
+        	var_dump($file_path);
+
+        	die;
             // $files = 'ex2.xlsx';
             // $file_path = PATH_BASE.'files/'.$files;
             require_once("../libraries/PHPExcel-1.8/Classes/PHPExcel.php");
