@@ -235,7 +235,7 @@
         public function showDataExcel($file_path,$sku_row, $mvd)
         {
 
-        	var_dump($file_path);
+        	var_dump($sku_row);
 
         	die;
             // $files = 'ex2.xlsx';
