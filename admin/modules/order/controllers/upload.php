@@ -86,13 +86,13 @@
 		{
 			global $db;
 
-			$querys = " SELECT id FROM  fs_order_uploads WHERE 1=1 AND date = '2024-07-17' AND platform_id=1"; 
+			// $querys = " SELECT id FROM  fs_order_uploads WHERE 1=1 AND date = '2024-07-17' AND platform_id=1"; 
 
-			$query_ar_id = $db->getObjectList($querys);
+			// $query_ar_id = $db->getObjectList($querys);
 
-			$ar = [];
+			// $ar = [];
 
-			// $ar = [230551];
+			$ar = [230596];
 
 			foreach ($query_ar_id as $key => $query_ar_ids) {
 				array_push($ar, $query_ar_ids->id);
@@ -418,7 +418,16 @@
 
 		    if(!empty($filePDF)){
 
-		    	 $data_pdf = $this->dataPDF($filePDF, $platform_id);
+		    	$data_pdf = $this->dataPDF($filePDF, $platform_id);
+
+		    	echo "<pre>";var_dump($data_pdf); echo"</pre>";
+
+		    	echo "<pre>";var_dump($test); echo"</pre>";
+
+		    	die;
+
+
+
 
 			    $checkMVD =  array_diff($test['maVanDon'], $data_pdf['mavandon']);
 
