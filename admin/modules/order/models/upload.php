@@ -1331,7 +1331,9 @@
 					$parser = new \Smalot\PdfParser\Parser();
 					$pdfs = $parser->parseFile($InputFile);
 
-					if(empty($pdfs)) {
+
+
+					if($platform_id !=6 && empty($pdfs)) {
 
 						$link = FSRoute::_('index.php?module=order&view=upload&task=edit&id='.$id);
 						$msg = 'file pdf với tên là '.$item_file_pdf_name. ' đang là định dạng pdf ảnh, cần chuyển sang định dạng pdf text!' ;
