@@ -1328,14 +1328,18 @@
 					$InputFile  = PATH_BASE.'files/orders/'.$cyear.'/'.$cmonth.'/'.$cday.'/'.$item_file_pdf_name;
 					$OutputFile = PATH_BASE.'files/orders/'.$cyear.'/'.$cmonth.'/'.$cday.'/'.str_replace('.pdf','_cv.pdf',$item_file_pdf_name);
 
-					// $check_pdf_text = trim(PdfToText::getText($InputFile));
+					$parser = new \Smalot\PdfParser\Parser();
+					$pdfs = $parser->parseFile($InputFile);
 
-					// if(empty($check_pdf_text)){
-					// 	$link = FSRoute::_('index.php?module=order&view=upload&task=edit&id='.$id);
-					// 	$msg = 'file pdf với tên là '.$item_file_pdf_name. ' đang là định dạng pdf ảnh, cần chuyển sang định dạng pdf text!' ;
-					// 	setRedirect($link,$msg,'error');
-					// 	return false;
-					// }
+					if(empty($pdfs)) {
+
+						$link = FSRoute::_('index.php?module=order&view=upload&task=edit&id='.$id);
+						$msg = 'file pdf với tên là '.$item_file_pdf_name. ' đang là định dạng pdf ảnh, cần chuyển sang định dạng pdf text!' ;
+						setRedirect($link,$msg,'error');
+						return false;
+					}	
+
+					
 
 					if($_SERVER['SERVER_ADDR'] == '127.0.0.1'){ // trên local
 						$cmd = "gswin64 -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dNOPAUSE -dQUIET -dBATCH -sOutputFile=".$OutputFile." ".$InputFile;
