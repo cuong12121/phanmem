@@ -1,6 +1,7 @@
 <?php
 	require_once 'PDFMerger-tcpdf/PDFMerger.php';
 	use PDFMerger\PDFMerger;
+	use Escarter\PopplerPhp\PdfToText;
 	include 'fpdf/fpdf.php';
    	include 'fpdi/src/autoload.php';
    	require_once('vendor/autoload.php');
@@ -492,6 +493,14 @@
 				}
 			}
 			return $count_ss;
+		}
+
+		function showPDFText($path)
+		{
+			
+			$text = $model->showText($path);
+
+			var_dump($text);
 		}
 
 
@@ -1330,6 +1339,8 @@
 
 					$parser = new \Smalot\PdfParser\Parser();
 					$pdfs = $parser->parseFile($InputFile);
+
+					
 
 
 

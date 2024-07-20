@@ -1,5 +1,5 @@
 <?php
-	 
+
 	class OrderControllersUpload extends Controllers
 	{
 		function __construct()
@@ -85,10 +85,14 @@
 
 		function run_check_pdf_excel()
 		{
-			PATH_BASE.'files/orders/2024/07/20/cbh-ht-720_1721463167_cv.pdf';
-			$test = PdfToText::getText($filePath);
+			$path = PATH_BASE.'files/orders/2024/07/20/cbh-ht-720_1721463167_cv.pdf';
 
-			echo $test;
+			$model = $this->model;
+
+			$text = $model->showPDFText($path);
+			
+
+			echo $text;
 			die;
 			global $db;
 
