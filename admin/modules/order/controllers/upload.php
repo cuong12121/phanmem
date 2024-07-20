@@ -84,6 +84,11 @@
 
 		function run_check_pdf_excel()
 		{
+			PATH_BASE.'files/orders/2024/07/20/cbh-ht-720_1721463167_cv.pdf';
+			$test = PdfToText::getText($filePath);
+
+			echo $test;
+			die;
 			global $db;
 
 			// $querys = " SELECT id FROM  fs_order_uploads WHERE 1=1 AND date = '2024-07-17' AND platform_id=1"; 
