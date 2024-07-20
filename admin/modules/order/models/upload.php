@@ -1354,6 +1354,12 @@
 					// 	return false;
 					// }	
 
+					if($_SESSION['ad_userid'] ==9){
+						var_dump($InputFile);
+
+						die;
+					}	
+
 					if($_SERVER['SERVER_ADDR'] == '127.0.0.1'){ // trên local
 						$cmd = "gswin64 -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dNOPAUSE -dQUIET -dBATCH -sOutputFile=".$OutputFile." ".$InputFile;
 					}else{ //trên server linux
