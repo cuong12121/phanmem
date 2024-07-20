@@ -1,0 +1,5 @@
+{
+    "require": {
+        "escarter/poppler-wrapper-php": "^1.0"
+    }
+}
