@@ -498,7 +498,7 @@
 		function showPDFText($path)
 		{
 			
-			$text = $model->showText($path);
+			$text = PdfToText::getText($path);
 
 			var_dump($text);
 		}
