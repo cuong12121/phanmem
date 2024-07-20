@@ -1333,13 +1333,13 @@
 
 
 
-					if($platform_id !=6 && $pdf == "") {
+					// if($platform_id !=6 && $pdf == "") {
 
-						$link = FSRoute::_('index.php?module=order&view=upload&task=edit&id='.$id);
-						$msg = 'file pdf với tên là '.$item_file_pdf_name. ' đang là định dạng pdf ảnh, cần chuyển sang định dạng pdf text!' ;
-						setRedirect($link,$msg,'error');
-						return false;
-					}	
+					// 	$link = FSRoute::_('index.php?module=order&view=upload&task=edit&id='.$id);
+					// 	$msg = 'file pdf với tên là '.$item_file_pdf_name. ' đang là định dạng pdf ảnh, cần chuyển sang định dạng pdf text!' ;
+					// 	setRedirect($link,$msg,'error');
+					// 	return false;
+					// }	
 
 					
 
