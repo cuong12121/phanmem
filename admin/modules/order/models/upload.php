@@ -1355,7 +1355,11 @@
 					// }	
 
 					if($_SESSION['ad_userid'] ==9){
-						var_dump($InputFile);
+						
+
+						$text_pdf_check = $this->showPDFText($InputFile);
+
+						var_dump($text_pdf_check);
 
 						die;
 					}	
