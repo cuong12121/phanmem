@@ -7,6 +7,7 @@
 	include 'fpdf/fpdf.php';
    	include 'fpdi/src/autoload.php';
    	require_once('vendor/autoload.php');
+   	require_once(PATH_BASE.'vendor/autoload.php');
 	class OrderModelsUpload extends FSModels
 	{
 		var $limit;
