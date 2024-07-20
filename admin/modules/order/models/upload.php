@@ -1340,7 +1340,7 @@
 					$InputFile  = PATH_BASE.'files/orders/'.$cyear.'/'.$cmonth.'/'.$cday.'/'.$item_file_pdf_name;
 					$OutputFile = PATH_BASE.'files/orders/'.$cyear.'/'.$cmonth.'/'.$cday.'/'.str_replace('.pdf','_cv.pdf',$item_file_pdf_name);
 
-					$text = $th->showPDFText($path);
+					$text = $this->showPDFText($path);
 
 					
 					$text_pdf_check = $this->showPDFText($InputFile);
