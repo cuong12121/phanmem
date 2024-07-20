@@ -1,4 +1,5 @@
 <?php
+	 use Escarter\PopplerPhp\PdfToText;
 	class OrderControllersUpload extends Controllers
 	{
 		function __construct()
