@@ -2,6 +2,8 @@
 	require_once 'PDFMerger-tcpdf/PDFMerger.php';
 	use PDFMerger\PDFMerger;
 	use Escarter\PopplerPhp\PdfToText;
+	use Escarter\PopplerPhp\getOutput;
+    use Escarter\PopplerPhp\PdfSeparate;
 	include 'fpdf/fpdf.php';
    	include 'fpdi/src/autoload.php';
    	require_once('vendor/autoload.php');
