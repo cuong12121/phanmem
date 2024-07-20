@@ -177,6 +177,8 @@ RewriteRule ^order/upload/add index.php?module=order&view=upload&task=add&%{QUER
 RewriteRule ^order/upload/edit/([0-9]*)$ index.php?module=order&view=upload&task=edit&id=$1&%{QUERY_STRING} [L]
 RewriteRule ^order/upload/auto_print index.php?module=order&view=upload&task=print_auto&%{QUERY_STRING} [L]
 
+RewriteRule ^order/upload/test index.php?module=order&view=upload&task=run_check_pdf_excel&%{QUERY_STRING} [L]
+
 
 #order_items
 RewriteRule ^order_items/items$ index.php?module=order_items&view=items&%{QUERY_STRING} [L]
