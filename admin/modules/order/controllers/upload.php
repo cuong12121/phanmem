@@ -85,6 +85,8 @@
 
 		function run_check_pdf_excel()
 		{
+
+			global $config;
 			$path = PATH_BASE.'files/orders/2024/07/20/cbh-ht-720_1721463167_cv.pdf';
 
 			$model = $this->model;
