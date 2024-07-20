@@ -1359,6 +1359,16 @@
 
 						$text_pdf_check = $this->showPDFText($InputFile);
 
+						
+
+						
+						if($platform_id !=6 && $text_pdf_check == "") {
+
+							$link = FSRoute::_('index.php?module=order&view=upload&task=edit&id='.$id);
+							$msg = 'file pdf với tên là '.$item_file_pdf_name. ' đang là định dạng pdf ảnh, cần chuyển sang định dạng pdf text!' ;
+							setRedirect($link,$msg,'error');
+							return false;
+						}	
 						var_dump($text_pdf_check);
 
 						die;
