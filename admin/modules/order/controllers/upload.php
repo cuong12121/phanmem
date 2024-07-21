@@ -255,6 +255,8 @@
 
 				var_dump($datas);
 
+				die;
+
 				// echo $datas;
 
 				// die;
