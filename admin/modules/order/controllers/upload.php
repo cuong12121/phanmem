@@ -426,34 +426,15 @@
 
 		    	echo "<pre>";var_dump($data_pdf); echo"</pre>";
 
-		    
-
 		    	die;
-
-
-
 
 			    $checkMVD =  array_diff($test['maVanDon'], $data_pdf['mavandon']);
 
 			    $checkSku =  array_diff($test['Sku'], $data_pdf['sku']);
 
-			    //check file pdf là hình ảnh
-			    $pdf_text = 1;//1 là ban đầu file đọc được
-
 			  
 			    foreach ($filePDF as $filePDFs) {
 
-			    	$check_pdf_image = shell_exec('pdftotext -f 1 -l 1 '.$filePDFs.' -');
-
-			    	if(empty(substr($check_pdf_image, 1))){
-
-			    		$pdf_text = 0; //0 là 0 đọc được
-
-
-			    	}
-
-			    	// xóa file kiểm tra đỡ chật ổ cứng
-			    	
 			    	unlink($filePDFs);
 			    }
 
