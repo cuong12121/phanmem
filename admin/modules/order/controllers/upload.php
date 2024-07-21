@@ -251,7 +251,7 @@
 
 			for ($i=0; $i < intval($number_page); $i++) { 
 				
-				$datas = shell_exec('pdftotext  -f '.$i.' -l '.$i.' '.$filePath.' -');
+				$datas = shell_exec('pdftotext -nopgbrk -f '.$i.' -l '.$i.' '.$filePath.' -');
 
 				// echo $datas;
 
