@@ -271,7 +271,7 @@
 
 				
 
-				$data_convert = $model->convertContentCheck($datas);
+				$data_convert = $model->convertContenttiktok($datas);
 
 				$data['sku'][] =  $data_convert[0];
 
