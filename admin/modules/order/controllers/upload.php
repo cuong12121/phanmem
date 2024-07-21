@@ -259,7 +259,7 @@
 
 				// // thay thế ký tự xuống dòng bằng chuỗi rỗng
 
-				$datas =  preg_replace("/\r?\n/", '-', $datas);
+				// $datas =  preg_replace("/\r?\n/", '-', $datas);
 
 				echo $datas;
 
