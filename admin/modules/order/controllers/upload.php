@@ -270,7 +270,7 @@
 				   
 				} 
 
-				$data_convert = $model->convertContenttiktok2($datas);
+				$data_convert = $model->convertContenttiktok($datas);
 
 				var_dump($data_convert);
 
