@@ -269,9 +269,7 @@
 				   
 				} 
 
-				var_dump($datas);
-
-				die;
+				
 
 				$data_convert = $model->convertContentCheck($datas);
 
