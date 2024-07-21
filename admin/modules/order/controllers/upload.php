@@ -253,10 +253,6 @@
 				
 				$datas = shell_exec('pdftotext -raw -f '.$i.' -l '.$i.' '.$filePath.' -');
 
-				var_dump($datas);
-
-				die;
-
 				// echo $datas;
 
 				// die;
@@ -266,11 +262,11 @@
 				// $datas =  preg_replace("/\r?\n/", '-', $datas);
 
 
-				$mau_regex = '/(\d+)546 V ET/'; // s cho phép . khớp với cả newline
+				$mau_regex = '/\d{12}/'; // s cho phép . khớp với cả newline
 
 				if (preg_match($mau_regex, $datas, $matches)) {
 
-					$data['mavandon'][] = $matches[1];
+					$data['mavandon'][] = $matches[0];
 				   
 				} 
 
