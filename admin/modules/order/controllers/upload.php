@@ -272,6 +272,10 @@
 
 				$data_convert = $model->convertContenttiktok2($datas);
 
+				var_dump($data_convert);
+
+				die;
+
 
 				$data['sku'][] =  $data_convert[0];
 
