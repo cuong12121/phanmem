@@ -424,9 +424,9 @@
 
 		    	$data_pdf = $this->dataPDF($filePDF, $platform_id);
 
-		    	echo "<pre>";var_dump($data_pdf); echo"</pre>";
+		    	// echo "<pre>";var_dump($data_pdf); echo"</pre>";
 
-		    	die;
+		    	// die;
 
 			    $checkMVD =  array_diff($test['maVanDon'], $data_pdf['mavandon']);
 
@@ -457,6 +457,9 @@
 					(`pdf_link`,excel_link,record_id, mvd_pdf,sku_pdf,created_at,platform_id,pdf_text,user_id)
 					VALUES ('$file_pdf','$file_xlsx','$id', '$erMVD', '$erSKU','$date', '$platform_id','$pdf_text','$user_id')";
 			    	
+			    }
+			    else{
+			    	echo "file không bị lỗi";
 			    }
 		    }
 		   
