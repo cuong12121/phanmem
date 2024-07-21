@@ -172,11 +172,6 @@
 
 		function convertContenttiktok($content){
 
-			var_dump($content);
-
-			die;
-            
-          
             
             if(empty($b[0])){
             	preg_match_all('/[0-9][0-9][0-9][A-Za-z]+-[A-Za-z0-9][A-Za-z0-9]+-[A-Za-z0-9][A-Za-z0-9]+-[A-Za-z0-9][A-Za-z0-9][A-Za-z0-9]+-[A-Za-z0-9][A-Za-z0-9]+-[0-9][0-9][0-9]/', $content, $b);
