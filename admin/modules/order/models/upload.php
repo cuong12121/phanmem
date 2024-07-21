@@ -205,11 +205,21 @@
                 preg_match_all('/[A-Z-0-9]{1}[A-Za-z0-9]{1}[A-Za-z0-9]{1}[A-Za-z]{1}+\s*-\s*[A-Za-z0-9][A-Za-z0-9]+\s*-\s*[A-Za-z0-9][A-Za-z0-9]/', $content, $b);
             }
 
+            if(!empty($b[0])){
+
+                preg_match_all('/[A-Z-0-9]{1}[A-Za-z0-9]{1}[A-Za-z0-9]{1}+-[A-Za-z0-9][A-Za-z0-9]+-[0-9][0-9][0-9]/', $content, $c);
+
+                return $b[0][0].$c[0][0];
+            }
+            return $b;
+
+           
             // if(empty($b[0])){
             // 	preg_match_all('/[A-Za-z0-9]+-[A-Za-z0-9][A-Za-z0-9]+-[A-Za-z0-9][A-Za-z0-9]+-[A-Za-z0-9][A-Za-z0-9][A-Za-z0-9]+-[A-Za-z0-9][A-Za-z0-9][A-Za-z0-9]/', $content, $b);
             // }
+
             
-            return $b;
+           
         }
 
 	    function convertContentCheck($content){
