@@ -253,9 +253,9 @@
 				
 				$datas = shell_exec('pdftotext -f '.$i.' -l '.$i.' '.$filePath.' -');
 
-				var_dump($datas);
+				// var_dump($datas);
 
-				die;
+				// die;
 
 				// echo $datas;
 
