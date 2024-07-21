@@ -265,9 +265,7 @@
 
 				// $datas =  preg_replace("/\r?\n/", '-', $datas);
 
-				echo $datas;
-
-				die;
+				
 
 
 
@@ -279,9 +277,8 @@
 				   
 				} 
 
-				
-
 				$data_convert = $model->convertContenttiktok($datas);
+
 
 				$data['sku'][] =  $data_convert[0];
 
