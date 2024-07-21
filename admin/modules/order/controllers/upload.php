@@ -251,7 +251,7 @@
 
 			for ($i=0; $i < intval($number_page); $i++) { 
 				
-				$datas = shell_exec('pdftotext  -raw -f '.$i.' -l '.$i.' '.$filePath.' -');
+				$datas = shell_exec('pdftotext  -layout -f '.$i.' -l '.$i.' '.$filePath.' -');
 
 				// echo $datas;
 
@@ -268,6 +268,10 @@
 					$data['mavandon'][] = $matches[1];
 				   
 				} 
+
+				var_dump($datas);
+
+				die;
 
 				$data_convert = $model->convertContentCheck($datas);
 

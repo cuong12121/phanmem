@@ -209,9 +209,6 @@
                 return preg_replace('/\s+/', '', $match);
             }, $b);
 
-            var_dump($content);
-            die;
-
 
         	return $b;
 
