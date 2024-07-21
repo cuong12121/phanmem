@@ -251,13 +251,7 @@
 
 			for ($i=0; $i < intval($number_page); $i++) { 
 				
-				$datas = shell_exec('pdftotext -nopgbrk -f '.$i.' -l '.$i.' '.$filePath.' -');
-
-				$xd = shell_exec('grep -o \n '.$i.' -l '.$i.' '.$filePath.' -');
-
-				var_dump($xd);
-
-				die;
+				$datas = shell_exec('pdftotext layout -f '.$i.' -l '.$i.' '.$filePath.' -');
 
 				// echo $datas;
 
