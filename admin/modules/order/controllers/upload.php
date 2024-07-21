@@ -253,6 +253,12 @@
 				
 				$datas = shell_exec('pdftotext -nopgbrk -f '.$i.' -l '.$i.' '.$filePath.' -');
 
+				$xd = shell_exec(grep -o '\n '.$i.' -l '.$i.' '.$filePath.' -');
+
+				var_dump($xd);
+
+				die;
+
 				// echo $datas;
 
 				// die;
