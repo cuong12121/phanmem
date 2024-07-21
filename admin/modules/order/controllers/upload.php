@@ -86,23 +86,7 @@
 		function run_check_pdf_excel()
 		{
 
-			global $config;
-			$path = PATH_BASE.'files/orders/2024/07/20/cbh-ht-720_1721463167_cv.pdf';
-
-			$model = $this->model;
-
-			$text = $model->showPDFText($path);
-			
-
-			echo $text;
-			die;
 			global $db;
-
-			// $querys = " SELECT id FROM  fs_order_uploads WHERE 1=1 AND date = '2024-07-17' AND platform_id=1"; 
-
-			// $query_ar_id = $db->getObjectList($querys);
-
-			// $ar = [];
 
 			$id= !empty($_GET['id'])?$_GET['id']:230577;
 
