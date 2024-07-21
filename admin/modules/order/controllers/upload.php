@@ -259,7 +259,7 @@
 
 				// // thay thế ký tự xuống dòng bằng chuỗi rỗng
 
-				$datas =  preg_replace("/\r?\n/", '', $datas);
+				// $datas =  preg_replace("/\r?\n/", '', $datas);
 
 				$mau_regex = '/(\d+)Người gửi/'; // s cho phép . khớp với cả newline
 
