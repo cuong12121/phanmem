@@ -209,7 +209,7 @@
 
                 preg_match_all('/[A-Z-0-9]{1}[A-Za-z0-9]{1}[A-Za-z0-9]{1}+-[A-Za-z0-9][A-Za-z0-9]+-[0-9][0-9][0-9]/', $content, $c);
 
-                return $b[0][0].$c[0][0];
+                return $b[0][0].'-'.$c[0][0];
             }
             return $b;
 
