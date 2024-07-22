@@ -115,7 +115,7 @@
 
             <td><?= $dem  ?></td>
 
-            <td><?=  implode(',', $file_pdf_rep1)   ?></td>
+            <td><?=  implode('<br>', $file_pdf_rep1)   ?></td>
             
             <td><?= $value->excel_link  ?></td>
             <td><?= $value->record_id  ?></td>
