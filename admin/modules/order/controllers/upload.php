@@ -457,11 +457,19 @@
 		 			$sql = " INSERT INTO run_check_file_order_pdf_excel
 					(`pdf_link`,excel_link,record_id, mvd_pdf,sku_pdf,created_at,platform_id,pdf_text,user_id)
 					VALUES ('$file_pdf','$file_xlsx','$id', '$erMVD', '$erSKU','$date', '$platform_id','$pdf_text','$user_id')";
+
+					$db->query($sql);
+					$id = $db->insert();
+
+					$result_return = 'file bị lỗi';
+
 			    	
 			    }
 			    else{
-			    	echo "file không bị lỗi";
+			    	$result_return = 'file không bị lỗi';
 			    }
+
+			    echo $result_return;
 		    }
 		   
 		}
