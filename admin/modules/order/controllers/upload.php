@@ -452,6 +452,7 @@
 
 			    		$erSKU = implode(',', $checkSku);
 			    	}
+			    	$pdf_text =1;
 
 		 			$sql = " INSERT INTO run_check_file_order_pdf_excel
 					(`pdf_link`,excel_link,record_id, mvd_pdf,sku_pdf,created_at,platform_id,pdf_text,user_id)
