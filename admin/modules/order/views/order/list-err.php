@@ -99,19 +99,15 @@
                 $file_pdf_rep1 = [];
 
                 for ($i=0; $i < count($file_pdf_rep) ; $i++) { 
-
-
-
                   
                     $link_pdf = 'https://'.DOMAIN.'/'.str_replace('pdft', 'pdf', $file_pdf_rep[$i]);
 
-                    
-
-                    // if($i>0){
-                    //     $path = str_replace(basename($link_pdf), '', $link_pdf[0]);
-                    //     array_push($file_pdf_rep1, $path.$link_pdf);
-
-                    // }
+                    if($i>0){
+                        $path = str_replace(basename($link_pdf), '', $link_pdf[0]);
+                       
+                        $link_pdf = $path.$link_pdf;
+                    }
+                     array_push($file_pdf_rep1, $link_pdf);
 
                 }
 
