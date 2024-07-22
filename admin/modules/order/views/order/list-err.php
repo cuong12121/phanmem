@@ -104,7 +104,7 @@
 
                     if($i>0){
 
-                        $link_pdf_v =  $file_pdf_rep[0];
+                        $link_pdf_v =  str_replace('pdft', 'pdf', $file_pdf_rep[0]);
 
                         $path = str_replace(basename($link_pdf_v), '', $link_pdf_v);
                        
