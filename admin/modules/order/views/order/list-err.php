@@ -120,7 +120,7 @@
             <td><?= $value->excel_link  ?></td>
             <td><?= $value->record_id  ?></td>
             <td><?=  str_replace(',', '<br>', $value->mvd_pdf)   ?></td>
-            <td><?= $value->sku_pdf  ?></td>
+            <td><?= str_replace(',', '<br>', $value->sku_pdf)   ?></td>
   
             <td><?= $value->platform_id ?></td>
             <td><?= date("d/m/Y", strtotime($value->created_at));  ?></td>
