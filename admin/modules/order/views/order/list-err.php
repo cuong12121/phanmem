@@ -101,15 +101,11 @@
 
                     $link_pdf = 'https://'.DOMAIN.'/'.str_replace('pdft', 'pdf', $file_pdf_rep[$i]);
 
-                    array_push($file_pdf_rep1, $link_pdf);
+                    array_push($file_pdf_rep1, '<a href="'.$link_pdf.'">'.$link_pdf.'</a>');
 
                 }
 
-                var_dump($file_pdf_rep1);
-
-                    die;
-                   
-        		
+                
         ?>
 
         <tr>
