@@ -92,6 +92,12 @@
 
                 $file_pdf_rep = explode(',', $value->pdf_link);
 
+                var_dump($file_pdf_rep);
+
+                die;
+
+
+
               
                 $file_pdf_rep1 = [];
 
