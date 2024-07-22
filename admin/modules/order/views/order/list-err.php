@@ -107,11 +107,11 @@
 
                     
 
-                    if($i>0){
-                        $path = str_replace(basename($link_pdf), '', $link_pdf[0]);
-                        array_push($file_pdf_rep1, $path.$link_pdf);
+                    // if($i>0){
+                    //     $path = str_replace(basename($link_pdf), '', $link_pdf[0]);
+                    //     array_push($file_pdf_rep1, $path.$link_pdf);
 
-                    }
+                    // }
 
                 }
 
