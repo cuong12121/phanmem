@@ -333,7 +333,7 @@
 		function test($file_xlsx,$file_pdf,$id,$id_file_pdf_google_drive,$file_excel_drive,$platform_id,$user_id)
 		{
 			
-
+			global $db;
 			$file_exc = $file_excel_drive;
 
 			$date = date('Y-m-d');
