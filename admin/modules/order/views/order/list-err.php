@@ -68,7 +68,6 @@
             <th>Sàn </th>
             <th>Ngày kiểm tra </th>
             
-            <th>File Pdf</th>
             <th>Sửa </th>
 
            
@@ -78,7 +77,7 @@
 
         <?php 
 
-            
+            $dem = 0;
             $now = date("d/m/Y");
             // echo "<pre>";
             //     var_dump($info_data);
@@ -88,15 +87,17 @@
         		
 
         		foreach ($result as $key => $value) {
+
+                    $dem++;
         			
 
         			
         ?>
 
         <tr>
-            
+            <td><?= $dem  ?></td>
             <td><?= $value->pdf_link  ?></td>
-            <td><?= $value->product_name  ?></td>
+            
             <td><?= $value->excel_link  ?></td>
             <td><?= $value->record_id  ?></td>
             <td><?= $value->mvd_pdf  ?></td>
@@ -104,6 +105,7 @@
   
             <td><?= $value->platform_id ?></td>
             <td><?= date("d/m/Y", strtotime($value->created_at));  ?></td>
+            <td></td>
 
            
         </tr>
