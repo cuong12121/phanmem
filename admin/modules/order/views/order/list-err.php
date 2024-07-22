@@ -92,9 +92,6 @@
 
                 $file_pdf_rep = explode(',', $value->pdf_link);
 
-                var_dump($file_pdf_rep);
-
-                die;
 
 
 
@@ -106,6 +103,11 @@
                   
 
                     $link_pdf = 'https://'.DOMAIN.'/'.str_replace('pdft', 'pdf', $file_pdf_rep[$i]);
+
+                    var_dump($link_pdf);
+
+                die;
+
 
                     array_push($file_pdf_rep1, '<a href="'.$link_pdf.'">'.$link_pdf.'</a>');
 
