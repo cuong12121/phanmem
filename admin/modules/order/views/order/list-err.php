@@ -96,7 +96,7 @@
 
                 for ($i=0; $i < count($file_pdf_rep) ; $i++) { 
 
-                    $link_pdf = 'https://'.DOMAIN.'/'str_replace('pdft', 'pdf', $file_pdf_rep1[$i]);
+                    $link_pdf = 'https://'.DOMAIN.'/'.str_replace('pdft', 'pdf', $file_pdf_rep1[$i]);
                    
                     $file_pdf_rep1[$i] = '<a href='.$link_pdf.'></a>'   ;
                 }
