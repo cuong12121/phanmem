@@ -89,14 +89,27 @@
         		foreach ($result as $key => $value) {
 
                     $dem++;
-        			
 
-        			
+                $file_pdf_rep = explode(',', $value->pdf_link);
+
+                $file_pdf_rep1 = [];
+
+                for ($i=0; $i < count($file_pdf_rep) ; $i++) { 
+
+                    $link_pdf = 'https://'.DOMAIN.'/'str_replace('pdft', 'pdf', $file_pdf_rep1[$i]);
+                   
+                    $file_pdf_rep1[$i] = '<a href='.$link_pdf.'></a>'   ;
+                }
+                   
+        		
         ?>
 
         <tr>
+
+
             <td><?= $dem  ?></td>
-            <td><?= $value->pdf_link  ?></td>
+
+            <td><?=  implode(',', $file_pdf_rep1)   ?></td>
             
             <td><?= $value->excel_link  ?></td>
             <td><?= $value->record_id  ?></td>
