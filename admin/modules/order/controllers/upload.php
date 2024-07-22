@@ -111,7 +111,7 @@
 
 						$dem++;
 							
-						$this->	test($value->file_xlsx,$value->file_pdf,$value->id,$value->id_file_pdf_google_drive, $value->file_excel_drive,$value->platform_id, $value->user_id);
+						$this->	test($value->file_xlsx,$value->file_pdf,$value->id,$value->id_file_pdf_google_drive, $value->file_excel_drive,$value->platform_id, $value->user_id, $db);
 
 						
 
@@ -330,10 +330,10 @@
 
 
 
-		function test($file_xlsx,$file_pdf,$id,$id_file_pdf_google_drive,$file_excel_drive,$platform_id,$user_id)
+		function test($file_xlsx,$file_pdf,$id,$id_file_pdf_google_drive,$file_excel_drive,$platform_id,$user_id, $db)
 		{
 			
-			global $db;
+
 			$file_exc = $file_excel_drive;
 
 			$date = date('Y-m-d');
