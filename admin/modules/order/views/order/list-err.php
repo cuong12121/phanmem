@@ -106,11 +106,13 @@
 
                         $link_pdf_v =  str_replace('pdft', 'pdf', $file_pdf_rep[0]);
 
+
+
+                        $path = str_replace(basename($link_pdf_v), '', $link_pdf_v);
+
                         var_dump($link_pdf_v);
 
                         die;
-
-                        $path = str_replace(basename($link_pdf_v), '', $link_pdf_v);
                        
                         $link_pdf = 'https://'.DOMAIN.'/'.$path.str_replace('pdft', 'pdf', $file_pdf_rep[$i]);
                     }
