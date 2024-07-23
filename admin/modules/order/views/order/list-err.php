@@ -117,7 +117,7 @@
 
 
                     }
-                    $link_pdf_href = '<a href="'.$link_pdf.'">'.basename($link_pdf).'</a>';
+                    $link_pdf_href = '<a href="'.$link_pdf.'" tarket="blank">'.basename($link_pdf).'</a>';
                      array_push($file_pdf_rep1, $link_pdf_href);
 
                 }
