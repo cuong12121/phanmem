@@ -95,7 +95,7 @@
 			die;
 
 			foreach ($values as $key => $value) {
-				echo $value->id.'<br>'
+				echo $value->id.'<br>';
 			}	
 		}
 
