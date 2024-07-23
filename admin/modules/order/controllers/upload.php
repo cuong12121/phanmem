@@ -113,53 +113,52 @@
 
 			global $db;
 
-			$id= !empty($_GET['id'])?$_GET['id']:230577;
+			$query = " SELECT record_id,id FROM  fs_info_run_check_pdf_excel WHERE 1=1 AND active =0"; 
 
-			$ar = [$id];
+			$values = $db->getResult($query);
 
-			// foreach ($query_ar_id as $key => $query_ar_ids) {
-			// 	array_push($ar, $query_ar_ids->id);
+			var_dump($values);
 
-			// }	
-			$dem = 0;
+			die;
 
-			if(count($ar)>0){
-				for ($i=0; $i < count($ar); $i++) { 
+			if(!empty($values)){
+				foreach ($values as $key => $val) {
 
-					
-					
-					$query = " SELECT id,file_excel_drive,file_pdf,file_xlsx,id_file_pdf_google_drive,user_id,platform_id FROM  fs_order_uploads WHERE 1=1 AND id = $ar[$i]"; 
+					$id= $val->record_id;
 
-					$values = $db->getObjectList($query);
+					$ids = $val->id;
 
-					foreach ($values as $key => $value) {
+					$ar = [$id];
 
-						$dem++;
+					$dem = 0;
+
+					if(count($ar)>0){
+						for ($i=0; $i < count($ar); $i++) { 
 							
-						$this->	test($value->file_xlsx,$value->file_pdf,$value->id,$value->id_file_pdf_google_drive, $value->file_excel_drive,$value->platform_id, $value->user_id, $db);
+							$query = " SELECT id,file_excel_drive,file_pdf,file_xlsx,id_file_pdf_google_drive,user_id,platform_id FROM  fs_order_uploads WHERE 1=1 AND id = $ar[$i]"; 
 
+							$values = $db->getObjectList($query);
+
+							foreach ($values as $key => $value) {
+
+								$dem++;
+									
+								$this->	test($value->file_xlsx,$value->file_pdf,$value->id,$value->id_file_pdf_google_drive, $value->file_excel_drive,$value->platform_id, $value->user_id, $db);
+							}
+
+							$sql= "UPDATE fs_info_run_check_pdf_excel SET active='1'  WHERE `id`=".$ids;
+
+		          			$db->query($sql);
+
+		          			echo "update thành công order_id ".$id."\n" ;
 						
-
+						}
 					}
-					echo $ar[$i]."\n";
 
 				}
 			}
 
 			
-			
-
-			// $date = date('Y-m-d');
-			// $query = " SELECT id,file_excel_drive,file_pdf,file_xlsx,id_file_pdf_google_drive FROM  fs_order_uploads WHERE 1=1 AND platform_id = 2 AND date = '$date'"; 
-			// $sql = $db->query ($query);
-		    // $result = $db->getObjectList ();
-
-		    // if(!empty($result)){
-		    // 	foreach ($result as $key => $value) {
-		    		
-		    // 		$this->	test($value->file_xlsx,$value->file_pdf,$value->id,$value->id_file_pdf_google_drive, $value->file_excel_drive);
-		    // 	}
-		    // }
 
 		}
 
