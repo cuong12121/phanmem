@@ -86,7 +86,7 @@
 		function insert_order_id_check(){
 			global $db;
 
-			$query = " SELECT id,platform_id FROM  fs_order_uploads WHERE 1=1 AND platform_id = 1 AND created_time > '2024-07-23'"; 
+			$query = " SELECT id,platform_id FROM  fs_order_uploads WHERE 1=1 AND platform_id = 1 AND created_time >= '2024-07-23'"; 
 
 			$values = $db->getObjectList($query);
 
