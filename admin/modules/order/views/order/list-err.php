@@ -117,7 +117,7 @@
 
 
                     }
-                    $link_pdf_href = '<a href="'.$link_pdf.'" tarket="blank">'.basename($link_pdf).'</a>';
+                    $link_pdf_href = '<a href="'.$link_pdf.'" target="blank">'.basename($link_pdf).'</a>';
                      array_push($file_pdf_rep1, $link_pdf_href);
 
                 }
@@ -131,8 +131,13 @@
             <td><?= $dem  ?></td>
 
             <td><?=  implode('<br>', $file_pdf_rep1)   ?></td>
+
+            <?php 
+
+                 $link_ex_href = '<a href="'.$value->excel_link.'" target="blank">'.basename($value->excel_link).'</a>';
+            ?>
             
-            <td><?= $value->excel_link  ?></td>
+            <td><?=    $link_ex_href  ?></td>
             <td><?= $value->record_id  ?></td>
             <td><?=  str_replace(',', '<br>', $value->mvd_pdf)   ?></td>
             <td><?= str_replace(',', '<br>', $value->sku_pdf)   ?></td>
