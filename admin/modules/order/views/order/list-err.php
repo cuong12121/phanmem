@@ -63,8 +63,15 @@
             <th>File PDF</th>
             <th>File Excel </th>
             <th>ID đơn hàng</th>
+            <th>Mã vận đơn  file pdf</th>
+            <th>Mã sku  file pdf</th>
+
+            <th>Mã vận đơn  file excel</th>
+            <th>Mã sku  file excel</th>
+
             <th>Mã vận đơn đúng file excel</th>
             <th>Mã sku đúng file excel</th>
+
             <th>Sàn </th>
             <th>Ngày kiểm tra </th>
             
@@ -149,6 +156,12 @@
             <td><?= $value->record_id  ?></td>
             <td><?=  str_replace(',', '<br>', $value->mvd_pdf)   ?></td>
             <td><?= str_replace(',', '<br>', $value->sku_pdf)   ?></td>
+
+            <td><?=  str_replace(',', '<br>', $value->mvd_ex)   ?></td>
+            <td><?= str_replace(',', '<br>', $value->sku_ex)   ?></td>
+
+            <td><?=  str_replace(',', '<br>', $value->er_mvd)   ?></td>
+            <td><?= str_replace(',', '<br>', $value->er_sku)   ?></td>
   
             <td><?= $define_platform[$value->platform_id]?></td>
             <td><?= date("d/m/Y", strtotime($value->created_at));  ?></td>
