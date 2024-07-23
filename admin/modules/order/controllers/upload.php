@@ -450,6 +450,14 @@
 
 			    $checkSku =  array_diff($test['Sku'], $data_pdf['sku']);
 
+			    $mvd_pdf = implode(',', $data_pdf['sku']);
+
+			    $sku_pdf = implode(',', $data_pdf['mavandon']);
+
+			    $mvd_ex = implode(',', $test['maVanDon']);
+
+			    $sku_ex = implode(',', $test['Sku']);
+
 			  
 			    foreach ($filePDF as $filePDFs) {
 
@@ -473,18 +481,18 @@
 			    	$pdf_text =1;
 
 		 			$sql = " INSERT INTO run_check_file_order_pdf_excel
-					(`pdf_link`,excel_link,record_id, mvd_pdf,sku_pdf,created_at,platform_id,pdf_text,user_id)
-					VALUES ('$file_pdf','$file_xlsx','$id', '$erMVD', '$erSKU','$date', '$platform_id','$pdf_text','$user_id')";
+					(`pdf_link`,excel_link,record_id, mvd_pdf,sku_pdf,mvd_ex,sku_ex,er_sku,er_mvd,created_at,platform_id,pdf_text,user_id)
+					VALUES ('$file_pdf','$file_xlsx','$id', '$mvd_pdf', '$sku_pdf','$date','$mvd_ex',' $sku_ex','$erSku','$erMVD',$platform_id','$pdf_text','$user_id')";
 
 					$db->query($sql);
 					$id = $db->insert();
 
-					$result_return = 'file bị lỗi';
+					$result_return = 'file bị lỗi ';
 
 			    	
 			    }
 			    else{
-			    	$result_return = 'file không bị lỗi';
+			    	$result_return = 'file không bị lỗi ';
 			    }
 
 			    echo $result_return;
