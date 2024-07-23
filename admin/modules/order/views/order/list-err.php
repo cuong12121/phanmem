@@ -110,7 +110,7 @@
 
                         $path = str_replace(basename($link_pdf_v), '', $link_pdf_v);
 
-                        var_dump($link_pdf_v);
+                        var_dump($path);
 
                         die;
                        
