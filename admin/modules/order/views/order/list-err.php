@@ -126,7 +126,13 @@
         ?>
 
         <tr>
-
+            $define_platform[1] = 'lazada';
+            $define_platform[2] = 'shopee';
+            $define_platform[9] = 'tiktok';
+            $define_platform[8] = 'best';
+            $define_platform[10] = 'viettel';
+            $define_platform[11] = 'shopee ngoài';
+            $define_platform[4] = 'lex ngoài';
 
             <td><?= $dem  ?></td>
 
@@ -142,7 +148,7 @@
             <td><?=  str_replace(',', '<br>', $value->mvd_pdf)   ?></td>
             <td><?= str_replace(',', '<br>', $value->sku_pdf)   ?></td>
   
-            <td><?= $value->platform_id ?></td>
+            <td><?= $define_platform[$value->platform_id]?></td>
             <td><?= date("d/m/Y", strtotime($value->created_at));  ?></td>
             <td></td>
 
