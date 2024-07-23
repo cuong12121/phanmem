@@ -86,16 +86,23 @@
 		function insert_order_id_check(){
 			global $db;
 
-			$query = " SELECT id,platform_id FROM  fs_order_uploads WHERE 1=1 AND platform_id = 1 AND created_time >= '2024-07-23'"; 
+			$platform_id =1;
+
+			$query = " SELECT id,platform_id FROM  fs_order_uploads WHERE 1=1 AND platform_id = $platform_id AND created_time >= '2024-07-23'"; 
 
 			$values = $db->getObjectList($query);
 
-			echo "<pre>"; var_dump($values); echo "</pre>";
-
-			die;
-
 			foreach ($values as $key => $value) {
-				echo $value->id.'<br>';
+				$id = $value->id;
+
+				$sql = " INSERT INTO fs_info_run_check_pdf_excel
+					(`platform`,record_id)
+					VALUES ('$platform_id','$id')";
+
+					$db->query($sql);
+					$db->insert();
+ 				echo "thêm thành công id = ".$id;
+
 			}	
 		}
 
