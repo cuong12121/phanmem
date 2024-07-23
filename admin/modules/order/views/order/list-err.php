@@ -126,6 +126,7 @@
         ?>
 
         <tr>
+            <?php
             $define_platform[1] = 'lazada';
             $define_platform[2] = 'shopee';
             $define_platform[9] = 'tiktok';
@@ -133,6 +134,7 @@
             $define_platform[10] = 'viettel';
             $define_platform[11] = 'shopee ngoài';
             $define_platform[4] = 'lex ngoài';
+            ?>
 
             <td><?= $dem  ?></td>
 
