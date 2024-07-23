@@ -114,8 +114,11 @@
 
                         $link_pdf = 'https://'.DOMAIN.'/'.$path.$basename;
 
+
+
                     }
-                     array_push($file_pdf_rep1, $link_pdf);
+                    $link_pdf_href = '<a href="'.$link_pdf.'">'.basename($link_pdf_href).'</a>';
+                     array_push($file_pdf_rep1, $link_pdf_href);
 
                 }
 
