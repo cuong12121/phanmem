@@ -113,7 +113,7 @@
 
 			global $db;
 
-			$query = " SELECT record_id,id FROM  fs_info_run_check_pdf_excel WHERE 1=1 AND active =0"; 
+			$query = " SELECT record_id,id FROM  fs_info_run_check_pdf_excel WHERE 1=1 AND active =0 ORDER BY id DESC"; 
 
 			$record_id = $db->getResult($query);
 
