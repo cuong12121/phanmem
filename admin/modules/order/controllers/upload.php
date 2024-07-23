@@ -115,48 +115,53 @@
 
 			$query = " SELECT record_id,id FROM  fs_info_run_check_pdf_excel WHERE 1=1 AND active =0"; 
 
-			$values = $db->getResult($query);
+			$record_id = $db->getResult($query);
 
-			var_dump($values);
+			$querys = " SELECT id FROM  fs_info_run_check_pdf_excel WHERE 1=1 AND active =0"; 
+
+			$order_id = $db->getResult($querys);
+
+			echo($record_id).'<br>';
+
+			echo($order_id);
 
 			die;
 
-			if(!empty($values)){
-				foreach ($values as $key => $val) {
+			
 
-					$id= $val->record_id;
+			$id= $record_id;
 
-					$ids = $val->id;
+			$ids = $order_id;
 
-					$ar = [$id];
+			$ar = [$id];
 
-					$dem = 0;
+			$dem = 0;
 
-					if(count($ar)>0){
-						for ($i=0; $i < count($ar); $i++) { 
+			if(count($ar)>0){
+				for ($i=0; $i < count($ar); $i++) { 
+					
+					$query = " SELECT id,file_excel_drive,file_pdf,file_xlsx,id_file_pdf_google_drive,user_id,platform_id FROM  fs_order_uploads WHERE 1=1 AND id = $ar[$i]"; 
+
+					$values = $db->getObjectList($query);
+
+					foreach ($values as $key => $value) {
+
+						$dem++;
 							
-							$query = " SELECT id,file_excel_drive,file_pdf,file_xlsx,id_file_pdf_google_drive,user_id,platform_id FROM  fs_order_uploads WHERE 1=1 AND id = $ar[$i]"; 
-
-							$values = $db->getObjectList($query);
-
-							foreach ($values as $key => $value) {
-
-								$dem++;
-									
-								$this->	test($value->file_xlsx,$value->file_pdf,$value->id,$value->id_file_pdf_google_drive, $value->file_excel_drive,$value->platform_id, $value->user_id, $db);
-							}
-
-							$sql= "UPDATE fs_info_run_check_pdf_excel SET active='1'  WHERE `id`=".$ids;
-
-		          			$db->query($sql);
-
-		          			echo "update thành công order_id ".$id."\n" ;
-						
-						}
+						$this->	test($value->file_xlsx,$value->file_pdf,$value->id,$value->id_file_pdf_google_drive, $value->file_excel_drive,$value->platform_id, $value->user_id, $db);
 					}
 
+					$sql= "UPDATE fs_info_run_check_pdf_excel SET active='1'  WHERE `id`=".$ids;
+
+          			$db->query($sql);
+
+          			echo "update thành công order_id ".$id."\n" ;
+				
 				}
 			}
+
+				
+			
 
 			
 
