@@ -86,9 +86,9 @@
 		function insert_order_id_check(){
 			global $db;
 
-			$date = date('Y-m-d');
+			$date = date('Y-m-d H:i:s');
 
-			$platform_id =2;
+			$platform_id = $_GET['platform'];
 
 			$query = " SELECT id,platform_id FROM  fs_order_uploads WHERE 1=1 AND platform_id = $platform_id AND created_time >= '2024-07-23'"; 
 
