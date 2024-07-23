@@ -86,7 +86,9 @@
 		function insert_order_id_check(){
 			global $db;
 
-			$platform_id =2;
+			$date = date('Y-m-d');
+
+			$platform_id =1;
 
 			$query = " SELECT id,platform_id FROM  fs_order_uploads WHERE 1=1 AND platform_id = $platform_id AND created_time >= '2024-07-23'"; 
 
@@ -96,8 +98,8 @@
 				$id = $value->id;
 
 				$sql = " INSERT INTO fs_info_run_check_pdf_excel
-					(`platform`,record_id)
-					VALUES ('$platform_id','$id')";
+					(`platform`,record_id, created_at, update_at)
+					VALUES ('$platform_id','$id', $date, $date)";
 
 					$db->query($sql);
 					$db->insert();
