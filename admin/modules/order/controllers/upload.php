@@ -99,7 +99,7 @@
 
 				$sql = " INSERT INTO fs_info_run_check_pdf_excel
 					(`platform`,record_id, created_at, update_at)
-					VALUES ('$platform_id','$id', $date, $date)";
+					VALUES ('$platform_id','$id', '$date', '$date')";
 
 					$db->query($sql);
 					$db->insert();
