@@ -179,16 +179,22 @@
 
 			$data_pdf = $this->dataPDF($file_ar_pdf, $platform_id);
 
+			var_dump($platform_id);
+
+			die;
+
 		
 			if($platform_id !=2){
 
-				$data_pdfs['sku'] = array_merge(...array_values($data_pdf['sku']));
+				$data_pdfs = $data_pdf;
 
-				$data_pdfs['mavandon'] = array_merge(...array_values($data_pdf['mavandon']));
+				
 				
 			}
 			else{
-				$data_pdfs = $data_pdf;
+				$data_pdfs['sku'] = array_merge(...array_values($data_pdf['sku']));
+
+				$data_pdfs['mavandon'] = array_merge(...array_values($data_pdf['mavandon']));
 			}
 
 			$result = $this->resultcheckPdfAndEx($data, $data_pdfs);
