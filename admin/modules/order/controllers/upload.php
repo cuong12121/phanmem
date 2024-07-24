@@ -191,7 +191,7 @@
 
 				$data_pdf = $this->dataPDF($file_ar_pdf, $platform_id);
 
-				var_dump($data_pdf);
+				var_dump($file_path);
 
 				die;
 
