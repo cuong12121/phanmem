@@ -1058,7 +1058,7 @@
 
 		 	$Sku = $this->convertContentCheck($data);
 
-		 	var_dump($Sku);
+		 	var_dump($Sku[0]);
 
 		 	die;
 
