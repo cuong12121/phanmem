@@ -112,8 +112,8 @@
 		{
 			$model  = $this -> model;
 
-			$file_path = PATH_BASE.'files/orders/files/orders/2024/07/23/kat-hcm_1721734674.xlsx';
-			
+			$file_path = PATH_BASE.'files/orders/2024/07/23/kat-hcm_1721734674.xlsx';
+
 
 			$data  = $model->showDataExcel($file_path,'S', 'F');
 
