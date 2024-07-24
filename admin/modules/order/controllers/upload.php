@@ -160,9 +160,17 @@
 
 				$data_pdf = $this->dataPDF($file_ar_pdf, 2);
 
+				
+
+				$data_pdfs['sku'] = array_merge(...array_values($data_pdf['sku']));
+
+				$data_pdfs['mavandon'] = array_merge(...array_values($data_pdf['mavandon']));
+
 				echo "<pre>";var_dump($data); echo "</pre>";
 
-				echo "<pre>";var_dump( array_merge(...array_values($data_pdf['sku']))); echo "</pre>";
+				echo "<pre>";var_dump($data_pdfs); echo "</pre>";
+
+				
 
 			}	
 
