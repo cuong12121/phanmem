@@ -30,6 +30,10 @@
     table tr:nth-child(1){
         background-color:skyblue;
     }
+
+    .error{
+        color: red;
+    }
     .form-search{
         display: flex;
     }
@@ -146,8 +150,8 @@
             
             <td><?=    $link_ex_href  ?></td>
             <td><?= $value->record_id  ?></td>
-            <td><?=  str_replace(',', '<br>', $value->mvd_pdf)   ?></td>
-            <td><?= str_replace(',', '<br>', $value->sku_pdf)   ?></td>
+            <td  <?= !empty($value->er_mvd)?'class="error"':''  ?> ><?=  str_replace(',', '<br>', $value->mvd_pdf)   ?></td>
+            <td <?=!empty($value->er_sku)?'class="error"':''?> ><?= str_replace(',', '<br>', $value->sku_pdf)   ?></td>
 
             <td><?=  str_replace(',', '<br>', $value->mvd_ex)   ?></td>
             <td><?= str_replace(',', '<br>', $value->sku_ex)   ?></td>
