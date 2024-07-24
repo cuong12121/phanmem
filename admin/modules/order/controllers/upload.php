@@ -179,14 +179,16 @@
 
 			$data_pdf = $this->dataPDF($file_ar_pdf, $platform_id);
 
-			
-			if($platform_id ==2){
-				$data_pdfs = $data_pdf;
-			}
-			else{
+		
+			if($platform_id !=2){
+
 				$data_pdfs['sku'] = array_merge(...array_values($data_pdf['sku']));
 
 				$data_pdfs['mavandon'] = array_merge(...array_values($data_pdf['mavandon']));
+				
+			}
+			else{
+				$data_pdfs = $data_pdf;
 			}
 
 			$result = $this->resultcheckPdfAndEx($data, $data_pdfs);
