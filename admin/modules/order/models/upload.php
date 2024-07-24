@@ -325,7 +325,7 @@
 	               
 	                $k++;
             	}else{
-            		var_dump($data[$j]);
+            		var_dump($data[$j]['S']);
 
             		die;
             	}
