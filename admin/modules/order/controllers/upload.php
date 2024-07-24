@@ -194,9 +194,7 @@
 				$data_pdfs['mavandon'] = array_merge(...array_values($data_pdf['mavandon']));
 			}
 
-			var_dump($data_pdfs);
-
-				die;
+			
 
 			$result = $this->resultcheckPdfAndEx($data, $data_pdfs);
 
