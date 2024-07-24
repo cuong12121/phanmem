@@ -325,7 +325,7 @@
 	               
 	                $k++;
             	}else{
-            		var_dump(trim($mvd));
+            		var_dump($data[$j]);
 
             		die;
             	}
