@@ -182,6 +182,8 @@
 					$file_pdf = $value->file_pdf;
 
 				}
+				var_dump($file_path);
+				die;
 
 				$excel_row = $excel_kytu[$platform_id];
 
@@ -191,9 +193,9 @@
 
 				$data_pdf = $this->dataPDF($file_ar_pdf, $platform_id);
 
-				var_dump($file_path);
+				
 
-				die;
+				
 
 
 			
