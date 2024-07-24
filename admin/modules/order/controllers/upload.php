@@ -115,13 +115,15 @@
 			$file_path = PATH_BASE.'files/orders/2024/07/23/kat-hcm_1721734674.xlsx';
 
 			$filePDF = PATH_BASE.'/files/orders/2024/07/23/kat-hcm-ghn_1721734668_cv.pdf';
+			
+			$filePDF1 = PATH_BASE.'/files/orders/2024/07/23/kat-hcm-vnp_1721734668_cv.pdf';
 
 
 			$data  = $model->showDataExcel($file_path,'S', 'F');
 
-			$data_pdf = $this->dataPDF([$filePDF], 2);
+			$data_pdf = $this->dataPDF([$filePDF, $filePDF1], 2);
 
-			echo "<pre>";var_dump($data); echo "</pre>";
+			// echo "<pre>";var_dump($data); echo "</pre>";
 
 			echo "<pre>";var_dump($data_pdf); echo "</pre>";
 
