@@ -457,7 +457,7 @@
 
 		    $sku_ex = implode(',', $test['Sku']);
 
-		    $sqls= "UPDATE fs_info_run_check_pdf_excel SET active='1', sku_excel='$sku_ex',sku_pdf = '$sku_pdf', tracking_code_pdf ='$mvd_pdf', tracking_code_excel='$mvd_ex',update_at = $dates   WHERE `record_id`=".$id;
+		    $sqls= "UPDATE fs_info_run_check_pdf_excel SET active='1', sku_excel='$sku_ex',sku_pdf = '$sku_pdf', tracking_code_pdf ='$mvd_pdf', tracking_code_excel='$mvd_ex',update_at = '$dates'   WHERE `record_id`=".$id;
 
 	         $db->query($sqls);
 
