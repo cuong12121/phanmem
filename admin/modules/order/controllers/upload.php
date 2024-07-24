@@ -144,9 +144,7 @@
 
 			$id = $_GET['id'];
 
-			$platform_id =2;
-
-			$query = " SELECT id,file_pdf, file_xlsx FROM  fs_order_uploads WHERE 1=1 AND id = $id AND platform_id = $platform_id"; 
+			$query = " SELECT id,file_pdf, file_xlsx, platform_id FROM  fs_order_uploads WHERE 1=1 AND id = $id"; 
 
 			$values = $db->getObjectList($query);
 
@@ -169,7 +167,8 @@
 				$file_path = PATH_BASE.$value->file_xlsx;
 
 				$file_ar_pdf = $this->convertArFilePDfToDB($value->file_pdf);
-				
+
+				$platform_id = $value->platform_id;
 			}
 
 			$excel_row = $excel_kytu[$platform_id];
@@ -184,18 +183,13 @@
 
 			$data_pdfs['mavandon'] = array_merge(...array_values($data_pdf['mavandon']));
 
+
 			$result = $this->resultcheckPdfAndEx($data, $data_pdfs);
-
-
 
 			echo 'Đơn hàng có id '.$id.' '.$result ;
 
 			die;
 
-
-
-
-			
 
 			$query = " SELECT record_id,id FROM  fs_info_run_check_pdf_excel WHERE 1=1 AND active =0 ORDER BY id DESC"; 
 
