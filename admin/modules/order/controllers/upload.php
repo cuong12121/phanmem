@@ -144,7 +144,9 @@
 
 			$id = $_GET['id'];
 
-			$query = " SELECT id,file_pdf, file_xlsx, platform_id FROM  fs_order_uploads WHERE 1=1 AND id = $id"; 
+			$query = " SELECT id,file_pdf, user_id, file_xlsx, platform_id FROM  fs_order_uploads WHERE 1=1 AND id = $id"; 
+
+
 
 			$values = $db->getObjectList($query);
 
@@ -163,6 +165,8 @@
 			$excel_kytu[8] = ['L','D'];
 
 			foreach ($values as $key => $value) {
+
+				$user_id = $value->user_id;
 				 
 				$file_path = PATH_BASE.$value->file_xlsx;
 
@@ -196,7 +200,9 @@
 
 			
 
-			$result = $this->resultcheckPdfAndEx($data, $data_pdfs);
+			$result = $this->resultcheckPdfAndEx($data, $data_pdfs, $id, $user_id);
+
+		
 
 			echo 'Đơn hàng có id '.$id.' '.$result ;
 
@@ -437,8 +443,10 @@
 		}
 
 
-		function resultcheckPdfAndEx($test, $data_pdf)
+		function resultcheckPdfAndEx($test, $data_pdf,$id,$user_id)
 		{
+			$date = date('Y-m-d');
+
 			$checkMVD =  array_diff($test['maVanDon'], $data_pdf['mavandon']);
 
 		    $checkSku =  array_diff($test['Sku'], $data_pdf['sku']);
@@ -450,6 +458,11 @@
 		    $mvd_ex = implode(',', $test['maVanDon']);
 
 		    $sku_ex = implode(',', $test['Sku']);
+
+		    $sqls= "UPDATE fs_info_run_check_pdf_excel SET active='1', sku_excel='$sku_ex',sku_pdf = '$sku_pdf', tracking_code_pdf ='$mvd_pdf', tracking_code_excel='$mvd_ex'  WHERE `record_id`=".$id;
+
+	         $db->query($sqls);
+
 
 		    if(!empty($checkMVD)|| !empty($checkSku)){
 		    	$erMVD = '';
