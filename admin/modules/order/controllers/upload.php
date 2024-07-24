@@ -162,7 +162,7 @@
 
 				echo "<pre>";var_dump($data); echo "</pre>";
 
-				echo "<pre>";var_dump($data_pdf); echo "</pre>";
+				echo "<pre>";var_dump( array_values($data_pdf)); echo "</pre>";
 
 			}	
 
