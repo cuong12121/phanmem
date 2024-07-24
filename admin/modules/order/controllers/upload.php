@@ -139,8 +139,8 @@
 		function run_check_pdf_excel()
 		{
 			global $db;
-			
-			$id = 232304;
+
+			$id = $_GET['id'];
 
 			$query = " SELECT id,file_pdf, file_xlsx FROM  fs_order_uploads WHERE 1=1 AND id = $id"; 
 
