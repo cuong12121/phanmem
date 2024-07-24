@@ -454,9 +454,9 @@
 
 		    $checkSku =  array_diff($test['Sku'], $data_pdf['sku']);
 
-		    $mvd_pdf = implode(',', $data_pdf['sku']);
+		    $mvd_pdf = implode(',', $data_pdf['mavandon']);
 
-		    $sku_pdf = implode(',', $data_pdf['mavandon']);
+		    $sku_pdf = implode(',', $data_pdf['sku']);
 
 		    $mvd_ex = implode(',', $test['maVanDon']);
 
