@@ -316,11 +316,11 @@
 
             	if(!empty($data[$j][$sku_row])){
 
-            		$sku =   $this->convertContentCheckExcel(trim($data[$j][$sku_row]));
+            		$sku =   $this->convertContentCheck(trim($data[$j][$sku_row]));
 
 	                $skuss = ($sku)[0];
 
-	                 $row['Sku'][$k] = trim($data[$j][$sku_row]);
+	                 $row['Sku'][$k] =  $skuss;
 
             	}
             	$k++;
