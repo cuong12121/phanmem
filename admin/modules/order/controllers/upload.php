@@ -656,7 +656,7 @@
 
 		  
 
-		   echo"<pre>";var_dump(array_values($data['sku']));echo"</pre>";
+		   echo"<pre>";var_dump(array_values($data));echo"</pre>";
 
 		   die;
 
