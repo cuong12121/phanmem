@@ -188,7 +188,7 @@
 
 				$data  = $model->showDataExcel($file_path,$excel_row[0], $excel_row[1]);
 
-				var_dump($data);
+				var_dump($platform_id);
 				die;
 
 				$data['maVanDon'] = array_unique($data['maVanDon']);
