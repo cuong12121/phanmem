@@ -447,6 +447,8 @@
 		{
 			$date = date('Y-m-d');
 
+			$dates = date('Y-m-d H:i:s');
+
 			$checkMVD =  array_diff($test['maVanDon'], $data_pdf['mavandon']);
 
 		    $checkSku =  array_diff($test['Sku'], $data_pdf['sku']);
@@ -459,7 +461,7 @@
 
 		    $sku_ex = implode(',', $test['Sku']);
 
-		    $sqls= "UPDATE fs_info_run_check_pdf_excel SET active='1', sku_excel='$sku_ex',sku_pdf = '$sku_pdf', tracking_code_pdf ='$mvd_pdf', tracking_code_excel='$mvd_ex'  WHERE `record_id`=".$id;
+		    $sqls= "UPDATE fs_info_run_check_pdf_excel SET active='1', sku_excel='$sku_ex',sku_pdf = '$sku_pdf', tracking_code_pdf ='$mvd_pdf', tracking_code_excel='$mvd_ex',update_at = $dates   WHERE `record_id`=".$id;
 
 	         $db->query($sqls);
 
