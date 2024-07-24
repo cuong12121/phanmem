@@ -651,6 +651,20 @@
 
 		   	}
 
+
+		   	// nối mảng lại cho đúng chuẩn
+
+		   	for ($i=0; $i < count($data['mavandon']); $i++) { 
+
+		   		array_merge(array_values($data['mavandon'][$i]));
+		   	}
+
+		   	for ($z=0; $z < count($data['sku']); $z++) { 
+
+		   		array_merge(array_values($data['sku'][$z]));
+		   	}
+
+
 		   	return $data;
 		}
 
