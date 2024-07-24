@@ -592,6 +592,10 @@
 
 		    $number_page = intval(str_replace('NumberOfPages: ', '', $datas));
 
+		    var_dump($number_page);
+
+		    die;
+
 		   	if($number_page>0){
 
 		   		for($i =0; $i<$number_page; $i++){
