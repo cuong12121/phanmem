@@ -110,6 +110,15 @@
 
 		function run_check_pdf_excel()
 		{
+			$model  = $this -> model;
+
+			$file_path = 'https://dienmayai.com/files/order/check/files/orders/2024/07/23/kat-hcm_1721734674.xlsx';
+
+			$data  = $model->showDataExcel($file_path,'S', 'F');
+
+			echo "<pre>";var_dump($data); echo "</pre>";
+
+			die;
 
 			global $db;
 
@@ -350,16 +359,7 @@
 
 		function test($file_xlsx,$file_pdf,$id,$id_file_pdf_google_drive,$file_excel_drive,$platform_id,$user_id, $db)
 		{
-			$model  = $this -> model;
-
-			$file_path = 'https://dienmayai.com/files/order/check/files/orders/2024/07/23/kat-hcm_1721734674.xlsx';
-
-			$data  = $model->showDataExcel($file_path,'S', 'F');
-
-			echo "<pre>";var_dump($data); echo "</pre>";
-
-			die;
-
+			
 			$file_exc = $file_excel_drive;
 
 			$date = date('Y-m-d');
