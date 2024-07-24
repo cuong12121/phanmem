@@ -182,12 +182,14 @@
 					$file_pdf = $value->file_pdf;
 
 				}
-				var_dump($file_path);
-				die;
+
 
 				$excel_row = $excel_kytu[$platform_id];
 
 				$data  = $model->showDataExcel($file_path,$excel_row[0], $excel_row[1]);
+
+				var_dump($data);
+				die;
 
 				$data['maVanDon'] = array_unique($data['maVanDon']);
 
