@@ -592,9 +592,6 @@
 
 		    $number_page = intval(str_replace('NumberOfPages: ', '', $datas));
 
-		    var_dump($datas);
-
-		    die;
 
 		   	if($number_page>0){
 
