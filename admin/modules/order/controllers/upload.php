@@ -146,7 +146,7 @@
 
 			$values = $db->getObjectList($query);
 
-			foreach ($variable as $key => $value) {
+			foreach ($values as $key => $value) {
 				 
 				$model  = $this -> model;
 
