@@ -179,16 +179,15 @@
 
 			$data_pdf = $this->dataPDF($file_ar_pdf, $platform_id);
 
-			var_dump($platform_id);
-
-			die;
 
 		
 			if($platform_id !=2){
 
 				$data_pdfs = $data_pdf;
 
-				
+				var_dump($data_pdfs);
+
+				die;
 				
 			}
 			else{
