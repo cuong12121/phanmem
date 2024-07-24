@@ -320,7 +320,7 @@
 
 	                $skuss = ($sku)[0];
 
-	                 $row['Sku'][$k] = trim($data[$j][$sku_row];
+	                 $row['Sku'][$k] = trim($data[$j][$sku_row]);
 
             	}
             	$k++;
