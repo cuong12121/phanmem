@@ -108,27 +108,60 @@
 			}	
 		}
 
+		function convertArFilePDfToDB($filePdf)
+		{
+			$file_pdf_rep = explode(',', $filePdf);
+
+            $file_pdf_rep1 = [];
+
+            for ($i=0; $i < count($file_pdf_rep) ; $i++) { 
+              
+                $link_pdf = PATH_BASE.str_replace('pdft', 'pdf', $file_pdf_rep[$i]);
+
+                if($i>0){
+
+                    $link_pdf_v =  str_replace('pdft', 'pdf', $file_pdf_rep[0]);
+
+                    $path = str_replace(basename($link_pdf_v), '', $link_pdf_v);
+
+                    $basename = str_replace('pdft', 'pdf',  substr($file_pdf_rep[$i], 1));
+
+                    $link_pdf = PATH_BASE.$path.$basename;
+
+                }
+              
+                array_push($file_pdf_rep1, $link_pdf);
+
+            }
+            return $file_pdf_rep1;
+		}
+
 		function run_check_pdf_excel()
 		{
-			$model  = $this -> model;
+			$id = 232304;
+			$query = " SELECT id,file_pdf, file_xlsx FROM  fs_order_uploads WHERE 1=1 AND id = $id"; 
 
-			$file_path = PATH_BASE.'files/orders/2024/07/23/kat-hcm_1721734674.xlsx';
+			$values = $db->getObjectList($query);
 
-			$filePDF = PATH_BASE.'/files/orders/2024/07/23/kat-hcm-ghn_1721734668_cv.pdf';
+			foreach ($variable as $key => $value) {
+				 
+				$model  = $this -> model;
 
-			$filePDF1 = PATH_BASE.'/files/orders/2024/07/23/kat-hcm-vnp_1721734668_cv.pdf';
+				$file_path = PATH_BASE.$value->file_xlsx;
 
+				$file_ar_pdf = $this->convertArFilePDfToDB($value->file_pdf);
 
-			$data  = $model->showDataExcel($file_path,'S', 'F');
+				$data  = $model->showDataExcel($file_path,'S', 'F');
 
-			$data['maVanDon'] = array_unique($data['maVanDon']);
+				$data['maVanDon'] = array_unique($data['maVanDon']);
 
-			$data_pdf = $this->dataPDF([$filePDF, $filePDF1], 2);
+				$data_pdf = $this->dataPDF($file_ar_pdf, 2);
 
-			echo "<pre>";var_dump($data); echo "</pre>";
+				echo "<pre>";var_dump($data); echo "</pre>";
 
-			echo "<pre>";var_dump($data_pdf); echo "</pre>";
+				echo "<pre>";var_dump($data_pdf); echo "</pre>";
 
+			}	
 
 			die;
 
