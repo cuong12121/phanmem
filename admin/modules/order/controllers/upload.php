@@ -654,9 +654,9 @@
 
 		   	// nối mảng lại cho đúng chuẩn
 
-		   $merged_sku = array_unique(array_merge(...array_values($data['sku'])));
+		  
 
-		   echo"<pre>";var_dump($merged_sku);echo"</pre>";
+		   echo"<pre>";var_dump(array_values($data['sku']));echo"</pre>";
 
 		   die;
 
