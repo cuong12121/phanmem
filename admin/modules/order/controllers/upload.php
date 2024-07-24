@@ -119,7 +119,7 @@
 
 			$data  = $model->showDataExcel($file_path,'S', 'F');
 
-			$data_pdf = $this->dataPDF($filePDF, 2);
+			$data_pdf = $this->dataPDF([$filePDF], 2);
 
 			echo "<pre>";var_dump($data); echo "</pre>";
 
