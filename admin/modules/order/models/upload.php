@@ -312,9 +312,7 @@
             	if(!empty($data[$j][$mvd])){
             		$row['maVanDon'][$k] = trim($data[$j][$mvd]);
 
-            		var_dump(trim($data[$j][$sku_row]));
-
-            		die;
+            		
 
 	                $sku =   $this->convertContentCheckExcel(trim($data[$j][$sku_row]));
 
@@ -326,6 +324,10 @@
 
 	               
 	                $k++;
+            	}else{
+            		var_dump(trim($mvd));
+
+            		die;
             	}
 
             }  
