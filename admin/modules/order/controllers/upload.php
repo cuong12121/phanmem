@@ -188,9 +188,9 @@
 				$data  = $model->showDataExcel($file_path,$excel_row[0], $excel_row[1]);
 
 			
-				$data['maVanDon'] = !empty($data['maVanDon'])?array_unique($data['maVanDon']):'';
+				$data['maVanDon'] = !empty($data['maVanDon'])?array_unique($data['maVanDon']):[];
 
-				$data['Sku'] = !empty($data['Sku'])?array_unique($data['Sku']):'';
+				$data['Sku'] = !empty($data['Sku'])?array_unique($data['Sku']):[];
 
 				$data_pdf = $this->dataPDF($file_ar_pdf, $platform_id);
 
