@@ -142,7 +142,7 @@
 
 			$model  = $this -> model;
 
-			$querys_id = "SELECT id FROM  fs_info_run_check_pdf_excel WHERE 1=1 AND active = 0 ORDER BY id DESC"; 
+			$querys_id = "SELECT record_id FROM  fs_info_run_check_pdf_excel WHERE 1=1 AND active = 0 ORDER BY id DESC"; 
 
 			$id = $db->getResult($querys_id);
 
