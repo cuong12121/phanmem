@@ -482,7 +482,7 @@
 
 	 			$sql = " INSERT INTO run_check_file_order_pdf_excel
 				(`pdf_link`,excel_link,record_id, mvd_pdf,sku_pdf,mvd_ex,sku_ex,er_sku,er_mvd,created_at,platform_id,pdf_text,user_id)
-				VALUES ('$file_pdf','$file_xlsx','$id', '$mvd_pdf', '$sku_pdf','$date','$mvd_ex',' $sku_ex','$erSku','$erMVD','$platform_id','$pdf_text','$user_id')";
+				VALUES ('$file_pdf','$file_xlsx','$id', '$mvd_pdf', '$sku_pdf','$mvd_ex',' $sku_ex','$erSku','$erMVD','$dates',$platform_id','$pdf_text','$user_id')";
 
 				$db->query($sql);
 				$id = $db->insert();
