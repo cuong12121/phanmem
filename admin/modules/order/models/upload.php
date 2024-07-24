@@ -325,7 +325,7 @@
 	               
 	                $k++;
             	}else{
-            		var_dump($data[$j]['S']);
+            		var_dump($sku_row);
 
             		die;
             	}
