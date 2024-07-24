@@ -651,15 +651,6 @@
 
 		   	}
 
-
-		   	// nối mảng lại cho đúng chuẩn
-
-		  
-
-		   echo"<pre>";var_dump($data);echo"</pre>";
-
-		   die;
-
 		   	return $data;
 		}
 
