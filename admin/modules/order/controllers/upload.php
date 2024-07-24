@@ -138,7 +138,10 @@
 
 		function run_check_pdf_excel()
 		{
+			global $db;
+			
 			$id = 232304;
+
 			$query = " SELECT id,file_pdf, file_xlsx FROM  fs_order_uploads WHERE 1=1 AND id = $id"; 
 
 			$values = $db->getObjectList($query);
@@ -168,7 +171,7 @@
 
 
 
-			global $db;
+			
 
 			$query = " SELECT record_id,id FROM  fs_info_run_check_pdf_excel WHERE 1=1 AND active =0 ORDER BY id DESC"; 
 
