@@ -140,39 +140,55 @@
 		{
 			global $db;
 
+			$model  = $this -> model;
+
 			$id = $_GET['id'];
 
-			$query = " SELECT id,file_pdf, file_xlsx FROM  fs_order_uploads WHERE 1=1 AND id = $id"; 
+			$platform_id =2;
+
+			$query = " SELECT id,file_pdf, file_xlsx FROM  fs_order_uploads WHERE 1=1 AND id = $id AND platform_id = $platform_id"; 
 
 			$values = $db->getObjectList($query);
 
+			$excel_kytu[2] = ['S','F'];
+
+		    $excel_kytu[11] = ['L','D'];
+
+			$excel_kytu[1] = ['F','BG'];
+
+			$excel_kytu[4] = ['L','D'];
+
+			$excel_kytu[9] = ['L','D'];
+
+			$excel_kytu[10] = ['L','D'];
+
+			$excel_kytu[8] = ['L','D'];
+
 			foreach ($values as $key => $value) {
 				 
-				$model  = $this -> model;
-
 				$file_path = PATH_BASE.$value->file_xlsx;
 
 				$file_ar_pdf = $this->convertArFilePDfToDB($value->file_pdf);
-
-				$data  = $model->showDataExcel($file_path,'S', 'F');
-
-				$data['maVanDon'] = array_unique($data['maVanDon']);
-
-				$data_pdf = $this->dataPDF($file_ar_pdf, 2);
-
 				
+			}
 
-				$data_pdfs['sku'] = array_merge(...array_values($data_pdf['sku']));
+			$excel_row = $excel_kytu[$platform_id];
 
-				$data_pdfs['mavandon'] = array_merge(...array_values($data_pdf['mavandon']));
+			$data  = $model->showDataExcel($file_path,$excel_row[0], $excel_row[1]);
 
-				echo "<pre>";var_dump($data); echo "</pre>";
+			$data['maVanDon'] = array_unique($data['maVanDon']);
 
-				echo "<pre>";var_dump($data_pdfs); echo "</pre>";
+			$data_pdf = $this->dataPDF($file_ar_pdf, $platform_id);
 
-				
+			$data_pdfs['sku'] = array_merge(...array_values($data_pdf['sku']));
 
-			}	
+			$data_pdfs['mavandon'] = array_merge(...array_values($data_pdf['mavandon']));
+
+			$result = $this->resultcheckPdfAndEx($data, $data_pdfs);
+
+
+
+			echo 'Đơn hàng có id '.$id.' '.$result ;
 
 			die;
 
@@ -415,6 +431,48 @@
 		}
 
 
+		function resultcheckPdfAndEx($test, $data_pdf)
+		{
+			$checkMVD =  array_diff($test['maVanDon'], $data_pdf['mavandon']);
+
+		    $checkSku =  array_diff($test['Sku'], $data_pdf['sku']);
+
+		    $mvd_pdf = implode(',', $data_pdf['sku']);
+
+		    $sku_pdf = implode(',', $data_pdf['mavandon']);
+
+		    $mvd_ex = implode(',', $test['maVanDon']);
+
+		    $sku_ex = implode(',', $test['Sku']);
+
+		    if(!empty($checkMVD)|| !empty($checkSku)){
+		    	$erMVD = '';
+		    	$erSku = '';
+		    	if(!empty($checkMVD)){
+
+		    		$erMVD = implode(',', $checkMVD);
+		    	}
+		    	if(!empty($checkSku)){
+
+		    		$erSKU = implode(',', $checkSku);
+		    	}
+		    	$pdf_text =1;
+
+	 			$sql = " INSERT INTO run_check_file_order_pdf_excel
+				(`pdf_link`,excel_link,record_id, mvd_pdf,sku_pdf,mvd_ex,sku_ex,er_sku,er_mvd,created_at,platform_id,pdf_text,user_id)
+				VALUES ('$file_pdf','$file_xlsx','$id', '$mvd_pdf', '$sku_pdf','$date','$mvd_ex',' $sku_ex','$erSku','$erMVD','$platform_id','$pdf_text','$user_id')";
+
+				$db->query($sql);
+				$id = $db->insert();
+
+				$result_return = 'bị lỗi ';
+
+		    }
+		    else{
+		    	$result_return = 'không bị lỗi ';
+		    }
+		    return $result_return;
+		}
 
 		function test($file_xlsx,$file_pdf,$id,$id_file_pdf_google_drive,$file_excel_drive,$platform_id,$user_id, $db)
 		{
