@@ -592,7 +592,7 @@
 
 		    $number_page = intval(str_replace('NumberOfPages: ', '', $datas));
 
-		    var_dump($number_page);
+		    var_dump($datas);
 
 		    die;
 
