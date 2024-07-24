@@ -320,7 +320,7 @@
 
 	                $skuss = ($sku)[0];
 
-	                 $row['Sku'][$k] = $skus;
+	                 $row['Sku'] = $skus;
 
             	}
             	$k++;
