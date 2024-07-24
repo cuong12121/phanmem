@@ -142,69 +142,69 @@
 
 			$model  = $this -> model;
 
-			$id = $_GET['id'];
+			$querys_id = "SELECT id FROM  fs_order_uploads WHERE 1=1 AND active = 0 ORDER BY id DESC"; 
 
-			$query = " SELECT id,file_pdf, user_id, file_xlsx, platform_id FROM  fs_order_uploads WHERE 1=1 AND id = $id"; 
+			$id = $db->getResult($querys_id);
 
+			var_dump($id);
 
+			die;
 
-			$values = $db->getObjectList($query);
+			if(!empty($id)){
+				$query = " SELECT id,file_pdf, user_id, file_xlsx, platform_id FROM  fs_order_uploads WHERE 1=1 AND id = $id"; 
 
-			$excel_kytu[2] = ['S','F'];
+				$values = $db->getObjectList($query);
 
-		    $excel_kytu[11] = ['L','D'];
+				$excel_kytu[2] = ['S','F'];
 
-			$excel_kytu[1] = ['F','BG'];
+			    $excel_kytu[11] = ['L','D'];
 
-			$excel_kytu[4] = ['L','D'];
+				$excel_kytu[1] = ['F','BG'];
 
-			$excel_kytu[9] = ['L','D'];
+				$excel_kytu[4] = ['L','D'];
 
-			$excel_kytu[10] = ['L','D'];
+				$excel_kytu[9] = ['L','D'];
 
-			$excel_kytu[8] = ['L','D'];
+				$excel_kytu[10] = ['L','D'];
 
-			foreach ($values as $key => $value) {
+				$excel_kytu[8] = ['L','D'];
 
-				$user_id = $value->user_id;
-				 
-				$file_path = PATH_BASE.$value->file_xlsx;
+				foreach ($values as $key => $value) {
 
-				$file_ar_pdf = $this->convertArFilePDfToDB($value->file_pdf);
+					$user_id = $value->user_id;
+					 
+					$file_path = PATH_BASE.$value->file_xlsx;
 
-				$platform_id = $value->platform_id;
-			}
+					$file_ar_pdf = $this->convertArFilePDfToDB($value->file_pdf);
 
-			$excel_row = $excel_kytu[$platform_id];
+					$platform_id = $value->platform_id;
+				}
 
-			$data  = $model->showDataExcel($file_path,$excel_row[0], $excel_row[1]);
+				$excel_row = $excel_kytu[$platform_id];
 
-			$data['maVanDon'] = array_unique($data['maVanDon']);
+				$data  = $model->showDataExcel($file_path,$excel_row[0], $excel_row[1]);
 
-			$data_pdf = $this->dataPDF($file_ar_pdf, $platform_id);
+				$data['maVanDon'] = array_unique($data['maVanDon']);
 
+				$data_pdf = $this->dataPDF($file_ar_pdf, $platform_id);
 
-		
-			if($platform_id !=2){
-
-				$data_pdfs = $data_pdf;
-
-				
-				
-			}
-			else{
-				$data_pdfs['sku'] = array_merge(...array_values($data_pdf['sku']));
-
-				$data_pdfs['mavandon'] = array_merge(...array_values($data_pdf['mavandon']));
-			}
 
 			
+				if($platform_id !=2){
 
-			$result = $this->resultcheckPdfAndEx($data, $data_pdfs, $id, $user_id, $db);
+					$data_pdfs = $data_pdf;
 
-		
+				}
+				else{
+					$data_pdfs['sku'] = array_merge(...array_values($data_pdf['sku']));
 
-			echo 'Đơn hàng có id '.$id.' '.$result ;
+					$data_pdfs['mavandon'] = array_merge(...array_values($data_pdf['mavandon']));
+				}
+
+				$result = $this->resultcheckPdfAndEx($data, $data_pdfs, $id, $user_id, $db);
+
+				echo 'Đơn hàng có id '.$id.' '.$result ;
+			}
 
 			die;
 
