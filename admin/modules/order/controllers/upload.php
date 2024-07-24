@@ -146,7 +146,6 @@
 
 			$id = $db->getResult($querys_id);
 
-			$id = 232284;
 
 			if(!empty($id)){
 				$query = " SELECT id,file_pdf, user_id, file_xlsx, platform_id,file_xlsx,file_pdf FROM  fs_order_uploads WHERE 1=1 AND id = $id"; 
