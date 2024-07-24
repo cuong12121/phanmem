@@ -147,7 +147,7 @@
 			$id = $db->getResult($querys_id);
 
 			if(!empty($id)){
-				$query = " SELECT id,file_pdf, user_id, file_xlsx, platform_id FROM  fs_order_uploads WHERE 1=1 AND id = $id"; 
+				$query = " SELECT id,file_pdf, user_id, file_xlsx, platform_id,file_xlsx,file_pdf FROM  fs_order_uploads WHERE 1=1 AND id = $id"; 
 
 				$values = $db->getObjectList($query);
 
@@ -174,6 +174,11 @@
 					$file_ar_pdf = $this->convertArFilePDfToDB($value->file_pdf);
 
 					$platform_id = $value->platform_id;
+
+					$file_xlsx = $value->file_xlsx;
+
+					$file_pdf = $value->file_pdf;
+
 				}
 
 				$excel_row = $excel_kytu[$platform_id];
@@ -197,7 +202,7 @@
 					$data_pdfs['mavandon'] = array_merge(...array_values($data_pdf['mavandon']));
 				}
 
-				$result = $this->resultcheckPdfAndEx($data, $data_pdfs, $id, $user_id, $db);
+				$result = $this->resultcheckPdfAndEx($data, $data_pdfs, $id, $user_id, $db, $file_xlsx, $file_pdf, $platform_id);
 
 				echo 'Đơn hàng có id '.$id.' '.$result ;
 			}
@@ -439,7 +444,7 @@
 		}
 
 
-		function resultcheckPdfAndEx($test, $data_pdf,$id,$user_id, $db)
+		function resultcheckPdfAndEx($test, $data_pdf,$id,$user_id, $db, $file_xlsx, $file_pdf,$platform_id)
 		{
 			$date = date('Y-m-d');
 
