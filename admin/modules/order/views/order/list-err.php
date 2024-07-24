@@ -141,7 +141,7 @@
 
             <?php 
 
-                 $link_ex_href = '<a href="'.$value->excel_link.'" target="blank">'.basename($value->excel_link).'</a>';
+                 $link_ex_href = '<a href="https://'.DOMAIN.'/'.$value->excel_link.'" target="blank">'.basename($value->excel_link).'</a>';
             ?>
             
             <td><?=    $link_ex_href  ?></td>
