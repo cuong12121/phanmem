@@ -654,16 +654,11 @@
 
 		   	// nối mảng lại cho đúng chuẩn
 
-		   	for ($i=0; $i < count($data['mavandon']); $i++) { 
+		   $merged_sku = array_unique(array_merge(...array_values($data['sku'])));
 
-		   		array_merge(array_values($data['mavandon'][$i]));
-		   	}
+		   echo"<pre>";var_dump($merged_sku);echo"</pre>";
 
-		   	for ($z=0; $z < count($data['sku']); $z++) { 
-
-		   		array_merge(array_values($data['sku'][$z]));
-		   	}
-
+		   die;
 
 		   	return $data;
 		}
