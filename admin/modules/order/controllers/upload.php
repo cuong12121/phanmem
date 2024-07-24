@@ -603,9 +603,9 @@
 
 				    $sku = $model->contendTextFindSku($path,$page);
 
-				    $data['mavandon'][] = $mvd??'';
+				    $data['mavandon'] = $mvd??'';
 
-				    $data['sku'][] = $sku??'';
+				    $data['sku'] = $sku??'';
 
 		   		}
 
