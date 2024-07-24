@@ -146,6 +146,8 @@
 
 			$id = $db->getResult($querys_id);
 
+			$id = 232284;
+
 			if(!empty($id)){
 				$query = " SELECT id,file_pdf, user_id, file_xlsx, platform_id,file_xlsx,file_pdf FROM  fs_order_uploads WHERE 1=1 AND id = $id"; 
 
@@ -189,6 +191,10 @@
 
 				$data_pdf = $this->dataPDF($file_ar_pdf, $platform_id);
 
+				var_dump($data_pdf);
+
+				die;
+
 
 			
 				if($platform_id !=2){
@@ -201,6 +207,8 @@
 
 					$data_pdfs['mavandon'] = array_merge(...array_values($data_pdf['mavandon']));
 				}
+
+
 
 				$result = $this->resultcheckPdfAndEx($data, $data_pdfs, $id, $user_id, $db, $file_xlsx, $file_pdf, $platform_id);
 
