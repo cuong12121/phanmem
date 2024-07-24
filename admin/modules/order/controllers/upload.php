@@ -200,7 +200,7 @@
 
 			
 
-			$result = $this->resultcheckPdfAndEx($data, $data_pdfs, $id, $user_id);
+			$result = $this->resultcheckPdfAndEx($data, $data_pdfs, $id, $user_id, $db);
 
 		
 
@@ -443,7 +443,7 @@
 		}
 
 
-		function resultcheckPdfAndEx($test, $data_pdf,$id,$user_id)
+		function resultcheckPdfAndEx($test, $data_pdf,$id,$user_id, $db)
 		{
 			$date = date('Y-m-d');
 
