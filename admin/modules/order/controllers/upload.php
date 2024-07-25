@@ -140,11 +140,31 @@
 		{
 			global $db;
 
+			$querys_id = "SELECT id FROM  fs_info_run_check_pdf_excel WHERE 1=1 AND active = 1 ORDER BY id DESC"; 
+
+			$val = $db->getObjectList($querys_id);
+
+			foreach ($val as $key => $value) {
+
+				$id = $value->id;
+				$sql= "UPDATE fs_info_run_check_pdf_excel SET active='0'  WHERE `id`=".$id;
+
+	          	$db->query($sql);
+
+	          	echo "update thanh cong id = ". $id;
+
+			}
+			die;
+
+
+
 			$model  = $this -> model;
 
 			$querys_id = "SELECT record_id FROM  fs_info_run_check_pdf_excel WHERE 1=1 AND active = 0 ORDER BY id DESC"; 
 
 			$id = $db->getResult($querys_id);
+
+
 
 			// $id =232252;
 
