@@ -66,7 +66,7 @@
 		{
 			global $db;
 
-			$page = $_GET['page']?$_GET['page']:1;
+			$page = !empty($_GET['page'])?$_GET['page']:1;
 
 			// $query = " SELECT * FROM run_check_file_order_pdf_excel
    			// 			  WHERE user_id = 208";
