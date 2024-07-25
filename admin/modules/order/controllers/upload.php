@@ -146,7 +146,7 @@
 
 			$id = $db->getResult($querys_id);
 
-			$id =232252;
+			// $id =232252;
 
 
 			if(!empty($id)){
@@ -198,9 +198,9 @@
 
 				$data_pdf = $this->dataPDF($file_ar_pdf, $platform_id);
 
-				echo"<pre>"; var_dump($data_pdf);echo"</pre>";
+				// echo"<pre>"; var_dump($data_pdf);echo"</pre>";
 
-				die;
+				// die;
 
 				
 				if($platform_id !=2){
