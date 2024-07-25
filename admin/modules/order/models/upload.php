@@ -385,13 +385,13 @@
 					return false;
 				}
 
-				// $row['tracking_code'] = trim($data[$j]['F']);
-				// if(!$row['tracking_code'] || $row['tracking_code'] == 'null' ){
-				// 	$this->remove_xml($result_id,$file_path);
-				// 	$msg = 'Không được để trống Mã vận đơn(cột F) dòng '.$j;
-				// 	setRedirect($link,$msg,'error');
-				// 	return false;
-				// }
+				$row['tracking_code'] = trim($data[$j]['F']);
+				if(!$row['tracking_code'] || $row['tracking_code'] == 'null' ){
+					$this->remove_xml($result_id,$file_path);
+					$msg = 'Không được để trống Mã vận đơn(cột F) dòng '.$j;
+					setRedirect($link,$msg,'error');
+					return false;
+				}
 
 				// $row['ma_kien_hang'] = trim($data[$j]['B']);
 				// if(!$row['ma_kien_hang'] || $row['ma_kien_hang'] == 'null' ){
