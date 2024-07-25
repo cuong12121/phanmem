@@ -187,10 +187,6 @@
 
 				$data  = $model->showDataExcel($file_path,$excel_row[0], $excel_row[1]);
 
-				var_dump($data);
-
-				die;
-
 			
 				$data['maVanDon'] = !empty($data['maVanDon'])?array_unique($data['maVanDon']):[];
 
