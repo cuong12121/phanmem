@@ -209,7 +209,7 @@
 
 				$data  = $model->showDataExcel($file_path,$excel_row[0], $excel_row[1]);
 
-				var_dump($data);
+				echo"<pre>";var_dump($data);echo"</pre>";
 
 				die;
 
