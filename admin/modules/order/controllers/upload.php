@@ -146,6 +146,8 @@
 
 			$id = $db->getResult($querys_id);
 
+			$id =232252;
+
 
 			if(!empty($id)){
 				$query = " SELECT id,file_pdf, user_id, file_xlsx, platform_id,file_xlsx,file_pdf FROM  fs_order_uploads WHERE 1=1 AND id = $id"; 
@@ -186,6 +188,10 @@
 				$excel_row = $excel_kytu[$platform_id];
 
 				$data  = $model->showDataExcel($file_path,$excel_row[0], $excel_row[1]);
+
+				var_dump($data);
+
+				die;
 
 			
 				$data['maVanDon'] = !empty($data['maVanDon'])?array_unique($data['maVanDon']):[];
