@@ -213,9 +213,6 @@
 
 				$data['Sku'] = !empty($data['Sku'])?array_unique($data['Sku']):[];
 
-				echo"<pre>";var_dump($data);echo"</pre>";
-
-				die;
 
 				$data_pdf = $this->dataPDF($file_ar_pdf, $platform_id);
 
