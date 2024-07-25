@@ -323,7 +323,7 @@
 	                if(!empty(($sku)[0])){
 	                	 $skus[$k] = $skuss[0];
 	                }
-	                $skus[$k] =$data[$j][$sku_row];
+	                $skus[$k] = substr($data[$j][$sku_row], 0,16) ;
 	               
 
 	                 $row['Sku'] = $skus;
