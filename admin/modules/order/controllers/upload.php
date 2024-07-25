@@ -140,21 +140,21 @@
 		{
 			global $db;
 
-			$querys_id = "SELECT id FROM  fs_info_run_check_pdf_excel WHERE 1=1 AND active = 1 ORDER BY id DESC"; 
+			// $querys_id = "SELECT id FROM  fs_info_run_check_pdf_excel WHERE 1=1 AND active = 1 ORDER BY id DESC"; 
 
-			$val = $db->getObjectList($querys_id);
+			// $val = $db->getObjectList($querys_id);
 
-			foreach ($val as $key => $value) {
+			// foreach ($val as $key => $value) {
 
-				$id = $value->id;
-				$sql= "UPDATE fs_info_run_check_pdf_excel SET active='0'  WHERE `id`=".$id;
+			// 	$id = $value->id;
+			// 	$sql= "UPDATE fs_info_run_check_pdf_excel SET active='0'  WHERE `id`=".$id;
 
-	          	$db->query($sql);
+	        //   	$db->query($sql);
 
-	          	echo "update thanh cong id = ". $id;
+	        //   	echo "update thanh cong id = ". $id;
 
-			}
-			die;
+			// }
+			// die;
 
 
 
@@ -208,6 +208,10 @@
 				$excel_row = $excel_kytu[$platform_id];
 
 				$data  = $model->showDataExcel($file_path,$excel_row[0], $excel_row[1]);
+
+				var_dump($data);
+
+				die;
 
 				
 
