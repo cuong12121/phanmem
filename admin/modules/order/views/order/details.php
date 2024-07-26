@@ -67,7 +67,7 @@
 </div>
 <?php 
      global $db;
-    if($user_id ==='9'):
+    if($user_id ==='9'||$user_id ==='251'):
    
 ?>
 <div class="form-search">
@@ -131,7 +131,7 @@
 
 <?php 
 
-    if($user_id !=9):
+    if($user_id !=9||$user_id !=251):
    
 ?>
     <h2>Danh sách đơn đã đóng mới nhất của  <?=  @$_SESSION ['ad_username'] ?></h2>
