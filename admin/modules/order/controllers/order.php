@@ -99,11 +99,9 @@
 
 	        // Send the request
 
-	        var_dump($user_id);
 
-	        	die;
 
-	        if($user_id==='9'||$user_id=='261'){
+	        if($user_id==='9'||$user_id==='251'){
 	        	
 	        	$link_api = 'https://api.'.DOMAIN.'/api/get-data-order-details?page='.$page;
 
