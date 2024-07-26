@@ -150,7 +150,7 @@
             
             <td><?=    $link_ex_href  ?></td>
             <td><?= $value->record_id  ?></td>
-            <td  <?= !empty($value->er_mvd)?'class="error"':''  ?> ><?=  str_replace(',', '<br>', $value->mvd_pdf)   ?></td>
+            <td  <?= isset($value->er_mvd)?'class="error"':''  ?> ><?=  str_replace(',', '<br>', $value->mvd_pdf)   ?></td>
             <td <?= isset($value->er_sku)?'class="error"':''?> ><?= str_replace(',', '<br>', $value->sku_pdf)   ?></td>
 
             <td><?=  str_replace(',', '<br>', $value->mvd_ex)   ?></td>
