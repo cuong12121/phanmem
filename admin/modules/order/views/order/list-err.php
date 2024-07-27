@@ -116,10 +116,10 @@
 
             function array_diff_ar($str1, $str2)
             {
-                $ar1 = explode(',', $str1);
+                $ar1 = explode(',', trim($str1));
 
 
-                $ar2 = explode(',', $str2);
+                $ar2 = explode(',', trim($str2));
 
                 $result = [];
                 foreach ($ar1 as $value) {
