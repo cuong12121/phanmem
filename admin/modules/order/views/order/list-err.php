@@ -125,6 +125,17 @@
 
                 }
 
+                public function sortString($str)
+                {
+                    $val = sort(explode(',', $str));
+
+                   $result = implode(',', $val);
+
+                   return $result;
+
+
+                }
+
                 
         ?>
 
@@ -151,13 +162,13 @@
             <td><?=    $link_ex_href  ?></td>
             <td><?= $value->record_id  ?></td>
             <td  <?= !empty($value->er_mvd)?'class="error"':''  ?> ><?=  str_replace(',', '<br>', $value->mvd_pdf)   ?></td>
-            <td <?= $value->er_sku!=''?'class="error"':''?> ><?= str_replace(',', '<br>', $value->sku_pdf)   ?></td>
+            <td <?=!empty($value->er_sku)?'class="error"':''?> ><?= str_replace(',', '<br>', sortString($value->sku_pdf))   ?></td>
 
             <td><?=  str_replace(',', '<br>', $value->mvd_ex)   ?></td>
             <td><?= str_replace(',', '<br>', $value->sku_ex)   ?></td>
 
             <td><?=  str_replace(',', '<br>', $value->er_mvd)   ?></td>
-            <td><?= str_replace(',', '<br>', $value->er_sku)   ?></td>
+            <td><?= str_replace(',', '<br>', sortString($value->er_sku))   ?></td>
   
             <td><?= $define_platform[$value->platform_id]?></td>
             <td><?= date("d/m/Y", strtotime($value->created_at));  ?></td>
