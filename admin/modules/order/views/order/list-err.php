@@ -91,7 +91,7 @@
             $dem = 0;
             $now = date("d/m/Y");
 
-              function sortString($str)
+            function sortString($str)
                 {
                     $val = explode(',', $str);
 
@@ -101,7 +101,28 @@
                    $result = implode(',', $val);
 
                     return  $result;
+            }
+
+            function array_diff_ar($str1, $str2)
+            {
+                $ar1 = explode(',', $str1);
+                $ar2 = explode(',', $str2);
+
+                $result = [];
+                foreach ($ar1 as $value) {
+                    if (!in_array($value, $ar2)) {
+                        $result[] = $value;
+                    }
                 }
+
+                $results = implode(',', $result);
+
+
+                
+                return $results;
+            }
+
+
             // echo "<pre>";
             //     var_dump($info_data);
             // echo "</pre>";
@@ -168,7 +189,7 @@
             <td><?= str_replace(',', '<br>', $value->sku_ex)   ?></td>
 
             <td><?=  str_replace(',', '<br>', $value->er_mvd)   ?></td>
-            <td><?= str_replace(',', '<br>', sortString($value->er_sku))   ?></td>
+            <td><?= str_replace(',', '<br>', array_diff_ar($value->sku_ex,$value->sku_pdf)   ?></td>
   
             <td><?= $define_platform[$value->platform_id]?></td>
             <td><?= date("d/m/Y", strtotime($value->created_at));  ?></td>
