@@ -74,7 +74,7 @@
             <th width="200px">Mã sku  file excel</th>
 
             <th>Mã vận đơn đúng file excel</th>
-            <th>Mã sku đúng file excel</th>
+            <th width="200px">Mã sku đúng file excel</th>
 
             <th>Sàn </th>
             <th>Ngày kiểm tra </th>
