@@ -93,7 +93,7 @@
 
               function sortString($str)
                 {
-                    $val = sort(explode(',', $str));
+                    $val = explode(',', $str);
 
                    // $result = implode(',', $val);
 
