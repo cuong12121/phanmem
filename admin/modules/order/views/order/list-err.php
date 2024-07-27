@@ -199,7 +199,7 @@
             <td <?=!empty($value->er_sku)?'class="error"':''?> ><?= str_replace(',', '<br>', sortString(convert_unique($value->sku_pdf)))   ?></td>
 
             <td><?=  str_replace(',', '<br>', $value->mvd_ex)   ?></td>
-            <td><?= str_replace(',', '<br>', $value->sku_ex)   ?></td>
+            <td><?= str_replace(',', '<br>', convert_unique($value->sku_ex))   ?></td>
 
             <td><?=  str_replace(',', '<br>', $value->er_mvd)   ?></td>
             <td><?= str_replace(',', '<br>', array_diff_ar($value->sku_ex,$value->sku_pdf))   ?></td>
