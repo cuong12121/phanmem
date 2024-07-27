@@ -125,7 +125,7 @@
 
                 }
 
-                public function sortString($str)
+                 function sortString($str)
                 {
                     $val = sort(explode(',', $str));
 
