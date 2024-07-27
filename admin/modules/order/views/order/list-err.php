@@ -98,7 +98,13 @@
                    // $result = implode(',', $val);
                     sort($val);
 
-                   return  $val;
+                  
+
+                   $result = implode(',', $val);
+
+                    return  $result;
+
+
 
 
                 }
