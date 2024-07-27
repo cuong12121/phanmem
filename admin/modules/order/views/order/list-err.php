@@ -127,14 +127,16 @@
 
                  function sortString($str)
                 {
-                    $val = sort(explode(',', $str));
+                    sort(explode(',', $str));
 
-                   // $result = implode(',', $val);
+                   $result = implode(',', $str);
 
                    return $result;
 
 
                 }
+
+
 
                 
         ?>
