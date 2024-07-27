@@ -68,10 +68,10 @@
             <th>File Excel </th>
             <th>ID đơn hàng</th>
             <th>Mã vận đơn  file pdf</th>
-            <th>Mã sku  file pdf</th>
+            <th width="200px">Mã sku  file pdf</th>
 
             <th>Mã vận đơn  file excel</th>
-            <th>Mã sku  file excel</th>
+            <th width="200px">Mã sku  file excel</th>
 
             <th>Mã vận đơn đúng file excel</th>
             <th>Mã sku đúng file excel</th>
