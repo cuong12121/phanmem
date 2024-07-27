@@ -90,6 +90,17 @@
 
             $dem = 0;
             $now = date("d/m/Y");
+
+              function sortString($str)
+                {
+                    $val = sort(explode(',', $str));
+
+                   $result = implode(',', $val);
+
+                   return $result;
+
+
+                }
             // echo "<pre>";
             //     var_dump($info_data);
             // echo "</pre>";
@@ -125,17 +136,12 @@
 
                 }
 
-                 function sortString($str)
-                {
-                    sort(explode(',', $str));
-
-                   $result = implode(',', $str);
-
-                   return $result;
 
 
-                }
+               
+                echo sortString($value->sku_pdf);
 
+                die;
 
 
                 
