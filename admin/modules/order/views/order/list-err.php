@@ -98,15 +98,9 @@
                    // $result = implode(',', $val);
                     sort($val);
 
-                  
-
                    $result = implode(',', $val);
 
                     return  $result;
-
-
-
-
                 }
             // echo "<pre>";
             //     var_dump($info_data);
@@ -143,15 +137,6 @@
 
                 }
 
-
-
-               
-                print_r(sortString($value->sku_pdf));
-
-                die;
-
-
-                
         ?>
 
         <tr>
