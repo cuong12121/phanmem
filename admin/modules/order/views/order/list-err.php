@@ -96,8 +96,9 @@
                     $val = explode(',', $str);
 
                    // $result = implode(',', $val);
+                    sort($val);
 
-                   return sort($val);
+                   return  $val;
 
 
                 }
