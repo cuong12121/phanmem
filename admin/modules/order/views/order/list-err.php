@@ -103,9 +103,22 @@
                     return  $result;
             }
 
+            function convert_unique($str1)
+            {
+                $ar1 = explode(',', $str1);
+                $ar1 = array_unique($ar1);
+
+
+                $results = implode(',', $ar1);
+
+                return $results;
+            }
+
             function array_diff_ar($str1, $str2)
             {
                 $ar1 = explode(',', $str1);
+
+
                 $ar2 = explode(',', $str2);
 
                 $result = [];
@@ -183,7 +196,7 @@
             <td><?=    $link_ex_href  ?></td>
             <td><?= $value->record_id  ?></td>
             <td  <?= !empty($value->er_mvd)?'class="error"':''  ?> ><?=  str_replace(',', '<br>', $value->mvd_pdf)   ?></td>
-            <td <?=!empty($value->er_sku)?'class="error"':''?> ><?= str_replace(',', '<br>', sortString($value->sku_pdf))   ?></td>
+            <td <?=!empty($value->er_sku)?'class="error"':''?> ><?= str_replace(',', '<br>', sortString(convert_unique($value->sku_pdf)))   ?></td>
 
             <td><?=  str_replace(',', '<br>', $value->mvd_ex)   ?></td>
             <td><?= str_replace(',', '<br>', $value->sku_ex)   ?></td>
