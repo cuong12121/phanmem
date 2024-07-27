@@ -139,7 +139,7 @@
 
 
                
-                echo sortString($value->sku_pdf);
+                print_r(sortString($value->sku_pdf));
 
                 die;
 
