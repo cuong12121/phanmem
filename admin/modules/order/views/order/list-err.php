@@ -124,7 +124,7 @@
 
                 $Sku = convertContentCheck($text);
 
-                $Skus = $Sku[0][0];
+                $Skus = !empty($Sku[0][0])?$Sku[0][0]:'';
 
           
                 return $Skus;
