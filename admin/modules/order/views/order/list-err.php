@@ -218,7 +218,7 @@
 
                     }
                     $link_pdf_href = '<a href="'.$link_pdf.'" target="blank">'.basename($link_pdf).'</a>';
-                     array_push($file_pdf_rep1, empty(checkrepair($link_pdf))?$link_pdf_href.'<span style="color:red">File e pdf gốc đã bị sửa đổi</span>':$link_pdf_href);
+                     array_push($file_pdf_rep1, empty(checkrepair($link_pdf))?$link_pdf_href.'<span style="color:red">(File  pdf gốc đã bị sửa đổi)</span>':$link_pdf_href);
 
                 }
 
