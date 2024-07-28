@@ -146,7 +146,7 @@
                 $result = [];
                 foreach ($ar1 as $value) {
                     if (!in_array($value, $ar2)) {
-                        $result[] =   empty(convertContentCheckExcel($value))?$value.'(không đúng mã sku theo quy định)':$value.'(không đúng mã sku theo quy định)' ;
+                        $result[] =   !empty(convertContentCheckExcel($value))?$value:$value.'(không đúng mã sku theo quy định)' ;
                     }
                 }
 
