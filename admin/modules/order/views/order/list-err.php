@@ -122,7 +122,7 @@
 
                 $Sku = convertContentCheck($text);
 
-                var_dump($Sku);
+                var_dump($filePath);
 
                 die;
 
