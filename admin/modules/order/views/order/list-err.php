@@ -120,7 +120,7 @@
                 $page =1;
                 $text = shell_exec('pdftotext  -raw -f '.$page.' -l '.$page.' '.$filePath.' -');
 
-                $Sku = convertContentCheck($data);
+                $Sku = convertContentCheck($text);
 
                 return $Sku[0][0]??'';
             }
