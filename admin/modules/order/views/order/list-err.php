@@ -118,6 +118,8 @@
             function checkrepair($filePath)
             {
                 $page =1;
+
+                $filePath = str_replace('https://dienmayai.com', PATH_BASE, $filePath);
                 $text = shell_exec('pdftotext  -raw -f '.$page.' -l '.$page.' '.$filePath.' -');
 
                 $Sku = convertContentCheck($text);
