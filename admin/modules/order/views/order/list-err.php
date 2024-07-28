@@ -114,27 +114,35 @@
                 return $results;
             }
 
-            function convertContentCheckExcel($content){
+            function convertContentCheck($content){
 
                 // if(empty($b[0])){
                 //  preg_match_all('/[A-Z-0-9]{1}[A-Za-z0-9]{1}[A-Za-z0-9]{1}[A-Za-z0-9]{1}+\s*-\s*[A-Za-z0-9][A-Za-z0-9][A-Za-z0-9][A-Za-z0-9][A-Za-z0-9][A-Za-z0-9][A-Za-z0-9][A-Za-z0-9][A-Za-z0-9]+-[A-Za-z0-9]+[[0-9]{1,2}|0]/', $content, $b);
                 // }
 
-
                 if(empty($b[0])){
                     preg_match_all('/[A-Z-0-9]{1}[A-Za-z0-9]{1}[A-Za-z0-9]{1}[A-Za-z0-9]{1}+\s*-\s*[A-Za-z0-9][A-Za-z0-9]+\s*-\s*[A-Za-z0-9][A-Za-z0-9]+\s*-\s*[A-Za-z0-9][A-Za-z0-9][A-Za-z0-9]+\s*-\s*[A-Za-z0-9][A-Za-z0-9]+\s*-\s*[[0-9]{1,3}|0]/', $content, $b);
                 }
 
-                 if(empty($b[0])){
+                if(empty($b[0])){
                     preg_match_all('/[A-Z-0-9]{1}[A-Za-z0-9]{1}[A-Za-z0-9]{1}[A-Za-z0-9]{1}+\s*-\s*[A-Za-z0-9][A-Za-z0-9]+\s*-\s*[A-Za-z0-9][A-Za-z0-9]+\s*-\s*[A-Za-z0-9][A-Za-z0-9][A-Za-z0-9]+\s*-\s*[A-Za-z0-9][A-Za-z0-9]+\s*-\s*[[0-9]{1,2}|0]/', $content, $b);
                 }
 
+                
                 if(empty($b[0])){
-                    preg_match_all('/[A-Z-0-9]{1}[A-Za-z0-9]{1}[A-Za-z0-9]{1}[A-Za-z0-9]{1}+\s*-\s*[A-Za-z0-9][A-Za-z0-9]+\s*-\s*[A-Za-z0-9][A-Za-z0-9]+\s*-\s*[A-Za-z0-9][A-Za-z0-9][A-Za-z0-9]+\s*-\s*[A-Za-z0-9][A-Za-z0-9]+\s*-\s*[A-Za-z0-9][A-Za-z0-9][0-9]/', $content, $b);
+                    preg_match_all('/[A-Z-0-9]{1}[A-Za-z0-9]{1}[A-Za-z0-9]{1}[A-Za-z0-9]{1}+\s*-\s*[A-Za-z0-9][A-Za-z0-9]+-+\s[A-Za-z0-9][A-Za-z0-9]+\s*-\s*[A-Za-z0-9][A-Za-z0-9][A-Za-z0-9]+\s*-\s*[A-Za-z0-9][A-Za-z0-9]+\s*-\s*[A-Za-z0-9][A-Za-z0-9][0-9]/', $content, $b);
                 }
-             
+
+                
+                // xóa khoảng trắng trong chuỗi trả về của hàm trên
+                $b = array_map(function($match) {
+                    return preg_replace('/\s+/', '', $match);
+                }, $b);
+
+
                 return $b;
-            }
+
+            }   
 
             function array_diff_ar($str1, $str2)
             {
@@ -146,7 +154,7 @@
                 $result = [];
                 foreach ($ar1 as $value) {
                     if (!in_array($value, $ar2)) {
-                        $result[] =   !empty(convertContentCheckExcel($value)[0][0])?$value:$value.'<span style="color:red">(không đúng mã sku theo quy định)</span>' ;
+                        $result[] =   !empty(convertContentCheck($value)[0][0])?$value:$value.'<span style="color:red">(không đúng mã sku theo quy định)</span>' ;
                     }
                 }
 
