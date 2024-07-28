@@ -124,11 +124,9 @@
 
                 $Sku = convertContentCheck($text);
 
-                var_dump($Sku);
+        
 
-                die;
-
-                return $Sku[0]??'';
+                return $Sku[0][0]??'';
 
                 
             }
