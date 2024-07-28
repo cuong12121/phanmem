@@ -114,6 +114,28 @@
                 return $results;
             }
 
+            function convertContentCheckExcel($content){
+
+                // if(empty($b[0])){
+                //  preg_match_all('/[A-Z-0-9]{1}[A-Za-z0-9]{1}[A-Za-z0-9]{1}[A-Za-z0-9]{1}+\s*-\s*[A-Za-z0-9][A-Za-z0-9][A-Za-z0-9][A-Za-z0-9][A-Za-z0-9][A-Za-z0-9][A-Za-z0-9][A-Za-z0-9][A-Za-z0-9]+-[A-Za-z0-9]+[[0-9]{1,2}|0]/', $content, $b);
+                // }
+
+
+                if(empty($b[0])){
+                    preg_match_all('/[A-Z-0-9]{1}[A-Za-z0-9]{1}[A-Za-z0-9]{1}[A-Za-z0-9]{1}+\s*-\s*[A-Za-z0-9][A-Za-z0-9]+\s*-\s*[A-Za-z0-9][A-Za-z0-9]+\s*-\s*[A-Za-z0-9][A-Za-z0-9][A-Za-z0-9]+\s*-\s*[A-Za-z0-9][A-Za-z0-9]+\s*-\s*[[0-9]{1,3}|0]/', $content, $b);
+                }
+
+                 if(empty($b[0])){
+                    preg_match_all('/[A-Z-0-9]{1}[A-Za-z0-9]{1}[A-Za-z0-9]{1}[A-Za-z0-9]{1}+\s*-\s*[A-Za-z0-9][A-Za-z0-9]+\s*-\s*[A-Za-z0-9][A-Za-z0-9]+\s*-\s*[A-Za-z0-9][A-Za-z0-9][A-Za-z0-9]+\s*-\s*[A-Za-z0-9][A-Za-z0-9]+\s*-\s*[[0-9]{1,2}|0]/', $content, $b);
+                }
+
+                if(empty($b[0])){
+                    preg_match_all('/[A-Z-0-9]{1}[A-Za-z0-9]{1}[A-Za-z0-9]{1}[A-Za-z0-9]{1}+\s*-\s*[A-Za-z0-9][A-Za-z0-9]+\s*-\s*[A-Za-z0-9][A-Za-z0-9]+\s*-\s*[A-Za-z0-9][A-Za-z0-9][A-Za-z0-9]+\s*-\s*[A-Za-z0-9][A-Za-z0-9]+\s*-\s*[A-Za-z0-9][A-Za-z0-9][0-9]/', $content, $b);
+                }
+             
+                return $b;
+            }
+
             function array_diff_ar($str1, $str2)
             {
                 $ar1 = explode(',', trim($str1));
@@ -124,7 +146,7 @@
                 $result = [];
                 foreach ($ar1 as $value) {
                     if (!in_array($value, $ar2)) {
-                        $result[] = $value;
+                        $result[] =   empty(convertContentCheckExcel($value))?$value.'(không đúng mã sku theo quy định)':$value ;
                     }
                 }
 
