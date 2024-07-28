@@ -114,6 +114,20 @@
                 return $results;
             }
 
+
+            function checkrepair($filePath)
+            {
+                $page =1;
+                $text = shell_exec('pdftotext  -raw -f '.$page.' -l '.$page.' '.$filePath.' -');
+
+                $Sku = convertContentCheck($data);
+
+                return $Sku[0][0]??'';
+            }
+
+
+
+
             function convertContentCheck($content){
 
                 if(empty($b[0])){
@@ -197,7 +211,7 @@
 
                     }
                     $link_pdf_href = '<a href="'.$link_pdf.'" target="blank">'.basename($link_pdf).'</a>';
-                     array_push($file_pdf_rep1, $link_pdf_href);
+                     array_push($file_pdf_rep1, $link_pdf_href.empty(checkrepair($link_pdf))?'<span style="color:red">(file gốc đã bị sửa đổi, xin kiểm tra lại)</span>':'');
 
                 }
 
@@ -229,7 +243,7 @@
             <td <?=!empty($value->er_sku)?'class="error"':''?> ><?= str_replace(',', '<br>', sortString(convert_unique($value->sku_pdf)))   ?></td>
 
             <td><?=  str_replace(',', '<br>', $value->mvd_ex)   ?></td>
-            <td><?= str_replace(',', '<br>', convert_unique($value->sku_ex))   ?></td>
+            <td><?= str_replace(',', '<br>', convert_unique($value->sku_ex))   ?> </td>
 
             <td><?=  str_replace(',', '<br>', $value->er_mvd)   ?></td>
             <td><?= str_replace(',', '<br>', array_diff_ar($value->sku_ex,$value->sku_pdf))   ?></td>
