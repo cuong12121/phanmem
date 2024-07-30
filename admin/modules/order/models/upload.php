@@ -1318,9 +1318,9 @@
 
 				$text_pdf_check = $this->showPDFText($InputFile);
 
-				$mvd = $this->findMVD($text_pdf_check);
+				// $mvd = $this->findMVD($text_pdf_check);
 
-				var_dump($mvd);
+				var_dump($text_pdf_check);
 
 				
 
