@@ -1303,7 +1303,7 @@
 
 			// cái này thử admin
 
-			if($_SESSION['ad_userid']===9){
+			if($_SESSION['ad_userid']==='9'){
 
 				$cyear = date ( 'Y' );
 				$cmonth = date ( 'm' );
