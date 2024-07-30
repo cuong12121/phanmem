@@ -153,6 +153,23 @@
             	return $b;
         }
 
+
+        function checkUrgentorderExelAndPDF($content,$mvdExcel){
+
+        	// Tìm mã vận đơn (sau "Mã vận đơn:" và trên cùng một dòng)
+            preg_match_all('/Mã vận đơn:\s*(\S+)/', $content, $maVanDonMatches);
+            $maVanDon = isset($maVanDonMatches[1]) ? $maVanDonMatches[1] : null;
+
+            if(empty($maVanDon)){
+
+            	preg_match_all('/Mã đơn hàng:\s*([A-Z0-9]+)/', $content, $maVanDonMatches);
+            	$maVanDon = isset($maVanDonMatches[1]) ? $maVanDonMatches[1] : null;
+            	if($maVanDon != trim($mvdExcel)){
+            		return false;
+            	}
+            }
+            return true;
+        }	
 	    function findMVD($content){
 		    
             // $text = trim(PdfToText::getText($filePath));
@@ -338,7 +355,7 @@
             return($row);  
         }
 
-		function upload_excel_shopee($file_path,$result_id,$shop_code,$house_id){
+		function upload_excel_shopee($file_path,$result_id,$shop_code,$house_id, $content){
 			require_once("../libraries/PHPExcel-1.8/Classes/PHPExcel.php");
 			$objReader = PHPExcel_IOFactory::createReaderForFile($file_path);
 			// $data = new PHPExcel_IOFactory();
@@ -397,6 +414,14 @@
 				if(!$row['tracking_code'] || $row['tracking_code'] == 'null' ){
 					$this->remove_xml($result_id,$file_path);
 					$msg = 'Không được để trống Mã vận đơn(cột F) dòng '.$j;
+					setRedirect($link,$msg,'error');
+					return false;
+				}
+
+				$checkUrgentorder = checkUrgentorderExelAndPDF($content,$row['code']);
+
+				if(!$checkUrgentorder){
+					$msg = 'Mã vận đơn của  hỏa tốc là mã đơn hàng, vui lòng sửa lại mã vận đơn file excel! '.$j;
 					setRedirect($link,$msg,'error');
 					return false;
 				}
@@ -1514,7 +1539,7 @@
 				if($platform_id == 1){
 					$add = $this->upload_excel_lazada($file_path,$result_id,$shop->code,$house_id);
 				}elseif($platform_id == 2){
-					$add = $this->upload_excel_shopee($file_path,$result_id,$shop->code,$house_id);
+					$add = $this->upload_excel_shopee($file_path,$result_id,$shop->code,$house_id, $text_pdf_check);
 				}elseif($platform_id == 3){
 					$add = $this->upload_excel_tiki($file_path,$result_id,$shop->code,$house_id);
 				}elseif($platform_id == 4){
