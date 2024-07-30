@@ -418,7 +418,7 @@
 					return false;
 				}
 
-				$checkUrgentorder = checkUrgentorderExelAndPDF($content,$row['code']);
+				$checkUrgentorder = $this->checkUrgentorderExelAndPDF($content,$row['code']);
 
 				if(!$checkUrgentorder){
 					$msg = 'Mã vận đơn của  hỏa tốc là mã đơn hàng, vui lòng sửa lại mã vận đơn file excel! ';
