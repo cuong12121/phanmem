@@ -1304,35 +1304,6 @@
 
 			// cái này thử admin
 
-			if($_SESSION['ad_userid']==='9'){
-
-				$cyear = date ( 'Y' );
-				$cmonth = date ( 'm' );
-				$cday = date ( 'd' );
-
-				$item_file_pdf_name = $_FILES["file_pdf"]["name"];
-	      
-
-				$InputFile  = PATH_BASE.'files/orders/'.$cyear.'/'.$cmonth.'/'.$cday.'/'.$item_file_pdf_name[0];
-
-				$path = str_replace('/', DS,$InputFile);
-
-				$file_pdf_name = $fsFile -> upload_file_multiple("file_pdf", $path ,100000000, '_'.time());
-
-				
-
-				$text_pdf_check = $this->showPDFText($InputFile);
-
-				// $mvd = $this->findMVD($text_pdf_check);
-
-				var_dump($text_pdf_check);
-
-				
-
-				die;
-
-			}
-
 			if(!$date || !$shop_id || !$platform_id || !$house_id || !$warehouse_id ){
 				$msg = 'Bạn phải nhập đầy đủ thông tin.';
 				setRedirect($link,$msg,'error');
