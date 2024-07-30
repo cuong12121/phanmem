@@ -1300,6 +1300,7 @@
 			$id = FSInput::get('id');
 			$date = FSInput::get('date');
 			$is_seeding = FSInput::get('is_seeding');
+			$fsFile = FSFactory::getClass('FsFiles');
 
 			// cái này thử admin
 
@@ -1385,7 +1386,7 @@
 
 
 
-			$fsFile = FSFactory::getClass('FsFiles');
+			
 			$cyear = date ( 'Y' );
 			$cmonth = date ( 'm' );
 			$cday = date ( 'd' );
