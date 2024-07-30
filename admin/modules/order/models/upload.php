@@ -164,7 +164,7 @@
 
             	preg_match_all('/Mã đơn hàng:\s*([A-Z0-9]+)/', $content, $maVanDonMatches);
             	$maVanDon = isset($maVanDonMatches[1]) ? $maVanDonMatches[1] : null;
-            	if($maVanDon[0] != trim($mvdExcel)){
+            	if(trim($maVanDon[0]) != trim($mvdExcel)){
             		return false;
             	}
             }
