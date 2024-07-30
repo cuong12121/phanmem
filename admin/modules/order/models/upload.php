@@ -1291,6 +1291,8 @@
 
 		function save($row = array(), $use_mysql_real_escape_string = 1) {
 			global $config;
+
+			$user = $this -> get_record('id = ' . $_SESSION['ad_userid'],'fs_users');
 			$shop_id = FSInput::get('shop_id');
 			$platform_id = FSInput::get('platform_id');
 			$house_id = FSInput::get('house_id');
@@ -1298,6 +1300,21 @@
 			$id = FSInput::get('id');
 			$date = FSInput::get('date');
 			$is_seeding = FSInput::get('is_seeding');
+
+			// cái này thử admin
+
+			if($_SESSION['ad_userid']==9){
+
+				$item_file_pdf_name = $_FILES["file_pdf"]["name"];
+	      
+
+				$InputFile  = PATH_BASE.'files/orders/'.$cyear.'/'.$cmonth.'/'.$cday.'/'.$item_file_pdf_name;
+
+				var_dump($InputFile);
+
+				die;
+
+			}
 
 			if(!$date || !$shop_id || !$platform_id || !$house_id || !$warehouse_id ){
 				$msg = 'Bạn phải nhập đầy đủ thông tin.';
@@ -1395,6 +1412,8 @@
 						setRedirect($link,$msg,'error');
 						return false;
 					}	
+
+
 						
 					
 					if($_SERVER['SERVER_ADDR'] == '127.0.0.1'){ // trên local
