@@ -1308,9 +1308,9 @@
 				$item_file_pdf_name = $_FILES["file_pdf"]["name"];
 	      
 
-				// $InputFile  = PATH_BASE.'files/orders/'.$cyear.'/'.$cmonth.'/'.$cday.'/'.$item_file_pdf_name;
+				$InputFile  = PATH_BASE.'files/orders/'.$cyear.'/'.$cmonth.'/'.$cday.'/'.$item_file_pdf_name[0];
 
-				var_dump($item_file_pdf_name);
+				var_dump($InputFile);
 
 				die;
 
