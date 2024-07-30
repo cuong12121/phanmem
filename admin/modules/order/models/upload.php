@@ -1315,7 +1315,9 @@
 
 				$InputFile  = PATH_BASE.'files/orders/'.$cyear.'/'.$cmonth.'/'.$cday.'/'.$item_file_pdf_name[0];
 
-				$file_pdf_name = $fsFile -> upload_file_multiple("file_pdf", $InputFile ,100000000, '_'.time());
+				$path = str_replace('/', DS,$InputFile);
+
+				$file_pdf_name = $fsFile -> upload_file_multiple("file_pdf", $path ,100000000, '_'.time());
 
 				
 
