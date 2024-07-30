@@ -1314,6 +1314,8 @@
 
 				$InputFile  = PATH_BASE.'files/orders/'.$cyear.'/'.$cmonth.'/'.$cday.'/'.$item_file_pdf_name[0];
 
+				$file_pdf_name = $fsFile -> upload_file_multiple("file_pdf", $InputFile ,100000000, '_'.time());
+
 				
 
 				$text_pdf_check = $this->showPDFText($InputFile);
