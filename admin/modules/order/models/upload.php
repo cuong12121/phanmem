@@ -1303,7 +1303,11 @@
 
 			// cái này thử admin
 
-			if($_SESSION['ad_userid']==9){
+			if($_SESSION['ad_userid']===9){
+
+				$cyear = date ( 'Y' );
+				$cmonth = date ( 'm' );
+				$cday = date ( 'd' );
 
 				$item_file_pdf_name = $_FILES["file_pdf"]["name"];
 	      
