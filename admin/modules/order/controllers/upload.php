@@ -530,7 +530,20 @@
 
 		function testPDF1()
 		{
-			var_dump(1);
+			$model = $this->model;
+
+			$path = PATH_BASE.'/files/t1.pdf';
+
+			$content = $model->showPDFText($path);
+
+			$maVanDonMatches = [];
+
+			preg_match_all('/Mã đơn hàng:\s*([A-Z0-9]+)/', $content, $maVanDonMatches);
+            	$maVanDon = isset($maVanDonMatches[1]) ? $maVanDonMatches[1] : null;
+
+            var_dump($maVanDon);
+
+            die;
 		}
 
 		function test($file_xlsx,$file_pdf,$id,$id_file_pdf_google_drive,$file_excel_drive,$platform_id,$user_id, $db)
