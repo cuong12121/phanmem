@@ -532,16 +532,18 @@
 		{
 			$model = $this->model;
 
-			$path = PATH_BASE.'/files/t1.pdf';
+			$filePath = PATH_BASE.'/files/t1.pdf';
 
-			$content = $model->showPDFText($path);
+			$i =1;
+
+			$content = shell_exec('pdftotext -raw -f '.$i.' -l '.$i.' '.$filePath.' -');
 
 			$maVanDonMatches = [];
 
 			preg_match_all('/Mã đơn hàng:\s*([A-Z0-9]+)/', $content, $maVanDonMatches);
             	$maVanDon = isset($maVanDonMatches[1]) ? $maVanDonMatches[1] : null;
 
-            var_dump($content);
+            var_dump($maVanDonMatches);
 
             die;
 		}
