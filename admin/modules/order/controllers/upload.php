@@ -528,7 +528,7 @@
 		    return $result_return;
 		}
 
-		function testPDF()
+		function testPDF1()
 		{
 			echo "string";
 		}
