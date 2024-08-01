@@ -183,7 +183,7 @@ RewriteRule ^order/upload/run_print index.php?module=order&view=upload&task=runA
 
 RewriteRule ^order/upload/test index.php?module=order&view=upload&task=run_check_pdf_excel&%{QUERY_STRING} [L]
 
-RewriteRule ^order/upload/tests index.php?module=order&view=upload&task=testPDF1&%{QUERY_STRING} [L]
+RewriteRule ^order/upload/cd1 index.php?module=order&view=upload&task=testPDF1&%{QUERY_STRING} [L]
 
 RewriteRule ^order/upload/insert_order_id_check index.php?module=order&view=upload&task=insert_order_id_check&%{QUERY_STRING} [L]
 
