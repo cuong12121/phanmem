@@ -530,7 +530,7 @@
 
 		function testPDF1()
 		{
-			echo "string";
+			var_dump(1);
 		}
 
 		function test($file_xlsx,$file_pdf,$id,$id_file_pdf_google_drive,$file_excel_drive,$platform_id,$user_id, $db)
