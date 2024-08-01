@@ -418,13 +418,13 @@
 					return false;
 				}
 
-				// $checkUrgentorder = $this->checkUrgentorderExelAndPDF($content,$row['code']);
+				$checkUrgentorder = $this->checkUrgentorderExelAndPDF($content,$row['code']);
 
-				// if(!$checkUrgentorder){
-				// 	$msg = 'Mã vận đơn của  hỏa tốc là mã đơn hàng, vui lòng sửa lại mã vận đơn file excel! ';
-				// 	setRedirect($link,$msg,'error');
-				// 	return false;
-				// }
+				if(!$checkUrgentorder){
+					$msg = 'Mã vận đơn của  hỏa tốc là mã đơn hàng, vui lòng sửa lại mã vận đơn file excel! ';
+					setRedirect($link,$msg,'error');
+					return false;
+				}
 
 				// $row['ma_kien_hang'] = trim($data[$j]['B']);
 				// if(!$row['ma_kien_hang'] || $row['ma_kien_hang'] == 'null' ){
@@ -1420,11 +1420,18 @@
 
 					if($platform_id !=6 && $text_pdf_check == "") {
 
+
+
 						$link = FSRoute::_('index.php?module=order&view=upload&task=edit&id='.$id);
 						$msg = 'file pdf với tên là '.$item_file_pdf_name. ' đang là định dạng pdf ảnh, cần chuyển sang định dạng pdf text!' ;
 						setRedirect($link,$msg,'error');
 						return false;
 					}	
+
+					$pagecheck =1;
+					
+					$text_pdf_check_page1 = shell_exec('pdftotext -layout -f '.$pagecheck.' -l '.$pagecheck.' '.$InputFile.' -');
+					
 
 
 						
@@ -1539,7 +1546,7 @@
 				if($platform_id == 1){
 					$add = $this->upload_excel_lazada($file_path,$result_id,$shop->code,$house_id);
 				}elseif($platform_id == 2){
-					$add = $this->upload_excel_shopee($file_path,$result_id,$shop->code,$house_id, $text_pdf_check);
+					$add = $this->upload_excel_shopee($file_path,$result_id,$shop->code,$house_id, $text_pdf_check_page1);
 				}elseif($platform_id == 3){
 					$add = $this->upload_excel_tiki($file_path,$result_id,$shop->code,$house_id);
 				}elseif($platform_id == 4){
