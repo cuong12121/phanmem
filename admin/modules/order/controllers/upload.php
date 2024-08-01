@@ -536,7 +536,7 @@
 
 			$i =1;
 
-			$content = shell_exec('pdftotext -raw -f '.$i.' -l '.$i.' '.$filePath.' -');
+			$content = shell_exec('pdftotext -layout -f '.$i.' -l '.$i.' '.$filePath.' -');
 
 			$maVanDonMatches = [];
 
