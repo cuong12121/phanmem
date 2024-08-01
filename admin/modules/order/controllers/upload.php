@@ -543,7 +543,7 @@
 			preg_match_all('/Mã đơn hàng:\s*([A-Z0-9]+)/', $content, $maVanDonMatches);
             	$maVanDon = isset($maVanDonMatches[1]) ? $maVanDonMatches[1] : null;
 
-            var_dump($maVanDonMatches);
+            var_dump($maVanDon);
 
             die;
 		}
