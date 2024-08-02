@@ -124,6 +124,8 @@ RewriteRule ^shops/transfer_money$ index.php?module=shops&view=transfer_money&%{
 RewriteRule ^shops/transfer_money/add index.php?module=shops&view=transfer_money&task=add&%{QUERY_STRING} [L]
 RewriteRule ^shops/transfer_money/edit/([0-9]*)$ index.php?module=shops&view=transfer_money&task=edit&id=$1&%{QUERY_STRING} [L]
 
+RewriteRule ^tags/check$ index.php?module=tags&view=tags&%{QUERY_STRING} [L]
+
 
 
 #warehouse_sales
