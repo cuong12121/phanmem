@@ -28,9 +28,7 @@
 			global $config;
 			$model = $this -> model;
 
-			var_dump(2);
-
-			die;
+			
 			// $wrap_id_warehouses = $model->get_wrap_id_warehouses();
 			// $warehouses = $model -> get_records('published = 1 AND id IN ('.$wrap_id_warehouses.')','fs_warehouses');
 			// $platforms = $model -> get_records('published = 1','fs_platforms');
@@ -42,7 +40,7 @@
 			// }else{
 			// 	$shops = $model -> get_records('','fs_shops');
 			// }
-			// include 'modules/'.$this->module.'/views/'.$this -> view.'/detail.php';
+			include 'modules/'.$this->module.'/views/'.$this -> view.'/detail.php';
 		}
 		
 		function bold()
