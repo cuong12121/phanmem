@@ -28,7 +28,7 @@
 			global $config;
 			$model = $this -> model;
 
-			var_dump(1);
+			var_dump(2);
 
 			die;
 			// $wrap_id_warehouses = $model->get_wrap_id_warehouses();
