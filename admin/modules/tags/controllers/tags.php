@@ -9,6 +9,10 @@
 		function display()
 		{
 			parent::display();
+
+			var_dump(1);
+
+			die;
 			$sort_field = $this -> sort_field;
 			$sort_direct = $this -> sort_direct;
 			
