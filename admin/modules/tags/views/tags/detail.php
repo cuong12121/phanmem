@@ -25,7 +25,7 @@ $toolbar->addButton('back',FSText :: _('Cancel'),'','back.png');
             <div class="panel panel-default">
                 <div class="panel-body">
                     <div class="form-group ">
-                        <label class="col-md-2 col-xs-12 control-label">Tên</label>
+                        <label class="col-md-2 col-xs-12 control-label">Tên12121</label>
                         <div class="col-md-10 col-xs-12">
                             <input type="text" class="form-control" name="name" id="name" value="" size="60">
                         </div>
