@@ -418,13 +418,13 @@
 					return false;
 				}
 
-				$checkUrgentorder = $this->checkUrgentorderExelAndPDF($content,$row['code']);
+				// $checkUrgentorder = $this->checkUrgentorderExelAndPDF($content,$row['code']);
 
-				if(!$checkUrgentorder){
-					$msg = 'Mã vận đơn của  hỏa tốc là mã đơn hàng, vui lòng sửa lại mã vận đơn file excel! ';
-					setRedirect($link,$msg,'error');
-					return false;
-				}
+				// if(!$checkUrgentorder){
+				// 	$msg = 'Mã vận đơn của  hỏa tốc là mã đơn hàng, vui lòng sửa lại mã vận đơn file excel! ';
+				// 	setRedirect($link,$msg,'error');
+				// 	return false;
+				// }
 
 				// $row['ma_kien_hang'] = trim($data[$j]['B']);
 				// if(!$row['ma_kien_hang'] || $row['ma_kien_hang'] == 'null' ){
