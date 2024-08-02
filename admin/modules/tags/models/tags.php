@@ -73,6 +73,8 @@
 
 		function save($row = array(), $use_mysql_real_escape_string = 1){
 			var_dump(2);
+
+			die;
 		}
 		
 		
