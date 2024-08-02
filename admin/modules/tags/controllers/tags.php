@@ -10,16 +10,16 @@
 		{
 			parent::display();
 
-			var_dump(1);
+			// var_dump(1);
 
-			die;
+			// die;
 			$sort_field = $this -> sort_field;
 			$sort_direct = $this -> sort_direct;
 			
 			$model  = $this -> model;
-			$list = $model->get_data();
+			// $list = $model->get_data();
 			
-			$pagination = $model->getPagination();
+			// $pagination = $model->getPagination();
 			include 'modules/'.$this->module.'/views/'.$this->view.'/list.php';
 		}
 
