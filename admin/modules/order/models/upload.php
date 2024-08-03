@@ -187,6 +187,35 @@
             
 		}   
 
+		public function showTextHtml()
+		{
+			$file_pdf = 'files/t1.pdf';
+
+			$path = 'files/html';
+
+			$source_pdf = PATH_BASE.$file_pdf;
+			$source_pdf = str_replace('/', DS,$source_pdf);
+			$output_folder = PATH_BASE.$path;
+			$output_folder = str_replace('/', DS,$output_folder);
+
+			// echo $output_folder.basename($file_pdf);
+			// die;
+
+		    if (!file_exists($output_folder)) { mkdir($output_folder, 0777, true);}
+			$a = passthru("pdftohtml $source_pdf $output_folder".basename($file_pdf),$b);
+			$name_html = str_replace('.pdf','.pdfs.html',basename($file_pdf));
+			//đọc file để lấy text update
+			$myfile = fopen($output_folder.$name_html, "r") or die("Unable to open file!");
+
+			$text = fread($myfile,filesize($output_folder.basename($file_pdf)));
+			$text = utf8_encode($text);
+			$text = strip_tags($text);
+			$text = trim($text);
+
+			var_dump($text);
+			die;
+		}
+
 		function convertContenttiktok2($content){
 
             
