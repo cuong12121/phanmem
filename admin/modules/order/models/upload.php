@@ -187,7 +187,7 @@
             
 		}   
 
-		public function showTextHtml()
+		function showTextHtml()
 		{
 			$file_pdf = 'files/t1.pdf';
 
