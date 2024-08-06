@@ -17,7 +17,7 @@
 			$sort_direct = $this -> sort_direct;
 			$model  = $this -> model;
 
-			echo 1;
+			include 'modules/order/views/external/form.php';
 			die;
 			// $wrap_id_warehouses = $model->get_wrap_id_warehouses();
 			// $warehouses = $model -> get_records('published = 1 AND id IN ('.$wrap_id_warehouses.')','fs_warehouses');
@@ -43,8 +43,8 @@
 		
 
 
-			$pagination = $model->getPagination();
-			include 'modules/'.$this->module.'/views/'.$this->view.'/list.php';
+			// $pagination = $model->getPagination();
+			// include 'modules/'.$this->module.'/views/'.$this->view.'/list.php';
 		}
 
 		function add()
