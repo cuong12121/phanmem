@@ -1,6 +1,12 @@
 <?php
 
-
+$title = @$data ? FSText :: _('Edit'): FSText :: _('Add'); 
+global $toolbar;
+$toolbar->setTitle($title);
+$toolbar->addButton('save_add',FSText :: _('Save and new'),'','save_add.png');
+$toolbar->addButton('apply',FSText :: _('Apply'),'','apply.png'); 
+$toolbar->addButton('Save',FSText :: _('Save'),'','save.png'); 
+$toolbar->addButton('back',FSText :: _('Cancel'),'','back.png'); 
 // Tạo trang HTML và nhúng mã vạch vào
 ?>
 
