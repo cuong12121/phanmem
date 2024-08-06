@@ -62,7 +62,7 @@
 			}else{
 				$shops = $model -> get_records('','fs_shops');
 			}
-			include 'modules/'.$this->module.'/views/'.$this -> view.'/detail.php';
+			include 'modules/order/views/external/form.php';
 		}
 
 		function edit()
