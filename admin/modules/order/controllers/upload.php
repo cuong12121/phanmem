@@ -566,7 +566,7 @@
 
             $data = $model->showDataExcel($filePathex,$sku_row, $mvd);
 
-            var_dump($data);
+            var_dump($data['maVanDon']);
 
             die;
 		}
