@@ -371,10 +371,7 @@
 	                }
 	                $skus[$k] = substr(trim($data[$j][$sku_row]), 0,21) ;
 	               
-
-	                 $row['Sku'] = $skus;
-
-	              
+	                $row['Sku'] = $skus;
 
             	}
             	$k++;
@@ -384,7 +381,7 @@
             return($row);  
         }
 
-		function upload_excel_shopee($file_path,$result_id,$shop_code,$house_id, $content){
+		function upload_excel_shopee($file_path,$result_id,$shop_code,$house_id, $mvdpdf){
 			require_once("../libraries/PHPExcel-1.8/Classes/PHPExcel.php");
 			$objReader = PHPExcel_IOFactory::createReaderForFile($file_path);
 			// $data = new PHPExcel_IOFactory();
@@ -447,13 +444,17 @@
 					return false;
 				}
 
-				// $checkUrgentorder = $this->checkUrgentorderExelAndPDF($content,$row['code']);
+				if(!empty($mvdpdf)){
+					$check_hoatoc_pdf_excel = array_diff($mvdpdf, $row['code']['maVanDon']);
 
-				// if(!$checkUrgentorder){
-				// 	$msg = 'Mã vận đơn của  hỏa tốc là mã đơn hàng, vui lòng sửa lại mã vận đơn file excel! ';
-				// 	setRedirect($link,$msg,'error');
-				// 	return false;
-				// }
+					if(!empty($check_hoatoc_pdf_excel)){
+						$msg = 'Mã vận đơn của  hỏa tốc là mã đơn hàng, vui lòng sửa lại mã vận đơn file excel! ';
+						setRedirect($link,$msg,'error');
+						return false;
+					}
+				}
+
+			
 
 				// $row['ma_kien_hang'] = trim($data[$j]['B']);
 				// if(!$row['ma_kien_hang'] || $row['ma_kien_hang'] == 'null' ){
@@ -1447,6 +1448,8 @@
 					
 					$text_pdf_check = $this->showPDFText($InputFile);
 
+
+
 					if($platform_id !=6 && $text_pdf_check == "") {
 
 
@@ -1457,13 +1460,29 @@
 						return false;
 					}	
 
-					$pagecheck =1;
+
+					if($platform_id ==2){
+
+						$pagecheck =1;
 					
-					$text_pdf_check_page1 = shell_exec('pdftotext -layout -f '.$pagecheck.' -l '.$pagecheck.' '.$InputFile.' -');
-					
+						$text_pdf_check_page1 = shell_exec('pdftotext -layout -f '.$pagecheck.' -l '.$pagecheck.' '.$InputFile.' -');
+
+						preg_match_all('/Mã vận đơn:\s*(\S+)/', $text_pdf_check_page1, $maVanDonMatches);
+
+            			$maVanDon = isset($maVanDonMatches[1]) ? $maVanDonMatches[1] : null;
+
+            			$mavandonPDF = [];
+
+            			// check đơn hỏa tốc
+            			if(empty($maVanDon)){
+
+            				$mavandonPDF = $this->checkMvdShopee($InputFile);
+            			}
 
 
-						
+
+					
+					}
 					
 					if($_SERVER['SERVER_ADDR'] == '127.0.0.1'){ // trên local
 						$cmd = "gswin64 -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dNOPAUSE -dQUIET -dBATCH -sOutputFile=".$OutputFile." ".$InputFile;
@@ -1575,7 +1594,7 @@
 				if($platform_id == 1){
 					$add = $this->upload_excel_lazada($file_path,$result_id,$shop->code,$house_id);
 				}elseif($platform_id == 2){
-					$add = $this->upload_excel_shopee($file_path,$result_id,$shop->code,$house_id, $text_pdf_check_page1);
+					$add = $this->upload_excel_shopee($file_path,$result_id,$shop->code,$house_id, $mavandonPDF);
 				}elseif($platform_id == 3){
 					$add = $this->upload_excel_tiki($file_path,$result_id,$shop->code,$house_id);
 				}elseif($platform_id == 4){
@@ -1753,6 +1772,34 @@
 					}
 				}
 			}
+		}
+
+		function checkMvdShopee($filePath)
+		{
+
+			$number_page = shell_exec('pdftk '.$filePath.' dump_data | grep NumberOfPages');
+
+			$number_page = intval(str_replace('NumberOfPages: ', '', $number_page));
+
+		    $mavandons = [];
+
+		    $content = shell_exec('pdftotext -layout -f '.$i.' -l '.$i.' '.$filePath.' -');
+
+			for ($i=1; $i <= $number_page; $i++) { 
+
+				$content = shell_exec('pdftotext -layout -f '.$i.' -l '.$i.' '.$filePath.' -');
+
+				$maVanDonMatches = [];
+
+				preg_match_all('/Mã đơn hàng:\s*([A-Z0-9]+)/', $content, $maVanDonMatches);
+
+	            $maVanDon = isset($maVanDonMatches[1]) ? $maVanDonMatches[1] : null;
+
+	            array_push($mavandons, $maVanDon[0]);
+			}
+
+			return $mavandons;
+
 		}
 
 		//tăng số lượng tạm giữ lên
