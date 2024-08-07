@@ -542,21 +542,31 @@
 		    $mavandons = [];
 
 
-			for ($i=1; $i <= $number_page; $i++) { 
+			// for ($i=1; $i <= $number_page; $i++) { 
 
-				$content = shell_exec('pdftotext -layout -f '.$i.' -l '.$i.' '.$filePath.' -');
+			// 	$content = shell_exec('pdftotext -layout -f '.$i.' -l '.$i.' '.$filePath.' -');
 
-				$maVanDonMatches = [];
+			// 	$maVanDonMatches = [];
 
-				preg_match_all('/Mã đơn hàng:\s*([A-Z0-9]+)/', $content, $maVanDonMatches);
+			// 	preg_match_all('/Mã đơn hàng:\s*([A-Z0-9]+)/', $content, $maVanDonMatches);
 
-	            $maVanDon = isset($maVanDonMatches[1]) ? $maVanDonMatches[1] : null;
+	        //     $maVanDon = isset($maVanDonMatches[1]) ? $maVanDonMatches[1] : null;
 
-	            array_push($mavandons, $maVanDon[0]);
-			}
+	        //     array_push($mavandons, $maVanDon[0]);
+			// }
 
 			
-            var_dump($mavandons);
+            // var_dump($mavandons);
+
+		    $filePathex = PATH_BASE.'/files/t1.xlsx';
+
+		    $sku_row = 'S';
+
+		    $mvd = 'F';
+
+            $data = $model->showDataExcel($filePathex,$sku_row, $mvd);
+
+            var_dump($data);
 
             die;
 		}
