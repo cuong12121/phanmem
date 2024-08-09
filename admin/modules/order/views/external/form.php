@@ -13,6 +13,10 @@ $toolbar->addButton('back',FSText :: _('Cancel'),'','back.png');
 
 // Tạo trang HTML và nhúng mã vạch vào
 ?>
+<div class="form_head"><div id="wrap-toolbar" class="wrap-toolbar">  <div class="fl">                      <h1 class="page-header"> Thêm mới</h1><!--end: .page-header -->
+                   
+<!-- /.row -->    
+  </div>  <div class="fr"><a class="toolbar" onclick="javascript: submitbutton('save_add')" href="#"><span title="Save and new" style="background:url('https://dienmayai.com/admin/templates/default/images/toolbar/save_add.png') no-repeat"></span>Save and new</a><a class="toolbar" onclick="javascript: submitbutton('apply')" href="#"><span title="Apply" style="background:url('https://dienmayai.com/admin/templates/default/images/toolbar/apply.png') no-repeat"></span>Apply</a><a class="toolbar" onclick="javascript: submitbutton('Save')" href="#"><span title="Lưu" style="background:url('https://dienmayai.com/admin/templates/default/images/toolbar/save.png') no-repeat"></span>Lưu</a><a class="toolbar" onclick="javascript: submitbutton('back')" href="#"><span title="Thoát" style="background:url('https://dienmayai.com/admin/templates/default/images/toolbar/back.png') no-repeat"></span>Thoát</a>      <div class="clearfix"></div>  </div>  <div class="clearfix"></div></div><!--end: .wrap-toolbar--></div>
 
 <style type="text/css">
     /* CSS Styling */
