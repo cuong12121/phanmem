@@ -534,6 +534,26 @@
 
 			$filePath = PATH_BASE.'/files/t2.pdf';
 
+			$filePath1 = PATH_BASE.'/files/t4.pdf';
+
+			$cmd = "gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dNOPAUSE \ -dBATCH -sOutputFile=".$filePath1." ".$filePath;
+
+			$cmd = str_replace('/',DS,$cmd);
+
+			echo $cmd;
+
+
+			die;
+
+
+
+
+
+
+
+
+
+
 			$number_page = shell_exec('pdftk '.$filePath.' dump_data | grep NumberOfPages');
 
 
