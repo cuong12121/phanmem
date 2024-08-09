@@ -90,7 +90,7 @@
 
 		function save()
 		{
-			$name = FSInput::get('name');
+			$name = FSInput::get('requester');
 
 			echo $name;
 
