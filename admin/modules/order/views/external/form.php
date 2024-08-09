@@ -1,12 +1,15 @@
 <?php
 
-$title = @$data ? FSText :: _('Edit'): FSText :: _('Add'); 
 global $toolbar;
-$toolbar->setTitle($title);
-$toolbar->addButton('save_add',FSText :: _('Save and new'),'','save_add.png');
-$toolbar->addButton('apply',FSText :: _('Apply'),'','apply.png'); 
-$toolbar->addButton('Save',FSText :: _('Save'),'','save.png'); 
-$toolbar->addButton('back',FSText :: _('Cancel'),'','back.png'); 
+    $toolbar->setTitle(FSText :: _('Từ khóa trèn trong mô tả sản phẩm') );
+    $toolbar->addButton('duplicate',FSText :: _('Duplicate'),'','duplicate.png');
+    $toolbar->addButton('save_all',FSText :: _('Save'),'','save.png'); 
+    $toolbar->addButton('add',FSText :: _('Add'),'','add.png'); 
+    $toolbar->addButton('edit',FSText :: _('Edit'),FSText :: _('You must select at least one record'),'edit.png'); 
+    $toolbar->addButton('remove',FSText :: _('Remove'),FSText :: _('You must select at least one record'),'remove.png'); 
+    $toolbar->addButton('published',FSText :: _('Published'),FSText :: _('You must select at least one record'),'published.png');
+    $toolbar->addButton('unpublished',FSText :: _('Unpublished'),FSText :: _('You must select at least one record'),'unpublished.png');
+    
 
 //  $this -> dt_form_begin();
     
