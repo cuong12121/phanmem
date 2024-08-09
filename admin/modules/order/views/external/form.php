@@ -134,6 +134,8 @@ $toolbar->addButton('back',FSText :: _('Cancel'),'','back.png');
         <br>
         
     </div>
+
+    <button type="submit">submit</button>
     
 </form>
 
