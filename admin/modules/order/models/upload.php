@@ -1513,8 +1513,13 @@
                     
 
                     array_push($ar_id_file_pdf_google, $id_google_drive);
+
+                    if(!empty($text_pdf_check)){
+                    	
+                    	@unlink($InputFile);
+                    }
 				    
-					// @unlink($InputFile);
+					
 				}
 
 				$row['id_file_pdf_google_drive'] = implode(",", $ar_id_file_pdf_google);
