@@ -92,7 +92,7 @@
 		{
 			$name = FSInput::get('requester');
 
-			echo 1;
+			echo $name;
 
 			die;
 		}
