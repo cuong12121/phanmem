@@ -1144,7 +1144,7 @@
 		function view_pdf($controle,$id){
 			$model = $controle -> model;
 
-			$data = $model->get_record('id = ' .$id,'fs_order_uploads','id,file_pdf,total_page_pdf');
+			$data = $model->get_record('id = ' .$id,'fs_order_uploads','id,file_pdf,total_page_pdf,id_file_pdf_google_drive');
 			if(!$data-> file_pdf){
 				$html ='<strong style="color:red">Lỗi thiếu file</strong>';
 				return $html;
@@ -1167,7 +1167,7 @@
 					    
 					    $file_direct_check = trim($path.$base_name); 
 					    
-					    $checkfile = $model->get_record('file_name = "' .$base_name.'"','fs_order_uploads','file_pdf,id_file_pdf_google_drive');
+					   
 					    
 					//     	$query = " SELECT " . $select . "
 					// 	  FROM " . $table_name . "
@@ -1189,9 +1189,9 @@
 						    $html .= '<a target="_blank" style="color: rgba(255, 153, 0, 0.79);" href="'.$url.'">'.$base_name.'</a><br/>';
 					    }
 					    else{
-					    	if(!empty($checkfile)){
+					    	if(!empty($data->id_file_pdf_google_drive)){
 
-					    		$file_pdf_ar = explode(',', $checkfile->id_file_drive);
+					    		$file_pdf_ar = explode(',', $data->id_file_pdf_google_drive);
 
 					    		foreach ($file_pdf_ar as $key => $value) {
 					    			
