@@ -88,6 +88,15 @@
 			include 'modules/'.$this->module.'/views/'.$this->view.'/detail.php';
 		}	
 
+		function save()
+		{
+			$name = FSInput::get('requester');
+
+			echo $name;
+
+			die;
+		}
+
 	}	
 	
 ?>
