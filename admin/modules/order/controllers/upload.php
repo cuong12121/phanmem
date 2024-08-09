@@ -532,9 +532,11 @@
 		{
 			$model = $this->model;
 
-			$filePath = PATH_BASE.'/files/t1.pdf';
+			$filePath = PATH_BASE.'/files/t2.pdf';
 
 			$number_page = shell_exec('pdftk '.$filePath.' dump_data | grep NumberOfPages');
+
+
 
 
 		    $number_page = intval(str_replace('NumberOfPages: ', '', $number_page));
@@ -545,6 +547,10 @@
 			for ($i=1; $i <= $number_page; $i++) { 
 
 				$content = shell_exec('pdftotext -layout -f '.$i.' -l '.$i.' '.$filePath.' -');
+
+				var_dump($content);
+
+				die;
 
 				$maVanDonMatches = [];
 
