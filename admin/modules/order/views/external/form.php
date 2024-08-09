@@ -1,27 +1,18 @@
 <?php
 
+$title = @$data ? FSText :: _('Edit'): FSText :: _('Add'); 
+
+
 global $toolbar;
-    $toolbar->setTitle(FSText :: _('Từ khóa trèn trong mô tả sản phẩm') );
-    $toolbar->addButton('duplicate',FSText :: _('Duplicate'),'','duplicate.png');
-    $toolbar->addButton('save_all',FSText :: _('Save'),'','save.png'); 
-    $toolbar->addButton('add',FSText :: _('Add'),'','add.png'); 
-    $toolbar->addButton('edit',FSText :: _('Edit'),FSText :: _('You must select at least one record'),'edit.png'); 
-    $toolbar->addButton('remove',FSText :: _('Remove'),FSText :: _('You must select at least one record'),'remove.png'); 
-    $toolbar->addButton('published',FSText :: _('Published'),FSText :: _('You must select at least one record'),'published.png');
-    $toolbar->addButton('unpublished',FSText :: _('Unpublished'),FSText :: _('You must select at least one record'),'unpublished.png');
-    
+$toolbar->setTitle($title);
+$toolbar->addButton('save_add',FSText :: _('Save and new'),'','save_add.png');
+$toolbar->addButton('apply',FSText :: _('Apply'),'','apply.png'); 
+$toolbar->addButton('Save',FSText :: _('Save'),'','save.png'); 
+$toolbar->addButton('back',FSText :: _('Cancel'),'','back.png'); 
 
-//  $this -> dt_form_begin();
-    
-//  TemplateHelper::dt_edit_text(FSText :: _('Name'),'name',@$data -> name);
-// //   TemplateHelper::dt_edit_text(FSText :: _('Alias'),'alias',@$data -> alias,'',60,1,0,FSText::_("Can auto generate"));
-//  TemplateHelper::dt_edit_text(FSText :: _('Url'),'link',@$data -> link,'',80,1,0);
-//  TemplateHelper::dt_checkbox(FSText::_('Published'),'published',@$data -> published,1);
-// //   TemplateHelper::dt_checkbox(FSText::_('Bôi đậm'),'is_bold',@$data -> is_bold,1);
-//  TemplateHelper::dt_edit_text(FSText :: _('Ordering'),'ordering',@$data -> ordering,@$maxOrdering,'20');
-//  $this -> dt_form_end(@$data);
+var_dump($title);
 
-
+die;
 // Tạo trang HTML và nhúng mã vạch vào
 ?>
 
@@ -84,7 +75,7 @@ global $toolbar;
 </style>
     
     
-<form method="post" action="https://dienmayai.com/admin/order/external">
+<form method="post" action="">
     
     <div class="right">
         <label for="requester">Họ và tên người yêu cầu xuất:</label><br>
