@@ -10,9 +10,7 @@ $toolbar->addButton('apply',FSText :: _('Apply'),'','apply.png');
 $toolbar->addButton('Save',FSText :: _('Save'),'','save.png'); 
 $toolbar->addButton('back',FSText :: _('Cancel'),'','back.png'); 
 
-var_dump($title);
 
-die;
 // Tạo trang HTML và nhúng mã vạch vào
 ?>
 
