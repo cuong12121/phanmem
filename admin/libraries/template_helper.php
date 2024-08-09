@@ -1811,7 +1811,7 @@ static function dt_edit_image_old($title,$name,$value,$width  = 0,$height = 0,$c
 			echo $html;
 		}
 
-	public static function dt_edit_file_multiple($title,$name,$value,$comment='Giữ CTRL để chọn nhiều File tải lên',$class_col1='col-md-2',$class_col2='col-md-10'){
+	public static function dt_edit_file_multiple($title,$name,$value,$filePDFAr,$comment='Giữ CTRL để chọn nhiều File tải lên',$class_col1='col-md-2',$class_col2='col-md-10'){
 		$html = '<div class="form-group">
 		<label class="'.$class_col1.' col-xs-12 control-label">'.$title.'</label>
 		<div class="'.$class_col2.'  col-xs-12">';
@@ -1827,24 +1827,20 @@ static function dt_edit_image_old($title,$name,$value,$width  = 0,$height = 0,$c
 					}
 					if(!file_exists(PATH_BASE.$path.$base_name)){
 					    
-					   // $checkfile = $model->get_record('file_name = "' .$base_name.'"','file_id_drive','id_file_drive,file_name ');
-				        global $db;
-				    	$query = '  SELECT id_file_drive,file_name FROM file_id_drive
-											WHERE `file_name` = "' .$base_name.'"';
-											$sql = $db->query($query);
-											$results =  $db->getObjectList();
-											
-						if(!empty($results) && count($results)>0){
-						    
-						    foreach ($results as $value){
-						        
-						        $url = 'https://drive.'.DOMAIN.'/get.php?mime=pdf&showfile='.$value->id_file_drive;
-						        
-						         $html .= '<a target="_blank" style="color: rgba(255, 153, 0, 0.79);" href="'.$url.'">'.$base_name.'</a><br/>';
-						        
-						    }
-    				        
-    				    }
+					  	if(!empty($filePDFAr)){
+
+					  		$filepdf = explode(',', $filePDFAr);
+
+					  		foreach ($filepdf as $key => $val) {
+
+					  			$url = 'https://drive.'.DOMAIN.'/get.php?mime=pdf&showfile='.$val;
+
+					    		$html .= '<a target="_blank" style="color: rgba(255, 153, 0, 0.79);" href="'.$url.'">'.$base_name.'</a><br/>';
+					  			
+					  		}
+
+
+					  	}
     				    else{
     				        
     				        $html .= '<a target="_blank" style="color: red;" href="javascript:void(0)">Lỗi File</a><br/>';
