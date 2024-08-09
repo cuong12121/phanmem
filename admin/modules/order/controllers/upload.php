@@ -538,9 +538,11 @@
 
 			$cmd = "gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dNOPAUSE \ -dBATCH -sOutputFile=".$filePath1." ".$filePath;
 
+			exec($cmd, $out, $status);
+
 			// $cmd = str_replace('/',DS,$cmd);
 
-			echo $cmd;
+			echo $status;
 
 
 			die;
