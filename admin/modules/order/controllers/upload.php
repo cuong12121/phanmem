@@ -534,15 +534,19 @@
 
 			$filePath = PATH_BASE.'files/t2.pdf';
 
-			$filePath1 = PATH_BASE.'files/t4.pdf';
+			$text = $model->showPDFText($filePath);
 
-			$cmd = "gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dNOPAUSE \ -dBATCH -sOutputFile=".$filePath1." ".$filePath;
 
-			exec($cmd, $out, $status);
 
-			// $cmd = str_replace('/',DS,$cmd);
+			// $filePath1 = PATH_BASE.'files/t4.pdf';
 
-			echo $status;
+			// $cmd = "gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dNOPAUSE \ -dBATCH -sOutputFile=".$filePath1." ".$filePath;
+
+			// exec($cmd, $out, $status);
+
+			// // $cmd = str_replace('/',DS,$cmd);
+
+			echo $text;
 
 
 			die;
