@@ -49,20 +49,20 @@
 
 		function add()
 		{
-			global $config;
-			$model = $this -> model;
-			$wrap_id_warehouses = $model->get_wrap_id_warehouses();
-			$warehouses = $model -> get_records('published = 1 AND id IN ('.$wrap_id_warehouses.')','fs_warehouses');
-			$platforms = $model -> get_records('published = 1','fs_platforms');
-			$houses = $model -> get_records('published = 1','fs_house');
-			$users = $model -> get_record('id = ' . $_SESSION['ad_userid'],'fs_users');
-			if($users->group_id == 1 && $users->shop_id){
-				$users->shop_id = substr($users->shop_id, 1, -1);
-				$shops = $model -> get_records('id IN ('.$users->shop_id.')','fs_shops');
-			}else{
-				$shops = $model -> get_records('','fs_shops');
-			}
-			include 'modules/order/views/external/form.php';
+			// global $config;
+			// $model = $this -> model;
+			// $wrap_id_warehouses = $model->get_wrap_id_warehouses();
+			// $warehouses = $model -> get_records('published = 1 AND id IN ('.$wrap_id_warehouses.')','fs_warehouses');
+			// $platforms = $model -> get_records('published = 1','fs_platforms');
+			// $houses = $model -> get_records('published = 1','fs_house');
+			// $users = $model -> get_record('id = ' . $_SESSION['ad_userid'],'fs_users');
+			// if($users->group_id == 1 && $users->shop_id){
+			// 	$users->shop_id = substr($users->shop_id, 1, -1);
+			// 	$shops = $model -> get_records('id IN ('.$users->shop_id.')','fs_shops');
+			// }else{
+			// 	$shops = $model -> get_records('','fs_shops');
+			// }
+			// include 'modules/order/views/external/form.php';
 		}
 
 		function edit()
