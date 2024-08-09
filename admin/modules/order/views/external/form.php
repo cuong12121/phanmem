@@ -10,6 +10,8 @@ $toolbar->addButton('apply',FSText :: _('Apply'),'','apply.png');
 $toolbar->addButton('Save',FSText :: _('Save'),'','save.png'); 
 $toolbar->addButton('back',FSText :: _('Cancel'),'','back.png'); 
 
+$this -> dt_form_begin(1,4,$title.' '.FSText::_('Đơn hàng'));
+
 
 // Tạo trang HTML và nhúng mã vạch vào
 ?>
@@ -74,7 +76,7 @@ $toolbar->addButton('back',FSText :: _('Cancel'),'','back.png');
 </style>
     
     
-<form class="form-horizontal" role="form" action="https://dienmayai.com/admin/tags/tags" name="adminForm">
+<form class="form-horizontal" role="form" action="https://dienmayai.com/admin/order/external" name="adminForm">
     
     <div class="right">
         <label for="requester">Họ và tên người yêu cầu xuất:</label><br>
@@ -136,9 +138,11 @@ $toolbar->addButton('back',FSText :: _('Cancel'),'','back.png');
         
     </div>
 
-    <input type="hidden" value="tags" name="module"><input type="hidden" value="tags" name="view"><input type="hidden" value="" name="task"><input type="hidden" value="0" name="boxchecked"><input type="hidden" value="0" name="page"><input type="hidden" value="L2FkbWluL3RhZ3MvdGFncy9hZGQ=" name="return">
+   
 
 
     
 </form>
+
+<?php $this -> dt_form_end(@$data,1,0); ?>
 
