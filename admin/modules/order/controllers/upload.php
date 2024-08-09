@@ -532,9 +532,9 @@
 		{
 			$model = $this->model;
 
-			$filePath = PATH_BASE.'/files/t2.pdf';
+			$filePath = PATH_BASE.'files/t2.pdf';
 
-			$filePath1 = PATH_BASE.'/files/t4.pdf';
+			$filePath1 = PATH_BASE.'files/t4.pdf';
 
 			$cmd = "gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dNOPAUSE \ -dBATCH -sOutputFile=".$filePath1." ".$filePath;
 
