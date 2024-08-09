@@ -1232,7 +1232,7 @@
 			        return '<a style="color: rgba(255, 153, 0, 0.79);" target="_blink" href="/'. $link .'">'.basename($link).'</a>';
 			    }
 			    else{
-			        return '<a style="color: red;" target="_blink" href="' . $link . '">Lỗi file</a>';
+			        return '<a style="color: red;" target="_blink" href="' . $link . '">Lỗi file 12</a>';
 			    }
 				
 			}else{
