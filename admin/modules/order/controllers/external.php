@@ -97,6 +97,15 @@
 			die;
 		}
 
+		function apply()
+		{
+			$name = FSInput::get('requester');
+
+			echo $name;
+
+			die;
+		}
+
 	}	
 	
 ?>
