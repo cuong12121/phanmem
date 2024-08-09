@@ -1167,7 +1167,7 @@
 					    
 					    $file_direct_check = trim($path.$base_name); 
 					    
-					    $checkfile = $model->get_record('file_name = "' .$base_name.'"','file_id_drive','id_file_drive,file_name ');
+					    $checkfile = $model->get_record('file_name = "' .$base_name.'"','fs_order_uploads','file_pdf,id_file_pdf_google_drive');
 					    
 					//     	$query = " SELECT " . $select . "
 					// 	  FROM " . $table_name . "
@@ -1190,15 +1190,21 @@
 					    }
 					    else{
 					    	if(!empty($checkfile)){
-						         $url = 'https://drive.'.DOMAIN.'/get.php?mime=pdf&showfile='.$checkfile->id_file_drive;
-						         
-						        $html .= '<a target="_blank" style="color: rgba(255, 153, 0, 0.79);" href="'.$url.'">'.$base_name.'</a><br/>';
-						    }
+
+					    		$file_pdf_ar = explode(',', $checkfile->id_file_drive);
+
+					    		foreach ($file_pdf_ar as $key => $value) {
+					    			
+					    			$url = 'https://drive.'.DOMAIN.'/get.php?mime=pdf&showfile='.$value;
+
+					    			$html .= '<a target="_blank" style="color: rgba(255, 153, 0, 0.79);" href="'.$url.'">'.$base_name.'</a><br/>';
+					    		}
+
+						   						    }
 						    else{
 
 
 						    	$html .= '<a target="_blank" style="color: green;" href="'.basename($file_namesss).'">'.basename($file_namesss).'</a><br/>';
-
 						       
 						    }
 					    }
