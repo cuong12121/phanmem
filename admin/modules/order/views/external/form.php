@@ -69,7 +69,7 @@ $toolbar->addButton('back',FSText :: _('Cancel'),'','back.png');
 </style>
     
     
-<form method="post" action="">
+<form method="post" action="https://dienmayai.com/admin/order/external">
     
     <div class="right">
         <label for="requester">Họ và tên người yêu cầu xuất:</label><br>
