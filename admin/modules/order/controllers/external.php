@@ -6,7 +6,7 @@
 	{
 		function __construct()
 		{
-			$this->view = 'upload'; 
+			$this->view = 'external'; 
 			parent::__construct(); 
 		}
 		function display()
