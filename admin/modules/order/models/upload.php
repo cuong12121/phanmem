@@ -2254,7 +2254,7 @@
 							}
 							$html .= '<a target="_blank" style="color: rgba(255, 153, 0, 0.79);" href="'.URL_ROOT.$path.$base_name.'">'.$base_name.'</a><br/>';
 							if(!file_exists(PATH_BASE.$path.$base_name)) {   
-								setRedirect($link,FSText :: _($error_order_id);
+								setRedirect($link,FSText :: _($error_order_id,'error');
 							}
 							$i++;
 						}
