@@ -2241,6 +2241,8 @@
 						setRedirect($link,FSText :: _('Đơn chọn in thiếu file tải lên !'),'error');
 					}
 
+					$error_order_id = "Đơn hàng có id là $item->id có file pdf bị lỗi, vui lòng kiểm tra lại";
+
 					$arr_name = explode('t,t',$item-> file_pdf);
 					if(!empty($arr_name)){
 						$i=0;
@@ -2252,18 +2254,18 @@
 							}
 							$html .= '<a target="_blank" style="color: rgba(255, 153, 0, 0.79);" href="'.URL_ROOT.$path.$base_name.'">'.$base_name.'</a><br/>';
 							if(!file_exists(PATH_BASE.$path.$base_name)) {   
-								setRedirect($link,FSText :: _('File PDF lỗi, vui lòng up lại file'),'error');
+								setRedirect($link,FSText :: _($error_order_id);
 							}
 							$i++;
 						}
 					}else{
 						if(!file_exists(PATH_BASE.$item-> file_pdf)) {   
-							setRedirect($link,FSText :: _('File PDF lỗi, vui lòng up lại file'),'error');
+							setRedirect($link,FSText :: _($error_order_id),'error');
 						}
 					}
 
 					if(!file_exists(PATH_BASE.$item-> file_xlsx)) {   
-						setRedirect($link,FSText :: _('File xlsx lỗi, vui lòng up lại file'),'error');
+						setRedirect($link,FSText :: _($error_order_id),'error');
 					}
 				}
 			
