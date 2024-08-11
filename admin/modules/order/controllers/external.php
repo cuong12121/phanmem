@@ -106,13 +106,13 @@
 
 			
 
-			if($requester=='null'){
+			if($requester=='NULL'){
 				$msg = 'Không được để trống họ tên người yêu cầu xuất';
 				setRedirect($link,$msg,'error');
 			}
 
 
-			if($storeName=='null'){
+			if($storeName=='NULL'){
 				$msg = 'Không được để trống tên gian hàng';
 				setRedirect($link,$msg,'error');
 			}
