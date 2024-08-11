@@ -87,13 +87,13 @@
 
 			$link = FSRoute::_('index.php?module=order&view=external&task=add');
 
-			if($requester==''){
+			if($requester=='null'){
 				$msg = 'Không được để trống họ tên người yêu cầu xuất';
 				setRedirect($link,$msg,'error');
 			}
 
 
-			if($storeName==''){
+			if($storeName=='null'){
 				$msg = 'Không được để trống tên gian hàng';
 				setRedirect($link,$msg,'error');
 			}
