@@ -88,65 +88,65 @@
 			include 'modules/'.$this->module.'/views/'.$this->view.'/detail.php';
 		}	
 
-		function save()
-		{
-			$requester = FSInput::get('requester');
-			$storeName = FSInput::get('storeName');
-			$deliveryPerson = FSInput::get('deliveryPerson');
-			$department = FSInput::get('department');
-			$storeCode = FSInput::get('storeCode');
-			$customerPhone = FSInput::get('customerPhone');
-			$customerPhone = FSInput::get('customerPhone');
+		// function save()
+		// {
+		// 	$requester = FSInput::get('requester');
+		// 	$storeName = FSInput::get('storeName');
+		// 	$deliveryPerson = FSInput::get('deliveryPerson');
+		// 	$department = FSInput::get('department');
+		// 	$storeCode = FSInput::get('storeCode');
+		// 	$customerPhone = FSInput::get('customerPhone');
+		// 	$customerPhone = FSInput::get('customerPhone');
 
-			$diachinhanhang = FSInput::get('diachinhanhang');
+		// 	$diachinhanhang = FSInput::get('diachinhanhang');
 
-			$tennguoinhan = FSInput::get('tennguoinhan');
+		// 	$tennguoinhan = FSInput::get('tennguoinhan');
 
-			$link = FSRoute::_('index.php?module=order&view=external&task=add');
+		// 	$link = FSRoute::_('index.php?module=order&view=external&task=add');
 
 			
 
-			if($requester==''){
-				$msg = 'Không được để trống họ tên người yêu cầu xuất';
-				setRedirect($link,$msg,'error');
-			}
+		// 	if($requester==''){
+		// 		$msg = 'Không được để trống họ tên người yêu cầu xuất';
+		// 		setRedirect($link,$msg,'error');
+		// 	}
 
 
-			if($storeName==''){
-				$msg = 'Không được để trống tên gian hàng';
-				setRedirect($link,$msg,'error');
-			}
-			if($deliveryPerson==''){
-				$msg = 'Không được để trống họ tên nvc giao';
-				setRedirect($link,$msg,'error');
-			}
+		// 	if($storeName==''){
+		// 		$msg = 'Không được để trống tên gian hàng';
+		// 		setRedirect($link,$msg,'error');
+		// 	}
+		// 	if($deliveryPerson==''){
+		// 		$msg = 'Không được để trống họ tên nvc giao';
+		// 		setRedirect($link,$msg,'error');
+		// 	}
 
-			if($department==''){
-				$msg = 'Không được để trống bộ phận';
-				setRedirect($link,$msg,'error');
-			}
+		// 	if($department==''){
+		// 		$msg = 'Không được để trống bộ phận';
+		// 		setRedirect($link,$msg,'error');
+		// 	}
 
-			if($storeCode==''){
-				$msg = 'Không được để trống mã gian hàng';
-				setRedirect($link,$msg,'error');
-			}
+		// 	if($storeCode==''){
+		// 		$msg = 'Không được để trống mã gian hàng';
+		// 		setRedirect($link,$msg,'error');
+		// 	}
 
-			if($customerPhone==''){
-				$msg = 'Không được để trống số điện thoại khách hàng';
-				setRedirect($link,$msg,'error');
-			}
+		// 	if($customerPhone==''){
+		// 		$msg = 'Không được để trống số điện thoại khách hàng';
+		// 		setRedirect($link,$msg,'error');
+		// 	}
 
-			if($diachinhanhang==''){
-				$msg = 'Không được để trống địa chỉ nhận hàng';
-				setRedirect($link,$msg,'error');
-			}
+		// 	if($diachinhanhang==''){
+		// 		$msg = 'Không được để trống địa chỉ nhận hàng';
+		// 		setRedirect($link,$msg,'error');
+		// 	}
 
-			if($tennguoinhan==''){
-				$msg = 'Không được để trống tên người nhận hàng';
-				setRedirect($link,$msg,'error');
-			}	
+		// 	if($tennguoinhan==''){
+		// 		$msg = 'Không được để trống tên người nhận hàng';
+		// 		setRedirect($link,$msg,'error');
+		// 	}	
 
-		}
+		// }
 
 		function apply()
 		{
