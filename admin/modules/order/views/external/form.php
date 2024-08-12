@@ -120,8 +120,28 @@ $data_post = $_SESSION['input_data']?$_SESSION['input_data']:'';
                 <th>Họ tên người thu tiền</th>
                 <th>Ghi chú (Mã vận đơn)</th>
             </tr>
+
+            <?php 
+
+                $number  = $_GET['number']?$_GET['number']?1;
+            ?>
+            <label for="tennguoinhan">Số lượng sản phẩm :</label><br>
+            <select id="mySelect">
+                <?php 
+
+                    $currentPath = $_SERVER['REQUEST_URI'];
+
+                    for($k =1; $k<10; $k++){
+                ?>
+                    <option value="<?= $currentPath ?>?number=<?= $k ?>"><?= $k ?></option>
+
+                <?php
+                    }
+                ?>
+            </select>
+            @for($i =0; $i<$number; $i++)
             <tr>
-                <td>1</td>
+                <td><?= $i ?></td>
                 <td><input type="text"  name="productName1" value="<?= $data_post['productName1']??'' ?>" required></td>
                 <td><input type="text"  name="productCode1" value="<?= $data_post['productCode1']??'' ?>" required></td>
 
@@ -134,10 +154,12 @@ $data_post = $_SESSION['input_data']?$_SESSION['input_data']:'';
 
 
                 <td><input type="text"  name="thanhtien" value="<?= $data_post['thanhtien']??'' ?>" required></td>
-                <td><input type="text"  name="hotenguoithutien" value="<?= $data_post['hotenguoithutien']??'' ?>" required></td>
+                <td><input type="text"  name="hotennguoithutien" value="<?= $data_post['hotennguoithutien']??'' ?>" required></td>
                 <td><input type="text"  name="ghichu" value="<?= $data_post['ghichu']??'' ?>" required></td>
                 
             </tr>
+
+            @endfor
 
             <tr>
                 <td>2</td>
@@ -153,7 +175,7 @@ $data_post = $_SESSION['input_data']?$_SESSION['input_data']:'';
 
 
                 <td><input type="text"  name="thanhtien" value="<?= $data_post['thanhtien']??'' ?>" required></td>
-                <td><input type="text"  name="hotenguoithutien" value="<?= $data_post['hotenguoithutien']??'' ?>" required></td>
+                <td><input type="text"  name="hotennguoithutien" value="<?= $data_post['hotennguoithutien']??'' ?>" required></td>
                 <td><input type="text"  name="ghichu" value="<?= $data_post['ghichu']??'' ?>" required></td>
                 
             </tr>
