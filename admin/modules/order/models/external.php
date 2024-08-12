@@ -90,8 +90,6 @@
 			$link = $_SERVER['HTTP_REFERER'];
 
 			if($requester==''){
-
-				
 				$msg = 'Không được để trống họ tên người yêu cầu xuất';
 
 				setRedirect($link,$msg,'error');
@@ -137,6 +135,8 @@
 				$msg = 'Không được để trống tên sản phẩm';
 				setRedirect($link,$msg,'error');
 			}
+
+			echo "thành công";
 
 			
 			
