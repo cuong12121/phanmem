@@ -133,7 +133,7 @@ $this -> dt_form_begin(1,4,$title.' '.FSText::_('Đơn hàng'));
             </tr>
             
         </table>
-        <button type="submit" onclick="javascript: submitbutton('Saves')">submit</button>
+        <button  onclick="javascript: submitbutton('Saves')">submit</button>
         <br>
         
     </div>
