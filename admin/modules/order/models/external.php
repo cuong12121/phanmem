@@ -91,6 +91,10 @@
 
 			if($requester==''){
 				$msg = 'Không được để trống họ tên người yêu cầu xuất';
+
+				var_dump($link);
+
+				die;
 				// setRedirect($link,$msg,'error');
 				header("Location: $link");
 				
