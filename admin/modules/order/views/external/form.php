@@ -76,7 +76,7 @@ $this -> dt_form_begin(1,4,$title.' '.FSText::_('Đơn hàng'));
 </style>
     
     
-<form class="form-horizontal" role="form" action="https://dienmayai.com/admin/order/external" name="adminForm">
+<form class="form-horizontal" role="form" action="#" name="adminForm">
     
     <div class="right">
         <label for="requester">Họ và tên người yêu cầu xuất:</label><br>
@@ -137,10 +137,6 @@ $this -> dt_form_begin(1,4,$title.' '.FSText::_('Đơn hàng'));
         <br>
         
     </div>
-
-   
-
-
     
 </form>
 
