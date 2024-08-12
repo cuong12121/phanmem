@@ -133,7 +133,7 @@ $this -> dt_form_begin(1,4,$title.' '.FSText::_('Đơn hàng'));
             </tr>
             
         </table>
-        <button  onclick="javascript: submitbutton('Saves')">submit</button>
+        <a class="toolbar" onclick="javascript: submitbutton('saves')" href="#"><span title="Apply" style="background:url('https://dienmayai.com/admin/templates/default/images/toolbar/apply.png') no-repeat"></span>Apply</a>
         <br>
         
     </div>
