@@ -12,8 +12,10 @@ $toolbar->addButton('back',FSText :: _('Cancel'),'','back.png');
 
 $this -> dt_form_begin(1,4,$title.' '.FSText::_('Đơn hàng'));
 
+if (!isset($_SESSION)) {
+    session_start();
+} 
 
-session_start();
 
 $data_post = $_SESSION['input_data']?$_SESSION['input_data']:'';
 
