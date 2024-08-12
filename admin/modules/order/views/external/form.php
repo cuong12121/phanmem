@@ -123,7 +123,7 @@ $data_post = $_SESSION['input_data']?$_SESSION['input_data']:'';
 
             <?php 
 
-                $number  = $_GET['number']?$_GET['number']:1;
+                $number  = !empty($_GET['number'])?$_GET['number']:1;
             ?>
             <label for="tennguoinhan">Số lượng sản phẩm :</label><br>
             <select id="mySelect">
