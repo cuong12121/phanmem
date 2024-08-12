@@ -141,7 +141,7 @@ $data_post = $_SESSION['input_data']?$_SESSION['input_data']:'';
             </select>
             <?php for($i =0; $i<$number; $i++){ ?>
             <tr>
-                <td><?= $i ?></td>
+                <td><?= $i+1 ?></td>
                 <td><input type="text"  name="productName1" value="<?= $data_post['productName1']??'' ?>" required></td>
                 <td><input type="text"  name="productCode1" value="<?= $data_post['productCode1']??'' ?>" required></td>
 
@@ -171,6 +171,18 @@ $data_post = $_SESSION['input_data']?$_SESSION['input_data']:'';
     </div>
     
 </form>
+
+<script type="text/javascript">
+    const selectElement = document.getElementById('mySelect');
+    selectElement.addEventListener('change', function() {
+        const selectedValue
+     = this.value;
+        const url = selectedValue;
+        
+            window.location.href = url;
+       
+    });
+</script>
 
 <?php $this -> dt_form_end(@$data,1,0); ?>
 
