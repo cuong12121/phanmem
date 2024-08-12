@@ -91,9 +91,9 @@
 
 			$tennguoinhan = FSInput::get('tennguoinhan');
 
-			$productName1 = FSInput::get('productName1');
+			$productName1 = FSInput::get('productName');
 
-			$productCode1 = FSInput::get('productCode1');
+			$productCode1 = FSInput::get('productCode');
 
 			$soluong = FSInput::get('soluong');
 

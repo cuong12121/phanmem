@@ -139,23 +139,23 @@ $data_post = $_SESSION['input_data']?$_SESSION['input_data']:'';
                     }
                 ?>
             </select>
-            <?php for($i =0; $i<$number; $i++){ ?>
+            <?php for($i =1; $i<=$number; $i++){ ?>
             <tr>
-                <td><?= $i+1 ?></td>
-                <td><input type="text"  name="productName1" value="<?= $data_post['productName1']??'' ?>" required></td>
-                <td><input type="text"  name="productCode1" value="<?= $data_post['productCode1']??'' ?>" required></td>
+                <td><?= $i ?></td>
+                <td><input type="text"  name="productName<?= $i ?>" value="<?= $data_post["productName$i"]??'' ?>" required></td>
+                <td><input type="text"  name="productCode<?= $i ?>" value="<?= $data_post["productCode$i"]??'' ?>" required></td>
 
-                <td><input type="text"  name="soluong" value="<?= $data_post['soluong']??'' ?>" required></td>
-                <td><input type="text"  name="phivanchuyen" value="<?= $data_post['phivanchuyen']??'' ?>" required></td>
+                <td><input type="text"  name="soluong<?= $i ?>" value="<?= $data_post["soluong$i"]??'' ?>" required></td>
+                <td><input type="text"  name="phivanchuyen<?= $i ?>" value="<?= $data_post["phivanchuyen$i"]??'' ?>" required></td>
                 <!-- <td><input type="text" id="phivanchuyennguoimuatra" name="phivanchuyennguoimuatra"></td> -->
-                <td><input type="text"  name="tongsotiennguoimuathanhtoan" value="<?= $data_post['tongsotiennguoimuathanhtoan']??'' ?>" required></td>
+                <td><input type="text"  name="tongsotiennguoimuathanhtoan<?= $i ?>" value="<?= $data_post["tongsotiennguoimuathanhtoan$i"]??'' ?>" required></td>
                
-                <td><input type="text"  name="dongia" value="<?= $data_post['dongia']??'' ?>" required></td>
+                <td><input type="text"  name="dongia<?= $i ?>" value="<?= $data_post["dongia$i"]??'' ?>" required></td>
 
 
-                <td><input type="text"  name="thanhtien" value="<?= $data_post['thanhtien']??'' ?>" required></td>
-                <td><input type="text"  name="hotennguoithutien" value="<?= $data_post['hotennguoithutien']??'' ?>" required></td>
-                <td><input type="text"  name="ghichu" value="<?= $data_post['ghichu']??'' ?>" required></td>
+                <td><input type="text"  name="thanhtien<?= $i ?>" value="<?= $data_post["thanhtien$i"]??'' ?>" required></td>
+                <td><input type="text"  name="hotennguoithutien<?= $i ?>" value="<?= $data_post["hotennguoithutien$i"]??'' ?>" required></td>
+                <td><input type="text"  name="ghichu<?= $i ?>" value="<?= $data_post["ghichu$i"]??'' ?>" required></td>
                 
             </tr>
 
