@@ -129,7 +129,7 @@ $data_post = $_SESSION['input_data']?$_SESSION['input_data']:'';
             <select id="mySelect">
                 <?php 
                  
-                    $currentPath = '/admin/order/external/add/';
+                    $currentPath = '/admin/order/external/add';
 
                     for($k =1; $k<10; $k++){
                 ?>
