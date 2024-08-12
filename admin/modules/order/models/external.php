@@ -105,6 +105,10 @@
 				// Lưu dữ liệu nhập liệu vào session
 				$_SESSION['input_data'] = $inputData;
 
+				var_dump($_SESSION['input_data']);
+
+				die;
+
 				$msg = 'Không được để trống họ tên người yêu cầu xuất';
 
 				setRedirect($link,$msg,'error');
