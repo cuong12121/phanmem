@@ -128,7 +128,11 @@ $data_post = $_SESSION['input_data']?$_SESSION['input_data']:'';
             <label for="tennguoinhan">Số lượng sản phẩm :</label><br>
             <select id="mySelect">
                 <?php 
+                    $currentPaths = FSRoute::_('index.php?module=order&view=upload&task=add');
 
+                    echo $currentPaths;
+
+                    
                     $currentPath = $_SERVER['PHP_SELF'];
 
                     for($k =1; $k<10; $k++){
