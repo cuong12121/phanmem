@@ -139,7 +139,7 @@ $data_post = $_SESSION['input_data']?$_SESSION['input_data']:'';
                     }
                 ?>
             </select>
-            @for($i =0; $i<$number; $i++)
+            <?php for($i =0; $i<$number; $i++){ ?>
             <tr>
                 <td><?= $i ?></td>
                 <td><input type="text"  name="productName1" value="<?= $data_post['productName1']??'' ?>" required></td>
@@ -159,27 +159,9 @@ $data_post = $_SESSION['input_data']?$_SESSION['input_data']:'';
                 
             </tr>
 
-            @endfor
+            <?php } ?>
 
-            <tr>
-                <td>2</td>
-                <td><input type="text" name="productName1" value="<?= $data_post['productName1']??'' ?>" required></td>
-                <td><input type="text"  name="productCode1" value="<?= $data_post['productCode1']??'' ?>" required></td>
-
-                <td><input type="text"  name="soluong" value="<?= $data_post['soluong']??'' ?>" required></td>
-                <td><input type="text"  name="phivanchuyen" value="<?= $data_post['phivanchuyen']??'' ?>" required></td>
-                <!-- <td><input type="text" id="phivanchuyennguoimuatra" name="phivanchuyennguoimuatra"></td> -->
-                <td><input type="text"  name="tongsotiennguoimuathanhtoan" value="<?= $data_post['tongsotiennguoimuathanhtoan']??'' ?>" required></td>
-               
-                <td><input type="text"  name="dongia" value="<?= $data_post['dongia']??'' ?>" required></td>
-
-
-                <td><input type="text"  name="thanhtien" value="<?= $data_post['thanhtien']??'' ?>" required></td>
-                <td><input type="text"  name="hotennguoithutien" value="<?= $data_post['hotennguoithutien']??'' ?>" required></td>
-                <td><input type="text"  name="ghichu" value="<?= $data_post['ghichu']??'' ?>" required></td>
-                
-            </tr>
-            
+           
         </table>
 
         <button type="submit" onclick="submitbutton('save')">submit</button>
