@@ -97,6 +97,18 @@
 
 			$soluong = FSInput::get('soluong');
 
+			$phivanchuyen = FSInput::get('phivanchuyen');
+
+
+			$tongsotiennguoimuathanhtoan = FSInput::get('tongsotiennguoimuathanhtoan');
+
+			$dongia = FSInput::get('dongia');
+
+			$thanhtien = FSInput::get('thanhtien');
+
+			$hotennguoithutien = FSInput::get('hotennguoithutien');
+
+
 			$link = $_SERVER['HTTP_REFERER'];
 
 			// Giả sử dữ liệu nhập liệu được truyền qua $_POST
@@ -153,9 +165,39 @@
 				setRedirect($link,$msg,'error');
 			}
 
-			echo "thành công";
+			if($productCode1==''){
+				$msg = 'Không được để trống mã đơn hàng';
+				setRedirect($link,$msg,'error');
+			}
 
-			
+			if($soluong==''){
+				$msg = 'Không được để trống Số lượng';
+				setRedirect($link,$msg,'error');
+			}
+
+			if($phivanchuyen==''){
+				$msg = 'Không được để trống Phí vận chuyển';
+				setRedirect($link,$msg,'error');
+			}
+			if($tongsotiennguoimuathanhtoan==''){
+				$msg = 'Không được để trống Tổng số tiền người mua thanh toán';
+				setRedirect($link,$msg,'error');
+			}
+
+			if($dongia==''){
+				$msg = 'Không được để trống đơn giá';
+				setRedirect($link,$msg,'error');
+			}
+
+			if($thanhtien==''){
+				$msg = 'Không được để trống thành tiền';
+				setRedirect($link,$msg,'error');
+			}
+
+			if($hotennguoithutien==''){
+				$msg = 'Không được để trống Họ tên người thu tiền';
+				setRedirect($link,$msg,'error');
+			}
 			
 		
 		}
