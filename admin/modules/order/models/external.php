@@ -85,20 +85,14 @@
 
 			$tennguoinhan = FSInput::get('tennguoinhan');
 
-			$link = FSRoute::_('index.php?module=order&view=external&task=add');
-
-			
+			$link = $_SERVER['HTTP_REFERER'];
 
 			if($requester==''){
 
-				$link = $_SERVER['HTTP_REFERER'];
+				
 				$msg = 'Không được để trống họ tên người yêu cầu xuất';
-				var_dump($link);
-				die;
-				
+
 				setRedirect($link,$msg,'error');
-				header("Location: $link");
-				
 				
 			}
 
