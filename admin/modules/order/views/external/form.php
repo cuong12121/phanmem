@@ -129,7 +129,7 @@ $data_post = $_SESSION['input_data']?$_SESSION['input_data']:'';
             <select id="mySelect">
                 <?php 
 
-                    $currentPath = $_SERVER['REQUEST_URI'];
+                    $currentPath = $_SERVER['SCRIPT_NAME'];
 
                     for($k =1; $k<10; $k++){
                 ?>
@@ -173,15 +173,19 @@ $data_post = $_SESSION['input_data']?$_SESSION['input_data']:'';
 </form>
 
 <script type="text/javascript">
+
     const selectElement = document.getElementById('mySelect');
     selectElement.addEventListener('change', function() {
-        const selectedValue
-     = this.value;
+        const selectedValue= this.value;
+
+
         const url = selectedValue;
         
             window.location.href = url;
        
     });
+
+
 </script>
 
 <?php $this -> dt_form_end(@$data,1,0); ?>
