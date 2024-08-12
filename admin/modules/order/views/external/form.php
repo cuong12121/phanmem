@@ -133,7 +133,9 @@ $this -> dt_form_begin(1,4,$title.' '.FSText::_('Đơn hàng'));
             </tr>
             
         </table>
-        <a class="toolbar" onclick="submitbutton('save')" href="#"><span title="Apply" style="background:url('https://dienmayai.com/admin/templates/default/images/toolbar/apply.png') no-repeat"></span>Apply</a>
+
+        <button type="submit" onclick="submitbutton('save')">submit</button>
+        <!-- <a class="toolbar" onclick="submitbutton('save')" href="#"><span title="Apply" style="background:url('https://dienmayai.com/admin/templates/default/images/toolbar/apply.png') no-repeat"></span>Apply</a> -->
         <br>
         
     </div>
