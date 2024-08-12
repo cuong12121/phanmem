@@ -91,7 +91,7 @@
 
 			if($requester==''){
 
-				$link = 1;
+				$link = FSRoute::_('index.php?module=order&view=external&task=add');
 				$msg = 'Không được để trống họ tên người yêu cầu xuất';
 
 				var_dump($link);
