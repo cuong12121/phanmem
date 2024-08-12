@@ -92,6 +92,10 @@
 			if($requester=='null'){
 				$msg = 'Không được để trống họ tên người yêu cầu xuất';
 				setRedirect($link,$msg,'error');
+
+				var_dump(1);
+
+				die;
 			}
 
 
