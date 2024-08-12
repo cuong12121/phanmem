@@ -115,20 +115,39 @@ $this -> dt_form_begin(1,4,$title.' '.FSText::_('Đơn hàng'));
             </tr>
             <tr>
                 <td>1</td>
-                <td><input type="text" id="productName1" name="productName1" required></td>
-                <td><input type="text" id="productCode1" name="productCode1" required></td>
+                <td><input type="text"  name="productName1" required></td>
+                <td><input type="text"  name="productCode1" required></td>
 
-                <td><input type="text" id="soluong" name="soluong" required></td>
-                <td><input type="text" id="phivanchuyen" name="phivanchuyen" required></td>
+                <td><input type="text"  name="soluong" required></td>
+                <td><input type="text"  name="phivanchuyen" required></td>
                 <!-- <td><input type="text" id="phivanchuyennguoimuatra" name="phivanchuyennguoimuatra"></td> -->
-                <td><input type="text" id="tongsotiennguoimuathanhtoan" name="tongsotiennguoimuathanhtoan" required></td>
+                <td><input type="text"  name="tongsotiennguoimuathanhtoan" required></td>
                
-                <td><input type="text" id="dongia" name="dongia" required></td>
+                <td><input type="text"  name="dongia" required></td>
 
 
-                <td><input type="text" id="thanhtien" name="thanhtien" required></td>
-                <td><input type="text" id="hotenguoithutien" name="hotenguoithutien" required></td>
-                <td><input type="text" id="ghichu" name="ghichu" required></td>
+                <td><input type="text"  name="thanhtien" required></td>
+                <td><input type="text"  name="hotenguoithutien" required></td>
+                <td><input type="text"  name="ghichu" required></td>
+                
+            </tr>
+
+            <tr>
+                <td>2</td>
+                <td><input type="text" name="productName1" required></td>
+                <td><input type="text"  name="productCode1" required></td>
+
+                <td><input type="text"  name="soluong" required></td>
+                <td><input type="text"  name="phivanchuyen" required></td>
+                <!-- <td><input type="text" id="phivanchuyennguoimuatra" name="phivanchuyennguoimuatra"></td> -->
+                <td><input type="text"  name="tongsotiennguoimuathanhtoan" required></td>
+               
+                <td><input type="text"  name="dongia" required></td>
+
+
+                <td><input type="text"  name="thanhtien" required></td>
+                <td><input type="text"  name="hotenguoithutien" required></td>
+                <td><input type="text"  name="ghichu" required></td>
                 
             </tr>
             

@@ -85,6 +85,8 @@
 
 			$tennguoinhan = FSInput::get('tennguoinhan');
 
+			$productName1 = FSInput::get('productName1');
+
 			$link = $_SERVER['HTTP_REFERER'];
 
 			if($requester==''){
@@ -130,6 +132,11 @@
 				$msg = 'Không được để trống tên người nhận hàng';
 				setRedirect($link,$msg,'error');
 			}	
+
+			if($productName1==''){
+				$msg = 'Không được để trống tên sản phẩm';
+				setRedirect($link,$msg,'error');
+			}
 
 			
 			
