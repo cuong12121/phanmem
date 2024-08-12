@@ -13,6 +13,11 @@ $toolbar->addButton('back',FSText :: _('Cancel'),'','back.png');
 $this -> dt_form_begin(1,4,$title.' '.FSText::_('Đơn hàng'));
 
 
+session_start();
+
+$data_post = $_SESSION['input_data']?$_SESSION['input_data']:'';
+
+
 // Tạo trang HTML và nhúng mã vạch vào
 ?>
 
@@ -80,23 +85,23 @@ $this -> dt_form_begin(1,4,$title.' '.FSText::_('Đơn hàng'));
     
     <div class="right">
         <label for="requester">Họ và tên người yêu cầu xuất:</label><br>
-        <input type="text" id="requester" name="requester" required><br><br>
+        <input type="text" id="requester" name="requester" value="<?= $data_post['requester']??'' ?>" required><br><br>
         <label for="storeName">Tên gian hàng:</label><br>
-        <input type="text" id="storeName" name="storeName" required><br><br>
+        <input type="text" id="storeName" name="storeName" value="<?= $data_post['storeName']??'' ?>" required><br><br>
         <label for="deliveryPerson">Tên NVC giao:</label><br>
-        <input type="text" id="deliveryPerson" name="deliveryPerson" required><br><br>
+        <input type="text" id="deliveryPerson" name="deliveryPerson" value="<?= $data_post['deliveryPerson']??'' ?>" required><br><br>
         <label for="department">Bộ phận:</label><br>
-        <input type="text" id="department" name="department" required><br><br>
+        <input type="text" id="department" name="department" value="<?= $data_post['department']??'' ?>" required><br><br>
         <label for="storeCode">Mã gian hàng:</label><br>
-        <input type="text" id="storeCode" name="storeCode" required><br><br>
+        <input type="text" id="storeCode" name="storeCode" value="<?= $data_post['storeCode']??'' ?>" required><br><br>
         <label for="customerPhone">Số điện thoại khách hàng:</label><br>
-        <input type="text" id="customerPhone" name="customerPhone" required><br><br>
+        <input type="text" id="customerPhone" name="customerPhone" value="<?= $data_post['customerPhone']??'' ?>" required><br><br>
 
         <label for="diachinhanhang">Địa chỉ nhận hàng:</label><br>
-        <input type="text" id="diachinhanhang" name="diachinhanhang" required><br><br>
+        <input type="text" id="diachinhanhang" name="diachinhanhang" value="<?= $data_post['diachinhanhang']??'' ?>" required><br><br>
 
          <label for="tennguoinhan">Tên người nhận hàng:</label><br>
-        <input type="text" id="tennguoinhan" name="tennguoinhan" required><br><br>
+        <input type="text" id="tennguoinhan" name="tennguoinhan" value="<?= $data_post['tennguoinhan']??'' ?>" required><br><br>
         <table>
             <tr>
                 <th>TT</th>
@@ -115,39 +120,39 @@ $this -> dt_form_begin(1,4,$title.' '.FSText::_('Đơn hàng'));
             </tr>
             <tr>
                 <td>1</td>
-                <td><input type="text"  name="productName1" required></td>
-                <td><input type="text"  name="productCode1" required></td>
+                <td><input type="text"  name="productName1" value="<?= $data_post['productName1']??'' ?>" required></td>
+                <td><input type="text"  name="productCode1" value="<?= $data_post['productCode1']??'' ?>" required></td>
 
-                <td><input type="text"  name="soluong" required></td>
-                <td><input type="text"  name="phivanchuyen" required></td>
+                <td><input type="text"  name="soluong" value="<?= $data_post['soluong']??'' ?>" required></td>
+                <td><input type="text"  name="phivanchuyen" value="<?= $data_post['phivanchuyen']??'' ?>" required></td>
                 <!-- <td><input type="text" id="phivanchuyennguoimuatra" name="phivanchuyennguoimuatra"></td> -->
-                <td><input type="text"  name="tongsotiennguoimuathanhtoan" required></td>
+                <td><input type="text"  name="tongsotiennguoimuathanhtoan" value="<?= $data_post['tongsotiennguoimuathanhtoan']??'' ?>" required></td>
                
-                <td><input type="text"  name="dongia" required></td>
+                <td><input type="text"  name="dongia" value="<?= $data_post['dongia']??'' ?>" required></td>
 
 
-                <td><input type="text"  name="thanhtien" required></td>
-                <td><input type="text"  name="hotenguoithutien" required></td>
-                <td><input type="text"  name="ghichu" required></td>
+                <td><input type="text"  name="thanhtien" value="<?= $data_post['thanhtien']??'' ?>" required></td>
+                <td><input type="text"  name="hotenguoithutien" value="<?= $data_post['hotenguoithutien']??'' ?>" required></td>
+                <td><input type="text"  name="ghichu" value="<?= $data_post['ghichu']??'' ?>" required></td>
                 
             </tr>
 
             <tr>
                 <td>2</td>
-                <td><input type="text" name="productName1" required></td>
-                <td><input type="text"  name="productCode1" required></td>
+                <td><input type="text" name="productName1" value="<?= $data_post['productName1']??'' ?>" required></td>
+                <td><input type="text"  name="productCode1" value="<?= $data_post['productCode1']??'' ?>" required></td>
 
-                <td><input type="text"  name="soluong" required></td>
-                <td><input type="text"  name="phivanchuyen" required></td>
+                <td><input type="text"  name="soluong" value="<?= $data_post['soluong']??'' ?>" required></td>
+                <td><input type="text"  name="phivanchuyen" value="<?= $data_post['phivanchuyen']??'' ?>" required></td>
                 <!-- <td><input type="text" id="phivanchuyennguoimuatra" name="phivanchuyennguoimuatra"></td> -->
-                <td><input type="text"  name="tongsotiennguoimuathanhtoan" required></td>
+                <td><input type="text"  name="tongsotiennguoimuathanhtoan" value="<?= $data_post['tongsotiennguoimuathanhtoan']??'' ?>" required></td>
                
-                <td><input type="text"  name="dongia" required></td>
+                <td><input type="text"  name="dongia" value="<?= $data_post['dongia']??'' ?>" required></td>
 
 
-                <td><input type="text"  name="thanhtien" required></td>
-                <td><input type="text"  name="hotenguoithutien" required></td>
-                <td><input type="text"  name="ghichu" required></td>
+                <td><input type="text"  name="thanhtien" value="<?= $data_post['thanhtien']??'' ?>" required></td>
+                <td><input type="text"  name="hotenguoithutien" value="<?= $data_post['hotenguoithutien']??'' ?>" required></td>
+                <td><input type="text"  name="ghichu" value="<?= $data_post['ghichu']??'' ?>" required></td>
                 
             </tr>
             
