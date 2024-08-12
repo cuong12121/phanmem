@@ -129,7 +129,7 @@ $data_post = $_SESSION['input_data']?$_SESSION['input_data']:'';
             <select id="mySelect">
                 <?php 
 
-                    $currentPath = $_SERVER['SCRIPT_NAME'];
+                    $currentPath = $_SERVER['PHP_SELF'];
 
                     for($k =1; $k<10; $k++){
                 ?>
