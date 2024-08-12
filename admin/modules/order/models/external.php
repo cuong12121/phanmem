@@ -73,7 +73,11 @@
 
 		function save($row = array(), $use_mysql_real_escape_string = 1){
 
-			session_start();
+			if (!isset($_SESSION)) {
+			    session_start();
+			} 
+
+			
 
 			$requester = FSInput::get('requester');
 			$storeName = FSInput::get('storeName');
