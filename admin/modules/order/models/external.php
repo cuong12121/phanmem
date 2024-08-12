@@ -73,6 +73,8 @@
 
 		function save($row = array(), $use_mysql_real_escape_string = 1){
 
+			session_start();
+
 			$requester = FSInput::get('requester');
 			$storeName = FSInput::get('storeName');
 			$deliveryPerson = FSInput::get('deliveryPerson');
@@ -87,9 +89,22 @@
 
 			$productName1 = FSInput::get('productName1');
 
+			$productCode1 = FSInput::get('productCode1');
+
+			$soluong = FSInput::get('soluong');
+
 			$link = $_SERVER['HTTP_REFERER'];
 
 			if($requester==''){
+
+
+
+				// Giả sử dữ liệu nhập liệu được truyền qua $_POST
+				$inputData = $_POST;
+
+				// Lưu dữ liệu nhập liệu vào session
+				$_SESSION['input_data'] = $inputData;
+
 				$msg = 'Không được để trống họ tên người yêu cầu xuất';
 
 				setRedirect($link,$msg,'error');
