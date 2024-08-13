@@ -85,7 +85,47 @@ $data_post = !empty($_SESSION['input_data'])?$_SESSION['input_data']:'';
     
 <form class="form-horizontal" role="form" action="#" name="adminForm">
     
-    <div class="right">
+        <div class="right">
+                <?php 
+
+            $number  = !empty($_GET['number'])?$_GET['number']:1;
+        ?>
+        <label for="tennguoinhan">Số lượng sản phẩm :</label><br>
+        <select id="mySelect">
+            <?php 
+             
+                $currentPath = '/admin/order/external/add';
+
+                for($k =1; $k<10; $k++){
+            ?>
+                <option value="<?= $currentPath ?>?number=<?= $k ?>"><?= $k ?></option>
+
+            <?php
+                }
+            ?>
+        </select>
+        <?php for($i =1; $i<=$number; $i++){ ?>
+        <tr>
+            <td><?= $i ?></td>
+            <td><input type="text"  name="productName<?= $i ?>" value="<?= $data_post["productName$i"]??'' ?>" required></td>
+            <td><input type="text"  name="productCode<?= $i ?>" value="<?= $data_post["productCode$i"]??'' ?>" required></td>
+
+            <td><input type="text"  name="soluong<?= $i ?>" value="<?= $data_post["soluong$i"]??'' ?>" required></td>
+            <td><input type="text"  name="phivanchuyen<?= $i ?>" value="<?= $data_post["phivanchuyen$i"]??'' ?>" required></td>
+            <!-- <td><input type="text" id="phivanchuyennguoimuatra" name="phivanchuyennguoimuatra"></td> -->
+            <td><input type="text"  name="tongsotiennguoimuathanhtoan<?= $i ?>" value="<?= $data_post["tongsotiennguoimuathanhtoan$i"]??'' ?>" required></td>
+           
+            <td><input type="text"  name="dongia<?= $i ?>" value="<?= $data_post["dongia$i"]??'' ?>" required></td>
+
+
+            <td><input type="text"  name="thanhtien<?= $i ?>" value="<?= $data_post["thanhtien$i"]??'' ?>" required></td>
+            <td><input type="text"  name="hotennguoithutien<?= $i ?>" value="<?= $data_post["hotennguoithutien$i"]??'' ?>" required></td>
+            <td><input type="text"  name="ghichu<?= $i ?>" value="<?= $data_post["ghichu$i"]??'' ?>" required></td>
+
+            
+        </tr>
+
+        <?php } ?>
         <label for="requester">Họ và tên người yêu cầu xuất:</label><br>
         <input type="text" id="requester" name="requester" value="<?= $data_post['requester']??'' ?>" required><br><br>
         <label for="storeName">Tên gian hàng:</label><br>
@@ -121,46 +161,7 @@ $data_post = !empty($_SESSION['input_data'])?$_SESSION['input_data']:'';
                 <th>Ghi chú (Mã vận đơn)</th>
             </tr>
 
-            <?php 
 
-                $number  = !empty($_GET['number'])?$_GET['number']:1;
-            ?>
-            <label for="tennguoinhan">Số lượng sản phẩm :</label><br>
-            <select id="mySelect">
-                <?php 
-                 
-                    $currentPath = '/admin/order/external/add';
-
-                    for($k =1; $k<10; $k++){
-                ?>
-                    <option value="<?= $currentPath ?>?number=<?= $k ?>"><?= $k ?></option>
-
-                <?php
-                    }
-                ?>
-            </select>
-            <?php for($i =1; $i<=$number; $i++){ ?>
-            <tr>
-                <td><?= $i ?></td>
-                <td><input type="text"  name="productName<?= $i ?>" value="<?= $data_post["productName$i"]??'' ?>" required></td>
-                <td><input type="text"  name="productCode<?= $i ?>" value="<?= $data_post["productCode$i"]??'' ?>" required></td>
-
-                <td><input type="text"  name="soluong<?= $i ?>" value="<?= $data_post["soluong$i"]??'' ?>" required></td>
-                <td><input type="text"  name="phivanchuyen<?= $i ?>" value="<?= $data_post["phivanchuyen$i"]??'' ?>" required></td>
-                <!-- <td><input type="text" id="phivanchuyennguoimuatra" name="phivanchuyennguoimuatra"></td> -->
-                <td><input type="text"  name="tongsotiennguoimuathanhtoan<?= $i ?>" value="<?= $data_post["tongsotiennguoimuathanhtoan$i"]??'' ?>" required></td>
-               
-                <td><input type="text"  name="dongia<?= $i ?>" value="<?= $data_post["dongia$i"]??'' ?>" required></td>
-
-
-                <td><input type="text"  name="thanhtien<?= $i ?>" value="<?= $data_post["thanhtien$i"]??'' ?>" required></td>
-                <td><input type="text"  name="hotennguoithutien<?= $i ?>" value="<?= $data_post["hotennguoithutien$i"]??'' ?>" required></td>
-                <td><input type="text"  name="ghichu<?= $i ?>" value="<?= $data_post["ghichu$i"]??'' ?>" required></td>
-
-                
-            </tr>
-
-            <?php } ?>
 
             <input type="hidden" name="number" value="<?= $number ?>">
         </table>
