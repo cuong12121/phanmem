@@ -77,7 +77,11 @@
 			    session_start();
 			} 
 
-			
+			// Lưu dữ liệu nhập liệu vào session
+			$_SESSION['input_data'] = $inputData;
+
+			$number = FSInput::get('number');
+
 
 			$requester = FSInput::get('requester');
 			$storeName = FSInput::get('storeName');
@@ -91,32 +95,71 @@
 
 			$tennguoinhan = FSInput::get('tennguoinhan');
 
-			$productName1 = FSInput::get('productName');
+			for ($i=1; $i <= $number; $i++) { 
+				$productName = FSInput::get('productName'.$i);
 
-			$productCode1 = FSInput::get('productCode');
+				$productCode = FSInput::get('productCode'.$i);
 
-			$soluong = FSInput::get('soluong');
+				$soluong = FSInput::get('soluong'.$i);
 
-			$phivanchuyen = FSInput::get('phivanchuyen');
-
-
-			$tongsotiennguoimuathanhtoan = FSInput::get('tongsotiennguoimuathanhtoan');
-
-			$dongia = FSInput::get('dongia');
-
-			$thanhtien = FSInput::get('thanhtien');
-
-			$hotennguoithutien = FSInput::get('hotennguoithutien');
+				$phivanchuyen = FSInput::get('phivanchuyen'.$i);
 
 
+				$tongsotiennguoimuathanhtoan = FSInput::get('tongsotiennguoimuathanhtoan'.$i);
+
+				$dongia = FSInput::get('dongia'.$i);
+
+				$thanhtien = FSInput::get('thanhtien'.$i);
+
+				$hotennguoithutien = FSInput::get('hotennguoithutien'.$i);
+
+				if($productName==''){
+					$msg = 'Không được để trống tên sản phẩm thứ '.$i;
+					setRedirect($link,$msg,'error');
+				}
+
+				if($productCode==''){
+					$msg = 'Không được để trống mã đơn hàng thứ '.$i;
+					setRedirect($link,$msg,'error');
+				}
+
+				if($soluong==''){
+					$msg = 'Không được để trống Số lượng thứ '.$i;
+					setRedirect($link,$msg,'error');
+				}
+
+				if($phivanchuyen==''){
+					$msg = 'Không được để trống Phí vận chuyển thứ '.$i;
+					setRedirect($link,$msg,'error');
+				}
+				if($tongsotiennguoimuathanhtoan==''){
+					$msg = 'Không được để trống Tổng số tiền người mua thanh toán thứ '.$i;
+					setRedirect($link,$msg,'error');
+				}
+
+				if($dongia==''){
+					$msg = 'Không được để trống đơn giá thứ '.$i;
+					setRedirect($link,$msg,'error');
+				}
+
+				if($thanhtien==''){
+					$msg = 'Không được để trống thành tiền '.$i;
+					setRedirect($link,$msg,'error');
+				}
+
+				if($hotennguoithutien==''){
+					$msg = 'Không được để trống Họ tên người thu tiền '.$i;
+					setRedirect($link,$msg,'error');
+				}
+			}
+
+		
 			$link = $_SERVER['HTTP_REFERER'];
 
 			// Giả sử dữ liệu nhập liệu được truyền qua $_POST
 			$inputData = $_POST;
 
-			// Lưu dữ liệu nhập liệu vào session
-			$_SESSION['input_data'] = $inputData;
-
+			
 			if($requester==''){
 
 				$msg = 'Không được để trống họ tên người yêu cầu xuất';
@@ -160,44 +203,9 @@
 				setRedirect($link,$msg,'error');
 			}	
 
-			if($productName1==''){
-				$msg = 'Không được để trống tên sản phẩm';
-				setRedirect($link,$msg,'error');
-			}
 
-			if($productCode1==''){
-				$msg = 'Không được để trống mã đơn hàng';
-				setRedirect($link,$msg,'error');
-			}
 
-			if($soluong==''){
-				$msg = 'Không được để trống Số lượng';
-				setRedirect($link,$msg,'error');
-			}
-
-			if($phivanchuyen==''){
-				$msg = 'Không được để trống Phí vận chuyển';
-				setRedirect($link,$msg,'error');
-			}
-			if($tongsotiennguoimuathanhtoan==''){
-				$msg = 'Không được để trống Tổng số tiền người mua thanh toán';
-				setRedirect($link,$msg,'error');
-			}
-
-			if($dongia==''){
-				$msg = 'Không được để trống đơn giá';
-				setRedirect($link,$msg,'error');
-			}
-
-			if($thanhtien==''){
-				$msg = 'Không được để trống thành tiền';
-				setRedirect($link,$msg,'error');
-			}
-
-			if($hotennguoithutien==''){
-				$msg = 'Không được để trống Họ tên người thu tiền';
-				setRedirect($link,$msg,'error');
-			}
+			
 			
 		
 		}
