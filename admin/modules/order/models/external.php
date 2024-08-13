@@ -71,6 +71,15 @@
 			return 0;
 		}
 
+		function formPdfPrint()
+		{
+			
+
+			include 'modules/order/views/external/file1.php';
+
+
+		}
+
 		function save($row = array(), $use_mysql_real_escape_string = 1){
 
 			if (!isset($_SESSION)) {
@@ -201,7 +210,12 @@
 				setRedirect($link,$msg,'error');
 			}
 
-			echo"thành công";	
+			
+
+			$content = $this->formPdfPrint;
+			var_dump($content);
+
+			
 
 		
 		}
