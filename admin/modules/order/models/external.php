@@ -199,12 +199,10 @@
 			if($tennguoinhan==''){
 				$msg = 'Không được để trống tên người nhận hàng';
 				setRedirect($link,$msg,'error');
-			}	
+			}
 
+			echo"thành công";	
 
-
-			
-			
 		
 		}
 		
