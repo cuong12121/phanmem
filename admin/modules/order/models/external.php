@@ -76,9 +76,10 @@
 			if (!isset($_SESSION)) {
 			    session_start();
 			} 
+			$link = $_SERVER['HTTP_REFERER'];
 
 			$inputData = $_POST;
-			
+
 			// Lưu dữ liệu nhập liệu vào session
 			$_SESSION['input_data'] = $inputData;
 
@@ -155,12 +156,7 @@
 				}
 			}
 
-		
-			$link = $_SERVER['HTTP_REFERER'];
-
 			// Giả sử dữ liệu nhập liệu được truyền qua $_POST
-			
-
 			
 			if($requester==''){
 
