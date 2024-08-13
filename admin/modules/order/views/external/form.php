@@ -162,7 +162,7 @@ $data_post = !empty($_SESSION['input_data'])?$_SESSION['input_data']:'';
 
             <?php } ?>
 
-            <input type="hide" name="number" value="<?= $number ?>">
+            <input type="hidden" name="number" value="<?= $number ?>">
         </table>
 
         <button type="submit" onclick="submitbutton('save')">submit</button>
