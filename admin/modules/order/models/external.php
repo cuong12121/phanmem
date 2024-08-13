@@ -213,9 +213,9 @@
 			
 
 			$content = $this->formPdfPrint;
-			var_dump($content);
+			echo($content);
 
-			
+
 
 		
 		}
