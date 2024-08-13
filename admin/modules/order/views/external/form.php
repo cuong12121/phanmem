@@ -87,12 +87,13 @@ $data_post = !empty($_SESSION['input_data'])?$_SESSION['input_data']:'';
      <label for="tennguoinhan">Số lượng sản phẩm :</label><br>
     <select id="mySelect">
         <?php 
-         
+            $number  = !empty($_GET['number'])?$_GET['number']:1;
+
             $currentPath = '/admin/order/external/add';
 
             for($k =1; $k<10; $k++){
         ?>
-            <option value="<?= $currentPath ?>?number=<?= $k ?>"><?= $k ?></option>
+            <option value="<?= $currentPath ?>?number=<?= $k ?>" <?= $number==$k?'selected':''   ?>><?= $k ?></option>
 
         <?php
             }
@@ -134,10 +135,6 @@ $data_post = !empty($_SESSION['input_data'])?$_SESSION['input_data']:'';
                 <th>Ghi chú (Mã vận đơn)</th>
             </tr>
 
-            <?php 
-
-                $number  = !empty($_GET['number'])?$_GET['number']:1;
-            ?>
            
             <?php for($i =1; $i<=$number; $i++){ ?>
             <tr>
