@@ -84,7 +84,7 @@ $data_post = !empty($_SESSION['input_data'])?$_SESSION['input_data']:'';
     
     
 <form class="form-horizontal" role="form" action="#" name="adminForm">
-     <label for="tennguoinhan">Số lượng sản phẩm :(vui lòng chọn số lượng sản phẩm trước khi nhập form)</label><br>
+     <label for="tennguoinhan">Số lượng sản phẩm :(vui lòng chọn số lượng sản phẩm trước khi nhập form. Mặc định là 1 sản phẩm)</label><br>
     <select id="mySelect">
         <?php 
             $number  = !empty($_GET['number'])?$_GET['number']:1;
