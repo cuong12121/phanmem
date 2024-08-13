@@ -17,7 +17,7 @@ if (!isset($_SESSION)) {
 } 
 
 
-$data_post = $_SESSION['input_data']?$_SESSION['input_data']:'';
+$data_post = !empty($_SESSION['input_data'])?$_SESSION['input_data']:'';
 
 
 // Tạo trang HTML và nhúng mã vạch vào
@@ -156,12 +156,13 @@ $data_post = $_SESSION['input_data']?$_SESSION['input_data']:'';
                 <td><input type="text"  name="thanhtien<?= $i ?>" value="<?= $data_post["thanhtien$i"]??'' ?>" required></td>
                 <td><input type="text"  name="hotennguoithutien<?= $i ?>" value="<?= $data_post["hotennguoithutien$i"]??'' ?>" required></td>
                 <td><input type="text"  name="ghichu<?= $i ?>" value="<?= $data_post["ghichu$i"]??'' ?>" required></td>
+
                 
             </tr>
 
             <?php } ?>
 
-           
+            <input type="hiden" name="number" value="<?= $number ?>">
         </table>
 
         <button type="submit" onclick="submitbutton('save')">submit</button>
