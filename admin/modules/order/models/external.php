@@ -109,7 +109,7 @@
 			                    <table border="0" cellspacing="0" cellpadding="0">
 			                        <tr>
 			                            <td>
-			                                <img src="images/logo1.png" width="115" height="36" alt="" style="-aw-left-pos:0pt; -aw-rel-hpos:column; -aw-rel-vpos:paragraph; -aw-top-pos:0pt; -aw-wrap-type:inline">
+			                                <img src="https://dienmayai.com/images/logo1.png" width="115" height="36" alt="" style="-aw-left-pos:0pt; -aw-rel-hpos:column; -aw-rel-vpos:paragraph; -aw-top-pos:0pt; -aw-wrap-type:inline">
 			                            </td>
 			                            <td style="width:100%; text-align:right; padding-right:15px">
 			                                <img src="data:image/png;base64,' . base64_encode($barcode).'">
