@@ -127,9 +127,7 @@
 			                    <p class="s4" style="padding-left: 4pt;text-indent: 0pt;line-height: 8pt;text-align: left;">Từ:</p>
 			                    <p class="s5" style="padding-left: 4pt;text-indent: 0pt;line-height: 8pt;text-align: left;">KAW center</p>
 			                    <p style="padding-top: 3pt;text-indent: 0pt;text-align: left;"><br/></p>
-			                    <p class="s5" style="padding-left: 4pt;text-indent: 0pt;line-height: 87%;text-align: left;">107/10 Liên khu 4-5, Phường Bình Hưng Hòa B, Quận Bình Tân, TP. Hồ Chí Minh</p>
-			                    <p style="padding-top: 4pt;text-indent: 0pt;text-align: left;"><br/></p>
-			                    <p class="s5" style="padding-left: 4pt;text-indent: 0pt;text-align: left;">SĐT: 84862046599</p>
+			                  
 			                </td>
 			                <td style="width:148pt;border-top-style:dashed;border-top-width:1pt;border-left-style:dashed;border-left-width:1pt;border-bottom-style:dashed;border-bottom-width:1pt;border-right-style:solid;border-right-width:2pt">
 			                    <p class="s4" style="padding-left: 4pt;text-indent: 0pt;line-height: 8pt;text-align: left;">Đến:</p>
