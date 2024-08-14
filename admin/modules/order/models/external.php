@@ -75,7 +75,7 @@
 		{
 			
 
-			$content = include 'modules/order/views/external/file1.php';
+			$content = file_get_contents('modules/order/views/external/file1.php');
 
 			return $content;
 
