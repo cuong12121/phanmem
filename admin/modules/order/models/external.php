@@ -146,7 +146,7 @@
 			                    <p class="s4" style="padding-left: 4pt;text-indent: 0pt;text-align: left;">Nội dung hàng (Tổng SL sản phẩm: 1)</p>
 			                </td>
 			            </tr>
-			            <tr style="height:89pt">
+			            <tr style="min-height:89pt">
 
 			                <td style="width:288pt;border-top-style:dashed;border-top-width:1pt;border-left-style:solid;border-left-width:2pt;border-bottom-style:solid;border-bottom-width:2pt;border-right-style:solid;border-right-width:2pt" colspan="2">
 
