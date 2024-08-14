@@ -209,13 +209,43 @@
 			$generator = new Picqer\Barcode\BarcodeGeneratorPNG();
 			$barcode = $generator->getBarcode($barcode_string, $generator::TYPE_CODE_128,1,50);
 
-			$pd_name_ar = [];
+			$pd_name_ar = $td_info_shows = [];
 
 			for ($i=1; $i <=$number; $i++) { 
 
-			$pd_info_show =	'<p class="s5" style="margin-top:10px;  padding-left: 4pt;text-indent: 0pt;line-height: 87%;text-align: left;">'.$i.'.'.FSInput::get('productName'.$i).'SL:'.FSInput::get('soluong'.$i).'</p>';
+				$pd_info_show =	'<p class="s5" style="margin-top:10px;  padding-left: 4pt;text-indent: 0pt;line-height: 87%;text-align: left;">'.$i.'.'.FSInput::get('productName'.$i).'SL:'.FSInput::get('soluong'.$i).'</p>';
 				               
 				array_push($pd_name_ar, $pd_info_show);
+
+				$td_info_show = '
+					<tr style="height:69pt">
+					    <td style="width:19pt;border-top-style:solid;border-top-width:1pt;border-left-style:solid;border-left-width:1pt;border-bottom-style:solid;border-bottom-width:1pt;border-right-style:solid;border-right-width:1pt">
+					        <p class="s5" style="text-indent: 0pt;line-height: 8pt;text-align: left;">'.$i.'</p>
+					    </td>
+					    <td style="width:23pt;border-top-style:solid;border-top-width:1pt;border-left-style:solid;border-left-width:1pt;border-bottom-style:solid;border-bottom-width:1pt;border-right-style:solid;border-right-width:1pt">
+					        
+					        <p class="s5" style="padding-left: 1pt;padding-right: 1pt;text-indent: 0pt;line-height: 87%;text-align: left;">'.FSInput::get('productCode'.$i).'</p>
+					     
+					    </td>
+					    <td style="width:78pt;border-top-style:solid;border-top-width:1pt;border-left-style:solid;border-left-width:1pt;border-bottom-style:solid;border-bottom-width:1pt;border-right-style:solid;border-right-width:1pt">
+					        <p class="s5">'.FSInput::get('productName'.$i).'</p>
+					    </td>
+					    <td style="width:31pt;border-top-style:solid;border-top-width:1pt;border-left-style:solid;border-left-width:1pt;border-bottom-style:solid;border-bottom-width:1pt;border-right-style:solid;border-right-width:1pt">
+					        <p style="text-indent: 0pt;text-align: left;"><br></p>
+					    </td>
+					    <td style="width:59pt;border-top-style:solid;border-top-width:1pt;border-left-style:solid;border-left-width:1pt;border-bottom-style:solid;border-bottom-width:1pt;border-right-style:solid;border-right-width:1pt">
+					        <p class="s5" style="padding-left: 1pt;text-indent: 0pt;line-height: 8pt;text-align: left;"></p>
+					    </td>
+					    <td style="width:15pt;border-top-style:solid;border-top-width:1pt;border-left-style:solid;border-left-width:1pt;border-bottom-style:solid;border-bottom-width:1pt;border-right-style:solid;border-right-width:1pt">
+					        <p class="s5" style="padding-right: 7pt;text-indent: 0pt;line-height: 8pt;text-align: center;">'.FSInput::get('soluong'.$i).'</p>
+					    </td>
+					    <td style="width:31pt;border-top-style:solid;border-top-width:1pt;border-left-style:solid;border-left-width:1pt;border-bottom-style:solid;border-bottom-width:1pt;border-right-style:solid;border-right-width:1pt">
+					        <p class="s5" style="text-indent: 0pt;line-height: 8pt;text-align: center;">'.FSInput::get('dongia'.$i).'</p>
+					    </td>
+					    <td style="width:40pt;border-top-style:solid;border-top-width:1pt;border-left-style:solid;border-left-width:1pt;border-bottom-style:solid;border-bottom-width:1pt;border-right-style:solid;border-right-width:1pt">
+					        <p class="s5" style="padding-left: 1pt;text-indent: 0pt;line-height: 8pt;text-align: left;">'.FSInput::get('thanhtien'.$i).'</p>
+					    </td>
+					</tr>';
 
 			}
 
@@ -272,7 +302,7 @@
 			                </td>
 			                <td style="width:148pt;border-top-style:dashed;border-top-width:1pt;border-left-style:dashed;border-left-width:1pt;border-bottom-style:dashed;border-bottom-width:1pt;border-right-style:solid;border-right-width:2pt">
 			                    <p class="s4" style="padding-left: 4pt;text-indent: 0pt;line-height: 8pt;text-align: left;">Đến:</p>
-			                    <p class="s5" style="padding-left: 4pt;text-indent: 0pt;line-height: 8pt;text-align: left;">Kim Uyên</p>
+			                    <p class="s5" style="padding-left: 4pt;text-indent: 0pt;line-height: 8pt;text-align: left;">'.$tennguoinhan.'</p>
 			                    <p style="padding-top: 3pt;text-indent: 0pt;text-align: left;"><br/></p>
 			                    <p class="s5" style="padding-left: 4pt;padding-right: 9pt;text-indent: 0pt;line-height: 87%;text-align: left;">15 Kỳ Đồng nhà hàng Hai lúa, Phường 9, Quận 3, TP. Hồ Chí Minh</p>
 			                </td>
@@ -354,36 +384,7 @@
 			                    <p class="s4" style="padding-left: 1pt;padding-right: 15pt;text-indent: 0pt;line-height: 87%;text-align: left;">Thành tiền</p>
 			                </td>
 			            </tr>
-			            <tr style="height:69pt">
-			                <td style="width:19pt;border-top-style:solid;border-top-width:1pt;border-left-style:solid;border-left-width:1pt;border-bottom-style:solid;border-bottom-width:1pt;border-right-style:solid;border-right-width:1pt">
-			                    <p class="s5" style="text-indent: 0pt;line-height: 8pt;text-align: left;">1</p>
-			                </td>
-			                <td style="width:23pt;border-top-style:solid;border-top-width:1pt;border-left-style:solid;border-left-width:1pt;border-bottom-style:solid;border-bottom-width:1pt;border-right-style:solid;border-right-width:1pt">
-
-			                    <p class="s5" style="padding-left: 1pt;text-indent: 0pt;line-height: 87%;text-align: left;">386F- WH-</p>
-			                    <p class="s5" style="padding-left: 1pt;padding-right: 1pt;text-indent: 0pt;line-height: 87%;text-align: left;">00- CEN- 00-</p>
-			                    <p class="s5" style="padding-left: 1pt;padding-right: 3pt;text-indent: 0pt;line-height: 8pt;text-align: justify;">001- TAM NUO C</p>
-			                </td>
-			                <td style="width:78pt;border-top-style:solid;border-top-width:1pt;border-left-style:solid;border-left-width:1pt;border-bottom-style:solid;border-bottom-width:1pt;border-right-style:solid;border-right-width:1pt">
-			                    <p class="s5" >Máy Tăm Nước Cầm Tay Vệ Sinh Răng Miệng Dung Tích 300ml Fullbox 5 Chế Độ Hàng Chính Hãng</p>
-			                </td>
-			                <td style="width:31pt;border-top-style:solid;border-top-width:1pt;border-left-style:solid;border-left-width:1pt;border-bottom-style:solid;border-bottom-width:1pt;border-right-style:solid;border-right-width:1pt">
-			                    <p style="text-indent: 0pt;text-align: left;"><br/></p>
-			                </td>
-			                <td style="width:59pt;border-top-style:solid;border-top-width:1pt;border-left-style:solid;border-left-width:1pt;border-bottom-style:solid;border-bottom-width:1pt;border-right-style:solid;border-right-width:1pt">
-			                    <p class="s5" style="padding-left: 1pt;text-indent: 0pt;line-height: 8pt;text-align: left;">KAW 386F Trắng</p>
-			                    
-			                </td>
-			                <td style="width:15pt;border-top-style:solid;border-top-width:1pt;border-left-style:solid;border-left-width:1pt;border-bottom-style:solid;border-bottom-width:1pt;border-right-style:solid;border-right-width:1pt">
-			                    <p class="s5" style="padding-right: 7pt;text-indent: 0pt;line-height: 8pt;text-align: center;">1</p>
-			                </td>
-			                <td style="width:31pt;border-top-style:solid;border-top-width:1pt;border-left-style:solid;border-left-width:1pt;border-bottom-style:solid;border-bottom-width:1pt;border-right-style:solid;border-right-width:1pt">
-			                    <p class="s5" style="text-indent: 0pt;line-height: 8pt;text-align: center;">351,500</p>
-			                </td>
-			                <td style="width:40pt;border-top-style:solid;border-top-width:1pt;border-left-style:solid;border-left-width:1pt;border-bottom-style:solid;border-bottom-width:1pt;border-right-style:solid;border-right-width:1pt">
-			                    <p class="s5" style="padding-left: 1pt;text-indent: 0pt;line-height: 8pt;text-align: left;">351,500</p>
-			                </td>
-			            </tr>
+			           	'.implode('',$td_info_shows).'
 			        </table>
 			    </body>
 			</html>';
