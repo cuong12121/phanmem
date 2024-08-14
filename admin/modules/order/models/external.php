@@ -1,5 +1,6 @@
 <?php 
 	require_once(PATH_BASE.'vendor/autoload.php');
+	use Mpdf\Mpdf;
 	class OrderModelsExternal extends FSModels
 	{
 		var $limit;
@@ -395,9 +396,11 @@
 			    </body>
 			</html>';
 
-			echo $content;
+			$mpdf = new Mpdf();
 
+			$mpdf->WriteHTML($content);
 
+			$mpdf->Output(PATH_BASE.'files/pdftest1.pdf', \Mpdf\Output\Destination::FILE);
 		
 		}
 		
