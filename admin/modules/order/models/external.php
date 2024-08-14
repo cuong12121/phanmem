@@ -1,4 +1,5 @@
 <?php 
+	require_once('vendor/autoload.php');
 	class OrderModelsExternal extends FSModels
 	{
 		var $limit;
