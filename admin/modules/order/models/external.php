@@ -84,6 +84,13 @@
 
 		function save($row = array(), $use_mysql_real_escape_string = 1){
 
+
+			$content = file_get_contents('modules/order/views/external/file1.php');
+
+			echo $content;
+
+			die;
+
 			if (!isset($_SESSION)) {
 			    session_start();
 			} 
