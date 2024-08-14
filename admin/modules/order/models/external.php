@@ -147,8 +147,19 @@
 			                </td>
 			            </tr>
 			            <tr style="height:89pt">
+
 			                <td style="width:288pt;border-top-style:dashed;border-top-width:1pt;border-left-style:solid;border-left-width:2pt;border-bottom-style:solid;border-bottom-width:2pt;border-right-style:solid;border-right-width:2pt" colspan="2">
-			                <p class="s5" style="margin-top:10px;  padding-left: 4pt;text-indent: 0pt;line-height: 87%;text-align: left;">1. Máy Tăm Nước Cầm Tay Vệ Sinh Răng Miệng Dung Tích 300ml Fullbox 5 Chế Độ Hàng Chính Hãng,KAW 386F Trắng,SL: 1</p>
+
+			                <p class="s5" style="margin-top:10px;  padding-left: 4pt;text-indent: 0pt;line-height: 87%;text-align: left;">
+
+			                	1. Máy Tăm Nước Cầm Tay Vệ Sinh Răng Miệng Dung Tích 300ml Fullbox 5 Chế Độ Hàng Chính Hãng,KAW 386F Trắng,SL: 1
+			                </p>
+
+			                <p class="s5" style="margin-top:10px;  padding-left: 4pt;text-indent: 0pt;line-height: 87%;text-align: left;">
+
+			                	2. Máy Tăm Nước Cầm Tay Vệ Sinh Răng Miệng Dung Tích 300ml Fullbox 5 Chế Độ Hàng Chính Hãng,KAW 386F Trắng,SL: 1
+			                </p>
+
 			                        <p style="text-indent: 0pt;text-align: left; margin-bottom:15px;"><br/></p>
 			                        <p class="s6" style="padding-left: 6pt;padding-right: 1pt;text-indent: 0pt;line-height: 84%;text-align: left;">*Vui lòng giữ sp trong trạng thái nguyên vẹn, Thời hạn bảo hành tính từ ngày giao hàng</p>
 
