@@ -113,7 +113,7 @@
 			                            </td>
 			                            <td style="width:100%; text-align:right; padding-right:15px">
 			                                <img src="data:image/png;base64,' . base64_encode($barcode).'">
-			                                 <p>Mã đơn hàng: <b><?= '.$barcode_string.' ?></b></p>    
+			                                 <p>Mã đơn hàng: <b>'.$barcode_string.'</b></p>    
 			                            </td>
 			                        </tr>
 			                    </table>
