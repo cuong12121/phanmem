@@ -343,7 +343,7 @@
 			                    <p style="text-indent: 0pt;text-align: left;"/>
 			                        <p class="s8" style="padding-left: 4pt;text-indent: 0pt;text-align: left; margin-top:10px; margin-bottom:5px">Tiền thu Người nhận:</p>
 			                        
-			                        <p class="s6" style="padding-left: 0;padding-right: 3pt;line-height: 79%;text-align: center;"><span class="s9">'.number_format(array_sum($sum_price), 0, ',', '.');.' VND    </span>
+			                        <p class="s6" style="padding-left: 0;padding-right: 3pt;line-height: 79%;text-align: center;"><span class="s9">'.number_format(array_sum($sum_price), 0, ',', '.').' VND    </span>
 			                        <p style="text-indent: 0pt;text-align: left;"><br/></p>
 			                        <p class="s4" style="padding-left: 3pt;text-indent: 0pt;line-height: 8pt;text-align: left;">Chỉ dẫn giao hàng: <span class="s5">Không đồng kiểm.</span>
 			                    </p>
