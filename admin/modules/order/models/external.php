@@ -245,7 +245,7 @@
 					        <p class="s5" style="text-indent: 0pt;line-height: 8pt;text-align: center;">'.FSInput::get('dongia'.$i).'</p>
 					    </td>
 					    <td style="width:40pt;border-top-style:solid;border-top-width:1pt;border-left-style:solid;border-left-width:1pt;border-bottom-style:solid;border-bottom-width:1pt;border-right-style:solid;border-right-width:1pt">
-					        <p class="s5" style="padding-left: 1pt;text-indent: 0pt;line-height: 8pt;text-align: left;">'.FSInput::get('thanhtien'.$i).'</p>
+					        <p class="s5" style="padding-left: 1pt;text-indent: 0pt;line-height: 8pt;text-align: left;">'. str_replace([',','.'], '', FSInput::get('thanhtien'.$i)).'</p>
 					    </td>
 					</tr>';
 
@@ -255,12 +255,9 @@
 
 				array_push($sum_price,FSInput::get('thanhtien'.$i));
 
-				
-
 			}
 
-			
-
+		
 			$content = '<!DOCTYPE  html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 			<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="vi" lang="vi">
 			    <head>
