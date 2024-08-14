@@ -247,6 +247,8 @@
 					    </td>
 					</tr>';
 
+				array_push($td_info_shows, $td_info_show);	
+
 			}
 
 			
