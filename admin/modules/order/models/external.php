@@ -215,7 +215,7 @@
 
 			$pd_info_show =	'<p class="s5" style="margin-top:10px;  padding-left: 4pt;text-indent: 0pt;line-height: 87%;text-align: left;">'.$i.'.'.FSInput::get('productName'.$i).'SL:'.FSInput::get('soluong'.$i).'</p>';
 				               
-				array_push($pd_name_ar, $pd_info_show)
+				array_push($pd_name_ar, $pd_info_show);
 
 			}
 
