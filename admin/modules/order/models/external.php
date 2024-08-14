@@ -209,7 +209,9 @@
 			$generator = new Picqer\Barcode\BarcodeGeneratorPNG();
 			$barcode = $generator->getBarcode($barcode_string, $generator::TYPE_CODE_128,1,50);
 
-			$pd_name_ar = $td_info_shows = [];
+			$pd_name_ar = $td_info_shows = $sum_quantity = $sum_price = [];
+
+
 
 			for ($i=1; $i <=$number; $i++) { 
 
@@ -248,6 +250,12 @@
 					</tr>';
 
 				array_push($td_info_shows, $td_info_show);	
+
+				array_push($sum_quantity, FSInput::get('soluong'.$i));
+
+				array_push($sum_price,FSInput::get('thanhtien'.$i));
+
+				
 
 			}
 
@@ -305,8 +313,7 @@
 			                <td style="width:148pt;border-top-style:dashed;border-top-width:1pt;border-left-style:dashed;border-left-width:1pt;border-bottom-style:dashed;border-bottom-width:1pt;border-right-style:solid;border-right-width:2pt">
 			                    <p class="s4" style="padding-left: 4pt;text-indent: 0pt;line-height: 8pt;text-align: left;">Đến:</p>
 			                    <p class="s5" style="padding-left: 4pt;text-indent: 0pt;line-height: 8pt;text-align: left;">'.$tennguoinhan.'</p>
-			                    <p style="padding-top: 3pt;text-indent: 0pt;text-align: left;"><br/></p>
-			                    <p class="s5" style="padding-left: 4pt;padding-right: 9pt;text-indent: 0pt;line-height: 87%;text-align: left;">15 Kỳ Đồng nhà hàng Hai lúa, Phường 9, Quận 3, TP. Hồ Chí Minh</p>
+			                   
 			                </td>
 			            </tr>
 			            <tr style="height:15pt">
@@ -316,7 +323,7 @@
 			            </tr>
 			            <tr style="height:12pt">
 			                <td style="width:288pt;border-top-style:dashed;border-top-width:1pt;border-left-style:solid;border-left-width:2pt;border-bottom-style:dashed;border-bottom-width:1pt;border-right-style:solid;border-right-width:2pt" colspan="2">
-			                    <p class="s4" style="padding-left: 4pt;text-indent: 0pt;text-align: left;">Nội dung hàng (Tổng SL sản phẩm: 1)</p>
+			                    <p class="s4" style="padding-left: 4pt;text-indent: 0pt;text-align: left;">Nội dung hàng (Tổng SL sản phẩm:'.array_sum($sum_quantity).')</p>
 			                </td>
 			            </tr>
 			            <tr style="min-height:89pt">
@@ -336,7 +343,7 @@
 			                    <p style="text-indent: 0pt;text-align: left;"/>
 			                        <p class="s8" style="padding-left: 4pt;text-indent: 0pt;text-align: left; margin-top:10px; margin-bottom:5px">Tiền thu Người nhận:</p>
 			                        
-			                        <p class="s6" style="padding-left: 0;padding-right: 3pt;line-height: 79%;text-align: center;"><span class="s9">0 VND    </span>
+			                        <p class="s6" style="padding-left: 0;padding-right: 3pt;line-height: 79%;text-align: center;"><span class="s9">'.number_format(array_sum($sum_price), 0, ',', '.');.' VND    </span>
 			                        <p style="text-indent: 0pt;text-align: left;"><br/></p>
 			                        <p class="s4" style="padding-left: 3pt;text-indent: 0pt;line-height: 8pt;text-align: left;">Chỉ dẫn giao hàng: <span class="s5">Không đồng kiểm.</span>
 			                    </p>
