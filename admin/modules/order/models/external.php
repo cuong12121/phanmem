@@ -253,7 +253,7 @@
 
 				array_push($sum_quantity, FSInput::get('soluong'.$i));
 
-				array_push($sum_price,FSInput::get('thanhtien'.$i));
+				array_push($sum_price,str_replace([',','.'], '', FSInput::get('thanhtien'.$i)));
 
 			}
 
