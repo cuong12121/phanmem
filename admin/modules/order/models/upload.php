@@ -2219,7 +2219,7 @@
 				}
 
 				// test phần kiểm tra in với userid là admin 
-				$userid = $_SESSION['userid'];
+				// $userid = $_SESSION['userid'];
 
 
 				// if($userid ==9){
