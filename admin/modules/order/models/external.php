@@ -1,6 +1,6 @@
 <?php 
 	require_once(PATH_BASE.'vendor/autoload.php');
-	require_once('/include/vendor/autoload.php');
+	require_once('include/vendor/autoload.php');
 	use Mpdf\Mpdf;
 	class OrderModelsExternal extends FSModels
 	{
