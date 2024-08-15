@@ -1,5 +1,6 @@
 {
     "require": {
-        "escarter/poppler-wrapper-php": "^1.0"
+        "escarter/poppler-wrapper-php": "^1.0",
+        "picqer/php-barcode-generator": "^2.4",
     }
 }
