@@ -1788,7 +1788,7 @@
 
 		    $mavandons = [];
 
-		    $content = shell_exec('pdftotext -layout -f '.$i.' -l '.$i.' '.$filePath.' -');
+		    // $content = shell_exec('pdftotext -layout -f '.$i.' -l '.$i.' '.$filePath.' -');
 
 			for ($i=1; $i <= $number_page; $i++) { 
 
