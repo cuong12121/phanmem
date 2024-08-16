@@ -405,8 +405,8 @@
 			FSFactory::include_class('excel','excel');
 			
 			$filename = 'don_ngoai';
-			$list = $model->get_member_info(0,2000);
-			$array_status = $this -> arr_status;
+			
+			
 			
 			$excel = FSExcel();
 			$excel->set_params(array('out_put_xlsx'=>PATH_BASE.'files/excel11.xlsx'));
