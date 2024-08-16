@@ -476,8 +476,8 @@
 			header("Expires: 0");
 			header("Cache-Control: must-revalidate, post-check=0, pre-check=0");
 			header("Cache-Control: private",false);			
-			header("Content-type: application/force-download");			
-			header("Content-Disposition: attachment; filename=\"".$filename.'.xls'."\";" );			
+			// header("Content-type: application/force-download");			
+			// header("Content-Disposition: attachment; filename=\"".$filename.'.xls'."\";" );			
 			header("Content-Transfer-Encoding: binary");
 			header("Content-Length: ".filesize($path_file));
 			// echo $link_excel = URL_ROOT.LINK_AMIN.'/export/excel/'. $filename.'.xls';
