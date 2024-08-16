@@ -468,6 +468,10 @@
 
 			$output = $excel->write_files();
 
+			var_dump($output);
+
+			die;
+
 			$mpdf = new Mpdf();
 
 			$mpdf->WriteHTML($content);
