@@ -407,7 +407,7 @@
 
 
 			FSFactory::include_class('excel','excel');
-			$model  = $this -> model;
+			
 			$filename = 'don_ngoai';
 			$list = $model->get_member_info(0,2000);
 			$array_status = $this -> arr_status;
