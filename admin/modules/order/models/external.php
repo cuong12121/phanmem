@@ -397,11 +397,7 @@
 			    </body>
 			</html>';
 
-			$mpdf = new Mpdf();
-
-			$mpdf->WriteHTML($content);
-
-			$mpdf->Output(PATH_BASE.'files/pdftest1.pdf', \Mpdf\Output\Destination::FILE);
+			
 
 			// tạo file excel
 
@@ -471,6 +467,12 @@
 			}
 
 			$output = $excel->write_files();
+
+			$mpdf = new Mpdf();
+
+			$mpdf->WriteHTML($content);
+
+			$mpdf->Output(PATH_BASE.'files/pdftest1.pdf', \Mpdf\Output\Destination::FILE);
 
 		}
 		
