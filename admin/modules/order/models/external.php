@@ -437,15 +437,17 @@
 			$excel->obj_php_excel->getActiveSheet()->getColumnDimension('I')->setWidth(60);
 			$excel->obj_php_excel->getActiveSheet()->getColumnDimension('J')->setWidth(60);
 			$excel->obj_php_excel->getActiveSheet()->setCellValue('A1', 'Mã đơn hàng');
-			$excel->obj_php_excel->getActiveSheet()->setCellValue('B1', 'Người mua');
-			$excel->obj_php_excel->getActiveSheet()->setCellValue('C1', 'Số điện thoại');
-			$excel->obj_php_excel->getActiveSheet()->setCellValue('D1', 'Sản phẩm');
-			$excel->obj_php_excel->getActiveSheet()->setCellValue('E1', 'Giá trị');
-			$excel->obj_php_excel->getActiveSheet()->setCellValue('F1', 'Ngày mua');
-			$excel->obj_php_excel->getActiveSheet()->setCellValue('G1', 'Số lượng');
-			$excel->obj_php_excel->getActiveSheet()->setCellValue('H1', 'Ghi chú');
-			$excel->obj_php_excel->getActiveSheet()->setCellValue('I1', 'Địa chỉ');
-			$excel->obj_php_excel->getActiveSheet()->setCellValue('J1', 'Trạng thái');
+			$excel->obj_php_excel->getActiveSheet()->setCellValue('B1', 'Mã kiện hàng');
+			$excel->obj_php_excel->getActiveSheet()->setCellValue('C1', 'Ngày đặt hàng');
+			$excel->obj_php_excel->getActiveSheet()->setCellValue('D1', 'Đơn vị vận chuyển');
+			$excel->obj_php_excel->getActiveSheet()->setCellValue('E1', 'Tên sản phẩm');
+			$excel->obj_php_excel->getActiveSheet()->setCellValue('F1', 'SKU phân loại hàng');
+			$excel->obj_php_excel->getActiveSheet()->setCellValue('G1', 'Đơn giá');
+			$excel->obj_php_excel->getActiveSheet()->setCellValue('H1', 'Số lượng');
+			$excel->obj_php_excel->getActiveSheet()->setCellValue('I1', 'Tổng giá bán');
+			$excel->obj_php_excel->getActiveSheet()->setCellValue('J1', 'Tổng giá trị sản phẩm');
+			$excel->obj_php_excel->getActiveSheet()->setCellValue('K1', 'Địa chỉ');
+			$excel->obj_php_excel->getActiveSheet()->setCellValue('L1', 'Trạng thái');
 			
 
 			for ($key=1;$key<=$number; $key++){
