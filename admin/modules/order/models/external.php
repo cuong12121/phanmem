@@ -404,7 +404,7 @@
 
 			FSFactory::include_class('excel','excel');
 			
-			$filename = 'don_ngoai';
+			$filename = 'don_ngoai12';
 			
 			
 			
@@ -482,7 +482,7 @@
 			header("Content-Length: ".filesize($path_file));
 			// echo $link_excel = URL_ROOT.LINK_AMIN.'/export/excel/'. $filename.'.xls';
 			// setRedirect($link_excel);
-			readfile($path_file);
+			// readfile($path_file);
 
 			die;
 
