@@ -484,6 +484,8 @@
 			// setRedirect($link_excel);
 			// readfile($path_file);
 
+			echo "thành công";
+
 			die;
 
 			$mpdf = new Mpdf();
