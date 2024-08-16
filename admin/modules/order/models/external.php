@@ -402,7 +402,76 @@
 			$mpdf->WriteHTML($content);
 
 			$mpdf->Output(PATH_BASE.'files/pdftest1.pdf', \Mpdf\Output\Destination::FILE);
-		
+
+			// tạo file excel
+
+
+			FSFactory::include_class('excel','excel');
+			$model  = $this -> model;
+			$filename = 'don_ngoai';
+			$list = $model->get_member_info(0,2000);
+			$array_status = $this -> arr_status;
+			
+			$excel = FSExcel();
+			$excel->set_params(array('out_put_xlsx'=>PATH_BASE.'files/excel11.xlsx'));
+			$style_header = array(
+				'fill' => array(
+					'type' => PHPExcel_Style_Fill::FILL_SOLID,
+					'color' => array('rgb'=>'ffff00'),
+				),
+				'font' => array(
+					'bold' => true,
+				)
+			);
+			$style_header1 = array(
+				'font' => array(
+					'bold' => true,
+				)
+			);
+			$excel->obj_php_excel->getActiveSheet()->getColumnDimension('A')->setWidth(20);
+			$excel->obj_php_excel->getActiveSheet()->getColumnDimension('B')->setWidth(30);
+			$excel->obj_php_excel->getActiveSheet()->getColumnDimension('C')->setWidth(30);
+			$excel->obj_php_excel->getActiveSheet()->getColumnDimension('D')->setWidth(30);
+			$excel->obj_php_excel->getActiveSheet()->getColumnDimension('E')->setWidth(20);
+			$excel->obj_php_excel->getActiveSheet()->getColumnDimension('F')->setWidth(30);
+			$excel->obj_php_excel->getActiveSheet()->getColumnDimension('G')->setWidth(13);
+			$excel->obj_php_excel->getActiveSheet()->getColumnDimension('H')->setWidth(50);
+			$excel->obj_php_excel->getActiveSheet()->getColumnDimension('I')->setWidth(60);
+			$excel->obj_php_excel->getActiveSheet()->getColumnDimension('J')->setWidth(60);
+			$excel->obj_php_excel->getActiveSheet()->setCellValue('A1', 'Mã đơn hàng');
+			$excel->obj_php_excel->getActiveSheet()->setCellValue('B1', 'Người mua');
+			$excel->obj_php_excel->getActiveSheet()->setCellValue('C1', 'Số điện thoại');
+			$excel->obj_php_excel->getActiveSheet()->setCellValue('D1', 'Sản phẩm');
+			$excel->obj_php_excel->getActiveSheet()->setCellValue('E1', 'Giá trị');
+			$excel->obj_php_excel->getActiveSheet()->setCellValue('F1', 'Ngày mua');
+			$excel->obj_php_excel->getActiveSheet()->setCellValue('G1', 'Số lượng');
+			$excel->obj_php_excel->getActiveSheet()->setCellValue('H1', 'Ghi chú');
+			$excel->obj_php_excel->getActiveSheet()->setCellValue('I1', 'Địa chỉ');
+			$excel->obj_php_excel->getActiveSheet()->setCellValue('J1', 'Trạng thái');
+			
+
+			for ($key=1;$key<=$number; $key++){
+				
+				
+				
+				$key = isset($key)?($key+1):2;
+				$excel->obj_php_excel->getActiveSheet()->setCellValue('A'.$key, '1' );
+				$excel->obj_php_excel->getActiveSheet()->setCellValue('B'.$key, '1');
+				$excel->obj_php_excel->getActiveSheet()->setCellValue('C'.$key, '1');
+				$excel->obj_php_excel->getActiveSheet()->setCellValue('D'.$key, '1');
+				$excel->obj_php_excel->getActiveSheet()->setCellValue('E'.$key, '1');
+				$excel->obj_php_excel->getActiveSheet()->setCellValue('F'.$key, '1');
+				$excel->obj_php_excel->getActiveSheet()->setCellValue('G'.$key, '1');
+				$excel->obj_php_excel->getActiveSheet()->setCellValue('H'.$key, '1');
+				$excel->obj_php_excel->getActiveSheet()->setCellValue('I'.$key, '1');
+				$excel->obj_php_excel->getActiveSheet()->setCellValue('J'.$key, '1');
+
+
+				// $excel->obj_php_excel->getActiveSheet()->setCellValue('J'.$key, $string_info_extent);
+			}
+
+			$output = $excel->write_files();
+
 		}
 		
 		
