@@ -410,8 +410,10 @@
 			
 			$excel = FSExcel();
 
-			dd($excel);
+
 			$excel->set_params(array('out_put_xlsx'=>PATH_BASE.'files/excel11.xlsx'));
+
+			dd($excel);
 			$style_header = array(
 				'fill' => array(
 					'type' => PHPExcel_Style_Fill::FILL_SOLID,
