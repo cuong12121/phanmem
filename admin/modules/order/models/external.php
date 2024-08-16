@@ -410,10 +410,8 @@
 			
 			$excel = FSExcel();
 
+			$excel->set_params(array('out_put_xls'=>'export/excel/'.$filename.'.xls','out_put_xlsx'=>'export/excel/'.$filename.'.xlsx'));
 
-			$excel->set_params(array('out_put_xlsx'=>PATH_BASE.'files/excel11.xlsx'));
-
-			dd($excel);
 			$style_header = array(
 				'fill' => array(
 					'type' => PHPExcel_Style_Fill::FILL_SOLID,
@@ -472,7 +470,18 @@
 
 			$output = $excel->write_files();
 
-			var_dump($output);
+			$path_file =   PATH_ADMINISTRATOR.DS.str_replace('/',DS, $output['xls']);
+			header("Pragma: public");
+			header("Expires: 0");
+			header("Cache-Control: must-revalidate, post-check=0, pre-check=0");
+			header("Cache-Control: private",false);			
+			header("Content-type: application/force-download");			
+			header("Content-Disposition: attachment; filename=\"".$filename.'.xls'."\";" );			
+			header("Content-Transfer-Encoding: binary");
+			header("Content-Length: ".filesize($path_file));
+			echo $link_excel = URL_ROOT.LINK_AMIN.'/export/excel/'. $filename.'.xls';
+			setRedirect($link_excel);
+			readfile($path_file);
 
 			die;
 
