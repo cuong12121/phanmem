@@ -462,8 +462,8 @@
 			$excel->obj_php_excel->getActiveSheet()->setCellValue('AB', 'Người mua');
 			$excel->obj_php_excel->getActiveSheet()->setCellValue('AC', 'Tên người nhận');
 			$excel->obj_php_excel->getActiveSheet()->setCellValue('AD', 'Số điện thoại');
-			$excel->obj_php_excel->getActiveSheet()->setCellValue('AD', 'Địa chỉ nhận hàng');
-			$excel->obj_php_excel->getActiveSheet()->setCellValue('L1', 'Trạng thái');
+			$excel->obj_php_excel->getActiveSheet()->setCellValue('AH', 'Địa chỉ nhận hàng');
+			$excel->obj_php_excel->getActiveSheet()->setCellValue('AI', 'Ghi chú');
 			
 
 			for ($key=1;$key<=$number; $key++){
