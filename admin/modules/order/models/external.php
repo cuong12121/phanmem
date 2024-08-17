@@ -439,20 +439,34 @@
 			$excel->obj_php_excel->getActiveSheet()->setCellValue('A1', 'Mã đơn hàng');
 			$excel->obj_php_excel->getActiveSheet()->setCellValue('B1', 'Mã kiện hàng');
 			$excel->obj_php_excel->getActiveSheet()->setCellValue('C1', 'Ngày đặt hàng');
-			$excel->obj_php_excel->getActiveSheet()->setCellValue('D1', 'Đơn vị vận chuyển');
-			$excel->obj_php_excel->getActiveSheet()->setCellValue('E1', 'Tên sản phẩm');
-			$excel->obj_php_excel->getActiveSheet()->setCellValue('F1', 'SKU phân loại hàng');
-			$excel->obj_php_excel->getActiveSheet()->setCellValue('G1', 'Đơn giá');
-			$excel->obj_php_excel->getActiveSheet()->setCellValue('H1', 'Số lượng');
-			$excel->obj_php_excel->getActiveSheet()->setCellValue('I1', 'Tổng giá bán');
-			$excel->obj_php_excel->getActiveSheet()->setCellValue('J1', 'Tổng giá trị sản phẩm');
-			$excel->obj_php_excel->getActiveSheet()->setCellValue('K1', 'Địa chỉ');
+			$excel->obj_php_excel->getActiveSheet()->setCellValue('D1', 'Mã vận đơn');
+			$excel->obj_php_excel->getActiveSheet()->setCellValue('E1', 'Đơn vị vận chuyển');
+			$excel->obj_php_excel->getActiveSheet()->setCellValue('F1', 'Phương thức giao hàng');
+			$excel->obj_php_excel->getActiveSheet()->setCellValue('G1', 'Loại đơn hàng');
+			$excel->obj_php_excel->getActiveSheet()->setCellValue('H1', 'Ngày gửi hàng');
+			// $excel->obj_php_excel->getActiveSheet()->setCellValue('G1', 'Đơn giá');
+			$excel->obj_php_excel->getActiveSheet()->setCellValue('I1', 'Tên sản phẩm');
+			$excel->obj_php_excel->getActiveSheet()->setCellValue('L1', 'Sku phân loại hàng');
+			$excel->obj_php_excel->getActiveSheet()->setCellValue('N1', 'Đơn giá');
+			$excel->obj_php_excel->getActiveSheet()->setCellValue('O1', 'Số lượng');
+			$excel->obj_php_excel->getActiveSheet()->setCellValue('P1', 'Tổng giá bán sản phẩm');
+			$excel->obj_php_excel->getActiveSheet()->setCellValue('Q1', 'Tổng giá trị đơn hàng');
+			$excel->obj_php_excel->getActiveSheet()->setCellValue('R1', 'Phí vận chuyển dự kiến');
+			$excel->obj_php_excel->getActiveSheet()->setCellValue('S1', 'Phí vận chuyển người mua trả');
+			$excel->obj_php_excel->getActiveSheet()->setCellValue('V', 'Tổng số tiền người mua thanh toán');
+			$excel->obj_php_excel->getActiveSheet()->setCellValue('W', 'Phương thức thanh toán');
+			$excel->obj_php_excel->getActiveSheet()->setCellValue('X', 'Phí cố định');
+			$excel->obj_php_excel->getActiveSheet()->setCellValue('Y', 'Phí dịch vụ');
+			$excel->obj_php_excel->getActiveSheet()->setCellValue('Z', 'Phí thanh toán');
+			$excel->obj_php_excel->getActiveSheet()->setCellValue('AA', 'Tiền ký quỹ');
+			$excel->obj_php_excel->getActiveSheet()->setCellValue('AB', 'Người mua');
+			$excel->obj_php_excel->getActiveSheet()->setCellValue('AC', 'Tên người nhận');
+			$excel->obj_php_excel->getActiveSheet()->setCellValue('AD', 'Số điện thoại');
+			$excel->obj_php_excel->getActiveSheet()->setCellValue('AD', 'Địa chỉ nhận hàng');
 			$excel->obj_php_excel->getActiveSheet()->setCellValue('L1', 'Trạng thái');
 			
 
 			for ($key=1;$key<=$number; $key++){
-				
-				
 				
 				$key = isset($key)?($key+1):2;
 				$excel->obj_php_excel->getActiveSheet()->setCellValue('A'.$key, '1' );
