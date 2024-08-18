@@ -1443,11 +1443,7 @@
 					
 					$text_pdf_check = $this->showPDFText($InputFile);
 
-
-
 					if($platform_id !=6 && $text_pdf_check == "") {
-
-
 
 						$link = FSRoute::_('index.php?module=order&view=upload&task=edit&id='.$id);
 						$msg = 'file pdf với tên là '.$item_file_pdf_name. ' đang là định dạng pdf ảnh, cần chuyển sang định dạng pdf text!' ;
@@ -1474,9 +1470,6 @@
             				$mavandonPDF = $this->checkMvdShopee($InputFile);
             			}
 
-
-
-					
 					}
 					
 					if($_SERVER['SERVER_ADDR'] == '127.0.0.1'){ // trên local
@@ -1505,8 +1498,6 @@
 
                     $id_google_drive = file_get_contents('https://drive.'.DOMAIN.'/createfiles.php?link=https://'.DOMAIN.'/files/orders/'.$cyear.'/'.$cmonth.'/'.$cday.'/'.$item_file_pdf_name);
 
-                    
-
                     array_push($ar_id_file_pdf_google, $id_google_drive);
 
                     if(!empty($text_pdf_check)){
@@ -1514,7 +1505,6 @@
                     	@unlink($InputFile);
                     }
 				    
-					
 				}
 
 				$row['id_file_pdf_google_drive'] = implode(",", $ar_id_file_pdf_google);
@@ -1528,8 +1518,6 @@
 				// $row['file_pdf'] = 'files/orders/'.$cyear.'/'.$cmonth.'/'.$cday.'/'.$file_pdf_name;
 			    
 			}
-
-			
 
 			// file xlsx
 	       $file_xlsx = $_FILES["file_xlsx"]["name"];
@@ -1559,7 +1547,6 @@
 				}
 			}
 
-			
 			$row['date'] = date('Y-m-d',strtotime($date));
 			$row['user_id'] = $_SESSION['ad_userid'];
 		
@@ -1626,9 +1613,6 @@
 
 				}
 
-
-				
-				 
 				//lợi nhuận
 				$list_code = $this->get_records('record_id = '.$result_id,'fs_order_uploads_detail','DISTINCT code','id ASC');
 
@@ -1666,8 +1650,6 @@
 							
 
 					// }
-
-
 
 					////////chi tiết lợi nhuận
 					$row3 = array();
