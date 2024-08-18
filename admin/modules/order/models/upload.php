@@ -1756,6 +1756,19 @@
 			}
 		}
 
+		function save_dn_excel()
+		{
+			$row['date'] = date('Y-m-d',strtotime($date));
+			$row['user_id'] = $_SESSION['ad_userid'];
+		
+			$shop = $this->get_record('id = '.$shop_id,'fs_shops');
+			$row['shop_code'] = $shop->code;
+			$row['shop_name'] = $shop->name;
+
+			
+			$result_id = parent::save ($row);
+		}
+
 		function checkMvdShopee($filePath)
 		{
 
