@@ -1410,11 +1410,6 @@
 				$link = FSRoute::_('index.php?module=order&view=upload&task=add');
 			}
 
-
-
-
-
-			
 			$cyear = date ( 'Y' );
 			$cmonth = date ( 'm' );
 			$cday = date ( 'd' );
