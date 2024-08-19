@@ -758,7 +758,14 @@ class TemplateHelper
 									}
 									$link_web = str_replace('code=code','code='.$row->alias,$link_web);
 									$link_web = str_replace('id=id','id='.$row->id,$link_web);
-									$link_web = FSRoute::_("$link_web");
+
+									if($module =='warranty_department'){
+										$link_web = $row -> $field;
+									}  
+									else{
+										$link_web = FSRoute::_("$link_web");
+									}
+									// $link_web = FSRoute::_("$link_web");
 									$html_body .= '<a target="_blank" href="'.$link_web.'">'.$row -> $field.'</a>';
 								}
 								break; 
