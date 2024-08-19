@@ -696,7 +696,7 @@ class TemplateHelper
 								case 'date':
 								$html_body .= date('d/m/Y',strtotime($row->$field));
 
-								dd($html_body);
+
 								break;
 								case 'edit_text':
 								$size = isset($item['arr_params']['size'])?$item['arr_params']['size']: 10;
@@ -869,6 +869,8 @@ class TemplateHelper
 			$html_footer .='<input type="hidden" value="'.$limit.'" name="limit">';
 			
 			$html = $html_begin.$html_filter.$html_head.$html_body.$html_footer.'</form></div></div>';
+
+			
 //		$html = '<xmp>'.$html_begin.$html_filter.$html_head.$html_body.$html_footer.'</form></div>'.'</xmp>';
 			echo $html;
 		}
