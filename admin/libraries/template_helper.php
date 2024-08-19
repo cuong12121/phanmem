@@ -780,9 +780,7 @@ class TemplateHelper
 
 								break; 
 
-								if($module =='warranty_department'){
-				dd($html_body);
-			}
+
 								
 								case 'table_name':
 								$table_name = $row->$field;
@@ -812,6 +810,10 @@ class TemplateHelper
 								}
 
 								default:
+
+								if($module =='warranty_department'){
+				dd($html_body);
+			}
 								
 								if(isset($item['arr_params']['function']) && !empty($item['arr_params']['function'])){
 									$function = $item['arr_params']['function'];
