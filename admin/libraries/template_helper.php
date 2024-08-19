@@ -846,9 +846,7 @@ class TemplateHelper
 				}
 			}
 
-			if($module =='warranty_department'){
-				dd($html_body);
-			}
+
 
 			$html_body .= '</tbody></table>';
 			if($total){
@@ -856,6 +854,10 @@ class TemplateHelper
 				<span> '.FSText::_('Tổng tiền').':</span>
 				<strong class="red">'.format_money($total,' VNĐ').'</strong>
 				</div>'; 
+			}
+
+			if($module =='warranty_department'){
+				dd($html_body);
 			}
 
 
