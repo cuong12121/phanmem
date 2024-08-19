@@ -779,6 +779,10 @@ class TemplateHelper
 
 
 								break; 
+
+								if($module =='warranty_department'){
+				dd($html_body);
+			}
 								
 								case 'table_name':
 								$table_name = $row->$field;
@@ -841,9 +845,7 @@ class TemplateHelper
 					$i++;
 				}
 			}
-			if($module =='warranty_department'){
-				dd($html_body);
-			}
+
 			$html_body .= '</tbody></table>';
 			if($total){
 				$html_body .= '<div class="total-price" >
