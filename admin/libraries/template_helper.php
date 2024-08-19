@@ -695,6 +695,8 @@ class TemplateHelper
 								break;
 								case 'date':
 								$html_body .= date('d/m/Y',strtotime($row->$field));
+
+								dd($html_body);
 								break;
 								case 'edit_text':
 								$size = isset($item['arr_params']['size'])?$item['arr_params']['size']: 10;
@@ -754,7 +756,7 @@ class TemplateHelper
 								case 'text_link':
 								$link_web = $item['link']? $item['link']:'';
 
-								dd($link_web);
+
 
 
 								
