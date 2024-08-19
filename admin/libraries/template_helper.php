@@ -841,6 +841,9 @@ class TemplateHelper
 					$i++;
 				}
 			}
+			if($module =='warranty_department'){
+				dd($html_body);
+			}
 			$html_body .= '</tbody></table>';
 			if($total){
 				$html_body .= '<div class="total-price" >
@@ -849,9 +852,7 @@ class TemplateHelper
 				</div>'; 
 			}
 
-			if($module =='warranty_department'){
-				dd($html_body);
-			}
+
 			$html_footer = '<nav aria-label="Page navigation">';
 			if(isset($pagination)) {
 				$html_footer .=  $pagination->showPagination();
