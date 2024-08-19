@@ -811,9 +811,7 @@ class TemplateHelper
 
 								default:
 
-								if($module =='warranty_department'){
-				dd($html_body);
-			}
+
 								
 								if(isset($item['arr_params']['function']) && !empty($item['arr_params']['function'])){
 									$function = $item['arr_params']['function'];
@@ -846,6 +844,10 @@ class TemplateHelper
 					$html_body .= '</tr>';
 					$i++;
 				}
+			}
+
+			if($module =='warranty_department'){
+				dd($html_body);
 			}
 
 			$html_body .= '</tbody></table>';
