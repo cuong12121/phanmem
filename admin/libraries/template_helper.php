@@ -619,7 +619,7 @@ class TemplateHelper
 						$field = isset($item['field'])?$item['field']:null;	
 						$type = isset($item['type'])?$item['type']:'text';
 
-						dd($type);
+						
 						
 						$display_label = isset($item['display_label'])?$item['display_label']:0;
 						if($display_label)
