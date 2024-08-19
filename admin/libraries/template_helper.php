@@ -620,7 +620,7 @@ class TemplateHelper
 						$type = isset($item['type'])?$item['type']:'text';
 
 						
-						
+
 						$display_label = isset($item['display_label'])?$item['display_label']:0;
 						if($display_label)
 							$html_body .= $item['title'].': ';
@@ -753,6 +753,8 @@ class TemplateHelper
 								break;
 								case 'text_link':
 								$link_web = $item['link']? $item['link']:'';
+
+								dd($link_web);
 
 
 								
