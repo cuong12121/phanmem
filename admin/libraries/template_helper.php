@@ -765,8 +765,7 @@ class TemplateHelper
 										dd($link_web);
 									}  
 									else{
-										// $link_web = FSRoute::_("$link_web");
-										$link_web = '#';
+										$link_web = FSRoute::_("$link_web");
 									}
 									// $link_web = FSRoute::_("$link_web");
 									$html_body .= '<a target="_blank" href="'.$link_web.'">'.$row -> $field.'</a>';
