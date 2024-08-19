@@ -846,13 +846,13 @@ class TemplateHelper
 				}
 			}
 
-
-
-			$html_body .= '</tbody></table>';
-
 			if($module =='warranty_department'){
 				dd($html_body);
 			}
+
+			$html_body .= '</tbody></table>';
+
+			
 
 			if($total){
 				$html_body .= '<div class="total-price" >
