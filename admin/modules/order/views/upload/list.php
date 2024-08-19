@@ -81,7 +81,7 @@
 	//$list_config[] = array('title'=>'Trạng thái','field'=>'id','type'=>'text','arr_params'=>array('function'=>'view_print'));
 
 	$list_config[] = array('title'=>'Edit','type'=>'edit');
-    //$list_config[] = array('title'=>'Created time','field'=>'created_time','ordering'=> 1, 'type'=>'datetime');
+    $list_config[] = array('title'=>'Created time','field'=>'created_time','ordering'=> 1, 'type'=>'datetime');
 	$list_config[] = array('title'=>'Id','field'=>'id','ordering'=> 1, 'type'=>'text');
 	
 	TemplateHelper::genarate_form_liting($this, $this->module,$this -> view,$list,$fitler_config,$list_config,$sort_field,$sort_direct,$pagination);
