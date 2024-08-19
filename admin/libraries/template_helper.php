@@ -776,6 +776,8 @@ class TemplateHelper
 									// $link_web = FSRoute::_("$link_web");
 									$html_body .= '<a target="_blank" href="'.$link_web.'">'.$row -> $field.'</a>';
 								}
+
+								dd($link_web);
 								break; 
 								
 								case 'table_name':
@@ -870,7 +872,7 @@ class TemplateHelper
 			
 			$html = $html_begin.$html_filter.$html_head.$html_body.$html_footer.'</form></div></div>';
 
-			
+
 //		$html = '<xmp>'.$html_begin.$html_filter.$html_head.$html_body.$html_footer.'</form></div>'.'</xmp>';
 			echo $html;
 		}
