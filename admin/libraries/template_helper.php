@@ -846,9 +846,9 @@ class TemplateHelper
 				}
 			}
 
-			if($module =='warranty_department'){
-				dd($html_body);
-			}
+			// if($module =='warranty_department'){
+			// 	dd($html_body);
+			// }
 
 			$html_body .= '</tbody></table>';
 
