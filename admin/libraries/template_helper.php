@@ -749,7 +749,7 @@ class TemplateHelper
 								case 'text_link':
 								$link_web = $item['link']? $item['link']:'';
 
-								dd($link_web);
+								
 								
 								if($link_web){
 									if(@$row->category_alias){
