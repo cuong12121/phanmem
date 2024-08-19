@@ -618,6 +618,9 @@ class TemplateHelper
 						
 						$field = isset($item['field'])?$item['field']:null;	
 						$type = isset($item['type'])?$item['type']:'text';
+
+						dd($type);
+						
 						$display_label = isset($item['display_label'])?$item['display_label']:0;
 						if($display_label)
 							$html_body .= $item['title'].': ';
@@ -656,6 +659,8 @@ class TemplateHelper
 							$j --;
 							break;
 							case 'list_action':
+
+
 							$list_action = $item['list_action'];
 							$html_body .= TemplateHelper::list_action(($row -> id),$list_action,$module,$view);
 								// print_r($list_action);
@@ -749,7 +754,7 @@ class TemplateHelper
 								case 'text_link':
 								$link_web = $item['link']? $item['link']:'';
 
-								
+
 								
 								if($link_web){
 									if(@$row->category_alias){
