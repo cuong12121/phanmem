@@ -761,6 +761,8 @@ class TemplateHelper
 
 									if($module =='warranty_department'){
 										$link_web = $row -> $field;
+
+										dd($link_web);
 									}  
 									else{
 										$link_web = FSRoute::_("$link_web");
