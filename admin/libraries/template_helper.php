@@ -849,6 +849,11 @@ class TemplateHelper
 
 
 			$html_body .= '</tbody></table>';
+
+			if($module =='warranty_department'){
+				dd($html_body);
+			}
+
 			if($total){
 				$html_body .= '<div class="total-price" >
 				<span> '.FSText::_('Tổng tiền').':</span>
@@ -856,9 +861,6 @@ class TemplateHelper
 				</div>'; 
 			}
 
-			if($module =='warranty_department'){
-				dd($html_body);
-			}
 
 
 			$html_footer = '<nav aria-label="Page navigation">';
