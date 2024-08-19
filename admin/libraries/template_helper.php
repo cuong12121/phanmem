@@ -777,7 +777,7 @@ class TemplateHelper
 									$html_body .= '<a target="_blank" href="'.$link_web.'">'.$row -> $field.'</a>';
 								}
 
-								dd($link_web);
+
 								break; 
 								
 								case 'table_name':
@@ -836,6 +836,7 @@ class TemplateHelper
 						}
 						$html_body .= '</div></td>';
 					}
+
 					$html_body .= '</tr>';
 					$i++;
 				}
@@ -846,6 +847,10 @@ class TemplateHelper
 				<span> '.FSText::_('Tổng tiền').':</span>
 				<strong class="red">'.format_money($total,' VNĐ').'</strong>
 				</div>'; 
+			}
+
+			if($module =='warranty_department'){
+				dd($html_body);
 			}
 			$html_footer = '<nav aria-label="Page navigation">';
 			if(isset($pagination)) {
