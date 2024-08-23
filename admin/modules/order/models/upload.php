@@ -1777,15 +1777,19 @@
 
 			$id = $result_id;
 
+			$house_id = 13;
+
+			$platform_id = 6;
+
 			if($result_id && $id){
 				$row2 = array();
 				$row2['date'] = $row['date'];
 				$row2['shop_id'] = $shop_id;
 				$row2['shop_code'] = $row['shop_code'];
 				$row2['shop_name'] = $row['shop_name'];
-				$row2['house_id'] = 13;
+				$row2['house_id'] = $house_id;
 				$row2['warehouse_id'] = 1;
-				$row2['platform_id'] = 6;
+				$row2['platform_id'] = $platform_id;
 				$this->_update($row2,'fs_order_uploads_detail','record_id = '.$id);
 			}
 
