@@ -1832,6 +1832,8 @@
 				//lợi nhuận
 				$list_code = $this->get_records('record_id = '.$result_id,'fs_order_uploads_detail','DISTINCT code','id ASC');
 
+				dd($list_code);
+
 
 				global $config;
 				foreach ($list_code as $code_item){
