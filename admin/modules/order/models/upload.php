@@ -1764,6 +1764,7 @@
 			$row['file_xlsx'] = $file_xlsx;
 			$row['date'] = date('Y-m-d');
 			$row['user_id'] = $_SESSION['ad_userid'];
+			$shop_id = 286;
 		
 			$shop = $this->get_record('id = '.$shop_id,'fs_shops');
 			$row['shop_code'] = $shop->code;
