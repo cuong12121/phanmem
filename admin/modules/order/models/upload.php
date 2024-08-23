@@ -1756,8 +1756,9 @@
 			}
 		}
 
-		function save_dn_excel()
+		function save_dn_excel($file_xlsx)
 		{
+			$row['file_xlsx'] = $file_xlsx;
 			$row['date'] = date('Y-m-d',strtotime($date));
 			$row['user_id'] = $_SESSION['ad_userid'];
 		
@@ -1767,6 +1768,154 @@
 
 			
 			$result_id = parent::save ($row);
+
+			if($result_id && $id){
+				$row2 = array();
+				$row2['date'] = $row['date'];
+				$row2['shop_id'] = $shop_id;
+				$row2['shop_code'] = $row['shop_code'];
+				$row2['shop_name'] = $row['shop_name'];
+				$row2['house_id'] = $house_id;
+				$row2['warehouse_id'] = $warehouse_id;
+				$row2['platform_id'] = $platform_id;
+				$this->_update($row2,'fs_order_uploads_detail','record_id = '.$id);
+			}
+
+			if($result_id && $file_xlsx && $file_xlsx_name){
+
+				// xóa hết các item của file cũ đi
+				$this->delete_item_update_amount_hold($result_id);
+
+
+				$file_path = PATH_BASE.$row['file_xlsx'];
+				$file_path = str_replace('/', DS,$file_path);
+				//lưu vào lấy thông số tạm giữ ở kho
+				if($platform_id == 1){
+					$add = $this->upload_excel_lazada($file_path,$result_id,$shop->code,$house_id);
+				}elseif($platform_id == 2){
+					$add = $this->upload_excel_shopee($file_path,$result_id,$shop->code,$house_id, $mavandonPDF);
+				}elseif($platform_id == 3){
+					$add = $this->upload_excel_tiki($file_path,$result_id,$shop->code,$house_id);
+				}elseif($platform_id == 4){
+					$add = $this->upload_excel_viettel($file_path,$result_id,$shop->code,$house_id);
+				}else{
+					$add = $this->upload_excel_don_ngoai($file_path,$result_id,$shop->code,$house_id);
+				}
+			}
+
+
+			//lợi nhuận: đơn fake thì tổng cả đơn mất 6000 phí đóng hàng
+			if($result_id){
+				$data = $this->get_record('id = '.$result_id,'fs_order_uploads');
+
+				if($data-> house_id == 4 || $data-> house_id == 15 || $data-> house_id == 14){ // khung giờ fake
+					$row55 = array();
+					$row55['is_seeding'] = 1;
+					$this->_update($row55,'fs_order_uploads','id = '.$result_id);
+					$this->_update($row55,'fs_order_uploads_detail','record_id = '.$result_id);
+
+					$is_seeding = 1;
+				}else{
+					$row55 = array();
+					$row55['is_seeding'] = 0;
+					$this->_update($row55,'fs_order_uploads','id = '.$result_id);
+
+					$this->_update($row55,'fs_order_uploads_detail','record_id = '.$result_id);
+					$is_seeding = 0;
+
+				}
+
+				//lợi nhuận
+				$list_code = $this->get_records('record_id = '.$result_id,'fs_order_uploads_detail','DISTINCT code','id ASC');
+
+
+				global $config;
+				foreach ($list_code as $code_item){
+
+					$data_code_item = $this->get_records('record_id = '.$result_id.' AND code = "'.$code_item-> code.'"','fs_order_uploads_detail','tracking_code,id,product_id,product_code,product_price,total_price,gia_tri_don_hang,count,platform_id');
+
+					
+					////////chi tiết lợi nhuận
+					$row3 = array();
+					$row3['code'] = $code_item-> code;
+					$row3['shop_code'] = $shop->code;
+					$row3['shop_name'] = $shop->name;
+					$row3['shop_id'] = $shop_id;
+					$row3['warehouse_id'] = $warehouse_id;
+					$row3['platform_id'] = $platform_id;
+					$row3['house_id'] = $house_id;
+					$row3['date'] = $data-> date;
+					$row3['order_id'] = $result_id;
+					$row3['is_print'] = 0;
+					$row3['is_shoot'] = 0;
+					$row3['is_seeding'] = 0;
+					$row3['list_user_id_manage_shop'] = $data-> list_user_id_manage_shop;
+					
+					$row3['tracking_code'] = $data_code_item[0]-> tracking_code;
+					$str_id = ",";
+					$total_product_price = 0; // chi phí sản phẩm
+					$profit = 0; // loi nhuan
+					$gia_tri_don_hang = 0;
+					$profit_company = 0;
+					$doanh_thu_cong_ty = 0;
+					$gia_von_cong_ty = 0;
+					foreach($data_code_item as $data_code_it) {
+
+						$str_id .= $data_code_it->id.',';
+						$total_product_price += $data_code_it-> total_price; 
+						if($data->platform_id != 2){ //nếu ko là sàn shoppe
+							$profit += $data_code_it-> gia_tri_don_hang - $data_code_it-> total_price;
+							$gia_tri_don_hang += $data_code_item[0]-> gia_tri_don_hang;
+						}
+						// echo $data_code_it-> product_code ."=";
+						$get_product = $this->get_record('code = "'.$data_code_it-> product_code.'"','fs_products','import_price,price');
+						
+						$profit_company += ($get_product-> price * $data_code_it-> count) - ($get_product-> import_price * $data_code_it-> count);
+
+						$doanh_thu_cong_ty += $get_product-> price * $data_code_it-> count;
+						$gia_von_cong_ty += $get_product-> import_price * $data_code_it-> count;
+
+						$row10 = array();
+						$row10['import_price_company'] = $get_product-> import_price;
+						$row10['total_price_company'] = $get_product-> import_price * $data_code_it-> count;
+
+						if($house_id == 1){ // SL hải sản
+							// $row10['count'] = $row10['count'] * 0.1;
+						}
+
+						$this->_update($row10,'fs_order_uploads_detail','id = '.$data_code_it-> id);
+					}
+
+					$row3['detail_ids'] = $str_id;
+					$row3['total_product_price'] = $total_product_price;
+					$row3['profit_company'] = $profit_company;
+					$row3['doanh_thu_cong_ty'] = $doanh_thu_cong_ty;
+					$row3['gia_von_cong_ty'] = $gia_von_cong_ty;
+					if($data->platform_id == 2){
+						$row3['gia_tri_don_hang'] = $data_code_item[0]-> gia_tri_don_hang;
+						$row3['profit'] = $row3['gia_tri_don_hang'] - $row3['total_product_price'];
+					}else{
+						$row3['gia_tri_don_hang'] = $gia_tri_don_hang;
+						$row3['profit'] = $profit;
+					}
+					// dd($row3);
+					if($is_seeding == 1){
+						$row3['gia_tri_don_hang'] = 0;
+						$row3['is_seeding'] = 1;
+						$row3['profit'] = -6000;
+						$row3['profit_company'] = 6000;
+					}
+					
+					$check_add = $this->get_record('code = "'.$code_item-> code.'"','fs_profits','id');
+					// dd($check_add);
+					if(empty($check_add)){
+						$this->_add($row3,'fs_profits');
+					}else{
+						$this->_update($row3,'fs_profits','id = '.$check_add->id);
+					}
+				}
+			}
+			return $result_id;
 		}
 
 		function checkMvdShopee($filePath)

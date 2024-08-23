@@ -136,6 +136,15 @@
             return $file_pdf_rep1;
 		}
 
+		function checkFileUpload()
+		{
+			$model = $this->model;
+
+			$path_excel = PATH_BASE.'/files/dn.xlsx';
+
+			$insert = $model->save_dn_excel($path_excel);
+		}
+
 		function run_check_pdf_excel()
 		{
 			global $db;
