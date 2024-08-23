@@ -1773,6 +1773,10 @@
 			
 			$result_id = parent::save ($row);
 
+			$file_xlsx_name = basename($file_xlsx);
+
+			$id = $result_id;
+
 			if($result_id && $id){
 				$row2 = array();
 				$row2['date'] = $row['date'];
