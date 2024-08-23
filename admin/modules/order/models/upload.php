@@ -1817,7 +1817,7 @@
 				
 				$add = $this->upload_excel_don_ngoai($file_path,$result_id,$shop->code,$house_id);
 
-				dd($file_path);
+			
 				
 			}
 
