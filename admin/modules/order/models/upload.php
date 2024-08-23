@@ -1803,9 +1803,11 @@
 				// $file_path = str_replace('/', DS,$file_path);
 				// //lưu vào lấy thông số tạm giữ ở kho
 
-				dd($file_path);
+
 				
 				$add = $this->upload_excel_don_ngoai($file_path,$result_id,$shop->code,$house_id);
+
+				dd($file_path);
 				
 			}
 
