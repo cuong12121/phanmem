@@ -1337,6 +1337,8 @@
 				}else{
 					$row['total_price'] = (float)$produt->price * (float)$row['count'];
 					$add_id = $this->_add($row,'fs_order_uploads_detail');
+
+					dd($row);
 					if($add_id){
 						$this->plus_quantity_product($row['warehouse_id'],$row['product_id'],(float)$row['count']);
 					}
@@ -1791,6 +1793,8 @@
 				$row2['shop_name'] = $row['shop_name'];
 				$row2['house_id'] = $house_id;
 				$row2['warehouse_id'] = $warehouse_id;
+
+
 				$row2['platform_id'] = $platform_id;
 				$this->_update($row2,'fs_order_uploads_detail','record_id = '.$id);
 			}
