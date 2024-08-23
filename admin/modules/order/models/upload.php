@@ -1783,9 +1783,9 @@
 				$row2['shop_id'] = $shop_id;
 				$row2['shop_code'] = $row['shop_code'];
 				$row2['shop_name'] = $row['shop_name'];
-				$row2['house_id'] = $house_id;
-				$row2['warehouse_id'] = $warehouse_id;
-				$row2['platform_id'] = $platform_id;
+				$row2['house_id'] = 13;
+				$row2['warehouse_id'] = 1;
+				$row2['platform_id'] = 6;
 				$this->_update($row2,'fs_order_uploads_detail','record_id = '.$id);
 			}
 
