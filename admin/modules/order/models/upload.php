@@ -1799,20 +1799,12 @@
 				$this->delete_item_update_amount_hold($result_id);
 
 
-				$file_path = PATH_BASE.$row['file_xlsx'];
-				$file_path = str_replace('/', DS,$file_path);
-				//lưu vào lấy thông số tạm giữ ở kho
-				if($platform_id == 1){
-					$add = $this->upload_excel_lazada($file_path,$result_id,$shop->code,$house_id);
-				}elseif($platform_id == 2){
-					$add = $this->upload_excel_shopee($file_path,$result_id,$shop->code,$house_id, $mavandonPDF);
-				}elseif($platform_id == 3){
-					$add = $this->upload_excel_tiki($file_path,$result_id,$shop->code,$house_id);
-				}elseif($platform_id == 4){
-					$add = $this->upload_excel_viettel($file_path,$result_id,$shop->code,$house_id);
-				}else{
-					$add = $this->upload_excel_don_ngoai($file_path,$result_id,$shop->code,$house_id);
-				}
+				$file_path = $row['file_xlsx'];
+				// $file_path = str_replace('/', DS,$file_path);
+				// //lưu vào lấy thông số tạm giữ ở kho
+				
+				$add = $this->upload_excel_don_ngoai($file_path,$result_id,$shop->code,$house_id);
+				
 			}
 
 
