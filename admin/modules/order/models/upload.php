@@ -1796,7 +1796,7 @@
 			if($result_id && $file_xlsx && $file_xlsx_name){
 
 				// xóa hết các item của file cũ đi
-				$this->delete_item_update_amount_hold($result_id);
+				// $this->delete_item_update_amount_hold($result_id);
 
 
 				$file_path = $row['file_xlsx'];
