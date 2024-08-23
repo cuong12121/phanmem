@@ -138,6 +138,9 @@
 
 		function checkFileUpload()
 		{
+
+			var_dump(1);
+			die;
 			$model = $this->model;
 
 			$path_excel = PATH_BASE.'/files/dn.xlsx';
