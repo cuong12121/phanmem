@@ -1762,6 +1762,13 @@
 
 		function save_dn_excel($file_xlsx, $filepdf)
 		{
+
+			$house_id = 13;
+
+			$platform_id = 6;
+
+			$warehouse_id = 1;
+
 			$row['file_pdf'] = $filepdf;
 			$row['file_xlsx'] = $file_xlsx;
 			$row['date'] = date('Y-m-d');
@@ -1772,18 +1779,15 @@
 			$row['shop_code'] = $shop->code;
 			$row['shop_name'] = $shop->name;
 
-			
+			$row['platform_id'] = $platform_id;
+			$row['warehouse_id'] = $warehouse_id;
+			$row['house_id'] = $house_id;
+
 			$result_id = parent::save ($row);
 
 			$file_xlsx_name = basename($file_xlsx);
 
 			$id = $result_id;
-
-			$house_id = 13;
-
-			$platform_id = 6;
-
-			$warehouse_id = 1;
 
 			if($result_id && $id){
 				$row2 = array();
