@@ -293,6 +293,8 @@
                 return preg_replace('/\s+/', '', $match);
             }, $b);
 
+            
+
 
         	return $b;
 
