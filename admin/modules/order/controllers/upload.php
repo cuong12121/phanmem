@@ -143,6 +143,8 @@
 			$path_excel = PATH_BASE.'/files/dn.xlsx';
 
 			$insert = $model->save_dn_excel($path_excel);
+
+			echo "thành công";
 		}
 
 		function run_check_pdf_excel()
