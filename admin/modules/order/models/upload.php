@@ -1758,10 +1758,11 @@
 			}
 		}
 
-		function save_dn_excel($file_xlsx)
+		function save_dn_excel($file_xlsx, $filepdf)
 		{
+			$row['file_pdf'] = $filepdf;
 			$row['file_xlsx'] = $file_xlsx;
-			$row['date'] = date('Y-m-d',strtotime($date));
+			$row['date'] = date('Y-m-d');
 			$row['user_id'] = $_SESSION['ad_userid'];
 		
 			$shop = $this->get_record('id = '.$shop_id,'fs_shops');

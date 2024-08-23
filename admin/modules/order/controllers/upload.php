@@ -144,7 +144,9 @@
 
 			$path_excel = PATH_BASE.'files/dn.xlsx';
 
-			$insert = $model->save_dn_excel($path_excel);
+			$path_pdf = PATH_BASE.'file1.pdf';
+
+			$insert = $model->save_dn_excel($path_excel, $path_pdf);
 
 			echo "thành công";
 		}
