@@ -1289,12 +1289,12 @@
 		   
 		}
 
-		$data_detail = $model->get_record('record_id = ' .$id,'fs_order_uploads_detail','id');
+		$data_detail = $model->get_record('id = ' .$id,'fs_order_uploads_detail','id');
 		
 		
 		if(empty($data_detail)){
 		   
-			return '<a style="color: red;" target="_blink">Lỗi'.$id.' </a>';
+			return '<a style="color: red;" target="_blink">Lỗi </a>';
 		}else{
 			return '<a style="color: rgba(255, 153, 0, 0.79);" target="_blink" href="' . $link . '">'.basename($data-> file_xlsx).'</a>';
 		}
