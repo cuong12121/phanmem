@@ -1294,7 +1294,7 @@
 		
 		if(empty($data_detail)){
 		   
-			return '<a style="color: red;" target="_blink">Lỗi 14 </a>';
+			return '<a style="color: red;" target="_blink">Lỗi'.$id.' </a>';
 		}else{
 			return '<a style="color: rgba(255, 153, 0, 0.79);" target="_blink" href="' . $link . '">'.basename($data-> file_xlsx).'</a>';
 		}
