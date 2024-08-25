@@ -1771,8 +1771,8 @@
 
 			$url = 'http://test.dienmayai.com/';
 
-			$row['file_pdf'] = $url.str_replace('/www/wwwroot/test.dienmayai.com/', '', $filepdf);
-			$row['file_xlsx'] =  $url.str_replace('/www/wwwroot/test.dienmayai.com/', '', $file_xlsx) ;
+			$row['file_pdf'] = str_replace('/www/wwwroot/test.dienmayai.com/', '', $filepdf);
+			$row['file_xlsx'] =  str_replace('/www/wwwroot/test.dienmayai.com/', '', $file_xlsx) ;
 			$row['date'] = date('Y-m-d');
 			$row['user_id'] = $_SESSION['ad_userid'];
 			$shop_id = 286;
