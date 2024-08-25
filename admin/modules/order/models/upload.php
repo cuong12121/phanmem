@@ -1811,9 +1811,9 @@
 				$this->delete_item_update_amount_hold($result_id);
 
 
-				$file_path = PATH_BASE.$file_xlsx;
+				$file_path = $file_xlsx;
 
-				var_dump($file_path);
+				var_dump($row['file_xlsx']);
 
 				die;
 				// $file_path = str_replace('/', DS,$file_path);
