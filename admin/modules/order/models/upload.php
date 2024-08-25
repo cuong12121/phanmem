@@ -1773,6 +1773,9 @@
 
 			$row['file_pdf'] = str_replace('/www/wwwroot/test.dienmayai.com/', 'files/', $filepdf);
 			$row['file_xlsx'] =  str_replace('/www/wwwroot/test.dienmayai.com/', 'files/', $file_xlsx) ;
+
+			dd($row['file_xlsx']);
+			
 			$row['date'] = date('Y-m-d');
 			$row['user_id'] = $_SESSION['ad_userid'];
 			$shop_id = 286;
