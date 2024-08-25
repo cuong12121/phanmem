@@ -108,7 +108,7 @@ $data_post = !empty($_SESSION['input_data'])?$_SESSION['input_data']:'';
         <input type="text" id="deliveryPerson" name="deliveryPerson" value="<?= $data_post['deliveryPerson']??'' ?>" required><br><br>
         <label for="department">Bộ phận:</label><br>
         <?php
-         TemplateHelper::dt_edit_selectbox(FSText::_('Sàn'),'platform_id',@$data -> platform_id,0,$platforms,$field_value = 'id', $field_label='name',$size = 1,0,1);
+       
     TemplateHelper::dt_edit_selectbox(FSText::_('Kho'),'warehouse_id',@$data -> warehouse_id,0,$warehouses,$field_value = 'id', $field_label='name',$size = 1,0,1);
     TemplateHelper::dt_edit_selectbox(FSText::_('Shop'),'shop_id',@$data -> shop_id,0,$shops,$field_value = 'id', $field_label='name',$size = 1,0,1);
 
