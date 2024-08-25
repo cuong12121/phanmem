@@ -1769,8 +1769,10 @@
 
 			$warehouse_id = 1;
 
-			$row['file_pdf'] = $filepdf;
-			$row['file_xlsx'] = $file_xlsx;
+			$url = 'http://test.dienmayai.com/';
+
+			$row['file_pdf'] = $url.$filepdf;
+			$row['file_xlsx'] = $url.$file_xlsx;
 			$row['date'] = date('Y-m-d');
 			$row['user_id'] = $_SESSION['ad_userid'];
 			$shop_id = 286;
