@@ -1811,7 +1811,7 @@
 				$this->delete_item_update_amount_hold($result_id);
 
 
-				$file_path = $row['file_xlsx'];
+				$file_path = PATH_BASE.$file_xlsx;
 				// $file_path = str_replace('/', DS,$file_path);
 				// //lưu vào lấy thông số tạm giữ ở kho
 
