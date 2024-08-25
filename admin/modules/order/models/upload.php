@@ -1812,6 +1812,10 @@
 
 
 				$file_path = PATH_BASE.$file_xlsx;
+
+				var_dump($file_path);
+
+				die;
 				// $file_path = str_replace('/', DS,$file_path);
 				// //lưu vào lấy thông số tạm giữ ở kho
 
