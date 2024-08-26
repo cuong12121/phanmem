@@ -115,8 +115,8 @@ $data_post = !empty($_SESSION['input_data'])?$_SESSION['input_data']:'';
 
         ?>
        
-        <label for="storeCode">Mã gian hàng:</label><br>
-        <input type="text" id="storeCode" name="storeCode" value="<?= $data_post['storeCode']??'' ?>" required><br><br>
+        <!-- <label for="storeCode">Mã gian hàng:</label><br>
+        <input type="text" id="storeCode" name="storeCode" value="<?= $data_post['storeCode']??'' ?>" required><br><br> -->
         <label for="customerPhone">Số điện thoại khách hàng:</label><br>
         <input type="text" id="customerPhone" name="customerPhone" value="<?= $data_post['customerPhone']??'' ?>" required><br><br>
 
