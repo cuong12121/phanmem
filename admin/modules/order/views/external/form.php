@@ -169,7 +169,7 @@ $data_post = !empty($_SESSION['input_data'])?$_SESSION['input_data']:'';
             <input type="hidden" name="number" value="<?= $number ?>">
         </table>
 
-        <button type="submit" onclick="submitbutton('save')">submit</button>
+        <!-- <button type="submit" onclick="submitbutton('save')">submit</button> -->
         <!-- <a class="toolbar" onclick="submitbutton('save')" href="#"><span title="Apply" style="background:url('https://dienmayai.com/admin/templates/default/images/toolbar/apply.png') no-repeat"></span>Apply</a> -->
         <br>
         
