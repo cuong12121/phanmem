@@ -94,7 +94,7 @@
 			$requester = FSInput::get('requester');
 			$storeName = FSInput::get('storeName');
 			$deliveryPerson = FSInput::get('deliveryPerson');
-			$department = FSInput::get('department');
+			// $department = FSInput::get('department');
 
 			$shop_id = FSInput::get('shop_id');
 
@@ -209,10 +209,10 @@
 				setRedirect($link,$msg,'error');
 			}
 
-			if($department==''){
-				$msg = 'Không được để trống bộ phận';
-				setRedirect($link,$msg,'error');
-			}
+			// if($department==''){
+			// 	$msg = 'Không được để trống bộ phận';
+			// 	setRedirect($link,$msg,'error');
+			// }
 
 			// if($storeCode==''){
 			// 	$msg = 'Không được để trống mã gian hàng';
