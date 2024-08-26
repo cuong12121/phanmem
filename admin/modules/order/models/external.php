@@ -102,11 +102,9 @@
 
 			$house_id = FSInput::get('house_id');
 
-			dd($house_id);
 
 			$customerPhone = FSInput::get('customerPhone');
-			$customerPhone = FSInput::get('customerPhone');
-
+			
 			$diachinhanhang = FSInput::get('diachinhanhang');
 
 			$tennguoinhan = FSInput::get('tennguoinhan');
