@@ -95,7 +95,15 @@
 			$storeName = FSInput::get('storeName');
 			$deliveryPerson = FSInput::get('deliveryPerson');
 			$department = FSInput::get('department');
-			$storeCode = FSInput::get('storeCode');
+
+			$shop_id = FSInput::get('shop_id');
+
+			$warehouse_id = FSInput::get('warehouse_id');
+
+			$house_id = FSInput::get('house_id');
+
+			dd($house_id);
+
 			$customerPhone = FSInput::get('customerPhone');
 			$customerPhone = FSInput::get('customerPhone');
 
@@ -171,6 +179,28 @@
 				
 			}
 
+			$shop_id = FSInput::get('shop_id');
+
+			$warehouse_id = FSInput::get('warehouse_id');
+
+			$house_id = FSInput::get('house_id');
+
+			if($shop_id==0){
+				$msg = 'Không được để trống mã gian hàng';
+				setRedirect($link,$msg,'error');
+			}
+
+			if($warehouse_id==0){
+				$msg = 'Không được để trống kho';
+				setRedirect($link,$msg,'error');
+			}
+
+			if($house_id==0){
+				$msg = 'Không được để trống giờ';
+				setRedirect($link,$msg,'error');
+			}
+
+
 
 			if($storeName==''){
 				$msg = 'Không được để trống tên gian hàng';
@@ -186,10 +216,10 @@
 				setRedirect($link,$msg,'error');
 			}
 
-			if($storeCode==''){
-				$msg = 'Không được để trống mã gian hàng';
-				setRedirect($link,$msg,'error');
-			}
+			// if($storeCode==''){
+			// 	$msg = 'Không được để trống mã gian hàng';
+			// 	setRedirect($link,$msg,'error');
+			// }
 
 			if($customerPhone==''){
 				$msg = 'Không được để trống số điện thoại khách hàng';
