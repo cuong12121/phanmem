@@ -1760,14 +1760,14 @@
 			}
 		}
 
-		function save_dn_excel($file_xlsx, $filepdf)
+		function save_dn_excel($file_xlsx, $filepdf,$house_id,$warehouse_id,$shop_id)
 		{
 
-			$house_id = 13;
+			// $house_id = 13;
 
 			$platform_id = 6;
 
-			$warehouse_id = 1;
+			// $warehouse_id = 1;
 
 			$url = 'http://test.dienmayai.com/';
 
@@ -1778,7 +1778,7 @@
 
 			$row['date'] = date('Y-m-d');
 			$row['user_id'] = $_SESSION['ad_userid'];
-			$shop_id = 286;
+			// $shop_id = 286;
 		
 			$shop = $this->get_record('id = '.$shop_id,'fs_shops');
 			$row['shop_code'] = $shop->code;

@@ -109,6 +109,17 @@
 
 			$tennguoinhan = FSInput::get('tennguoinhan');
 
+			$timestamp = time();
+
+			$date=date('Y/m/d');
+
+			$dir = "files/dn/$date";
+			if (!file_exists($dir)) {
+		        // Nếu đường dẫn không tồn tại, tạo các thư mục con cần thiết
+		        mkdir(PATH_BASE.$dir, 0755, true); // 0755 là quyền truy cập, true để tạo các thư mục con nếu cần
+		        
+		    } 
+
 			for ($i=1; $i <= $number; $i++) { 
 				$productName = FSInput::get('productName'.$i);
 
@@ -117,6 +128,8 @@
 				$soluong = FSInput::get('soluong'.$i);
 
 				$phivanchuyen = FSInput::get('phivanchuyen'.$i);
+
+				$skuplhang = FSInput::get('skuplhang'.$i);
 
 
 				$tongsotiennguoimuathanhtoan = FSInput::get('tongsotiennguoimuathanhtoan'.$i);
@@ -141,6 +154,12 @@
 					$msg = 'Không được để trống Số lượng thứ '.$i;
 					setRedirect($link,$msg,'error');
 				}
+
+				if($skuplhang==''){
+					$msg = 'Không được để trống mã sku phân loại hàng thứ '.$i;
+					setRedirect($link,$msg,'error');
+				}
+
 
 				if($phivanchuyen==''){
 					$msg = 'Không được để trống Phí vận chuyển thứ '.$i;
@@ -431,12 +450,18 @@
 
 
 			FSFactory::include_class('excel','excel');
+
+			// $timestamp = time();
+
+			// $date=date('Y/m/d');
 			
-			$filename = 'don_ngoai12';
+			$filename = "don_ngoai_$timestamp";
 
 			$excel = FSExcel();
 
-			$excel->set_params(array('out_put_xls'=>'export/excel/'.$filename.'.xls','out_put_xlsx'=>'export/excel/'.$filename.'.xlsx'));
+			$excel->set_params(array('out_put_xls'=>$dir.'/'.$filename.'.xls','out_put_xlsx'=>$dir.'/'.$filename.'.xlsx'));
+
+			$path_excel = $dir.'/'.$filename.'.xls';
 
 			$style_header = array(
 				'fill' => array(
@@ -507,40 +532,41 @@
 			$excel->obj_php_excel->getActiveSheet()->setCellValue('AI1', 'Ghi chú');
 			
 
-			for ($key=1;$key<=$number; $key++){
+			for ($keys=1;$keys<=$number; $keys++){
 				
-				$key = isset($key)?($key+1):2;
-				$excel->obj_php_excel->getActiveSheet()->setCellValue('A'.$key, '1' );
-				$excel->obj_php_excel->getActiveSheet()->setCellValue('B'.$key, '1');
-				$excel->obj_php_excel->getActiveSheet()->setCellValue('C'.$key, '1');
-				$excel->obj_php_excel->getActiveSheet()->setCellValue('D'.$key, '1');
-				$excel->obj_php_excel->getActiveSheet()->setCellValue('E'.$key, '1');
-				$excel->obj_php_excel->getActiveSheet()->setCellValue('F'.$key, '1');
-				$excel->obj_php_excel->getActiveSheet()->setCellValue('G'.$key, '1');
-				$excel->obj_php_excel->getActiveSheet()->setCellValue('H'.$key, '1');
-				$excel->obj_php_excel->getActiveSheet()->setCellValue('I'.$key, '1');
-				$excel->obj_php_excel->getActiveSheet()->setCellValue('J'.$key, '1');
-				$excel->obj_php_excel->getActiveSheet()->setCellValue('K'.$key, '1');
-				$excel->obj_php_excel->getActiveSheet()->setCellValue('L'.$key, '1');
-				$excel->obj_php_excel->getActiveSheet()->setCellValue('N'.$key, '1');
-				$excel->obj_php_excel->getActiveSheet()->setCellValue('O'.$key, '1');
-				$excel->obj_php_excel->getActiveSheet()->setCellValue('P'.$key, '1');
-				$excel->obj_php_excel->getActiveSheet()->setCellValue('Q'.$key, '1');
-				$excel->obj_php_excel->getActiveSheet()->setCellValue('R'.$key, '1');
-				$excel->obj_php_excel->getActiveSheet()->setCellValue('S'.$key, '1');
+				$key = isset($keys)?($keys+1):2;
+
+				$excel->obj_php_excel->getActiveSheet()->setCellValue('A'.$key,  FSInput::get('productCode'.$keys));
+				$excel->obj_php_excel->getActiveSheet()->setCellValue('B'.$key, '');
+				$excel->obj_php_excel->getActiveSheet()->setCellValue('C'.$key, '');
+				$excel->obj_php_excel->getActiveSheet()->setCellValue('D'.$key, FSInput::get('productCode'.$keys));
+				$excel->obj_php_excel->getActiveSheet()->setCellValue('E'.$key, $deliveryPerson);
+				$excel->obj_php_excel->getActiveSheet()->setCellValue('F'.$key, '');
+				$excel->obj_php_excel->getActiveSheet()->setCellValue('G'.$key, '');
+				$excel->obj_php_excel->getActiveSheet()->setCellValue('H'.$key, '');
+				$excel->obj_php_excel->getActiveSheet()->setCellValue('I'.$key, $key, FSInput::get('productName'.$keys));
+				$excel->obj_php_excel->getActiveSheet()->setCellValue('J'.$key, '');
+				$excel->obj_php_excel->getActiveSheet()->setCellValue('K'.$key, '');
+				$excel->obj_php_excel->getActiveSheet()->setCellValue('L'.$key, FSInput::get('skuplhang'.$keys));
+				$excel->obj_php_excel->getActiveSheet()->setCellValue('N'.$key, FSInput::get('dongia'.$keys));
+				$excel->obj_php_excel->getActiveSheet()->setCellValue('O'.$key, FSInput::get('soluong'.$keys));
+				$excel->obj_php_excel->getActiveSheet()->setCellValue('P'.$key, FSInput::get('tongsotiennguoimuathanhtoan'.$keys));
+				$excel->obj_php_excel->getActiveSheet()->setCellValue('Q'.$key, FSInput::get('tongsotiennguoimuathanhtoan'.$keys));
+				$excel->obj_php_excel->getActiveSheet()->setCellValue('R'.$key, '');
+				$excel->obj_php_excel->getActiveSheet()->setCellValue('S'.$key, '');
 				$excel->obj_php_excel->getActiveSheet()->setCellValue('T'.$key, '');
 				$excel->obj_php_excel->getActiveSheet()->setCellValue('U'.$key, '');
-				$excel->obj_php_excel->getActiveSheet()->setCellValue('V'.$key, '1');
-				$excel->obj_php_excel->getActiveSheet()->setCellValue('W'.$key, '1');
-				$excel->obj_php_excel->getActiveSheet()->setCellValue('X'.$key, '1');
-				$excel->obj_php_excel->getActiveSheet()->setCellValue('Y'.$key, '1');
-				$excel->obj_php_excel->getActiveSheet()->setCellValue('Z'.$key, '1');
-				$excel->obj_php_excel->getActiveSheet()->setCellValue('AA'.$key, '1');
-				$excel->obj_php_excel->getActiveSheet()->setCellValue('AB'.$key, '1');
-				$excel->obj_php_excel->getActiveSheet()->setCellValue('AC'.$key, '1');
-				$excel->obj_php_excel->getActiveSheet()->setCellValue('AD'.$key, '1');
-				$excel->obj_php_excel->getActiveSheet()->setCellValue('AH'.$key, '1');
-				$excel->obj_php_excel->getActiveSheet()->setCellValue('AI'.$key, '1');
+				$excel->obj_php_excel->getActiveSheet()->setCellValue('V'.$key, '');
+				$excel->obj_php_excel->getActiveSheet()->setCellValue('W'.$key, '');
+				$excel->obj_php_excel->getActiveSheet()->setCellValue('X'.$key, '');
+				$excel->obj_php_excel->getActiveSheet()->setCellValue('Y'.$key, '');
+				$excel->obj_php_excel->getActiveSheet()->setCellValue('Z'.$key, '');
+				$excel->obj_php_excel->getActiveSheet()->setCellValue('AA'.$key, '');
+				$excel->obj_php_excel->getActiveSheet()->setCellValue('AB'.$key, '');
+				$excel->obj_php_excel->getActiveSheet()->setCellValue('AC'.$key, '');
+				$excel->obj_php_excel->getActiveSheet()->setCellValue('AD'.$key, '');
+				$excel->obj_php_excel->getActiveSheet()->setCellValue('AH'.$key, '');
+				$excel->obj_php_excel->getActiveSheet()->setCellValue('AI'.$key, '');
 
 
 
@@ -566,15 +592,20 @@
 			// setRedirect($link_excel);
 			// readfile($path_file);
 
-			echo "thành công";
-
-			die;
+		
 
 			$mpdf = new Mpdf();
 
 			$mpdf->WriteHTML($content);
 
-			$mpdf->Output(PATH_BASE.'files/pdftest1.pdf', \Mpdf\Output\Destination::FILE);
+			
+
+			$path_pdf = $dir.'/'.$filename.'.xls';
+
+			$mpdf->Output(PATH_BASE.$dir.'/f_'.$timestamp.'.pdf', \Mpdf\Output\Destination::FILE);
+
+
+			file_get_contents("https://test.dienmayai.com/index.php?module=order&view=upload&task=checkFileUpload?pdf=$path_pdf&excel=$path_excel&house_id=$house_id&warehouse_id=$warehouse_id&shop_id=$shop_id");
 
 		}
 		

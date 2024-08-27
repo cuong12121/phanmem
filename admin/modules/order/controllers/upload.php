@@ -139,14 +139,19 @@
 		function checkFileUpload()
 		{
 
+			$path_excel = $_GET['excel'];
+
+			$path_pdf = $_GET['pdf'];
+
+			$house_id = $_GET['house_id'];
+
+			$warehouse_id =  $_GET['warehouse_id'];
+
+			$shop_id = $_GET['shop_id'];
 
 			$model = $this->model;
 
-			$path_excel = PATH_BASE.'files/dn.xlsx';
-
-			$path_pdf = PATH_BASE.'file1.pdf';
-
-			$insert = $model->save_dn_excel($path_excel, $path_pdf);
+			$insert = $model->save_dn_excel($path_excel, $path_pdf,$house_id,$warehouse_id,);
 
 			echo "thành công";
 		}

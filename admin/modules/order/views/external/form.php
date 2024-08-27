@@ -132,6 +132,7 @@ $data_post = !empty($_SESSION['input_data'])?$_SESSION['input_data']:'';
                 <th>Mã đơn hàng</th>
 
                 <th style="width: 10px;">Số lượng</th>
+                <th style="width: 267px;">Sku phân loại hàng </th>
                 <th>Phí vận chuyển</th>
                 
                 <th style="width:105px">Tổng số tiền người mua thanh toán</th>
@@ -150,6 +151,7 @@ $data_post = !empty($_SESSION['input_data'])?$_SESSION['input_data']:'';
                 <td><input type="text"  name="productCode<?= $i ?>" value="<?= $data_post["productCode$i"]??'' ?>" required></td>
 
                 <td><input type="text"  name="soluong<?= $i ?>" value="<?= $data_post["soluong$i"]??'' ?>" required></td>
+                <td><input type="text"  name="skuplhang<?= $i ?>" value="<?= $data_post["skuplhang$i"]??'' ?>" required></td>
                 <td><input type="text"  name="phivanchuyen<?= $i ?>" value="<?= $data_post["phivanchuyen$i"]??'' ?>" required></td>
                 <!-- <td><input type="text" id="phivanchuyennguoimuatra" name="phivanchuyennguoimuatra"></td> -->
                 <td><input type="text"  name="tongsotiennguoimuathanhtoan<?= $i ?>" value="<?= $data_post["tongsotiennguoimuathanhtoan$i"]??'' ?>" required></td>
