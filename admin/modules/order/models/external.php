@@ -479,17 +479,17 @@
 			$excel->obj_php_excel->getActiveSheet()->setCellValue('Q1', 'Tổng giá trị đơn hàng');
 			$excel->obj_php_excel->getActiveSheet()->setCellValue('R1', 'Phí vận chuyển dự kiến');
 			$excel->obj_php_excel->getActiveSheet()->setCellValue('S1', 'Phí vận chuyển người mua trả');
-			$excel->obj_php_excel->getActiveSheet()->setCellValue('V', 'Tổng số tiền người toán');
-			$excel->obj_php_excel->getActiveSheet()->setCellValue('W', 'Phương thức thanh toán');
-			$excel->obj_php_excel->getActiveSheet()->setCellValue('X', 'Phí cố định');
-			$excel->obj_php_excel->getActiveSheet()->setCellValue('Y', 'Phí dịch vụ');
-			$excel->obj_php_excel->getActiveSheet()->setCellValue('Z', 'Phí thanh toán');
-			$excel->obj_php_excel->getActiveSheet()->setCellValue('AA', 'Tiền ký quỹ');
-			$excel->obj_php_excel->getActiveSheet()->setCellValue('AB', 'Người mua');
-			$excel->obj_php_excel->getActiveSheet()->setCellValue('AC', 'Tên người nhận');
-			$excel->obj_php_excel->getActiveSheet()->setCellValue('AD', 'Số điện thoại');
-			$excel->obj_php_excel->getActiveSheet()->setCellValue('AH', 'Địa chỉ nhận hàng');
-			$excel->obj_php_excel->getActiveSheet()->setCellValue('AI', 'Ghi chú');
+			// $excel->obj_php_excel->getActiveSheet()->setCellValue('V', 'Tổng số tiền người toán');
+			// $excel->obj_php_excel->getActiveSheet()->setCellValue('W', 'Phương thức thanh toán');
+			// $excel->obj_php_excel->getActiveSheet()->setCellValue('X', 'Phí cố định');
+			// $excel->obj_php_excel->getActiveSheet()->setCellValue('Y', 'Phí dịch vụ');
+			// $excel->obj_php_excel->getActiveSheet()->setCellValue('Z', 'Phí thanh toán');
+			// $excel->obj_php_excel->getActiveSheet()->setCellValue('AA', 'Tiền ký quỹ');
+			// $excel->obj_php_excel->getActiveSheet()->setCellValue('AB', 'Người mua');
+			// $excel->obj_php_excel->getActiveSheet()->setCellValue('AC', 'Tên người nhận');
+			// $excel->obj_php_excel->getActiveSheet()->setCellValue('AD', 'Số điện thoại');
+			// $excel->obj_php_excel->getActiveSheet()->setCellValue('AH', 'Địa chỉ nhận hàng');
+			// $excel->obj_php_excel->getActiveSheet()->setCellValue('AI', 'Ghi chú');
 			
 
 			for ($key=1;$key<=$number; $key++){
@@ -511,17 +511,17 @@
 				$excel->obj_php_excel->getActiveSheet()->setCellValue('Q'.$key, '1');
 				$excel->obj_php_excel->getActiveSheet()->setCellValue('R'.$key, '1');
 				$excel->obj_php_excel->getActiveSheet()->setCellValue('S'.$key, '1');
-				$excel->obj_php_excel->getActiveSheet()->setCellValue('V'.$key, '1');
-				$excel->obj_php_excel->getActiveSheet()->setCellValue('W'.$key, '1');
-				$excel->obj_php_excel->getActiveSheet()->setCellValue('X'.$key, '1');
-				$excel->obj_php_excel->getActiveSheet()->setCellValue('Y'.$key, '1');
-				$excel->obj_php_excel->getActiveSheet()->setCellValue('Z'.$key, '1');
-				$excel->obj_php_excel->getActiveSheet()->setCellValue('AA'.$key, '1');
-				$excel->obj_php_excel->getActiveSheet()->setCellValue('AB'.$key, '1');
-				$excel->obj_php_excel->getActiveSheet()->setCellValue('AC'.$key, '1');
-				$excel->obj_php_excel->getActiveSheet()->setCellValue('AD'.$key, '1');
-				$excel->obj_php_excel->getActiveSheet()->setCellValue('AH'.$key, '1');
-				$excel->obj_php_excel->getActiveSheet()->setCellValue('AI'.$key, '1');
+				// $excel->obj_php_excel->getActiveSheet()->setCellValue('V'.$key, '1');
+				// $excel->obj_php_excel->getActiveSheet()->setCellValue('W'.$key, '1');
+				// $excel->obj_php_excel->getActiveSheet()->setCellValue('X'.$key, '1');
+				// $excel->obj_php_excel->getActiveSheet()->setCellValue('Y'.$key, '1');
+				// $excel->obj_php_excel->getActiveSheet()->setCellValue('Z'.$key, '1');
+				// $excel->obj_php_excel->getActiveSheet()->setCellValue('AA'.$key, '1');
+				// $excel->obj_php_excel->getActiveSheet()->setCellValue('AB'.$key, '1');
+				// $excel->obj_php_excel->getActiveSheet()->setCellValue('AC'.$key, '1');
+				// $excel->obj_php_excel->getActiveSheet()->setCellValue('AD'.$key, '1');
+				// $excel->obj_php_excel->getActiveSheet()->setCellValue('AH'.$key, '1');
+				// $excel->obj_php_excel->getActiveSheet()->setCellValue('AI'.$key, '1');
 
 
 
