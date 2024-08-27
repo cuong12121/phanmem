@@ -184,7 +184,7 @@
 			$house_id = FSInput::get('house_id');
 
 			if($shop_id==0){
-				$msg = 'Không được để trống mã gian hàng';
+				$msg = 'Không được để trống shop';
 				setRedirect($link,$msg,'error');
 			}
 
