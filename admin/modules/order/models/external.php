@@ -504,6 +504,7 @@
 				$excel->obj_php_excel->getActiveSheet()->setCellValue('G'.$key, '1');
 				$excel->obj_php_excel->getActiveSheet()->setCellValue('H'.$key, '1');
 				$excel->obj_php_excel->getActiveSheet()->setCellValue('I'.$key, '1');
+				$excel->obj_php_excel->getActiveSheet()->setCellValue('L'.$key, '1');
 				$excel->obj_php_excel->getActiveSheet()->setCellValue('N'.$key, '1');
 				$excel->obj_php_excel->getActiveSheet()->setCellValue('O'.$key, '1');
 				$excel->obj_php_excel->getActiveSheet()->setCellValue('P'.$key, '1');
