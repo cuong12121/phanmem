@@ -462,6 +462,14 @@
 			$excel->obj_php_excel->getActiveSheet()->getColumnDimension('H')->setWidth(50);
 			$excel->obj_php_excel->getActiveSheet()->getColumnDimension('I')->setWidth(60);
 			$excel->obj_php_excel->getActiveSheet()->getColumnDimension('J')->setWidth(60);
+			$excel->obj_php_excel->getActiveSheet()->getColumnDimension('I')->setWidth(60);
+			$excel->obj_php_excel->getActiveSheet()->getColumnDimension('J')->setWidth(60);
+			$excel->obj_php_excel->getActiveSheet()->getColumnDimension('K')->setWidth(20);
+			$excel->obj_php_excel->getActiveSheet()->getColumnDimension('L')->setWidth(20);
+			$excel->obj_php_excel->getActiveSheet()->getColumnDimension('M')->setWidth(20);
+			$excel->obj_php_excel->getActiveSheet()->getColumnDimension('N')->setWidth(20);
+			
+
 			$excel->obj_php_excel->getActiveSheet()->setCellValue('A1', 'Mã đơn hàng');
 			$excel->obj_php_excel->getActiveSheet()->setCellValue('B1', 'Mã kiện hàng');
 			$excel->obj_php_excel->getActiveSheet()->setCellValue('C1', 'Ngày đặt hàng');
@@ -472,6 +480,8 @@
 			$excel->obj_php_excel->getActiveSheet()->setCellValue('H1', 'Ngày gửi hàng');
 			// $excel->obj_php_excel->getActiveSheet()->setCellValue('G1', 'Đơn giá');
 			$excel->obj_php_excel->getActiveSheet()->setCellValue('I1', 'Tên sản phẩm');
+			$excel->obj_php_excel->getActiveSheet()->setCellValue('J1', 'Cân nặng sản phẩm');
+			$excel->obj_php_excel->getActiveSheet()->setCellValue('K1', 'Tổng cân nặng');
 			$excel->obj_php_excel->getActiveSheet()->setCellValue('L1', 'Sku phân loại hàng');
 			$excel->obj_php_excel->getActiveSheet()->setCellValue('N1', 'Đơn giá');
 			$excel->obj_php_excel->getActiveSheet()->setCellValue('O1', 'Số lượng');
@@ -479,6 +489,8 @@
 			$excel->obj_php_excel->getActiveSheet()->setCellValue('Q1', 'Tổng giá trị đơn hàng');
 			$excel->obj_php_excel->getActiveSheet()->setCellValue('R1', 'Phí vận chuyển dự kiến');
 			$excel->obj_php_excel->getActiveSheet()->setCellValue('S1', 'Phí vận chuyển người mua trả');
+			$excel->obj_php_excel->getActiveSheet()->setCellValue('T1', 'Phí vận chuyển tài trợ bởi');
+			$excel->obj_php_excel->getActiveSheet()->setCellValue('U1', 'Phí trả hàng');
 			$excel->obj_php_excel->getActiveSheet()->setCellValue('V1', 'Tổng số tiền người toán');
 			$excel->obj_php_excel->getActiveSheet()->setCellValue('W1', 'Phương thức thanh toán');
 			$excel->obj_php_excel->getActiveSheet()->setCellValue('X1', 'Phí cố định');
@@ -488,6 +500,9 @@
 			$excel->obj_php_excel->getActiveSheet()->setCellValue('AB1', 'Người mua');
 			$excel->obj_php_excel->getActiveSheet()->setCellValue('AC1', 'Tên người nhận');
 			$excel->obj_php_excel->getActiveSheet()->setCellValue('AD1', 'Số điện thoại');
+			$excel->obj_php_excel->getActiveSheet()->setCellValue('AE1', 'Tỉnh thành phố');
+			$excel->obj_php_excel->getActiveSheet()->setCellValue('AF1', 'Quận huyện');
+			$excel->obj_php_excel->getActiveSheet()->setCellValue('AG1', 'Quận');
 			$excel->obj_php_excel->getActiveSheet()->setCellValue('AH1', 'Địa chỉ nhận hàng');
 			$excel->obj_php_excel->getActiveSheet()->setCellValue('AI1', 'Ghi chú');
 			
@@ -504,6 +519,8 @@
 				$excel->obj_php_excel->getActiveSheet()->setCellValue('G'.$key, '1');
 				$excel->obj_php_excel->getActiveSheet()->setCellValue('H'.$key, '1');
 				$excel->obj_php_excel->getActiveSheet()->setCellValue('I'.$key, '1');
+				$excel->obj_php_excel->getActiveSheet()->setCellValue('J'.$key, '1');
+				$excel->obj_php_excel->getActiveSheet()->setCellValue('K'.$key, '1');
 				$excel->obj_php_excel->getActiveSheet()->setCellValue('L'.$key, '1');
 				$excel->obj_php_excel->getActiveSheet()->setCellValue('N'.$key, '1');
 				$excel->obj_php_excel->getActiveSheet()->setCellValue('O'.$key, '1');
@@ -511,6 +528,8 @@
 				$excel->obj_php_excel->getActiveSheet()->setCellValue('Q'.$key, '1');
 				$excel->obj_php_excel->getActiveSheet()->setCellValue('R'.$key, '1');
 				$excel->obj_php_excel->getActiveSheet()->setCellValue('S'.$key, '1');
+				$excel->obj_php_excel->getActiveSheet()->setCellValue('T'.$key, '');
+				$excel->obj_php_excel->getActiveSheet()->setCellValue('U'.$key, '');
 				$excel->obj_php_excel->getActiveSheet()->setCellValue('V'.$key, '1');
 				$excel->obj_php_excel->getActiveSheet()->setCellValue('W'.$key, '1');
 				$excel->obj_php_excel->getActiveSheet()->setCellValue('X'.$key, '1');
@@ -528,11 +547,10 @@
 				// $excel->obj_php_excel->getActiveSheet()->setCellValue('J'.$key, $string_info_extent);
 			}
 
-
+			$path_file =   PATH_ADMINISTRATOR.DS.str_replace('/',DS, $output['xls']);
 
 			$output = $excel->write_files();
 
-		
 
 			$path_file =   PATH_ADMINISTRATOR.DS.str_replace('/',DS, $output['xls']);
 
