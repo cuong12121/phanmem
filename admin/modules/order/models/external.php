@@ -479,7 +479,7 @@
 			$excel->obj_php_excel->getActiveSheet()->setCellValue('Q1', 'Tổng giá trị đơn hàng');
 			$excel->obj_php_excel->getActiveSheet()->setCellValue('R1', 'Phí vận chuyển dự kiến');
 			$excel->obj_php_excel->getActiveSheet()->setCellValue('S1', 'Phí vận chuyển người mua trả');
-			$excel->obj_php_excel->getActiveSheet()->setCellValue('V', 'Tổng số tiền người mua thanh toán');
+			$excel->obj_php_excel->getActiveSheet()->setCellValue('V', 'Tổng số tiền người toán');
 			$excel->obj_php_excel->getActiveSheet()->setCellValue('W', 'Phương thức thanh toán');
 			$excel->obj_php_excel->getActiveSheet()->setCellValue('X', 'Phí cố định');
 			$excel->obj_php_excel->getActiveSheet()->setCellValue('Y', 'Phí dịch vụ');
