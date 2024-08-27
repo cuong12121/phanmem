@@ -504,7 +504,24 @@
 				$excel->obj_php_excel->getActiveSheet()->setCellValue('G'.$key, '1');
 				$excel->obj_php_excel->getActiveSheet()->setCellValue('H'.$key, '1');
 				$excel->obj_php_excel->getActiveSheet()->setCellValue('I'.$key, '1');
-				$excel->obj_php_excel->getActiveSheet()->setCellValue('J'.$key, '1');
+				$excel->obj_php_excel->getActiveSheet()->setCellValue('N'.$key, '1');
+				$excel->obj_php_excel->getActiveSheet()->setCellValue('O'.$key, '1');
+				$excel->obj_php_excel->getActiveSheet()->setCellValue('P'.$key, '1');
+				$excel->obj_php_excel->getActiveSheet()->setCellValue('Q'.$key, '1');
+				$excel->obj_php_excel->getActiveSheet()->setCellValue('R'.$key, '1');
+				$excel->obj_php_excel->getActiveSheet()->setCellValue('S'.$key, '1');
+				$excel->obj_php_excel->getActiveSheet()->setCellValue('V'.$key, '1');
+				$excel->obj_php_excel->getActiveSheet()->setCellValue('W'.$key, '1');
+				$excel->obj_php_excel->getActiveSheet()->setCellValue('X'.$key, '1');
+				$excel->obj_php_excel->getActiveSheet()->setCellValue('Y'.$key, '1');
+				$excel->obj_php_excel->getActiveSheet()->setCellValue('Z'.$key, '1');
+				$excel->obj_php_excel->getActiveSheet()->setCellValue('AA'.$key, '1');
+				$excel->obj_php_excel->getActiveSheet()->setCellValue('AB'.$key, '1');
+				$excel->obj_php_excel->getActiveSheet()->setCellValue('AC'.$key, '1');
+				$excel->obj_php_excel->getActiveSheet()->setCellValue('AD'.$key, '1');
+				$excel->obj_php_excel->getActiveSheet()->setCellValue('AH'.$key, '1');
+				$excel->obj_php_excel->getActiveSheet()->setCellValue('AI'.$key, '1');
+
 
 
 				// $excel->obj_php_excel->getActiveSheet()->setCellValue('J'.$key, $string_info_extent);
@@ -514,7 +531,7 @@
 
 			$output = $excel->write_files();
 
-			dd($output);
+		
 
 			$path_file =   PATH_ADMINISTRATOR.DS.str_replace('/',DS, $output['xls']);
 
