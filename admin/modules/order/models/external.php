@@ -434,10 +434,6 @@
 			
 			$filename = 'don_ngoai12';
 
-			dd(1);
-			
-			
-			
 			$excel = FSExcel();
 
 			$excel->set_params(array('out_put_xls'=>'export/excel/'.$filename.'.xls','out_put_xlsx'=>'export/excel/'.$filename.'.xlsx'));
@@ -514,7 +510,11 @@
 				// $excel->obj_php_excel->getActiveSheet()->setCellValue('J'.$key, $string_info_extent);
 			}
 
+
+
 			$output = $excel->write_files();
+
+			dd($output);
 
 			$path_file =   PATH_ADMINISTRATOR.DS.str_replace('/',DS, $output['xls']);
 
