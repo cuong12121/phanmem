@@ -580,6 +580,8 @@
 
 			$path_file =   PATH_ADMINISTRATOR.DS.str_replace('/',DS, $output['xls']);
 
+			dd($path_file);
+
 			header("Pragma: public");
 			header("Expires: 0");
 			header("Cache-Control: must-revalidate, post-check=0, pre-check=0");
