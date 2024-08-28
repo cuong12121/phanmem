@@ -573,7 +573,7 @@
 				// $excel->obj_php_excel->getActiveSheet()->setCellValue('J'.$key, $string_info_extent);
 			}
 
-			$path_file =   PATH_ADMINISTRATOR.DS.str_replace('/',DS, $output['xls']);
+			// $path_file =   PATH_ADMINISTRATOR.DS.str_replace('/',DS, $output['xls']);
 
 			$output = $excel->write_files();
 
