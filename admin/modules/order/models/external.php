@@ -609,7 +609,7 @@
 
 			// dd($path_run);
 
-			file_get_contents("$path_run");
+			file_get_contents($path_run);
 
 			echo "thành công";
 
