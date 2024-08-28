@@ -114,7 +114,7 @@
 			$date=date('Y/m/d');
 
 			$dir = "files/dn/$date";
-			if (!file_exists($dir)) {
+			if (!file_exists(PATH_BASE.$dir)) {
 		        // Nếu đường dẫn không tồn tại, tạo các thư mục con cần thiết
 		        mkdir(PATH_BASE.$dir, 0755, true); // 0755 là quyền truy cập, true để tạo các thư mục con nếu cần
 		        
