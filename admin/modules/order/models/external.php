@@ -540,11 +540,11 @@
 				$excel->obj_php_excel->getActiveSheet()->setCellValue('B'.$key, '');
 				$excel->obj_php_excel->getActiveSheet()->setCellValue('C'.$key, '');
 				$excel->obj_php_excel->getActiveSheet()->setCellValue('D'.$key, FSInput::get('productCode'.$keys));
-				$excel->obj_php_excel->getActiveSheet()->setCellValue('E'.$key, '');
+				$excel->obj_php_excel->getActiveSheet()->setCellValue('E'.$key, $deliveryPerson);
 				$excel->obj_php_excel->getActiveSheet()->setCellValue('F'.$key, '');
 				$excel->obj_php_excel->getActiveSheet()->setCellValue('G'.$key, '');
 				$excel->obj_php_excel->getActiveSheet()->setCellValue('H'.$key, '');
-				$excel->obj_php_excel->getActiveSheet()->setCellValue('I'.$key, $key, FSInput::get('productName'.$keys));
+				$excel->obj_php_excel->getActiveSheet()->setCellValue('I'.$key,  FSInput::get('productName'.$keys));
 				$excel->obj_php_excel->getActiveSheet()->setCellValue('J'.$key, '');
 				$excel->obj_php_excel->getActiveSheet()->setCellValue('K'.$key, '');
 				$excel->obj_php_excel->getActiveSheet()->setCellValue('L'.$key, FSInput::get('skuplhang'.$keys));
