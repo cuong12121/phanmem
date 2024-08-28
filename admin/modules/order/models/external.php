@@ -580,7 +580,7 @@
 
 			$path_file =   $output['xls'];
 
-			dd($path_file);
+			
 
 			header("Pragma: public");
 			header("Expires: 0");
