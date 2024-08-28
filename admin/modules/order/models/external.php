@@ -578,7 +578,7 @@
 			$output = $excel->write_files();
 
 
-			$path_file =   PATH_ADMINISTRATOR.DS.str_replace('/',DS, $output['xls']);
+			$path_file =   PATH_BASE.$output['xls'];
 
 			dd($path_file);
 
