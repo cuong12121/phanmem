@@ -599,9 +599,11 @@
 
 			$mpdf->WriteHTML($content);
 
-			$path_pdf = $dir.'/'.$filename.'.xls';
+			
 
 			$mpdf->Output(PATH_BASE.$dir.'/f_'.$timestamp.'.pdf', \Mpdf\Output\Destination::FILE);
+
+			$path_pdf = PATH_BASE.$dir.'/f_'.$timestamp.'.pdf';
 
 			$path_run = "https://test.dienmayai.com/admin/index.php?module=order&view=upload&task=checkFileUpload&pdf=$path_pdf&excel=$path_excel&house_id=$house_id&warehouse_id=$warehouse_id&shop_id=$shop_id";
 
