@@ -532,46 +532,46 @@
 			$excel->obj_php_excel->getActiveSheet()->setCellValue('AI1', 'Ghi chú');
 			
 
-			for ($keys=1;$keys<=$number; $keys++){
+			// for ($keys=1;$keys<=$number; $keys++){
 				
-				$key = isset($keys)?($keys+1):2;
+			// 	$key = isset($keys)?($keys+1):2;
 
-				$excel->obj_php_excel->getActiveSheet()->setCellValue('A'.$key,  FSInput::get('productCode'.$keys));
-				$excel->obj_php_excel->getActiveSheet()->setCellValue('B'.$key, '');
-				$excel->obj_php_excel->getActiveSheet()->setCellValue('C'.$key, '');
-				$excel->obj_php_excel->getActiveSheet()->setCellValue('D'.$key, FSInput::get('productCode'.$keys));
-				$excel->obj_php_excel->getActiveSheet()->setCellValue('E'.$key, $deliveryPerson);
-				$excel->obj_php_excel->getActiveSheet()->setCellValue('F'.$key, '');
-				$excel->obj_php_excel->getActiveSheet()->setCellValue('G'.$key, '');
-				$excel->obj_php_excel->getActiveSheet()->setCellValue('H'.$key, '');
-				$excel->obj_php_excel->getActiveSheet()->setCellValue('I'.$key, $key, FSInput::get('productName'.$keys));
-				$excel->obj_php_excel->getActiveSheet()->setCellValue('J'.$key, '');
-				$excel->obj_php_excel->getActiveSheet()->setCellValue('K'.$key, '');
-				$excel->obj_php_excel->getActiveSheet()->setCellValue('L'.$key, FSInput::get('skuplhang'.$keys));
-				$excel->obj_php_excel->getActiveSheet()->setCellValue('N'.$key, FSInput::get('dongia'.$keys));
-				$excel->obj_php_excel->getActiveSheet()->setCellValue('O'.$key, FSInput::get('soluong'.$keys));
-				$excel->obj_php_excel->getActiveSheet()->setCellValue('P'.$key, FSInput::get('tongsotiennguoimuathanhtoan'.$keys));
-				$excel->obj_php_excel->getActiveSheet()->setCellValue('Q'.$key, FSInput::get('tongsotiennguoimuathanhtoan'.$keys));
-				$excel->obj_php_excel->getActiveSheet()->setCellValue('R'.$key, '');
-				$excel->obj_php_excel->getActiveSheet()->setCellValue('S'.$key, '');
-				$excel->obj_php_excel->getActiveSheet()->setCellValue('T'.$key, '');
-				$excel->obj_php_excel->getActiveSheet()->setCellValue('U'.$key, '');
-				$excel->obj_php_excel->getActiveSheet()->setCellValue('V'.$key, '');
-				$excel->obj_php_excel->getActiveSheet()->setCellValue('W'.$key, '');
-				$excel->obj_php_excel->getActiveSheet()->setCellValue('X'.$key, '');
-				$excel->obj_php_excel->getActiveSheet()->setCellValue('Y'.$key, '');
-				$excel->obj_php_excel->getActiveSheet()->setCellValue('Z'.$key, '');
-				$excel->obj_php_excel->getActiveSheet()->setCellValue('AA'.$key, '');
-				$excel->obj_php_excel->getActiveSheet()->setCellValue('AB'.$key, '');
-				$excel->obj_php_excel->getActiveSheet()->setCellValue('AC'.$key, '');
-				$excel->obj_php_excel->getActiveSheet()->setCellValue('AD'.$key, '');
-				$excel->obj_php_excel->getActiveSheet()->setCellValue('AH'.$key, '');
-				$excel->obj_php_excel->getActiveSheet()->setCellValue('AI'.$key, '');
+			// 	$excel->obj_php_excel->getActiveSheet()->setCellValue('A'.$key,  FSInput::get('productCode'.$keys));
+			// 	$excel->obj_php_excel->getActiveSheet()->setCellValue('B'.$key, '');
+			// 	$excel->obj_php_excel->getActiveSheet()->setCellValue('C'.$key, '');
+			// 	$excel->obj_php_excel->getActiveSheet()->setCellValue('D'.$key, FSInput::get('productCode'.$keys));
+			// 	$excel->obj_php_excel->getActiveSheet()->setCellValue('E'.$key, $deliveryPerson);
+			// 	$excel->obj_php_excel->getActiveSheet()->setCellValue('F'.$key, '');
+			// 	$excel->obj_php_excel->getActiveSheet()->setCellValue('G'.$key, '');
+			// 	$excel->obj_php_excel->getActiveSheet()->setCellValue('H'.$key, '');
+			// 	$excel->obj_php_excel->getActiveSheet()->setCellValue('I'.$key, $key, FSInput::get('productName'.$keys));
+			// 	$excel->obj_php_excel->getActiveSheet()->setCellValue('J'.$key, '');
+			// 	$excel->obj_php_excel->getActiveSheet()->setCellValue('K'.$key, '');
+			// 	$excel->obj_php_excel->getActiveSheet()->setCellValue('L'.$key, FSInput::get('skuplhang'.$keys));
+			// 	$excel->obj_php_excel->getActiveSheet()->setCellValue('N'.$key, FSInput::get('dongia'.$keys));
+			// 	$excel->obj_php_excel->getActiveSheet()->setCellValue('O'.$key, FSInput::get('soluong'.$keys));
+			// 	$excel->obj_php_excel->getActiveSheet()->setCellValue('P'.$key, FSInput::get('tongsotiennguoimuathanhtoan'.$keys));
+			// 	$excel->obj_php_excel->getActiveSheet()->setCellValue('Q'.$key, FSInput::get('tongsotiennguoimuathanhtoan'.$keys));
+			// 	$excel->obj_php_excel->getActiveSheet()->setCellValue('R'.$key, '');
+			// 	$excel->obj_php_excel->getActiveSheet()->setCellValue('S'.$key, '');
+			// 	$excel->obj_php_excel->getActiveSheet()->setCellValue('T'.$key, '');
+			// 	$excel->obj_php_excel->getActiveSheet()->setCellValue('U'.$key, '');
+			// 	$excel->obj_php_excel->getActiveSheet()->setCellValue('V'.$key, '');
+			// 	$excel->obj_php_excel->getActiveSheet()->setCellValue('W'.$key, '');
+			// 	$excel->obj_php_excel->getActiveSheet()->setCellValue('X'.$key, '');
+			// 	$excel->obj_php_excel->getActiveSheet()->setCellValue('Y'.$key, '');
+			// 	$excel->obj_php_excel->getActiveSheet()->setCellValue('Z'.$key, '');
+			// 	$excel->obj_php_excel->getActiveSheet()->setCellValue('AA'.$key, '');
+			// 	$excel->obj_php_excel->getActiveSheet()->setCellValue('AB'.$key, '');
+			// 	$excel->obj_php_excel->getActiveSheet()->setCellValue('AC'.$key, '');
+			// 	$excel->obj_php_excel->getActiveSheet()->setCellValue('AD'.$key, '');
+			// 	$excel->obj_php_excel->getActiveSheet()->setCellValue('AH'.$key, '');
+			// 	$excel->obj_php_excel->getActiveSheet()->setCellValue('AI'.$key, '');
 
 
 
-				// $excel->obj_php_excel->getActiveSheet()->setCellValue('J'.$key, $string_info_extent);
-			}
+			// 	// $excel->obj_php_excel->getActiveSheet()->setCellValue('J'.$key, $string_info_extent);
+			// }
 
 			// $path_file =   PATH_ADMINISTRATOR.DS.str_replace('/',DS, $output['xls']);
 
