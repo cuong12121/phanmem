@@ -459,7 +459,7 @@
 
 			$excel = FSExcel();
 
-			$excel->set_params(array('out_put_xls'=>$dir.'/'.$filename.'.xls','out_put_xlsx'=>$dir.'/'.$filename.'.xlsx'));
+			$excel->set_params(array('out_put_xls'=>PATH_BASE.$dir.'/'.$filename.'.xls','out_put_xlsx'=>PATH_BASE.$dir.'/'.$filename.'.xlsx'));
 
 			$path_excel = $dir.'/'.$filename.'.xls';
 
