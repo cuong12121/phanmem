@@ -151,6 +151,8 @@
 
 			$model = $this->model;
 
+			dd($shop_id);
+
 			$insert = $model->save_dn_excel($path_excel, $path_pdf,$house_id,$warehouse_id,);
 
 			echo "thành công";
