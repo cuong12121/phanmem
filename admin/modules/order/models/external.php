@@ -607,13 +607,9 @@
 
 			$path_run = "https://drive.dienmayai.com/dn.php?pdf=$path_pdf&excel=$path_excel&house_id=$house_id&warehouse_id=$warehouse_id&shop_id=$shop_id";
 
-			
-
 			file_get_contents($path_run);
 
 			echo "thành công";
-
-		
 
 		
 		}
