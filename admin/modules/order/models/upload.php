@@ -1771,7 +1771,7 @@
 
 			$url = 'http://test.dienmayai.com/';
 
-			$row['file_pdf'] = str_replace('/www/wwwroot/test.dienmayai.com/', 'files/', $filepdf);
+			$row['file_pdf'] = str_replace('/www/wwwroot/test.dienmayai.com/', '', $filepdf);
 			$row['file_xlsx'] =  str_replace('/www/wwwroot/test.dienmayai.com/', '', $file_xlsx) ;
 
 			// dd($row['file_xlsx']);
