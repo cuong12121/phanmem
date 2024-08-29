@@ -282,7 +282,7 @@
 					        <p class="s5">'.FSInput::get('productName'.$i).'</p>
 					    </td>
 					    <td style="width:31pt;border-top-style:solid;border-top-width:1pt;border-left-style:solid;border-left-width:1pt;border-bottom-style:solid;border-bottom-width:1pt;border-right-style:solid;border-right-width:1pt">
-					        <p style="text-indent: 0pt;text-align: left;"><br></p>
+					        <p style="text-indent: 0pt;text-align: left;">'.FSInput::get('skuplhang'.$i).' <br></p>
 					    </td>
 					    <td style="width:59pt;border-top-style:solid;border-top-width:1pt;border-left-style:solid;border-left-width:1pt;border-bottom-style:solid;border-bottom-width:1pt;border-right-style:solid;border-right-width:1pt">
 					        <p class="s5" style="padding-left: 1pt;text-indent: 0pt;line-height: 8pt;text-align: left;"></p>
