@@ -1272,11 +1272,18 @@
 		$model = $controle -> model;
 		
 		$data_detail = $model->get_record('id = ' .$id,'fs_order_uploads_detail','id,platform_id');
-		$data = $model->get_record('id = ' .$id,'fs_order_uploads','id,file_xlsx,file_excel_drive');
+		$data = $model->get_record('id = ' .$id,'fs_order_uploads','id,file_xlsx,file_excel_drive,platform_id');
 		
 	
-		if(!$data-> file_xlsx){
-			$html ='<strong style="color:red">Lỗi thiếu file</strong>';
+		if(!$data-> file_xlsx||$data->platform_id==6){
+
+			if($data->platform_id==6){
+				$html = '';
+			}
+			else{
+				$html ='<strong style="color:red">Lỗi thiếu file</strong>';
+			}
+			
 			return $html;
 		}
 		$link = URL_ROOT.$data-> file_xlsx;
@@ -1304,12 +1311,7 @@
 			return '<a style="color: red;" target="_blink">Lỗi </a>';
 		}else{
 
-			// xóa file excel ở đơn ngoài
-
-			if($data_detail->platform_id==6){
-				return '<a style="#" target="_blink" href="#"></a>';
-
-			}
+			
 			return '<a style="color: rgba(255, 153, 0, 0.79);" target="_blink" href="' . $link . '">'.basename($data-> file_xlsx).$data_detail->platform_id.'</a>';
 		}
 
