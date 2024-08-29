@@ -1275,14 +1275,9 @@
 		$data = $model->get_record('id = ' .$id,'fs_order_uploads','id,file_xlsx,file_excel_drive,platform_id');
 		
 	
-		if(!$data-> file_xlsx||$data->platform_id==6){
+		if(!$data-> file_xlsx){
 
-			if($data->platform_id==6){
-				$html = '';
-			}
-			else{
-				$html ='<strong style="color:red">Lỗi thiếu file</strong>';
-			}
+			$html ='<strong style="color:red">Lỗi thiếu file</strong>';
 			
 			return $html;
 		}
@@ -1303,8 +1298,6 @@
 		   
 		}
 
-		
-		
 		
 		if(empty($data_detail)){
 		   
