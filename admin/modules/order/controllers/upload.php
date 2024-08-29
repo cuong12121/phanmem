@@ -1271,7 +1271,7 @@
 	function view_excel($controle,$id){
 		$model = $controle -> model;
 		
-		
+		$data_detail = $model->get_record('id = ' .$id,'fs_order_uploads_detail','id,platform_id');
 		$data = $model->get_record('id = ' .$id,'fs_order_uploads','id,file_xlsx,file_excel_drive');
 		
 	
@@ -1296,7 +1296,7 @@
 		   
 		}
 
-		$data_detail = $model->get_record('id = ' .$id,'fs_order_uploads_detail','id,platform_id');
+		
 		
 		
 		if(empty($data_detail)){
