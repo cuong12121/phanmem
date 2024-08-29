@@ -13,6 +13,11 @@
 	global $toolbar;
 	$toolbar->setTitle(FSText :: _('Đơn hàng') );
 	$toolbar->addButton('add',FSText :: _('Add'),'','add.png');
+	?>
+
+	<a class="toolbar"  href="https://test.dienmayai.com/admin/order/external/add"><span title=" Thêm mới đơn hàng ngoài" style="background:url('https://test.dienmayai.com/admin/templates/default/images/toolbar/add.png') no-repeat"></span> Thêm mới</a>
+
+	<?php
 	$toolbar->addButton('prints',FSText :: _('In Hóa Đơn'),FSText :: _('You must select at least one record'),'print.png');
 	//$toolbar->addButton('edit',FSText :: _('Edit'),FSText :: _('You must select at least one record'),'edit.png'); 
 	$toolbar->addButton('remove',FSText :: _('Remove'),FSText :: _('You must select at least one record'),'remove.png'); 
