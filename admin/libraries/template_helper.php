@@ -1860,30 +1860,37 @@ static function dt_edit_image_old($title,$name,$value,$width  = 0,$height = 0,$c
 					if($i == 0){
 						$path = str_replace($base_name,'',$name_item);
 					}
-					if(!file_exists(PATH_BASE.$path.$base_name)){
+					if(!file_exists(PATH_BASE.$path.$base_name)|| $platform_id==6){
 
-						if(!empty($filePDFAr)){
+						if($platform_id==6){
 
-					  		$filepdf = explode(',', $filePDFAr);
+    				    	$html .='';
+						}
+						else{
+							if(!empty($filePDFAr)){
 
-					  		foreach ($filepdf as $key => $val) {
+						  		$filepdf = explode(',', $filePDFAr);
 
-					  			$url = 'https://drive.'.DOMAIN.'/get.php?mime=pdf&showfile='.$val;
+						  		foreach ($filepdf as $key => $val) {
 
-					    		$html .= '<a target="_blank" style="color: rgba(255, 153, 0, 0.79);" href="'.$url.'">'.$base_name.'</a><br/>';
-					  			
-					  		}
+						  			$url = 'https://drive.'.DOMAIN.'/get.php?mime=pdf&showfile='.$val;
 
-
-					  	}
-    				    else{
+						    		$html .= '<a target="_blank" style="color: rgba(255, 153, 0, 0.79);" href="'.$url.'">'.$base_name.'</a><br/>';
+						  			
+						  		}
 
 
-    				        
-    				        $html .= '<a target="_blank" style="color: red;" href="javascript:void(0)">Lỗi File</a><br/>';
-    				    }
-					
-						  
+						  	}
+	    				    else{
+
+
+	    				        
+	    				        $html .= '<a target="_blank" style="color: red;" href="javascript:void(0)">Lỗi File</a><br/>';
+	    				    }
+						}
+						  	
+
+						
 					}else{
 						$html .= '<a target="_blank" style="color: rgba(255, 153, 0, 0.79);" href="'.URL_ROOT.$path.$base_name.'">'.$base_name.'</a><br/>';
 					}
