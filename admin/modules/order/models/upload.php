@@ -1818,7 +1818,7 @@
 
 				// var_dump($row['file_xlsx']);
 
-				die;
+				
 				// $file_path = str_replace('/', DS,$file_path);
 				// //lưu vào lấy thông số tạm giữ ở kho
 
