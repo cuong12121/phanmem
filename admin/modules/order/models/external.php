@@ -609,7 +609,8 @@
 
 			file_get_contents($path_run);
 
-			echo "thành công";
+			$link = FSRoute::_('index.php?module=order&view=upload');	
+			setRedirect($link);	
 
 		
 		}
