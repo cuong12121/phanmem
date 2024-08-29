@@ -609,6 +609,8 @@
 
 			file_get_contents($path_run);
 
+			$_SESSION['input_data'] = '';
+
 			$link = FSRoute::_('index.php?module=order&view=upload');	
 			setRedirect($link);	
 

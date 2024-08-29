@@ -1303,6 +1303,13 @@
 		   
 			return '<a style="color: red;" target="_blink">Lỗi </a>';
 		}else{
+
+			// xóa file excel ở đơn ngoài
+
+			if($data_detail->platform_id==6){
+				return '<a style="#" target="_blink" href="#">''</a>';
+
+			}
 			return '<a style="color: rgba(255, 153, 0, 0.79);" target="_blink" href="' . $link . '">'.basename($data-> file_xlsx).'</a>';
 		}
 
