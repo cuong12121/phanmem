@@ -1310,7 +1310,7 @@
 				return '<a style="#" target="_blink" href="#"></a>';
 
 			}
-			return '<a style="color: rgba(255, 153, 0, 0.79);" target="_blink" href="' . $link . '">'.basename($data-> file_xlsx).'</a>';
+			return '<a style="color: rgba(255, 153, 0, 0.79);" target="_blink" href="' . $link . '">'.basename($data-> file_xlsx).$data_detail->platform_id'</a>';
 		}
 
 		
