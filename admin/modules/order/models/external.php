@@ -605,9 +605,9 @@
 
 			$path_pdf = PATH_BASE.$dir.'/f_'.$timestamp.'.pdf';
 
-			$path_run = "https://test.dienmayai.com/admin/index.php?module=order&view=upload&task=checkFileUpload&pdf=$path_pdf&excel=$path_excel&house_id=$house_id&warehouse_id=$warehouse_id&shop_id=$shop_id";
+			$path_run = "https://drive.dienmayai.com/dn.php?pdf=$path_pdf&excel=$path_excel&house_id=$house_id&warehouse_id=$warehouse_id&shop_id=$shop_id";
 
-			dd($path_run);
+			
 
 			file_get_contents($path_run);
 
