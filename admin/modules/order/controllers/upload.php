@@ -1296,7 +1296,7 @@
 		   
 		}
 
-		$data_detail = $model->get_record('id = ' .$id,'fs_order_uploads_detail','id');
+		$data_detail = $model->get_record('id = ' .$id,'fs_order_uploads_detail','id,platform_id');
 		
 		
 		if(empty($data_detail)){
