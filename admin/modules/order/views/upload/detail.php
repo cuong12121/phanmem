@@ -20,7 +20,7 @@
     TemplateHelper::dt_edit_selectbox(FSText::_('Giờ'),'house_id',@$data -> house_id,0,$houses,$field_value = 'id', $field_label='name',$size = 1,0,1);
     TemplateHelper::dt_edit_text(FSText :: _('File name'),'name',@$data -> name);
     
-    TemplateHelper::dt_edit_file_multiple(FSText :: _('Hóa đơn PDF'),'file_pdf',@$data->file_pdf, @$data->id_file_pdf_google_drive);
+    TemplateHelper::dt_edit_file_multiple(FSText :: _('Hóa đơn PDF'),'file_pdf',@$data->file_pdf, @$data->id_file_pdf_google_drive, @$data->platform_id);
    
     TemplateHelper::dt_edit_file(FSText :: _('Đơn hàng Excel'),'file_xlsx',@$data->file_xlsx, @$data->file_excel_drive);
     if($users-> group_id != 1 && !empty($data) && @$data-> is_print == 0){ ?>

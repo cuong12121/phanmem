@@ -1846,7 +1846,7 @@ static function dt_edit_image_old($title,$name,$value,$width  = 0,$height = 0,$c
 			echo $html;
 		}
 
-	public static function dt_edit_file_multiple($title,$name,$value,$filePDFAr,$comment='Giữ CTRL để chọn nhiều File tải lên',$class_col1='col-md-2',$class_col2='col-md-10'){
+	public static function dt_edit_file_multiple($title,$name,$value,$filePDFAr,$platform_id,$comment='Giữ CTRL để chọn nhiều File tải lên',$class_col1='col-md-2',$class_col2='col-md-10'){
 		$html = '<div class="form-group">
 		<label class="'.$class_col1.' col-xs-12 control-label">'.$title.'</label>
 		<div class="'.$class_col2.'  col-xs-12">';
@@ -1860,27 +1860,37 @@ static function dt_edit_image_old($title,$name,$value,$width  = 0,$height = 0,$c
 					if($i == 0){
 						$path = str_replace($base_name,'',$name_item);
 					}
-					if(!file_exists(PATH_BASE.$path.$base_name)){
-					    
-					  	if(!empty($filePDFAr)){
+					if(!file_exists(PATH_BASE.$path.$base_name)|| $platform_id==6){
 
-					  		$filepdf = explode(',', $filePDFAr);
+						if($platform_id==6){
 
-					  		foreach ($filepdf as $key => $val) {
+    				    	$html .='';
+						}
+						else{
+							if(!empty($filePDFAr)){
 
-					  			$url = 'https://drive.'.DOMAIN.'/get.php?mime=pdf&showfile='.$val;
+						  		$filepdf = explode(',', $filePDFAr);
 
-					    		$html .= '<a target="_blank" style="color: rgba(255, 153, 0, 0.79);" href="'.$url.'">'.$base_name.'</a><br/>';
-					  			
-					  		}
+						  		foreach ($filepdf as $key => $val) {
+
+						  			$url = 'https://drive.'.DOMAIN.'/get.php?mime=pdf&showfile='.$val;
+
+						    		$html .= '<a target="_blank" style="color: rgba(255, 153, 0, 0.79);" href="'.$url.'">'.$base_name.'</a><br/>';
+						  			
+						  		}
 
 
-					  	}
-    				    else{
-    				        
-    				        $html .= '<a target="_blank" style="color: red;" href="javascript:void(0)">Lỗi File</a><br/>';
-    				    }
-					
+						  	}
+	    				    else{
+
+
+	    				        
+	    				        $html .= '<a target="_blank" style="color: red;" href="javascript:void(0)">Lỗi File</a><br/>';
+	    				    }
+						}
+						  	
+
+						
 					}else{
 						$html .= '<a target="_blank" style="color: rgba(255, 153, 0, 0.79);" href="'.URL_ROOT.$path.$base_name.'">'.$base_name.'</a><br/>';
 					}
