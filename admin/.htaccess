@@ -168,6 +168,12 @@ RewriteRule ^refunds/excel/download_file$ index.php?module=refunds&view=excel&ta
 RewriteRule ^order/upload$ index.php?module=order&view=upload&%{QUERY_STRING} [L]
 
 RewriteRule ^order/detail$ index.php?module=order&view=order&task=details&%{QUERY_STRING} [L]
+
+RewriteRule ^detail/search/package$ index.php?module=order&view=order&task=search_order_by_Name&%{QUERY_STRING} [L]
+
+
+
+
 RewriteRule ^order/trackings$ index.php?module=order&view=order&task=tracking_code_big&%{QUERY_STRING} [L]
 
 RewriteRule ^order/detail/search$ index.php?module=order&view=order&task=search_order_details&%{QUERY_STRING} [L]
