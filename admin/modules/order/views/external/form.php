@@ -58,6 +58,10 @@ $data_post = !empty($_SESSION['input_data'])?$_SESSION['input_data']:'';
     text-align: left;
     }
 
+    #wrapper{
+        overflow:auto !important;
+    }
+
    
     th {
     background-color: #f0f0f0;
