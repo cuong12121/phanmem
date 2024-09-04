@@ -30,7 +30,7 @@ $data_post = !empty($_SESSION['input_data'])?$_SESSION['input_data']:'';
     font-family: sans-serif; /* Sử dụng phông chữ không chân */
     }
     form {
-    width: auto; /* Điều chỉnh độ rộng của form */
+    width: 1800px; /* Điều chỉnh độ rộng của form */
     margin: 0 auto; /* Căn giữa form */
     padding: 20px;
     border: 1px solid #ccc;
