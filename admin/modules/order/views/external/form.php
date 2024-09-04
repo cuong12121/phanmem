@@ -147,7 +147,7 @@ $data_post = !empty($_SESSION['input_data'])?$_SESSION['input_data']:'';
             <?php for($i =1; $i<=$number; $i++){ ?>
             <tr>
                 <td><?= $i ?></td>
-                <td><input type="text"  name="productName<?= $i ?>" value="<?= $data_post["productName$i"]??'' ?>" required></td>
+                <td><input type="text" id="productName<?= $i ?>"  name="productName<?= $i ?>" value="<?= $data_post["productName$i"]??'' ?>" required></td>
                 <td><input type="text"  name="productCode<?= $i ?>" value="<?= $data_post["productCode$i"]??'' ?>" required></td>
 
                 <td><input type="text"  name="soluong<?= $i ?>" value="<?= $data_post["soluong$i"]??'' ?>" required></td>
@@ -191,6 +191,36 @@ $data_post = !empty($_SESSION['input_data'])?$_SESSION['input_data']:'';
             window.location.href = url;
        
     });
+
+     $( function() {
+    var availableTags = [
+      "ActionScript",
+      "AppleScript",
+      "Asp",
+      "BASIC",
+      "C",
+      "C++",
+      "Clojure",
+      "COBOL",
+      "ColdFusion",
+      "Erlang",
+      "Fortran",
+      "Groovy",
+      "Haskell",
+      "Java",
+      "JavaScript",
+      "Lisp",
+      "Perl",
+      "PHP",
+      "Python",
+      "Ruby",
+      "Scala",
+      "Scheme"
+    ];
+    $( "#productName1" ).autocomplete({
+      source: availableTags
+    });
+  } );
 
 
 </script>
