@@ -210,7 +210,7 @@ $data_post = !empty($_SESSION['input_data'])?$_SESSION['input_data']:'';
 
 
    
-    code = JSON.parse(<?= $pd_show  ?>);
+    code = JSON.parse('<?= $pd_show  ?>');
         $( "#productName1" ).autocomplete({
           source: code
         });
