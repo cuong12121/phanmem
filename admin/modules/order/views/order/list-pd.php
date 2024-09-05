@@ -131,7 +131,7 @@
         </form>
     </div>
    
-    <h2>Danh sách đơn đã đóng mới nhất của  admin</h2>
+    <h2>Danh sách đơn hàng</h2>
     <table class="table-responsive">
         <tbody>
             <tr>
