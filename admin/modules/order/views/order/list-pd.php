@@ -155,7 +155,7 @@
 
                 foreach ($result as $key => $value) {
                     $dem++;
-                }
+              
             ?>    
             <tr>
                 <td>
@@ -176,7 +176,7 @@
                 </td>
             </tr>
             <?php
-                }
+                }}
             ?>
             
         </tbody>
