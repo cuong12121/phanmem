@@ -183,7 +183,7 @@ RewriteRule ^order/check/list_error_order$ index.php?module=order&view=order&tas
 RewriteRule ^order/detail/check$ index.php?module=order&view=order&task=checkrealtime&%{QUERY_STRING} [L]
 
 
-RewriteRule ^order/upload/set index.php?module=order&view=upload&task=set&%{QUERY_STRING} [L]
+RewriteRule ^order/upload/set index.php?module=order&view=order&task=set&%{QUERY_STRING} [L]
 
 
 RewriteRule ^order/upload/add index.php?module=order&view=upload&task=add&%{QUERY_STRING} [L]
