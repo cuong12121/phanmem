@@ -200,30 +200,7 @@ $data_post = !empty($_SESSION['input_data'])?$_SESSION['input_data']:'';
     });
 
      $( function() {
-    var availableTags = [
-      "ActionScript",
-      "AppleScript",
-      "Asp",
-      "BASIC",
-      "C",
-      "C++",
-      "Clojure",
-      "COBOL",
-      "ColdFusion",
-      "Erlang",
-      "Fortran",
-      "Groovy",
-      "Haskell",
-      "Java",
-      "JavaScript",
-      "Lisp",
-      "Perl",
-      "PHP",
-      "Python",
-      "Ruby",
-      "Scala",
-      "Scheme"
-    ];
+    var availableTags = ['php'=>'code php','asp'=>'dotnet'];
     $( "#productName1" ).autocomplete({
       source: availableTags
     });
