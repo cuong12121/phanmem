@@ -199,8 +199,10 @@ $data_post = !empty($_SESSION['input_data'])?$_SESSION['input_data']:'';
        
     });
 
+    code['php'] = 'code php';
+
      $( function() {
-    var availableTags['php'] = 'code php';
+    var availableTags = code;
     $( "#productName1" ).autocomplete({
       source: availableTags
     });
