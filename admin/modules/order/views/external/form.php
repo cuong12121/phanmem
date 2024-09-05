@@ -211,8 +211,10 @@ $data_post = !empty($_SESSION['input_data'])?$_SESSION['input_data']:'';
                 { code: "FR", name: "France" },
                 { code: "IN", name: "India" }
             ];
+
+     const countryNames = countries.map(country => country.name);
     $( "#productName1" ).autocomplete({
-      source: countries
+      source: countryNames
     });
   } );
 
