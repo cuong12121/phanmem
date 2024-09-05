@@ -202,19 +202,10 @@ $data_post = !empty($_SESSION['input_data'])?$_SESSION['input_data']:'';
   
 
      $( function() {
-   const countries = [
-                { code: "US", name: "United States" },
-                { code: "CA", name: "Canada" },
-                { code: "AU", name: "Australia" },
-                { code: "UK", name: "United Kingdom" },
-                { code: "DE", name: "Germany" },
-                { code: "FR", name: "France" },
-                { code: "IN", name: "India" }
-            ];
-
-     const countryNames = countries.map(country => country.name);
+   
+    code = ['FRA-France','USA-AMERICAN'];
     $( "#productName1" ).autocomplete({
-      source: countryNames
+      source: code
     });
   } );
 
