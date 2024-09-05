@@ -76,6 +76,8 @@
    			$sql = $db->query_limit($query, 10, $page);
 			$result = $db->getObjectList();	
 
+			dd($result);
+
 			include 'modules/'.$this->module.'/views/'.$this->view.'/list-pd.php';		
 		}
 
