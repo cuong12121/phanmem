@@ -202,11 +202,17 @@ $data_post = !empty($_SESSION['input_data'])?$_SESSION['input_data']:'';
   
 
      $( function() {
-    var availableTags = {
-        php:'codephp'
-    };
+   const countries = [
+                { code: "US", name: "United States" },
+                { code: "CA", name: "Canada" },
+                { code: "AU", name: "Australia" },
+                { code: "UK", name: "United Kingdom" },
+                { code: "DE", name: "Germany" },
+                { code: "FR", name: "France" },
+                { code: "IN", name: "India" }
+            ];
     $( "#productName1" ).autocomplete({
-      source: availableTags
+      source: countries
     });
   } );
 
