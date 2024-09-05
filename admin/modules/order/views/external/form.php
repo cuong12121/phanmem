@@ -179,16 +179,23 @@ $data_post = !empty($_SESSION['input_data'])?$_SESSION['input_data']:'';
     
 </form>
 
+<?php 
+
+    $redis = new Redis();
+
+    // Thiết lập kết nối
+    $redis->connect('127.0.0.1', 6379);
+?>
+
 <script type="text/javascript">
 
     const selectElement = document.getElementById('mySelect');
     selectElement.addEventListener('change', function() {
         const selectedValue= this.value;
 
-
         const url = selectedValue;
         
-            window.location.href = url;
+        window.location.href = url;
        
     });
 
