@@ -185,6 +185,11 @@ $data_post = !empty($_SESSION['input_data'])?$_SESSION['input_data']:'';
 
     // Thiết lập kết nối
     $redis->connect('127.0.0.1', 6379);
+
+    if ($redis->exists('key_pd')) {
+
+        $pd_show = $redis->get("key_pd");
+    }
 ?>
 
 <script type="text/javascript">
@@ -202,12 +207,14 @@ $data_post = !empty($_SESSION['input_data'])?$_SESSION['input_data']:'';
   
 
      $( function() {
+
+
    
-    code = ['FRA-France','USA-AMERICAN'];
-    $( "#productName1" ).autocomplete({
-      source: code
+    code = JSON.parse(<?= $pd_show  ?>);
+        $( "#productName1" ).autocomplete({
+          source: code
+        });
     });
-  } );
 
 
 </script>
