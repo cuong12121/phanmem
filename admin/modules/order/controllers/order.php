@@ -71,7 +71,7 @@
 			// $query = " SELECT * FROM run_check_file_order_pdf_excel
    			// 			  WHERE user_id = 208";
 
-			$query = " SELECT * FROM fs_order_uploads" ORDER BY id DESC;
+			$query = " SELECT * FROM fs_order_uploads ORDER BY id DESC" ;
 
    			$sql = $db->query_limit($query, 10, $page);
 			$result = $db->getObjectList();	
