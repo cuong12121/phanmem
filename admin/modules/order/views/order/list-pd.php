@@ -136,38 +136,48 @@
         <tbody>
             <tr>
                 <th>STT</th>
-                <th>Tracking code</th>
-                <th>Tên sản phẩm </th>
-                <th>Tên shop</th>
-                <th>Mã shop</th>
-                <th>Số lượng</th>
-                <th>Id đơn hàng</th>
-                <th>Người đánh đơn</th>
-                <th>Ngày đánh đơn</th>
-                <th>Thời gian đóng đơn hàng</th>
-                <th>Thành tiền</th>
-                <th>Hoàn đơn</th>
+                <th>Kho</th>
+                <th>Sàn </th>
+                <th>Shop</th>
+                <th>Tên file</th>
+                <th>Ngày</th>
+                <th>Giờ</th>
+                <th>Hóa đơn PDF</th>
+                <th>Đơn hàng excel</th>
+                <th>Sửa</th>
+                <th>Thời gian tạo</th>
+                <th>Id</th>
             </tr>
+            <?php
+            if(!empty($result)){
+
+                $dem=0;
+
+                foreach ($result as $key => $value) {
+                    $dem++;
+                }
+            ?>    
             <tr>
                 <td>
-                    1                
-                    <div class="mobile">
-                        <a href="https://dienmayai.com/admin/order/detail/search?search=1470147&amp;active=0" style="color: red">Hoàn đơn</a>
-                    </div>
+                    <?= $dem ?>                 
                 </td>
-                <td>LMP0266043552VNA</td>
-                <td>Keo và miếng vá bể bơi-không màu- không size</td>
-                <td>KAW MAX - Lazada</td>
-                <td>AMS</td>
-                <td>1</td>
-                <td>243549</td>
-                <td>PHUONGDGMB</td>
-                <td>28/08/2024</td>
-                <td>28/08/2024,01:31:29</td>
-                <td>5.211đ</td>
+                <td><?= $value->warehouse_id ?></td>
+                <td><?= $value->platform_id ?></td>
+                <td><?= $value->shop_code ?></td>
+                <td><?= $value->name ?></td>
+                <td><?= $value->date ?></td>
+                <td><?= $value->time_id ?></td>
+                <td><?= $value->file_pdf ?></td>
+                <td><?= $value->file_xlsx ?></td>
+                <td></td>
+                <td><?= $value->created_time ?></td>
                 <td class="return">
+                    <?= $value->id ?>
                 </td>
             </tr>
+            <?php
+                }
+            ?>
             
         </tbody>
     </table>
