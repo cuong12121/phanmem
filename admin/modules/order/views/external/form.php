@@ -199,17 +199,11 @@ $data_post = !empty($_SESSION['input_data'])?$_SESSION['input_data']:'';
        
     });
 
-    // let person = {
-    //     php: "code php",
-    //     asp: "dot net",
-    //     city: "New York"
-    // };
-
      $( function() {
-
-
-
-    var availableTags['php'] = 'code php';
+    var availableTags['php'] = [
+      "Code php",
+     
+    ];
     $( "#productName1" ).autocomplete({
       source: availableTags
     });
