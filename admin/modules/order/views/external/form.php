@@ -209,7 +209,7 @@ $data_post = !empty($_SESSION['input_data'])?$_SESSION['input_data']:'';
 
 
 
-    var availableTags =  JSON.parse(variable);
+    var availableTags =  variable;
     $( "#productName1" ).autocomplete({
           source: availableTags
         });
