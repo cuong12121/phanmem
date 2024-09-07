@@ -1301,11 +1301,11 @@
 		
 		if(empty($data_detail)){
 		   
-			return '<a style="color: red;" target="_blink">Lỗi </a>';
+			return '<a style="color: red;" target="_blink">Lỗi 22</a>';
 		}else{
 
 			
-			return '<a style="color: rgba(255, 153, 0, 0.79);" target="_blink" href="' . $link . '">'.basename($data-> file_xlsx).$data_detail->platform_id.'</a>';
+			return '<a style="color: rgba(255, 153, 0, 0.79);" target="_blink" href="' . $link . '">'.basename($data-> file_xlsx).'</a>';
 		}
 
 		
