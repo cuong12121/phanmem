@@ -176,8 +176,8 @@
 		function search_order_by_date()
 		{
 			
-			dd(1);
 			
+
 			$date1 = !empty($_GET['date1'])?$_GET['date1']:'';
 
 			$date2 = !empty($_GET['date1'])?$_GET['date2']:'';
@@ -198,9 +198,11 @@
 
 	        $response = file_get_contents('https://api.'.DOMAIN.'/api/search-data-order-to-date?&date1='.$date1.'&date2='.$date2, FALSE, $context);
 
+	        dd($result);
+
 	        $result = json_decode($response);
 
-	        dd($result);
+	        
 
 	        $kho = ['Kho','Kho Hà nội','Kho HCM'];
 
