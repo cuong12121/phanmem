@@ -76,7 +76,7 @@
    			$sql = $db->query_limit($query, 10, $page);
 			$result = $db->getObjectList();	
 
-			$kho = ['Kho','Kho Hà nội','Kho Hồ Chí Minh'];
+			$kho = ['Kho','Kho Hà nội','Kho HCM'];
 
 			
 
