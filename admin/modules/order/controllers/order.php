@@ -176,7 +176,8 @@
 		function search_order_by_date()
 		{
 			
-
+			dd(1);
+			
 			$date1 = !empty($_GET['date1'])?$_GET['date1']:'';
 
 			$date2 = !empty($_GET['date1'])?$_GET['date2']:'';
