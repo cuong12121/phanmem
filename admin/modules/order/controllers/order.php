@@ -198,7 +198,7 @@
 
 	        $response = file_get_contents('https://api.'.DOMAIN.'/api/search-data-order-to-date?&date1='.$date1.'&date2='.$date2, FALSE, $context);
 
-	        dd($response);
+	        
 
 	        $result = json_decode($response);
 
