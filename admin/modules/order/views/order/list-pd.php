@@ -155,7 +155,8 @@
             if(!empty($result)){
 
                 
-                $dem=  $page-1*10+$dem;
+                $dem=  intval($page)-1*10+$dem;
+
                 foreach ($result as $key => $value) {
 
 
