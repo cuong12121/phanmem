@@ -194,9 +194,11 @@
 	            )
 	        ));
 
+	        $page =  !empty($_GET['page'])?$_GET['page']:1;
+
 	        // Send the request
 
-	        $response = file_get_contents('https://api.'.DOMAIN.'/api/search-data-order-to-date?&date1='.$date1.'&date2='.$date2, FALSE, $context);
+	        $response = file_get_contents('https://api.'.DOMAIN.'/api/search-data-order-to-date?&date1='.$date1.'&date2='.$date2.'&page='.$page, FALSE, $context);
 
 
 
@@ -206,9 +208,6 @@
 
 	        $result = $results->data;
 
-	        dd($results);
-
-	        $page = $results->current;
 	      
 
 	        $kho = ['Kho','Kho Hà nội','Kho HCM'];
