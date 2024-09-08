@@ -127,12 +127,18 @@
         }
     </style>
     <div class="form-search">
-        <form class="header__search" method="get" action="https://dienmayai.com/admin/order/detail/search" style="display: flex; margin-bottom: 15px;">
-            <input type="text" class="input-search ui-autocomplete-input" id="tags" name="search" autocomplete="off" maxlength="100" required="" wfd-id="id0" autofocus=""> 
-            <input type="hidden" name="active" value="1">    
-            <button type="submit">Bắn đơn </button> 
-        </form>
-    </div>
+    
+    <form class="header__search" method="get" action="https://<?= DOMAIN ?>/admin/order/detail/search/package" style="display: flex; margin-bottom: 15px;">
+
+       
+        <label>từ</label>
+        <input type="date" class="input-search ui-autocomplete-input"   name="date1" autocomplete="off" maxlength="100" required="" > 
+         <label>đến</label>
+        <input type="date" class="input-search ui-autocomplete-input"   name="date2" autocomplete="off" maxlength="100" required="" > 
+       
+        <button type="submit">Tìm kiếm </button> 
+    </form>
+</div>
    
     <h2>Danh sách đơn hàng</h2>
     <table class="table-responsive">
