@@ -190,7 +190,7 @@
         <ul class="pagination">
 
             <?php
-            for($i=$page;$i<$page+3;$i++){ ?>
+            for($i=$page;$i<  intval($page)+3;$i++){ ?>
             <li class="page-item"><a class="page-link" href="?page=<?= $i ?>"><?= $i ?></a></li>
             <?php
             }
