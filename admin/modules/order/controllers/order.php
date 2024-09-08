@@ -208,7 +208,7 @@
 
 	        dd($result);
 
-	        $page = $results->current
+	        $page = $results->current;
 	      
 
 	        $kho = ['Kho','Kho Hà nội','Kho HCM'];
