@@ -186,10 +186,7 @@
     </table>
     <nav aria-label="Page navigation example">
 
-        <?php 
-
-            $page =1
-        ?>
+        
         <ul class="pagination">
 
             <?php
