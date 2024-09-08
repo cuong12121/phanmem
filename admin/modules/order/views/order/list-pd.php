@@ -224,7 +224,9 @@
             else:
             ?>    
             <li class="page-item"><a class="page-link" href="?page=<?= float(intval($results->total)/10) ?>">Trang <?=  float(intval($results->total)/10) ?></a></li>
-         
+            <?php
+            endif;
+            ?>
         </ul>
     </nav>
 </div>
