@@ -214,7 +214,7 @@
             endfor;
             ?>
             <li>...</li>
-            <li class="page-item"><a class="page-link" href="?page=100">Trang cuối</a></li>
+            <li class="page-item"><a class="page-link" href="?page=200">Trang cuối</a></li>
          
         </ul>
     </nav>
