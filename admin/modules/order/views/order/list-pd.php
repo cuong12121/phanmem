@@ -140,7 +140,7 @@
     </form>
 </div>
    
-    <h2>Danh sách đơn hàng  <?= !empty($_GET['date1']) && !empty($_GET['date2'])? 'Từ ngày'.$_GET['date1'].'đến ngày'.$_GET['date2']:''   ?></h2>
+    <h2>Danh sách đơn hàng  <?= !empty($_GET['date1']) && !empty($_GET['date2'])? 'Từ ngày '.$_GET['date1'].'đến ngày '.$_GET['date2']:''   ?></h2>
     <table class="table-responsive">
         <tbody>
             <tr>
