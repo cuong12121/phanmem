@@ -168,7 +168,7 @@
                 <td><?= $san[$value->platform_id]   ?></td>
                 <td><?= $value->shop_code ?></td>
                 <td><?= $value->name ?></td>
-                <td><?=  new DateTime($value->date)->format('d/m/Y')  ?></td>
+                <td><?= date('d/m/Y', strtotime($value->date))  ?></td>
                 <td><?= $value->time_id ?></td>
                 <td><a href="<?= '/'.$value->file_pdf ?>" target="_blank"><?= basename($value->file_pdf) ?></a> </td>
                 <td><a href="<?= '/'.$value->file_xlsx ?>" target="_blank"><?= basename($value->file_xlsx) ?></a> </td>
