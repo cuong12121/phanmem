@@ -227,7 +227,7 @@
                 ?>    
 
                 <?php
-                for($i=$page;$i<  round(intval($results->total)/10);$i++): ?>
+                for($i=1;$i<  round(intval($results->total)/10);$i++): ?>
                 <li class="page-item"><a class="page-link" href="?date1=<?= $_GET['date1'] ?>&date2=<?= $_GET['date2'] ?>&page=<?= $i ?>"><?= $i ?></a></li>
                 <?php
                 endfor;
