@@ -172,6 +172,45 @@
 		   
 		}
 
+
+		function search_order_by_Name()
+		{
+			
+
+			$date1 = !empty($_GET['date1'])?$_GET['date1']:'';
+
+			$date2 = !empty($_GET['date1'])?$_GET['date2']:'';
+
+			
+			$context = stream_context_create(array(
+	            'http' => array(
+	                
+	                'method' => 'GET',
+
+	                'header' => "Content-Type: application/x-www-form-urlencoded\r\n".
+	                            "token: 7ojTLYXnzV0EH1wRGxOmvLFga",
+	                
+	            )
+	        ));
+
+	        // Send the request
+
+	        $response = file_get_contents('https://api.'.DOMAIN.'/api/search-data-user-id-package?name='.$name.'&date1='.$date1.'&date2='.$date2, FALSE, $context);
+
+	        $result = json_decode($response);
+
+	        $kho = ['Kho','Kho Hà nội','Kho HCM'];
+
+			
+			$san = ['Sàn','Lazada','Shopee','Tiki','Lex ngoài HCM','Đơn ngoài','','Best','Ticktok','Viettel','Shopee ngoài'];
+
+
+	        include 'modules/'.$this->module.'/views/'.$this->view.'/list-pd.php';
+
+		}
+
+
+
 		function search_order_by_Name()
 		{
 			$name = !empty($_GET['name'])?$_GET['name']:'';
