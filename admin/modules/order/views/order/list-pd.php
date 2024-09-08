@@ -186,7 +186,7 @@
                         for($i=0;$i< count($file); $i++):
                     ?>
 
-                    <a href="<?= '/'.$file[$i] ?>" target="_blank"><?= basename($file[$i]) ?></a> 
+                    <a href="<?= '/'.$file[$i] ?>" target="_blank"><?= basename($file[$i]) ?></a><br>
 
                     <?php 
                         endfor;
