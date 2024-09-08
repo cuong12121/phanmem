@@ -90,7 +90,7 @@
 
 			$platform_id = $_GET['platform'];
 
-			$query = " SELECT id,platform_id FROM  fs_order_uploads WHERE 1=1 AND platform_id = $platform_id AND created_time >= '2024-07-23'"; 
+			$query = " SELECT id,platform_id FROM  fs_order_uploads WHERE 1=1 AND platform_id = $platform_id AND created_time >= '2024-09-05'"; 
 
 			$values = $db->getObjectList($query);
 
@@ -1303,23 +1303,10 @@
 		   
 		}
 
-		
-		
-		
-		if(empty($data_detail)){
-		   
-			return '<a style="color: red;" target="_blink">Lỗi </a>';
-		}else{
 
-			
-			return '<a style="color: rgba(255, 153, 0, 0.79);" target="_blink" href="' . $link . '">'.basename($data-> file_xlsx).$data_detail->platform_id.'</a>';
-		}
-
+		return '<a style="color: rgba(255, 153, 0, 0.79);" target="_blink" href="' . $link . '">'.basename($data-> file_xlsx).'</a>';
 		
 	}
-
-
-		
 
 	function view_print($controle,$id){
 		$model = $controle -> model;

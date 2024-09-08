@@ -493,7 +493,7 @@ class WarehousesModelsBill_transfer extends FSModels
 
 			$row['product_id'] = $product-> id;
 			$row['amount'] = $amount;
-
+			
 			$this-> _add($row,$this -> table_name_detail);
 
 			$total_product ++;
