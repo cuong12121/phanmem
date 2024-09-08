@@ -197,33 +197,44 @@
 
         
         <ul class="pagination">
-            <?php 
-                if($page !=1):
-            ?>
-            <li class="page-item"><a class="page-link" href="?page=1">Về đầu</a></li>
-
-            <?php
-                endif;
-            ?>
-
-             
-            <?php
-            for($i=$page;$i<  intval($page)+3;$i++): ?>
-            <li class="page-item"><a class="page-link" href="?page=<?= $i ?>"><?= $i ?></a></li>
-            <?php
-            endfor;
-            ?>
-            <li>...</li>
+            
+           
 
             <?php
              if(empty($results->total)):
              ?>   
 
-            <li class="page-item"><a class="page-link" href="?page=200">Trang cuối</a></li>
-            <?php
-            else:
-            ?>    
-            <li class="page-item"><a class="page-link" href="?page=<?= float(intval($results->total)/10) ?>">Trang <?=  float(intval($results->total)/10) ?></a></li>
+                 <?php 
+                    if($page !=1):
+                ?>
+                <li class="page-item"><a class="page-link" href="?page=1">Về đầu</a></li>
+
+                <?php
+                    endif;
+                ?>
+
+                 
+                <?php
+                for($i=$page;$i<  intval($page)+3;$i++): ?>
+                <li class="page-item"><a class="page-link" href="?page=<?= $i ?>"><?= $i ?></a></li>
+                <?php
+                endfor;
+                ?>
+
+                <li class="page-item"><a class="page-link" href="?page=200">Trang cuối</a></li>
+                <?php
+                else:
+                ?>    
+
+                <?php
+                for($i=$page;$i<  float(intval($results->total)/10);$i++): ?>
+                <li class="page-item"><a class="page-link" href="?page=<?= $i ?>"><?= $i ?></a></li>
+                <?php
+                endfor;
+                ?>
+
+
+                <li class="page-item"><a class="page-link" href="?page=<?= float(intval($results->total)/10) ?>">Trang <?=  float(intval($results->total)/10) ?></a></li>
             <?php
             endif;
             ?>
