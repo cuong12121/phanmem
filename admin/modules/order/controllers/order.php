@@ -199,6 +199,8 @@
 
 	        $result = json_decode($response);
 
+	        dd($result);
+
 	        $kho = ['Kho','Kho Hà nội','Kho HCM'];
 
 			

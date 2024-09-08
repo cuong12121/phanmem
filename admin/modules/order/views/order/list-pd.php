@@ -128,7 +128,7 @@
     </style>
     <div class="form-search">
     
-    <form class="header__search" method="get" action="https://<?= DOMAIN ?>/admin/order/detail/search/package" style="display: flex; margin-bottom: 15px;">
+    <form class="header__search" method="get" action="https://<?= DOMAIN ?>/admin/order/upload/view_order_by_date" style="display: flex; margin-bottom: 15px;">
 
        
         <label>từ</label>
