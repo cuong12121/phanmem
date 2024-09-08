@@ -228,13 +228,13 @@
 
                 <?php
                 for($i=$page;$i<  round(intval($results->total)/10);$i++): ?>
-                <li class="page-item"><a class="page-link" href="?page=<?= $i ?>"><?= $i ?></a></li>
+                <li class="page-item"><a class="page-link" href="?date1=<?= $_GET['date1'] ?>&date2=<?= $_GET['date2'] ?>page=<?= $i ?>"><?= $i ?></a></li>
                 <?php
                 endfor;
                 ?>
 
 
-                <li class="page-item"><a class="page-link" href="?page=<?= round(intval($results->total)/10) ?>"><?=  round(intval($results->total)/10) ?></a></li>
+                <li class="page-item"><a class="page-link" href="?date1=<?= $_GET['date1'] ?>&date2=<?= $_GET['date2'] ?>&page=<?= round(intval($results->total)/10) ?>"><?=  round(intval($results->total)/10) ?></a></li>
             <?php
             endif;
             ?>
