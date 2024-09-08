@@ -200,11 +200,13 @@
 
 
 
-	        $result = json_decode($response);
+	        $results = json_decode($response);
+
+	        $result = $result['data'];
 
 	        $page =1;
 
-	        dd($result);
+	      
 
 	        $kho = ['Kho','Kho Hà nội','Kho HCM'];
 
