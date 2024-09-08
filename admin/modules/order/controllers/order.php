@@ -202,7 +202,7 @@
 
 	        $results = json_decode($response);
 
-	        $result = $result['data'];
+	        $result = $results['data'];
 
 	        $page =1;
 
