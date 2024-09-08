@@ -132,15 +132,15 @@
 
        
         <label>từ</label>
-        <input type="date" class="input-search ui-autocomplete-input"   name="date1" autocomplete="off" maxlength="100" required="" > 
+        <input type="date" class="input-search ui-autocomplete-input" value="<?= @$_GET['date1'] ?>"   name="date1" autocomplete="off" maxlength="100" required="" > 
          <label>đến</label>
-        <input type="date" class="input-search ui-autocomplete-input"   name="date2" autocomplete="off" maxlength="100" required="" > 
+        <input type="date" class="input-search ui-autocomplete-input" value="<?= @$_GET['date1'] ?>"   name="date2" autocomplete="off" maxlength="100" required="" > 
        
         <button type="submit">Tìm kiếm </button> 
     </form>
 </div>
    
-    <h2>Danh sách đơn hàng</h2>
+    <h2>Danh sách đơn hàng  <?= !empty($_GET['date1']) && !empty($_GET['date2'])? 'Từ ngày'.$_GET['date1'].'đến ngày'.$_GET['date2']   ?></h2>
     <table class="table-responsive">
         <tbody>
             <tr>
