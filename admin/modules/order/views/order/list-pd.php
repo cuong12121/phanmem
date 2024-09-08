@@ -162,7 +162,7 @@
             ?>    
             <tr>
                 <td>
-                    <?= $dem ?>                 
+                    <?=  $page=1?$dem:($page-1*10)+$dem ?>                 
                 </td>
                 <td><?= $kho[$value->warehouse_id]  ?></td>
                 <td><?= $san[$value->platform_id]   ?></td>
@@ -173,7 +173,7 @@
                 <td><a href="<?= '/'.$value->file_pdf ?>" target="_blank"><?= basename($value->file_pdf) ?></a> </td>
                 <td><a href="<?= '/'.$value->file_xlsx ?>" target="_blank"><?= basename($value->file_xlsx) ?></a> </td>
                 <td></td>
-                <td><?= $value->created_time ?></td>
+                <td><?= date('d/m/Y,H:i:s', strtotime($value->created_time))   ?></td>
                 <td class="return">
                     <?= $value->id ?>
                 </td>
@@ -185,15 +185,21 @@
         </tbody>
     </table>
     <nav aria-label="Page navigation example">
+
+        <?php 
+
+            $page =1
+        ?>
         <ul class="pagination">
-            <li class="page-item"><a class="page-link" href="?page=1">1</a></li>
-            <li class="page-item"><a class="page-link" href="?page=2">2</a></li>
-            <li class="page-item"><a class="page-link" href="?page=3">3</a></li>
-            <li class="page-item">
-                <a class="page-link" href="?page=4" aria-label="Next">
-                <span aria-hidden="true">»</span>
-                </a>
-            </li>
+
+            <?php
+            @for($i=$page;$i<$page+3;$i++) ?>
+            <li class="page-item"><a class="page-link" href="?page=<?= $i ?>"><?= $i ?></a></li>
+            <?php
+            @endfor
+            ?>
+           
+         
         </ul>
     </nav>
 </div>
