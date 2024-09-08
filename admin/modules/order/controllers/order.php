@@ -76,6 +76,12 @@
    			$sql = $db->query_limit($query, 10, $page);
 			$result = $db->getObjectList();	
 
+			$kho = ['Kho','Kho Hà nội','Kho Hồ Chí Minh'];
+
+			
+
+			$san = ['Sàn','Lazada','Shopee','Tiki','Lex ngoài HCM','Đơn ngoài','','Best','Ticktok','Viettel','Shopee ngoài'];
+
 
 			include 'modules/'.$this->module.'/views/'.$this->view.'/list-pd.php';		
 		}

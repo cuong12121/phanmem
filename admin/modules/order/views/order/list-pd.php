@@ -161,14 +161,14 @@
                 <td>
                     <?= $dem ?>                 
                 </td>
-                <td><?= $value->warehouse_id ?></td>
-                <td><?= $value->platform_id ?></td>
+                <td><?= $kho[$value->warehouse_id]  ?></td>
+                <td><?= $san[$value->platform_id]   ?></td>
                 <td><?= $value->shop_code ?></td>
                 <td><?= $value->name ?></td>
                 <td><?= $value->date ?></td>
                 <td><?= $value->time_id ?></td>
-                <td><?= $value->file_pdf ?></td>
-                <td><?= $value->file_xlsx ?></td>
+                <td><a href="<?= DOMAIN.$value->file_pdf ?>"><?= basename($value->file_pdf) ?></a> </td>
+                <td><a href="<?= DOMAIN.$value->file_xlsx ?>"><?= basename($value->file_xlsx) ?></a> </td>
                 <td></td>
                 <td><?= $value->created_time ?></td>
                 <td class="return">
