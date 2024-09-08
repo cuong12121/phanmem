@@ -202,7 +202,7 @@
 
 	        $results = json_decode($response);
 
-	        dd($results);
+	        dd($results->data);
 
 	        $result = $results['data'];
 
