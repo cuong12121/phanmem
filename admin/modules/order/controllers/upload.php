@@ -1221,7 +1221,7 @@
 					    			$html .= '<a target="_blank" style="color: rgba(255, 153, 0, 0.79);" href="'.$url.'">'.$base_name.'</a><br/>';
 					    		}
 
-						   						    }
+						    }
 						    else{
 
 
