@@ -191,12 +191,21 @@
 
         
         <ul class="pagination">
+            <?php 
+                if($page !=1):
+            ?>
+            <li class="page-item"><a class="page-link" href="?page=1">Về đầu</a></li>
 
             <?php
-            for($i=$page;$i<  intval($page)+3;$i++){ ?>
+                endif;
+            ?>
+
+             ?>
+            <?php
+            for($i=$page;$i<  intval($page)+3;$i++): ?>
             <li class="page-item"><a class="page-link" href="?page=<?= $i ?>"><?= $i ?></a></li>
             <?php
-            }
+            endfor;
             ?>
            
          
