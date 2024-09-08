@@ -167,8 +167,8 @@
                 <td><?= $value->name ?></td>
                 <td><?= $value->date ?></td>
                 <td><?= $value->time_id ?></td>
-                <td><a href="<?= DOMAIN.'/'.$value->file_pdf ?>"><?= basename($value->file_pdf) ?></a> </td>
-                <td><a href="<?= DOMAIN.'/'.$value->file_xlsx ?>"><?= basename($value->file_xlsx) ?></a> </td>
+                <td><a href="<?= $value->file_pdf ?>"><?= basename($value->file_pdf) ?></a> </td>
+                <td><a href="<?= $value->file_xlsx ?>"><?= basename($value->file_xlsx) ?></a> </td>
                 <td></td>
                 <td><?= $value->created_time ?></td>
                 <td class="return">
