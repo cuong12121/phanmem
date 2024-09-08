@@ -234,7 +234,7 @@
                 ?>
 
 
-                <li class="page-item"><a class="page-link" href="?page=<?= round(intval($results->total)/10) ?>">Trang <?=  round(intval($results->total)/10) ?></a></li>
+                <li class="page-item"><a class="page-link" href="?page=<?= round(intval($results->total)/10) ?>"><?=  round(intval($results->total)/10) ?></a></li>
             <?php
             endif;
             ?>
