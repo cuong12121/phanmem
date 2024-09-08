@@ -162,7 +162,7 @@
             ?>    
             <tr>
                 <td>
-                    <?=  $page=1?$dem:($page-1*10)+$dem ?>                 
+                    <?= $dem=  $page-1*10+$dem ?>                 
                 </td>
                 <td><?= $kho[$value->warehouse_id]  ?></td>
                 <td><?= $san[$value->platform_id]   ?></td>
