@@ -206,7 +206,7 @@
 
 	        $result = $results->data;
 
-	        dd($result);
+	        dd($results);
 
 	        $page = $results->current;
 	      
