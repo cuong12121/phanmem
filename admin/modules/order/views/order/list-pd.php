@@ -214,7 +214,16 @@
             endfor;
             ?>
             <li>...</li>
+
+            <?php
+             if(empty($results->total)):
+             ?>   
+
             <li class="page-item"><a class="page-link" href="?page=200">Trang cuối</a></li>
+            <?php
+            else:
+            ?>    
+            <li class="page-item"><a class="page-link" href="?page=<?= float(intval($results->total)/10) ?>">Trang <?=  float(intval($results->total)/10) ?></a></li>
          
         </ul>
     </nav>
