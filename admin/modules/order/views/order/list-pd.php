@@ -179,7 +179,19 @@
                 <td><?= $value->name ?></td>
                 <td><?= date('d/m/Y', strtotime($value->date))  ?></td>
                 <td><?= $value->time_id ?></td>
-                <td><a href="<?= '/'.$value->file_pdf ?>" target="_blank"><?= basename($value->file_pdf) ?></a> </td>
+                <td>
+
+                    <?php 
+                        $file = explode(',', $value->file_pdf);
+                        for($i=0;$i< count($file); $i++):
+                    ?>
+
+                    <a href="<?= '/'.$file[$i] ?>" target="_blank"><?= basename($file[$i]) ?></a> 
+
+                    <?php 
+                        endfor;
+                    ?>
+                </td>
                 <td><a href="<?= '/'.$value->file_xlsx ?>" target="_blank"><?= basename($value->file_xlsx) ?></a> </td>
                 <td></td>
                 <td><?= date('d/m/Y,H:i:s', strtotime($value->created_time))   ?></td>
