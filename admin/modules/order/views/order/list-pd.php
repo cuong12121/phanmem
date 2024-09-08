@@ -110,6 +110,9 @@
         .return a{
         color: red !important;
         }
+        body #page-wrapper a{
+            color: orange;
+        }
         @media only screen and (min-width: 601px) {
         .mobile{
         display: none;
