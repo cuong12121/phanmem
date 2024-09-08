@@ -154,15 +154,17 @@
             <?php
             if(!empty($result)){
 
-                $dem=0;
-
+                
+                $dem=  $page-1*10+$dem;
                 foreach ($result as $key => $value) {
+
+
                     $dem++;
               
-            ?>    
+                ?>    
             <tr>
                 <td>
-                    <?= $dem=  $page-1*10+$dem ?>                 
+                    <?= $dem ?>                 
                 </td>
                 <td><?= $kho[$value->warehouse_id]  ?></td>
                 <td><?= $san[$value->platform_id]   ?></td>
