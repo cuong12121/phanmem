@@ -1500,14 +1500,16 @@
                         echo "Command failed with status: $status";
                     }
 
-                    $id_google_drive = file_get_contents('https://drive.'.DOMAIN.'/createfiles.php?link=https://'.DOMAIN.'/files/orders/'.$cyear.'/'.$cmonth.'/'.$cday.'/'.$item_file_pdf_name);
+                    // $id_google_drive = file_get_contents('https://drive.'.DOMAIN.'/createfiles.php?link=https://'.DOMAIN.'/files/orders/'.$cyear.'/'.$cmonth.'/'.$cday.'/'.$item_file_pdf_name);
+
+                    $id_google_drive ='file1_pdf';
 
                     array_push($ar_id_file_pdf_google, $id_google_drive);
 
-                    if(!empty($text_pdf_check)){
+                    // if(!empty($text_pdf_check)){
                     	
-                    	@unlink($InputFile);
-                    }
+                    // 	@unlink($InputFile);
+                    // }
 				    
 				}
 
