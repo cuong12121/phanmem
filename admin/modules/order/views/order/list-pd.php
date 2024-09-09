@@ -236,6 +236,17 @@
                 <li class="page-item"><a class="page-link" href="?page=200">Trang cuối</a></li>
                 <?php
             else:
+
+                <?php 
+                    if($page !=1):
+                ?>
+                <li class="page-item"><a class="page-link" href="?date1=<?= $_GET['date1'] ?>&date2=<?= $_GET['date2']?>&page=1">Về đầu</a></li>
+
+                <?php
+                    endif;
+                ?>
+
+
                 ?>    
 
                 <?php
@@ -253,7 +264,7 @@
                 ?>
 
 
-                <li class="page-item"><a class="page-link" href="?date1=<?= $_GET['date1'] ?>&date2=<?= $_GET['date2'] ?>&page=<?= round(intval($results->total)/10) ?>"><?=  round(intval($results->total)/10) ?></a></li>
+                <li class="page-item"><a class="page-link" href="?date1=<?= $_GET['date1'] ?>&date2=<?= $_GET['date2'] ?>&page=<?= round(intval($results->total)/10) ?>">Trang cuối</a></li>
             <?php
             endif;
             ?>
