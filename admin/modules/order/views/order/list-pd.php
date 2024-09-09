@@ -247,7 +247,7 @@
                 ?>
 
 
-                ?>    
+              
 
                 <?php
                 for($i=$page;$i<  intval($page)+3;$i++): ?>
