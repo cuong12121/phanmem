@@ -126,19 +126,30 @@
         }
         }
     </style>
+
     <div class="form-search">
     
-    <form class="header__search" method="get" action="https://<?= DOMAIN ?>/admin/order/upload/view_order_by_date" style="display: flex; margin-bottom: 15px;">
+        <form class="header__search" method="get" action="https://<?= DOMAIN ?>/admin/order/detail/search" style="display: flex; margin-bottom: 15px;">
+            <input type="text" class="input-search ui-autocomplete-input" id="tags"  name="search" autocomplete="off" maxlength="100" required="" wfd-id="id0" autofocus > 
+            
+            <input type="hidden" name="active" value="1">    
+            <button type="submit">Tìm kiếm </button> 
+        </form>
+    </div>
 
-       
-        <label>từ</label>
-        <input type="date" class="input-search ui-autocomplete-input" value="<?= @$_GET['date1'] ?>"   name="date1" autocomplete="off" maxlength="100" required="" > 
-         <label>đến</label>
-        <input type="date" class="input-search ui-autocomplete-input" value="<?= @$_GET['date1'] ?>"   name="date2" autocomplete="off" maxlength="100" required="" > 
-       
-        <button type="submit">Tìm kiếm </button> 
-    </form>
-</div>
+   <!--  <div class="form-search">
+    
+        <form class="header__search" method="get" action="https://<?= DOMAIN ?>/admin/order/upload/view_order_by_date" style="display: flex; margin-bottom: 15px;">
+
+           
+            <label>từ</label>
+            <input type="date" class="input-search ui-autocomplete-input" value="<?= @$_GET['date1'] ?>"   name="date1" autocomplete="off" maxlength="100" required="" > 
+             <label>đến</label>
+            <input type="date" class="input-search ui-autocomplete-input" value="<?= @$_GET['date1'] ?>"   name="date2" autocomplete="off" maxlength="100" required="" > 
+           
+            <button type="submit">Tìm kiếm </button> 
+        </form>
+    </div> -->
    
     <h2>Danh sách đơn hàng  <?= !empty($_GET['date1']) && !empty($_GET['date2'])? 'Từ ngày '.$_GET['date1'].' đến ngày '.$_GET['date2']:''   ?></h2>
     <table class="table-responsive">
