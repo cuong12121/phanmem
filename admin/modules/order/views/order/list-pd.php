@@ -235,13 +235,20 @@
 
                 <li class="page-item"><a class="page-link" href="?page=200">Trang cuối</a></li>
                 <?php
-                else:
+            else:
                 ?>    
 
                 <?php
-                for($i=1;$i<  round(intval($results->total)/10);$i++): ?>
-                <li class="page-item"><a class="page-link" href="?date1=<?= $_GET['date1'] ?>&date2=<?= $_GET['date2'] ?>&page=<?= $i ?>"><?= $i ?></a></li>
+                for($i=$page;$i<  intval($page)+3;$i++): ?>
+                    <li class="page-item"><a class="page-link" href="?date1=<?= $_GET['date1'] ?>&date2=<?= $_GET['date2'] ?>&page=<?= $i ?>"><?= $i ?></a>
+                    </li>
+
+
                 <?php
+                    if($i>= round(intval($results->total)/10)):
+                        break;
+                    endif;    
+
                 endfor;
                 ?>
 
