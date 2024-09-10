@@ -178,9 +178,7 @@
 			
 			
 
-			$date1 = !empty($_GET['date1'])?$_GET['date1']:'';
-
-			$date2 = !empty($_GET['date1'])?$_GET['date2']:'';
+			$search = !empty($_GET['search'])?$_GET['search']:'';
 
 			
 			$context = stream_context_create(array(
@@ -198,7 +196,7 @@
 
 	        // Send the request
 
-	        $response = file_get_contents('https://api.'.DOMAIN.'/api/search-data-order-to-date?&date1='.$date1.'&date2='.$date2.'&page='.$page, FALSE, $context);
+	        $response = file_get_contents('https://api.'.DOMAIN.'/api/search-data-order-to-date?&search='.$search. FALSE, $context);
 
 
 
