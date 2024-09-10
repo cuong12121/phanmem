@@ -196,7 +196,7 @@
 
 	        // Send the request
 
-	        $response = file_get_contents('https://api.'.DOMAIN.'/api/search-data-order-to-date?&search='.$search. FALSE, $context);
+	        $response = file_get_contents('https://api.'.DOMAIN.'/api/search-data-order-to-date?&search='.$search,FALSE, $context);
 
 
 
