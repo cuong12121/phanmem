@@ -204,7 +204,7 @@
 
 
 
-	        $result = $results->data;
+	        $result = $results;
 
 	      
 
