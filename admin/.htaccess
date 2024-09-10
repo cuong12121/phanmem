@@ -205,6 +205,10 @@ RewriteRule ^order/upload/insert_order_id_check index.php?module=order&view=uplo
 
 #order_items
 RewriteRule ^order_items/items$ index.php?module=order_items&view=items&%{QUERY_STRING} [L]
+
+RewriteRule ^order_items/items/details$ index.php?module=order_items&view=items&task=details&%{QUERY_STRING} [L]
+
+
 RewriteRule ^order_items/items/excel_nhat$ index.php?module=order_items&view=items&task=excel_nhat&%{QUERY_STRING} [L]
 RewriteRule ^order_items/items/excel_misa$ index.php?module=order_items&view=items&task=excel_misa&%{QUERY_STRING} [L]
 RewriteRule ^order_items/items/excel_tong_ngay$ index.php?module=order_items&view=items&task=excel_tong_ngay&%{QUERY_STRING} [L]
