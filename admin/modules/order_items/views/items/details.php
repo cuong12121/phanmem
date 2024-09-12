@@ -208,10 +208,10 @@
                 <td><?= $value->size ?></td>
 
                 <td><?= $value->sku_nhanh??'' ?></td>
-                <td><?= str_replace(',' ,'.', number_format($value->product_price))??'' ?></td>
+                <td><?= str_replace(',' ,'.', number_format($value->product_price))??'' ?>đ</td>
 
                 <td><?= $value->count??'' ?></td>
-                <td><?= str_replace(',' ,'.', number_format($value->total_price))??'' ?></td>
+                <td><?= str_replace(',' ,'.', number_format($value->total_price))??'' ?>đ</td>
 
                 <td><?= $value->shipping_unit_name??'' ?></td>
                         
