@@ -135,7 +135,7 @@
 			$san = ['Sàn','Lazada','Shopee','Tiki','Lex ngoài HCM','Đơn ngoài','','Best','Ticktok','Viettel','Shopee ngoài'];
 
 
-			include 'modules/'.$this->module.'/views/'.$this->view.'/items/details.php';	
+			include 'modules/'.$this->module.'/views/'.$this->view.'/details.php';	
 		}
 
 
