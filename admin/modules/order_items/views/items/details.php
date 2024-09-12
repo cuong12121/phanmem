@@ -151,7 +151,7 @@
         </form>
     </div> -->
 
-    <a href="https://<?= DOMAIN ?>/admin/order_items/details"><h2>Xuất kho</h2></a>
+    <a href="https://<?= DOMAIN ?>/admin/order_items/items/details"><h2>Xuất kho</h2></a>
    
     
     <table class="table-responsive">
