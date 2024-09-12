@@ -150,8 +150,10 @@
             <button type="submit">Tìm kiếm </button> 
         </form>
     </div> -->
+
+    <a href="https://<?= DOMAIN ?>/admin/order_items/details"><h2>Xuất kho</h2></a>
    
-    <h2>Xuất kho</h2>
+    
     <table class="table-responsive">
         <tbody>
             <tr>
