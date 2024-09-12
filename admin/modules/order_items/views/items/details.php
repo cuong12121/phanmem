@@ -193,30 +193,32 @@
                     <?= $dem ?>                 
                 </td>
                 <td><?= $value->tracking_code  ?></td>
+                <td><?= $value->code   ?></td>
+                <td><?= $kho[$value->warehouse_id]  ?></td>
+
                 <td><?= $san[$value->platform_id]   ?></td>
-                <td><?= $value->shop_code ?></td>
-                <td><?= $value->name ?></td>
+                <td><?= $value->shop_name  ?></td>
                 <td><?= date('d/m/Y', strtotime($value->date))  ?></td>
-                <td><?= $value->time_id ?></td>
-                <td>
 
-                    <?php 
-                        $file = explode(',', $value->file_pdf);
-                        for($i=0;$i< count($file); $i++):
-                    ?>
+                <td><?= $value->house_id ?></td>
 
-                    <a href="<?= '/'. str_replace('.pdft', '.pdf',  $file[$i]) ?>" target="_blank"><?= basename(str_replace('.pdft', '.pdf',  $file[$i])) ?></a><br>
+                <td><?= $value->sku ?></td>
 
-                    <?php 
-                        endfor;
-                    ?>
-                </td>
-                <td><a href="<?= '/'.$value->file_xlsx ?>" target="_blank"><?= basename($value->file_xlsx) ?></a> </td>
-                <td></td>
-                <td><?= date('d/m/Y,H:i:s', strtotime($value->created_time))   ?></td>
-                <td class="return">
-                    <?= $value->id ?>
-                </td>
+                <td><?= $value->color ?></td>
+                <td><?= $value->size ?></td>
+
+                <td><?= $value->sku_nhanh??'' ?></td>
+                <td><?= $value->product_price??'' ?></td>
+
+                <td><?= $value->count??'' ?></td>
+                <td><?= $value->total_price??'' ?></td>
+
+                <td><?= $value->shipping_unit_name??'' ?></td>
+                        
+                <td></td> 
+                <td>sửa</td>
+                <td><?= $value->id ?></td>    
+               
             </tr>
             <?php
                 }}
