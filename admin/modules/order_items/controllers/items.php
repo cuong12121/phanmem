@@ -114,6 +114,72 @@
 			include 'modules/'.$this->module.'/views/'.$this->view.'/detail.php';
 		}
 
+		public function details()
+		{
+			global $db;
+
+			$page = !empty($_GET['page'])?$_GET['page']:1;
+
+			// $query = " SELECT * FROM run_check_file_order_pdf_excel
+   			// 			  WHERE user_id = 208";
+
+			$query = " SELECT * FROM  fs_order_uploads_detail ORDER BY id DESC" ;
+
+   			$sql = $db->query_limit($query, 10, $page);
+			$result = $db->getObjectList();	
+
+			$kho = ['Kho','Kho Hà nội','Kho HCM'];
+
+			
+
+			$san = ['Sàn','Lazada','Shopee','Tiki','Lex ngoài HCM','Đơn ngoài','','Best','Ticktok','Viettel','Shopee ngoài'];
+
+
+			include 'modules/'.$this->module.'/views/'.$this->view.'/details.php';	
+		}
+
+		public function searchByTracking()
+		{
+			$search = !empty($_GET['search'])?$_GET['search']:'';
+
+			
+			$context = stream_context_create(array(
+	            'http' => array(
+	                
+	                'method' => 'GET',
+
+	                'header' => "Content-Type: application/x-www-form-urlencoded\r\n".
+	                            "token: 7ojTLYXnzV0EH1wRGxOmvLFga",
+	                
+	            )
+	        ));
+
+	        $page =  !empty($_GET['page'])?$_GET['page']:1;
+
+	        // Send the request
+
+	        $response = file_get_contents('https://api.'.DOMAIN.'/api/search-data-order-to-date?&search='.$search,FALSE, $context);
+
+
+
+	        $results = json_decode($response);
+
+
+
+	        $result = $results;
+
+	      
+
+	        $kho = ['Kho','Kho Hà nội','Kho HCM'];
+
+			
+			$san = ['Sàn','Lazada','Shopee','Tiki','Lex ngoài HCM','Đơn ngoài','','Best','Ticktok','Viettel','Shopee ngoài'];
+
+
+	        include 'modules/'.$this->module.'/views/'.$this->view.'/details.php';
+
+		}
+
 
 		function excel_nhat(){
 			 $model  = $this -> model;

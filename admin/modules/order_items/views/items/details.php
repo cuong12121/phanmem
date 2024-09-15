@@ -129,7 +129,7 @@
 
     <div class="form-search">
     
-        <form class="header__search" method="get" action="https://<?= DOMAIN ?>/admin/order/upload/view_order_by_code" style="display: flex; margin-bottom: 15px;">
+        <form class="header__search" method="get" action="https://<?= DOMAIN ?>/admin/order_items/items/search_tracking" style="display: flex; margin-bottom: 15px;">
             <input type="text" class="input-search ui-autocomplete-input" id="tags"  name="search" autocomplete="off" maxlength="100" required="" wfd-id="id0" autofocus > 
             
             <!-- <input type="hidden" name="active" value="1">     -->
@@ -150,23 +150,33 @@
             <button type="submit">Tìm kiếm </button> 
         </form>
     </div> -->
+
+    <a href="https://<?= DOMAIN ?>/admin/order_items/items/details"><h2>Xuất kho</h2></a>
    
-    <h2>Danh sách đơn hàng  <?= !empty($_GET['date1']) && !empty($_GET['date2'])? 'Từ ngày '.$_GET['date1'].' đến ngày '.$_GET['date2']:''   ?></h2>
+    
     <table class="table-responsive">
         <tbody>
             <tr>
                 <th>STT</th>
+                <th>Tracking Code</th>
+                <th>Order number </th>
                 <th>Kho</th>
-                <th>Sàn </th>
+                <th>Sàn</th>
                 <th>Shop</th>
-                <th>Tên file</th>
                 <th>Ngày</th>
                 <th>Giờ</th>
-                <th>Hóa đơn PDF</th>
-                <th>Đơn hàng excel</th>
+                <th>Mã sku</th>
+                <th>Mã màu</th>
+                <th>Mã size</th>
+                <th>SKU nhanh</th>
+                <th>Giá SP </th>
+                <th>Số lượng</th>
+                <th>Tổng số tiền</th>
+                <th>Đơn vị vận chuyển</th>
+                <th>Actions</th>
                 <th>Sửa</th>
-                <th>Thời gian tạo</th>
                 <th>Id</th>
+                
             </tr>
             <?php
             if(!empty($result)){
@@ -184,31 +194,33 @@
                 <td>
                     <?= $dem ?>                 
                 </td>
+                <td><?= $value->tracking_code  ?></td>
+                <td><?= $value->code   ?></td>
                 <td><?= $kho[$value->warehouse_id]  ?></td>
+
                 <td><?= $san[$value->platform_id]   ?></td>
-                <td><?= $value->shop_code ?></td>
-                <td><?= $value->name ?></td>
+                <td><?= $value->shop_name  ?></td>
                 <td><?= date('d/m/Y', strtotime($value->date))  ?></td>
-                <td><?= $value->time_id ?></td>
-                <td>
 
-                    <?php 
-                        $file = explode(',', $value->file_pdf);
-                        for($i=0;$i< count($file); $i++):
-                    ?>
+                <td><?= $value->house_id ?></td>
 
-                    <a href="<?= '/'. str_replace('.pdft', '.pdf',  $file[$i]) ?>" target="_blank"><?= basename(str_replace('.pdft', '.pdf',  $file[$i])) ?></a><br>
+                <td><?= $value->sku ?></td>
 
-                    <?php 
-                        endfor;
-                    ?>
-                </td>
-                <td><a href="<?= '/'.$value->file_xlsx ?>" target="_blank"><?= basename($value->file_xlsx) ?></a> </td>
-                <td></td>
-                <td><?= date('d/m/Y,H:i:s', strtotime($value->created_time))   ?></td>
-                <td class="return">
-                    <?= $value->id ?>
-                </td>
+                <td><?= $value->color ?></td>
+                <td><?= $value->size ?></td>
+
+                <td><?= $value->sku_nhanh??'' ?></td>
+                <td><?= str_replace(',' ,'.', number_format($value->product_price))??'' ?> đ</td>
+
+                <td><?= $value->count??'' ?></td>
+                <td><?= str_replace(',' ,'.', number_format($value->total_price))??'' ?> đ</td>
+
+                <td><?= $value->shipping_unit_name??'' ?></td>
+                        
+                <td></td> 
+                <td>sửa</td>
+                <td><?= $value->id ?></td>    
+               
             </tr>
             <?php
                 }}
