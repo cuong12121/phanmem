@@ -111,6 +111,26 @@
 			include 'modules/'.$this->module.'/views/'.$this->view.'/list-external.php';		
 		}
 
+		function confirm_set_external_orders()
+		{
+
+			global $db;
+
+			$id = !empty($_GET['id'])??'';
+
+			if(!empty($id)){
+				$sql="UPDATE table_name SET is_active = '1' WHERE id = $id";
+
+				$db->query($sql);
+			}
+
+
+			$link = 'index.php?module=order&view=order&task=set_external_orders';
+
+				
+			setRedirect($link);
+			
+		}	
 
 		function showCheckErrorFile()
 		{

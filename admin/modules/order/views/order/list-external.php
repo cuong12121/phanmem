@@ -204,7 +204,11 @@
                     ?>
                 </td>
                 <td><a href="<?= '/'.$value->file_xlsx ?>" target="_blank"><?= basename($value->file_xlsx) ?></a> </td>
-                <td>Duyệt</td>
+                <td>
+                    <?=  $value->active==0?'<a href="/admin/index.php?module=order&view=order&task=set_external_orders?id='.$value->id.'">Duyệt</a>':'Đơn hàng đã duyệt'?>
+                    
+
+                </td>
                 <td><?= date('d/m/Y,H:i:s', strtotime($value->created_time))   ?></td>
                 <td class="return">
                     <?= $value->id ?>
