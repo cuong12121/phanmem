@@ -135,7 +135,7 @@
 					$check = $db->query($sql);
 
 					if(!$check){
-						echo $check;
+						var_dump($check);
 
 						die;
 					}
