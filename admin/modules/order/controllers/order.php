@@ -124,7 +124,7 @@
 
 				$query = " SELECT id FROM fs_order_uploads WHERE id = $id";
 
-				$db->query($sql);
+				$db->query($query);
 
 				$rs = $db->getResult();
 
