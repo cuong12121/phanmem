@@ -118,10 +118,29 @@
 
 			$id = !empty($_GET['id'])??'';
 
-			if(!empty($id)){
-				$sql="UPDATE table_name SET is_active = '1' WHERE id = $id";
+
+
+			if(!empty($id) ){
+
+				$query = " SELECT id FROM fs_order_uploads WHERE id = $id";
 
 				$db->query($sql);
+
+				$rs = $db->getResult();
+
+				if(!empty($rs)){
+
+					$sql="UPDATE fs_order_uploads SET is_active = '1' WHERE id = $id";
+
+					$db->query($sql);
+				}
+				else{
+					echo "thất bại";
+
+					die;
+				}
+
+				
 			}
 
 
