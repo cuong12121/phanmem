@@ -205,7 +205,7 @@
                 </td>
                 <td><a href="<?= '/'.$value->file_xlsx ?>" target="_blank"><?= basename($value->file_xlsx) ?></a> </td>
                 <td>
-                    <?=  $value->is_active==0?'<a href="/admin/index.php?module=order&view=order&task=set_external_orders?id='.$value->id.'">Duyệt</a>':'Đơn hàng đã duyệt'?>
+                    <?=  $value->is_active==0?'<a href="/admin/index.php?module=order&view=order&task=confirm_set_external_orders?id='.$value->id.'">Duyệt</a>':'Đơn hàng đã duyệt'?>
                     
 
                 </td>
