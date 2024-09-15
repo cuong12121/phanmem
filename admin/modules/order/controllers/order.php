@@ -132,7 +132,13 @@
 
 					$sql="UPDATE fs_order_uploads SET is_active = '1' WHERE id = $id";
 
-					$db->query($sql);
+					$check = $db->query($sql);
+
+					if(!$check){
+						echo $check;
+
+						die;
+					}
 				}
 				else{
 					echo "thất bại";
