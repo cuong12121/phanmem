@@ -133,7 +133,7 @@
             <input type="text" class="input-search ui-autocomplete-input" id="tags"  name="search" autocomplete="off" maxlength="100" required="" wfd-id="id0" autofocus > 
             
             <!-- <input type="hidden" name="active" value="1">     -->
-            <button type="submit">Tìm kiếm </button> 
+            <button type="submit">Tìm kiếm 11</button> 
         </form>
     </div>
 
