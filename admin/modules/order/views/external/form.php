@@ -30,7 +30,7 @@ $data_post = !empty($_SESSION['input_data'])?$_SESSION['input_data']:'';
     font-family: sans-serif; /* Sử dụng phông chữ không chân */
     }
     form {
-    width: 1600px; /* Điều chỉnh độ rộng của form */
+    width: 1800px; /* Điều chỉnh độ rộng của form */
     margin: 0 auto; /* Căn giữa form */
     padding: 20px;
     border: 1px solid #ccc;
@@ -151,7 +151,7 @@ $data_post = !empty($_SESSION['input_data'])?$_SESSION['input_data']:'';
             <?php for($i =1; $i<=$number; $i++){ ?>
             <tr>
                 <td><?= $i ?></td>
-                <td><input type="text"  name="productName<?= $i ?>" value="<?= $data_post["productName$i"]??'' ?>" required></td>
+                <td><input type="text" id="productName<?= $i ?>"  name="productName<?= $i ?>" value="<?= $data_post["productName$i"]??'' ?>" required></td>
                 <td><input type="text"  name="productCode<?= $i ?>" value="<?= $data_post["productCode$i"]??'' ?>" required></td>
 
                 <td><input type="text"  name="soluong<?= $i ?>" value="<?= $data_post["soluong$i"]??'' ?>" required></td>
@@ -183,17 +183,41 @@ $data_post = !empty($_SESSION['input_data'])?$_SESSION['input_data']:'';
     
 </form>
 
+<?php 
+
+    $redis = new Redis();
+
+    // Thiết lập kết nối
+    $redis->connect('127.0.0.1', 6379);
+
+    if ($redis->exists('key_pd')) {
+
+        $pd_show = $redis->get("key_pd");
+    }
+?>
+
 <script type="text/javascript">
 
     const selectElement = document.getElementById('mySelect');
     selectElement.addEventListener('change', function() {
         const selectedValue= this.value;
 
-
         const url = selectedValue;
         
-            window.location.href = url;
+        window.location.href = url;
        
+    });
+
+  
+
+     $( function() {
+
+
+   
+    code = <?= trim($pd_show)  ?>;
+        $( "#productName1" ).autocomplete({
+          source: code
+        });
     });
 
 

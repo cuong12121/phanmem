@@ -86,6 +86,32 @@
 			include 'modules/'.$this->module.'/views/'.$this->view.'/list-pd.php';		
 		}
 
+
+		function set_external_orders()
+		{
+			global $db;
+
+			$page = !empty($_GET['page'])?$_GET['page']:1;
+
+			// $query = " SELECT * FROM run_check_file_order_pdf_excel
+   			// 			  WHERE user_id = 208";
+
+			$query = " SELECT * FROM fs_order_uploads ORDER BY id DESC Where  platform_id = 6" ;
+
+   			$sql = $db->query_limit($query, 10, $page);
+			$result = $db->getObjectList();	
+
+			$kho = ['Kho','Kho Hà nội','Kho HCM'];
+
+			
+
+			$san = ['Sàn','Lazada','Shopee','Tiki','Lex ngoài HCM','Đơn ngoài','','Best','Ticktok','Viettel','Shopee ngoài'];
+
+
+			include 'modules/'.$this->module.'/views/'.$this->view.'/list-external.php';		
+		}
+
+
 		function showCheckErrorFile()
 		{
 			global $db;

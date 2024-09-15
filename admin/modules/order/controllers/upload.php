@@ -1275,9 +1275,14 @@
 		$data = $model->get_record('id = ' .$id,'fs_order_uploads','id,file_xlsx,file_excel_drive,platform_id');
 		
 	
-		if(!$data-> file_xlsx){
+		if(!$data-> file_xlsx||$data->platform_id==6){
 
-			$html ='<strong style="color:red">Lỗi thiếu file</strong>';
+			if($data->platform_id==6){
+				$html = '';
+			}
+			else{
+				$html ='<strong style="color:red">Lỗi thiếu file</strong>';
+			}
 			
 			return $html;
 		}
@@ -1298,12 +1303,10 @@
 		   
 		}
 
+
 		return '<a style="color: rgba(255, 153, 0, 0.79);" target="_blink" href="' . $link . '">'.basename($data-> file_xlsx).'</a>';
 		
 	}
-
-
-		
 
 	function view_print($controle,$id){
 		$model = $controle -> model;
