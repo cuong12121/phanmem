@@ -122,19 +122,29 @@
 
 			if(!empty($id) ){
 
-				
+				$query = " SELECT id FROM fs_order_uploads WHERE id = $id";
 
-				$sql="UPDATE fs_order_uploads SET is_active = 1 WHERE id = $id";
+				$db->query($query);
 
-				$check = $db->query($sql);
+				$rs = $db->getResult();
 
-				if(!$check){
-					var_dump(1);
+				if(!empty($rs)){
+
+					$sql="UPDATE fs_order_uploads SET is_active = 1 WHERE id = $id";
+
+					$check = $db->affected_rows($sql);
+
+					if(!$check){
+						var_dump(1);
+
+						die;
+					}
+				}
+				else{
+					echo "thất bại";
 
 					die;
 				}
-				
-				
 
 				
 			}
