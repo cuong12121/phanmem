@@ -105,6 +105,8 @@
 
 			dd(1);
 
+			die;
+
 			
 
 			$san = ['Sàn','Lazada','Shopee','Tiki','Lex ngoài HCM','Đơn ngoài','','Best','Ticktok','Viettel','Shopee ngoài'];
