@@ -130,12 +130,12 @@
 
 				if(!empty($rs)){
 
-					$sql="UPDATE fs_order_uploads SET is_active = '1' WHERE id = $id";
+					$sql="UPDATE fs_order_uploads SET is_active = 1 WHERE id = $id";
 
 					$check = $db->query($sql);
 
 					if(!$check){
-						var_dump($check);
+						var_dump(mysql_error());
 
 						die;
 					}
