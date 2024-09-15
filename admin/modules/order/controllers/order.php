@@ -103,6 +103,8 @@
 
 			$kho = ['Kho','Kho Hà nội','Kho HCM'];
 
+			dd(1);
+
 			
 
 			$san = ['Sàn','Lazada','Shopee','Tiki','Lex ngoài HCM','Đơn ngoài','','Best','Ticktok','Viettel','Shopee ngoài'];
