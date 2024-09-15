@@ -116,7 +116,7 @@
 
 			global $db;
 
-			$id = !empty($_GET['id'])??'';
+			$id = !empty($_GET['id'])?$_GET['id']:'';
 
 
 
@@ -132,15 +132,8 @@
 
 					$sql="UPDATE fs_order_uploads SET is_active = 1 WHERE id = $id";
 
-					dd($sql);
+					$check = $db->query($sql);
 
-					$check = $db->affected_rows($sql);
-
-					if(!$check){
-						var_dump(1);
-
-						die;
-					}
 				}
 				else{
 					echo "thất bại";
