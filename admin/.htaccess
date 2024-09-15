@@ -187,6 +187,9 @@ RewriteRule ^order/upload/set index.php?module=order&view=order&task=set&%{QUERY
 
 RewriteRule ^order/upload/set_external_orders index.php?module=order&view=order&task=set_external_orders&%{QUERY_STRING} [L]
 
+RewriteRule ^order/upload/confirm_set_external_orders index.php?module=order&view=order&task=confirm_set_external_orders&%{QUERY_STRING} [L]
+
+
 RewriteRule ^order/upload/view_order_by_code index.php?module=order&view=order&task=search_order_by_date&%{QUERY_STRING} [L]
 
 
