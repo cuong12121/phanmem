@@ -132,6 +132,8 @@
 
 					$sql="UPDATE fs_order_uploads SET is_active = 1 WHERE id = $id";
 
+					dd($sql);
+
 					$check = $db->affected_rows($sql);
 
 					if(!$check){
