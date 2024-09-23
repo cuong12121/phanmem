@@ -887,6 +887,8 @@
 			    		
 			    		// shopee
 			    		$data  = $this->returnDataPDF($path);
+
+			    	dd($data);	
 			    	
 			    }
 
