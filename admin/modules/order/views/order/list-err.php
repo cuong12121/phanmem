@@ -65,7 +65,7 @@
 
 <br>
 
-<h3>Đã kiểm tra <?= $count??0 ?> đơn hàng</h3>
+<h3>Đã kiểm tra <?= $testcount??0 ?> đơn hàng</h3>
 
 <table class="table-responsive">
         <tr>
