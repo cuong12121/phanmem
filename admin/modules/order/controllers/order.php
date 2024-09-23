@@ -99,7 +99,7 @@
 
 			$querys = " SELECT id FROM run_check_file_order_pdf_excel WHERE 1=1 AND active = 0";
 
-			$queryss = " SELECT id FROM run_check_file_order_pdf_excel WHERE  active = 1";
+			$queryss = " SELECT id FROM run_check_file_order_pdf_excel WHERE  active = '1'";
 
    			$sql = $db->query_limit($query, 10, $page);
 			$result = $db->getObjectList();	
