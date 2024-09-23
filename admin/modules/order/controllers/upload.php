@@ -31,7 +31,7 @@
 			    return $item->platform_id !== 6;
 			});
 
-			$list = array_merge($new_array, $mang_moi);
+			$list = $mang_moi;
 
 
 			// foreach ($list as $key => $l) {
