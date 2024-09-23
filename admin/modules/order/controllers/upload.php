@@ -33,7 +33,7 @@
 
 			$list = $mang_moi;
 
-			dd($list);
+			dd($mang_moi);
 
 
 			// foreach ($list as $key => $l) {
