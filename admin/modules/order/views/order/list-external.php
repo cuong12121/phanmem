@@ -155,7 +155,7 @@
     <table class="table-responsive">
         <tbody>
             <tr>
-                <th>STT11</th>
+                <th>STT</th>
                 <th>Kho</th>
                 <th>Sàn </th>
                 <th>Shop</th>
