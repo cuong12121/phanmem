@@ -22,6 +22,8 @@
 			$users = $model -> get_record('id = ' . $_SESSION['ad_userid'],'fs_users');
 			$list = $this -> model->get_data();
 
+			dd($list);
+
 			// $iddd="";
 			// foreach ($list as $key => $l) {
 			// 	$iddd .= $l->id.',';
