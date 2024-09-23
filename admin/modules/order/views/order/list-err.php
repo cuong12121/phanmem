@@ -314,7 +314,7 @@
                 if($get_page !=1):
             ?>
             <li class="page-item">
-                <a class="page-link" href="/admin/index.php?module=order&view=order&task=set_external_orders&page=<?= intval($get_page)-1 ?>" aria-label="Previous">
+                <a class="page-link" href="?page=<?= intval($get_page)-1 ?>" aria-label="Previous">
                 <span aria-hidden="true">&laquo;</span>
                 </a>
             </li>
@@ -327,7 +327,7 @@
                 for ($i = $get_page; $i < 3+intval($get_page); $i++) :
             ?>
 
-            <li class="page-item"><a class="page-link" href="/admin/index.php?module=order&view=order&task=set_external_orders&page=<?= $i ?>"><?= $i ?></a></li>
+            <li class="page-item"><a class="page-link" href="?page=<?= $i ?>"><?= $i ?></a></li>
           
 
             <?php 
@@ -336,7 +336,7 @@
 
 
             <li class="page-item">
-                <a class="page-link" href="/admin/index.php?module=order&view=order&task=set_external_orders&page=<?= intval($get_page)+3 ?>" aria-label="Next">
+                <a class="page-link" href="?page=<?= intval($get_page)+3 ?>" aria-label="Next">
                 <span aria-hidden="true">&raquo;</span>
                 </a>
             </li>
