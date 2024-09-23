@@ -63,6 +63,10 @@
 
 <h3>Còn <?= $count??0 ?> đơn hàng chưa kiểm tra</h3>
 
+<br>
+
+<h3>Đã kiểm tra <?= $count??0 ?> đơn hàng</h3>
+
 <table class="table-responsive">
         <tr>
             <th>STT</th>
