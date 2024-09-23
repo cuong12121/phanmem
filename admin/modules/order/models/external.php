@@ -253,6 +253,10 @@
 				setRedirect($link,$msg,'error');
 			}
 
+			// ngày giờ
+			date_default_timezone_set('Asia/Ho_Chi_Minh');
+
+
 			$ngay=date('dmY');
 			$gio =date('His');
 			
