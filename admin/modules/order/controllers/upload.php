@@ -20,7 +20,7 @@
 			$platforms = $model -> get_records('published = 1','fs_platforms');
 			$houses = $model -> get_records('published = 1','fs_house');
 			$users = $model -> get_record('id = ' . $_SESSION['ad_userid'],'fs_users');
-			$lists = $this -> model->get_data();
+			$list = $this -> model->get_data();
 
 
 
