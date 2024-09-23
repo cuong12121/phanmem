@@ -33,6 +33,8 @@
 
 			$list = $mang_moi;
 
+			dd($list);
+
 
 			// foreach ($list as $key => $l) {
 			// 	$row = array();
