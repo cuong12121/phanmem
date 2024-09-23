@@ -22,18 +22,6 @@
 			$users = $model -> get_record('id = ' . $_SESSION['ad_userid'],'fs_users');
 			$lists = $this -> model->get_data();
 
-			
-			$new_array = array_filter($lists, function($item) {
-			    return $item->platform_id === 6 && $item->is_active === 1;
-			});
-
-			$mang_moi = array_filter($lists, function($item) {
-			    return $item->platform_id !== 6;
-			});
-
-			$list = $mang_moi;
-
-			dd($mang_moi);
 
 
 			// foreach ($list as $key => $l) {
