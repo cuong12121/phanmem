@@ -193,9 +193,6 @@
 
 			if(!empty($id)){
 
-				
-
-
 				$query = " SELECT id,file_pdf, user_id, file_xlsx, platform_id,file_xlsx,file_pdf FROM  fs_order_uploads WHERE 1=1 AND id = $id"; 
 
 				$values = $db->getObjectList($query);
@@ -229,8 +226,6 @@
 					$file_pdf = $value->file_pdf;
 
 				}
-				dd($platform_id);
-
 
 				$excel_row = $excel_kytu[$platform_id];
 
