@@ -20,14 +20,14 @@
 			$platforms = $model -> get_records('published = 1','fs_platforms');
 			$houses = $model -> get_records('published = 1','fs_house');
 			$users = $model -> get_record('id = ' . $_SESSION['ad_userid'],'fs_users');
-			$list = $this -> model->get_data();
+			$lists = $this -> model->get_data();
 
 			
-			$new_array = array_filter($list, function($item) {
+			$new_array = array_filter($lists, function($item) {
 			    return $item->platform_id === 6 && $item->is_active === 1;
 			});
 
-			$mang_moi = array_filter($list, function($item) {
+			$mang_moi = array_filter($lists, function($item) {
 			    return $item->platform_id !== 6;
 			});
 
