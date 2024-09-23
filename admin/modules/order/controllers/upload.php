@@ -182,13 +182,13 @@
 
 			$model  = $this -> model;
 
-			$querys_id = "SELECT record_id FROM  fs_info_run_check_pdf_excel WHERE 1=1 AND active = 0 ORDER BY id DESC"; 
+			// $querys_id = "SELECT record_id FROM  fs_info_run_check_pdf_excel WHERE 1=1 AND active = 0 ORDER BY id DESC"; 
 
-			$id = $db->getResult($querys_id);
+			// $id = $db->getResult($querys_id);
 
 
 
-			// $id =232252;
+			$id =251940;
 
 
 			if(!empty($id)){
@@ -237,6 +237,8 @@
 
 
 				$data_pdf = $this->dataPDF($file_ar_pdf, $platform_id);
+
+				dd($data_pdf);
 
 				// echo"<pre>"; var_dump($data_pdf);echo"</pre>";
 
