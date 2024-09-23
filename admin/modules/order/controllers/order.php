@@ -97,8 +97,12 @@
 
 			$query = " SELECT * FROM run_check_file_order_pdf_excel";
 
+			$querys = " SELECT id FROM run_check_file_order_pdf_excel WHERE 1=1 AND active = 0";
+
    			$sql = $db->query_limit($query, 10, $page);
 			$result = $db->getObjectList();	
+
+			$count = $db->getTotal($querys); 
 
 			include 'modules/'.$this->module.'/views/'.$this->view.'/list-err.php';		  
   
