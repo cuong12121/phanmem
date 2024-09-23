@@ -236,7 +236,7 @@
                  <?php 
                     if($page !=1):
                 ?>
-                <li class="page-item"><a class="page-link" href="?page=1">Về đầu</a></li>
+                <li class="page-item"><a class="page-link" href="/admin/index.php?module=order&view=order&task=set_external_orders&page=1">Về đầu</a></li>
 
                 <?php
                     endif;
@@ -245,12 +245,12 @@
                  
                 <?php
                 for($i=$page;$i<  intval($page)+3;$i++): ?>
-                <li class="page-item"><a class="page-link" href="?page=<?= $i ?>"><?= $i ?></a></li>
+                <li class="page-item"><a class="page-link" href="/admin/index.php?module=order&view=order&task=set_external_orders&page=<?= $i ?>"><?= $i ?></a></li>
                 <?php
                 endfor;
                 ?>
 
-                <li class="page-item"><a class="page-link" href="?page=200">Trang cuối</a></li>
+                <li class="page-item"><a class="page-link" href="/admin/index.php?module=order&view=order&task=set_external_orders&page=200">Trang cuối</a></li>
                 <?php
             else:
 
