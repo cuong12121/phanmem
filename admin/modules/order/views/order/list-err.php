@@ -265,6 +265,12 @@
 
         ?>
 
+        <?php 
+       
+        $get_page =!empty($_GET['page'])?$_GET['page']:1
+        
+        ?>
+
         <tr>
             <?php
             $define_platform[1] = 'lazada';
@@ -276,7 +282,16 @@
             $define_platform[4] = 'lex ngoài';
             ?>
 
-            <td><?= $dem  ?></td>
+            <?php 
+
+                if(intval($get_page)>0):
+                    $dems = (intval($get_page)-1)*10+$dem;
+                else:
+                    $dems =0;
+                endif;        
+            ?>
+
+            <td><?= $dems  ?></td>
 
             <td><?=  implode('<br>', $file_pdf_rep1)   ?></td>
 
@@ -311,11 +326,7 @@
        
     </table>
 
-    <?php 
-       
-        $get_page =!empty($_GET['page'])?$_GET['page']:1
-        
-    ?>
+    
 
     <nav aria-label="Page navigation example">
         <ul class="pagination">
