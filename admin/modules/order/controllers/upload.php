@@ -90,7 +90,7 @@
 
 			$platform_id = $_GET['platform'];
 
-			$query = " SELECT id,platform_id FROM  fs_order_uploads WHERE 1=1 AND platform_id = $platform_id AND created_time >= '2024-09-23'"; 
+			$query = " SELECT id,platform_id FROM  fs_order_uploads WHERE 1=1 AND platform_id = $platform_id AND created_time >= '2024-09-05'"; 
 
 			$values = $db->getObjectList($query);
 
@@ -182,17 +182,16 @@
 
 			$model  = $this -> model;
 
-			// $querys_id = "SELECT record_id FROM  fs_info_run_check_pdf_excel WHERE 1=1 AND active = 0 ORDER BY id DESC"; 
+			$querys_id = "SELECT record_id FROM  fs_info_run_check_pdf_excel WHERE 1=1 AND active = 0 ORDER BY id DESC"; 
 
-			// $id = $db->getResult($querys_id);
+			$id = $db->getResult($querys_id);
 
 
 
-			$id =251940;
+			// $id =232252;
 
 
 			if(!empty($id)){
-
 				$query = " SELECT id,file_pdf, user_id, file_xlsx, platform_id,file_xlsx,file_pdf FROM  fs_order_uploads WHERE 1=1 AND id = $id"; 
 
 				$values = $db->getObjectList($query);
@@ -227,6 +226,7 @@
 
 				}
 
+
 				$excel_row = $excel_kytu[$platform_id];
 
 				$data  = $model->showDataExcel($file_path,$excel_row[0], $excel_row[1]);
@@ -237,8 +237,6 @@
 
 
 				$data_pdf = $this->dataPDF($file_ar_pdf, $platform_id);
-
-				dd($data_pdf);
 
 				// echo"<pre>"; var_dump($data_pdf);echo"</pre>";
 
@@ -887,8 +885,6 @@
 			    		
 			    		// shopee
 			    		$data  = $this->returnDataPDF($path);
-
-			    	dd($data);	
 			    	
 			    }
 
@@ -1279,9 +1275,14 @@
 		$data = $model->get_record('id = ' .$id,'fs_order_uploads','id,file_xlsx,file_excel_drive,platform_id');
 		
 	
-		if(!$data-> file_xlsx){
+		if(!$data-> file_xlsx||$data->platform_id==6){
 
-			$html ='<strong style="color:red">Lỗi thiếu file</strong>';
+			if($data->platform_id==6){
+				$html = '';
+			}
+			else{
+				$html ='<strong style="color:red">Lỗi thiếu file</strong>';
+			}
 			
 			return $html;
 		}
@@ -1302,12 +1303,10 @@
 		   
 		}
 
+
 		return '<a style="color: rgba(255, 153, 0, 0.79);" target="_blink" href="' . $link . '">'.basename($data-> file_xlsx).'</a>';
 		
 	}
-
-
-		
 
 	function view_print($controle,$id){
 		$model = $controle -> model;
