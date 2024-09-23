@@ -253,7 +253,11 @@
 				setRedirect($link,$msg,'error');
 			}
 
-			$barcode_string  ='230724DN15H0505MCH';
+			$ngay=date('dmY');
+			$gio =date('His');
+			
+		
+			$barcode_string  =  $ngay.'DN'.$gio.$shop_id;
 
 			$generator = new Picqer\Barcode\BarcodeGeneratorPNG();
 			$barcode = $generator->getBarcode($barcode_string, $generator::TYPE_CODE_128,1,50);
