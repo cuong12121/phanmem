@@ -121,6 +121,8 @@
 			
 
 			$query = "SELECT * FROM ".$this -> table_name." AS a WHERE 1=1 " . $where. $ordering. " ";
+
+			dd($query);
 			return $query;
 		}
 

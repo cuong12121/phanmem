@@ -620,7 +620,7 @@
 			$_SESSION['input_data'] = '';
 
 			$link = FSRoute::_('index.php?module=order&view=upload');	
-			setRedirect($link);	
+			setRedirect($link,FSText :: _('Đơn hàng được tạo thành công vui lòng chờ duyệt'),'success');
 
 		
 		}
