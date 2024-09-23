@@ -67,6 +67,11 @@
 
 <h3>Đã kiểm tra <?= $testcount ?> đơn hàng</h3>
 
+<br>
+
+
+<h3>có tổng số  <?= $total ?> đơn hàng bị lỗi</h3>
+
 <table class="table-responsive">
         <tr>
             <th>STT</th>

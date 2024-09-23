@@ -104,6 +104,8 @@
    			$sql = $db->query_limit($query, 10, $page);
 			$result = $db->getObjectList();	
 
+			$total = $db->getTotal($query);
+
 			$count = $db->getTotal($querys); 
 
 			$testcount = $db->getTotal($queryss); 
