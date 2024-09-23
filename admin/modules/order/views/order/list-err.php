@@ -355,7 +355,7 @@
 
             <?php 
 
-                if($i>$limit+1){
+                if($i>$limit){
                     break;
                 }
 
