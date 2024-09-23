@@ -325,7 +325,9 @@
         ?>
        
     </table>
-
+    <?php 
+        $limit = floor($total/10);
+    ?>
     
 
     <nav aria-label="Page navigation example">
@@ -350,9 +352,13 @@
             ?>
 
             <li class="page-item"><a class="page-link" href="?page=<?= $i ?>"><?= $i ?></a></li>
-          
 
             <?php 
+
+                if($i>$limit+1){
+                    break
+                }
+
             endfor;    
             ?>
 
