@@ -90,7 +90,7 @@
 
 			$platform_id = $_GET['platform'];
 
-			$query = " SELECT id,platform_id FROM  fs_order_uploads WHERE 1=1 AND platform_id = $platform_id AND created_time >= '2024-09-05'"; 
+			$query = " SELECT id,platform_id FROM  fs_order_uploads WHERE 1=1 AND platform_id = $platform_id AND created_time >= '2024-09-23'"; 
 
 			$values = $db->getObjectList($query);
 
