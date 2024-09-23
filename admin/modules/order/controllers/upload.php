@@ -192,6 +192,10 @@
 
 
 			if(!empty($id)){
+
+				dd($id);
+
+				
 				$query = " SELECT id,file_pdf, user_id, file_xlsx, platform_id,file_xlsx,file_pdf FROM  fs_order_uploads WHERE 1=1 AND id = $id"; 
 
 				$values = $db->getObjectList($query);
