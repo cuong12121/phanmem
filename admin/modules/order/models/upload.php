@@ -117,12 +117,12 @@
 			}
 
 			$wrap_id_warehouses = $this->get_wrap_id_warehouses();
-			$where .= ' AND warehouse_id IN ('.$wrap_id_warehouses.')';
+			$where .= ' AND warehouse_id IN ('.$wrap_id_warehouses.') AND platform_id = 6 AND is_active = 1';
 			
 
 			$query = "SELECT * FROM ".$this -> table_name." AS a WHERE 1=1 " . $where. $ordering. " ";
 
-			
+
 			return $query;
 		}
 
