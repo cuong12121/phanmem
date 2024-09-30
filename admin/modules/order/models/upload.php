@@ -1342,6 +1342,10 @@
 					if($add_id){
 						$this->plus_quantity_product($row['warehouse_id'],$row['product_id'],(float)$row['count']);
 					}
+					else{
+						$msg = 'Vui lòng upload lại đơn hàng, file excel có vấn đề';
+						setRedirect($link,$msg,'error');
+					}
 					return $add_id;
 				}
 			}
