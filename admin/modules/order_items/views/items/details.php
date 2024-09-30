@@ -174,6 +174,7 @@
                 <th>Tổng số tiền</th>
                 <th>Đơn vị vận chuyển</th>
                 <th>Actions</th>
+                <th>Id đơn hàng</th>
                 <th>Sửa</th>
                 <th>Id</th>
                 
@@ -218,6 +219,7 @@
                 <td><?= $value->shipping_unit_name??'' ?></td>
                         
                 <td></td> 
+                <td><?= $value->record_id ?></td>
                 <td>sửa</td>
                 <td><?= $value->id ?></td>    
                
