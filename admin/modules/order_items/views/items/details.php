@@ -165,6 +165,7 @@
                 <th>Shop</th>
                 <th>Ngày</th>
                 <th>Giờ</th>
+                <th>Tên sản phẩm</th>
                 <th>Mã sku</th>
                 <th>Mã màu</th>
                 <th>Mã size</th>
@@ -203,6 +204,7 @@
                 <td><?= date('d/m/Y', strtotime($value->date))  ?></td>
 
                 <td><?= $value->house_id ?></td>
+                <td><?= $value->product_name ?></td>
 
                 <td><?= $value->sku ?></td>
 
