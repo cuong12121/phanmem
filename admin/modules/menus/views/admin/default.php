@@ -119,7 +119,7 @@ echo '</li>';
 </li>
 
 <li>
-  <a id="li_menu_502" href="https://<?= DOMAIN ?>/admin/order/order/upload/set" class="li_menu_0 header ">
+  <a id="li_menu_502" href="https://<?= DOMAIN ?>/admin/order/upload/set" class="li_menu_0 header ">
     <span class="text">Đơn hàng(new)</span>          
   </a>
 </li>
