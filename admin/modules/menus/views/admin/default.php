@@ -117,6 +117,19 @@ echo '</li>';
     <span class="text">tracking</span>          
   </a>
 </li>
+
+<li>
+  <a id="li_menu_502" href="https://<?= DOMAIN ?>/admin/order/order/upload/set" class="li_menu_0 header ">
+    <span class="text">Đơn hàng(new)</span>          
+  </a>
+</li>
+
+<li>
+  <a id="li_menu_502" href="https://<?= DOMAIN ?>/admin/order_items/items/details" class="li_menu_0 header ">
+    <span class="text">Xuất kho(new)</span>          
+  </a>
+</li>
+
 </ul>
 <script>
 
