@@ -400,6 +400,8 @@
 			$heightRow=$objexcel->setActiveSheetIndex()->getHighestRow();
 			// printr($data);
 			unset($j);
+
+			dd($data);
 		
 			if(!$result_id){
 				$link = FSRoute::_('index.php?module=order&view=upload&task=add');
