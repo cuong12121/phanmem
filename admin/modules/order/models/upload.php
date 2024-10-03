@@ -396,16 +396,21 @@
 			$heightRow=$objexcel->setActiveSheetIndex()->getHighestRow();
 			// printr($data);
 			unset($j);
-			
 
-		
 			if(!$result_id){
 				$link = FSRoute::_('index.php?module=order&view=upload&task=add');
 			}else{
 				$link = FSRoute::_('index.php?module=order&view=upload&task=edit&id='.$result_id);
 			}
-			
 
+			if($data[1]['A']==='null'){
+
+				$msg = 'File excel không đúng định dạng ban đầu, vui lòng chuyển về đúng định dạng!';
+
+				setRedirect($link,$msg,'error');
+				
+			}
+			
 			//chạy vòng đầu để check lỗi trước
 			for($j=2;$j<=$heightRow;$j++){
 				$row = array();
