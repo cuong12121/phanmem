@@ -402,7 +402,7 @@
 			unset($j);
 
 			
-			if($data[1]['A']===null){
+			if($data[1]['A']==='null'){
 				print_r('tồn tại');
 			}
 			else{
