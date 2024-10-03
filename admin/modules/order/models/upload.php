@@ -407,7 +407,7 @@
 			}
 			
 
-			if(!empty($data[1]['A'])){
+			if($data[1]['A']==null){
 				print_r('tồn tại');
 			}
 			else{
