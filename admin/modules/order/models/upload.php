@@ -1367,6 +1367,7 @@
 
 			if(!$date || !$shop_id || !$platform_id || !$house_id || !$warehouse_id ){
 				$msg = 'Bạn phải nhập đầy đủ thông tin.';
+				$link = FSRoute::_('index.php?module=order&view=upload&task=add');
 				setRedirect($link,$msg,'error');
 				return false;
 			}
@@ -1536,7 +1537,7 @@
 					return false;
 
 				dd($file_xlsx_name);
-				
+
 				$row['file_xlsx'] = 'files/orders/'.$cyear.'/'.$cmonth.'/'.$cday.'/'.$file_xlsx_name;
 
 				 // $id_google_excel = file_get_contents('https://drive.'.DOMAIN.'/createfiles.php?link=https://'.DOMAIN.'/files/orders/'.$cyear.'/'.$cmonth.'/'.$cday.'/'.$file_xlsx_name);
