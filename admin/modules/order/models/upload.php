@@ -392,7 +392,7 @@
 			// $data->setOutputEncoding('UTF-8');
 			$objReader->setLoadAllSheets();
 
-			$file_path="https://test.dienmayai.com/files/orders/2024/10/03/order-toship-20240903_20241003-4-_1727931400-1-_1727944863.xlsx";
+			$file_path="/www/wwwroot/test.dienmayai.com/files/orders/2024/10/03/test.xlsx";
 			$objexcel = $objReader->load($file_path);
 			$data =$objexcel->getActiveSheet()->toArray('null',true,true,true);
 			// $data->load($file_path);
