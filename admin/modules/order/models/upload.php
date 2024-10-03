@@ -401,7 +401,7 @@
 			// printr($data);
 			unset($j);
 
-			dd($data);
+			dd($data[1]);
 		
 			if(!$result_id){
 				$link = FSRoute::_('index.php?module=order&view=upload&task=add');
