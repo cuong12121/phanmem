@@ -401,17 +401,12 @@
 			// printr($data);
 			unset($j);
 
-			if($data[1]['A']==null){
-				echo "file excel không đúng định dạng vui lòng kiểm tra lại định dạng";
-				
-			}
 			
-
-			if($data[1]['A']==null){
+			if($data[1]['A']===null){
 				print_r('tồn tại');
 			}
 			else{
-				print_r('Không tồn tại');
+				print_r($data[1]['A']);
 			}
 			die;
 		
