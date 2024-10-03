@@ -1534,6 +1534,9 @@
 				$file_xlsx_name = $fsFile -> upload_file("file_xlsx", $path ,100000000, '_'.time());
 				if(!$file_xlsx_name)
 					return false;
+
+				dd($file_xlsx_name);
+				
 				$row['file_xlsx'] = 'files/orders/'.$cyear.'/'.$cmonth.'/'.$cday.'/'.$file_xlsx_name;
 
 				 // $id_google_excel = file_get_contents('https://drive.'.DOMAIN.'/createfiles.php?link=https://'.DOMAIN.'/files/orders/'.$cyear.'/'.$cmonth.'/'.$cday.'/'.$file_xlsx_name);
