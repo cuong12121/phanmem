@@ -1291,6 +1291,8 @@
 						}else{
 							$row['total_price'] = (float)$produt->price * $quantity_product;
 							// printr($row);
+
+							dd($row);
 							$add_id = $this->_add($row,'fs_order_uploads_detail');
 							if($add_id){
 								$this->plus_quantity_product($row['warehouse_id'],$row['product_id'],$quantity_product);
