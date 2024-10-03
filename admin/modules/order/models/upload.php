@@ -1536,7 +1536,7 @@
 				if(!$file_xlsx_name)
 					return false;
 
-				dd($file_xlsx_name);
+				
 
 				$row['file_xlsx'] = 'files/orders/'.$cyear.'/'.$cmonth.'/'.$cday.'/'.$file_xlsx_name;
 
@@ -1570,6 +1570,8 @@
 
 			
 			$result_id = parent::save ($row);
+
+			dd($result_id);
 
 			if($result_id && $id){
 				$row2 = array();
