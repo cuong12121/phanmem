@@ -401,7 +401,7 @@
 			// printr($data);
 			unset($j);
 
-			if(empty($data[1]['A'])){
+			if($data[1]['A']==null){
 				echo "file excel không đúng định dạng vui lòng kiểm tra lại định dạng";
 				
 			}
