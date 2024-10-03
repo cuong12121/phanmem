@@ -403,10 +403,10 @@
 
 			if(empty($data[1]['A'])){
 				echo "file excel không đúng định dạng vui lòng kiểm tra lại định dạng";
-				die;
+				
 			}
 
-			
+			die;
 		
 			if(!$result_id){
 				$link = FSRoute::_('index.php?module=order&view=upload&task=add');
