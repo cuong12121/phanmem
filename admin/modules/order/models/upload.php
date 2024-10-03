@@ -1592,7 +1592,7 @@
 				// xóa hết các item của file cũ đi
 				$this->delete_item_update_amount_hold($result_id);
 
-
+				dd('chạy vào đây');
 				$file_path = PATH_BASE.$row['file_xlsx'];
 				$file_path = str_replace('/', DS,$file_path);
 				//lưu vào lấy thông số tạm giữ ở kho
