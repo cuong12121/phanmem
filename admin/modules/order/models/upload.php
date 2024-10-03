@@ -405,7 +405,14 @@
 				echo "file excel không đúng định dạng vui lòng kiểm tra lại định dạng";
 				
 			}
-			dd($data[1]['A']==null?true:false);
+			
+
+			if(!empty($data[1]['A'])){
+				print_r('tồn tại');
+			}
+			else{
+				print_r('Không tồn tại');
+			}
 			die;
 		
 			if(!$result_id){
