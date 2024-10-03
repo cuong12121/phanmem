@@ -398,6 +398,8 @@
 			$heightRow=$objexcel->setActiveSheetIndex()->getHighestRow();
 			// printr($data);
 			unset($j);
+
+			dd($data);
 			
 
 		
@@ -1600,7 +1602,7 @@
 					$add = $this->upload_excel_lazada($file_path,$result_id,$shop->code,$house_id);
 				}elseif($platform_id == 2){
 
-					dd($file_path);
+					// dd($file_path);
 					$add = $this->upload_excel_shopee($file_path,$result_id,$shop->code,$house_id, $mavandonPDF);
 				}elseif($platform_id == 3){
 					$add = $this->upload_excel_tiki($file_path,$result_id,$shop->code,$house_id);
