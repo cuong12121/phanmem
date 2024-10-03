@@ -402,13 +402,7 @@
 			unset($j);
 
 			
-			if($data[1]['A']==='null'){
-				print_r('tồn tại');
-			}
-			else{
-				print_r($data[1]['A']);
-			}
-			die;
+			
 		
 			if(!$result_id){
 				$link = FSRoute::_('index.php?module=order&view=upload&task=add');
