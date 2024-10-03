@@ -405,7 +405,7 @@
 				echo "file excel không đúng định dạng vui lòng kiểm tra lại định dạng";
 				
 			}
-
+			dd($data[1]['A']);
 			die;
 		
 			if(!$result_id){
