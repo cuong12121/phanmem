@@ -1571,7 +1571,7 @@
 			
 			$result_id = parent::save ($row);
 
-			dd($result_id);
+			dd($id);
 
 			if($result_id && $id){
 				$row2 = array();
