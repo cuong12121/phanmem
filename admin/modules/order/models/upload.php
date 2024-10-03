@@ -399,7 +399,7 @@
 			// printr($data);
 			unset($j);
 
-			dd($data);
+			dd($file_path);
 			
 
 		
