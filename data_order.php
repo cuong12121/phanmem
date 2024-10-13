@@ -26,7 +26,7 @@ if ($redis->exists('complete_order')) {
 
 	foreach ($data_order as $key => $value) {
 
-		print_r($value);
+		print_r('https://api.'.$DOMAIN.'/api/search-data-order-details?search='.$value->search.'&user_package_id='.$value->user_package_id.'&active='.$value->$active);
 
 		die;
 
