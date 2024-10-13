@@ -25,7 +25,7 @@ if ($redis->exists('complete_order')) {
 	$data_order = json_decode($data_order);
 
 	foreach ($data_order as $key => $value) {
-		print_r($value);
+		print_r($value['search']);
 	}
 
 	
