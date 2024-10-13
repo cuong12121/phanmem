@@ -37,4 +37,4 @@ if ($redis->exists('complete_order')) {
 }
 
 
-echo 'thành công;
+echo 'thành công';
