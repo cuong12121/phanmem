@@ -15,7 +15,7 @@ $context = stream_context_create(array(
         
     )
 ));
-
+DOMAIN = 'dienmayai.com';
 
 
 if ($redis->exists('complete_order')) {
