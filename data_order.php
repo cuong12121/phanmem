@@ -20,9 +20,10 @@ $DOMAIN = 'dienmayai.com';
 
 if ($redis->exists('complete_order')) {
 
-	$data_order = $redis->get("complete_order");
 
-	$data_order = json_decode($data_order);
+	$data_order = json_decode($redis->get("complete_order"));
+
+	$redis->delete("complete_order");
 
 	foreach ($data_order as $key => $value) {
 
@@ -35,9 +36,6 @@ if ($redis->exists('complete_order')) {
 		
 	}
 
-	
-
-	
 }
 // $redis->delete("complete_order");
 
