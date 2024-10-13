@@ -26,12 +26,8 @@ if ($redis->exists('complete_order')) {
 
 	foreach ($data_order as $key => $value) {
 
-		print_r('https://api.'.$DOMAIN.'/api/search-data-order-details?search='.$value->search.'&user_package_id='.$value->user_package_id.'&active='.$value->$active);
-
-		die;
-
 		// Send the request
-		$response = file_get_contents('https://api.'.$DOMAIN.'/api/search-data-order-details?search='.$value->search.'&user_package_id='.$value->user_package_id.'&active='.$value->$active, FALSE, $context);
+		$response = file_get_contents('https://api.'.$DOMAIN.'/api/search-data-order-details?search='.$value->search.'&user_package_id='.$value->user_package_id.'&active='.$value->active, FALSE, $context);
 
 		print_r($response);
 
