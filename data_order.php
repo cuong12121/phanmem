@@ -26,7 +26,7 @@ if ($redis->exists('complete_order')) {
 
 	foreach ($data_order as $key => $value) {
 
-		print_r($value->active);
+		print_r($value);
 
 		die;
 
