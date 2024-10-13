@@ -267,6 +267,8 @@
 		public function search_order_details()
 		{
 
+			$redis = $this->connect_redis();
+
 			$define_id = ['$'=>252, '@'=>253, '%'=>254,'?'=>255, '+'=>251, '&'=>9,'#'=>256, '*'=>257,'/'=>258,'>'=>259,'<'=>260];
 
 			$searchs = trim($_GET['search']);
@@ -283,10 +285,34 @@
 
 			$data = ['search'=>$search, 'user_package_id'=>$user_id,'active'=>$active];
 
-			dd($data);
+			$keyExists_order = $redis->exists('complete_order');
+
+			if(!$keyExists_order){
+
+				$complete_order = [];
+
+				array_push($complete_order, $data);
+
+				$redis->set("complete_order", json_encode($complete_order));
 
 
-			die;
+			}
+			else{
+				$complete_order_convert =$redis->get("complete_order");
+
+				$complete_order = json_decode($complete_order_convert);
+
+				array_push($complete_order, $data);
+
+				$redis->delete("complete_order");
+
+
+				$redis->set("complete_order", json_encode($complete_order));
+
+			}
+
+			dd('thành công');
+
 
 			$context = stream_context_create(array(
 	            'http' => array(
@@ -303,7 +329,7 @@
 	        // Send the request
 	        $response = file_get_contents('https://api.'.DOMAIN.'/api/search-data-order-details?search='.$search.'&user_package_id='.$user_id.'&active='.$active, FALSE, $context);
 
-	        $redis = $this->connect_redis();
+	        
 
 	        $keyExists = $redis->exists('refresh');
 
