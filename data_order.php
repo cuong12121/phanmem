@@ -23,7 +23,7 @@ if ($redis->exists('complete_order')) {
 
 	$data_order = json_decode($redis->get("complete_order"));
 
-	$redis->delete("complete_order");
+	$redis->del("complete_order");
 
 	foreach ($data_order as $key => $value) {
 
