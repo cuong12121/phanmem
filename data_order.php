@@ -31,10 +31,10 @@ if ($redis->exists('complete_order')) {
 		
 	}
 
-	$redis->delete("complete_order");
+	
 
 	
 }
-
+$redis->delete("complete_order");
 
 echo 'thành công';
