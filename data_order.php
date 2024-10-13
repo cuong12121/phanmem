@@ -25,15 +25,17 @@ if ($redis->exists('complete_order')) {
 	$data_order = json_decode($data_order);
 
 	foreach ($data_order as $key => $value) {
-		print_r($value->search);
+
+		// Send the request
+		$response = file_get_contents('https://api.'.DOMAIN.'/api/search-data-order-details?search='.$value->search.'&user_package_id='.$value->user_package_id.'&active='.$value->$active, FALSE, $context);
+		
 	}
 
 	
 }
 
 
-// // Send the request
-// $response = file_get_contents('https://api.'.DOMAIN.'/api/search-data-order-details?search='.$search.'&user_package_id='.$user_id.'&active='.$active, FALSE, $context);
+
 
 
 // echo $check;
