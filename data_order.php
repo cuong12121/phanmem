@@ -15,7 +15,7 @@ $context = stream_context_create(array(
         
     )
 ));
-DOMAIN = 'dienmayai.com';
+$DOMAIN = 'dienmayai.com';
 
 
 if ($redis->exists('complete_order')) {
@@ -27,7 +27,7 @@ if ($redis->exists('complete_order')) {
 	foreach ($data_order as $key => $value) {
 
 		// Send the request
-		$response = file_get_contents('https://api.'.DOMAIN.'/api/search-data-order-details?search='.$value->search.'&user_package_id='.$value->user_package_id.'&active='.$value->$active, FALSE, $context);
+		$response = file_get_contents('https://api.'.$DOMAIN.'/api/search-data-order-details?search='.$value->search.'&user_package_id='.$value->user_package_id.'&active='.$value->$active, FALSE, $context);
 		
 	}
 
