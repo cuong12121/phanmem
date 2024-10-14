@@ -37,6 +37,15 @@ if ($redis->exists('complete_order')) {
 	}
 
 }
-// $redis->delete("complete_order");
+
+$keyExists = $redis->exists('refresh');
+
+if ($keyExists) {
+    $redis->del("refresh");
+
+    $redis->set("refresh", 1);
+
+} 
+
 
 echo 'thành công';

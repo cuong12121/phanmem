@@ -311,35 +311,29 @@
 
 			}
 
-			dd('thành công');
+			$response = 'thành công';
+
+			// dd('thành công');
 
 
-			$context = stream_context_create(array(
-	            'http' => array(
+			// $context = stream_context_create(array(
+	        //     'http' => array(
 	                
-	                'method' => 'GET',
+	        //         'method' => 'GET',
 
-	                'header' => "Content-Type: application/x-www-form-urlencoded\r\n".
-	                            "token: 7ojTLYXnzV0EH1wRGxOmvLFga",
+	        //         'header' => "Content-Type: application/x-www-form-urlencoded\r\n".
+	        //                     "token: 7ojTLYXnzV0EH1wRGxOmvLFga",
 	                
-	            )
-	        ));
+	        //     )
+	        // ));
 	        
 
-	        // Send the request
-	        $response = file_get_contents('https://api.'.DOMAIN.'/api/search-data-order-details?search='.$search.'&user_package_id='.$user_id.'&active='.$active, FALSE, $context);
+	        // // Send the request
+	        // $response = file_get_contents('https://api.'.DOMAIN.'/api/search-data-order-details?search='.$search.'&user_package_id='.$user_id.'&active='.$active, FALSE, $context);
 
 	        
 
-	        $keyExists = $redis->exists('refresh');
-
-			if ($keyExists) {
-			    $redis->delete("refresh");
-
-			    $redis->set("refresh", 1);
-
-			} 
-
+	        
 
 			$_SESSION['notification'] = $response; //khởi tạo session
 
