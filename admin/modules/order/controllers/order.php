@@ -267,8 +267,6 @@
 		public function search_order_details()
 		{
 
-			$redis = $this->connect_redis();
-
 			$define_id = ['$'=>252, '@'=>253, '%'=>254,'?'=>255, '+'=>251, '&'=>9,'#'=>256, '*'=>257,'/'=>258,'>'=>259,'<'=>260];
 
 			$searchs = trim($_GET['search']);
@@ -283,57 +281,32 @@
 
 			$active =$_GET['active'];
 
-			$data = ['search'=>$search, 'user_package_id'=>$user_id,'active'=>$active];
-
-			$keyExists_order = $redis->exists('complete_order');
-
-			if(!$keyExists_order){
-
-				$complete_order = [];
-
-				array_push($complete_order, $data);
-
-				$redis->set("complete_order", json_encode($complete_order));
-
-
-			}
-			else{
-				$complete_order_convert =$redis->get("complete_order");
-
-				$complete_order = json_decode($complete_order_convert);
-
-				array_push($complete_order, $data);
-
-				$redis->delete("complete_order");
-
-
-				$redis->set("complete_order", json_encode($complete_order));
-
-			}
-
-			$response = 'thành công';
-
-			// dd('thành công');
-
-
-			// $context = stream_context_create(array(
-	        //     'http' => array(
+			$context = stream_context_create(array(
+	            'http' => array(
 	                
-	        //         'method' => 'GET',
+	                'method' => 'GET',
 
-	        //         'header' => "Content-Type: application/x-www-form-urlencoded\r\n".
-	        //                     "token: 7ojTLYXnzV0EH1wRGxOmvLFga",
+	                'header' => "Content-Type: application/x-www-form-urlencoded\r\n".
+	                            "token: 7ojTLYXnzV0EH1wRGxOmvLFga",
 	                
-	        //     )
-	        // ));
+	            )
+	        ));
 	        
 
-	        // // Send the request
-	        // $response = file_get_contents('https://api.'.DOMAIN.'/api/search-data-order-details?search='.$search.'&user_package_id='.$user_id.'&active='.$active, FALSE, $context);
+	        // Send the request
+	        $response = file_get_contents('https://api.'.DOMAIN.'/api/search-data-order-details?search='.$search.'&user_package_id='.$user_id.'&active='.$active, FALSE, $context);
 
-	        
+	        $redis = $this->connect_redis();
 
-	        
+	        $keyExists = $redis->exists('refresh');
+
+			if ($keyExists) {
+			    $redis->delete("refresh");
+
+			    $redis->set("refresh", 1);
+
+			} 
+
 
 			$_SESSION['notification'] = $response; //khởi tạo session
 
