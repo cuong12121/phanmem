@@ -296,7 +296,7 @@
 	        // Send the request
 	        $response = file_get_contents('https://api.'.DOMAIN.'/api/search-data-order-details?search='.$search.'&user_package_id='.$user_id.'&active='.$active, FALSE, $context);
 
-	        dd($response);
+	        // dd($response);
 
 	        $redis = $this->connect_redis();
 
