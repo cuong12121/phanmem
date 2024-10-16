@@ -1162,7 +1162,7 @@ class FSModels
 				}
 				
 				
-				if(!$this->check_note_code){
+				if(empty($this->check_note_code)){
 					if($field == 'code'){
 						$row['code'] = FSInput::get('code');
 						if($row['code']) {
