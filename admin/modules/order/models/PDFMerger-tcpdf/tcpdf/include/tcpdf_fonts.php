@@ -1668,12 +1668,12 @@ class TCPDF_FONTS {
 			return chr($c);
 		} elseif ($c <= 0x7F) {
 
-			if(!is_int($c)){
-				return '';
+			if(is_int($c)){
+				return chr($c);
 			}
 			else{
-				// one byte
-				return chr($c);
+				return '';
+				
 			}
 			
 		} elseif ($c <= 0x7FF) {
