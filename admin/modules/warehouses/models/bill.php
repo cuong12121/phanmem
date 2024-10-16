@@ -615,12 +615,12 @@ function add_products_detail_excel($id,$excel){
 		$product = $this-> get_record('code = "'.$item[0].'"','fs_products');
 		if(empty($product)) continue;
 
-		$amount = $item[1];
-		$link = $item[6];
-		$price = $item[2];
-		$typediscount = $item[3];
-		$discount = $item[4];
-		$weight = $item[5];
+		$amount = @$item[1];
+		$link = @$item[6];
+		$price = @$item[2];
+		$typediscount = @$item[3];
+		$discount = @$item[4];
+		$weight = @$item[5];
 
 		$row['product_id'] = $product-> id;
 		$row['amount'] = $amount;
