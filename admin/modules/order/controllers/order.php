@@ -303,7 +303,7 @@
 	        $keyExists = $redis->exists('refresh');
 
 			if ($keyExists) {
-			    $redis->delete("refresh");
+			    $redis->del("refresh");
 
 			    $redis->set("refresh", 1);
 
