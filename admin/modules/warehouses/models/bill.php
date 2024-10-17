@@ -662,15 +662,15 @@ function add_products_detail_excel($id,$excel){
 		$total_amount += $amount;
 		$total_weight += $weight*$amount;
 
-		$prices = !empty($price)?$price*$amount:0;
+		$prices = !empty($price)?intval($price)*intval($amount):0;
 		$total_price += $prices;
 
 		if($typediscount == 1) {
-			$discountss = !empty($discount)?$discount:0;
+			$discountss = !empty($discount)?intval($discount):0;
 			$total_discount += $discountss;
 		} else {
 
-			$discountss = !empty($price)&&!empty($amount)&&!empty($discount)?$discount*$price*$amount/100:0;
+			$discountss = !empty($price)&&!empty($amount)&&!empty($discount)?intval($discount)*intval($price)*intval($amount)/100:0;
 			$total_discount += $discountss;
 		}
 
