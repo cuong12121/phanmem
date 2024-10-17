@@ -422,6 +422,12 @@ class ProductsControllersProducts  extends Controllers
 //				$excel->obj_php_excel->getActiveSheet()->getStyle('A1')->getAlignment()->setIndent(1);// padding cell
 				
 				$output = $excel->write_files();
+
+				if(empty($output['xlsx'])){
+
+
+					$link = FSRoute::_('index.php?module=products&view=products', FSText :: _('file xuất có vấn đề xin kiểm tra lại'),'error');
+				}
 				
 				$path_file =   PATH_ADMINISTRATOR.DS.str_replace('/',DS, $output['xlsx']);
 				header("Pragma: public");
