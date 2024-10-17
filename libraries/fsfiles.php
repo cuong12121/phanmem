@@ -1037,7 +1037,10 @@ class FSFiles
 		if($file_ext == 'xls' || $file_ext == 'xlsx')
 			return $this->upload_file($input_tag_name, $path ,$size_max, $suffix);
 		else{
-			Errors:: setError('Extension of file is not format. Only user extension: xls,xlsx');
+
+			$error = new Errors();
+			$error->setError('Extension of file is not format. Only user extension: xls,xlsx');
+		
 			return false;
 		}
 	

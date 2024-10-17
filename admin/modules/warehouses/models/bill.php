@@ -498,9 +498,9 @@ function add_products_detail($id){
 		$total_price += $price*$amount;
 
 		if($typediscount == 1) {
-			$total_discount += $discount;
+			$total_discount += intval($discount);
 		} else {
-			$total_discount += $discount*$price*$amount/100;
+			$total_discount += intval($discount)*intval($price)*intval($amount)/100;
 		}
 
 	}
