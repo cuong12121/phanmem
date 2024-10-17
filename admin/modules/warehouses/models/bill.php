@@ -661,12 +661,17 @@ function add_products_detail_excel($id,$excel){
 		$total_product ++;
 		$total_amount += $amount;
 		$total_weight += $weight*$amount;
-		$total_price += $price*$amount;
+
+		$prices = !empty($price)?$price*$amount:0;
+		$total_price += $prices;
 
 		if($typediscount == 1) {
-			$total_discount += $discount;
+			$discountss = !empty($discount)?$discount:0;
+			$total_discount += $discountss;
 		} else {
-			$total_discount += $discount*$price*$amount/100;
+
+			$discountss = !empty($price)&&!empty($amount)&&!empty($discount)?$discount*$price*$amount/100:0;
+			$total_discount += $discountss;
 		}
 
 			// code...
