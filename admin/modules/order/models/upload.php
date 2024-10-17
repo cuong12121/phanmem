@@ -738,20 +738,20 @@
 				$row['code'] = trim($data[$j]['A']);
 				$row['sku_nhanh'] = trim($data[$j]['L']);
 				$row['count'] = trim($data[$j]['O']);
-				$row['shipping_unit_name'] = trim($data[$j]['E']);
-				$row['tracking_code'] = trim($data[$j]['D']);
+				$row['shipping_unit_name'] = !empty($data[$j]['E'])?trim($data[$j]['E']):'';
+				$row['tracking_code'] =  trim($data[$j]['D']);
 				$row['find_pdf'] = $row['code'];
-				$row['ma_kien_hang'] = trim($data[$j]['B']);
-				$row['gia_tri_don_hang'] = trim($data[$j]['Q']); // giá trị đơn hàng
+				$row['ma_kien_hang'] = !empty($data[$j]['B'])?trim($data[$j]['B']):'';
+				$row['gia_tri_don_hang'] = !empty($data[$j]['Q'])?trim($data[$j]['Q']):''; // giá trị đơn hàng
 
 				$row['don_ngoai_tong_gia_tri_don'] = trim($data[$j]['Q']);
-				$row['don_ngoai_phi_van_chuyen_du_kien'] = trim($data[$j]['R']);
-				$row['don_ngoai_phi_van_chuyen_user_tra'] = trim($data[$j]['S']);
-				$row['don_ngoai_phi_co_dinh'] = trim($data[$j]['X']);
-				$row['don_ngoai_phi_dich_vu'] = trim($data[$j]['Y']);
-				$row['don_ngoai_phi_thanh_toan'] = trim($data[$j]['Z']);
-				$row['created_at'] = trim($data[$j]['C']);
-				$row['ngay_gui_hang'] = trim($data[$j]['H']);
+				$row['don_ngoai_phi_van_chuyen_du_kien'] = !empty($data[$j]['R'])?trim($data[$j]['R']):'';
+				$row['don_ngoai_phi_van_chuyen_user_tra'] = !empty($data[$j]['S'])?trim($data[$j]['S']):'';
+				$row['don_ngoai_phi_co_dinh'] = !empty($data[$j]['X'])?trim($data[$j]['X']):'';
+				$row['don_ngoai_phi_dich_vu'] = !empty($data[$j]['Y'])?trim($data[$j]['Y']):'';
+				$row['don_ngoai_phi_thanh_toan'] = !empty($data[$j]['Z'])?trim($data[$j]['Z']):'';
+				$row['created_at'] = !empty($data[$j]['C'])?trim($data[$j]['C']):'';
+				$row['ngay_gui_hang'] =  !empty($data[$j]['H'])?trim($data[$j]['H']):'';
 
 				$upload_exel = $this->save_excel($row,$result_id);
 				if(!$upload_exel){
