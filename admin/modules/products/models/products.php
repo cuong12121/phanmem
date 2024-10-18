@@ -639,7 +639,7 @@ class ProductsModelsProducts extends FSModels {
 				$row_fix_text['barcode'] = $id;
 			}
 			
-			if($summary){
+			if(!empty($summary)){
 				$row_fix_text['summary'] = html_entity_decode($summary);
 			}
 

@@ -1553,7 +1553,7 @@
 			// đổi khung giờ fake sang khung giờ bán thì phải check giá min lại bằng cách bắt nhập lại
 			if($id && !$file_xlsx){
 				$data = $this->get_record('id = '.$id,'fs_order_uploads');
-				if($house_id != $data-> house_id && $house_id != 4 && $house_id != 15 && $house_id != 14 ){
+				if($house_id != $data-> house_id && $house_id != 4 && $house_id != 15 && $house_id != 14 && !empty($file_path)){
 					$file_path_data = PATH_BASE.$data->file_xlsx;
 					$file_path_data = str_replace('/', DS,$file_path);
 					$this->remove_xml($id,$file_path);
