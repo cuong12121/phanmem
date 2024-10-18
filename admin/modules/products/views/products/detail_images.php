@@ -162,9 +162,17 @@ $skuConfig  = json_encode($arr_sku_map);
 
 			?>
 			<option value="0">Màu sắc</option>
-			<?php foreach($colors_to_upload_image as $item){?>
-				<option value="<?php echo $item -> id; ?>"  style="background-color: <?php echo '#'.$item -> code; ?>" ><?php echo $item -> name; ?></option>
-			<?php }?>
+
+			<?php 
+
+			if(!empty($colors_to_upload_image)):
+
+				<?php foreach($colors_to_upload_image as $item){?>
+					<option value="<?php echo $item -> id; ?>"  style="background-color: <?php echo '#'.$item -> code; ?>" ><?php echo $item -> name; ?></option>
+				<?php }?>
+			<?php	
+				endif;	
+			?>
 		</select>
 		<select class='dz-extend hide' onchange="javascript: change_extend(this);">
 			<option value="0">Nhóm ảnh</option>
@@ -174,9 +182,16 @@ $skuConfig  = json_encode($arr_sku_map);
 				// }
 
 			?>
-			<?php foreach($image_groups as $item){?>
+			<?php 
+
+			if(!empty($image_groups)):
+				foreach($image_groups as $item){?>
 				<option value="<?php echo $item -> id; ?>" ><?php echo $item -> name; ?></option>
-			<?php }?>
+				<?php 
+
+					}
+			endif;	
+			?>
 		</select>
 	</div>
 

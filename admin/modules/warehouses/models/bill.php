@@ -493,9 +493,9 @@ function add_products_detail($id){
 		$this-> _add($row,$this -> table_name_detail);
 
 		$total_product ++;
-		$total_amount += $amount;
-		$total_weight += $weight*$amount;
-		$total_price += $price*$amount;
+		$total_amount += intval($amount);
+		$total_weight += intval($weight)*intval($amount);
+		$total_price += intval($price)*intval($amount);
 
 		if($typediscount == 1) {
 			$total_discount += intval($discount);

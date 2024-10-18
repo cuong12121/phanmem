@@ -53,7 +53,13 @@
 		
 		function logout()
 		{
-			session_start();	
+
+			if (session_status() == PHP_SESSION_NONE) {
+			    // Nếu session chưa được khởi tạo, tiến hành khởi tạo
+			    session_start();
+			   
+			}
+			
 			if(isset($_SESSION['ad_logged']) )	
 				unset($_SESSION['ad_logged'])	;
 				
