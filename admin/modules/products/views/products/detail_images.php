@@ -167,7 +167,7 @@ $skuConfig  = json_encode($arr_sku_map);
 
 			if(!empty($colors_to_upload_image)){
 
-				<?php foreach($colors_to_upload_image as $item){?>
+				foreach($colors_to_upload_image as $item){?>
 					<option value="<?php echo $item -> id; ?>"  style="background-color: <?php echo '#'.$item -> code; ?>" ><?php echo $item -> name; ?></option>
 				<?php }?>
 			<?php	
