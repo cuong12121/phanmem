@@ -1598,6 +1598,10 @@
 				if($platform_id == 1){
 					$add = $this->upload_excel_lazada($file_path,$result_id,$shop->code,$house_id);
 				}elseif($platform_id == 2){
+
+					if(empty($mavandonPDF)){
+						$mavandonPDF =[];
+					}
 					$add = $this->upload_excel_shopee($file_path,$result_id,$shop->code,$house_id, $mavandonPDF);
 				}elseif($platform_id == 3){
 					$add = $this->upload_excel_tiki($file_path,$result_id,$shop->code,$house_id);
@@ -2655,7 +2659,10 @@
 
            	global $db;
 
-           	$pdf = new PDFMerger;
+           	if(empty($pdf)){
+           		
+           		$pdf = new PDFMerger;
+           	}
 
            	// echo $str_ids;
 
