@@ -1081,8 +1081,12 @@ class ProductsModelsProducts extends FSModels {
 		// printr($row);
 		// echo $tablename;
 		// die;
-		$this->_update ( $row2, $this->table_name, ' id =  ' . $record_id );
 
+		if(!empty($row2) && is_array($row2)){
+
+
+			$this->_update ( $row2, $this->table_name, ' id =  ' . $record_id );
+		}	
 		// chuyển danh mục có bảng khác sẽ xóa record_id đó ở các bảng khác
 		if ($ext_id){
 			$check_ext_id = $this->get_record('id = ' . $ext_id, $tablename,'id');
