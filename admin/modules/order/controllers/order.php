@@ -290,7 +290,7 @@
 			// thử
 
 			// Kết nối PDO
-			$host = 'your_database_host';
+			$host = 'localhost';
 			$db = 'sql_dienmayai_co';
 			$user = 'sql_dienmayai_co';
 			$pass = 'jGT6D533rw8yHSsk';
