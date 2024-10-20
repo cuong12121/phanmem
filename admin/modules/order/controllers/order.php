@@ -294,11 +294,11 @@
 			// thử
 
 			// Kết nối PDO
-			$host = 'localhost';
+			$host = $config['dbHost'];
 			$db = $config['dbName'];
 			$user = $config['dbUser'];
 			$pass = $config['dbPass'];
-			$charset = $config['dbHost'];
+			$charset = 'utf8mb4';
 
 			$dsn = "mysql:host=$host;dbname=$db;charset=$charset";
 			$options = [
