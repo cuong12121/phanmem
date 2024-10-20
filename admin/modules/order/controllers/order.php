@@ -240,6 +240,51 @@
 
 			$user_id ='9';
 
+			// thử
+
+			// Kết nối PDO
+			$host = 'your_database_host';
+			$db = 'sql_dienmayai_co';
+			$user = 'sql_dienmayai_co';
+			$pass = 'jGT6D533rw8yHSsk';
+			$charset = 'utf8mb4';
+
+			$dsn = "mysql:host=$host;dbname=$db;charset=$charset";
+			$options = [
+			    PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
+			    PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
+			    PDO::ATTR_EMULATE_PREPARES   => false,
+			];
+
+			try {
+			    $pdo = new PDO($dsn, $user, $pass, $options);
+			} catch (\PDOException $e) {
+			    throw new \PDOException($e->getMessage(), (int)$e->getCode());
+			}
+
+			// Thực hiện truy vấn
+			$search = 'your_tracking_code_value'; // Giá trị của $search
+
+			$sql = "SELECT id FROM fs_order_uploads_detail 
+			        WHERE is_package = :is_package 
+			        AND tracking_code = :tracking_code 
+			        ORDER BY id DESC 
+			        LIMIT 100";
+
+			$stmt = $pdo->prepare($sql);
+			$stmt->execute(['is_package' => 0, 'tracking_code' => $search]);
+			$results = $stmt->fetchAll();
+
+			// Lấy phần tử cuối cùng
+			$checkorders = !empty($results) ? end($results) : null;
+
+			// In kết quả
+			dd($checkorders);
+
+
+			// hết thử 
+
+
 			
 
 			$context = stream_context_create(array(
@@ -266,6 +311,7 @@
 
 		public function search_order_details()
 		{
+			global $db;
 
 			$define_id = ['$'=>252, '@'=>253, '%'=>254,'?'=>255, '+'=>251, '&'=>9,'#'=>256, '*'=>257,'/'=>258,'>'=>259,'<'=>260];
 
@@ -281,20 +327,53 @@
 
 			$active =$_GET['active'];
 
-			$context = stream_context_create(array(
-	            'http' => array(
-	                
-	                'method' => 'GET',
+			date_default_timezone_set('Asia/Ho_Chi_Minh');
 
-	                'header' => "Content-Type: application/x-www-form-urlencoded\r\n".
-	                            "token: 7ojTLYXnzV0EH1wRGxOmvLFga",
-	                
-	            )
-	        ));
-	        
 
-	        // Send the request
-	        $response = file_get_contents('https://api.'.DOMAIN.'/api/search-data-order-details?search='.$search.'&user_package_id='.$user_id.'&active='.$active, FALSE, $context);
+			// sửa
+
+	    	if(!empty($request->search)):
+
+	    		if($active ==1):
+
+	    			$sql = " DELETE FROM ".$this -> table_name." WHERE id = " . $id;
+					$row = $db->affected_rows($sql);
+			        	
+			        $checkorders = DB::table('fs_order_uploads_detail')->OrderBy('id','desc')->limit(100)->select('id')->where('is_package', 0)->where('tracking_code', $search)->get()->last();
+
+			        $db->getResult($query);
+
+			     
+			        if(!empty($checkorders)):
+
+					    $update = DB::table('fs_order_uploads_detail')->where('id', $checkorders->id)->update(['is_package'=>1,'user_package_id'=>$$user_id, 'date_package'=>date("Y-m-d H:i:s")]);
+
+					        
+				        
+				        return response('Đóng hàng thành công đơn hàng có mã vận đơn: '.$search);
+			        else:
+			       		return response('Đóng hàng không thành công, vui lòng kiểm tra lại mã đơn');
+				    endif;	 	
+
+
+			    else:
+
+			    	if($active ==0):
+				    	$id = $request->search;
+
+				    	$update = DB::table('fs_order_uploads_detail')->where('id', $id)->update(['is_package'=>0,'user_package_id'=>NULL, 'date_package'=>NULL]);
+				    	return response('Hoàn thành công đơn hàng');
+
+				    endif;	
+
+				    return response('lỗi');
+
+			    endif;    	
+
+		    endif; 
+
+
+		    // endsua
 
 	        // dd($response);
 
