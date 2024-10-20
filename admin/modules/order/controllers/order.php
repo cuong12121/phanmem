@@ -240,49 +240,7 @@
 
 			$user_id ='9';
 
-			// thử
 
-			// Kết nối PDO
-			$host = 'your_database_host';
-			$db = 'sql_dienmayai_co';
-			$user = 'sql_dienmayai_co';
-			$pass = 'jGT6D533rw8yHSsk';
-			$charset = 'utf8mb4';
-
-			$dsn = "mysql:host=$host;dbname=$db;charset=$charset";
-			$options = [
-			    PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
-			    PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
-			    PDO::ATTR_EMULATE_PREPARES   => false,
-			];
-
-			try {
-			    $pdo = new PDO($dsn, $user, $pass, $options);
-			} catch (\PDOException $e) {
-			    throw new \PDOException($e->getMessage(), (int)$e->getCode());
-			}
-
-			// Thực hiện truy vấn
-			$search = 'your_tracking_code_value'; // Giá trị của $search
-
-			$sql = "SELECT id FROM fs_order_uploads_detail 
-			        WHERE is_package = :is_package 
-			        AND tracking_code = :tracking_code 
-			        ORDER BY id DESC 
-			        LIMIT 100";
-
-			$stmt = $pdo->prepare($sql);
-			$stmt->execute(['is_package' => 0, 'tracking_code' => $search]);
-			$results = $stmt->fetchAll();
-
-			// Lấy phần tử cuối cùng
-			$checkorders = !empty($results) ? end($results) : null;
-
-			// In kết quả
-			dd($checkorders);
-
-
-			// hết thử 
 
 
 			
@@ -328,6 +286,50 @@
 			$active =$_GET['active'];
 
 			date_default_timezone_set('Asia/Ho_Chi_Minh');
+
+			// thử
+
+			// Kết nối PDO
+			$host = 'your_database_host';
+			$db = 'sql_dienmayai_co';
+			$user = 'sql_dienmayai_co';
+			$pass = 'jGT6D533rw8yHSsk';
+			$charset = 'utf8mb4';
+
+			$dsn = "mysql:host=$host;dbname=$db;charset=$charset";
+			$options = [
+			    PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
+			    PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
+			    PDO::ATTR_EMULATE_PREPARES   => false,
+			];
+
+			try {
+			    $pdo = new PDO($dsn, $user, $pass, $options);
+			} catch (\PDOException $e) {
+			    throw new \PDOException($e->getMessage(), (int)$e->getCode());
+			}
+
+			// Thực hiện truy vấn
+			$search = 'your_tracking_code_value'; // Giá trị của $search
+
+			$sql = "SELECT id FROM fs_order_uploads_detail 
+			        WHERE is_package = :is_package 
+			        AND tracking_code = :tracking_code 
+			        ORDER BY id DESC 
+			        LIMIT 100";
+
+			$stmt = $pdo->prepare($sql);
+			$stmt->execute(['is_package' => 0, 'tracking_code' => $search]);
+			$results = $stmt->fetchAll();
+
+			// Lấy phần tử cuối cùng
+			$checkorders = !empty($results) ? end($results) : null;
+
+			// In kết quả
+			dd($checkorders);
+
+
+			// hết thử 
 
 
 			// sửa
