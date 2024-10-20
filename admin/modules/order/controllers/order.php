@@ -334,9 +334,7 @@
 	
 			        if(!empty($checkorders)):
 
-			        	dd($checkorders);
-
-			        	$checkorders_id = $checkorders[0]['id'];  // ID của đơn hàng (từ kết quả trước)
+			        	$checkorders_id = $checkorders['id'];  // ID của đơn hàng (từ kết quả trước)
 						$user_package_id = $user_id; // Giá trị của $user_package_id
 
 					    $sql = "UPDATE fs_order_uploads_detail 
