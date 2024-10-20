@@ -409,9 +409,19 @@
 						// Thực hiện câu lệnh
 						$update = $stmt->execute($params);
 
-						$msg ='Hoàn thành công đơn hàng';
+						if ($update) {
 
-						setRedirect($link,$msg);
+							$msg ='Hoàn thành công đơn hàng';
+
+							setRedirect($link,$msg);
+						   
+						} else {
+						    $msg ='Hoàn hàng thất bại';
+
+							setRedirect($link,$msg,'error');
+						}
+
+						
 
 
 				    endif;	
