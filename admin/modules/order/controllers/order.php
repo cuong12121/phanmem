@@ -311,6 +311,8 @@
 			    throw new \PDOException($e->getMessage(), (int)$e->getCode());
 			}
 
+			dd($request->search);
+
 
 			if(!empty($request->search)):
 
