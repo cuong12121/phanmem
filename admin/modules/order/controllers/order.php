@@ -291,6 +291,8 @@
 
 			$config = require PATH_BASE.'/includes/config.php';
 
+			dd($config);
+
 			// thử
 
 			// Kết nối PDO
