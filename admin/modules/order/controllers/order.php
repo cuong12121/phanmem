@@ -334,7 +334,7 @@
 	
 			        if(!empty($checkorders)):
 
-			        	dd(1);
+			        	
 
 			        	$checkorders_id = $checkorders[0]['id'];  // ID của đơn hàng (từ kết quả trước)
 						$user_package_id = $user_id; // Giá trị của $user_package_id
