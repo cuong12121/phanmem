@@ -291,7 +291,7 @@
 
 			$config = require PATH_BASE.'/includes/config.php';
 
-			dd($config);
+			dd({$config['dbName']});
 
 			// thử
 
