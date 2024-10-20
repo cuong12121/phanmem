@@ -326,7 +326,7 @@
 			$checkorders = !empty($results) ? end($results) : null;
 
 			// In kết quả
-			dd($checkorders);
+			dd($results);
 
 
 			// hết thử 
