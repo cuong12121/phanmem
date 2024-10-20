@@ -285,7 +285,9 @@
 
 			$active =$_GET['active'];
 
+
 			date_default_timezone_set('Asia/Ho_Chi_Minh');
+
 
 			// thử
 
@@ -309,22 +311,107 @@
 			    throw new \PDOException($e->getMessage(), (int)$e->getCode());
 			}
 
-			// Thực hiện truy vấn
+
+			if(!empty($request->search)):
+
+	    		if($active ==1):
+
+			        // Thực hiện truy vấn
 			
+					$sql = "SELECT id FROM fs_order_uploads_detail 
+					        WHERE is_package = :is_package 
+					        AND tracking_code = :tracking_code 
+					        ORDER BY id DESC 
+					        LIMIT 100";
 
-			$sql = "SELECT id FROM fs_order_uploads_detail 
-			        WHERE is_package = :is_package 
-			        AND tracking_code = :tracking_code 
-			        ORDER BY id DESC 
-			        LIMIT 100";
+					$stmt = $pdo->prepare($sql);
+					$stmt->execute(['is_package' => 0, 'tracking_code' => $search]);
+					$results = $stmt->fetchAll();
 
-			$stmt = $pdo->prepare($sql);
-			$stmt->execute(['is_package' => 0, 'tracking_code' => $search]);
-			$results = $stmt->fetchAll();
+					// Lấy phần tử cuối cùng
+					$checkorders = !empty($results) ? end($results) : null;
+	
+			        if(!empty($checkorders)):
 
-			// Lấy phần tử cuối cùng
-			$checkorders = !empty($results) ? end($results) : null;
+			        	$checkorders_id = $checkorders[0]['id'];  // ID của đơn hàng (từ kết quả trước)
+						$user_package_id = $user_id; // Giá trị của $user_package_id
 
+					    $sql = "UPDATE fs_order_uploads_detail 
+						        SET is_package = :is_package, 
+						            user_package_id = :user_package_id, 
+						            date_package = :date_package 
+						        WHERE id = :id";
+
+						$stmt = $pdo->prepare($sql);
+
+						// Các giá trị cần bind
+						$params = [
+						    'is_package' => 1,
+						    'user_package_id' => $user_package_id,
+						    'date_package' => date("Y-m-d H:i:s"),
+						    'id' => $checkorders_id
+						];
+
+						// Thực hiện câu lệnh
+						$update = $stmt->execute($params);
+
+						if ($update) {
+						    echo "Cập nhật thành công!";
+						} else {
+						    echo "Có lỗi trong quá trình đóng hàng";
+						}
+					        
+				        				       
+			        else:
+			       		echo 'Đóng hàng không thành công, vui lòng kiểm tra lại mã đơn';
+				    endif;	 	
+
+
+			    else:
+
+			    	if($active ==0):
+				    	$id = $request->search;
+
+				    	$checkorders_id = $id;  
+
+						$user_package_id = $user_id;
+
+					    $sql = "UPDATE fs_order_uploads_detail 
+						        SET is_package = :is_package, 
+						            user_package_id = :user_package_id, 
+						            date_package = :date_package 
+						        WHERE id = :id";
+
+						$stmt = $pdo->prepare($sql);
+
+						// Các giá trị cần bind
+						$params = [
+						    'is_package' => 0,
+						    'user_package_id' => $user_package_id,
+						    'date_package' => date("Y-m-d H:i:s"),
+						    'id' => $checkorders_id
+						];
+
+						// Thực hiện câu lệnh
+						$update = $stmt->execute($params);
+
+
+				    	echo 'Hoàn thành công đơn hàng';
+
+				    endif;	
+
+				   	echo "lỗi";
+			    endif;    	
+
+		    endif; 
+
+
+
+
+
+
+			
+			
 			// In kết quả
 			dd($results);
 
@@ -338,9 +425,6 @@
 
 	    		if($active ==1):
 
-	    			$sql = " DELETE FROM ".$this -> table_name." WHERE id = " . $id;
-					$row = $db->affected_rows($sql);
-			        	
 			        $checkorders = DB::table('fs_order_uploads_detail')->OrderBy('id','desc')->limit(100)->select('id')->where('is_package', 0)->where('tracking_code', $search)->get()->last();
 
 			        $db->getResult($query);
