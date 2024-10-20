@@ -288,7 +288,7 @@
 
 			date_default_timezone_set('Asia/Ho_Chi_Minh');
 
-			$link = 'index.php?module=order&view=order&task=details';
+			$link = '';
 
 
 			// thử
