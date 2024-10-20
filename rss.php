@@ -12,13 +12,15 @@ require_once("libraries/fsrouter.php");
 include("includes/config.php");
 include("includes/functions.php");
 //include("includes/defines.php");
+
+
+die;
 define('URL_ROOT','https://msmobile.com.vn/');
 define('IS_REWRITE',1);
 
  
 include("libraries/database/mysql.php");
 
-die;
 
 $db = new Mysql_DB();
 	
