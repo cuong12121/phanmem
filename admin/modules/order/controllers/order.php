@@ -310,7 +310,7 @@
 			}
 
 			// Thực hiện truy vấn
-			$search = 'your_tracking_code_value'; // Giá trị của $search
+			
 
 			$sql = "SELECT id FROM fs_order_uploads_detail 
 			        WHERE is_package = :is_package 
