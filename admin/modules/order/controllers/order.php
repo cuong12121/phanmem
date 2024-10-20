@@ -289,9 +289,9 @@
 
 			$link = '/admin/order/detail';
 
-			$config = require PATH_BASE.'/includes/config.php';
+			$config = require PATH_BASE.'/includes/configs.php';
 
-			dd({$config['dbName']});
+			dd($config['dbName']);
 
 			// thử
 
