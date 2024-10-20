@@ -411,6 +411,8 @@
 
 						if ($update) {
 
+							dd($update);
+
 							$msg ='Hoàn thành công đơn hàng';
 
 							setRedirect($link,$msg);
