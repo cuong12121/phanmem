@@ -18,6 +18,8 @@ define('IS_REWRITE',1);
  
 include("libraries/database/mysql.php");
 
+die;
+
 $db = new Mysql_DB();
 	
 include("libraries/rss/rss.php");
