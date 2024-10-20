@@ -288,6 +288,8 @@
 
 			date_default_timezone_set('Asia/Ho_Chi_Minh');
 
+			$link = 'index.php?module=order&view=order&task=details';
+
 
 			// thử
 
@@ -357,14 +359,25 @@
 						$update = $stmt->execute($params);
 
 						if ($update) {
-						    echo "Cập nhật thành công!";
+
+							$msg ='Đóng hàng thành công';
+
+							setRedirect($link,$msg);
+
+						    
 						} else {
-						    echo "Có lỗi trong quá trình đóng hàng";
+							$msg = 'Có lỗi trong quá trình đóng hàng';
+
+							setRedirect($link,$msg,'error');
+						    
 						}
 					        
 				        				       
 			        else:
-			       		echo 'Đóng hàng không thành công, vui lòng kiểm tra lại mã đơn';
+
+			       		$msg = 'Đóng hàng không thành công, vui lòng kiểm tra lại mã đơn';
+
+			       		setRedirect($link,$msg,'error');
 				    endif;	 	
 
 
@@ -396,12 +409,17 @@
 						// Thực hiện câu lệnh
 						$update = $stmt->execute($params);
 
+						$msg ='Hoàn thành công đơn hàng';
 
-				    	echo 'Hoàn thành công đơn hàng';
+						setRedirect($link,$msg);
+
 
 				    endif;	
 
-				   	echo "lỗi";
+				    $msg = 'Quá trình đóng hàng bị lỗi';
+
+			       	setRedirect($link,$msg,'error');
+				   	
 			    endif;    	
 
 		    endif; 
