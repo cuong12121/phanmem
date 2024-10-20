@@ -291,8 +291,6 @@
 
 			$config = require PATH_BASE.'/includes/configs.php';
 
-			dd($config['dbName']);
-
 			// thử
 
 			// Kết nối PDO
@@ -300,7 +298,7 @@
 			$db = $config['dbName'];
 			$user = $config['dbUser'];
 			$pass = $config['dbPass'];
-			$charset = 'utf8mb4';
+			$charset = $config['dbHost'];
 
 			$dsn = "mysql:host=$host;dbname=$db;charset=$charset";
 			$options = [
