@@ -405,63 +405,7 @@
 
 		    endif; 
 
-
-
-
-
-
-			
-			
-			// In kết quả
-			dd($results);
-
-
-			// hết thử 
-
-
-			// sửa
-
-	    	if(!empty($request->search)):
-
-	    		if($active ==1):
-
-			        $checkorders = DB::table('fs_order_uploads_detail')->OrderBy('id','desc')->limit(100)->select('id')->where('is_package', 0)->where('tracking_code', $search)->get()->last();
-
-			        $db->getResult($query);
-
-			     
-			        if(!empty($checkorders)):
-
-					    $update = DB::table('fs_order_uploads_detail')->where('id', $checkorders->id)->update(['is_package'=>1,'user_package_id'=>$$user_id, 'date_package'=>date("Y-m-d H:i:s")]);
-
-					        
-				        
-				        return response('Đóng hàng thành công đơn hàng có mã vận đơn: '.$search);
-			        else:
-			       		return response('Đóng hàng không thành công, vui lòng kiểm tra lại mã đơn');
-				    endif;	 	
-
-
-			    else:
-
-			    	if($active ==0):
-				    	$id = $request->search;
-
-				    	$update = DB::table('fs_order_uploads_detail')->where('id', $id)->update(['is_package'=>0,'user_package_id'=>NULL, 'date_package'=>NULL]);
-				    	return response('Hoàn thành công đơn hàng');
-
-				    endif;	
-
-				    return response('lỗi');
-
-			    endif;    	
-
-		    endif; 
-
-
-		    // endsua
-
-	        // dd($response);
+		    die;
 
 	        $redis = $this->connect_redis();
 
