@@ -384,7 +384,7 @@
 			    else:
 
 			    	if($active ==0):
-				    	$id = $request->search;
+				    	$id = $_GET['search'];
 
 				    	$checkorders_id = $id;  
 
