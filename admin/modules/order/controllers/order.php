@@ -289,14 +289,15 @@
 
 			$link = '/admin/order/detail';
 
+			$config = require PATH_BASE.'/includes/config.php';
 
 			// thử
 
 			// Kết nối PDO
 			$host = 'localhost';
-			$db = 'sql_dienmayai_co';
-			$user = 'sql_dienmayai_co';
-			$pass = 'jGT6D533rw8yHSsk';
+			$db = $config['dbName'];
+			$user = $config['dbUser'];
+			$pass = $config['dbPass'];
 			$charset = 'utf8mb4';
 
 			$dsn = "mysql:host=$host;dbname=$db;charset=$charset";
@@ -362,6 +363,17 @@
 
 						if ($update) {
 
+							$redis = $this->connect_redis();
+
+						    $keyExists = $redis->exists('refresh');
+
+							if ($keyExists) {
+								$redis->del("refresh");
+
+								$redis->set("refresh", 1);
+
+							} 
+
 							$msg ='Đóng hàng thành công';
 
 							setRedirect($link,$msg);
@@ -413,7 +425,16 @@
 
 						if ($update) {
 
-							
+							 $redis = $this->connect_redis();
+
+					        $keyExists = $redis->exists('refresh');
+
+							if ($keyExists) {
+							    $redis->del("refresh");
+
+							    $redis->set("refresh", 1);
+
+							} 	
 
 							$msg ='Hoàn thành công đơn hàng';
 
@@ -437,26 +458,6 @@
 			    endif;    	
 
 		    endif; 
-
-		    die;
-
-	        $redis = $this->connect_redis();
-
-	        $keyExists = $redis->exists('refresh');
-
-			if ($keyExists) {
-			    $redis->del("refresh");
-
-			    $redis->set("refresh", 1);
-
-			} 
-
-
-			$_SESSION['notification'] = $response; //khởi tạo session
-
-			// unset($_SESSION['name']); // Huỷ session name
-
-	      	header("Location: https://".DOMAIN."/admin/order/detail");
 
 		}
 
