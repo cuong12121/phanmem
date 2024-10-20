@@ -281,8 +281,7 @@
 
 			$page =1;
 
-			$user_id = $define_id[$kytudefine];
-
+			
 			$active =$_GET['active'];
 
 
@@ -320,6 +319,9 @@
 	    		if($active ==1):
 
 			        // Thực hiện truy vấn
+
+			        $user_id = $define_id[$kytudefine];
+
 			
 					$sql = "SELECT id FROM fs_order_uploads_detail 
 					        WHERE is_package = :is_package 
@@ -388,11 +390,11 @@
 
 				    	$checkorders_id = $id;  
 
-						$user_package_id = $user_id;
+						
 
 					    $sql = "UPDATE fs_order_uploads_detail 
 						        SET is_package = :is_package, 
-						            user_package_id = :user_package_id, 
+						            
 						            date_package = :date_package 
 						        WHERE id = :id";
 
@@ -401,7 +403,7 @@
 						// Các giá trị cần bind
 						$params = [
 						    'is_package' => 0,
-						    'user_package_id' => $user_package_id,
+						   
 						    'date_package' => date("Y-m-d H:i:s"),
 						    'id' => $checkorders_id
 						];
