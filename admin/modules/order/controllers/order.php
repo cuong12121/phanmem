@@ -267,6 +267,60 @@
 
 		}
 
+		function add_box_Order()
+		{
+
+			date_default_timezone_set('Asia/Ho_Chi_Minh');
+
+			$define_id = ['$'=>252, '@'=>253, '%'=>254,'?'=>255, '+'=>251, '&'=>9,'#'=>256, '*'=>257,'/'=>258,'>'=>259,'<'=>260];
+
+			$searchs = trim($_GET['search']);
+
+			$link = '/admin/order/detail';
+
+			$kytudefine = substr(trim($searchs), -1);
+
+			$user_id = $define_id[$kytudefine];
+
+			$search = str_replace($kytudefine, '', $searchs);
+
+			$page =1;
+
+			$date_package => date("Y-m-d H:i:s"),
+			
+			$active =$_GET['active'];
+
+			$data = [];
+
+			$keyExists = $redis->exists('data_box_order');
+
+			
+			if ($keyExists) {
+
+				$data_json = $redis->get($data_box_order);
+
+				$data = json_decode($data_json);
+
+			} 
+
+			$put_data['search'] =  $search;
+
+			$put_data['user_id'] = $user_id;
+
+			$put_data['date_time'] = $date_package;
+
+			array_push($data, $put_data);
+
+			$redis->del("data_box_order");
+
+			$redis->set("data_box_order", json_encode($put_data));
+
+			$msg = "Đơn bắn được đưa vào hàng chờ!"
+
+			setRedirect($link,$msg);
+
+		}
+
 		public function search_order_details()
 		{
 			global $db;

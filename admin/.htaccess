@@ -171,6 +171,8 @@ RewriteRule ^order/detail$ index.php?module=order&view=order&task=details&%{QUER
 
 RewriteRule ^order/detail/search/package$ index.php?module=order&view=order&task=search_order_by_Name&%{QUERY_STRING} [L]
 
+RewriteRule ^order/detail/box/package$ index.php?module=order&view=order&task=add_box_Order&%{QUERY_STRING} [L]
+
 
 
 
