@@ -437,15 +437,13 @@
 
 									$msg ='Đóng hàng thành công';
 
-									$redis->del("data_box_order"); 
-
-									setRedirect($link,$msg);
+									
 
 								    
 								} else {
 									$msg = 'Có lỗi trong quá trình đóng hàng';
 
-									setRedirect($link,$msg,'error');
+									
 								    
 								}
 							        
@@ -454,10 +452,14 @@
 
 					       		$msg = 'Đóng hàng không thành công, vui lòng kiểm tra lại mã đơn';
 
-					       		setRedirect($link,$msg,'error');
+					       		
 						    endif;
 
 						endforeach;  
+
+						$redis->del("data_box_order"); 
+
+						setRedirect($link,$msg);
 
 						
 					endif;   
