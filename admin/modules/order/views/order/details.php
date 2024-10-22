@@ -131,7 +131,7 @@
     // Thiết lập kết nối
     $redis->connect('127.0.0.1', 6379);
 
-    $data_prepare =  json_decode($redis->get("data_box_order"));
+    $data_prepare =  json_decode($redis->get("data_box_order"),true);
 
 
 ?>
@@ -161,9 +161,9 @@ if(!empty($data_prepare)):
 
     <tr>
         <td><?= $dem ?></td>
-        <td><?=$val['search'] ?></td>
-        <td><?=$val['user_id'] ?></td>
-        <td><?=$val['date_time'] ?></td>
+        <td><?= $val->search ?></td>
+        <td><?= $val->user_id ?></td>
+        <td><?= $val->date_time ?></td>
         <td>đang chờ</td>
     </tr>
     <?php
