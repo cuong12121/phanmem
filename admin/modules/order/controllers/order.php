@@ -316,7 +316,7 @@
 
 			$redis->del("data_box_order");
 
-			$redis->set("data_box_order", json_encode($put_data));
+			$redis->set("data_box_order", json_encode($data));
 
 			$msg = "Đơn bắn được đưa vào hàng chờ!";
 
