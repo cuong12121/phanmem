@@ -315,7 +315,7 @@
 
 			$redis->set("data_box_order", json_encode($put_data));
 
-			$msg = "Đơn bắn được đưa vào hàng chờ!"
+			$msg = "Đơn bắn được đưa vào hàng chờ!";
 
 			setRedirect($link,$msg);
 
