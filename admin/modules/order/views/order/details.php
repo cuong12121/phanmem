@@ -139,7 +139,7 @@
 ?>
 <?php
 $dem=0;
-if(!empty($data_prepare)):
+if(!empty($data_prepare)  && $$redis->exists('data_box_order')):
 ?>    
 
 <h3>Danh sách chờ update đơn bắn </h3>
