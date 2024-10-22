@@ -688,10 +688,10 @@
 				// }
 
 				$arr_other = explode('-',$row['sku_nhanh']);
-				$row['sku'] = $arr_other[0];
-				$row['color'] = $arr_other[1];
-				$row['size'] = $arr_other[2];
-				$row['shop_code'] = $arr_other[3];
+				$row['sku'] = $arr_other[0]??'';
+				$row['color'] = $arr_other[1]??'';
+				$row['size'] = $arr_other[2]??'';
+				$row['shop_code'] = $arr_other[3]??'';
 
 				if($row['color'] == '00' && $row['size'] == '00'){
 					$product_code = $row['sku'];
