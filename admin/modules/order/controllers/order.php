@@ -456,8 +456,9 @@
 
 						endforeach;  
 
-						$redis->del("data_box_order");
-					endif;    
+						
+					endif;   
+					$redis->del("data_box_order"); 
 
 			    else:
 
