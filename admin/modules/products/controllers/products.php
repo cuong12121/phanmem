@@ -427,6 +427,7 @@ class ProductsControllersProducts  extends Controllers
 
 
 					$link = FSRoute::_('index.php?module=products&view=products', FSText :: _('file xuất có vấn đề xin kiểm tra lại'),'error');
+					setRedirect($link);
 				}
 				
 				$path_file =   PATH_ADMINISTRATOR.DS.str_replace('/',DS, $output['xlsx']);

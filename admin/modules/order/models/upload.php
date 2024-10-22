@@ -1986,7 +1986,11 @@
 
 	            $maVanDon = isset($maVanDonMatches[1]) ? $maVanDonMatches[1] : null;
 
-	            array_push($mavandons, $maVanDon[0]);
+	            if(!empty($maVanDon[0])){
+	            	array_push($mavandons, $maVanDon[0]);
+	            }
+
+	            
 			}
 
 			return $mavandons;
