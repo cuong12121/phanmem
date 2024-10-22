@@ -131,7 +131,7 @@
     // Thiết lập kết nối
     $redis->connect('127.0.0.1', 6379);
 
-    $data_prepare =  json_decode($redis->get("data_box_order"));
+    $data_prepare =  $redis->get("data_box_order");
 
      dd($data_prepare);
 
