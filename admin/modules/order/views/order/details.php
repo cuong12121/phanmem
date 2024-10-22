@@ -140,6 +140,26 @@
     endif
 
 ?>
+<h3>Danh sách chờ update đơn bắn </h3>
+
+<table class="table-responsive">
+    <tr>
+        <th>STT</th>
+        <th>Tracking code</th>
+        <th>Người bắn đơn </th>
+        <tr>Giờ bắn đơn</tr>
+        
+    </tr>
+
+    <tr>
+        <td>1</td>
+        <td>admin</td>
+        <td>22/10/2022</td>
+    </tr>
+</table>    
+
+
+
 
 <table class="table-responsive">
         <tr>
