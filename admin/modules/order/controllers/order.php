@@ -300,7 +300,7 @@
 			$dems =0;			
 			if ($keyExists) {
 
-				$data_json = $redis->get($data_box_order);
+				$data_json = $redis->get('data_box_order');
 
 				$data = json_decode($data_json);
 
@@ -308,7 +308,7 @@
 
 			} 
 
-			dd($dems);
+			
 
 			$data[$dems]['searchs'] = $searchs;
 			$data[$dems]['search'] =  $search;
