@@ -129,18 +129,8 @@
 
 ?>
 
-<?php 
 
-    if($user_id !='9'||$user_id !='251'):
-   
-?>
-    <h2>Danh sách đơn đã đóng mới nhất của  <?=  @$_SESSION ['ad_username'] ?></h2>
-
-<?php
-    endif
-
-?>
-
+<h3>Danh sách chờ update đơn bắn </h3>
 
 <table class="table-responsive">
     <tr>
@@ -162,9 +152,19 @@
 </table>   
 
 <br>
-<h3>Danh sách chờ update đơn bắn </h3> 
+ 
 
+<?php 
 
+    if($user_id !='9'||$user_id !='251'):
+   
+?>
+    <h2>Danh sách đơn đã đóng mới nhất của  <?=  @$_SESSION ['ad_username'] ?></h2>
+
+<?php
+    endif
+
+?>
 
 
 <table class="table-responsive">
