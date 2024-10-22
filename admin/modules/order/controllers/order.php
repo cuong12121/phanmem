@@ -436,6 +436,8 @@
 
 									$msg ='Đóng hàng thành công';
 
+									$redis->del("data_box_order"); 
+
 									setRedirect($link,$msg);
 
 								    
@@ -458,7 +460,7 @@
 
 						
 					endif;   
-					$redis->del("data_box_order"); 
+
 
 			    else:
 
