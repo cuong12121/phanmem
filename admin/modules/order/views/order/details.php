@@ -148,6 +148,7 @@
         <th>Tracking code</th>
         <th>Người bắn đơn </th>
         <tr>Giờ bắn đơn</tr>
+        <tr>trạng thái</tr>
         
     </tr>
 
@@ -155,6 +156,7 @@
         <td>1</td>
         <td>admin</td>
         <td>22/10/2022</td>
+        <td>đang chờ</td>
     </tr>
 </table>    
 
