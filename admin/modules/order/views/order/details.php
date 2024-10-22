@@ -140,7 +140,7 @@
     endif
 
 ?>
-<h3>Danh sách chờ update đơn bắn </h3>
+
 
 <table class="table-responsive">
     <tr>
@@ -159,7 +159,10 @@
         <td>22/10/2022</td>
         <td>đang chờ</td>
     </tr>
-</table>    
+</table>   
+
+<br>
+<h3>Danh sách chờ update đơn bắn </h3> 
 
 
 
