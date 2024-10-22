@@ -333,6 +333,8 @@
 
 			$searchs = trim($_GET['search']);
 
+			$active = $_GET['active'];
+
 		
 			$link = '/admin/order/detail';
 
