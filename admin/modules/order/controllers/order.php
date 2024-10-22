@@ -396,8 +396,7 @@
 							// Lấy phần tử cuối cùng
 							$checkorders = !empty($results) ? end($results) : null;
 
-							dd($search);
-			
+							
 					        if(!empty($checkorders)):
 
 					        	$checkorders_id = $checkorders['id'];  // ID của đơn hàng (từ kết quả trước)
