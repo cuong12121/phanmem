@@ -290,6 +290,8 @@
 			
 			$active =$_GET['active'];
 
+			
+
 			$redis = $this->connect_redis();
 
 
@@ -311,8 +313,6 @@
 			$data[$dems]['user_id'] = $user_id;
 
 			$data[$dems]['date_time'] = $date_package;
-
-			array_push($data, $put_data);
 
 			$redis->del("data_box_order");
 
