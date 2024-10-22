@@ -292,6 +292,9 @@
 
 			$data = [];
 
+			$redis = $this->connect_redis();
+
+
 			$keyExists = $redis->exists('data_box_order');
 
 			
