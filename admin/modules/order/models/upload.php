@@ -1371,6 +1371,7 @@
 			$fsFile = FSFactory::getClass('FsFiles');
 
 			// cái này thử admin
+			$link = FSRoute::_('index.php?module=order&view=upload&task=add');
 
 			if(!$date || !$shop_id || !$platform_id || !$house_id || !$warehouse_id ){
 				$msg = 'Bạn phải nhập đầy đủ thông tin.';
