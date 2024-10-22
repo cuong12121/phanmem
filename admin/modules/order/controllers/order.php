@@ -290,27 +290,27 @@
 			
 			$active =$_GET['active'];
 
-			$data = [];
-
 			$redis = $this->connect_redis();
 
 
 			$keyExists = $redis->exists('data_box_order');
 
-			
+			$dems =0;			
 			if ($keyExists) {
 
 				$data_json = $redis->get($data_box_order);
 
-				$data = json_decode($data_json);
+				$data = json_decode($data_json, true);
+
+				$dems = count($data);
 
 			} 
 
-			$put_data['search'] =  $search;
+			$data[$dems]['search'] =  $search;
 
-			$put_data['user_id'] = $user_id;
+			$data[$dems]['user_id'] = $user_id;
 
-			$put_data['date_time'] = $date_package;
+			$data[$dems]['date_time'] = $date_package;
 
 			array_push($data, $put_data);
 
