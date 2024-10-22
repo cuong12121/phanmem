@@ -141,7 +141,7 @@
 $dem=0;
 if(!empty($data_prepare)):
 
-    dd($data_prepare);
+  
 ?>    
 
 <h3>Danh sách chờ update đơn bắn </h3>
