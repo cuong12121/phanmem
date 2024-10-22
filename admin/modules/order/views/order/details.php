@@ -131,7 +131,9 @@
     // Thiết lập kết nối
     $redis->connect('127.0.0.1', 6379);
 
-    $data_prepare =  json_decode($redis->get("data_box_order"),true);
+    $data_prepare =  json_decode($redis->get("data_box_order"));
+
+     dd($data_prepare);
 
 
 ?>
@@ -139,7 +141,7 @@
 $dem=0;
 if(!empty($data_prepare)):
     
-    dd($data_prepare);
+   
 ?>    
 
 <h3>Danh sách chờ update đơn bắn </h3>
