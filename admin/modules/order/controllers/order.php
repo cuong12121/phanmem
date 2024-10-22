@@ -396,7 +396,7 @@
 							// Lấy phần tử cuối cùng
 							$checkorders = !empty($results) ? end($results) : null;
 
-							dd($sql);
+							dd($results);
 			
 					        if(!empty($checkorders)):
 
