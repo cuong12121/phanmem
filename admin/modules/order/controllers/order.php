@@ -286,7 +286,7 @@
 
 			$page =1;
 
-			$date_package => date("Y-m-d H:i:s"),
+			$date_package => date("Y-m-d H:i:s");
 			
 			$active =$_GET['active'];
 
