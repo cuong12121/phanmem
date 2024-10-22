@@ -133,15 +133,13 @@
 
     $data_prepare =  json_decode($redis->get("data_box_order"));
 
-     dd($data_prepare);
+
 
 
 ?>
 <?php
 $dem=0;
 if(!empty($data_prepare)):
-    
-   
 ?>    
 
 <h3>Danh sách chờ update đơn bắn </h3>
