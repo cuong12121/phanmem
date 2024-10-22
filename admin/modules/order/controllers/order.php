@@ -302,11 +302,13 @@
 
 				$data_json = $redis->get($data_box_order);
 
-				$data = json_decode($data_json, true);
+				$data = json_decode($data_json);
 
 				$dems = count($data);
 
 			} 
+
+			dd($dems);
 
 			$data[$dems]['searchs'] = $searchs;
 			$data[$dems]['search'] =  $search;
