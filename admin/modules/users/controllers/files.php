@@ -16,6 +16,8 @@
 			$list = $this -> model->get_data('');
 			$categories = $model->get_records('','fs_groups_file');
 			$pagination = $model->getPagination('');
+
+			dd(12);
 			include 'modules/'.$this->module.'/views/'.$this->view.'/list.php';
 		}
 

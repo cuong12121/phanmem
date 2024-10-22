@@ -421,7 +421,11 @@ class FSModels
 						$old_field_img = $item -> $remove_field_img;
 
 						$old_field_img = PATH_BASE.str_replace('/',DS, $old_field_img);
-						unlink($old_field_img); 
+
+						if($old_field_img !='/www/wwwroot/dienmayai.com/'){
+							unlink($old_field_img); 
+						}
+						
 					}
 
 					if($use_table_extend){
