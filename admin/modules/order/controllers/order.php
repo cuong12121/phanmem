@@ -333,6 +333,8 @@
 
 			$searchs = trim($_GET['search']);
 
+			dd($searchs);
+
 			$kytudefine = substr(trim($searchs), -1);
 
 			$search = str_replace($kytudefine, '', $searchs);
@@ -395,7 +397,7 @@
 					// Lấy phần tử cuối cùng
 					$checkorders = !empty($results) ? end($results) : null;
 
-					dd($searchs);
+
 	
 			        if(!empty($checkorders)):
 
