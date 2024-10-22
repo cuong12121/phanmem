@@ -308,6 +308,7 @@
 
 			} 
 
+			$data[$dems]['searchs'] = $searchs;
 			$data[$dems]['search'] =  $search;
 
 			$data[$dems]['user_id'] = $user_id;
