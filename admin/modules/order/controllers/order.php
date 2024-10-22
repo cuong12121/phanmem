@@ -382,7 +382,6 @@
 
 					        $search = $value->search;
 
-					        dd($search);
 
 							$sql = "SELECT id FROM fs_order_uploads_detail 
 							        WHERE is_package = :is_package 
