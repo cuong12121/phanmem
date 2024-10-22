@@ -371,8 +371,6 @@
 
 	    			$redis = $this->connect_redis();
 
-					    // Thiết lập kết nối
-					$redis->connect('127.0.0.1', 6379);
 
 					$data_prepare =  json_decode($redis->get("data_box_order"));
 
@@ -383,6 +381,8 @@
 					        $user_id = $value->user_id;
 
 					        $search = $value->search;
+
+					        dd($search)
 
 							$sql = "SELECT id FROM fs_order_uploads_detail 
 							        WHERE is_package = :is_package 
