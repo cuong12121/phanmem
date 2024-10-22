@@ -333,20 +333,7 @@
 
 			$searchs = trim($_GET['search']);
 
-			dd($searchs);
-
-			$kytudefine = substr(trim($searchs), -1);
-
-			$search = str_replace($kytudefine, '', $searchs);
-
-			$page =1;
-
-			
-			$active =$_GET['active'];
-
-
-			date_default_timezone_set('Asia/Ho_Chi_Minh');
-
+		
 			$link = '/admin/order/detail';
 
 			$config = require PATH_BASE.'/includes/configs.php';
@@ -379,83 +366,98 @@
 
 	    		if($active ==1):
 
-			        // Thực hiện truy vấn
 
-			        $user_id = $define_id[$kytudefine];
+	    			$redis = $this->connect_redis();
+
+					    // Thiết lập kết nối
+					$redis->connect('127.0.0.1', 6379);
+
+					$data_prepare =  json_decode($redis->get("data_box_order"));
+
+					if(!empty($data_prepare)):
+
+						foreach ($data_prepare as $key => $value) :
+							
+					        $user_id = $value->user_id;
+
+					        $search = $value->search;
+
+							$sql = "SELECT id FROM fs_order_uploads_detail 
+							        WHERE is_package = :is_package 
+							        AND tracking_code = :tracking_code 
+							        ORDER BY id DESC 
+							        LIMIT 100";
+
+							$stmt = $pdo->prepare($sql);
+							$stmt->execute(['is_package' => 0, 'tracking_code' => $search]);
+							$results = $stmt->fetchAll();
+
+							// Lấy phần tử cuối cùng
+							$checkorders = !empty($results) ? end($results) : null;
+
 
 			
-					$sql = "SELECT id FROM fs_order_uploads_detail 
-					        WHERE is_package = :is_package 
-					        AND tracking_code = :tracking_code 
-					        ORDER BY id DESC 
-					        LIMIT 100";
+					        if(!empty($checkorders)):
 
-					$stmt = $pdo->prepare($sql);
-					$stmt->execute(['is_package' => 0, 'tracking_code' => $search]);
-					$results = $stmt->fetchAll();
+					        	$checkorders_id = $checkorders['id'];  // ID của đơn hàng (từ kết quả trước)
+								$user_package_id = $user_id; // Giá trị của $user_package_id
 
-					// Lấy phần tử cuối cùng
-					$checkorders = !empty($results) ? end($results) : null;
+							    $sql = "UPDATE fs_order_uploads_detail 
+								        SET is_package = :is_package, 
+								            user_package_id = :user_package_id, 
+								            date_package = :date_package 
+								        WHERE id = :id";
 
+								$stmt = $pdo->prepare($sql);
 
-	
-			        if(!empty($checkorders)):
+								// Các giá trị cần bind
+								$params = [
+								    'is_package' => 1,
+								    'user_package_id' => $user_package_id,
+								    'date_package' => date("Y-m-d H:i:s"),
+								    'id' => $checkorders_id
+								];
 
-			        	$checkorders_id = $checkorders['id'];  // ID của đơn hàng (từ kết quả trước)
-						$user_package_id = $user_id; // Giá trị của $user_package_id
+								// Thực hiện câu lệnh
+								$update = $stmt->execute($params);
 
-					    $sql = "UPDATE fs_order_uploads_detail 
-						        SET is_package = :is_package, 
-						            user_package_id = :user_package_id, 
-						            date_package = :date_package 
-						        WHERE id = :id";
+								if ($update) {
 
-						$stmt = $pdo->prepare($sql);
+									
 
-						// Các giá trị cần bind
-						$params = [
-						    'is_package' => 1,
-						    'user_package_id' => $user_package_id,
-						    'date_package' => date("Y-m-d H:i:s"),
-						    'id' => $checkorders_id
-						];
+								    $keyExists = $redis->exists('refresh');
 
-						// Thực hiện câu lệnh
-						$update = $stmt->execute($params);
+									if ($keyExists) {
+										$redis->del("refresh");
 
-						if ($update) {
+										$redis->set("refresh", 1);
 
-							$redis = $this->connect_redis();
+									} 
 
-						    $keyExists = $redis->exists('refresh');
+									$msg ='Đóng hàng thành công';
 
-							if ($keyExists) {
-								$redis->del("refresh");
+									setRedirect($link,$msg);
 
-								$redis->set("refresh", 1);
+								    
+								} else {
+									$msg = 'Có lỗi trong quá trình đóng hàng';
 
-							} 
+									setRedirect($link,$msg,'error');
+								    
+								}
+							        
+						        				       
+					        else:
 
-							$msg ='Đóng hàng thành công';
+					       		$msg = 'Đóng hàng không thành công, vui lòng kiểm tra lại mã đơn';
 
-							setRedirect($link,$msg);
+					       		setRedirect($link,$msg,'error');
+						    endif;
 
-						    
-						} else {
-							$msg = 'Có lỗi trong quá trình đóng hàng';
+						endforeach;  
 
-							setRedirect($link,$msg,'error');
-						    
-						}
-					        
-				        				       
-			        else:
-
-			       		$msg = 'Đóng hàng không thành công, vui lòng kiểm tra lại mã đơn';
-
-			       		setRedirect($link,$msg,'error');
-				    endif;	 	
-
+						$redis->del("data_box_order");
+					endif;    
 
 			    else:
 
