@@ -147,8 +147,8 @@
         <th>STT</th>
         <th>Tracking code</th>
         <th>Người bắn đơn </th>
-        <tr>Giờ bắn đơn</tr>
-        <tr>trạng thái</tr>
+        <th>Giờ bắn đơn</th>
+        <th>trạng thái</th>
         
     </tr>
 
