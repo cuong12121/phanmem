@@ -395,7 +395,7 @@
 					// Lấy phần tử cuối cùng
 					$checkorders = !empty($results) ? end($results) : null;
 
-					dd($search);
+					dd($searchs);
 	
 			        if(!empty($checkorders)):
 
