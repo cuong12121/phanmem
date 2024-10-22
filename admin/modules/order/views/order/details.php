@@ -126,32 +126,56 @@
 
     unset($_SESSION['notification']);
 
+    $redis = new Redis();
+
+    // Thiết lập kết nối
+    $redis->connect('127.0.0.1', 6379);
+
+    $data_prepare =  json_decode($redis->get("data_box_order"));
+
 
 ?>
+<?php
+$dem=0;
+if(!empty($data_prepare)):
+    
 
+?>    
 
 <h3>Danh sách chờ update đơn bắn </h3>
+
 
 <table class="table-responsive">
     <tr>
         <th>STT</th>
         <th>Tracking code</th>
-        <th>Người bắn đơn </th>
+        <th>ID người bắn đơn </th>
         <th>Giờ bắn đơn</th>
         <th>trạng thái</th>
         
     </tr>
+    <?php
+    foreach($data_prepare as $val):
+        $dem++
+    ?>
 
     <tr>
-        <td>1</td>
-        <td>SPXVN04248003743A</td>
-        <td>admin</td>
-        <td>22/10/2022</td>
+        <td><?= $dem ?></td>
+        <td><?=$val['search'] ?></td>
+        <td><?=$val['user_id'] ?></td>
+        <td><?=$val['date_time'] ?></td>
         <td>đang chờ</td>
     </tr>
+    <?php
+        endforeach;
+    ?>
 </table>   
 
 <br>
+<?php
+
+endif;
+?>
  
 
 <?php 
