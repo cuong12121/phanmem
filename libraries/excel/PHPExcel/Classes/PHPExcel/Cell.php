@@ -683,11 +683,13 @@ class PHPExcel_Cell
 			if (!isset($string[1])) {
 
 				
-				// return $pString;
 
-				var_dump($pString);
+				if(!empty($_columnLookup[$pString])){
+					return $_columnLookup[$pString];
+				}	
+						
 
-				die;
+				
 
 			} 
 			elseif(!isset($pString[2])) {
