@@ -677,22 +677,22 @@ class PHPExcel_Cell
 
 		//	We also use the language construct isset() rather than the more costly strlen() function to match the length of $pString
 		//		for improved performance
-		if (isset($pString[0])) {
+		// if (isset($pString[0])) {
 
 			
-			if (!isset($string[1])) {
-				return $_columnLookup[$pString];
+		// 	if (!isset($string[1])) {
+		// 		return $_columnLookup[$pString];
 
-			} 
-			elseif(!isset($pString[2])) {
+		// 	} 
+		// 	elseif(!isset($pString[2])) {
 
 
-				$return = $_columnLookup[ intval($pString[0]) * 26 + intval($_columnLookup[$pString[1]])];
-				return $return;
-			} elseif(!isset($pString[3])) {
-				return $_columnLookup[ intval($pString[0]) * 676 + $_columnLookup[intval($pString[1]) * 26 + intval($_columnLookup[$pString[2]]) ]];
-			}
-		}
+		// 		$return = $_columnLookup[ intval($pString[0]) * 26 + intval($_columnLookup[$pString[1]])];
+		// 		return $return;
+		// 	} elseif(!isset($pString[3])) {
+		// 		return $_columnLookup[ intval($pString[0]) * 676 + $_columnLookup[intval($pString[1]) * 26 + intval($_columnLookup[$pString[2]]) ]];
+		// 	}
+		// }
 		throw new Exception("Column string index can not be " . ((isset($pString[0])) ? "longer than 3 characters" : "empty") . ".");
 	}
 
