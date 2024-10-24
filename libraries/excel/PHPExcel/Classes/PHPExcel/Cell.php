@@ -686,6 +686,11 @@ class PHPExcel_Cell
 
 				if(!empty($_columnLookup[$pString])){
 					return $_columnLookup[$pString];
+				}
+				else{
+					var_dump($pString);
+
+					die;
 				}	
 						
 
