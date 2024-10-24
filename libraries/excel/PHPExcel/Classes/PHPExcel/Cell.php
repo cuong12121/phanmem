@@ -679,18 +679,10 @@ class PHPExcel_Cell
 		//		for improved performance
 		if (!empty($pString[0])) {
 
-			var_dump($pString[1]);
-
-				die;
 			
-			if (empty($pString[1])) {
+			if (!isset($string[1])) {
 				return $_columnLookup[$pString];
-
-
 			} 
-
-
-
 			elseif(empty($pString[2])) {
 
 
