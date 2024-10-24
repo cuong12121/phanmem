@@ -688,14 +688,8 @@ class PHPExcel_Cell
 					return $_columnLookup[$pString];
 				}
 				else{
-					var_dump($pString);
-
-					die;
+					return '';
 				}	
-						
-
-				
-
 			} 
 			elseif(!isset($pString[2])) {
 
