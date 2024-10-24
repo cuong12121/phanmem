@@ -678,7 +678,7 @@ class PHPExcel_Cell
 		//	We also use the language construct isset() rather than the more costly strlen() function to match the length of $pString
 		//		for improved performance
 		if (!empty($pString[0])) {
-			var_dump($pString);
+			var_dump($pString[1]);
 
 			die;
 			if (empty($pString[1])) {
