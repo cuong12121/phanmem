@@ -1320,7 +1320,7 @@ class PHPExcel_Worksheet implements PHPExcel_IComparable
 
 		// Translate column into index
 		$rangeStart[0]	= PHPExcel_Cell::columnIndexFromString($rangeStart[0]) - 1;
-		$rangeEnd[0]	= PHPExcel_Cell::columnIndexFromString($rangeEnd[0]) - 1;
+		$rangeEnd[0]	= intval(PHPExcel_Cell::columnIndexFromString($rangeEnd[0]))_ - 1;
 
 		// Make sure we can loop upwards on rows and columns
 		if ($rangeStart[0] > $rangeEnd[0] && $rangeStart[1] > $rangeEnd[1]) {
