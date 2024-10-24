@@ -682,13 +682,14 @@ class PHPExcel_Cell
 			
 			if (!isset($string[1])) {
 				return $_columnLookup[$pString];
+				
 			} 
-			elseif(empty($pString[2])) {
+			elseif(!isset($pString[2])) {
 
 
 				$return = $_columnLookup[ intval($pString[0]) * 26 + intval($_columnLookup[$pString[1]])];
 				return $return;
-			} elseif(empty($pString[3])) {
+			} elseif(!isset($pString[3])) {
 				return $_columnLookup[ intval($pString[0]) * 676 + $_columnLookup[intval($pString[1]) * 26 + intval($_columnLookup[$pString[2]]) ]];
 			}
 		}
