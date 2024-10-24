@@ -423,6 +423,8 @@ class ProductsControllersProducts  extends Controllers
 				
 				$output = $excel->write_files();
 
+				dd($output);
+
 				if(empty($output['xlsx'])){
 
 
