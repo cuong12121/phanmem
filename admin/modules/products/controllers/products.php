@@ -423,16 +423,17 @@ class ProductsControllersProducts  extends Controllers
 				
 				$output = $excel->write_files();
 
-				dd($output);
-
-				if(empty($output['xlsx'])){
+				
+				if(empty($output['xls'])||){
 
 
 					$link = FSRoute::_('index.php?module=products&view=products', FSText :: _('file xuất có vấn đề xin kiểm tra lại'),'error');
 					setRedirect($link);
 				}
+
 				
-				$path_file =   PATH_ADMINISTRATOR.DS.str_replace('/',DS, $output['xlsx']);
+				
+				$path_file =   PATH_ADMINISTRATOR.DS.str_replace('/',DS, $output['xls']);
 				header("Pragma: public");
 				header("Expires: 0");
 				header("Cache-Control:no-cache, must-revalidate, post-check=0, pre-check=0");
