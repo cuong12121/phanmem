@@ -683,7 +683,9 @@ class PHPExcel_Cell
 			if (!isset($string[1])) {
 
 				
-				return $_columnLookup[$pString];
+				// return $pString;
+
+				var_dump($pString);
 
 				die;
 
