@@ -424,7 +424,7 @@ class ProductsControllersProducts  extends Controllers
 				$output = $excel->write_files();
 
 				
-				if(empty($output['xls'])||){
+				if(empty($output['xls'])){
 
 
 					$link = FSRoute::_('index.php?module=products&view=products', FSText :: _('file xuất có vấn đề xin kiểm tra lại'),'error');
