@@ -680,7 +680,12 @@ class PHPExcel_Cell
 		if (!empty($pString[0])) {
 			if (empty($pString[1])) {
 				return $_columnLookup[$pString];
-			} elseif(empty($pString[2])) {
+			} 
+
+			var_dump($pString);
+
+			elseif(empty($pString[2])) {
+
 
 				$return = $_columnLookup[ intval($pString[0]) * 26 + intval($_columnLookup[$pString[1]])];
 				return $return;
