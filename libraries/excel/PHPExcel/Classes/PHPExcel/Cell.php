@@ -677,12 +677,12 @@ class PHPExcel_Cell
 
 		//	We also use the language construct isset() rather than the more costly strlen() function to match the length of $pString
 		//		for improved performance
-		if (!empty($pString[0])) {
+		if (isset($pString[0])) {
 
 			
 			if (!isset($string[1])) {
 				return $_columnLookup[$pString];
-				
+
 			} 
 			elseif(!isset($pString[2])) {
 
