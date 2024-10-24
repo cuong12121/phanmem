@@ -259,12 +259,12 @@ class ProductsControllersProducts  extends Controllers
 				$excel->obj_php_excel->getActiveSheet()->getColumnDimension('X')->setWidth(30);
 				$excel->obj_php_excel->getActiveSheet()->getColumnDimension('Y')->setWidth(30);
 				$excel->obj_php_excel->getActiveSheet()->getColumnDimension('Z')->setWidth(30);
-				$excel->obj_php_excel->getActiveSheet()->getColumnDimension('AA')->setWidth(30);
-				$excel->obj_php_excel->getActiveSheet()->getColumnDimension('AB')->setWidth(30);
-				$excel->obj_php_excel->getActiveSheet()->getColumnDimension('AC')->setWidth(30);
-				$excel->obj_php_excel->getActiveSheet()->getColumnDimension('AD')->setWidth(30);
-				$excel->obj_php_excel->getActiveSheet()->getColumnDimension('AE')->setWidth(30);
-				$excel->obj_php_excel->getActiveSheet()->getColumnDimension('AF')->setWidth(30);
+				// $excel->obj_php_excel->getActiveSheet()->getColumnDimension('AA')->setWidth(30);
+				// $excel->obj_php_excel->getActiveSheet()->getColumnDimension('AB')->setWidth(30);
+				// $excel->obj_php_excel->getActiveSheet()->getColumnDimension('AC')->setWidth(30);
+				// $excel->obj_php_excel->getActiveSheet()->getColumnDimension('AD')->setWidth(30);
+				// $excel->obj_php_excel->getActiveSheet()->getColumnDimension('AE')->setWidth(30);
+				// $excel->obj_php_excel->getActiveSheet()->getColumnDimension('AF')->setWidth(30);
 
 				
 				$excel->obj_php_excel->getActiveSheet()->getStyle('A')->getNumberFormat()->setFormatCode( PHPExcel_Style_NumberFormat::FORMAT_TEXT );
@@ -293,12 +293,12 @@ class ProductsControllersProducts  extends Controllers
 				$excel->obj_php_excel->getActiveSheet()->getStyle('X')->getNumberFormat()->setFormatCode( PHPExcel_Style_NumberFormat::FORMAT_TEXT );
 				$excel->obj_php_excel->getActiveSheet()->getStyle('Y')->getNumberFormat()->setFormatCode( PHPExcel_Style_NumberFormat::FORMAT_TEXT );
 				$excel->obj_php_excel->getActiveSheet()->getStyle('Z')->getNumberFormat()->setFormatCode( PHPExcel_Style_NumberFormat::FORMAT_TEXT );
-				$excel->obj_php_excel->getActiveSheet()->getStyle('AA')->getNumberFormat()->setFormatCode( PHPExcel_Style_NumberFormat::FORMAT_TEXT );
-				$excel->obj_php_excel->getActiveSheet()->getStyle('AB')->getNumberFormat()->setFormatCode( PHPExcel_Style_NumberFormat::FORMAT_TEXT );
-				$excel->obj_php_excel->getActiveSheet()->getStyle('AC')->getNumberFormat()->setFormatCode( PHPExcel_Style_NumberFormat::FORMAT_TEXT );
-				$excel->obj_php_excel->getActiveSheet()->getStyle('AD')->getNumberFormat()->setFormatCode( PHPExcel_Style_NumberFormat::FORMAT_TEXT );
-				$excel->obj_php_excel->getActiveSheet()->getStyle('AE')->getNumberFormat()->setFormatCode( PHPExcel_Style_NumberFormat::FORMAT_TEXT );
-				$excel->obj_php_excel->getActiveSheet()->getStyle('AF')->getNumberFormat()->setFormatCode( PHPExcel_Style_NumberFormat::FORMAT_TEXT );
+				// $excel->obj_php_excel->getActiveSheet()->getStyle('AA')->getNumberFormat()->setFormatCode( PHPExcel_Style_NumberFormat::FORMAT_TEXT );
+				// $excel->obj_php_excel->getActiveSheet()->getStyle('AB')->getNumberFormat()->setFormatCode( PHPExcel_Style_NumberFormat::FORMAT_TEXT );
+				// $excel->obj_php_excel->getActiveSheet()->getStyle('AC')->getNumberFormat()->setFormatCode( PHPExcel_Style_NumberFormat::FORMAT_TEXT );
+				// $excel->obj_php_excel->getActiveSheet()->getStyle('AD')->getNumberFormat()->setFormatCode( PHPExcel_Style_NumberFormat::FORMAT_TEXT );
+				// $excel->obj_php_excel->getActiveSheet()->getStyle('AE')->getNumberFormat()->setFormatCode( PHPExcel_Style_NumberFormat::FORMAT_TEXT );
+				// $excel->obj_php_excel->getActiveSheet()->getStyle('AF')->getNumberFormat()->setFormatCode( PHPExcel_Style_NumberFormat::FORMAT_TEXT );
 	
 				
 				
@@ -402,13 +402,13 @@ class ProductsControllersProducts  extends Controllers
 					$excel->obj_php_excel->getActiveSheet()->setCellValue('X'.$key, $item->warranty_address);
 					$excel->obj_php_excel->getActiveSheet()->setCellValue('Y'.$key, $item->warranty_phone);
 					$excel->obj_php_excel->getActiveSheet()->setCellValue('Z'.$key, $item->warranty);
-					$excel->obj_php_excel->getActiveSheet()->setCellValue('AA'.$key, $item->warranty_link);
+					// $excel->obj_php_excel->getActiveSheet()->setCellValue('AA'.$key, $item->warranty_link);
 
-					$excel->obj_php_excel->getActiveSheet()->setCellValue('AB'.$key, $item->amount);
-					$excel->obj_php_excel->getActiveSheet()->setCellValue('AC'.$key, $tong_ton);
-					$excel->obj_php_excel->getActiveSheet()->setCellValue('AD'.$key, $tam_giu);
-					$excel->obj_php_excel->getActiveSheet()->setCellValue('AE'.$key, $co_the_ban);
-					$excel->obj_php_excel->getActiveSheet()->setCellValue('AF'.$key, $item->price_min);
+					// $excel->obj_php_excel->getActiveSheet()->setCellValue('AB'.$key, $item->amount);
+					// $excel->obj_php_excel->getActiveSheet()->setCellValue('AC'.$key, $tong_ton);
+					// $excel->obj_php_excel->getActiveSheet()->setCellValue('AD'.$key, $tam_giu);
+					// $excel->obj_php_excel->getActiveSheet()->setCellValue('AE'.$key, $co_the_ban);
+					// $excel->obj_php_excel->getActiveSheet()->setCellValue('AF'.$key, $item->price_min);
 					$i ++;
 				}
 
