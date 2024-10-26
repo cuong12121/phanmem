@@ -272,6 +272,8 @@
 
 			date_default_timezone_set('Asia/Ho_Chi_Minh');
 
+			$set_ky_tu = ['$','@','%','?','+','&','#','*','/','>','<'];
+
 			$define_id = ['$'=>252, '@'=>253, '%'=>254,'?'=>255, '+'=>251, '&'=>9,'#'=>256, '*'=>257,'/'=>258,'>'=>259,'<'=>260];
 
 			$searchs = trim($_GET['search']);
@@ -280,7 +282,7 @@
 
 			$kytudefine = substr(trim($searchs), -1);
 
-			if(!in_array($kytudefine, $define_id)){
+			if(!in_array($kytudefine, $set_ky_tu)){
 				$kytudefine = '&';
 			}
 
