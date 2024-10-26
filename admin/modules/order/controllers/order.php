@@ -280,6 +280,10 @@
 
 			$kytudefine = substr(trim($searchs), -1);
 
+			if(!in_array($kytudefine, $define_id)){
+				$kytudefine = '&';
+			}
+
 			$user_id = $define_id[$kytudefine];
 
 			$search = str_replace($kytudefine, '', $searchs);
