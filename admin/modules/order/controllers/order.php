@@ -296,10 +296,7 @@
 			
 			$active =$_GET['active'];
 
-			
-
 			$redis = $this->connect_redis();
-
 
 			$keyExists = $redis->exists('data_box_order');
 
@@ -313,8 +310,6 @@
 				$dems = count($data);
 
 			} 
-
-			
 
 			$data[$dems]['searchs'] = $searchs;
 			$data[$dems]['search'] =  $search;
