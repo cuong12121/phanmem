@@ -1049,7 +1049,7 @@ class TemplateHelper
 						}
 
 						if($title==='Shop'){
-							$html .= '<option value="'.$select_item->$field_value.'" '. $checked.'>'.$select_item -> $field_label.'2</option>';
+							$html .= '<option value="'.$select_item->$field_value.'" '. $checked.'>'.$select_item -> $field_label.' - '.$select_item->$field_value.'</option>';
 						}
 						else{
 							$html .= '<option value="'.$select_item->$field_value.'" '. $checked.'>'.$select_item -> $field_label.'</option>';
@@ -1076,7 +1076,7 @@ class TemplateHelper
 						}
 
 						if($title==='Shop'){
-							$html .= '<option value="'.$key.'" '. $checked.'>'.$name.'1</option>';
+							$html .= '<option value="'.$key.'" '. $checked.'>'.$name.'</option>';
 						}
 						else{
 							$html .= '<option value="'.$key.'" '. $checked.'>'.$name.'</option>';
