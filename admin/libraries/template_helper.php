@@ -1048,7 +1048,14 @@ class TemplateHelper
 								$checked = "selected=\"selected\"";
 						}
 
-						$html .= '<option value="'.$select_item->$field_value.'" '. $checked.'>'.$select_item -> $field_label.'</option>';
+						if($title==='Shop'){
+							$html .= '<option value="'.$select_item->$field_value.'" '. $checked.'>'.$select_item -> $field_label.'2</option>';
+						}
+						else{
+							$html .= '<option value="'.$select_item->$field_value.'" '. $checked.'>'.$select_item -> $field_label.'</option>';
+						}
+
+						
 
 						$j ++;
 					}
@@ -1066,6 +1073,13 @@ class TemplateHelper
 						} else {
 							if($compare == $key)
 								$checked = "selected=\"selected\"";
+						}
+
+						if($title==='Shop'){
+							$html .= '<option value="'.$key.'" '. $checked.'>'.$name.'1</option>';
+						}
+						else{
+							$html .= '<option value="'.$key.'" '. $checked.'>'.$name.'</option>';
 						}
 						$html .= '<option value="'.$key.'" '. $checked.'>'.$name.'</option>';	
 						$j ++;
