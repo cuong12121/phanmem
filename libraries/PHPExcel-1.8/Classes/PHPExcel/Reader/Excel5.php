@@ -3929,7 +3929,7 @@ class PHPExcel_Reader_Excel5 extends PHPExcel_Reader_Abstract implements PHPExce
                 && (ord($recordData[13]) == 255)) {
                 // Error formula. Error code is in +2
                 $dataType = PHPExcel_Cell_DataType::TYPE_ERROR;
-                $value = PHPExcel_Reader_Excel5_ErrorCode::lookup(ord($recordData{8}));
+                $value = PHPExcel_Reader_Excel5_ErrorCode::lookup(ord($recordData[8]));
             } elseif ((ord($recordData[6]) == 3)
                 && (ord($recordData[12]) == 255)
                 && (ord($recordData[13]) == 255)) {
