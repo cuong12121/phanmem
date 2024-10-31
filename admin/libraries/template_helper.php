@@ -1049,7 +1049,7 @@ class TemplateHelper
 						}
 
 						if($title==='Shop'){
-							$html .= '<option value="'.$select_item->$field_value.'" '. $checked.'>'.$select_item -> $field_label.' - '.$select_item->$field_value.'</option>';
+							$html .= '<option value="'.$select_item->$field_value.'" '. $checked.'>'.$select_item -> $field_label.' - '.$value.'</option>';
 						}
 						else{
 							$html .= '<option value="'.$select_item->$field_value.'" '. $checked.'>'.$select_item -> $field_label.'</option>';
