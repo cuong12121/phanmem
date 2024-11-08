@@ -161,6 +161,7 @@
                 <th>Tracking Code</th>
                 <th>Order number </th>
                 <th>Kho</th>
+                <th>Thời gian đóng đơn</th>
                 <th>Sàn</th>
                 <th>Shop</th>
                 <th>Ngày</th>
@@ -199,6 +200,8 @@
                 <td><?= $value->tracking_code  ?></td>
                 <td><?= $value->code   ?></td>
                 <td><?= $kho[$value->warehouse_id]  ?></td>
+
+                <td><?= date('d/m/Y,H:i:s', strtotime($value->date_package))   ?>    </td>
 
                 <td><?= $san[$value->platform_id]   ?></td>
                 <td><?= $value->shop_name  ?></td>
