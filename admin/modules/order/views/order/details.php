@@ -85,7 +85,7 @@
             $names = $db->getObjectList ();
 
 
-            $define_id = [252=>'PHUONGDGMB', 253=>'LANDGMB', 254=>'LOANDGMB',255=>'CANHDGMB', 256=>'TRANGDGMB', 9=>'admin', 257=>'HAIDGMB', '/'=>258=>'ANHDGMN', 259=>'THOADGMN', 260=>'THUDGMN'];
+            $define_id = ['252'=>'PHUONGDGMB', '253'=>'LANDGMB', '254'=>'LOANDGMB','255'=>'CANHDGMB', '256'=>'TRANGDGMB', '9'=>'admin', '257'=>'HAIDGMB', '258'=>'ANHDGMN', '259'=>'THOADGMN', '260'=>'THUDGMN'];
               
         ?>
 
