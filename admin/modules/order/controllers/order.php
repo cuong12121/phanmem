@@ -257,7 +257,7 @@
 
 	        $info_data = json_decode($response);
 
-	         dd($info_data);
+	         // dd($info_data);
 
 
 
