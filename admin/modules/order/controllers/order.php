@@ -851,9 +851,9 @@
 				$excel->obj_php_excel->getActiveSheet()->getStyle('A1')->applyFromArray( $style_header );
 				$excel->obj_php_excel->getActiveSheet()->duplicateStyle( $excel->obj_php_excel->getActiveSheet()->getStyle('A1'), 'B1:J1' );
 
-				$output = $excel->write_files();
+				// $output = $excel->write_files();
 
-				dd($output);
+				dd($excel);
 				die;
 
 				$path_file =   PATH_ADMINISTRATOR.DS.str_replace('/',DS, $output['xls']);
