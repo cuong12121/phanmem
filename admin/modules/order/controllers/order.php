@@ -233,6 +233,8 @@
 
 			global $db;
 
+			dd($_GET['option']);
+
 			$name = !empty($_GET['name'])?$_GET['name']:'';
 
 			$date1 = !empty($_GET['date1'])?$_GET['date1']:'';
