@@ -324,6 +324,8 @@
 			foreach ($list as $item){
 				$key++;
 				$stt++;
+
+				dd($item);
 				$excel->obj_php_excel->getActiveSheet()->setCellValue('A'.$key, $stt);		
 				$excel->obj_php_excel->getActiveSheet()->setCellValue('B'.$key, $item->tracking_code);	
 				$excel->obj_php_excel->getActiveSheet()->setCellValue('C'.$key, $item->product_name); 
