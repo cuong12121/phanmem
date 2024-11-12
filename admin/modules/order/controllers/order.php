@@ -854,6 +854,7 @@
 				$output = $excel->write_files();
 
 				dd($output);
+				die;
 
 				$path_file =   PATH_ADMINISTRATOR.DS.str_replace('/',DS, $output['xls']);
 				header("Pragma: public");
