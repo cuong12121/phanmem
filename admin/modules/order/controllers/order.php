@@ -211,8 +211,6 @@
 
 	        $results = json_decode($response);
 
-	        dd($response);
-
 
 	        $result = $results;
 
@@ -240,11 +238,6 @@
 
 			$user_id ='9';
 
-
-
-
-			
-
 			$context = stream_context_create(array(
 	            'http' => array(
 	                
@@ -256,11 +249,19 @@
 	            )
 	        ));
 
+
+
 	        // Send the request
 
 	        $response = file_get_contents('https://api.'.DOMAIN.'/api/search-data-user-id-package?name='.$name.'&date1='.$date1.'&date2='.$date2, FALSE, $context);
 
 	        $info_data = json_decode($response);
+
+	         dd($info_data);
+
+
+
+
 
 
 	        include 'modules/'.$this->module.'/views/'.$this->view.'/details.php';
