@@ -341,21 +341,21 @@
 				$excel->obj_php_excel->getActiveSheet()->setCellValue('K'.$key, number_format((float)$item->total_price, 0, ',', '.'));
 
 			}
-			$output = $excel->write_files();
+			// $output = $excel->write_files();
 
-			$path_file =   PATH_ADMINISTRATOR.DS.str_replace('/',DS, $output['xls']);
-			header("Pragma: public");
-			header("Expires: 0");
-			header("Cache-Control:no-cache, must-revalidate, post-check=0, pre-check=0");
-			header("Cache-Control: private",false);		
-			header("Content-type: application/force-download");		
-			header("Content-Disposition: attachment; filename=\"".$filename.'.xlsx'."\";" );
-			header("Content-Transfer-Encoding: binary");
-			header("Content-Length: ".filesize($path_file));	
+			// $path_file =   PATH_ADMINISTRATOR.DS.str_replace('/',DS, $output['xls']);
+			// header("Pragma: public");
+			// header("Expires: 0");
+			// header("Cache-Control:no-cache, must-revalidate, post-check=0, pre-check=0");
+			// header("Cache-Control: private",false);		
+			// header("Content-type: application/force-download");		
+			// header("Content-Disposition: attachment; filename=\"".$filename.'.xlsx'."\";" );
+			// header("Content-Transfer-Encoding: binary");
+			// header("Content-Length: ".filesize($path_file));	
 
-			echo $link_excel = URL_ROOT.LINK_AMIN.'/export/excel/'. $filename.'.xlsx';	
+			// echo $link_excel = URL_ROOT.LINK_AMIN.'/export/excel/'. $filename.'.xlsx';	
 
-			dd($link_excel);
+			dd($excel);
 
 			// setRedirect($link_excel);
 			// readfile($path_file);
