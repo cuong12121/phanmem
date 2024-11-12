@@ -268,11 +268,14 @@
 
 	        $response = file_get_contents('https://api.'.DOMAIN.'/api/search-data-user-id-package?name='.$name.'&date1='.$date1.'&date2='.$date2, FALSE, $context);
 
-	        $list = json_decode($response);
+	        $results  = json_decode($response);
+
 
 	        // nếu xuất excel bằng 1
 
 	        if($option ==1){
+
+	        	
 	        	 FSFactory::include_class('excel','excel');
 
 		        $excel = FSExcel();
@@ -332,9 +335,9 @@
 				$key=1;
 				$stt =0;
 
-				if(!empty($list->data)){
+				if(!empty($results->data)){
 
-					foreach ($list->data as $item){
+					foreach ($results->data as $item){
 						$key++;
 						$stt++;
 
@@ -377,6 +380,8 @@
 				readfile($path_file);
 
 	        }
+
+
 
 
 	        include 'modules/'.$this->module.'/views/'.$this->view.'/details.php';
