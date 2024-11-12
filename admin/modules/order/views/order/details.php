@@ -106,7 +106,7 @@
          <label>đến</label>
         <input type="date" class="input-search ui-autocomplete-input"   name="date2" autocomplete="off" maxlength="100" required="" > 
 
-        <input type="checkbox" name="options[]" value="1"> xuất file excel<br>
+        <input type="checkbox" name="options" value="1"> xuất file excel<br>
         
        
         <button type="submit">Tìm kiếm </button> 
