@@ -262,8 +262,6 @@
 
 	        $list = json_decode($response);
 
-	        dd($list->data);
-
 	        FSFactory::include_class('excel','excel');
 
 	        $excel = FSExcel();
@@ -323,30 +321,33 @@
 			$key=1;
 			$stt =0;
 
-			foreach ($list as $item){
-				$key++;
-				$stt++;
+			if(!empty($list->data)){
 
-				dd($item);
-				$excel->obj_php_excel->getActiveSheet()->setCellValue('A'.$key, $stt);		
-				$excel->obj_php_excel->getActiveSheet()->setCellValue('B'.$key, $item->tracking_code);	
-				$excel->obj_php_excel->getActiveSheet()->setCellValue('C'.$key, $item->product_name); 
-				$excel->obj_php_excel->getActiveSheet()->setCellValue('D'.$key, $item->shop_name);
-				$excel->obj_php_excel->getActiveSheet()->setCellValue('E'.$key, $item->shop_code);
-				$excel->obj_php_excel->getActiveSheet()->setCellValue('F'.$key, $item->count);
-				$excel->obj_php_excel->getActiveSheet()->setCellValue('G'.$key, $item->record_id);
+				foreach ($list->data as $item){
+					$key++;
+					$stt++;
+
+					
+					$excel->obj_php_excel->getActiveSheet()->setCellValue('A'.$key, $stt);		
+					$excel->obj_php_excel->getActiveSheet()->setCellValue('B'.$key, $item->tracking_code);	
+					$excel->obj_php_excel->getActiveSheet()->setCellValue('C'.$key, $item->product_name); 
+					$excel->obj_php_excel->getActiveSheet()->setCellValue('D'.$key, $item->shop_name);
+					$excel->obj_php_excel->getActiveSheet()->setCellValue('E'.$key, $item->shop_code);
+					$excel->obj_php_excel->getActiveSheet()->setCellValue('F'.$key, $item->count);
+					$excel->obj_php_excel->getActiveSheet()->setCellValue('G'.$key, $item->record_id);
 
 
 
-                $sql = " SELECT username FROM  fs_users WHERE id = '$item->user_package_id'";
-                $name = $db->getResult($sql);
-            
-				$excel->obj_php_excel->getActiveSheet()->setCellValue('H'.$key, $name);
-				$excel->obj_php_excel->getActiveSheet()->setCellValue('I'.$key, date("d/m/Y", strtotime($item->date)));
-				$excel->obj_php_excel->getActiveSheet()->setCellValue('J'.$key, date("d/m/Y", strtotime($item->date_package)));
-				$excel->obj_php_excel->getActiveSheet()->setCellValue('K'.$key, number_format((float)$item->total_price, 0, ',', '.'));
+	                $sql = " SELECT username FROM  fs_users WHERE id = '$item->user_package_id'";
+	                $name = $db->getResult($sql);
+	            
+					$excel->obj_php_excel->getActiveSheet()->setCellValue('H'.$key, $name);
+					$excel->obj_php_excel->getActiveSheet()->setCellValue('I'.$key, date("d/m/Y", strtotime($item->date)));
+					$excel->obj_php_excel->getActiveSheet()->setCellValue('J'.$key, date("d/m/Y", strtotime($item->date_package)));
+					$excel->obj_php_excel->getActiveSheet()->setCellValue('K'.$key, number_format((float)$item->total_price, 0, ',', '.'));
 
-			}
+				}
+			}	
 			// $output = $excel->write_files();
 
 			// $path_file =   PATH_ADMINISTRATOR.DS.str_replace('/',DS, $output['xls']);
