@@ -262,6 +262,8 @@
 
 	        $list = json_decode($response);
 
+	        dd($list);
+
 	        FSFactory::include_class('excel','excel');
 
 	        $excel = FSExcel();
