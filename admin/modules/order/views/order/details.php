@@ -65,6 +65,8 @@
         <button type="submit">Bắn đơn </button> 
     </form>
 </div>
+
+
 <?php 
      global $db;
     if($user_id ==='9'||$user_id ==='251'):
@@ -81,6 +83,9 @@
 
             $db->query ( $sqls );
             $names = $db->getObjectList ();
+
+
+            $define_id = ['252'=>'PHUONGDGMB', '253'=>'LANDGMB', '254'=>'LOANDGMB','255'=>'CANHDGMB', '256'=>'TRANGDGMB', '9'=>'admin', '257'=>'HAIDGMB', '258'=>'ANHDGMN', '259'=>'THOADGMN', '260'=>'THUDGMN'];
               
         ?>
 
@@ -88,9 +93,9 @@
 
             <option value ="0">Tên người dùng</option>
             <?php
-                foreach($names as $val){
+                foreach($define_id as $key=>$val){
             ?>
-                <option value="<?= $val->id ?>"><?= @$val->username ?></option>
+                <option value="<?= $key ?>"><?= $val ?></option>
 
             <?php
                 }
