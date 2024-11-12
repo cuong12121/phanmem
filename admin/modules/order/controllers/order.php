@@ -355,6 +355,8 @@
 
 			echo $link_excel = URL_ROOT.LINK_AMIN.'/export/excel/'. $filename.'.xlsx';	
 
+			dd($link_excel);
+
 			// setRedirect($link_excel);
 			// readfile($path_file);
 
@@ -851,10 +853,7 @@
 				$excel->obj_php_excel->getActiveSheet()->getStyle('A1')->applyFromArray( $style_header );
 				$excel->obj_php_excel->getActiveSheet()->duplicateStyle( $excel->obj_php_excel->getActiveSheet()->getStyle('A1'), 'B1:J1' );
 
-				// $output = $excel->write_files();
-
-				dd($excel);
-				die;
+				$output = $excel->write_files();
 
 				$path_file =   PATH_ADMINISTRATOR.DS.str_replace('/',DS, $output['xls']);
 				header("Pragma: public");
