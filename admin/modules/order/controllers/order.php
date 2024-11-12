@@ -233,7 +233,13 @@
 
 			global $db;
 
-			dd($_GET['options']);
+			$option = 0;
+
+			if(!empty($_GET['options'])){
+
+				$option = $_GET['options'];
+			}
+
 
 			$name = !empty($_GET['name'])?$_GET['name']:'';
 
@@ -264,112 +270,114 @@
 
 	        $list = json_decode($response);
 
-	        FSFactory::include_class('excel','excel');
+	        // nếu xuất excel bằng 1
 
-	        $excel = FSExcel();
-			$excel->set_params(array('out_put_xls'=>'export/excel/'.$filename.'.xlsx','out_put_xlsx'=>'export/excel/'.$filename.'.xlsx'));
-			$style_header = array(
-				'fill' => array(
-					'type' => PHPExcel_Style_Fill::FILL_SOLID,
-					'color' => array('rgb'=>'ffff00'),
-				),
-				'font' => array(
-					'bold' => true,
-				)
-			);
-			$style_header1 = array(
-				'font' => array(
-					'bold' => true,
-				)
-			);
+	        if($option ==1){
+	        	 FSFactory::include_class('excel','excel');
 
-			$excel->obj_php_excel->getActiveSheet()->getColumnDimension('A')->setWidth(30);
-			$excel->obj_php_excel->getActiveSheet()->getColumnDimension('B')->setWidth(80);
-			$excel->obj_php_excel->getActiveSheet()->getColumnDimension('C')->setWidth(90);
-			$excel->obj_php_excel->getActiveSheet()->getColumnDimension('D')->setWidth(30);
-			$excel->obj_php_excel->getActiveSheet()->getColumnDimension('E')->setWidth(30);
-			$excel->obj_php_excel->getActiveSheet()->getColumnDimension('F')->setWidth(30);
-			$excel->obj_php_excel->getActiveSheet()->getColumnDimension('G')->setWidth(30);
-			$excel->obj_php_excel->getActiveSheet()->getColumnDimension('H')->setWidth(30);
-			$excel->obj_php_excel->getActiveSheet()->getColumnDimension('I')->setWidth(30);
-			$excel->obj_php_excel->getActiveSheet()->getColumnDimension('J')->setWidth(30);
-			$excel->obj_php_excel->getActiveSheet()->getColumnDimension('K')->setWidth(30);
+		        $excel = FSExcel();
+				$excel->set_params(array('out_put_xls'=>'export/excel/'.$filename.'.xlsx','out_put_xlsx'=>'export/excel/'.$filename.'.xlsx'));
+				$style_header = array(
+					'fill' => array(
+						'type' => PHPExcel_Style_Fill::FILL_SOLID,
+						'color' => array('rgb'=>'ffff00'),
+					),
+					'font' => array(
+						'bold' => true,
+					)
+				);
+				$style_header1 = array(
+					'font' => array(
+						'bold' => true,
+					)
+				);
 
-			$excel->obj_php_excel->getActiveSheet()->getStyle('A')->getNumberFormat()->setFormatCode( PHPExcel_Style_NumberFormat::FORMAT_TEXT );
-			$excel->obj_php_excel->getActiveSheet()->getStyle('B')->getNumberFormat()->setFormatCode( PHPExcel_Style_NumberFormat::FORMAT_TEXT );
-			$excel->obj_php_excel->getActiveSheet()->getStyle('C')->getNumberFormat()->setFormatCode( PHPExcel_Style_NumberFormat::FORMAT_TEXT );
-			$excel->obj_php_excel->getActiveSheet()->getStyle('D')->getNumberFormat()->setFormatCode( PHPExcel_Style_NumberFormat::FORMAT_TEXT );
-			$excel->obj_php_excel->getActiveSheet()->getStyle('E')->getNumberFormat()->setFormatCode( PHPExcel_Style_NumberFormat::FORMAT_TEXT );
-			$excel->obj_php_excel->getActiveSheet()->getStyle('F')->getNumberFormat()->setFormatCode( PHPExcel_Style_NumberFormat::FORMAT_TEXT );
-			$excel->obj_php_excel->getActiveSheet()->getStyle('G')->getNumberFormat()->setFormatCode( PHPExcel_Style_NumberFormat::FORMAT_TEXT );
-			$excel->obj_php_excel->getActiveSheet()->getStyle('H')->getNumberFormat()->setFormatCode( PHPExcel_Style_NumberFormat::FORMAT_TEXT );
-			$excel->obj_php_excel->getActiveSheet()->getStyle('I')->getNumberFormat()->setFormatCode( PHPExcel_Style_NumberFormat::FORMAT_TEXT );
-			$excel->obj_php_excel->getActiveSheet()->getStyle('J')->getNumberFormat()->setFormatCode( PHPExcel_Style_NumberFormat::FORMAT_TEXT );
-			$excel->obj_php_excel->getActiveSheet()->getStyle('K')->getNumberFormat()->setFormatCode( PHPExcel_Style_NumberFormat::FORMAT_TEXT );
+				$excel->obj_php_excel->getActiveSheet()->getColumnDimension('A')->setWidth(30);
+				$excel->obj_php_excel->getActiveSheet()->getColumnDimension('B')->setWidth(80);
+				$excel->obj_php_excel->getActiveSheet()->getColumnDimension('C')->setWidth(90);
+				$excel->obj_php_excel->getActiveSheet()->getColumnDimension('D')->setWidth(30);
+				$excel->obj_php_excel->getActiveSheet()->getColumnDimension('E')->setWidth(30);
+				$excel->obj_php_excel->getActiveSheet()->getColumnDimension('F')->setWidth(30);
+				$excel->obj_php_excel->getActiveSheet()->getColumnDimension('G')->setWidth(30);
+				$excel->obj_php_excel->getActiveSheet()->getColumnDimension('H')->setWidth(30);
+				$excel->obj_php_excel->getActiveSheet()->getColumnDimension('I')->setWidth(30);
+				$excel->obj_php_excel->getActiveSheet()->getColumnDimension('J')->setWidth(30);
+				$excel->obj_php_excel->getActiveSheet()->getColumnDimension('K')->setWidth(30);
 
-
-			$excel->obj_php_excel->getActiveSheet()->setCellValue('A1', 'STT');
-			$excel->obj_php_excel->getActiveSheet()->setCellValue('B1', 'Tracking code');
-			$excel->obj_php_excel->getActiveSheet()->setCellValue('C1', 'Tên sản phẩm');
-			$excel->obj_php_excel->getActiveSheet()->setCellValue('D1', 'Tên shop');
-			$excel->obj_php_excel->getActiveSheet()->setCellValue('E1', 'Mã shop');
-			$excel->obj_php_excel->getActiveSheet()->setCellValue('F1', 'Số lượng');
-			$excel->obj_php_excel->getActiveSheet()->setCellValue('G1', 'Id đơn hàng');
-			$excel->obj_php_excel->getActiveSheet()->setCellValue('H1', 'Người đánh đơn');
-			$excel->obj_php_excel->getActiveSheet()->setCellValue('I1', 'Ngày đánh đơn');
-			$excel->obj_php_excel->getActiveSheet()->setCellValue('J1', 'Thời gian đóng đơn hàng');
-			$excel->obj_php_excel->getActiveSheet()->setCellValue('K1', 'Thành tiền');
-
-			$key=1;
-			$stt =0;
-
-			if(!empty($list->data)){
-
-				foreach ($list->data as $item){
-					$key++;
-					$stt++;
-
-					
-					$excel->obj_php_excel->getActiveSheet()->setCellValue('A'.$key, $stt);		
-					$excel->obj_php_excel->getActiveSheet()->setCellValue('B'.$key, $item->tracking_code);	
-					$excel->obj_php_excel->getActiveSheet()->setCellValue('C'.$key, $item->product_name); 
-					$excel->obj_php_excel->getActiveSheet()->setCellValue('D'.$key, $item->shop_name);
-					$excel->obj_php_excel->getActiveSheet()->setCellValue('E'.$key, $item->shop_code);
-					$excel->obj_php_excel->getActiveSheet()->setCellValue('F'.$key, $item->count);
-					$excel->obj_php_excel->getActiveSheet()->setCellValue('G'.$key, $item->record_id);
+				$excel->obj_php_excel->getActiveSheet()->getStyle('A')->getNumberFormat()->setFormatCode( PHPExcel_Style_NumberFormat::FORMAT_TEXT );
+				$excel->obj_php_excel->getActiveSheet()->getStyle('B')->getNumberFormat()->setFormatCode( PHPExcel_Style_NumberFormat::FORMAT_TEXT );
+				$excel->obj_php_excel->getActiveSheet()->getStyle('C')->getNumberFormat()->setFormatCode( PHPExcel_Style_NumberFormat::FORMAT_TEXT );
+				$excel->obj_php_excel->getActiveSheet()->getStyle('D')->getNumberFormat()->setFormatCode( PHPExcel_Style_NumberFormat::FORMAT_TEXT );
+				$excel->obj_php_excel->getActiveSheet()->getStyle('E')->getNumberFormat()->setFormatCode( PHPExcel_Style_NumberFormat::FORMAT_TEXT );
+				$excel->obj_php_excel->getActiveSheet()->getStyle('F')->getNumberFormat()->setFormatCode( PHPExcel_Style_NumberFormat::FORMAT_TEXT );
+				$excel->obj_php_excel->getActiveSheet()->getStyle('G')->getNumberFormat()->setFormatCode( PHPExcel_Style_NumberFormat::FORMAT_TEXT );
+				$excel->obj_php_excel->getActiveSheet()->getStyle('H')->getNumberFormat()->setFormatCode( PHPExcel_Style_NumberFormat::FORMAT_TEXT );
+				$excel->obj_php_excel->getActiveSheet()->getStyle('I')->getNumberFormat()->setFormatCode( PHPExcel_Style_NumberFormat::FORMAT_TEXT );
+				$excel->obj_php_excel->getActiveSheet()->getStyle('J')->getNumberFormat()->setFormatCode( PHPExcel_Style_NumberFormat::FORMAT_TEXT );
+				$excel->obj_php_excel->getActiveSheet()->getStyle('K')->getNumberFormat()->setFormatCode( PHPExcel_Style_NumberFormat::FORMAT_TEXT );
 
 
+				$excel->obj_php_excel->getActiveSheet()->setCellValue('A1', 'STT');
+				$excel->obj_php_excel->getActiveSheet()->setCellValue('B1', 'Tracking code');
+				$excel->obj_php_excel->getActiveSheet()->setCellValue('C1', 'Tên sản phẩm');
+				$excel->obj_php_excel->getActiveSheet()->setCellValue('D1', 'Tên shop');
+				$excel->obj_php_excel->getActiveSheet()->setCellValue('E1', 'Mã shop');
+				$excel->obj_php_excel->getActiveSheet()->setCellValue('F1', 'Số lượng');
+				$excel->obj_php_excel->getActiveSheet()->setCellValue('G1', 'Id đơn hàng');
+				$excel->obj_php_excel->getActiveSheet()->setCellValue('H1', 'Người đánh đơn');
+				$excel->obj_php_excel->getActiveSheet()->setCellValue('I1', 'Ngày đánh đơn');
+				$excel->obj_php_excel->getActiveSheet()->setCellValue('J1', 'Thời gian đóng đơn hàng');
+				$excel->obj_php_excel->getActiveSheet()->setCellValue('K1', 'Thành tiền');
 
-	                $sql = " SELECT username FROM  fs_users WHERE id = '$item->user_package_id'";
-	                $name = $db->getResult($sql);
-	            
-					$excel->obj_php_excel->getActiveSheet()->setCellValue('H'.$key, $name);
-					$excel->obj_php_excel->getActiveSheet()->setCellValue('I'.$key, date("d/m/Y", strtotime($item->date)));
-					$excel->obj_php_excel->getActiveSheet()->setCellValue('J'.$key, date("d/m/Y", strtotime($item->date_package)));
-					$excel->obj_php_excel->getActiveSheet()->setCellValue('K'.$key, number_format((float)$item->total_price, 0, ',', '.'));
+				$key=1;
+				$stt =0;
 
-				}
-			}	
-			$output = $excel->write_files();
+				if(!empty($list->data)){
 
-			$path_file =   PATH_ADMINISTRATOR.DS.str_replace('/',DS, $output['xls']);
-			header("Pragma: public");
-			header("Expires: 0");
-			header("Cache-Control:no-cache, must-revalidate, post-check=0, pre-check=0");
-			header("Cache-Control: private",false);		
-			header("Content-type: application/force-download");		
-			header("Content-Disposition: attachment; filename=\"".$filename.'.xlsx'."\";" );
-			header("Content-Transfer-Encoding: binary");
-			header("Content-Length: ".filesize($path_file));	
+					foreach ($list->data as $item){
+						$key++;
+						$stt++;
 
-			echo $link_excel = URL_ROOT.LINK_AMIN.'/export/excel/'. $filename.'.xlsx';	
+						
+						$excel->obj_php_excel->getActiveSheet()->setCellValue('A'.$key, $stt);		
+						$excel->obj_php_excel->getActiveSheet()->setCellValue('B'.$key, $item->tracking_code);	
+						$excel->obj_php_excel->getActiveSheet()->setCellValue('C'.$key, $item->product_name); 
+						$excel->obj_php_excel->getActiveSheet()->setCellValue('D'.$key, $item->shop_name);
+						$excel->obj_php_excel->getActiveSheet()->setCellValue('E'.$key, $item->shop_code);
+						$excel->obj_php_excel->getActiveSheet()->setCellValue('F'.$key, $item->count);
+						$excel->obj_php_excel->getActiveSheet()->setCellValue('G'.$key, $item->record_id);
 
-			
 
-			setRedirect($link_excel);
-			readfile($path_file);
 
-	         // dd($info_data);
+		                $sql = " SELECT username FROM  fs_users WHERE id = '$item->user_package_id'";
+		                $name = $db->getResult($sql);
+		            
+						$excel->obj_php_excel->getActiveSheet()->setCellValue('H'.$key, $name);
+						$excel->obj_php_excel->getActiveSheet()->setCellValue('I'.$key, date("d/m/Y", strtotime($item->date)));
+						$excel->obj_php_excel->getActiveSheet()->setCellValue('J'.$key, date("d/m/Y", strtotime($item->date_package)));
+						$excel->obj_php_excel->getActiveSheet()->setCellValue('K'.$key, number_format((float)$item->total_price, 0, ',', '.'));
+
+					}
+				}	
+				$output = $excel->write_files();
+
+				$path_file =   PATH_ADMINISTRATOR.DS.str_replace('/',DS, $output['xls']);
+				header("Pragma: public");
+				header("Expires: 0");
+				header("Cache-Control:no-cache, must-revalidate, post-check=0, pre-check=0");
+				header("Cache-Control: private",false);		
+				header("Content-type: application/force-download");		
+				header("Content-Disposition: attachment; filename=\"".$filename.'.xlsx'."\";" );
+				header("Content-Transfer-Encoding: binary");
+				header("Content-Length: ".filesize($path_file));	
+
+				echo $link_excel = URL_ROOT.LINK_AMIN.'/export/excel/'. $filename.'.xlsx';	
+
+				setRedirect($link_excel);
+				readfile($path_file);
+
+	        }
+
 
 	        include 'modules/'.$this->module.'/views/'.$this->view.'/details.php';
 
