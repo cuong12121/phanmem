@@ -262,7 +262,7 @@
 
 	        $list = json_decode($response);
 
-	        dd($list);
+	        dd($list->data);
 
 	        FSFactory::include_class('excel','excel');
 
