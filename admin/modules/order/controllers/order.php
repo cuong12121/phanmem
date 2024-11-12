@@ -233,7 +233,7 @@
 
 			global $db;
 
-			dd($_GET['option']);
+			dd($_GET['options']);
 
 			$name = !empty($_GET['name'])?$_GET['name']:'';
 
