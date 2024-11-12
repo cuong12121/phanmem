@@ -241,6 +241,8 @@
 
 			$user_id ='9';
 
+			$filename = 'danh_sach_don_hang';
+
 			$context = stream_context_create(array(
 	            'http' => array(
 	                
@@ -258,7 +260,7 @@
 
 	        $response = file_get_contents('https://api.'.DOMAIN.'/api/search-data-user-id-package?name='.$name.'&date1='.$date1.'&date2='.$date2, FALSE, $context);
 
-	        $info_data = json_decode($response);
+	        $list = json_decode($response);
 
 	        FSFactory::include_class('excel','excel');
 
