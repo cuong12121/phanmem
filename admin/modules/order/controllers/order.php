@@ -273,7 +273,7 @@
 
 	        // nếu xuất excel bằng 1
 
-	        if($option ==1){
+	        if($option ==1 && !empty($info_data->data)){
 	        	 FSFactory::include_class('excel','excel');
 
 		        $excel = FSExcel();
