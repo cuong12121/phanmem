@@ -8,7 +8,7 @@
 <body>
 	<form method="post" action="" enctype="multipart/form-data">
 		<div class="form-group">
-		    <label class="col-md-2 col-xs-12 control-label">Hóa đơn PDF</label>
+		    <label class="col-md-2 col-xs-12 control-label">File excel</label>
 		    <div class="col-md-10  col-xs-12">
 		        <div class="fileUpload btn btn-primary ">
 		            <span><i class="fa fa-cloud-upload"></i> Upload</span>

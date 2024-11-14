@@ -69,7 +69,7 @@
 <br>
 
 <div class="form">
-    <a href="#">Nhập đơn bằng file excel</a>
+    <a href="/admin/index.php?module=order&view=order&task=view_pack">Nhập đơn bằng file excel</a>
 </div>
 
 
