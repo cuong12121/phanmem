@@ -103,6 +103,26 @@ class OrderModelsOrder extends FSModels
 		return $record;
 	}
 
+	function updateOrder()
+	{
+		$files = 'ts2.xlsx';
+		$file_path = PATH_BASE.'files/'.$files;
+		require_once("../libraries/PHPExcel-1.8/Classes/PHPExcel.php");
+		$objReader = PHPExcel_IOFactory::createReaderForFile($file_path);
+		// $data = new PHPExcel_IOFactory();
+		// $data->setOutputEncoding('UTF-8');
+		$objReader->setLoadAllSheets();
+		$objexcel = $objReader->load($file_path);
+		$data =$objexcel->getActiveSheet()->toArray('null',true,true,true);
+		// $data->load($file_path);
+		unset($heightRow);  
+		$heightRow=$objexcel->setActiveSheetIndex()->getHighestRow();
+		// printr($data);
+		// unset($j);
+
+		printr($data);
+	}
+
 	function set_query_order(){
 		$ordering = "";
 		if(isset($_SESSION[$this -> prefix.'sort_field']))
