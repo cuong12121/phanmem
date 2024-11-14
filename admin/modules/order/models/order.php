@@ -103,7 +103,7 @@ class OrderModelsOrder extends FSModels
 		return $record;
 	}
 
-	function updateOrder()
+	function update_order()
 	{
 		$files = 'ts2.xlsx';
 		$file_path = PATH_BASE.'files/'.$files;
