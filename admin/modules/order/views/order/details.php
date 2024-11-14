@@ -66,6 +66,12 @@
     </form>
 </div>
 
+<br>
+
+<div class="form">
+    <a href="#">Nhập đơn bằng file excel</a>
+</div>
+
 
 <?php 
      global $db;

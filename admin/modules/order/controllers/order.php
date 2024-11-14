@@ -106,6 +106,11 @@
 			printr($data);
 		}
 
+		function view_pack()
+		{
+			include 'modules/'.$this->module.'/views/'.$this->view.'/packing_handwork.php';
+		}
+
 
 		function showCheckErrorFile()
 		{
