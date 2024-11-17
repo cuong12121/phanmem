@@ -13,36 +13,37 @@
 		function update_pack_order()
 		{
 			if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-			    if (isset($_FILES['file']) && $_FILES['file']['error'] == UPLOAD_ERR_OK) {
+				    if (isset($_FILES['file']) && $_FILES['file']['error'] == UPLOAD_ERR_OK) {
 
-        		$file = $_FILES['file'];
+	        		$file = $_FILES['file'];
 
-        		$fileName = $file['name']; // Tên file gốc
-		        $fileTmp = $file['tmp_name']; // Đường dẫn tạm thời
-		        $fileSize = $file['size']; // Kích thước file (byte)
-		        $fileType = $file['type'];
+	        		$fileName = $file['name']; // Tên file gốc
+			        $fileTmp = $file['tmp_name']; // Đường dẫn tạm thời
+			        $fileSize = $file['size']; // Kích thước file (byte)
+			        $fileType = $file['type'];
 
-		        $uploadDir = "file/pack/";
+			        $uploadDir = "file/pack/";
 
-		        if($fileType == 'xlsx' || $fileType =='xls'){
+			        if($fileType == 'xlsx' || $fileType =='xls'){
 
-		        	// Đường dẫn đích để lưu file
-			        $uploadPath = $uploadDir . basename($fileName);
+			        	// Đường dẫn đích để lưu file
+				        $uploadPath = $uploadDir . basename($fileName);
 
-			        // Di chuyển file từ thư mục tạm sang thư mục đích
-			        if (move_uploaded_file($fileTmp, $uploadPath)) {
-			            $this->update_pack($uploadPath);
-			        } else {
-			            echo "Lỗi khi di chuyển tệp.";
+				        // Di chuyển file từ thư mục tạm sang thư mục đích
+				        if (move_uploaded_file($fileTmp, $uploadPath)) {
+				            $this->update_pack($uploadPath);
+				        } else {
+				            echo "Lỗi khi di chuyển tệp.";
+				        }
+
+			        }
+			        else{
+			        	echo "file không đúng định dạng";
 			        }
 
-		        }
-		        else{
-		        	echo "file không đúng định dạng";
-		        }
-
-		} 
-		
+				} 
+			}
+		}	
 
 		function display()
 		{
