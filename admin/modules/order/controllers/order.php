@@ -9,6 +9,15 @@
 			$array_status = array( 0 => 'Mới tiếp nhận',1 => 'Đang xử lý',2=>'Chuyển qua kho đóng gói',4=>'Đang giao hàng',5=>'Hoàn thành',6=>'Hủy');
 			$this -> arr_status = $array_status;
 		}
+
+		function update_pack_order()
+		{
+			if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+			    // Lấy dữ liệu từ form
+			   	echo "string";
+			} 
+		}
+
 		function display()
 		{
 
