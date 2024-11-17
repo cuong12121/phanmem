@@ -24,7 +24,9 @@
 
 			        $uploadDir = "file/pack/";
 
-			        
+			        dd($fileType);
+
+
 
 			        if($fileType == 'xlsx' || $fileType =='xls'){
 
