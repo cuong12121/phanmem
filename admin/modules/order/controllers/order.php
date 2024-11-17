@@ -199,7 +199,7 @@
 
 				$row_time = trim($data[$j]['B']);
 
-				dd(DateTime::createFromFormat('d-m-Y,H:i:s', $row_time));
+				dd(DateTime::createFromFormat('d-m-Y,H:i:s', $row_time)->date);
 
 				$user_id = $define_id[$kytudefine];
 
