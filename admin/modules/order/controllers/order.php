@@ -199,6 +199,8 @@
 
 				$row_time = trim($data[$j]['B']);
 
+				dd($row_time);
+
 				$user_id = $define_id[$kytudefine];
 
 				$search = str_replace($kytudefine, '', $row_track);
