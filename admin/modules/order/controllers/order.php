@@ -137,7 +137,7 @@
 		function update_pack($file_path)
 		{
 			
-		
+			global $db;
 			require_once("../libraries/PHPExcel-1.8/Classes/PHPExcel.php");
 			$objReader = PHPExcel_IOFactory::createReaderForFile($file_path);
 			// $data = new PHPExcel_IOFactory();
@@ -149,9 +149,85 @@
 			unset($heightRow);  
 			$heightRow=$objexcel->setActiveSheetIndex()->getHighestRow();
 			// printr($data);
-			// unset($j);
+			unset($j);
 
-			printr($data);
+			date_default_timezone_set('Asia/Ho_Chi_Minh');
+
+			$set_ky_tu = ['$','@','%','?','+','&','#','*','/','>','<'];
+
+			$define_id = ['$'=>252, '@'=>253, '%'=>254,'?'=>255, '+'=>251, '&'=>9,'#'=>256, '*'=>257,'/'=>258,'>'=>259,'<'=>260];
+
+			$searchs = trim($_GET['search']);
+
+			$link = 'index.php?module=order&view=order&task=view_pack';
+
+			
+			for($j=2;$j<=$heightRow;$j++){
+			
+				$row_track = trim($data[$j]['A']);
+
+				$kytudefine = substr(trim($row_track), -1);
+
+				if(!in_array($kytudefine, $set_ky_tu)){
+					$kytudefine = '&';
+				}
+
+				$row_time = trim($data[$j]['B']);
+
+				$user_id = $define_id[$kytudefine];
+
+				$search = str_replace($kytudefine, '', $row_track);
+
+				// phần này là update vào db
+
+				$sql = "SELECT id FROM fs_order_uploads_detail 
+				        WHERE is_package = :is_package 
+				        AND tracking_code = :tracking_code 
+				        ORDER BY id DESC 
+				        LIMIT 100";
+
+				$stmt = $pdo->prepare($sql);
+				$stmt->execute(['is_package' => 0, 'tracking_code' => $search]);
+				$results = $stmt->fetchAll();
+
+				// Lấy phần tử cuối cùng
+				$checkorders = !empty($results) ? end($results) : null;
+				
+		        if(!empty($checkorders)){
+		        	$checkorders_id = $checkorders['id'];  // ID của đơn hàng (từ kết quả trước)
+					$user_package_id = $user_id; // Giá trị của $user_package_id
+
+				    $sql = "UPDATE fs_order_uploads_detail 
+					        SET is_package = :is_package, 
+					            user_package_id = :user_package_id, 
+					            date_package = :date_package 
+					        WHERE id = :id";
+
+					$stmt = $pdo->prepare($sql);
+
+					// Các giá trị cần bind
+					$params = [
+					    'is_package' => 1,
+					    'user_package_id' => $user_package_id,
+					    'date_package' =>  DateTime::createFromFormat('d-m-Y,H:i:s', $row_time),
+					    'id' => $checkorders_id
+					];
+
+					// Thực hiện câu lệnh
+					$update = $stmt->execute($params);
+
+					if (!$update) {
+						$msg = "Có lỗi xảy ra với mã tracking của dòng $j vui lòng kiểm tra lại";
+
+						setRedirect($link,$msg);
+					}	
+		        }
+
+			}
+
+			$msg = "Đã đóng được $heightRow kiện hàng thành công";	
+			setRedirect($link,$msg);
+
 		}
 
 		function view_pack()
