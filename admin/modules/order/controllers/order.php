@@ -13,9 +13,9 @@
 		function update_pack_order()
 		{
 			if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-				if (isset($_FILES['file']) && $_FILES['file']['error'] == UPLOAD_ERR_OK) {
+				if (isset($_FILES['file_pdf']) && $_FILES['file_pdf']['error'] == UPLOAD_ERR_OK) {
 
-	        		$file = $_FILES['file'];
+	        		$file = $_FILES['file_pdf'];
 
 	        		$fileName = $file['name']; // Tên file gốc
 			        $fileTmp = $file['tmp_name']; // Đường dẫn tạm thời
@@ -24,7 +24,7 @@
 
 			        $uploadDir = "file/pack/";
 
-			        dd($fileType);
+			        
 
 			        if($fileType == 'xlsx' || $fileType =='xls'){
 
