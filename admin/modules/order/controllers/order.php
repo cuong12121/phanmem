@@ -22,7 +22,7 @@
 			        $fileSize = $file['size']; // Kích thước file (byte)
 			        $fileType = $file['type'];
 
-			        $uploadDir = "file/pack/";
+			        $uploadDir = PATH_BASE."/files/pack/";
 
 			        $allowedMimeTypes = [
 			            'application/vnd.ms-excel', // .xls (Excel 97-2003)
