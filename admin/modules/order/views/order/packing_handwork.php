@@ -6,7 +6,7 @@
 	<title>Document</title>
 </head>
 <body>
-	<form method="post" action="/admin/index.php?module=order&view=order&task=update_pack_order" enctype="multipart/form-data">
+	<form method="post" action="index.php?module=order&view=order&task=update_pack_order" enctype="multipart/form-data">
 		<div class="form-group">
 		    <label class="col-md-2 col-xs-12 control-label">File excel</label>
 		    <div class="col-md-10  col-xs-12">
