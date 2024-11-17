@@ -13,7 +13,7 @@
 		function update_pack_order()
 		{
 			if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-				    if (isset($_FILES['file']) && $_FILES['file']['error'] == UPLOAD_ERR_OK) {
+				if (isset($_FILES['file']) && $_FILES['file']['error'] == UPLOAD_ERR_OK) {
 
 	        		$file = $_FILES['file'];
 
@@ -24,6 +24,8 @@
 
 			        $uploadDir = "file/pack/";
 
+			        dd($fileType);
+
 			        if($fileType == 'xlsx' || $fileType =='xls'){
 
 			        	// Đường dẫn đích để lưu file
@@ -31,6 +33,8 @@
 
 				        // Di chuyển file từ thư mục tạm sang thư mục đích
 				        if (move_uploaded_file($fileTmp, $uploadPath)) {
+
+
 				            $this->update_pack($uploadPath);
 				        } else {
 				            echo "Lỗi khi di chuyển tệp.";
