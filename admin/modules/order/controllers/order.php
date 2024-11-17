@@ -24,7 +24,7 @@
 
 		        $uploadDir = "file/pack/";
 
-		        if($fileType == 'xlsx', || $fileType =='xls'){
+		        if($fileType == 'xlsx' || $fileType =='xls'){
 
 		        	// Đường dẫn đích để lưu file
 			        $uploadPath = $uploadDir . basename($fileName);
