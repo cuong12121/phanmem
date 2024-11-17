@@ -36,7 +36,7 @@
 
 			        // Kiểm tra MIME type của file
 			        if (in_array($fileType, $allowedMimeTypes)) {
-			            echo "Tệp là tệp Excel hợp lệ.<br>";
+			            
 			            // Bạn có thể xử lý tệp ở đây, ví dụ: di chuyển tệp hoặc đọc nội dung// Đường dẫn đích để lưu file
 				        $uploadPath = $uploadDir . basename($fileName);
 
