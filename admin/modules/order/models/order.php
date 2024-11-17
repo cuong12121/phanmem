@@ -98,7 +98,7 @@ class OrderModelsOrder extends FSModels
 		return $query;
 	}
 
-	function update_pack_order($value='')
+	function update_pack_order()
 	{
 		if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 		    // Lấy dữ liệu từ form
