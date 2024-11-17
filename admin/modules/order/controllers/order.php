@@ -234,7 +234,7 @@
 					$params = [
 					    'is_package' => 1,
 					    'user_package_id' => $user_package_id,
-					    'date_package' =>   new DateTime($row_time),
+					    'date_package' =>   new DateTime($row_time)->format('Y-m-d H:i:s'),
 					    'id' => $checkorders_id
 					];
 
