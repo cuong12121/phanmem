@@ -137,7 +137,7 @@
 		function update_pack($file_path)
 		{
 			
-			$file_path = PATH_BASE.'files/'.$files;
+		
 			require_once("../libraries/PHPExcel-1.8/Classes/PHPExcel.php");
 			$objReader = PHPExcel_IOFactory::createReaderForFile($file_path);
 			// $data = new PHPExcel_IOFactory();
