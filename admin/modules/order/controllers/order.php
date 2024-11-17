@@ -24,7 +24,7 @@
 
 			        $uploadDir = "file/pack/";
 
-			        dd($fileType);
+			        dd($file);
 
 
 
