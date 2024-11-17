@@ -24,6 +24,8 @@
 
 			        $uploadDir = PATH_BASE."/files/pack/";
 
+			        dd(PATH_BASE);
+
 			        $allowedMimeTypes = [
 			            'application/vnd.ms-excel', // .xls (Excel 97-2003)
 			            'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet', // .xlsx
