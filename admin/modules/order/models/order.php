@@ -98,6 +98,18 @@ class OrderModelsOrder extends FSModels
 		return $query;
 	}
 
+	function update_pack_order($value='')
+	{
+		if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+		    // Lấy dữ liệu từ form
+		   	echo "string";
+		} 
+	}
+
+
+
+
+
 	function price_extend($extend_id) {
 		$record =  $this->get_record_by_id($extend_id,'fs_products_price_extend');
 		return $record;
