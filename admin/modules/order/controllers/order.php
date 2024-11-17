@@ -41,10 +41,8 @@
 		        	echo "file không đúng định dạng";
 		        }
 
-		        
-
-			} 
-		}
+		} 
+		
 
 		function display()
 		{
