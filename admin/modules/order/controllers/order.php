@@ -234,7 +234,7 @@
 					$params = [
 					    'is_package' => 1,
 					    'user_package_id' => $user_package_id,
-					    'date_package' =>   strtotime(DateTime::createFromFormat('Y-m-d,H:i:s', $row_time)->format('Y-m-d, H:i:s')),
+					    'date_package' =>   strtotime(DateTime::createFromFormat('d-m-Y,H:i:s', $row_time)->format('Y-m-d, H:i:s')),
 					    'id' => $checkorders_id
 					];
 
