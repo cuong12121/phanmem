@@ -31,7 +31,7 @@
 
 			        // Di chuyển file từ thư mục tạm sang thư mục đích
 			        if (move_uploaded_file($fileTmp, $uploadPath)) {
-			            $this->update_pack($uploadPath)
+			            $this->update_pack($uploadPath);
 			        } else {
 			            echo "Lỗi khi di chuyển tệp.";
 			        }
