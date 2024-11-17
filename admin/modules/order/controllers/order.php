@@ -24,25 +24,29 @@
 
 			        $uploadDir = "file/pack/";
 
-			        dd($file);
+			        $allowedMimeTypes = [
+			            'application/vnd.ms-excel', // .xls (Excel 97-2003)
+			            'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet', // .xlsx
+			            'application/vnd.ms-excel.sheet.macroEnabled.12', // .xlsm
+			            'application/vnd.ms-excel.addin.macroEnabled.12', // .xlam
+			            'text/csv' // .csv
+			        ];
 
-
-
-			        if($fileType == 'xlsx' || $fileType =='xls'){
-
-			        	// Đường dẫn đích để lưu file
+			        // Kiểm tra MIME type của file
+			        if (in_array($fileType, $allowedMimeTypes)) {
+			            echo "Tệp là tệp Excel hợp lệ.<br>";
+			            // Bạn có thể xử lý tệp ở đây, ví dụ: di chuyển tệp hoặc đọc nội dung// Đường dẫn đích để lưu file
 				        $uploadPath = $uploadDir . basename($fileName);
 
 				        // Di chuyển file từ thư mục tạm sang thư mục đích
 				        if (move_uploaded_file($fileTmp, $uploadPath)) {
 
-
 				            $this->update_pack($uploadPath);
 				        } else {
 				            echo "Lỗi khi di chuyển tệp.";
 				        }
+			        } 
 
-			        }
 			        else{
 			        	echo "file không đúng định dạng";
 			        }
