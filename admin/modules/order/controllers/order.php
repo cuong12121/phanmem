@@ -249,8 +249,9 @@
 		        }
 
 			}
+			$count = intval($heightRow-1);
 
-			$msg = "Đã đóng được $heightRow kiện hàng thành công";	
+			$msg = "Đã đóng được $count kiện hàng thành công";	
 			setRedirect($link,$msg);
 
 		}
