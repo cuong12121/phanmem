@@ -137,7 +137,7 @@
 		function update_pack($file_path)
 		{
 			
-			global $db;
+			
 			require_once("../libraries/PHPExcel-1.8/Classes/PHPExcel.php");
 			$objReader = PHPExcel_IOFactory::createReaderForFile($file_path);
 			// $data = new PHPExcel_IOFactory();
@@ -157,7 +157,32 @@
 
 			$define_id = ['$'=>252, '@'=>253, '%'=>254,'?'=>255, '+'=>251, '&'=>9,'#'=>256, '*'=>257,'/'=>258,'>'=>259,'<'=>260];
 
-			$searchs = trim($_GET['search']);
+			$config = require PATH_BASE.'/includes/configs.php';
+
+			// thử
+
+			// Kết nối PDO
+			$host = $config['dbHost'];
+			$db = $config['dbName'];
+			$user = $config['dbUser'];
+			$pass = $config['dbPass'];
+			$charset = 'utf8mb4';
+
+			$dsn = "mysql:host=$host;dbname=$db;charset=$charset";
+			$options = [
+			    PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
+			    PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
+			    PDO::ATTR_EMULATE_PREPARES   => false,
+			];
+
+			try {
+			    $pdo = new PDO($dsn, $user, $pass, $options);
+			} catch (\PDOException $e) {
+			    throw new \PDOException($e->getMessage(), (int)$e->getCode());
+			}
+
+
+			
 
 			$link = 'index.php?module=order&view=order&task=view_pack';
 
