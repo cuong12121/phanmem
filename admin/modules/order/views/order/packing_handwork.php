@@ -12,7 +12,7 @@
 		    <div class="col-md-10  col-xs-12">
 		        <div class="fileUpload btn btn-primary ">
 		            <span><i class="fa fa-cloud-upload"></i> Upload</span>
-		            <input type="file" id="file_pdf" class="upload" name="file_pdf[]" multiple="">
+		            <input type="file" id="file_pdf" class="upload" name="file" multiple="">
 		        </div>
 		        
 		    </div>
