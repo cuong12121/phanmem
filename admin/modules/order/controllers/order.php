@@ -199,8 +199,6 @@
 
 				$row_time = trim($data[$j]['B']);
 
-				dd(DateTime::createFromFormat('d-m-Y,H:i:s', $row_time)->date);
-
 				$user_id = $define_id[$kytudefine];
 
 				$search = str_replace($kytudefine, '', $row_track);
@@ -236,7 +234,7 @@
 					$params = [
 					    'is_package' => 1,
 					    'user_package_id' => $user_package_id,
-					    'date_package' =>  DateTime::createFromFormat('d-m-Y,H:i:s', $row_time),
+					    'date_package' =>  DateTime::createFromFormat('d-m-Y,H:i:s', $row_time)->format('d-m-Y, H:i:s'),
 					    'id' => $checkorders_id
 					];
 
