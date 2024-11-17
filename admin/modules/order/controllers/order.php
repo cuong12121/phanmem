@@ -13,8 +13,36 @@
 		function update_pack_order()
 		{
 			if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-			    // Lấy dữ liệu từ form
-			   	echo "string";
+			    if (isset($_FILES['file']) && $_FILES['file']['error'] == UPLOAD_ERR_OK) {
+
+        		$file = $_FILES['file'];
+
+        		$fileName = $file['name']; // Tên file gốc
+		        $fileTmp = $file['tmp_name']; // Đường dẫn tạm thời
+		        $fileSize = $file['size']; // Kích thước file (byte)
+		        $fileType = $file['type'];
+
+		        $uploadDir = "file/pack/";
+
+		        if($fileType == 'xlsx', || $fileType =='xls'){
+
+		        	// Đường dẫn đích để lưu file
+			        $uploadPath = $uploadDir . basename($fileName);
+
+			        // Di chuyển file từ thư mục tạm sang thư mục đích
+			        if (move_uploaded_file($fileTmp, $uploadPath)) {
+			            $this->update_pack($uploadPath)
+			        } else {
+			            echo "Lỗi khi di chuyển tệp.";
+			        }
+
+		        }
+		        else{
+		        	echo "file không đúng định dạng";
+		        }
+
+		        
+
 			} 
 		}
 
@@ -95,9 +123,9 @@
 			include 'modules/'.$this->module.'/views/'.$this->view.'/list-pd.php';		
 		}
 
-		function update_pack()
+		function update_pack($file_path)
 		{
-			$files = 'ts2.xlsx';
+			
 			$file_path = PATH_BASE.'files/'.$files;
 			require_once("../libraries/PHPExcel-1.8/Classes/PHPExcel.php");
 			$objReader = PHPExcel_IOFactory::createReaderForFile($file_path);
