@@ -193,7 +193,7 @@
 
 					$msg = "Mã tracking hoặc trường ngày tháng của dòng $j không tồn tại, vui lòng kiểm tra lại";
 
-					setRedirect($link,$msg, ,'error');
+					setRedirect($link,$msg, 'error');
 				}
 
 				$sql = "SELECT id FROM fs_order_uploads_detail 
