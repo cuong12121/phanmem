@@ -191,7 +191,7 @@
 
 				
 
-				if($data[$j]['A'] ==null || $data[$j]['B']==null){
+				if(is_null($data[$j]['A'])|| is_null($data[$j]['B'])){
 
 					$msg = "Mã tracking hoặc trường ngày tháng của dòng $j không tồn tại, vui lòng kiểm tra lại";
 
