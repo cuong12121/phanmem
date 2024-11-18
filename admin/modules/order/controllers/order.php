@@ -189,7 +189,9 @@
 
 			for($j=2;$j<=$heightRow;$j++){
 
-			
+				var_dump($data[$j]['A']);
+
+				die;
 
 				if($data[$j]['A'] === null){
 					echo "dữ liệu là null";
