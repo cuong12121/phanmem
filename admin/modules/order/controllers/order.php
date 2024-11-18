@@ -287,10 +287,10 @@
 				
 				
 			}
-			$count = intval($heightRow-1);
+			// $count = intval($heightRow-1);
 
-			$msg = "Đã đóng được $count kiện hàng thành công";	
-			setRedirect($link,$msg);
+			// $msg = "Đã đóng được $count kiện hàng thành công";	
+			// setRedirect($link,$msg);
 
 		}
 
