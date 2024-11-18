@@ -218,7 +218,7 @@
 			
 			for($j=2;$j<=$heightRow;$j++){
 
-				if(!empty($data[$j]['A'])  && !empty($data[$j]['B']))
+				if(!empty($data[$j]['A'])  && !empty($data[$j]['B'])){
 			
 					$row_track = trim($data[$j]['A']);
 
@@ -287,10 +287,10 @@
 				
 				
 			}
-			// $count = intval($heightRow-1);
+			$count = intval($heightRow-1);
 
-			// $msg = "Đã đóng được $count kiện hàng thành công";	
-			// setRedirect($link,$msg);
+			$msg = "Đã đóng được $count kiện hàng thành công";	
+			setRedirect($link,$msg);
 
 		}
 
