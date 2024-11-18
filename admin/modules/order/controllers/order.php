@@ -189,7 +189,7 @@
 
 			for($j=2;$j<=$heightRow;$j++){
 
-				if(empty($data[$j]['A'])  && empty($data[$j]['B'])){
+				if(empty($data[$j]['A'])  || empty($data[$j]['B'])){
 
 					$msg = "Mã tracking hoặc trường ngày tháng của dòng $j không tồn tại, vui lòng kiểm tra lại";
 
