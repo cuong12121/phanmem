@@ -189,12 +189,14 @@
 
 			for($j=2;$j<=$heightRow;$j++){
 
-				if($data[$j]['A'] === 'null'|| $data[$j]['B']==='null'){
+				if(trim($data[$j]['A']) === 'null'|| trim($data[$j]['B'])==='null'){
 
 					$msg = "Mã tracking hoặc trường ngày tháng của dòng $j không tồn tại, vui lòng kiểm tra lại";
 
 					setRedirect($link,$msg, 'error');
 				}
+
+				$row_tracks = trim($data[$j]['A']);
 
 				$sql = "SELECT id FROM fs_order_uploads_detail 
 				        WHERE is_package = :is_package 
@@ -203,7 +205,7 @@
 				        LIMIT 100";
 
 				$stmt = $pdo->prepare($sql);
-				$stmt->execute(['is_package' => 0, 'tracking_code' => $search]);
+				$stmt->execute(['is_package' => 0, 'tracking_code' => $row_tracks]);
 				$results = $stmt->fetchAll();
 
 				if(empty($results)){
