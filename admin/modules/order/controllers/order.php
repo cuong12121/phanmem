@@ -198,6 +198,14 @@
 
 				$row_tracks = trim($data[$j]['A']);
 
+				$kytudefine = substr(trim($row_track), -1);
+
+				if(!in_array($kytudefine, $set_ky_tu)){
+					$kytudefine = '&';
+				}
+
+				$search = str_replace($kytudefine, '', $row_track);
+
 				$sql = "SELECT id FROM fs_order_uploads_detail 
 				        WHERE is_package = :is_package 
 				        AND tracking_code = :tracking_code 
@@ -205,7 +213,7 @@
 				        LIMIT 100";
 
 				$stmt = $pdo->prepare($sql);
-				$stmt->execute(['is_package' => 0, 'tracking_code' => $row_tracks]);
+				$stmt->execute(['is_package' => 0, 'tracking_code' => $search]);
 				$results = $stmt->fetchAll();
 
 				if(empty($results)){
