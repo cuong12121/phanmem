@@ -189,18 +189,7 @@
 
 			for($j=2;$j<=$heightRow;$j++){
 
-				var_dump($data[$j]['A']);
-
-				die;
-
-				if($data[$j]['A'] === null){
-					echo "dữ liệu là null";
-
-					die;
-				}
-				
-
-				if(is_null($data[$j]['A'])|| is_null($data[$j]['B'])){
+				if($data[$j]['A'] === 'null'|| $data[$j]['B']==='null'){
 
 					$msg = "Mã tracking hoặc trường ngày tháng của dòng $j không tồn tại, vui lòng kiểm tra lại";
 
