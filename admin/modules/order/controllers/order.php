@@ -189,6 +189,7 @@
 
 			for($j=2;$j<=$heightRow;$j++){
 
+				dd(is_null($data[$j]['A']));
 				
 
 				if(is_null($data[$j]['A'])|| is_null($data[$j]['B'])){
