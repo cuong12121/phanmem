@@ -191,7 +191,7 @@
 
 			
 
-				if(is_null($data[$j]['A'])){
+				if($data[$j]['A'] === null){
 					echo "dữ liệu là null";
 
 					die;
