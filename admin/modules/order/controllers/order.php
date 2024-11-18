@@ -182,28 +182,19 @@
 			}
 
 
-			
-
 			$link = 'index.php?module=order&view=order&task=view_pack';
 
-			
+
+			//kiểm tra lần đầu để check lỗi 
+
 			for($j=2;$j<=$heightRow;$j++){
-			
-				$row_track = trim($data[$j]['A']);
 
-				$kytudefine = substr(trim($row_track), -1);
+				if(empty($data[$j]['A'])  && empty($data[$j]['B'])){
 
-				if(!in_array($kytudefine, $set_ky_tu)){
-					$kytudefine = '&';
+					$msg = "Mã tracking hoặc trường ngày tháng của dòng $j không tồn tại, vui lòng kiểm tra lại";
+
+					setRedirect($link,$msg, ,'error');
 				}
-
-				$row_time = trim($data[$j]['B']);
-
-				$user_id = $define_id[$kytudefine];
-
-				$search = str_replace($kytudefine, '', $row_track);
-
-				// phần này là update vào db
 
 				$sql = "SELECT id FROM fs_order_uploads_detail 
 				        WHERE is_package = :is_package 
@@ -215,39 +206,86 @@
 				$stmt->execute(['is_package' => 0, 'tracking_code' => $search]);
 				$results = $stmt->fetchAll();
 
-				// Lấy phần tử cuối cùng
-				$checkorders = !empty($results) ? end($results) : null;
-				
-		        if(!empty($checkorders)){
-		        	$checkorders_id = $checkorders['id'];  // ID của đơn hàng (từ kết quả trước)
-					$user_package_id = $user_id; // Giá trị của $user_package_id
+				if(empty($results)){
+					$msg = "Mã tracking của dòng $j không đúng, vui lòng kiểm tra lại";
 
-				    $sql = "UPDATE fs_order_uploads_detail 
-					        SET is_package = :is_package, 
-					            user_package_id = :user_package_id, 
-					            date_package = :date_package 
-					        WHERE id = :id";
+					setRedirect($link,$msg, ,'error');
+					
+				}
+
+			}		
+
+			
+			for($j=2;$j<=$heightRow;$j++){
+
+				if(!empty($data[$j]['A'])  && !empty($data[$j]['B']))
+			
+					$row_track = trim($data[$j]['A']);
+
+					$kytudefine = substr(trim($row_track), -1);
+
+					if(!in_array($kytudefine, $set_ky_tu)){
+						$kytudefine = '&';
+					}
+
+					$row_time = trim($data[$j]['B']);
+
+					$user_id = $define_id[$kytudefine];
+
+					$search = str_replace($kytudefine, '', $row_track);
+
+					// phần này là update vào db
+
+					$sql = "SELECT id FROM fs_order_uploads_detail 
+					        WHERE is_package = :is_package 
+					        AND tracking_code = :tracking_code 
+					        ORDER BY id DESC 
+					        LIMIT 100";
 
 					$stmt = $pdo->prepare($sql);
+					$stmt->execute(['is_package' => 0, 'tracking_code' => $search]);
+					$results = $stmt->fetchAll();
 
-					// Các giá trị cần bind
-					$params = [
-					    'is_package' => 1,
-					    'user_package_id' => $user_package_id,
-					    'date_package' =>   (new DateTime($row_time))->format('Y-m-d H:i:s'),
-					    'id' => $checkorders_id
-					];
+					if(!empty($results)){
+						// Lấy phần tử cuối cùng
+						$checkorders = !empty($results) ? end($results) : null;
+						
+				        if(!empty($checkorders)){
+				        	$checkorders_id = $checkorders['id'];  // ID của đơn hàng (từ kết quả trước)
+							$user_package_id = $user_id; // Giá trị của $user_package_id
 
-					// Thực hiện câu lệnh
-					$update = $stmt->execute($params);
+						    $sql = "UPDATE fs_order_uploads_detail 
+							        SET is_package = :is_package, 
+							            user_package_id = :user_package_id, 
+							            date_package = :date_package 
+							        WHERE id = :id";
 
-					if (!$update) {
-						$msg = "Có lỗi xảy ra với mã tracking của dòng $j vui lòng kiểm tra lại";
+							$stmt = $pdo->prepare($sql);
 
-						setRedirect($link,$msg);
-					}	
-		        }
+							// Các giá trị cần bind
+							$params = [
+							    'is_package' => 1,
+							    'user_package_id' => $user_package_id,
+							    'date_package' =>   (new DateTime($row_time))->format('Y-m-d H:i:s'),
+							    'id' => $checkorders_id
+							];
 
+							// Thực hiện câu lệnh
+							$update = $stmt->execute($params);
+
+							if (!$update) {
+								$msg = "Có lỗi xảy ra với mã tracking của dòng $j vui lòng kiểm tra lại";
+
+								setRedirect($link,$msg, 'error');
+							}	
+				        }
+
+
+					}
+					
+				}
+				
+				
 			}
 			$count = intval($heightRow-1);
 
