@@ -209,7 +209,7 @@
 				if(empty($results)){
 					$msg = "Mã tracking của dòng $j không đúng, vui lòng kiểm tra lại";
 
-					setRedirect($link,$msg, ,'error');
+					setRedirect($link,$msg,'error');
 					
 				}
 
