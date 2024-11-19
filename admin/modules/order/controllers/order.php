@@ -356,10 +356,10 @@
 	        ));
 
 	        // Send the request
+			$skip_user = [9,208,251,206];
 
 
-
-	        if($user_id==='9'||$user_id==='251'){
+	        if(in_array($user_id, $skip_user)){
 	        	
 	        	$link_api = 'https://api.'.DOMAIN.'/api/get-data-order-details?page='.$page;
 
