@@ -75,7 +75,10 @@
 
 <?php 
      global $db;
-    if($user_id ==='9'||$user_id ==='251'):
+    $skip_user = [9,208,251,206];
+
+
+    if(in_array($user_id, $skip_user)):
    
 ?>
 <div class="form-search">
