@@ -226,6 +226,8 @@
 
 			}	
 
+			echo "pass";
+
 			die;	
 
 			
