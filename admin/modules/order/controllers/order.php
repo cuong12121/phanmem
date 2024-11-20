@@ -184,9 +184,7 @@
 
 			$link = 'index.php?module=order&view=order&task=view_pack';
 
-			dd($data);
-
-
+		
 			//kiểm tra lần đầu để check lỗi 
 
 			for($j=2;$j<=$heightRow;$j++){
@@ -199,6 +197,10 @@
 				}
 
 				$row_tracks = trim($data[$j]['A']);
+
+				if(empty($row_tracks)){
+					dd($j);
+				}
 
 				$kytudefine = substr(trim($row_track), -1);
 
@@ -225,7 +227,9 @@
 					
 				}
 
-			}		
+			}	
+
+			die;	
 
 			
 			for($j=2;$j<=$heightRow;$j++){
