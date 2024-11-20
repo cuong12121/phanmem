@@ -184,7 +184,7 @@
 
 			$link = 'index.php?module=order&view=order&task=view_pack';
 
-			dd($data[$j]['A']);
+			dd($data);
 
 
 			//kiểm tra lần đầu để check lỗi 
