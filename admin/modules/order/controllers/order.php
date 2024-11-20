@@ -225,11 +225,6 @@
 				}
 
 			}	
-
-			echo "pass";
-
-			die;	
-
 			
 			for($j=2;$j<=$heightRow;$j++){
 
