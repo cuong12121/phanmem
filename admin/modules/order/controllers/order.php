@@ -198,17 +198,14 @@
 
 				$row_tracks = trim($data[$j]['A']);
 
-				if(empty($row_tracks)){
-					dd($j);
-				}
-
-				$kytudefine = substr(trim($row_track), -1);
+			
+				$kytudefine = substr(trim($row_tracks), -1);
 
 				if(!in_array($kytudefine, $set_ky_tu)){
 					$kytudefine = '&';
 				}
 
-				$search = str_replace($kytudefine, '', $row_track);
+				$search = str_replace($kytudefine, '', $row_tracks);
 
 				$sql = "SELECT id FROM fs_order_uploads_detail 
 				        WHERE is_package = :is_package 
