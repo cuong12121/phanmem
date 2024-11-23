@@ -480,7 +480,7 @@
 
 			$user_id ='9';
 
-			$filename = 'danh_sach_don_hang dong ngay'. date("d_m_Y");
+			$filename = 'danh_sach_don_hang dong ngay'. date("d-m-Y");
 
 
 
