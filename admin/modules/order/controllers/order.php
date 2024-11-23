@@ -184,6 +184,8 @@
 
 			$link = 'index.php?module=order&view=order&task=view_pack';
 
+			$error = '';
+
 		
 			//kiểm tra lần đầu để check lỗi 
 
@@ -191,9 +193,11 @@
 
 				if(trim($data[$j]['A']) === 'null'|| trim($data[$j]['B'])==='null'){
 
-					$msg = "Mã tracking hoặc trường ngày tháng của dòng $j không tồn tại, vui lòng kiểm tra lại";
+					$error .="Mã tracking hoặc trường ngày tháng của dòng $j không tồn tại, vui lòng kiểm tra lại <br>";
 
-					setRedirect($link,$msg, 'error');
+					// $msg = "";
+
+					// setRedirect($link,$msg, 'error');
 				}
 
 				$row_tracks = trim($data[$j]['A']);
@@ -218,13 +222,16 @@
 				$results = $stmt->fetchAll();
 
 				if(empty($results)){
-					$msg = "Mã tracking của dòng $j không đúng, vui lòng kiểm tra lại";
 
-					setRedirect($link,$msg,'error');
+					$error .="Mã tracking của dòng $j không đúng, vui lòng kiểm tra lại <br>";
 					
 				}
 
 			}	
+
+			if(!empty($error)){
+				setRedirect($link,$error,'error');
+			}
 			
 			for($j=2;$j<=$heightRow;$j++){
 
