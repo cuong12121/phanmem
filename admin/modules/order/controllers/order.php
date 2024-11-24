@@ -247,6 +247,10 @@
 
 					$row_time = trim($data[$j]['B']);
 
+					dd((new DateTime($row_time))->format('Y-m-d H:i:s'));
+
+					die;
+
 					$user_id = $define_id[$kytudefine];
 
 					$search = str_replace($kytudefine, '', $row_track);
