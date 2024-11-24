@@ -249,7 +249,9 @@
 
 					$time = DateTime::createFromFormat('d-m-Y H:i:s',$row_time);
 
-					dd($time->format('Y-m-d, H:i:s')) ;
+					dd($row_time);
+
+					// dd($time->format('Y-m-d, H:i:s')) ;
 
 					die;
 
