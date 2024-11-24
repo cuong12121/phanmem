@@ -245,15 +245,7 @@
 						$kytudefine = '&';
 					}
 
-					$row_time = trim($data[$j]['B']);
-
-					$time = DateTime::createFromFormat('d-m-Y H:i:s',$row_time);
-
-					dd($row_time);
-
-					// dd($time->format('Y-m-d, H:i:s')) ;
-
-					die;
+					$row_time =  $row_time = str_replace('/', '-', trim($data[$j]['B']));
 
 					$user_id = $define_id[$kytudefine];
 
