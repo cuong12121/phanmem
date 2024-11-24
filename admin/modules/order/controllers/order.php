@@ -247,7 +247,7 @@
 
 					$row_time = trim($data[$j]['B']);
 
-					dd((new DateTime($row_time))->format('Y-m-d H:i:s'));
+					dd($row_time );
 
 					die;
 
