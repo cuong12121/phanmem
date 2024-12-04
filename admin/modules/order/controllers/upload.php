@@ -576,6 +576,12 @@
 	            array_push($mavandons, $maVanDon[0]);
 			}
 
+			$sku =  $this->returnDataPDF($filePath);
+
+			var_dump($sku);
+
+			die();
+
 			
             var_dump($mavandons);
 
