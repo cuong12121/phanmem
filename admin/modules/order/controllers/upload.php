@@ -554,7 +554,7 @@
 		{
 			$model = $this->model;
 
-			$filePath = PATH_BASE.'files/t2.pdf';
+			$filePath = PATH_BASE.'files/t5.pdf';
 
 			$number_page = shell_exec('pdftk '.$filePath.' dump_data | grep NumberOfPages');
 
