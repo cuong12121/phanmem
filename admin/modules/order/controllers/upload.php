@@ -577,17 +577,17 @@
 			}
 
 			
-            // var_dump($mavandons);
+            var_dump($mavandons);
 
-		    $filePathex = PATH_BASE.'/files/t1.xlsx';
+		    // $filePathex = PATH_BASE.'/files/t1.xlsx';
 
-		    $sku_row = 'S';
+		    // $sku_row = 'S';
 
-		    $mvd = 'F';
+		    // $mvd = 'F';
 
-            $data = $model->showDataExcel($filePathex,$sku_row, $mvd);
+            // $data = $model->showDataExcel($filePathex,$sku_row, $mvd);
 
-            var_dump($data['maVanDon']);
+            // var_dump($data['maVanDon']);
 
             die;
 		}
