@@ -356,7 +356,7 @@
 			$today = date('Y-m-d');  // Today's date
 
 			// Prepare a dynamic SQL query
-			$placeholders = implode(',', array_fill(0, count($ids), '?'));
+			$placeholders = $ids;
 
 			// $query = " SELECT * FROM run_check_file_order_pdf_excel
    			// 			  WHERE user_id = 208";
