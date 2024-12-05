@@ -354,13 +354,8 @@
 			$start_of_month = date('Y-m-01');  // First day of the current month
 			$today = date('Y-m-d');  // Today's date
 
-			// Prepare a dynamic SQL query
-			
 
-			// $query = " SELECT * FROM run_check_file_order_pdf_excel
-   			// 			  WHERE user_id = 208";
-
-			$query = "SELECT id FROM fs_order_uploads_detail WHERE user_package_id IN  ('252') AND date_package BETWEEN '$start_of_month' AND '$today'";
+			$query = "SELECT id FROM fs_order_uploads_detail WHERE user_package_id = 252 AND date_package BETWEEN '$start_of_month' AND '$today'";
 
 			$sql = $db->query($query);
 
