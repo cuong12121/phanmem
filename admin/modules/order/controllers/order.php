@@ -347,7 +347,20 @@
 
 		function show_complete_box()
 		{
-			
+			$define_id = [252, 253, 254,255, 251,9,256,257,258, 259, 260];
+
+			$data = [];
+
+			foreach ($define_id as $key => $value) {
+				$data[$value] = $this->return_complete_box($define_id);
+			}
+
+			dd($data);
+
+		}
+
+		function return_complete_box($id)
+		{
 			global $db;
 
 			
@@ -355,15 +368,13 @@
 			$today = date('Y-m-d');  // Today's date
 
 
-			$query = "SELECT id FROM fs_order_uploads_detail WHERE user_package_id = 252 AND date_package BETWEEN '$start_of_month' AND '$today'";
+			$query = "SELECT id FROM fs_order_uploads_detail WHERE user_package_id = '$id' AND date_package BETWEEN '$start_of_month' AND '$today'";
 
 			$sql = $db->query($query);
 
 			$result = $db->getTotal();
 
-			dd($result);
-
-
+			return $result;
 		}
 
 		function details()
