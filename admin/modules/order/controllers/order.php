@@ -345,6 +345,36 @@
   
 		}
 
+		function show_complete_box()
+		{
+			
+			global $db;
+
+			$ids = [252,253,254,255,251,9,256,257,258,259,260];
+
+			$start_of_month = date('Y-m-01');  // First day of the current month
+			$today = date('Y-m-d');  // Today's date
+
+			// Prepare a dynamic SQL query
+			$placeholders = implode(',', array_fill(0, count($ids), '?'));
+
+			// $query = " SELECT * FROM run_check_file_order_pdf_excel
+   			// 			  WHERE user_id = 208";
+
+
+
+			$query = "SELECT * FROM fs_order_uploads_detail WHERE user_package_id IN ($placeholders) AND date_package BETWEEN '$start_of_month' AND '$today'";
+
+			$sql = $db->query($querys);
+
+			$result = $db->getObjectList();
+
+			dd($result);
+
+
+
+		}
+
 		function details()
 		{
 			$page = !empty($_GET['page'])?$_GET['page']:1;
