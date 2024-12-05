@@ -352,7 +352,7 @@
 			$data = [];
 
 			foreach ($define_id as $key => $value) {
-				$data[$value] = $this->return_complete_box($define_id);
+				$data[$value] = $this->return_complete_box($value);
 			}
 
 			dd($data);
