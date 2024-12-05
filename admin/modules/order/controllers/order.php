@@ -365,11 +365,11 @@
 
 			$query = "SELECT * FROM fs_order_uploads_detail WHERE user_package_id IN ($placeholders) AND date_package BETWEEN '$start_of_month' AND '$today'";
 
-			$sql = $db->query($query);
+			// $sql = $db->query($query);
 
-			$result = $db->getObjectList();
+			// $result = $db->getObjectList();
 
-			dd($result);
+			dd($query);
 
 
 
