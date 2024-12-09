@@ -348,7 +348,7 @@
 		function create_data_order_for_redis()
 		{
 			global $db;
-			$start_of_month = date('Y-m-09');  // First day of the current month
+			$start_of_month = date('Y-m-06');  // First day of the current month
 
 			$today = date('Y-m-d');  // Today's date
 
