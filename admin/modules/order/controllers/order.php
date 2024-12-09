@@ -345,6 +345,22 @@
   
 		}
 
+		function create_data_order_for_redis()
+		{
+			$start_of_month = date('Y-m-09');  // First day of the current month
+
+			$today = date('Y-m-d');  // Today's date
+
+			$query = "SELECT * FROM fs_order_uploads_detail WHERE user_package_id = '$id' AND date_package BETWEEN '$start_of_month' AND '$today'";
+
+			$sql = $db->query($query);
+
+			$result = $db->getObjectList();
+
+			dd($result);
+
+		}
+
 		function show_complete_box()
 		{
 			$define_id = [252, 253, 254,255, 251,9,256,257,258, 259, 260];
