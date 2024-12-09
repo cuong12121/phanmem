@@ -395,9 +395,8 @@
 			if ($keyExists) {
 			    $redis->del("complete_box");
 
-			    $redis->set("complete_box", $results);
-
 			} 	
+			$redis->set("complete_box", $results);
 
 		}
 
