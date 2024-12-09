@@ -356,7 +356,9 @@
 
 			$sql = $db->query($query);
 
-			$result = $db->getObjectList();
+			$result = $db->fetch_array();
+
+			dd($result);
 
 			$redis = new Redis();
 
