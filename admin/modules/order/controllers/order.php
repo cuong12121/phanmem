@@ -381,11 +381,7 @@
 
 			$stmt = $pdo->prepare($sql);
 			$stmt->execute(['start_of_month' => $start_of_month, 'today' => $today]);
-			$results = $stmt->fetchAll();
-
-			
-
-			dd($results);
+			$result = $stmt->fetchAll();
 
 			$redis = new Redis();
 
