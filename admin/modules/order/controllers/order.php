@@ -352,13 +352,27 @@
 
 			$today = date('Y-m-d');  // Today's date
 
-			$query = "SELECT * FROM fs_order_uploads_detail WHERE user_package_id = '255' AND date_package BETWEEN '$start_of_month' AND '$today'";
+			$query = "SELECT * FROM fs_order_uploads_detail WHERE user_package_id  IN  ('252','253','254','255','9','256','257','258','259','260') AND date_package BETWEEN '$start_of_month' AND '$today'";
 
 			$sql = $db->query($query);
 
 			$result = $db->getObjectList();
 
-			dd($result);
+			$redis = new Redis();
+
+		    // Thiết lập kết nối
+		    $redis->connect('127.0.0.1', 6379);
+
+		    $results = json_decode($result);
+
+		    $keyExists = $redis->exists('complete_box');
+
+			if ($keyExists) {
+			    $redis->del("complete_box");
+
+			    $redis->set("complete_box", $results);
+
+			} 	
 
 		}
 
