@@ -388,7 +388,7 @@
 		    // Thiết lập kết nối
 		    $redis->connect('127.0.0.1', 6379);
 
-		    $results = json_decode($result);
+		    $results = json_encode($result);
 
 		    $keyExists = $redis->exists('complete_box');
 
