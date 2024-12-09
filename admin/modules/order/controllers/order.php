@@ -352,7 +352,7 @@
 
 			$today = date('Y-m-06');  // Today's date
 
-			$query = "SELECT * FROM fs_order_uploads_detail WHERE user_package_id = '252' AND date_package BETWEEN '$start_of_month' AND '$today'";
+			$query = "SELECT * FROM fs_order_uploads_detail WHERE user_package_id = '255' AND date_package BETWEEN '$start_of_month' AND '$today'";
 
 			$sql = $db->query($query);
 
