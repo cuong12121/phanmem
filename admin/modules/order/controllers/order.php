@@ -347,18 +347,45 @@
 
 		function create_data_order_for_redis()
 		{
-			global $db;
+			
 			$start_of_month = date('Y-m-01');  // First day of the current month
 
 			$today = date('Y-m-d');  // Today's date
 
-			$query = "SELECT * FROM fs_order_uploads_detail WHERE user_package_id  IN  ('252','253','254','255','9','256','257','258','259','260') AND date_package BETWEEN '$start_of_month' AND '$today'";
+			$config = require PATH_BASE.'/includes/configs.php';
 
-			$sql = $db->query($query);
+			// thử
 
-			$result = $db->fetch_array();
+			// Kết nối PDO
+			$host = $config['dbHost'];
+			$db = $config['dbName'];
+			$user = $config['dbUser'];
+			$pass = $config['dbPass'];
+			$charset = 'utf8mb4';
 
-			dd($result);
+			$dsn = "mysql:host=$host;dbname=$db;charset=$charset";
+			$options = [
+			    PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
+			    PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
+			    PDO::ATTR_EMULATE_PREPARES   => false,
+			];
+
+			try {
+			    $pdo = new PDO($dsn, $user, $pass, $options);
+			} catch (\PDOException $e) {
+			    throw new \PDOException($e->getMessage(), (int)$e->getCode());
+			}
+
+
+			$sql = "SELECT * FROM fs_order_uploads_detail WHERE user_package_id  IN  ('252','253','254','255','9','256','257','258','259','260') AND date_package BETWEEN :start_of_month AND :today";
+
+			$stmt = $pdo->prepare($sql);
+			$stmt->execute(['start_of_month' => $start_of_month, 'today' => $today]);
+			$results = $stmt->fetchAll();
+
+			
+
+			dd($results);
 
 			$redis = new Redis();
 
