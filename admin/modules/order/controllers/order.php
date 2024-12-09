@@ -398,6 +398,8 @@
 			} 	
 			$redis->set("complete_box", $results);
 
+			echo "thành công";
+
 		}
 
 		function show_complete_box()
