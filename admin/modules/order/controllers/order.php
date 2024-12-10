@@ -354,7 +354,7 @@
 
 			$config = require PATH_BASE.'/includes/configs.php';
 
-			// thử
+			// th
 
 			// Kết nối PDO
 			$host = $config['dbHost'];
@@ -413,7 +413,11 @@
 
 		    $data_code = json_decode($data);
 
-		    dd($data_code);
+		    $result = array_filter($data_code, function($item) {
+			    return $item->user_package_id == 254;
+			});
+
+		    dd($result);
 
 			// $define_id = [252, 253, 254,255, 251,9,256,257,258, 259, 260];
 
