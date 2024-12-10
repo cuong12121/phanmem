@@ -404,15 +404,26 @@
 
 		function show_complete_box()
 		{
-			$define_id = [252, 253, 254,255, 251,9,256,257,258, 259, 260];
+			$redis = new Redis();
 
-			$data = [];
+		    // Thiết lập kết nối
+		    $redis->connect('127.0.0.1', 6379);
 
-			foreach ($define_id as $key => $value) {
-				$data[$value] = $this->return_complete_box($value);
-			}
+		    $data = $redis->get("complete_box");
 
-			dd($data);
+		    $data_code = json_decode($data);
+
+		    dd($data_code);
+
+			// $define_id = [252, 253, 254,255, 251,9,256,257,258, 259, 260];
+
+			// $data = [];
+
+			// foreach ($define_id as $key => $value) {
+			// 	$data[$value] = $this->return_complete_box($value);
+			// }
+
+			// dd($data);
 
 		}
 
