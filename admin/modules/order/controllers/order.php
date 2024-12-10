@@ -424,7 +424,7 @@
 		function show_complete_box()
 		{
 
-			$id = 254
+			$id = 254;
 
 			$get_data = $this->return_list_total_complete_box($id);
 
