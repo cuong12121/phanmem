@@ -402,7 +402,7 @@
 
 		}
 
-		function show_complete_box()
+		function return_list_total_complete_box($id)
 		{
 			$redis = new Redis();
 
@@ -413,11 +413,22 @@
 
 		    $data_code = json_decode($data);
 
-		    $result = array_filter($data_code, function($item) {
-			    return $item->user_package_id == 254;
+		    $result = array_filter($data_code, function($item) use($id) {
+			    return $item->user_package_id == $id;
 			});
 
-		    dd($result);
+			return count($result);
+
+		}
+
+		function show_complete_box()
+		{
+
+			$id = 254
+
+			$get_data = $this->return_list_total_complete_box($id);
+
+			dd($get_data);
 
 			// $define_id = [252, 253, 254,255, 251,9,256,257,258, 259, 260];
 
