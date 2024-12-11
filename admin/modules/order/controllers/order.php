@@ -605,8 +605,6 @@
 			    // Lưu ảnh vào thư mục
 			    $file = file_put_contents($savePath, $imageContent);
 
-			    dd($file);
-
 			    echo "Ảnh đã được lưu thành công vào: " . $savePath;
 			} catch (Exception $e) {
 			    echo "Lỗi: " . $e->getMessage();
