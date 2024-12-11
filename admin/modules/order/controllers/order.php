@@ -582,10 +582,41 @@
 			// Chuyển chuỗi JSON thành mảng PHP
 			$data = json_decode($jsonContent, true); // true để trả về mảng, false để trả về đối tượng
 
-			// Hiển thị dữ liệu
-			echo "<pre>";
-			print_r($data);
-			echo "</pre>";
+			// Đường dẫn URL của ảnh
+			$imageUrl = $data[1]['image'];
+
+			// Tên file lưu trữ
+			$imageName = $data[1]['model'].'jpg'; // Lấy tên file từ URL
+			$savePath = __DIR__ . "/images/products/2024/12/11/" . $imageName; // Đường dẫn thư mục cần lưu
+
+			// Tạo thư mục nếu chưa tồn tại
+			if (!is_dir(__DIR__ . "/images/products/2024/12/11")) {
+			    mkdir(__DIR__ . "/images/products/2024/12/11", 0755, true);
+			}
+
+			try {
+			    // Tải nội dung ảnh từ URL
+			    $imageContent = file_get_contents($imageUrl);
+
+			    if ($imageContent === false) {
+			        throw new Exception("Không thể tải ảnh từ URL.");
+			    }
+
+			    // Lưu ảnh vào thư mục
+			    file_put_contents($savePath, $imageContent);
+			    echo "Ảnh đã được lưu thành công vào: " . $savePath;
+			} catch (Exception $e) {
+			    echo "Lỗi: " . $e->getMessage();
+			}
+
+			
+
+			// // Hiển thị dữ liệu
+			// echo "<pre>";
+			// print_r($data[1]['image']);
+
+
+			// echo "</pre>";
 		}
 
 
