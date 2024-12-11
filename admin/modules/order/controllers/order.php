@@ -582,16 +582,18 @@
 			// Chuyển chuỗi JSON thành mảng PHP
 			$data = json_decode($jsonContent, true); // true để trả về mảng, false để trả về đối tượng
 
+			dd($data);
+
 			// Đường dẫn URL của ảnh
 			$imageUrl = $data[1]['image'];
 
 			// Tên file lưu trữ
 			$imageName = $data[1]['model'].'.jpg'; // Lấy tên file từ URL
-			$savePath = PATH_BASE . "/images/products/2024/12/11/" . $imageName; // Đường dẫn thư mục cần lưu
+			$savePath = PATH_BASE . "images/products/2024/12/11/" . $imageName; // Đường dẫn thư mục cần lưu
 
 			// Tạo thư mục nếu chưa tồn tại
-			if (!is_dir(PATH_BASE . "/images/products/2024/12/11")) {
-			    mkdir(PATH_BASE . "/images/products/2024/12/11", 0755, true);
+			if (!is_dir(PATH_BASE . "images/products/2024/12/11")) {
+			    mkdir(PATH_BASE . "images/products/2024/12/11", 0755, true);
 			}
 
 			try {
@@ -620,6 +622,33 @@
 			// echo "</pre>";
 		}
 
+		function convert_error(){
+
+			$config = require PATH_BASE.'/includes/configs.php';
+
+			// th
+
+			// Kết nối PDO
+			$host = $config['dbHost'];
+			$db = $config['dbName'];
+			$user = $config['dbUser'];
+			$pass = $config['dbPass'];
+			$charset = 'utf8mb4';
+
+			$dsn = "mysql:host=$host;dbname=$db;charset=$charset";
+			$options = [
+			    PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
+			    PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
+			    PDO::ATTR_EMULATE_PREPARES   => false,
+			];
+
+			try {
+			    $pdo = new PDO($dsn, $user, $pass, $options);
+			} catch (\PDOException $e) {
+			    throw new \PDOException($e->getMessage(), (int)$e->getCode());
+			}
+
+		}
 
 
 		function search_order_by_Name()
