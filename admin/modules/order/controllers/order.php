@@ -586,7 +586,7 @@
 			$imageUrl = $data[1]['image'];
 
 			// Tên file lưu trữ
-			$imageName = $data[1]['model'].'jpg'; // Lấy tên file từ URL
+			$imageName = $data[1]['model'].'.jpg'; // Lấy tên file từ URL
 			$savePath = __DIR__ . "/images/products/2024/12/11/" . $imageName; // Đường dẫn thư mục cần lưu
 
 			// Tạo thư mục nếu chưa tồn tại
