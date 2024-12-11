@@ -587,11 +587,11 @@
 
 			// Tên file lưu trữ
 			$imageName = $data[1]['model'].'.jpg'; // Lấy tên file từ URL
-			$savePath = __DIR__ . "/images/products/2024/12/11/" . $imageName; // Đường dẫn thư mục cần lưu
+			$savePath = PATH_BASE . "/images/products/2024/12/11/" . $imageName; // Đường dẫn thư mục cần lưu
 
 			// Tạo thư mục nếu chưa tồn tại
-			if (!is_dir(__DIR__ . "/images/products/2024/12/11")) {
-			    mkdir(__DIR__ . "/images/products/2024/12/11", 0755, true);
+			if (!is_dir(PATH_BASE . "/images/products/2024/12/11")) {
+			    mkdir(PATH_BASE . "/images/products/2024/12/11", 0755, true);
 			}
 
 			try {
