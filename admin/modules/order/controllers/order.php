@@ -446,10 +446,9 @@
 		{
 			global $db;
 
-			
 			$start_of_month = date('Y-m-01');  // First day of the current month
-			$today = date('Y-m-d');  // Today's date
 
+			$today = date('Y-m-d');  // Today's date
 
 			$query = "SELECT id FROM fs_order_uploads_detail WHERE user_package_id = '$id' AND date_package BETWEEN '$start_of_month' AND '$today'";
 
@@ -570,6 +569,23 @@
 
 	        include 'modules/'.$this->module.'/views/'.$this->view.'/list-pd.php';
 
+		}
+
+		function convert_json_data()
+		{
+			// Đường dẫn tới tệp JSON
+			$file = 'https://dienmayai.com/files/data.json';
+
+			// Đọc nội dung tệp JSON
+			$jsonContent = file_get_contents($file);
+
+			// Chuyển chuỗi JSON thành mảng PHP
+			$data = json_decode($jsonContent, true); // true để trả về mảng, false để trả về đối tượng
+
+			// Hiển thị dữ liệu
+			echo "<pre>";
+			print_r($data);
+			echo "</pre>";
 		}
 
 
