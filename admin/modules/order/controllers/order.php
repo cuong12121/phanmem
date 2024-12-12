@@ -643,7 +643,7 @@
 				$name = trim($value['name']);
 				$image = $this->convert_json_data($value['image'], $model);
 
-				dd($image);
+
 				$sql = "UPDATE fs_products 
 				        SET code = :model, 
 				            name = :name, 
@@ -661,6 +661,8 @@
 				];
 
 				$update = $stmt->execute($params);
+
+				dd($update);
 
 				if ($update) {
 					echo "update thành công $model! ";		
