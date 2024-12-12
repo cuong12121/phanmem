@@ -575,7 +575,7 @@
 		{
 			
 			// Đường dẫn URL của ảnh
-			$imageUrl = $data[1]['image'];
+			
 
 			// Tên file lưu trữ
 			$imageName = $data[1]['model'].'.jpg'; // Lấy tên file từ URL
