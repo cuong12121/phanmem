@@ -742,7 +742,7 @@ class TemplateHelper
 								if($have_link_edit)
 									$html_body .= '<a href="'.$link_view.'"><img onerror="'.$error_img.'" src="'.URL_ROOT.$link_img.'" '.$html_size.' /></a>';
 								else
-									$html_body .= '<img class="show_all_image" onclick="show_all_image('.$row -> id.')" onerror="'.$error_img.'" src="'.URL_ROOT.$link_img.'" '.$html_size.' />';
+									$html_body .= '<img class="show_all_image" onclick="show_all_image('.$row -> id.')" onerror="'.$error_img.'" src="'$link_img.'" '.$html_size.' />';
 								break;
 								case 'order':
 								$estore_code = 'DH';
