@@ -571,29 +571,19 @@
 
 		}
 
-		function convert_json_data()
+		function convert_json_data($imageUrl)
 		{
-			// Đường dẫn tới tệp JSON
-			$file = 'https://dienmayai.com/files/data.json';
-
-			// Đọc nội dung tệp JSON
-			$jsonContent = file_get_contents($file);
-
-			// Chuyển chuỗi JSON thành mảng PHP
-			$data = json_decode($jsonContent, true); // true để trả về mảng, false để trả về đối tượng
-
-			dd($data);
-
+			
 			// Đường dẫn URL của ảnh
 			$imageUrl = $data[1]['image'];
 
 			// Tên file lưu trữ
 			$imageName = $data[1]['model'].'.jpg'; // Lấy tên file từ URL
-			$savePath = PATH_BASE . "images/products/2024/12/11/" . $imageName; // Đường dẫn thư mục cần lưu
+			$savePath = PATH_BASE . "images/products/2024/12/12/" . $imageName; // Đường dẫn thư mục cần lưu
 
 			// Tạo thư mục nếu chưa tồn tại
-			if (!is_dir(PATH_BASE . "images/products/2024/12/11")) {
-			    mkdir(PATH_BASE . "images/products/2024/12/11", 0755, true);
+			if (!is_dir(PATH_BASE . "images/products/2024/12/12")) {
+			    mkdir(PATH_BASE . "images/products/2024/12/12", 0755, true);
 			}
 
 			try {
@@ -611,22 +601,12 @@
 			} catch (Exception $e) {
 			    echo "Lỗi: " . $e->getMessage();
 			}
-
-			
-
-			// // Hiển thị dữ liệu
-			// echo "<pre>";
-			// print_r($data[1]['image']);
-
-
-			// echo "</pre>";
+			return $savePath;
 		}
 
 		function convert_error(){
 
 			$config = require PATH_BASE.'/includes/configs.php';
-
-			// th
 
 			// Kết nối PDO
 			$host = $config['dbHost'];
@@ -646,6 +626,47 @@
 			    $pdo = new PDO($dsn, $user, $pass, $options);
 			} catch (\PDOException $e) {
 			    throw new \PDOException($e->getMessage(), (int)$e->getCode());
+			}
+
+			// Đường dẫn tới tệp JSON
+			$file = 'https://dienmayai.com/files/data.json';
+
+			// Đọc nội dung tệp JSON
+			$jsonContent = file_get_contents($file);
+
+			// Chuyển chuỗi JSON thành mảng PHP
+			$data = json_decode($jsonContent, true); // true để trả về mảng, false để trả về đối tượng
+
+
+			foreach ($data as $key => $value) {
+				$model = trim($value['model']);
+				$name = trim($value['name']);
+				$image = $this->convert_json_data($value['image']);
+				$sql = "UPDATE fs_products 
+				        SET code = :model, 
+				            name = :name, 
+				            image = :image 
+				        WHERE barcode = :id";
+
+				$stmt = $pdo->prepare($sql);
+
+				// Các giá trị cần bind
+				$params = [
+				    'model' => $model,
+				    'name' => $name,
+				    'image' => $image,
+				   
+				];
+
+				$update = $stmt->execute($params);
+
+				if ($update) {
+					echo "update thành công $model! ";		
+
+
+				}
+				die;		
+
 			}
 
 		}
