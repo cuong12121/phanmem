@@ -660,9 +660,9 @@
 				   
 				];
 
-				// $update = $stmt->execute($params);
+				$update = $stmt->execute($params);
 
-				dd($params);
+				dd($update);
 
 				if ($update) {
 					echo "update thành công $model! ";		
