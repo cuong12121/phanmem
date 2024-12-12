@@ -646,7 +646,7 @@
 				        SET code = :model, 
 				            name = :name, 
 				            image = :image 
-				        WHERE barcode = :id";
+				        WHERE barcode = :model";
 
 				$stmt = $pdo->prepare($sql);
 
