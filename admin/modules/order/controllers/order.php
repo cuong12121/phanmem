@@ -571,14 +571,14 @@
 
 		}
 
-		function convert_json_data($imageUrl)
+		function convert_json_data($imageUrl, $model)
 		{
 			
 			// Đường dẫn URL của ảnh
 			
 
 			// Tên file lưu trữ
-			$imageName = $data[1]['model'].'.jpg'; // Lấy tên file từ URL
+			$imageName = $model.'.jpg'; // Lấy tên file từ URL
 			$savePath = PATH_BASE . "images/products/2024/12/12/" . $imageName; // Đường dẫn thư mục cần lưu
 
 			// Tạo thư mục nếu chưa tồn tại
@@ -641,7 +641,7 @@
 			foreach ($data as $key => $value) {
 				$model = trim($value['model']);
 				$name = trim($value['name']);
-				$image = $this->convert_json_data($value['image']);
+				$image = $this->convert_json_data($value['image'], $model);
 				$sql = "UPDATE fs_products 
 				        SET code = :model, 
 				            name = :name, 
