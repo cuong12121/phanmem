@@ -642,13 +642,14 @@
 				$model = trim($value['model']);
 				$name = trim($value['name']);
 				$image = $this->convert_json_data($value['image'], $model);
+				$barcode = trim($value['model']);
 
 
 				$sql = "UPDATE fs_products 
 				        SET code = :model, 
 				            name = :name, 
 				            image = :image 
-				        WHERE barcode = :model";
+				        WHERE barcode = :barcode";
 
 				$stmt = $pdo->prepare($sql);
 
@@ -657,6 +658,7 @@
 				    'model' => $model,
 				    'name' => $name,
 				    'image' => $image,
+				    'barcode'=>$barcode,
 				   
 				];
 
