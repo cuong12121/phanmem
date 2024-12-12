@@ -641,6 +641,8 @@
 			foreach ($data as $key => $value) {
 				$model = trim($value['model']);
 				$name = trim($value['name']);
+				dd($value['image']);
+				
 				$image =  str_replace('/www/wwwroot/dienmayai.com/', '', $this->convert_json_data($value['image'], $model)) ;
 				$barcode = trim($value['model']);
 
