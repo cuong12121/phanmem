@@ -664,8 +664,7 @@
 
 				$update = $stmt->execute($params);
 
-				dd($update);
-
+				
 				if ($update) {
 					echo "update thành công $model! ";		
 
