@@ -637,6 +637,8 @@
 			// Chuyển chuỗi JSON thành mảng PHP
 			$data = json_decode($jsonContent, true); // true để trả về mảng, false để trả về đối tượng
 
+			$dem = 0;
+
 			foreach ($data as $key => $value) {
 				$model = trim($value['model']);
 				$name = trim($value['name']);
@@ -666,11 +668,15 @@
 
 				
 				if ($update) {
-					echo "update thành công $model! ";		
-				}
-				die;		
 
+					$dem++;
+						
+				}
+						
 			}
+			echo "update thành công $dem sản phẩm" ;
+
+
 
 		}
 
