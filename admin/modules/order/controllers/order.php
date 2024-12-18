@@ -637,14 +637,11 @@
 			// Chuyển chuỗi JSON thành mảng PHP
 			$data = json_decode($jsonContent, true); // true để trả về mảng, false để trả về đối tượng
 
-			dd($data);
-
-
 			foreach ($data as $key => $value) {
 				$model = trim($value['model']);
 				$name = trim($value['name']);
 				
-				$image =  str_replace('/www/wwwroot/dienmayai.com/', '', $this->convert_json_data($value['image'], $model)) ;
+				$image =  'https://dienmayai.com/images/products/2024/12/12'.$model.'.jpg';
 				$barcode = trim($value['model']);
 
 
@@ -670,8 +667,6 @@
 				
 				if ($update) {
 					echo "update thành công $model! ";		
-
-
 				}
 				die;		
 
