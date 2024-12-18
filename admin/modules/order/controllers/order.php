@@ -644,15 +644,15 @@
 
 				$model = trim($value['model']);
 
-				$gia_nhap =  !empty($value['gia_nhap'])?str_replace('.', '', trim($value['gia_nhap'])):'';
+				// $gia_nhap =  !empty($value['gia_nhap'])?str_replace('.', '', trim($value['gia_nhap'])):'';
 
-				$gia_ban_le = !empty($value['gia_ban_le'])?str_replace('.', '', trim($value['gia_ban_le'])):'';
+				// $gia_ban_le = !empty($value['gia_ban_le'])?str_replace('.', '', trim($value['gia_ban_le'])):'';
 
-				$gia_dong_goi = !empty($value['gia_dong_goi'])?str_replace('.', '', trim($value['gia_dong_goi'])):'';
+				// $gia_dong_goi = !empty($value['gia_dong_goi'])?str_replace('.', '', trim($value['gia_dong_goi'])):'';
 
-				$gia_ban_thap_nhat = !empty($value['gia_ban_thap_nhat'])?str_replace('.', '', trim($value['gia_ban_thap_nhat'])):'';
+				// $gia_ban_thap_nhat = !empty($value['gia_ban_thap_nhat'])?str_replace('.', '', trim($value['gia_ban_thap_nhat'])):'';
 				
-				$barcode = trim($value['model']);
+				$barcode = $model;
 
 
 				$sql = "UPDATE fs_products 
