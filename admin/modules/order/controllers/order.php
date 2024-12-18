@@ -639,7 +639,7 @@
 
 			"<pre>";
 
-			var_dump($data);
+			print_r($data);
 
 			"</pre>";
 
