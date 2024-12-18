@@ -637,57 +637,52 @@
 			// Chuyển chuỗi JSON thành mảng PHP
 			$data = json_decode($jsonContent, true); // true để trả về mảng, false để trả về đối tượng
 
-			"<pre>";
-
-			print_r($data);
-
-			"</pre>";
-
-			die;
-
-
 			$dem = 0;
 
 			foreach ($data as $key => $value) {
+
+
 				$model = trim($value['model']);
 
-				$gia_nhap =  !empty($value['gia_nhap'])?str_replace('.', '', trim($value['gia_nhap'])):'';
+				echo $model.'<br>';
 
-				$gia_ban_le = !empty($value['gia_ban_le'])?str_replace('.', '', trim($value['gia_ban_le'])):'';
+				// $gia_nhap =  !empty($value['gia_nhap'])?str_replace('.', '', trim($value['gia_nhap'])):'';
 
-				$gia_dong_goi = !empty($value['gia_dong_goi'])?str_replace('.', '', trim($value['gia_dong_goi'])):'';
+				// $gia_ban_le = !empty($value['gia_ban_le'])?str_replace('.', '', trim($value['gia_ban_le'])):'';
 
-				$gia_ban_thap_nhat = !empty($value['gia_ban_thap_nhat'])?str_replace('.', '', trim($value['gia_ban_thap_nhat'])):'';
+				// $gia_dong_goi = !empty($value['gia_dong_goi'])?str_replace('.', '', trim($value['gia_dong_goi'])):'';
+
+				// $gia_ban_thap_nhat = !empty($value['gia_ban_thap_nhat'])?str_replace('.', '', trim($value['gia_ban_thap_nhat'])):'';
 				
-				$barcode = trim($value['model']);
+				// $barcode = trim($value['model']);
 
 
-				$sql = "UPDATE fs_products 
-				        SET code = :model, 
+				// $sql = "UPDATE fs_products 
+				//         SET code = :model, 
 				           
-				        WHERE barcode = :barcode";
+				//         WHERE barcode = :barcode";
 
-				$stmt = $pdo->prepare($sql);
+				// $stmt = $pdo->prepare($sql);
 
-				// Các giá trị cần bind
-				$params = [
-				    'model' => $model,
+				// // Các giá trị cần bind
+				// $params = [
+				//     'model' => $model,
 				   
-				    'barcode'=>$barcode,
+				//     'barcode'=>$barcode,
 				   
-				];
+				// ];
 
-				$update = $stmt->execute($params);
+				// $update = $stmt->execute($params);
 
 				
-				if ($update) {
+				// if ($update) {
 
-					$dem++;
+				// 	$dem++;
 						
-				}
+				// }
 						
 			}
-			echo "update thành công $dem sản phẩm" ;
+			// echo "update thành công $dem sản phẩm" ;
 
 
 
