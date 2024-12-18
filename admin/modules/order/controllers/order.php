@@ -656,7 +656,7 @@
 
 
 				$sql = "UPDATE fs_products 
-				        SET code = :model, 
+				        SET code = :model
 				        WHERE barcode = :barcode";
 
 				$stmt = $pdo->prepare($sql);
@@ -665,7 +665,7 @@
 				$params = [
 				    'model' =>$model,
 				   
-				    'barcode'=>$barcode,
+				    'barcode'=>$barcode
 				   
 				];
 
