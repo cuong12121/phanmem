@@ -637,31 +637,37 @@
 			// Chuyển chuỗi JSON thành mảng PHP
 			$data = json_decode($jsonContent, true); // true để trả về mảng, false để trả về đối tượng
 
-			dd($data);
-
 			$dem = 0;
 
 			foreach ($data as $key => $value) {
 				$model = trim($value['model']);
-				$name = trim($value['name']);
+
+				$gia_nhap =  !empty($value['gia_nhap'])?str_replace('.', '', trim($value['gia_nhap'])):'';
+
+				$gia_ban_le = !empty($value['gia_ban_le'])?str_replace('.', '', trim($value['gia_ban_le'])):'';
+
+				$gia_dong_goi = !empty($value['gia_dong_goi'])?str_replace('.', '', trim($value['gia_dong_goi'])):'';
+
+				$gia_ban_thap_nhat = !empty($value['gia_ban_thap_nhat'])?str_replace('.', '', trim($value['gia_ban_thap_nhat'])):'';
 				
-				$image =  'images/products/2024/12/12/'.$model.'.jpg';
 				$barcode = trim($value['model']);
 
 
 				$sql = "UPDATE fs_products 
-				        SET code = :model, 
-				            name = :name, 
-				            image = :image 
+				        SET import_price = :gia_nhap, 
+				            price = :gia_ban_le, 
+				            price_pack = :gia_dong_goi, 
+				            price_min = :gia_ban_thap_nhat
 				        WHERE barcode = :barcode";
 
 				$stmt = $pdo->prepare($sql);
 
 				// Các giá trị cần bind
 				$params = [
-				    'model' => $model,
-				    'name' => $name,
-				    'image' => $image,
+				    'gia_nhap' => $gia_nhap,
+				    'gia_ban_le' => $gia_ban_le,
+				    'gia_dong_goi' => $gia_dong_goi,
+				    'gia_ban_thap_nhat' =>$gia_ban_thap_nhat,
 				    'barcode'=>$barcode,
 				   
 				];
