@@ -654,20 +654,16 @@
 
 
 				$sql = "UPDATE fs_products 
-				        SET import_price = :gia_nhap, 
-				            price = :gia_ban_le, 
-				            price_pack = :gia_dong_goi, 
-				            price_min = :gia_ban_thap_nhat
+				        SET code = :model, 
+				           
 				        WHERE barcode = :barcode";
 
 				$stmt = $pdo->prepare($sql);
 
 				// Các giá trị cần bind
 				$params = [
-				    'gia_nhap' => $gia_nhap,
-				    'gia_ban_le' => $gia_ban_le,
-				    'gia_dong_goi' => $gia_dong_goi,
-				    'gia_ban_thap_nhat' =>$gia_ban_thap_nhat,
+				    'model' => $model,
+				   
 				    'barcode'=>$barcode,
 				   
 				];
