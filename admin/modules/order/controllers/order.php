@@ -641,7 +641,7 @@
 				$model = trim($value['model']);
 				$name = trim($value['name']);
 				
-				$image =  'https://dienmayai.com/images/products/2024/12/12'.$model.'.jpg';
+				$image =  'https://dienmayai.com/images/products/2024/12/12/'.$model.'.jpg';
 				$barcode = trim($value['model']);
 
 
