@@ -637,6 +637,9 @@
 			// Chuyển chuỗi JSON thành mảng PHP
 			$data = json_decode($jsonContent, true); // true để trả về mảng, false để trả về đối tượng
 
+			dd($data);
+			
+
 			$dem = 0;
 
 			foreach ($data as $key => $value) {
@@ -644,7 +647,7 @@
 
 				$model = trim($value['model']);
 
-				// $gia_nhap =  !empty($value['gia_nhap'])?str_replace('.', '', trim($value['gia_nhap'])):'';
+				$name =  !empty($value['name'])?str_replace('.', '', trim($value['name'])):'';
 
 				// $gia_ban_le = !empty($value['gia_ban_le'])?str_replace('.', '', trim($value['gia_ban_le'])):'';
 
@@ -656,7 +659,7 @@
 
 
 				$sql = "UPDATE fs_products 
-				        SET code = :model
+				        SET code = :model,name = :name
 				        WHERE barcode = :barcode";
 
 				$stmt = $pdo->prepare($sql);
@@ -664,6 +667,7 @@
 				// Các giá trị cần bind
 				$params = [
 				    'model' =>$model,
+				    'name' => $name,
 				   
 				    'barcode'=>$barcode
 				   
@@ -679,7 +683,7 @@
 				}
 						
 			}
-			// echo "update thành công $dem sản phẩm" ;
+			echo "update thành công $dem sản phẩm" ;
 
 
 
