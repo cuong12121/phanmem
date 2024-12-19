@@ -672,7 +672,7 @@
 				    'model' =>$model,
 				    'new_name' => $new_name,
 				   
-				    'barcode'=>$barcode
+				    'barcode'=>$barcode,
 				   
 				];
 
