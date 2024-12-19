@@ -640,12 +640,17 @@
 			
 			$dem = 0;
 
+
 			foreach ($data as $key => $value) {
 
 
 				$model = trim($value['model']);
 
-				$name =  !empty($value['name'])?str_replace('.', '', trim($value['name'])):'';
+
+
+				$name =  !empty($value['name'])?trim($value['name']):'';
+
+				$new_name = str_replace(['00','03','04', '05', '06'], ['Không size', 'Size S', 'Size M', 'Size L', 'Size XL'], $name);
 
 				// $gia_ban_le = !empty($value['gia_ban_le'])?str_replace('.', '', trim($value['gia_ban_le'])):'';
 
@@ -657,7 +662,7 @@
 
 
 				$sql = "UPDATE fs_products 
-				        SET code = :model,name = :name
+				        SET name = :new_name
 				        WHERE barcode = :barcode";
 
 				$stmt = $pdo->prepare($sql);
@@ -665,7 +670,7 @@
 				// Các giá trị cần bind
 				$params = [
 				    'model' =>$model,
-				    'name' => $name,
+				    'new_name' => $new_name,
 				   
 				    'barcode'=>$barcode
 				   
