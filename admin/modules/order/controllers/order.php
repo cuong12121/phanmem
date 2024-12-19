@@ -650,7 +650,7 @@
 
 				$name =  !empty($value['name'])?trim($value['name']):'';
 
-				$new_name = str_replace(['Không size'], ['00'], $name);
+				$new_name = str_replace(['Size 03','Size 04', 'Size 05', 'Size 06'], ['Size S', 'Size M', 'Size L', 'Size XL'], $name);
 
 				// $gia_ban_le = !empty($value['gia_ban_le'])?str_replace('.', '', trim($value['gia_ban_le'])):'';
 
