@@ -669,7 +669,7 @@
 
 				// Các giá trị cần bind
 				$params = [
-				    'model' =>$model,
+				   
 				    'new_name' => $new_name,
 				   
 				    'barcode'=>$barcode,
