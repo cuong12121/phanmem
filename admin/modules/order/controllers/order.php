@@ -447,7 +447,7 @@
 			$sql = "SELECT * FROM fs_order_uploads_detail ORDER BY id DESC LIMIT 100";
 			$stmt = $pdo->prepare($sql);
 			$stmt->execute();
-			$result = $stmt->fetchAll()->toArray();
+			$result = $stmt->fetchAll();
 
 			echo "<pre>";
 
