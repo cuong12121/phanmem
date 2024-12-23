@@ -449,6 +449,11 @@
 			$stmt->execute();
 			$result = $stmt->fetchAll()->toArray();
 
+			echo "<pre>";
+
+			var_dump($result);
+			echo"</pre>";
+
 			// $id = 254;
 
 			// $get_data = $this->return_list_total_complete_box($id);
