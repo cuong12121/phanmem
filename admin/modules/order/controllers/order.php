@@ -451,7 +451,7 @@
 
 			$json = json_encode($result);
 
-			prin_r($json);
+			print_r($json);
 
 			// $id = 254;
 
