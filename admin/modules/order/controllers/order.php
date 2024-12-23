@@ -423,12 +423,37 @@
 
 		function show_complete_box()
 		{
+			$config = require PATH_BASE.'/includes/configs.php';
+			$host = $config['dbHost'];
+			$db = $config['dbName'];
+			$user = $config['dbUser'];
+			$pass = $config['dbPass'];
+			$charset = 'utf8mb4';
 
-			$id = 254;
+			$dsn = "mysql:host=$host;dbname=$db;charset=$charset";
+			$options = [
+			    PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
+			    PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
+			    PDO::ATTR_EMULATE_PREPARES   => false,
+			];
 
-			$get_data = $this->return_list_total_complete_box($id);
+			try {
+			    $pdo = new PDO($dsn, $user, $pass, $options);
+			} catch (\PDOException $e) {
+			    throw new \PDOException($e->getMessage(), (int)$e->getCode());
+			}
 
-			dd($get_data);
+
+			$sql = "SELECT * FROM fs_order_uploads_detail ORDER BY id DESC LIMIT 100";
+			$stmt = $pdo->prepare($sql);
+			$stmt->execute();
+			$result = $stmt->fetchAll()->toArray();
+
+			// $id = 254;
+
+			// $get_data = $this->return_list_total_complete_box($id);
+
+			// dd($get_data);
 
 			// $define_id = [252, 253, 254,255, 251,9,256,257,258, 259, 260];
 
