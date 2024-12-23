@@ -449,10 +449,9 @@
 			$stmt->execute();
 			$result = $stmt->fetchAll();
 
-			echo "<pre>";
+			$json = json_encode($result);
 
-			var_dump($result);
-			echo"</pre>";
+			prin_r($json);
 
 			// $id = 254;
 
