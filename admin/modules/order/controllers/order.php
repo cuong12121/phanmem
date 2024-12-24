@@ -613,7 +613,19 @@
 
 				$data = json_decode($data_json);
 
-				dd($data);
+				$filtered = array_filter($data, function($item) {
+				    return $item->model === '002E';
+				});
+
+				// Lấy giá của model 002E
+				if (!empty($filtered)) {
+				    $salePrice = reset($filtered)->sale; // Dùng reset để lấy phần tử đầu tiên
+				    echo "Giá của model 002E là: $salePrice";
+				} else {
+				    echo "Không tìm thấy model 002E.";
+				}
+
+				
 
 			} 
 		}
