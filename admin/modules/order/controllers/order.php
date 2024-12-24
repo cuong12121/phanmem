@@ -613,6 +613,8 @@
 
 				$data = json_decode($data_json);
 
+				$data = (array)$data;
+
 				dd($data);
 
 				$filtered = array_filter($data, function($item) {
