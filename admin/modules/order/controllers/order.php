@@ -613,6 +613,8 @@
 
 				$data = json_decode($data_json);
 
+				dd($data);
+
 				$filtered = array_filter($data, function($item) {
 				    return $item->model === '002E';
 				});
