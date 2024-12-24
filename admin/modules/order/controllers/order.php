@@ -615,7 +615,7 @@
 
 				$data = (array)$data;
 
-				dd($data);
+				
 
 				$filtered = array_filter($data, function($item) {
 				    return $item->model === '002E';
