@@ -600,6 +600,24 @@
 
 		}
 
+		public function check_sale()
+		{
+			$redis = $this->connect_redis();
+
+			$keyExists = $redis->exists('sale_model');
+
+				
+			if ($keyExists) {
+
+				$data_json = $redis->get('sale_model');
+
+				$data = json_decode($data_json);
+
+				dd($data);
+
+			} 
+		}
+
 		function convert_json_data($imageUrl, $model)
 		{
 			
