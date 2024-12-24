@@ -124,6 +124,40 @@
 			return $query;
 		}
 
+		function check_sale($model)
+		{
+			$redis = $this->connect_redis();
+
+			$keyExists = $redis->exists('sale_model');
+
+
+			$salePrice = 0;
+				
+			if ($keyExists) {
+
+				$data_json = $redis->get('sale_model');
+
+				$data = json_decode($data_json);
+
+				$data = (array)$data;
+
+				$filtered = array_filter($data, function($item) {
+				    return $item->model === $model;
+				});
+
+				// Lấy giá của model 002E
+				if (!empty($filtered)) {
+
+				    $salePrice = reset($filtered)->sale; // Dùng reset để lấy phần tử đầu tiên
+
+				    $salePrice = str_replace('.', '', $salePrice);    
+				} 
+
+			} 
+
+			return $salePrice;
+		}
+
 		
 
 		function convertSlug($str)
@@ -497,6 +531,13 @@
 					setRedirect($link,$msg,'error');
 					return false;
 				}
+
+				$day = date('d');
+
+				// Kiểm tra xem ngày hôm nay có phải là ngày 25 tháng 12 để convert lại giá nhỏ nhất
+				if ($day == 25) {
+				    $produt-> price_min = $this->check_sale(trim($product_code));
+				} 
 
 	
 				global $config;

@@ -600,12 +600,14 @@
 
 		}
 
-		public function check_sale()
+		function check_sale($model)
 		{
 			$redis = $this->connect_redis();
 
 			$keyExists = $redis->exists('sale_model');
 
+
+			$salePrice = 0;
 				
 			if ($keyExists) {
 
@@ -615,23 +617,21 @@
 
 				$data = (array)$data;
 
-				
-
 				$filtered = array_filter($data, function($item) {
-				    return $item->model === '002E';
+				    return $item->model === $model;
 				});
 
 				// Lấy giá của model 002E
 				if (!empty($filtered)) {
-				    $salePrice = reset($filtered)->sale; // Dùng reset để lấy phần tử đầu tiên
-				    echo "Giá của model 002E là: $salePrice";
-				} else {
-				    echo "Không tìm thấy model 002E.";
-				}
 
-				
+				    $salePrice = reset($filtered)->sale; // Dùng reset để lấy phần tử đầu tiên
+
+				    $salePrice = str_replace('.', '', $salePrice);    
+				} 
 
 			} 
+
+			return $salePrice;
 		}
 
 		function convert_json_data($imageUrl, $model)
