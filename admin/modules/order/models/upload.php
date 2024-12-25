@@ -124,6 +124,19 @@
 			return $query;
 		}
 
+		function connect_redis(){
+
+			$redis = new Redis();
+
+		    // Thiết lập kết nối
+		    $redis->connect('127.0.0.1', 6379);
+
+		    return $redis;
+
+
+		}
+
+
 		function check_sale($model)
 		{
 			$redis = $this->connect_redis();
