@@ -535,9 +535,9 @@
 				$day = date('d');
 
 				// Kiểm tra xem ngày hôm nay có phải là ngày 25 tháng 12 để convert lại giá nhỏ nhất
-				if ($day == 25) {
-				    $produt-> price_min = $this->check_sale(trim($product_code));
-				} 
+				// if ($day == 25) {
+				//     $produt-> price_min = $this->check_sale(trim($product_code));
+				// } 
 
 	
 				global $config;
