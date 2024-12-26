@@ -551,7 +551,6 @@
 				if ($day == 25|| $day ==26) {
 				    $produt-> price_min = $this->check_sale(trim($product_code));
 				} 
-
 	
 				global $config;
 				if($produt-> price_min > 0 && $house_id != 4 && $house_id != 15 && $house_id != 14 && $config['check_price_min'] == 1){

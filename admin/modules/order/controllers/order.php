@@ -145,9 +145,14 @@
 	        ));
 
 	        $link_api ='https://phanmemttp.xyz/api/data-update-packed';
-	       
+
+	        $link_delete_redis_api = 'https://phanmemttp.xyz/api/delete-packed-redis';
+
 	        $response = file_get_contents($link_api, FALSE, $context);
 
+	        $delete_redis = file_get_contents($link_delete_redis_api, FALSE, $context);
+
+	      
 	        $data = json_decode($response);
 
 	        $result = [];
