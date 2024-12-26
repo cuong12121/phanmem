@@ -128,7 +128,36 @@
 	       
 	        $response = file_get_contents($link_api, FALSE, $context);
 
-	        dd($response);
+	        $data = json_decode($response);
+
+	        dd($data);
+
+	        // foreach ($data as $key => $value) {
+	        // 	// code...
+	        // }
+
+
+	        // $sql = "UPDATE fs_order_uploads_detail 
+			//         SET is_package = :is_package, 
+			//             user_package_id = :user_package_id, 
+			//             date_package = :date_package 
+			//         WHERE id = :id";
+
+			// $stmt = $pdo->prepare($sql);
+
+			// // Các giá trị cần bind
+			// $params = [
+			//     'is_package' => 1,
+			//     'user_package_id' => $user_package_id,
+			//     'date_package' => date("Y-m-d H:i:s"),
+			//     'id' => $checkorders_id
+			// ];
+
+			// // Thực hiện câu lệnh
+			// $update = $stmt->execute($params);
+
+
+	        // dd($response);
 		}
 
 		function set()
