@@ -110,6 +110,27 @@
 			}
 		}
 
+		function update_by_api_packed()
+		{
+			
+	        $context = stream_context_create(array(
+	            'http' => array(
+	                
+	                'method' => 'GET',
+
+	                'header' => "Content-Type: application/x-www-form-urlencoded\r\n".
+	                            "token: 7ojTLYXnzV0EH1wRGxOmvLFga",
+	                
+	            )
+	        ));
+
+	        $link_api ='https://phanmemttp.xyz/api/data-update-packed';
+	       
+	        $response = file_get_contents($link_api, FALSE, $context);
+
+	        dd($response);
+		}
+
 		function set()
 		{
 			global $db;
