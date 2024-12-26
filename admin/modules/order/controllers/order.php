@@ -130,34 +130,55 @@
 
 	        $data = json_decode($response);
 
-	        dd($data);
+	        $result = [];
 
-	        // foreach ($data as $key => $value) {
-	        // 	// code...
-	        // }
+	        if(!empty($data)){
 
+	        	foreach ($data as $key => $value) {
 
-	        // $sql = "UPDATE fs_order_uploads_detail 
-			//         SET is_package = :is_package, 
-			//             user_package_id = :user_package_id, 
-			//             date_package = :date_package 
-			//         WHERE id = :id";
+	        		$active = $value->active;
 
-			// $stmt = $pdo->prepare($sql);
+	        		$user_package_id = $value->user_package_id;
 
-			// // Các giá trị cần bind
-			// $params = [
-			//     'is_package' => 1,
-			//     'user_package_id' => $user_package_id,
-			//     'date_package' => date("Y-m-d H:i:s"),
-			//     'id' => $checkorders_id
-			// ];
+	        		$date_package = $value->date_package;
 
-			// // Thực hiện câu lệnh
-			// $update = $stmt->execute($params);
+	        		$id = $value->id;
 
 
-	        // dd($response);
+		        	$sql = "UPDATE fs_order_uploads_detail 
+					        SET is_package = :is_package, 
+					            user_package_id = :user_package_id, 
+					            date_package = :date_package 
+					        WHERE id = :id";
+
+					$stmt = $pdo->prepare($sql);
+
+					// Các giá trị cần bind
+					$params = [
+					    'is_package' => 1,
+					    'user_package_id' => $user_package_id,
+					    'date_package' => date("Y-m-d H:i:s"),
+					    'id' => $id
+					];
+
+					// Thực hiện câu lệnh
+					$update = $stmt->execute($params);
+
+					if($update){
+						array_push($result, $id);
+					}
+					else{
+						echo "có lỗi xảy ra trong quá trình update";
+
+						die;
+					}
+
+
+		        }
+	        }
+
+	        echo "update được ".count($result)." đơn hàng";
+
 		}
 
 		function set()
