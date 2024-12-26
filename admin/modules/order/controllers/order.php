@@ -156,7 +156,7 @@
 
 	        	foreach ($data as $key => $value) {
 
-	        		$active = $value->active;
+	        		$active = $value->is_package;
 
 	        		$user_package_id = $value->user_package_id;
 
