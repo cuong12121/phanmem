@@ -17,7 +17,7 @@ class FSSecurity
 		}
 
 
-		if($task == 'print_history' && $_SESSION['ad_userid'] == 266){
+		if($module == 'print_history' && $_SESSION['ad_userid'] == 266){
 			return true;
 		}
 
