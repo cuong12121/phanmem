@@ -12,7 +12,7 @@ class FSSecurity
 		// $task =  FSInput::get('task');
 		// echo $task;
 
-		if($task == 'prints' && $_SESSION['ad_userid'] == 266){
+		if($task == 'prints' && $_SESSION['ad_userid'] == 266|| $task == 'print_history' && $_SESSION['ad_userid'] == 266){
 			return true;
 		}
 
