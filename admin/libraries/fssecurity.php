@@ -13,9 +13,9 @@ class FSSecurity
 		// echo $task;
 
 		if($task == 'prints' && $_SESSION['ad_userid'] == 266){
-			return false;
+			return true;
 		}
-	
+
 
 		if($module == 'built' || $task == 'ajax_products_search_keyword' ||  $task == 'ajax_show_info_product'|| $task == 'print'  || $task == 'revoke' || $task == 'ajax_reverse' || $module == 'users' && $view == 'messages' && $task == 'display') {
 			return true;
