@@ -149,7 +149,7 @@ function loadMainContent($module){
 
             $user = $_SESSION['ad_userid'];
 
-            echo $task.'<br>';
+            echo $module.'<br>';
             echo FSText::_("Bạn không có quyền thực hiện chức năng này nhé!!!");
             return;
         }
