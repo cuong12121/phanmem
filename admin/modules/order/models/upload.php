@@ -2471,13 +2471,7 @@
 					setRedirect($link,FSText :: _('Vui lòng chọn lọc khung ngày, giờ, kho, sàn trước khi in!'),'error');
 				}
 
-				// check user riêng cho thành phần đơn váy ngủ
-
-				$filter_kho = [6,7];
-
-				if($_SESSION['ad_userid'] == 266 && !in_array($_SESSION[$this -> prefix.'filter1'], $filter_kho)){
-					setRedirect($link,FSText :: _('Bạn không có quyền in đơn của kho này!'),'error');
-				}
+				
 
 
 
