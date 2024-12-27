@@ -2458,7 +2458,17 @@
 
 				$link = FSRoute::_('index.php?module='.$this -> module.'&view='.$this -> view);
 				if(!isset($_SESSION[$this -> prefix.'text0']) || $_SESSION[$this -> prefix.'text0'] == '' || !isset($_SESSION[$this -> prefix.'text1']) || $_SESSION[$this -> prefix.'text1'] == '' || !isset($_SESSION[$this -> prefix.'filter0']) || $_SESSION[$this -> prefix.'filter0'] == 0 || !isset($_SESSION[$this -> prefix.'filter1']) || $_SESSION[$this -> prefix.'filter1'] == 0 || !isset($_SESSION[$this -> prefix.'filter2']) || $_SESSION[$this -> prefix.'filter2'] == 0 ){
-					setRedirect($link,FSText :: _('Vui lòng chọn lọc khung ngày, giờ, kho, sàn trước khi in!'),'error');
+
+					echo $_SESSION[$this -> prefix.'text0'].'<br>';
+					echo $_SESSION[$this -> prefix.'text1'].'<br>';
+					echo $_SESSION[$this -> prefix.'filter0'].'<br>';
+
+					echo $_SESSION[$this -> prefix.'filter1'].'<br>';
+					echo $_SESSION[$this -> prefix.'filter2'].'<br>';
+
+					die;
+
+					// setRedirect($link,FSText :: _('Vui lòng chọn lọc khung ngày, giờ, kho, sàn trước khi in!'),'error');
 				}
 
 				// test phần kiểm tra in với userid là admin 
