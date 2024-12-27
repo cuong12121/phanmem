@@ -148,7 +148,7 @@ function loadMainContent($module){
         if (!$permission){
 
             
-            echo FSText::_("Bạn không có quyền thực hiện chức năng này nhé");
+            echo FSText::_("Bạn không có quyền thực hiện chức năng này nhé!!!");
             return;
         }
         FSSecurity::save_history($module, $view, $task);
