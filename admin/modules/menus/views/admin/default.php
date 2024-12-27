@@ -124,6 +124,17 @@ echo '</li>';
   </a>
 </li>
 
+<?php 
+if($_SESSION['ad_userid'] == 266){
+?>    
+<li>
+    <a id="li_menu_339" href="https://dienmayai.com/admin/print_history/history" class="li_menu_0 header ">
+      <span class="text">Lịch sử in</span>          
+    </a>
+</li>
+<?php
+    }
+?>
 <li>
   <a id="li_menu_502" href="https://<?= DOMAIN ?>/admin/order_items/items/details" class="li_menu_0 header ">
     <span class="text">Xuất kho(new)</span>          
