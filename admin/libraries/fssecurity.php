@@ -12,13 +12,11 @@ class FSSecurity
 		// $task =  FSInput::get('task');
 		// echo $task;
 
+		// in đơn và xem lịch sử in cho bên váy ngủ
+
 		if($task == 'prints' && $_SESSION['ad_userid'] == 266 || $module == 'print_history' && $_SESSION['ad_userid'] == 266 && $task=='display'){
 			return true;
 		}
-
-
-	
-
 
 		if($module == 'built' || $task == 'ajax_products_search_keyword' ||  $task == 'ajax_show_info_product'|| $task == 'print'  || $task == 'revoke' || $task == 'ajax_reverse' || $module == 'users' && $view == 'messages' && $task == 'display') {
 			return true;
