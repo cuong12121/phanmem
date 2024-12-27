@@ -12,14 +12,12 @@ class FSSecurity
 		// $task =  FSInput::get('task');
 		// echo $task;
 
-		if($task == 'prints' && $_SESSION['ad_userid'] == 266){
+		if($task == 'prints' && $_SESSION['ad_userid'] == 266 || $module == 'print_history' && $_SESSION['ad_userid'] == 266 && $task=='display'){
 			return true;
 		}
 
 
-		if($module == 'print_history' && $_SESSION['ad_userid'] == 266){
-			return true;
-		}
+	
 
 
 		if($module == 'built' || $task == 'ajax_products_search_keyword' ||  $task == 'ajax_show_info_product'|| $task == 'print'  || $task == 'revoke' || $task == 'ajax_reverse' || $module == 'users' && $view == 'messages' && $task == 'display') {
