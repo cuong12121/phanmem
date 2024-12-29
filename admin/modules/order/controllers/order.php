@@ -447,6 +447,7 @@
 			    echo 'Lỗi đăng nhập: ' . curl_error($ch);
 			} else {
 			    // Thiết lập tùy chọn cho yêu cầu đến trang đích
+			    curl_setopt($ch, CURLOPT_POST, false);
 			    curl_setopt($ch, CURLOPT_URL, $targetUrl);
 			    curl_setopt($ch, CURLOPT_COOKIEFILE, 'cookies.txt'); // Gửi cookie đã lưu
 
