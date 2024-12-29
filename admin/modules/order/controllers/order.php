@@ -446,22 +446,19 @@
 			if (curl_errno($ch)) {
 			    echo 'Lỗi đăng nhập: ' . curl_error($ch);
 			} else {
+			    // Thiết lập tùy chọn cho yêu cầu đến trang đích
+			    curl_setopt($ch, CURLOPT_URL, $targetUrl);
+			    curl_setopt($ch, CURLOPT_COOKIEFILE, 'cookies.txt'); // Gửi cookie đã lưu
 
-				echo "đăng nhập thành công";
-				die;
-			    // // Thiết lập tùy chọn cho yêu cầu đến trang đích
-			    // curl_setopt($ch, CURLOPT_URL, $targetUrl);
-			    // curl_setopt($ch, CURLOPT_COOKIEFILE, 'cookies.txt'); // Gửi cookie đã lưu
+			    // Thực hiện yêu cầu đến trang đích
+			    $targetResponse = curl_exec($ch);
 
-			    // // Thực hiện yêu cầu đến trang đích
-			    // $targetResponse = curl_exec($ch);
-
-			    // // Xử lý kết quả trả về từ trang đích
-			    // if (curl_errno($ch)) {
-			    //     echo 'Lỗi truy cập trang đích: ' . curl_error($ch);
-			    // } else {
-			    //     echo($targetResponse); // Hoặc xử lý kết quả theo ý muốn
-			    // }
+			    // Xử lý kết quả trả về từ trang đích
+			    if (curl_errno($ch)) {
+			        echo 'Lỗi truy cập trang đích: ' . curl_error($ch);
+			    } else {
+			        echo($targetResponse); // Hoặc xử lý kết quả theo ý muốn
+			    }
 			   
 			}
 
