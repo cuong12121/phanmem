@@ -202,6 +202,10 @@
 		        }
 	        }
 
+	        if(count($result)>0){
+	        	$this->resetDBApi();
+	        }
+
 	        echo "update được ".count($result)." đơn hàng";
 
 		}
