@@ -201,7 +201,7 @@
 
 		        }
 	        }
-
+	        // update lai db hỗ trợ để xử lý tiếp khi update thành công
 	        if(count($result)>0){
 	        	$this->resetDBApi();
 	        }
