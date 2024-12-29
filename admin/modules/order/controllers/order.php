@@ -202,9 +202,9 @@
 		        }
 	        }
 	        // update lai db hỗ trợ để xử lý tiếp khi update thành công
-	        // if(count($result)>0){
-	        // 	$this->resetDBApi();
-	        // }
+	        if(count($result)>0){
+	        	$this->resetDBApi();
+	        }
 
 	        echo "update được ".count($result)." đơn hàng";
 
