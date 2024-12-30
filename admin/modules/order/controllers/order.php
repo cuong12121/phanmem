@@ -441,6 +441,8 @@
 			// Thực hiện yêu cầu đăng nhập
 			$loginResponse = curl_exec($ch);    
 
+			dd($loginResponse);
+
 
 			// Kiểm tra đăng nhập thành công
 			if (curl_errno($ch)) {
