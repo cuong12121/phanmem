@@ -418,13 +418,15 @@
 
 		public function resetDBApi()
 		{
-
+			$csrfToken = csrf_token();	
 			$username = "adminapi";
 			$password = "123456123";
-			$data = ["username"=>$username, "password"=>$password];
+			$data = ["username"=>$username, "password"=>$password,  '_token' => $csrfToken];
 			// URL đăng nhập và trang đích
 			$loginUrl = "https://phanmemttp.xyz/post-login";
 			$targetUrl = "https://phanmemttp.xyz/show-data-api";
+
+
 			
 
 			// Khởi tạo cURL session
