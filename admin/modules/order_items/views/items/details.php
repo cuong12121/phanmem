@@ -201,7 +201,7 @@
                 <td><?= $value->code   ?></td>
                 <td><?= $kho[$value->warehouse_id]  ?></td>
 
-                <td><?= date('d/m/Y,H:i:s', strtotime($value->date_package))   ?>    </td>
+                <td><?= $value->date_package   ?>    </td>
 
                 <td><?= $san[$value->platform_id]   ?></td>
                 <td><?= $value->shop_name  ?></td>
