@@ -1013,7 +1013,7 @@
 				$excel->obj_php_excel->getActiveSheet()->setCellValue('I1', 'Ngày đánh đơn');
 				$excel->obj_php_excel->getActiveSheet()->setCellValue('J1', 'Thời gian đóng đơn hàng');
 				$excel->obj_php_excel->getActiveSheet()->setCellValue('K1', 'Thành tiền');
-				$excel->obj_php_excel->getActiveSheet()->setCellValue('L1', 'Thành tiền');
+				$excel->obj_php_excel->getActiveSheet()->setCellValue('L1', 'Đơn vị vẩn chuyển');
 
 				$key=1;
 				$stt =0;
