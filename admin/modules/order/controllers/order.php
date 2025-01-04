@@ -952,8 +952,7 @@
 
 	        $info_data  = json_decode($response);
 
-	        dd($info_data);
-	       
+	        
 
 	        // nếu xuất excel bằng 1
 
@@ -1044,7 +1043,7 @@
 						$excel->obj_php_excel->getActiveSheet()->setCellValue('I'.$key, date("d/m/Y", strtotime($item->date)));
 						$excel->obj_php_excel->getActiveSheet()->setCellValue('J'.$key, date("d/m/Y", strtotime($item->date_package)));
 						$excel->obj_php_excel->getActiveSheet()->setCellValue('K'.$key, number_format((float)$item->total_price, 0, ',', '.'));
-						$excel->obj_php_excel->getActiveSheet()->setCellValue('L'.$key, $item->shipping_unit??'');
+						$excel->obj_php_excel->getActiveSheet()->setCellValue('L'.$key, $item->shipping_unit_name??'');
 
 					}
 				}	
