@@ -986,6 +986,7 @@
 				$excel->obj_php_excel->getActiveSheet()->getColumnDimension('I')->setWidth(30);
 				$excel->obj_php_excel->getActiveSheet()->getColumnDimension('J')->setWidth(30);
 				$excel->obj_php_excel->getActiveSheet()->getColumnDimension('K')->setWidth(30);
+				$excel->obj_php_excel->getActiveSheet()->getColumnDimension('L')->setWidth(30);
 
 				$excel->obj_php_excel->getActiveSheet()->getStyle('A')->getNumberFormat()->setFormatCode( PHPExcel_Style_NumberFormat::FORMAT_TEXT );
 				$excel->obj_php_excel->getActiveSheet()->getStyle('B')->getNumberFormat()->setFormatCode( PHPExcel_Style_NumberFormat::FORMAT_TEXT );
@@ -998,6 +999,7 @@
 				$excel->obj_php_excel->getActiveSheet()->getStyle('I')->getNumberFormat()->setFormatCode( PHPExcel_Style_NumberFormat::FORMAT_TEXT );
 				$excel->obj_php_excel->getActiveSheet()->getStyle('J')->getNumberFormat()->setFormatCode( PHPExcel_Style_NumberFormat::FORMAT_TEXT );
 				$excel->obj_php_excel->getActiveSheet()->getStyle('K')->getNumberFormat()->setFormatCode( PHPExcel_Style_NumberFormat::FORMAT_TEXT );
+				$excel->obj_php_excel->getActiveSheet()->getStyle('L')->getNumberFormat()->setFormatCode( PHPExcel_Style_NumberFormat::FORMAT_TEXT );
 
 
 				$excel->obj_php_excel->getActiveSheet()->setCellValue('A1', 'STT');
@@ -1011,6 +1013,7 @@
 				$excel->obj_php_excel->getActiveSheet()->setCellValue('I1', 'Ngày đánh đơn');
 				$excel->obj_php_excel->getActiveSheet()->setCellValue('J1', 'Thời gian đóng đơn hàng');
 				$excel->obj_php_excel->getActiveSheet()->setCellValue('K1', 'Thành tiền');
+				$excel->obj_php_excel->getActiveSheet()->setCellValue('L1', 'Thành tiền');
 
 				$key=1;
 				$stt =0;
@@ -1039,6 +1042,7 @@
 						$excel->obj_php_excel->getActiveSheet()->setCellValue('I'.$key, date("d/m/Y", strtotime($item->date)));
 						$excel->obj_php_excel->getActiveSheet()->setCellValue('J'.$key, date("d/m/Y", strtotime($item->date_package)));
 						$excel->obj_php_excel->getActiveSheet()->setCellValue('K'.$key, number_format((float)$item->total_price, 0, ',', '.'));
+						$excel->obj_php_excel->getActiveSheet()->setCellValue('L'.$key, $item->shipping_unit??'');
 
 					}
 				}	
