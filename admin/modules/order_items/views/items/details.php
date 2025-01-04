@@ -183,7 +183,7 @@
             </tr>
             <?php
 
-            dd($result);
+            
             if(!empty($result)){
 
                 
