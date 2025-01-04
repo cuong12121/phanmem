@@ -224,6 +224,7 @@ endif;
             <th>Ngày đánh đơn</th>
 
             <th>Thời gian đóng đơn hàng</th>
+            <th>Đơn vị vận chuyển</th>
             <th>Thành tiền</th>
             <th>Hoàn đơn</th>
         </tr>
@@ -281,6 +282,10 @@ endif;
             ?>
 
             <td><?= $date_time_package  ?></td>
+
+            <td><?= $value->shipping_unit_name?$value->shipping_unit_name:''  ?></td>
+
+            
             
             <td><?=  number_format((float)$value->total_price, 0, ',', '.') ?>đ</td>
             <td class="return">
