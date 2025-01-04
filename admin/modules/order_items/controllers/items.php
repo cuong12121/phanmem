@@ -160,6 +160,8 @@
 
 	        $response = file_get_contents('https://api.'.DOMAIN.'/api/search-data-order-to-date?&search='.$search,FALSE, $context);
 
+	        dd($response);
+
 
 
 	        $results = json_decode($response);
