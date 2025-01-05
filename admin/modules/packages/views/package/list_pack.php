@@ -286,7 +286,7 @@ endif;
             
             <td><?=  number_format((float)$value->total_price, 0, ',', '.') ?>đ</td>
             <td class="return">
-                <select name="status" id="status">
+                <select name="status" id="status_<?= $dem ?>">
                     <option value="0">Đang giao</option>
                     <option value="1">Giao thành công</option>
                     <option value="2">Hủy</option>
