@@ -252,10 +252,7 @@ endif;
         <tr>
             <td>
                 <?= $dem ?>
-                <div class="mobile">
-
-                    <a href="https://<?= DOMAIN ?>/admin/order/detail/search?search=<?= $value->id ?>&active=0" style="color: red">Hoàn đơn</a>
-                </div>
+                
                     
             </td>
             <td><?= $value->tracking_code  ?></td>
@@ -313,6 +310,7 @@ endif;
     ?>
 
     <script type="text/javascript">
+        let previousValue = $("#status").val();
         $("#status").change(function(){
             let selectedValue = $(this).val();
 
