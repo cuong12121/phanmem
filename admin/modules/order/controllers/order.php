@@ -676,7 +676,7 @@
 	       
 	        $info_data = json_decode($response);
 
-	        include 'modules/'.$this->module.'/views/'.$this->view.'/details.php';
+	        include 'modules/'.$this->module.'/views/'.$this->view.'/list_pack.php';
 	    	
 		}
 
