@@ -310,19 +310,23 @@ endif;
     ?>
 
     <script type="text/javascript">
-        let previousValue = $("#status").val();
-        $("#status").change(function(){
-            let selectedValue = $(this).val();
 
-            if(selectedValue == "2"){
-                if(!confirm("Bạn có chắc chắn muốn chọn hủy, sản phẩm sẽ trả về kho và không thể sửa")){
-                    $(this).val(previousValue); // Quay lại giá trị trước đó nếu Cancel
-                    return;
+        for (var i = 1; i >= 12; i++) {
+            let previousValue = $("#status_"+i).val();
+            $("#status_"+i).change(function(){
+                let selectedValue = $(this).val();
+
+                if(selectedValue == "2"){
+                    if(!confirm("Bạn có chắc chắn muốn chọn hủy, sản phẩm sẽ trả về kho và không thể sửa")){
+                        $(this).val(previousValue); // Quay lại giá trị trước đó nếu Cancel
+                        return;
+                    }
                 }
-            }
 
-            previousValue = selectedValue; // Cập nhật giá trị trước đó
-        });
+                previousValue = selectedValue; // Cập nhật giá trị trước đó
+            });
+        }
+        
     </script>
 
     <nav aria-label="Page navigation example">
