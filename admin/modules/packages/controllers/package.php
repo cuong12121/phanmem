@@ -264,9 +264,9 @@
 	       
 	        $info_data = json_decode($response);
 
-	        dd($info_data);
+	        
 
-	        // include 'modules/'.$this->module.'/views/'.$this->view.'/details.php';
+	        include 'modules/'.$this->module.'/views/'.$this->view.'/list_pack.php';
 		}
 
 	}
