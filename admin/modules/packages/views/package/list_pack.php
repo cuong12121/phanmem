@@ -311,7 +311,7 @@ endif;
 
     <script type="text/javascript">
 
-        for (var i = 1; i >= 12; i++) {
+        for (var i = 1; i <= 12; i++) {
             let previousValue = $("#status_"+i).val();
             $("#status_"+i).change(function(){
                 let selectedValue = $(this).val();
