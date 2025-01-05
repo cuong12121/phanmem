@@ -264,7 +264,7 @@
 	       
 	        $info_data = json_decode($response);
 
-	        dd($info_data)
+	        dd($info_data);
 
 	        // include 'modules/'.$this->module.'/views/'.$this->view.'/details.php';
 		}
