@@ -14,7 +14,7 @@ class FSSecurity
 
 		// in đơn và xem lịch sử in cho bên váy ngủ
 
-		if($task == 'prints' && $_SESSION['ad_userid'] == 266 || $module == 'print_history' && $_SESSION['ad_userid'] == 266 && $task=='display'||$task == 'packages' && $_SESSION['ad_userid'] == 266 ){
+		if($task == 'prints' && $_SESSION['ad_userid'] == 266 || $module == 'print_history' && $_SESSION['ad_userid'] == 266 && $task=='display'||$module == 'packages' && $_SESSION['ad_userid'] == 266 ){
 			return true;
 		}
 
