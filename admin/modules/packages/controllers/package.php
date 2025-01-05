@@ -227,48 +227,50 @@
 				$model->_add($row2,'fs_shops_money_order_history');
 			}
 		}
+
+		function show_packed()
+		{
+			$page = !empty($_GET['page'])?$_GET['page']:1;
+
+			$user_id = $_SESSION['ad_userid'];
+
+			$context = stream_context_create(array(
+	            'http' => array(
+	                
+	                'method' => 'GET',
+
+	                'header' => "Content-Type: application/x-www-form-urlencoded\r\n".
+	                            "token: 7ojTLYXnzV0EH1wRGxOmvLFga",
+	                
+	            )
+	        ));
+
+	        // Send the request
+			$skip_user = [9,208,251,206];
+
+
+	        if(in_array($user_id, $skip_user)){
+	        	
+	        	$link_api = 'https://api.'.DOMAIN.'/api/get-data-order-details?page='.$page;
+
+	        	
+	        }
+	        else{
+	        	$link_api ='https://api.'.DOMAIN.'/api/get-data-order-details?page='.$page.'&id_user='.$user_id;
+	        }
+
+	      
+	        $response = file_get_contents($link_api, FALSE, $context);
+	       
+	        $info_data = json_decode($response);
+
+	        dd($info_data)
+
+	        // include 'modules/'.$this->module.'/views/'.$this->view.'/details.php';
+		}
+
 	}
 
-	function show_packed()
-	{
-		$page = !empty($_GET['page'])?$_GET['page']:1;
-
-		$user_id = $_SESSION['ad_userid'];
-
-		$context = stream_context_create(array(
-            'http' => array(
-                
-                'method' => 'GET',
-
-                'header' => "Content-Type: application/x-www-form-urlencoded\r\n".
-                            "token: 7ojTLYXnzV0EH1wRGxOmvLFga",
-                
-            )
-        ));
-
-        // Send the request
-		$skip_user = [9,208,251,206];
-
-
-        if(in_array($user_id, $skip_user)){
-        	
-        	$link_api = 'https://api.'.DOMAIN.'/api/get-data-order-details?page='.$page;
-
-        	
-        }
-        else{
-        	$link_api ='https://api.'.DOMAIN.'/api/get-data-order-details?page='.$page.'&id_user='.$user_id;
-        }
-
-      
-        $response = file_get_contents($link_api, FALSE, $context);
-       
-        $info_data = json_decode($response);
-
-        dd($info_data);
-
-        // include 'modules/'.$this->module.'/views/'.$this->view.'/details.php';
-	}
 
 
 	
