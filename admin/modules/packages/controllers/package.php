@@ -245,6 +245,8 @@
 	            )
 	        ));
 
+	        $user_id =266;
+
 	        // Send the request
 			$skip_user = [9,208,251,206];
 
