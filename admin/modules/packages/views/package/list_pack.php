@@ -226,7 +226,7 @@ endif;
             <th>Thời gian đóng đơn hàng</th>
             <th>Đơn vị vận chuyển</th>
             <th>Thành tiền</th>
-            <th>Hoàn đơn</th>
+            <th>trạng thái</th>
         </tr>
 
 
@@ -289,14 +289,12 @@ endif;
             
             <td><?=  number_format((float)$value->total_price, 0, ',', '.') ?>đ</td>
             <td class="return">
-                <?php
-                    if($now=== $date_package):
-                ?>    
-                <a href="https://<?= DOMAIN ?>/admin/order/detail/search?search=<?= $value->id ?>&active=0">Hoàn đơn</a>
-
-                <?php 
-                   endif;
-                ?>
+                <select name="status">
+                    <option value="0">Đang giao</option>
+                    <option value="1">Giao thành công</option>
+                    <option value="2">Hủy</option>
+                </select>
+                
             </td>
         </tr>
 
