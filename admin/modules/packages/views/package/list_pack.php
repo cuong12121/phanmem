@@ -289,7 +289,7 @@ endif;
             
             <td><?=  number_format((float)$value->total_price, 0, ',', '.') ?>đ</td>
             <td class="return">
-                <select name="status">
+                <select name="status" id="status">
                     <option value="0">Đang giao</option>
                     <option value="1">Giao thành công</option>
                     <option value="2">Hủy</option>
@@ -311,6 +311,21 @@ endif;
         $get_page =!empty($_GET['page'])?$_GET['page']:1
         
     ?>
+
+    <script type="text/javascript">
+        $("#status").change(function(){
+            let selectedValue = $(this).val();
+
+            if(selectedValue == "2"){
+                if(!confirm("Bạn có chắc chắn muốn chọn hủy, sản phẩm sẽ trả về kho và không thể sửa")){
+                    $(this).val(previousValue); // Quay lại giá trị trước đó nếu Cancel
+                    return;
+                }
+            }
+
+            previousValue = selectedValue; // Cập nhật giá trị trước đó
+        });
+    </script>
 
     <nav aria-label="Page navigation example">
         <ul class="pagination">
