@@ -35,7 +35,7 @@
             height: auto;
         }
 
-        body #page-wrapper a{
+        body #page-wrapper .btn-outline a{
             color: #fff;
         }
     </style>
