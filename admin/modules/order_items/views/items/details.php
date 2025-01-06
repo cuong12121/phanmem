@@ -57,6 +57,10 @@
     }
 </style>
 
+<?php
+    global $db;
+?>
+
 <div id="page-wrapper" class="page-wrapper-small" style="min-height: 110px;">
     <div class="form_head">
         <div id="wrap-toolbar" class="wrap-toolbar">
