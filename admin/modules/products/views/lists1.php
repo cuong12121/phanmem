@@ -142,7 +142,7 @@
                 <td>50</td>
                
                 <td><?= $value->amount ?></td>
-                <td><?= $value->quantity ?></td>
+                <td><?= $value->amount ?></td>
             </tr>
             
             <?php
