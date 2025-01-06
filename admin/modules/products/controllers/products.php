@@ -25,6 +25,7 @@ class ProductsControllersProducts  extends Controllers
 		$get_template = $_GET['get_template']??'';
 
 		if(!empty($get_template)){
+			dd($list);
 			include 'modules/'.$this->module.'/views/lists1.php';
 		}
 		else{
