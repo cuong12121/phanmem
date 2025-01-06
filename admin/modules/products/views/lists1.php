@@ -34,6 +34,10 @@
             max-width: 50px;
             height: auto;
         }
+
+        body #page-wrapper a{
+            color: #fff;
+        }
     </style>
 </head>
 <body>
