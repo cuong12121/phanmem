@@ -42,7 +42,7 @@
 </head>
 <body>
 
-<form class="form-horizontal" action="https://dienmayai.com/admin/product" name="adminForm" method="get">    
+<form  action="https://dienmayai.com/admin/product" name="adminForm" method="get">    
     <div class="filter_area">
         <div class="row">
 
