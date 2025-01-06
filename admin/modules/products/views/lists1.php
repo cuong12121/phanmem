@@ -116,199 +116,38 @@
                 <th>Mã</th>
                 <th>Tên</th>
                 <th>Giá bán</th>
+                <th>Giá nhập</th>
                 <th>Giá bán đóng gói</th>
                 <th>Giá bán thấp nhất</th>
-                <th>Hàng chuyển kho</th>
+                <!-- <th>Hàng chuyển kho</th> -->
                 <th>Hàng đã xuất</th>
                 <th>Tồn</th>
                 <th>Tổng tồn</th>
             </tr>
         </thead>
         <tbody>
+            <?php
+
+                foreach($list as $value):
+            ?>
             <tr>
                 <td><img src="product.jpg" alt="Ảnh SP"></td>
-                <td>8934567890123</td>
-                <td>SP001</td>
-                <td>Sản phẩm A</td>
-                <td>100,000₫</td>
-                <td>95,000₫</td>
-                <td>90,000₫</td>
+                <td><?= $value->id ?></td>
+                <td><?= $value->code ?></td>
+                <td><?= $value->name ?></td>
+                <td><?= number_format((float)$value->price, 0, ',', '.')   ?></td>
+                <td><?= number_format((float)$value->import_price, 0, ',', '.')   ?></td>
+                <td><?= number_format((float)$value->price_pack, 0, ',', '.')   ?></td>
+                <td><?= number_format((float)$value->price_min, 0, ',', '.')   ?></td>
                 <td>50</td>
-                <td>30</td>
-                <td>200</td>
-                <td>250</td>
+               
+                <td><?= $value->amount ?></td>
+                <td><?= $value->quantity ?></td>
             </tr>
-            <tr>
-                <td><img src="product2.jpg" alt="Ảnh SP"></td>
-                <td>8934567890456</td>
-                <td>SP002</td>
-                <td>Sản phẩm B</td>
-                <td>150,000₫</td>
-                <td>140,000₫</td>
-                <td>130,000₫</td>
-                <td>30</td>
-                <td>20</td>
-                <td>150</td>
-                <td>180</td>
-            </tr>
-            <tr>
-                <td><img src="product3.jpg" alt="Ảnh SP"></td>
-                <td>8934567890789</td>
-                <td>SP003</td>
-                <td>Sản phẩm C</td>
-                <td>200,000₫</td>
-                <td>190,000₫</td>
-                <td>180,000₫</td>
-                <td>40</td>
-                <td>15</td>
-                <td>120</td>
-                <td>160</td>
-            </tr>
-            <tr>
-                <td><img src="product3.jpg" alt="Ảnh SP"></td>
-                <td>8934567890789</td>
-                <td>SP003</td>
-                <td>Sản phẩm C</td>
-                <td>200,000₫</td>
-                <td>190,000₫</td>
-                <td>180,000₫</td>
-                <td>40</td>
-                <td>15</td>
-                <td>120</td>
-                <td>160</td>
-            </tr>
-
-             <tr>
-                <td><img src="product3.jpg" alt="Ảnh SP"></td>
-                <td>8934567890789</td>
-                <td>SP003</td>
-                <td>Sản phẩm C</td>
-                <td>200,000₫</td>
-                <td>190,000₫</td>
-                <td>180,000₫</td>
-                <td>40</td>
-                <td>15</td>
-                <td>120</td>
-                <td>160</td>
-            </tr>
-            <tr>
-                <td><img src="product3.jpg" alt="Ảnh SP"></td>
-                <td>8934567890789</td>
-                <td>SP003</td>
-                <td>Sản phẩm C</td>
-                <td>200,000₫</td>
-                <td>190,000₫</td>
-                <td>180,000₫</td>
-                <td>40</td>
-                <td>15</td>
-                <td>120</td>
-                <td>160</td>
-            </tr>
-             <tr>
-                <td><img src="product3.jpg" alt="Ảnh SP"></td>
-                <td>8934567890789</td>
-                <td>SP003</td>
-                <td>Sản phẩm C</td>
-                <td>200,000₫</td>
-                <td>190,000₫</td>
-                <td>180,000₫</td>
-                <td>40</td>
-                <td>15</td>
-                <td>120</td>
-                <td>160</td>
-            </tr>
-            <tr>
-                <td><img src="product3.jpg" alt="Ảnh SP"></td>
-                <td>8934567890789</td>
-                <td>SP003</td>
-                <td>Sản phẩm C</td>
-                <td>200,000₫</td>
-                <td>190,000₫</td>
-                <td>180,000₫</td>
-                <td>40</td>
-                <td>15</td>
-                <td>120</td>
-                <td>160</td>
-            </tr>
-             <tr>
-                <td><img src="product3.jpg" alt="Ảnh SP"></td>
-                <td>8934567890789</td>
-                <td>SP003</td>
-                <td>Sản phẩm C</td>
-                <td>200,000₫</td>
-                <td>190,000₫</td>
-                <td>180,000₫</td>
-                <td>40</td>
-                <td>15</td>
-                <td>120</td>
-                <td>160</td>
-            </tr>
-            <tr>
-                <td><img src="product3.jpg" alt="Ảnh SP"></td>
-                <td>8934567890789</td>
-                <td>SP003</td>
-                <td>Sản phẩm C</td>
-                <td>200,000₫</td>
-                <td>190,000₫</td>
-                <td>180,000₫</td>
-                <td>40</td>
-                <td>15</td>
-                <td>120</td>
-                <td>160</td>
-            </tr>
-             <tr>
-                <td><img src="product3.jpg" alt="Ảnh SP"></td>
-                <td>8934567890789</td>
-                <td>SP003</td>
-                <td>Sản phẩm C</td>
-                <td>200,000₫</td>
-                <td>190,000₫</td>
-                <td>180,000₫</td>
-                <td>40</td>
-                <td>15</td>
-                <td>120</td>
-                <td>160</td>
-            </tr>
-            <tr>
-                <td><img src="product3.jpg" alt="Ảnh SP"></td>
-                <td>8934567890789</td>
-                <td>SP003</td>
-                <td>Sản phẩm C</td>
-                <td>200,000₫</td>
-                <td>190,000₫</td>
-                <td>180,000₫</td>
-                <td>40</td>
-                <td>15</td>
-                <td>120</td>
-                <td>160</td>
-            </tr>
-             <tr>
-                <td><img src="product3.jpg" alt="Ảnh SP"></td>
-                <td>8934567890789</td>
-                <td>SP003</td>
-                <td>Sản phẩm C</td>
-                <td>200,000₫</td>
-                <td>190,000₫</td>
-                <td>180,000₫</td>
-                <td>40</td>
-                <td>15</td>
-                <td>120</td>
-                <td>160</td>
-            </tr>
-            <tr>
-                <td><img src="product3.jpg" alt="Ảnh SP"></td>
-                <td>8934567890789</td>
-                <td>SP003</td>
-                <td>Sản phẩm C</td>
-                <td>200,000₫</td>
-                <td>190,000₫</td>
-                <td>180,000₫</td>
-                <td>40</td>
-                <td>15</td>
-                <td>120</td>
-                <td>160</td>
-            </tr>
-
+            
+            <?php
+                endforeach;
+            ?>
             <!-- Thêm nhiều dòng hơn nếu cần -->
         </tbody>
     </table>
