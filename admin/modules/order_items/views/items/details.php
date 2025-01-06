@@ -162,6 +162,7 @@
                 <th>Order number </th>
                 <th>Kho</th>
                 <th>Thời gian đóng đơn</th>
+                <th>Người đóng đơn</th>
                 <th>Sàn</th>
                 <th>Shop</th>
                 <th>Ngày</th>
@@ -204,6 +205,13 @@
                 <td><?= $kho[$value->warehouse_id]  ?></td>
 
                 <td><?= date('d/m/Y,H:i:s', strtotime($value->date_package))   ?>    </td>
+
+                <?php 
+
+                $sql = " SELECT username FROM  fs_users WHERE id = '$value->user_package_id'";
+                    $name = $db->getResult($sql);
+                ?>
+                <td><?= $name??''   ?></td>
 
                 <td><?= $san[$value->platform_id]   ?></td>
                 <td><?= $value->shop_name  ?></td>
