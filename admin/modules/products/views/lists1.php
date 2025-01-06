@@ -52,8 +52,10 @@
         </div>
         <div class="fl-left">               
             <button class="btn btn-outline btn-primary" onclick="this.form.submit();">Tìm kiếm</button>             
+            <button class="btn btn-outline btn-primary"><a href="https://dienmayai.com/admin/product?get_template=1">Reset</a>  </button>           
         </div>
          
+        
     </div>
 </div>
 <div class="table-container">
