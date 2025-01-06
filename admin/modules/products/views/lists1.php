@@ -50,9 +50,10 @@
             </button>
             </span>
         </div>
-        <div class="fl-left">               <button class="btn btn-outline btn-primary" onclick="this.form.submit();">Tìm kiếm</button>             <button class="btn btn-outline btn-primary" onclick="document.getElementById('search').value='';                this.form.getElementById('filter_state').value='';this.form.submit();">Reset</button>           </div>
+        <div class="fl-left">               
+            <button class="btn btn-outline btn-primary" onclick="this.form.submit();">Tìm kiếm</button>             
+        </div>
          
-        
     </div>
 </div>
 <div class="table-container">
