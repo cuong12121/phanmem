@@ -139,7 +139,7 @@
                 <td><?= number_format((float)$value->import_price, 0, ',', '.')   ?></td>
                 <td><?= number_format((float)$value->price_pack, 0, ',', '.')   ?></td>
                 <td><?= number_format((float)$value->price_min, 0, ',', '.')   ?></td>
-                <td>50</td>
+                <td>0</td>
                
                 <td><?= $value->amount ?></td>
                 <td><?= $value->amount ?></td>
