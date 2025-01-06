@@ -51,60 +51,8 @@
             </span>
         </div>
         <div class="fl-left">               <button class="btn btn-outline btn-primary" onclick="this.form.submit();">Tìm kiếm</button>             <button class="btn btn-outline btn-primary" onclick="document.getElementById('search').value='';                this.form.getElementById('filter_state').value='';this.form.submit();">Reset</button>           </div>
-        <input type="hidden" name="filter_count" value="2">         
-        <div class="fl-left pd-15">
-            <select name="filter0" class="form-control " onchange="this.form.submit()">
-                <option value="0"> -- Danh mục -- </option>
-                <option value="1">Dự Án Hải Sản</option>
-                <option value="2">Đồ chơi</option>
-                <option value="3">Sản phẩm TLC</option>
-                <option value="5">Đèn &amp; Trang trí</option>
-                <option value="6">Các mã xả tồn sẽ dừng bán</option>
-                <option value="7">Điện thoại &amp; Máy tính bảng</option>
-                <option value="8">Bếp &amp; Phòng ăn</option>
-                <option value="9">Bách hóa Online</option>
-                <option value="10">Sức khỏe</option>
-                <option value="11">Giường ngủ &amp; Nhà tắm</option>
-                <option value="12">Âm thanh</option>
-                <option value="13">Văn phòng phẩm và nghề thủ công</option>
-                <option value="14">Thiết bị thông minh</option>
-                <option value="15">Đồ gia dụng</option>
-                <option value="16">Giày dép &amp; Quần áo nam</option>
-                <option value="17">Ôtô, Xe máy &amp; Thiết bị định vị</option>
-                <option value="18">Áo điều hòa- Dũng Hoan</option>
-                <option value="19">Thể thao &amp; Hoạt động ngoài trời</option>
-                <option value="20">Sách NTBook</option>
-                <option value="21">Máy ảnh &amp;&nbsp;Máy bay camera</option>
-                <option value="22">Trẻ sơ sinh &amp; Trẻ nhỏ</option>
-                <option value="23">Dụng cụ sửa chữa nhà cửa</option>
-                <option value="24">Túi xách và Vali túi du lịch</option>
-                <option value="25">Đồng hồ, Mắt kính, Trang sức</option>
-                <option value="26">Các mã dừng bán hẳn</option>
-                <option value="27">Làm đẹp</option>
-                <option value="28">Màn hình &amp; Máy in</option>
-                <option value="29">Giày dép &amp; Quần áo nữ</option>
-                <option value="30">Nội thất &amp; Sắp xếp</option>
-                <option value="31">Máy vi tính &amp; Laptop</option>
-                <option value="32">Chăm sóc nhà cửa</option>
-                <option value="33">Chăm sóc thú cưng</option>
-                <option value="34">Ngoài trời &amp; sân vườn</option>
-                <option value="35">TV &amp; Video</option>
-                <option value="36">Sản phẩm Seka</option>
-                <option value="37">DAKYANG</option>
-            </select>
-        </div>
-        <div class="fl-left pd-15">
-            <select name="filter1" class="form-control " onchange="this.form.submit()">
-                <option value="0"> -- Kho -- </option>
-                <option value="1">Kho Hà Nội</option>
-                <option value="2">Kho Hồ Chí Minh</option>
-                <option value="3">Kho test</option>
-                <option value="4">Kho hàng Cao Duy Hoan</option>
-                <option value="5">Tầng 1</option>
-                <option value="6">Kho Văn La</option>
-                <option value="7">Kho Văn Phú</option>
-            </select>
-        </div>
+         
+        
     </div>
 </div>
 <div class="table-container">
