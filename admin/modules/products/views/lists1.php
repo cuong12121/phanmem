@@ -46,7 +46,6 @@
     <div class="filter_area">
         <div class="row">
 
-            <input type="hidden" name="text_count" value="0">           
             <div class="fl-left pd-15"> 
                 <input type="text" placeholder="Tìm kiếm" name="keysearch" id="search" value="" class="form-control fl-left">
                 <span class="input-group-btn fl-left" style="margin-left: -2px;">
