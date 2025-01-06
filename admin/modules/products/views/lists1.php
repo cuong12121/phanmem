@@ -131,7 +131,7 @@
                 foreach($list as $value):
             ?>
             <tr>
-                <td> <?php (!empty($value->image))? ?> <img src="/<?= $value->image  ?>" alt="Ảnh SP" <?php :'' ?>></td>
+                <td> <?php if(!empty($value->image)){ ?> <img src="/<?= $value->image  ?>" alt="Ảnh SP" <?php } ?>></td>
                 <td><?= $value->id ?></td>
                 <td><?= $value->code ?></td>
                 <td><?= $value->name ?></td>
