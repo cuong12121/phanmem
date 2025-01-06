@@ -40,6 +40,15 @@ class ProductsControllersProducts  extends Controllers
 		}
 		
 	}
+
+	function SearchBYNamePD()
+	{
+		global $db
+		$search = trim($_GET['search']);
+		if(!empty($search)){
+
+		}
+	}
 	
 	
 	function add()

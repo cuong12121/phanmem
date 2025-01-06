@@ -42,26 +42,28 @@
 </head>
 <body>
 
-    
-<div class="filter_area">
-    <div class="row">
-        <input type="hidden" name="text_count" value="0">           
-        <div class="fl-left pd-15"> 
-            <input type="text" placeholder="Tìm kiếm" name="keysearch" id="search" value="" class="form-control fl-left">
-            <span class="input-group-btn fl-left" style="margin-left: -2px;">
-            <button onclick="this.form.submit();" class="btn btn-search btn-default" type="button">
-            <i class="fa fa-search"></i>
-            </button>
-            </span>
+<form class="form-horizontal" action="https://dienmayai.com/admin/product" name="adminForm" method="get">    
+    <div class="filter_area">
+        <div class="row">
+
+            <input type="hidden" name="text_count" value="0">           
+            <div class="fl-left pd-15"> 
+                <input type="text" placeholder="Tìm kiếm" name="keysearch" id="search" value="" class="form-control fl-left">
+                <span class="input-group-btn fl-left" style="margin-left: -2px;">
+                <button onclick="this.form.submit();" class="btn btn-search btn-default" type="button">
+                <i class="fa fa-search"></i>
+                </button>
+                </span>
+            </div>
+            <div class="fl-left">               
+                <button class="btn btn-outline btn-primary" type="submit">Tìm kiếm</button>             
+                <button class="btn btn-outline btn-primary"><a href="https://dienmayai.com/admin/product?get_template=1">Reset</a>  </button>           
+            </div>
+             
+            
         </div>
-        <div class="fl-left">               
-            <button class="btn btn-outline btn-primary" onclick="this.form.submit();">Tìm kiếm</button>             
-            <button class="btn btn-outline btn-primary"><a href="https://dienmayai.com/admin/product?get_template=1">Reset</a>  </button>           
-        </div>
-         
-        
     </div>
-</div>
+</form>    
 <div class="table-container">
     <table>
         <thead>
