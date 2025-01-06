@@ -21,7 +21,16 @@ class ProductsControllersProducts  extends Controllers
 		$breadcrumbs[] = array(0=>'Danh sách sản phẩm', 1 => '');	
 		global $tmpl;
 		$tmpl->assign ( 'breadcrumbs', $breadcrumbs );
-		include 'modules/'.$this->module.'/views/'.$this->view.'/list.php';
+
+		$get_template = $_GET['get_template']??'';
+
+		if(!empty($get_template)){
+			include 'modules/'.$this->module.'/views/'.$this->view.'/list1.php';
+		}
+		else{
+			include 'modules/'.$this->module.'/views/'.$this->view.'/list.php';
+		}
+		
 	}
 	
 	
