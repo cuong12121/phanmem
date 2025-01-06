@@ -24,14 +24,12 @@ class ProductsControllersProducts  extends Controllers
 
 		$get_template = $_GET['get_template']??'';
 
-		$limit = 3;
-
+		
 		// Xác định trang hiện tại (mặc định là trang 1)
 		$page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
 		$page = max($page, 1); // Đảm bảo không có số âm
 
-		// Tính offset (vị trí bắt đầu lấy dữ liệu)
-		$offset = ($page - 1) * $limit;
+		
 
 		if(!empty($get_template)){
 			// dd($list);
