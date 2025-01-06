@@ -151,6 +151,18 @@
             <!-- Thêm nhiều dòng hơn nếu cần -->
         </tbody>
     </table>
+
+    <nav aria-label="Page navigation">
+        <div style="text-align: center; font-weight: bold; margin-top: 30px;"><font>Tổng</font> : <span style="color:red">[8044]</span> </div>
+        <ul class="pagination">
+            <li><a class="title_pagination">Trang</a></li>
+            <li><a title="Page 1" class="current">[1]</a></li>
+            <li><a title="Page 2" href="https://dienmayai.com/admin/product?page=2">2</a></li>
+            
+        
+            <li><a aria-label="Next" title="Last page" href="https://dienmayai.com/admin/product?page=161">»</a></li>
+        </ul>
+    </nav>
 </div>
 
 </body>
