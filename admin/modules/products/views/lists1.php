@@ -169,7 +169,7 @@
         <li><a title="Page 2" href="https://dienmayai.com/admin/product?get_template=1&page=<?= intval($page) ?>"><?= intval($page) ?></a></li>
         
     
-        <li><a aria-label="Next" title="Last page" href="https://dienmayai.com/admin/product?get_template=1&page=<?= intval($page)+1 ?>">»<?= intval($page)+1 ?></a></li>
+        <li><a aria-label="Next" title="Last page" href="https://dienmayai.com/admin/product?get_template=1&page=<?= intval($page)+1 ?>"><?= intval($page)+1 ?></a></li>
     </ul>
 </nav>
 
