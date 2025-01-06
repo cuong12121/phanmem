@@ -43,11 +43,11 @@ class ProductsControllersProducts  extends Controllers
 
 	function SearchBYNamePD()
 	{
-		global $db
+		global $db;
 		$search = trim($_GET['search']);
-		if(!empty($search)){
+		// if(!empty($search)){
 
-		}
+		// }
 	}
 	
 	
