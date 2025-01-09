@@ -130,6 +130,31 @@
         }
         }
     </style>
+    <?php 
+       $kho = ['Kho','Kho Hà nội','Kho HCM', 'Kho test', 'Kho hàng Cao Duy Hoan','Kho tầng 1', 'Kho Văn La', 'Kho Văn Phú'];
+
+    ?>
+
+    <div class="form-search">
+        <form class="header__search" method="get" action="https://<?= DOMAIN ?>/admin/order_items/items/search_tracking" style="display: flex; margin-bottom: 15px;">
+            <select name="name">
+                <?php 
+                    foreach ($kho as $key => $value) {
+                      
+                ?>
+                <option value="<?= $key ?>"><?= $value ?></option>
+                <?php 
+                    }
+                ?>
+            </select>
+            <label>từ</label>
+            <input type="date" class="input-search ui-autocomplete-input" name="date1" autocomplete="off" maxlength="100"> 
+            <label>đến</label>
+            <input type="date" class="input-search ui-autocomplete-input" name="date2" autocomplete="off" maxlength="100"> 
+            <input type="checkbox" name="options" value="1"> xuất file excel<br>
+            <button type="submit">Tìm kiếm </button> 
+        </form>
+    </div>
 
     <div class="form-search">
     
