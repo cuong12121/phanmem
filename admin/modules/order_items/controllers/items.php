@@ -201,7 +201,7 @@
 				setRedirect($link,$msg,'error');
 			}
 
-			if($option = 0){
+			if($option == 0){
 				$link = 'https://'.DOMAIN.'/admin/order_items/items/details';
 				$msg = 'bạn chưa chọn xuất file excel, vui lòng kiểm tra lại';
 
