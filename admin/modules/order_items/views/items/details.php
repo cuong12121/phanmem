@@ -136,8 +136,8 @@
     ?>
 
     <div class="form-search">
-        <form class="header__search" method="get" action="https://<?= DOMAIN ?>/admin/order_items/items/search_tracking" style="display: flex; margin-bottom: 15px;">
-            <select name="name">
+        <form class="header__search" method="get" action="https://<?= DOMAIN ?>/admin/order_items/items/search_tracking_to_ware_house" style="display: flex; margin-bottom: 15px;">
+            <select name="kho">
                 <?php 
                     foreach ($kho as $key => $value) {
                       

@@ -211,6 +211,9 @@ RewriteRule ^order_items/items$ index.php?module=order_items&view=items&%{QUERY_
 RewriteRule ^order_items/items/details$ index.php?module=order_items&view=items&task=details&%{QUERY_STRING} [L]
 RewriteRule ^order_items/items/search_tracking$ index.php?module=order_items&view=items&task=searchByTracking&%{QUERY_STRING} [L]
 
+RewriteRule ^order_items/items/search_tracking_to_ware_house$ index.php?module=order_items&view=items&task=searchByTrackingToWarehouses&%{QUERY_STRING} [L]
+
+
 
 RewriteRule ^order_items/items/excel_nhat$ index.php?module=order_items&view=items&task=excel_nhat&%{QUERY_STRING} [L]
 RewriteRule ^order_items/items/excel_misa$ index.php?module=order_items&view=items&task=excel_misa&%{QUERY_STRING} [L]
