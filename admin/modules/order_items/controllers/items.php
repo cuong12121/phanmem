@@ -196,7 +196,7 @@
 			if($kho ==0){
 
 				$link = 'https://'.DOMAIN.'/admin/order_items/items/details';
-				$msg = 'kho không tồn tại, vui lòng kiểm tra lại kho';
+				$msg = 'kho chưa được chọn, vui lòng kiểm tra lại';
 
 				setRedirect($link,$msg,'error');
 			}
