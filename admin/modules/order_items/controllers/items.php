@@ -201,6 +201,13 @@
 				setRedirect($link,$msg,'error');
 			}
 
+			if($option = 0){
+				$link = 'https://'.DOMAIN.'/admin/order_items/items/details';
+				$msg = 'bạn chưa chọn xuất file excel, vui lòng kiểm tra lại';
+
+				setRedirect($link,$msg,'error');
+			}
+
 			$kho_define = ['Kho','Kho Hà nội','Kho HCM', 'Kho test', 'Kho hàng Cao Duy Hoan','Kho tầng 1', 'Kho Văn La', 'Kho Văn Phú'];
 
 			$date1 = !empty($_GET['date1'])?$_GET['date1']:'';
