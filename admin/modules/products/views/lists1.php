@@ -95,7 +95,13 @@
                 <td><?= number_format((float)$value->import_price, 0, ',', '.')   ?></td>
                 <td><?= number_format((float)$value->price_pack, 0, ',', '.')   ?></td>
                 <td><?= number_format((float)$value->price_min, 0, ',', '.')   ?></td>
-                <td>0</td>
+
+                <?php 
+                    global $db;
+                    $querys = " SELECT count FROM fs_order_uploads_detail WHERE 1=1 AND product_id = $value->id";
+                    $result_count = $db->getTotal($querys);
+                ?>
+                <td><?= $result_count ?></td>
                
                 <td><?= $value->amount ?></td>
                 <td><?= $value->amount ?></td>
