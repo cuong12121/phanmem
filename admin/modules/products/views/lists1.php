@@ -98,7 +98,7 @@
 
                 <?php 
                     global $db;
-                    $querys = " SELECT count FROM fs_order_uploads_detail WHERE 1=1 AND product_id = $value->id";
+                    $querys = " SELECT count FROM fs_order_uploads_detail WHERE 1=1 AND is_package  =1 AND product_id = $value->id";
                     $result_count = $db->getTotal($querys);
                 ?>
                 <td><?= $result_count ?></td>
