@@ -428,13 +428,13 @@ class ProductsControllersProducts  extends Controllers
 					$excel->obj_php_excel->getActiveSheet()->setCellValue('X'.$key, $item->warranty_address);
 					$excel->obj_php_excel->getActiveSheet()->setCellValue('Y'.$key, $item->warranty_phone);
 					$excel->obj_php_excel->getActiveSheet()->setCellValue('Z'.$key, $item->warranty);
-					// $excel->obj_php_excel->getActiveSheet()->setCellValue('AA'.$key, $item->warranty_link);
+					$excel->obj_php_excel->getActiveSheet()->setCellValue('AA'.$key, $item->warranty_link);
 
-					// $excel->obj_php_excel->getActiveSheet()->setCellValue('AB'.$key, $item->amount);
-					// $excel->obj_php_excel->getActiveSheet()->setCellValue('AC'.$key, $tong_ton);
-					// $excel->obj_php_excel->getActiveSheet()->setCellValue('AD'.$key, $tam_giu);
-					// $excel->obj_php_excel->getActiveSheet()->setCellValue('AE'.$key, $co_the_ban);
-					// $excel->obj_php_excel->getActiveSheet()->setCellValue('AF'.$key, $item->price_min);
+					$excel->obj_php_excel->getActiveSheet()->setCellValue('AB'.$key, $item->amount);
+					$excel->obj_php_excel->getActiveSheet()->setCellValue('AC'.$key, $tong_ton);
+					$excel->obj_php_excel->getActiveSheet()->setCellValue('AD'.$key, $tam_giu);
+					$excel->obj_php_excel->getActiveSheet()->setCellValue('AE'.$key, $co_the_ban);
+					$excel->obj_php_excel->getActiveSheet()->setCellValue('AF'.$key, $item->price_min);
 					$i ++;
 				}
 
