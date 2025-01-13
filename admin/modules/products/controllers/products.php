@@ -45,6 +45,7 @@ class ProductsControllersProducts  extends Controllers
 	{
 		global $db;
 
+		$page =1;
 	
 		$search = trim($_GET['search']);
 		if(!empty($search)){
