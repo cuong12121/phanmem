@@ -1133,7 +1133,7 @@
 			$stmt->execute(['is_package' => 0, 'tracking_code' => $search]);
 			$results = $stmt->fetchAll();
 
-			dd($results);
+			dd(end($results));
 
 			// Lấy phần tử cuối cùng
 			$checkorders = !empty($results) ? end($results) : null;
