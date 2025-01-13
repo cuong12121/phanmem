@@ -1244,7 +1244,22 @@
 
 									$msg ='Đóng hàng thành công';
 
-									
+									if($user_package_id==266){
+
+										$sql = "INSERT INTO fs_status_packed (product_id, status, created_at, order_id) VALUES (:product_id, :status, :created_at);";
+
+										$stmt = $pdo->prepare($sql);
+
+										// Các giá trị cần bind
+										$params = [
+										    'product_id' => $checkorders->product_id,
+										    'status' => 0,
+										    'order_id'=>$checkorders_id,
+										    'created_at' => date("Y-m-d H:i:s"),
+
+										    
+										];
+									}
 
 								    
 								} else {
@@ -1314,6 +1329,21 @@
 							} 	
 
 							$msg ='Hoàn thành công đơn hàng';
+
+							if($user_package_id==266){
+
+								$sql = "DELETE FROM fs_status_packed WHERE order_id = :order_id";
+
+								$stmt = $pdo->prepare($sql);
+
+								// Bind giá trị cho product_id
+								$params = ['order_id' => $checkorders_id];
+
+								// Thực thi truy vấn
+								$stmt->execute($params);
+
+								
+							}
 
 							setRedirect($link,$msg);
 						   
