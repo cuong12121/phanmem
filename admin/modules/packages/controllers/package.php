@@ -228,6 +228,56 @@
 			}
 		}
 
+		public function active_status_packed()
+		{
+			
+			$status = $_GET['status']??'';
+
+			$order_id = $_GET['order_id']??'';
+			$error ='';
+
+			$link = 'admin/index.php?module=packages&view=package&task=show_packed';
+
+			if(!empty($status) && !empty($id_active)){
+				// phần kết nối DB
+				$config = require PATH_BASE.'/includes/configs.php';
+
+				$host = $config['dbHost'];
+				$db = $config['dbName'];
+				$user = $config['dbUser'];
+				$pass = $config['dbPass'];
+				$charset = 'utf8mb4';
+
+				$dsn = "mysql:host=$host;dbname=$db;charset=$charset";
+				$options = [
+				    PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
+				    PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
+				    PDO::ATTR_EMULATE_PREPARES   => false,
+				];
+
+				try {
+				    $pdo = new PDO($dsn, $user, $pass, $options);
+				} catch (\PDOException $e) {
+				    throw new \PDOException($e->getMessage(), (int)$e->getCode());
+				}
+
+				$sql = "UPDATE fs_status_packed SET status = :status, updated_at = :updated_at WHERE order_id = :order_id";
+
+				$stmt = $pdo->prepare($sql);
+				$stmt->execute(['status' => $status, 'updated_at' => date("Y-m-d H:i:s"), 'order_id'=>$order_id]);
+
+
+				$msg = "thao tác thành công";
+			}
+			else{
+				$error = 1;
+				$msg = "thao tác thất bại vì thiếu thông tin truyền vào ";
+			}
+
+			setRedirect($link,$msg, $error===1?'error':'');
+
+		}
+
 		function show_packed()
 		{
 			$page = !empty($_GET['page'])?$_GET['page']:1;
