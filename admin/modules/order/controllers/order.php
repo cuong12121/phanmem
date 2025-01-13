@@ -1171,7 +1171,7 @@
 
 					if($user_package_id==266){
 
-						$sql = "INSERT INTO fs_status_packed (product_id, status, created_at,user_packed_id, order_id) VALUES (:product_id,:user_packed_id, :status, :created_at, :order_id)";
+						$sql = "INSERT INTO fs_status_packed (product_id,user_packed_id, status, created_at,order_id) VALUES (:product_id,:user_packed_id, :status, :created_at, :order_id)";
 
 						$stmt = $pdo->prepare($sql);
 
