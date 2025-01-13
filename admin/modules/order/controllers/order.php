@@ -1180,6 +1180,8 @@
 
 						    
 						];
+
+						$insert = $stmt->execute($params);
 					}
 
 				    
