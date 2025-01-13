@@ -42,7 +42,7 @@
 </head>
 <body>
 
-<form  action="https://dienmayai.com/admin/product" name="adminForm" method="get">    
+<form  action="https://<?= DOMAIN  ?>/admin/index.php?module=product&view=product&task=SearchBYNamePD" name="adminForm" method="get">    
     <div class="filter_area">
         <div class="row">
 
@@ -56,7 +56,7 @@
             </div>
             <div class="fl-left">               
                 <button class="btn btn-outline btn-primary" type="submit">Tìm kiếm</button>             
-                <button class="btn btn-outline btn-primary"><a href="https://dienmayai.com/admin/product?get_template=1">Reset</a>  </button>           
+                <button class="btn btn-outline btn-primary"><a href="https://<?= DOMAIN  ?>/admin/product?get_template=1">Reset</a>  </button>           
             </div>
              
             

@@ -43,11 +43,18 @@ class ProductsControllersProducts  extends Controllers
 
 	function SearchBYNamePD()
 	{
-		global $db;
-		$search = trim($_GET['search']);
-		// if(!empty($search)){
+		$global $db;
 
-		// }
+	
+		$search = trim($_GET['search']);
+		if(!empty($search)){
+
+			$sql = " SELECT * FROM  fs_products WHERE id = '$search' OR Where name like '%$search%'";
+            $list = $db->getObjectList($sql);
+
+            include 'modules/'.$this->module.'/views/lists1.php';
+
+		}
 	}
 	
 	
@@ -218,7 +225,8 @@ class ProductsControllersProducts  extends Controllers
 			echo $alias;
 			return;
 		}
-		
+
+
 
 
 
