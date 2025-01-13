@@ -1173,7 +1173,7 @@
 
 						// Các giá trị cần bind
 						$params = [
-						    'product_id' => $checkorders->product_id,
+						    'product_id' => $checkorders['product_id'],
 						    'status' => 0,
 						    'order_id'=>$checkorders_id,
 						    'created_at' => date("Y-m-d H:i:s"),
