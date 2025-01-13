@@ -42,14 +42,14 @@
 </head>
 <body>
 
-<form  action="https://<?= DOMAIN  ?>/admin/index.php?module=product&view=product&task=SearchBYNamePD" name="adminForm" method="get">    
+<form  action="https://<?= DOMAIN  ?>/product/search-fast/check" name="adminForm" method="get">    
     <div class="filter_area">
         <div class="row">
 
             <div class="fl-left pd-15"> 
                 <input type="text" placeholder="Tìm kiếm" name="keysearch" id="search" value="" class="form-control fl-left">
                 <span class="input-group-btn fl-left" style="margin-left: -2px;">
-                <button onclick="this.form.submit();" class="btn btn-search btn-default" type="button">
+                <button type="submit" class="btn btn-search btn-default" type="button">
                 <i class="fa fa-search"></i>
                 </button>
                 </span>
