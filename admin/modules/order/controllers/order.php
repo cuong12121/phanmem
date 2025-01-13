@@ -1133,7 +1133,6 @@
 			$stmt->execute(['is_package' => 0, 'tracking_code' => $search]);
 			$results = $stmt->fetchAll();
 
-			dd(end($results));
 
 			// Lấy phần tử cuối cùng
 			$checkorders = !empty($results) ? end($results) : null;
@@ -1143,7 +1142,6 @@
 
 				$checkorders_id = $checkorders['id'];  // ID của đơn hàng (từ kết quả trước)
 
-				
 
 				$user_package_id = $user_id; // Giá trị của $user_package_id
 
