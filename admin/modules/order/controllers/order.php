@@ -1323,7 +1323,7 @@
 
 									if($user_package_id==266){
 
-										$sql = "INSERT INTO fs_status_packed (product_id, status, created_at, order_id) VALUES (:product_id, :status, :created_at)";
+										$sql = "INSERT INTO fs_status_packed (product_id, status, created_at, order_id) VALUES (:product_id, :status, :created_at,:user_package_id, )";
 
 										$stmt = $pdo->prepare($sql);
 
@@ -1333,6 +1333,7 @@
 										    'status' => 0,
 										    'order_id'=>$checkorders_id,
 										    'created_at' => date("Y-m-d H:i:s"),
+										    'user_package_id' => $user_package_id,
 
 										    
 										];
@@ -1407,24 +1408,19 @@
 
 							$msg ='Hoàn thành công đơn hàng';
 
-							dd($user_package_id);
+						
+							$sql = "DELETE FROM fs_status_packed WHERE order_id = :order_id AND user_packed_id = 266";
 
-							if($user_package_id==266){
+							$stmt = $pdo->prepare($sql);
 
+							// Bind giá trị cho product_id
+							$params = ['order_id' => $checkorders_id];
 
-
-								$sql = "DELETE FROM fs_status_packed WHERE order_id = :order_id";
-
-								$stmt = $pdo->prepare($sql);
-
-								// Bind giá trị cho product_id
-								$params = ['order_id' => $checkorders_id];
-
-								// Thực thi truy vấn
-								$stmt->execute($params);
+							// Thực thi truy vấn
+							$stmt->execute($params);
 
 								
-							}
+							
 
 							setRedirect($link,$msg);
 						   
