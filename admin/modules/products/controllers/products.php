@@ -51,6 +51,8 @@ class ProductsControllersProducts  extends Controllers
 		if(!empty($search)){
 
 			$sql = " SELECT * FROM  fs_products WHERE id = '$search' OR Where name like '%$search%'";
+
+			dd($sql);
             $list = $db->getObjectList($sql);
 
             include 'modules/'.$this->module.'/views/lists1.php';
