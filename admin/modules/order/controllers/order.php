@@ -1096,38 +1096,84 @@
 
 			$search = str_replace($kytudefine, '', $searchs);
 
-			$page =1;
 
 			$date_package = date("Y-m-d H:i:s");
 			
-			$active =$_GET['active'];
-
-			$redis = $this->connect_redis();
-
-			$keyExists = $redis->exists('data_box_order');
-
-			$dems =0;			
-			if ($keyExists) {
-
-				$data_json = $redis->get('data_box_order');
-
-				$data = json_decode($data_json);
-
-				$dems = count($data);
-
-			} 
-
-			$data[$dems]['searchs'] = $searchs;
-			$data[$dems]['search'] =  $search;
-
-			$data[$dems]['user_id'] = $user_id;
-
-			$data[$dems]['date_time'] = $date_package;
-
 			
-			$redis->set("data_box_order", json_encode($data));
+			
+			$sql = "SELECT id FROM fs_order_uploads_detail 
+			        WHERE is_package = :is_package 
+			        AND tracking_code = :tracking_code 
+			        ORDER BY id DESC 
+			        LIMIT 100";
 
-			$msg = "Đơn bắn được đưa vào hàng chờ!";
+			$stmt = $pdo->prepare($sql);
+			$stmt->execute(['is_package' => 0, 'tracking_code' => $search]);
+			$results = $stmt->fetchAll();
+
+			// Lấy phần tử cuối cùng
+			$checkorders = !empty($results) ? end($results) : null;
+
+
+			if(!empty($checkorders)):
+
+				$checkorders_id = $checkorders['id'];  // ID của đơn hàng (từ kết quả trước)
+				$user_package_id = $user_id; // Giá trị của $user_package_id
+
+			    $sql = "UPDATE fs_order_uploads_detail 
+				        SET is_package = :is_package, 
+				            user_package_id = :user_package_id, 
+				            date_package = :date_package 
+				        WHERE id = :id";
+
+				$stmt = $pdo->prepare($sql);
+
+				// Các giá trị cần bind
+				$params = [
+				    'is_package' => 1,
+				    'user_package_id' => $user_package_id,
+				    'date_package' => date("Y-m-d H:i:s"),
+				    'id' => $checkorders_id
+				];
+
+				// Thực hiện câu lệnh
+				$update = $stmt->execute($params);
+
+				if ($update) {
+
+					$msg ='Đóng hàng thành công';
+
+					if($user_package_id==266){
+
+						$sql = "INSERT INTO fs_status_packed (product_id, status, created_at, order_id) VALUES (:product_id, :status, :created_at)";
+
+						$stmt = $pdo->prepare($sql);
+
+						// Các giá trị cần bind
+						$params = [
+						    'product_id' => $checkorders->product_id,
+						    'status' => 0,
+						    'order_id'=>$checkorders_id,
+						    'created_at' => date("Y-m-d H:i:s"),
+
+						    
+						];
+					}
+
+				    
+				} else {
+					$msg = 'Có lỗi trong quá trình đóng hàng';
+
+				
+				}
+			        
+			    				       
+			else:
+
+					$msg = 'Đóng hàng không thành công, vui lòng kiểm tra lại mã đơn';
+
+					
+			endif;
 
 			setRedirect($link,$msg);
 
