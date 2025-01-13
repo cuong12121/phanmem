@@ -1140,6 +1140,9 @@
 			if(!empty($checkorders)):
 
 				$checkorders_id = $checkorders['id'];  // ID của đơn hàng (từ kết quả trước)
+
+				dd($checkorders_id);
+				
 				$user_package_id = $user_id; // Giá trị của $user_package_id
 
 			    $sql = "UPDATE fs_order_uploads_detail 
@@ -1157,6 +1160,7 @@
 				    'date_package' => date("Y-m-d H:i:s"),
 				    'id' => $checkorders_id
 				];
+
 
 				// Thực hiện câu lệnh
 				$update = $stmt->execute($params);
