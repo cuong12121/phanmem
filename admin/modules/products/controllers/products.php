@@ -50,7 +50,7 @@ class ProductsControllersProducts  extends Controllers
 		$search = trim($_GET['search']);
 		if(!empty($search)){
 
-			$sql = " SELECT * FROM  fs_products WHERE id = '$search' OR Where name like '%$search%'";
+			$sql = " SELECT * FROM  fs_products WHERE id = $search OR Where name like '%$search%'";
 
 			
             $list = $db->getObjectList($sql);
