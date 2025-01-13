@@ -285,11 +285,21 @@ endif;
             
             
             <td><?=  number_format((float)$value->total_price, 0, ',', '.') ?>đ</td>
+            <?php 
+                global $db;
+                $querys = "SELECT status FROM fs_status_packed WHERE 1=1 AND  order_id= $value->id";
+
+                $result = $db->getResult($querys);
+
+                
+            ?>
             <td class="return">
                 <select name="status" id="status_<?= $dem ?>">
-                    <option value="https://<?= DOMAIN  ?>/admin/index.php?module=packages&view=package&task=active_status_packed&status=0&order_id=<?= $value->id ?>">Đang giao</option>
-                    <option value="https://<?= DOMAIN  ?>/admin/index.php?module=packages&view=package&task=active_status_packed&status=1&order_id=<?= $value->id ?>">Giao thành công</option>
-                    <option value="https://<?= DOMAIN  ?>/admin/index.php?module=packages&view=package&task=active_status_packed&status=2&order_id=<?= $value->id ?>">Hủy</option>
+
+
+                    <option <?= $result=='0'?'selected':'' ?> value="https://<?= DOMAIN  ?>/admin/index.php?module=packages&view=package&task=active_status_packed&status=0&order_id=<?= $value->id ?>">Đang giao</option>
+                    <option <?= $result=='1'?'selected':'' ?> value="https://<?= DOMAIN  ?>/admin/index.php?module=packages&view=package&task=active_status_packed&status=1&order_id=<?= $value->id ?>">Giao thành công</option>
+                    <option <?= $result=='2'?'selected':'' ?> value="https://<?= DOMAIN  ?>/admin/index.php?module=packages&view=package&task=active_status_packed&status=2&order_id=<?= $value->id ?>">Hủy</option>
                 </select>
                 
             </td>
