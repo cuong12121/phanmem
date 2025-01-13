@@ -1407,7 +1407,11 @@
 
 							$msg ='Hoàn thành công đơn hàng';
 
+							dd($user_package_id);
+
 							if($user_package_id==266){
+
+
 
 								$sql = "DELETE FROM fs_status_packed WHERE order_id = :order_id";
 
