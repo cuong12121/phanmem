@@ -287,9 +287,9 @@ endif;
             <td><?=  number_format((float)$value->total_price, 0, ',', '.') ?>đ</td>
             <td class="return">
                 <select name="status" id="status_<?= $dem ?>">
-                    <option value="0">Đang giao</option>
-                    <option value="1">Giao thành công</option>
-                    <option value="2">Hủy</option>
+                    <option value="https://<?= DOMAIN  ?>/admin/index.php?module=packages&view=package&task=active_status_packed&status=0&order_id=<?= $value->id ?>">Đang giao</option>
+                    <option value="https://<?= DOMAIN  ?>/admin/index.php?module=packages&view=package&task=active_status_packed&status=1&order_id=<?= $value->id ?>">Giao thành công</option>
+                    <option value="https://<?= DOMAIN  ?>/admin/index.php?module=packages&view=package&task=active_status_packed&status=2&order_id=<?= $value->id ?>">Hủy</option>
                 </select>
                 
             </td>
@@ -316,14 +316,21 @@ endif;
             $("#status_"+i).change(function(){
                 let selectedValue = $(this).val();
 
-                if(selectedValue == "2"){
+                if(selectedValue == "https://<?= DOMAIN  ?>/admin/index.php?module=packages&view=package&task=active_status_packed&status=2&order_id=<?= $value->id ?>  "){
                     if(!confirm("Bạn có chắc chắn muốn chọn hủy, sản phẩm sẽ trả về kho và không thể sửa")){
                         $(this).val(previousValue); // Quay lại giá trị trước đó nếu Cancel
+
+                        window.location.href = selectedValue; // Chuyển hướng đến trang đã chọn
+                        
                         return;
                     }
                 }
 
+
                 previousValue = selectedValue; // Cập nhật giá trị trước đó
+
+                 window.location.href = selectedValue; // Chuyển hướng đến trang đã chọn
+                        
             });
         }
         
