@@ -238,7 +238,7 @@
 
 			$link = 'admin/index.php?module=packages&view=package&task=show_packed';
 
-			if(!empty($status) && !empty($id_active)){
+			if(!empty($status) && !empty($order_id)){
 				// phần kết nối DB
 				$config = require PATH_BASE.'/includes/configs.php';
 
