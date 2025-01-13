@@ -1184,6 +1184,7 @@
 
 				    
 				} else {
+					$error =1;
 					$msg = 'Có lỗi trong quá trình đóng hàng';
 
 				
@@ -1191,13 +1192,15 @@
 			        
 			    				       
 			else:
-
+					$error =1;
 					$msg = 'Đóng hàng không thành công, vui lòng kiểm tra lại mã đơn';
 
 					
 			endif;
-
-			setRedirect($link,$msg);
+			
+			setRedirect($link,$msg, $error===1?'error':'');
+			
+			
 
 		}
 
