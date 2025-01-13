@@ -1123,7 +1123,7 @@
 			
 			
 			
-			$sql = "SELECT id FROM fs_order_uploads_detail 
+			$sql = "SELECT id,product_id FROM fs_order_uploads_detail 
 			        WHERE is_package = :is_package 
 			        AND tracking_code = :tracking_code 
 			        ORDER BY id DESC 
@@ -1133,6 +1133,8 @@
 			$stmt->execute(['is_package' => 0, 'tracking_code' => $search]);
 			$results = $stmt->fetchAll();
 
+			dd($results);
+
 			// Lấy phần tử cuối cùng
 			$checkorders = !empty($results) ? end($results) : null;
 
@@ -1141,8 +1143,8 @@
 
 				$checkorders_id = $checkorders['id'];  // ID của đơn hàng (từ kết quả trước)
 
-				dd($checkorders_id);
 				
+
 				$user_package_id = $user_id; // Giá trị của $user_package_id
 
 			    $sql = "UPDATE fs_order_uploads_detail 
