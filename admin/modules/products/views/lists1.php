@@ -42,7 +42,7 @@
 </head>
 <body>
 
-<form  action="https://<?= DOMAIN  ?>/product/search-fast/check" name="adminForm" method="get">    
+<form  action="https://<?= DOMAIN  ?>/admin/product/search-fast/check" name="adminForm" method="get">    
     <div class="filter_area">
         <div class="row">
 
