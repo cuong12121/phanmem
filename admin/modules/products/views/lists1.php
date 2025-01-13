@@ -75,7 +75,7 @@
                 <th>Giá nhập</th>
                 <th>Giá bán đóng gói</th>
                 <th>Giá bán thấp nhất</th>
-                <!-- <th>Hàng chuyển kho</th> -->
+                <th>Hàng Đã Hủy</th>
                 <th>Hàng đã xuất</th>
                 <th>Tồn</th>
                 <th>Tổng tồn</th>
@@ -96,12 +96,8 @@
                 <td><?= number_format((float)$value->price_pack, 0, ',', '.')   ?></td>
                 <td><?= number_format((float)$value->price_min, 0, ',', '.')   ?></td>
 
-                <?php 
-                    global $db;
-                    $querys = " SELECT count FROM fs_order_uploads_detail WHERE 1=1 AND is_package  =1 AND product_id = $value->id";
-                    $result_count = $db->getTotal($querys);
-                ?>
-                <td><?= $result_count ?></td>
+                <td>0</td>
+                <td>0</td>
                
                 <td><?= $value->amount ?></td>
                 <td><?= $value->amount ?></td>
