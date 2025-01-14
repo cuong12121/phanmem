@@ -107,7 +107,7 @@
                 <td><?= $product_sale ?></td>
 
                 <td><?= $value->amount  ?></td>
-                <td><?= (int)$value->amount - (int)$value->amount ?></td>
+                <td><?= (int)$value->amount - (int)$product_sale ?></td>
             </tr>
             
             <?php
