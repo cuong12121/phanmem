@@ -88,6 +88,10 @@
 
                     $id_pd = $value->id;
 
+                    if($id_pd<37898355 && $id_pd>37898669){
+                        continue;
+                    }
+
                     // echo($id_pd);
 
                     $query  = "SELECT amount FROM fs_status_packed WHERE 1=1 AND product_id = $id_pd AND status<2";
