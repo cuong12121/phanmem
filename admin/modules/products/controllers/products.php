@@ -34,7 +34,9 @@ class ProductsControllersProducts  extends Controllers
 		if(!empty($get_template)){
 			// dd($list);
 
-			$list = $list->toArray();
+			// $list = $list->toArray();
+
+			dd($list);
 			include 'modules/'.$this->module.'/views/lists1.php';
 		}
 		else{

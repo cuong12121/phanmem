@@ -90,7 +90,7 @@
 
                     // echo($id_pd);
 
-                    $query  = "SELECT amount FROM fs_status_packed WHERE 1=1 AND product_id = $id_pd";
+                    $query  = "SELECT amount FROM fs_status_packed WHERE 1=1 AND product_id = $id_pd AND status<2";
                     $product_sale = $db->getTotal($query);                     
             ?>
             <tr>
