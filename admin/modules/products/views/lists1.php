@@ -86,7 +86,7 @@
                 global $db;
                 foreach($list as $value):
 
-                    $query  = "SELECT amount FROM fs_status_packed WHERE 1=1 AND product_id = $value->id";
+                    $query  = "SELECT amount FROM fs_status_packed WHERE 1=1 AND product_id = $value['id']";
                     $product_sale = $db->getTotal($query);                     
             ?>
             <tr>
