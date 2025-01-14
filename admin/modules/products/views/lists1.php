@@ -86,7 +86,7 @@
                 global $db;
                 foreach($list as $value):
 
-                    $id_pd = $value['id'];
+                    // $id_pd = $value['id'];
 
                     // echo($id_pd);
 
