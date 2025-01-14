@@ -88,6 +88,8 @@
 
                     $id_pd = $value['id'];
 
+                    dd($id_pd);
+
                     $query  = "SELECT amount FROM fs_status_packed WHERE 1=1 AND product_id = $id_pd";
                     $product_sale = $db->getTotal($query);                     
             ?>
