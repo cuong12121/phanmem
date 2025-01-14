@@ -106,8 +106,17 @@ echo '</li>';
 }
 ?>
 
+<?php 
+if($_SESSION['ad_userid'] == 266){
+    $link_order = 'https://'.DOMAIN.'/admin/index.php?module=packages&view=package&task=show_packed';
+}
+else{
+     $link_order = 'https://'.DOMAIN.'/admin/order/detail';
+}    
+?>
+
 <li>
-  <a id="li_menu_500" href="https://<?= DOMAIN ?>/admin/order/detail" class="li_menu_0 header ">
+  <a id="li_menu_500" href="<?= $link_order ?>" class="li_menu_0 header ">
     <span class="text">Đóng đơn</span>          
   </a>
   
@@ -132,6 +141,13 @@ if($_SESSION['ad_userid'] == 266){
       <span class="text">Lịch sử in</span>          
     </a>
 </li>
+
+<li>
+  <a id="li_menu_502" href="https://<?= DOMAIN ?>/admin/product?get_template=1" class="li_menu_0 header ">
+    <span class="text">Sản phẩm (New)</span>          
+  </a>
+</li>
+
 <?php
     }
 ?>
@@ -140,6 +156,8 @@ if($_SESSION['ad_userid'] == 266){
     <span class="text">Xuất kho(new)</span>          
   </a>
 </li>
+
+
 
 </ul>
 <script>
