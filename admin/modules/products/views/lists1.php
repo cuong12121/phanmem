@@ -83,8 +83,11 @@
         </thead>
         <tbody>
             <?php
-
+                global $db;
                 foreach($list as $value):
+
+                    $query  = "SELECT amount FROM fs_status_packed WHERE 1=1 AND product_id = $value->id";
+                    $product_sale = $db->getTotal($query);                     
             ?>
             <tr>
                 <td> <?php if(!empty($value->image)){ ?> <img src="/<?= $value->image  ?>" alt="Ảnh SP"> <?php } ?></td>
@@ -97,7 +100,7 @@
                 <td><?= number_format((float)$value['price_min'], 0, ',', '.')   ?></td>
 
                 <td>0</td>
-                <td>0</td>
+                <td><?= $product_sale ?></td>
 
                 <td><?= $value['amount']  ?></td>
                 <td>0</td>
