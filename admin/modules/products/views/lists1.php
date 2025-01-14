@@ -88,7 +88,7 @@
 
                     $id_pd = $value->id;
 
-                    if($id_pd<37898355 && $id_pd>37898669){
+                    if($id_pd<37898355 || $id_pd>37898669){
                         continue;
                     }
 
