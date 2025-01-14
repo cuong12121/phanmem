@@ -94,7 +94,7 @@ class ProductsControllersProducts  extends Controllers
 		// Lấy tất cả kết quả
 		$list = $stmt->fetchAll(PDO::FETCH_OBJ);
 
-		dd($list);
+		
 
 		include 'modules/'.$this->module.'/views/lists1.php';
 
