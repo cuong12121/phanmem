@@ -32,7 +32,7 @@ class ProductsControllersProducts  extends Controllers
 
 	        $list = $db->getObjectList();
 
-	        dd($list);
+	        
 	    }
 	    else{
 	    	$list = $model->get_data();
