@@ -83,7 +83,7 @@
         </thead>
         <tbody>
             <?php
-                global $db;
+                
                 foreach($list as $value):
 
                     $id_pd = $value->id;
