@@ -75,10 +75,10 @@
                 <th>Giá nhập</th>
                 <th>Giá bán đóng gói</th>
                 <th>Giá bán thấp nhất</th>
-                <th>Hàng Đã Hủy</th>
+                
                 <th>Hàng đã xuất</th>
                 <th>Tồn</th>
-                <th>Tổng tồn</th>
+                <th>Tổng tồn (Tổng tồn = Tồn - Hàng đã xuất)</th>
             </tr>
         </thead>
         <tbody>
@@ -86,7 +86,7 @@
                 global $db;
                 foreach($list as $value):
 
-                    $id_pd = $value['id'];
+                    $id_pd = $value->id;
 
                     // echo($id_pd);
 
@@ -95,19 +95,19 @@
             ?>
             <tr>
                 <td> <?php if(!empty($value->image)){ ?> <img src="/<?= $value->image  ?>" alt="Ảnh SP"> <?php } ?></td>
-                <td><?= $value['id'] ?></td>
-                <td><?= $value['code'] ?></td>
-                <td><?= $value['name'] ?></td>
-                <td><?= number_format((float)$value['price'], 0, ',', '.')   ?></td>
-                <td><?= number_format((float)$value['import_price'], 0, ',', '.')   ?></td>
-                <td><?= number_format((float)$value['price_pack'], 0, ',', '.')   ?></td>
-                <td><?= number_format((float)$value['price_min'], 0, ',', '.')   ?></td>
+                <td><?= $value->id ?></td>
+                <td><?= $value->code ?></td>
+                <td><?= $value->name ?></td>
+                <td><?= number_format((float)$value->price, 0, ',', '.')   ?></td>
+                <td><?= number_format((float)$value->import_price, 0, ',', '.')   ?></td>
+                <td><?= number_format((float)$value->price_pack, 0, ',', '.')   ?></td>
+                <td><?= number_format((float)$value->price_min, 0, ',', '.')   ?></td>
 
-                <td>0</td>
+                
                 <td><?= $product_sale ?></td>
 
-                <td><?= $value['amount']  ?></td>
-                <td>0</td>
+                <td><?= $value->amount  ?></td>
+                <td><?= (int)$value->amount - (int)$value->amount ?></td>
             </tr>
             
             <?php
