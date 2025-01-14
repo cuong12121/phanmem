@@ -28,7 +28,9 @@ class ProductsControllersProducts  extends Controllers
 	        FROM fs_products AS p
 	        LEFT JOIN fs_warehouses_products_total AS w ON p.id = w.product_id
 	        WHERE  p.id BETWEEN 37898355 AND 37898669';
-	        $list = $db->query_limit($query,50,$page);
+	        $result = $db->query_limit($query,50,$page);
+
+	        $list = $db->getObjectList();
 
 	        dd($list);
 	    }
