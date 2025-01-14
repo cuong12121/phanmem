@@ -86,8 +86,10 @@
                 global $db;
                 foreach($list as $value):
 
-                    // $query  = "SELECT amount FROM fs_status_packed WHERE 1=1 AND product_id = $value->id";
-                    // $product_sale = $db->getTotal($query);                     
+                    $id_pd = $value['id'];
+
+                    $query  = "SELECT amount FROM fs_status_packed WHERE 1=1 AND product_id = $id_pd";
+                    $product_sale = $db->getTotal($query);                     
             ?>
             <tr>
                 <td> <?php if(!empty($value->image)){ ?> <img src="/<?= $value->image  ?>" alt="Ảnh SP"> <?php } ?></td>
