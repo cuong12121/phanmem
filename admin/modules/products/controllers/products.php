@@ -92,7 +92,9 @@ class ProductsControllersProducts  extends Controllers
 		$stmt->execute();
 
 		// Lấy tất cả kết quả
-		$list = $stmt->fetchAll();
+		$list = $stmt;
+
+		dd($list);
 
 		include 'modules/'.$this->module.'/views/lists1.php';
 
