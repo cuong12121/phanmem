@@ -86,12 +86,12 @@
                 global $db;
                 foreach($list as $value):
 
-                    // $id_pd = $value['id'];
+                    $id_pd = $value['id'];
 
                     // echo($id_pd);
 
-                    // $query  = "SELECT amount FROM fs_status_packed WHERE 1=1 AND product_id = $id_pd";
-                    // $product_sale = $db->getTotal($query);                     
+                    $query  = "SELECT amount FROM fs_status_packed WHERE 1=1 AND product_id = $id_pd";
+                    $product_sale = $db->getTotal($query);                     
             ?>
             <tr>
                 <td> <?php if(!empty($value->image)){ ?> <img src="/<?= $value->image  ?>" alt="Ảnh SP"> <?php } ?></td>
