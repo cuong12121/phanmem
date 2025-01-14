@@ -36,7 +36,7 @@ class ProductsControllersProducts  extends Controllers
 
 			// $list = $list->toArray();
 
-			dd($list);
+
 			include 'modules/'.$this->module.'/views/lists1.php';
 		}
 		else{
@@ -92,7 +92,7 @@ class ProductsControllersProducts  extends Controllers
 		$stmt->execute();
 
 		// Lấy tất cả kết quả
-		$list = $stmt;
+		$list = $stmt->fetchAll(PDO::FETCH_OBJ);
 
 		dd($list);
 
