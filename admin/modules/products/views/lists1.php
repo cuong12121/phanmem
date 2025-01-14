@@ -99,8 +99,8 @@
                 <td>0</td>
                 <td>0</td>
 
-                <td><?= $value->amount ?></td>
-                <td><?= $value->amount ?></td>
+                <td><?= $value['amount']  ?></td>
+                <td>0</td>
             </tr>
             
             <?php
