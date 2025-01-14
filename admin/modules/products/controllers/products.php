@@ -43,23 +43,65 @@ class ProductsControllersProducts  extends Controllers
 
 	function SearchBYNamePD()
 	{
-		global $db;
+		
 
 		$page =1;
-	
-		$search = trim($_GET['search']);
-		if(!empty($search)){
 
-			$sql = " SELECT * FROM  fs_products WHERE id = $search OR  name like '%$search%'";
+		$config = require PATH_BASE.'/includes/configs.php';
+
+		$host = $config['dbHost'];
+		$db = $config['dbName'];
+		$user = $config['dbUser'];
+		$pass = $config['dbPass'];
+		$charset = 'utf8mb4';
+
+		$dsn = "mysql:host=$host;dbname=$db;charset=$charset";
+		$options = [
+		    PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
+		    PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
+		    PDO::ATTR_EMULATE_PREPARES   => false,
+		];
+
+		try {
+		    $pdo = new PDO($dsn, $user, $pass, $options);
+		} catch (\PDOException $e) {
+		    throw new \PDOException($e->getMessage(), (int)$e->getCode());
+		}
+
 
 			
-            $list = $db->getObjectList($sql);
+	
+		// Nhận giá trị tìm kiếm từ request (GET hoặc POST)
+			$search = isset($_GET['search']) ? trim($_GET['search']) : '';
 
-            
+			// Chuẩn bị truy vấn SQL với Prepared Statements để tránh SQL Injection
+			$sql = "SELECT p.*, w.*
+			        FROM fs_products AS p
+			        LEFT JOIN fs_warehouses_products_total AS w ON p.id = w.product_id
+			        WHERE p.id = :search OR p.name LIKE :name_search";
 
-            include 'modules/'.$this->module.'/views/lists1.php';
+			$stmt = $pdo->prepare($sql);
 
-		}
+			// Bind giá trị vào tham số
+			$stmt->bindValue(':search', $search, is_numeric($search) ? PDO::PARAM_INT : PDO::PARAM_STR);
+			$stmt->bindValue(':name_search', "%$search%", PDO::PARAM_STR);
+
+			// Thực thi truy vấn
+			$stmt->execute();
+
+			// Lấy tất cả kết quả
+			$results = $stmt->fetchAll();
+
+		
+
+			// Hiển thị kết quả (có thể chuyển thành JSON nếu dùng API)
+			if ($results) {
+			    echo "<pre>";
+			    print_r($results);
+			    echo "</pre>";
+			} else {
+			    echo "Không tìm thấy sản phẩm nào.";
+			}
 	}
 	
 	
