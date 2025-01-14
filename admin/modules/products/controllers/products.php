@@ -9,18 +9,11 @@ class ProductsControllersProducts  extends Controllers
 	}
 	function display()
 	{
+		global $tmpl, $db;
 		$model  = $this -> model;
 		parent::display();
 		$sort_field = $this -> sort_field;
 		$sort_direct = $this -> sort_direct;
-		$list = $model->get_data();
-		$categories = $model->get_categories_tree();
-		$warehouses = $model -> get_records('published = 1','fs_warehouses');
-		$pagination = $model->getPagination();
-		$breadcrumbs = array();
-		$breadcrumbs[] = array(0=>'Danh sách sản phẩm', 1 => '');	
-		global $tmpl;
-		$tmpl->assign ( 'breadcrumbs', $breadcrumbs );
 
 		$get_template = $_GET['get_template']??'';
 
@@ -29,13 +22,32 @@ class ProductsControllersProducts  extends Controllers
 		$page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
 		$page = max($page, 1); // Đảm bảo không có số âm
 
+		if(!empty($get_template)){
+
+			$query = 'SELECT p.*, w.*
+	        FROM fs_products AS p
+	        LEFT JOIN fs_warehouses_products_total AS w ON p.id = w.product_id
+	        WHERE  p.id BETWEEN 37898355 AND 37898669';
+	        $list = $db->query_limit($query,50,);
+	    }
+	    else{
+	    	$list = $model->get_data();
+	    }    
+
+		$categories = $model->get_categories_tree();
+		$warehouses = $model -> get_records('published = 1','fs_warehouses');
+		$pagination = $model->getPagination();
+		$breadcrumbs = array();
+		$breadcrumbs[] = array(0=>'Danh sách sản phẩm', 1 => '');	
+		
+
+		$tmpl->assign ( 'breadcrumbs', $breadcrumbs );
+
+		
+
 		
 
 		if(!empty($get_template)){
-			// dd($list);
-
-			// $list = $list->toArray();
-
 
 			include 'modules/'.$this->module.'/views/lists1.php';
 		}
