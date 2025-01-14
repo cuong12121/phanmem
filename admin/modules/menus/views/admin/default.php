@@ -107,12 +107,12 @@ echo '</li>';
 ?>
 
 <?php 
-if($_SESSION['ad_userid'] == 266){
-    $link_order = 'https://'.DOMAIN.'/admin/index.php?module=packages&view=package&task=show_packed';
-}
-else{
+
+    $link_order_status = 'https://'.DOMAIN.'/admin/index.php?module=packages&view=package&task=show_packed';
+
+
      $link_order = 'https://'.DOMAIN.'/admin/order/detail';
-}    
+    
 ?>
 
 <li>
@@ -121,6 +121,20 @@ else{
   </a>
   
 </li>
+
+<?php
+    if($_SESSION['ad_userid'] == 266){
+?>    
+<li>
+  <a id="li_menu_500" href="<?= $link_order_status ?>" class="li_menu_0 header ">
+    <span class="text">Trạng thái đơn hàng</span>          
+  </a>
+  
+</li>
+<?php 
+    }
+?>
+
 <li>
   <a id="li_menu_501" href="https://<?= DOMAIN ?>/admin/order/trackings" class="li_menu_0 header ">
     <span class="text">tracking</span>          
