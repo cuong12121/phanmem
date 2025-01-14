@@ -107,6 +107,8 @@ class ProductsControllersProducts  extends Controllers
 		// Thực thi truy vấn
 		$stmt->execute();
 
+		global $db;
+
 		// Lấy tất cả kết quả
 		$list = $stmt->fetchAll(PDO::FETCH_OBJ);
 
