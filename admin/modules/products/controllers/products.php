@@ -107,7 +107,7 @@ class ProductsControllersProducts  extends Controllers
 		$stmt->bindValue(':search', $search, is_numeric($search) ? PDO::PARAM_INT : PDO::PARAM_STR);
 		$stmt->bindValue(':name_search', "%$search%", PDO::PARAM_STR);
 
-		dd($stmt);
+		
 
 		// Thực thi truy vấn
 		$stmt->execute();
@@ -119,7 +119,12 @@ class ProductsControllersProducts  extends Controllers
 		// Lấy tất cả kết quả
 		$list = $stmt->fetchAll(PDO::FETCH_OBJ);
 
+		$stmt->closeCursor();
+		$stmt = null; 
+
 		dd($list);
+
+		
 
 		
 
