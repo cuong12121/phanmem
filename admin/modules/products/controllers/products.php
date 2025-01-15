@@ -122,11 +122,6 @@ class ProductsControllersProducts  extends Controllers
 		$stmt->closeCursor();
 		$stmt = null; 
 
-		dd($list);
-
-		
-
-		
 
 		include 'modules/'.$this->module.'/views/lists1.php';
 
