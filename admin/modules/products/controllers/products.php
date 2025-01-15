@@ -70,12 +70,12 @@ class ProductsControllersProducts  extends Controllers
 		$config = require PATH_BASE.'/includes/configs.php';
 
 		$host = $config['dbHost'];
-		$db = $config['dbName'];
+		$dbs = $config['dbName'];
 		$user = $config['dbUser'];
 		$pass = $config['dbPass'];
 		$charset = 'utf8mb4';
 
-		$dsn = "mysql:host=$host;dbname=$db;charset=$charset";
+		$dsn = "mysql:host=$host;dbname=$dbs;charset=$charset";
 		$options = [
 		    PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
 		    PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
