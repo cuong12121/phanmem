@@ -92,6 +92,8 @@ class ProductsControllersProducts  extends Controllers
 		// Nhận giá trị tìm kiếm từ request (GET hoặc POST)
 		$search = isset($_GET['search']) ? trim($_GET['search']) : '';
 
+		dd($search);
+
 		// Chuẩn bị truy vấn SQL với Prepared Statements để tránh SQL Injection
 		$sql = "SELECT p.*, w.*
 		        FROM fs_products AS p
