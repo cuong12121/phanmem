@@ -101,6 +101,7 @@ class ProductsControllersProducts  extends Controllers
 		        WHERE p.id = :search OR p.name LIKE :name_search";
 
 		$stmt = $pdo->prepare($sql);
+		dd($stmt);
 
 		// Bind giá trị vào tham số
 		$stmt->bindValue(':search', $search, is_numeric($search) ? PDO::PARAM_INT : PDO::PARAM_STR);
