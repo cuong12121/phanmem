@@ -1597,9 +1597,9 @@
 					return false;
 				$row['file_xlsx'] = 'files/orders/'.$cyear.'/'.$cmonth.'/'.$cday.'/'.$file_xlsx_name;
 
-				 // $id_google_excel = file_get_contents('https://drive.'.DOMAIN.'/createfiles.php?link=https://'.DOMAIN.'/files/orders/'.$cyear.'/'.$cmonth.'/'.$cday.'/'.$file_xlsx_name);
+				$id_google_excel = file_get_contents('https://drive.'.DOMAIN.'/createfiles.php?link=https://'.DOMAIN.'/files/orders/'.$cyear.'/'.$cmonth.'/'.$cday.'/'.$file_xlsx_name);
 
-				 $id_google_excel = 'file1pdf';
+				 // $id_google_excel = 'file1pdf';
 
 				$row['file_excel_drive'] = $id_google_excel;
 			}
