@@ -13,16 +13,25 @@ if ($conn->connect_error) {
     die("Kết nối thất bại: " . $conn->connect_error);
 }
 
-// Câu lệnh SQL
-$sql = "DELETE FROM fs_order_uploads_detail WHERE created_time <= '2024-08-30'";
+// Truy vấn danh sách ID cần xóa
+$sql = "SELECT id FROM fs_order_uploads_detail WHERE created_time <= '2024-08-30'";
+$result = $conn->query($sql);
 
-// Thực thi truy vấn
-if ($conn->query($sql) === TRUE) {
-    echo "Xóa dữ liệu thành công!";
-} else {
-    echo "Lỗi: " . $conn->error;
-}
+if ($result->num_rows > 0) {
+    while ($row = $result->fetch_assoc()) {
+        $id = $row["id"];
+        $deleteSQL = "DELETE FROM fs_order_uploads_detail WHERE id = $id";
+
+        if ($conn->query($deleteSQL) === TRUE) {
+            echo "Đã xóa ID: $id \n";
+        } else {
+            echo "Lỗi khi xóa ID: $id - " . $conn->error . "<br>";
+        }
+    }
+} 
 
 // Đóng kết nối
 $conn->close();
 ?>
+
+
