@@ -14,7 +14,7 @@ if ($conn->connect_error) {
 }
 
 // Truy vấn danh sách ID cần xóa
-$sql = "SELECT id FROM fs_order_uploads_detail WHERE created_time <= '2024-08-30'";
+$sql = "SELECT id FROM fs_order_uploads_detail WHERE created_time <= '2024-08-30 23:59:59'";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
