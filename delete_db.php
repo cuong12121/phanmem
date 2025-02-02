@@ -14,7 +14,7 @@ if ($conn->connect_error) {
 }
 
 // Câu lệnh SQL
-$sql = "DELETE FROM fs_order_uploads_detail WHERE created <= '2024-08-30'";
+$sql = "DELETE FROM fs_order_uploads_detail WHERE created_time <= '2024-08-30'";
 
 // Thực thi truy vấn
 if ($conn->query($sql) === TRUE) {
