@@ -14,13 +14,13 @@ if ($conn->connect_error) {
 }
 
 // Truy vấn danh sách ID cần xóa
-$sql = "SELECT id FROM fs_order_uploads_detail WHERE created_time <= '2024-08-30 23:59:59'";
+$sql = "SELECT id FROM fs_order_uploads_page_pdf WHERE record_id  < '1472963'";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
     while ($row = $result->fetch_assoc()) {
         $id = $row["id"];
-        $deleteSQL = "DELETE FROM fs_order_uploads_detail WHERE id = $id";
+        $deleteSQL = "DELETE FROM fs_order_uploads_page_pdf WHERE id = $id";
 
         if ($conn->query($deleteSQL) === TRUE) {
             echo "Đã xóa ID: $id \n";
