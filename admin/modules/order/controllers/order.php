@@ -182,7 +182,7 @@
 					$params = [
 					    'is_package' => 1,
 					    'user_package_id' => $user_package_id,
-					    'date_package' => date("Y-m-d H:i:s"),
+					    'date_package' => $date_package,
 					    'id' => $id
 					];
 
