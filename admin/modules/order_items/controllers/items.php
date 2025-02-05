@@ -330,7 +330,7 @@
 		            
 						$excel->obj_php_excel->getActiveSheet()->setCellValue('H'.$key, $name);
 						$excel->obj_php_excel->getActiveSheet()->setCellValue('I'.$key, date("d/m/Y", strtotime($item->date)));
-						$excel->obj_php_excel->getActiveSheet()->setCellValue('J'.$key, date("d/m/Y", strtotime($item->date_package)));
+						$excel->obj_php_excel->getActiveSheet()->setCellValue('J'.$key, date("d/m/Y, H:i:s", strtotime($item->date_package)));
 						$excel->obj_php_excel->getActiveSheet()->setCellValue('K'.$key, number_format((float)$item->total_price, 0, ',', '.'));
 						$excel->obj_php_excel->getActiveSheet()->setCellValue('L'.$key, $item->shipping_unit_name??'');
 						$excel->obj_php_excel->getActiveSheet()->setCellValue('M'.$key, $kho_define[$item->warehouse_id]??'');
