@@ -16,7 +16,7 @@
     
     <style>
         .form-horizontal {
-/*            height: 500px;*/
+            height: 700px;
             overflow-y: auto;
         }
 
