@@ -871,10 +871,10 @@
 				// Thực thi câu lệnh
 				if (!$run_insert) {
 				     echo "Lỗi: " . $stmt->error;
+
+				     die;
 				}	
-				else{
-					echo "thành công";
-				}
+				
 			
 				
 			}
