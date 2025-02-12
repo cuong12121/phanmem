@@ -846,37 +846,29 @@
 
 			foreach ($data as $key => $value) {
 
-				
-
-				$sql = "INSERT INTO fs_products (name,parent_id_name,code,import_price, price,price_pack,price_min,image) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
-				$stmt = $conn->prepare($sql);
-				$stmt->bind_param('ssssssss',$name, $parent_id_name, $code, str_replace('.', '', $import_price),str_replace('.', '',$price),str_replace('.', '', $price_pack),str_replace('.', '', $price_min), trim($image));
-
 				$name = $value['name'];
 
 				$parent_id_name = $value['parent_id_name'];
 
 				$code = $value['code'];
 
-				$import_price = $value['import_price'];
+				$import_price = str_replace('.', '', $value['import_price']);
 
-				$price = $value['price'];
+				$price =  str_replace('.', '', $value['price']);
 
-				$price_pack = $value['price_pack'];
+				$price_pack =  str_replace('.', '', $value['price_pack']);
 
-				$price_min = $value['price_min'];
+				$price_min = str_replace('.', '', $value['price_min']);
 
-				$image = $value['image'];
+				$image = trim($value['image']);
 
-				$run_insert = $stmt->execute();
-
-				// Thực thi câu lệnh
-				if (!$run_insert) {
-				     echo "Lỗi: " . $stmt->error;
-
-				     die;
-				}	
+				$sql = "INSERT INTO fs_products (name,parent_id_name,code,import_price, price,price_pack,price_min,image) VALUES ($name, $parent_id_name, $code, $import_price, $price, $price_pack, $price_min, $image)";
 				
+				if ($conn->query($sql) === False) {
+				    echo "Thêm dữ liệu thất bại!";
+
+				    die;
+				} 
 			
 				
 			}
@@ -884,7 +876,7 @@
 			// Đóng kết nối
 			$stmt->close();
 			$conn->close();
-			// echo "insert thành công";
+			echo "insert thành công";
 			
 		}
 
