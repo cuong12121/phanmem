@@ -864,7 +864,7 @@
 
 				$sql = "INSERT INTO fs_products (name,parent_id_name,code,import_price, price,price_pack,price_min,image) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
 				$stmt = $conn->prepare($sql);
-				$stmt->bind_param($name, $parent_id_name, $code, str_replace('.', '', $import_price),str_replace('.', '',$price),str_replace('.', '', $price_pack),str_replace('.', '', $price_min), trim($image));
+				$stmt->bind_param('ssssssss',$name, $parent_id_name, $code, str_replace('.', '', $import_price),str_replace('.', '',$price),str_replace('.', '', $price_pack),str_replace('.', '', $price_min), trim($image));
 
 				$run_insert = $stmt->execute();
 
@@ -876,8 +876,12 @@
 					echo "thành công";
 				}
 			
-				die;
+				
 			}
+
+			// Đóng kết nối
+			$stmt->close();
+			$conn->close();
 			// echo "insert thành công";
 			
 		}
