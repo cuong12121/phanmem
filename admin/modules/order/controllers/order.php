@@ -846,6 +846,12 @@
 
 			foreach ($data as $key => $value) {
 
+				
+
+				$sql = "INSERT INTO fs_products (name,parent_id_name,code,import_price, price,price_pack,price_min,image) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+				$stmt = $conn->prepare($sql);
+				$stmt->bind_param('ssssssss',$name, $parent_id_name, $code, str_replace('.', '', $import_price),str_replace('.', '',$price),str_replace('.', '', $price_pack),str_replace('.', '', $price_min), trim($image));
+
 				$name = $value['name'];
 
 				$parent_id_name = $value['parent_id_name'];
@@ -861,10 +867,6 @@
 				$price_min = $value['price_min'];
 
 				$image = $value['image'];
-
-				$sql = "INSERT INTO fs_products (name,parent_id_name,code,import_price, price,price_pack,price_min,image) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
-				$stmt = $conn->prepare($sql);
-				$stmt->bind_param('ssssssss',$name, $parent_id_name, $code, str_replace('.', '', $import_price),str_replace('.', '',$price),str_replace('.', '', $price_pack),str_replace('.', '', $price_min), trim($image));
 
 				$run_insert = $stmt->execute();
 
