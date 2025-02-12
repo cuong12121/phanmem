@@ -819,6 +819,44 @@
 			return $savePath;
 		}
 
+		function insert_data_to_pd()
+		{
+
+			$config = require PATH_BASE.'/includes/configs.php';
+
+			// Kết nối PDO
+			
+
+			$servername = $config['dbHost'];
+			$username = $config['dbUser'];
+			$password = $config['dbPass'];
+			$dbname = $config['dbName'];
+
+			$conn = new mysqli($servername, $username, $password, $dbname);
+
+			if ($conn->connect_error) {
+			    die("Kết nối thất bại: " . $conn->connect_error);
+			}
+			else{
+				echo "kết nối thành công";
+			}
+			// $sql = "INSERT INTO fs_products (name,parent_id_name,code,import_price, price,price_pack,price_min,image) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+			// $stmt = $conn->prepare($sql);
+			// $stmt->bind_param("ssd", $store_code, $product_name, $price);
+
+			
+
+			// // Thực thi câu lệnh
+			// if ($stmt->execute()) {
+			//     echo "Dữ liệu đã được chèn thành công!";
+			// } else {
+			//     echo "Lỗi: " . $stmt->error;
+			// }
+
+			// $stmt->close();
+			// $conn->close();
+		}
+
 		function convert_error(){
 
 			$config = require PATH_BASE.'/includes/configs.php';
