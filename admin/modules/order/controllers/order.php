@@ -874,7 +874,7 @@
 			}
 
 			// Đóng kết nối
-			$stmt->close();
+			
 			$conn->close();
 			echo "insert thành công";
 			
