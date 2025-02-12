@@ -862,24 +862,21 @@
 
 				$image = $value['image'];
 
-				echo $code;
+				$sql = "INSERT INTO fs_products (name,parent_id_name,code,import_price, price,price_pack,price_min,image) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+				$stmt = $conn->prepare($sql);
+				$stmt->bind_param($name, $parent_id_name, $code, str_replace('.', '', $import_price),str_replace('.', '',$price),str_replace('.', '', $price_pack),str_replace('.', '', $price_min), trim($image);
 
+				$run_insert = $stmt->execute();
+
+				// Thực thi câu lệnh
+				if (!$run_insert) {
+				     echo "Lỗi: " . $stmt->error;
+				}	
+				else{
+					echo "thành công";
+				}
+			
 				die;
-
-				
-
-
-				// $sql = "INSERT INTO fs_products (name,parent_id_name,code,import_price, price,price_pack,price_min,image) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
-				// $stmt = $conn->prepare($sql);
-				// $stmt->bind_param($value['name'], $value['parent_id_name'], $value['code'], str_replace('.', '', $value['import_price']),str_replace('.', '', $value['price']),str_replace('.', '', $value['price_pack']),str_replace('.', '', $value['price_min']), trim($value['image']));
-
-				// $run_insert = $stmt->execute();
-
-				// // Thực thi câu lệnh
-				// if (!$run_insert) {
-				//      echo "Lỗi: " . $stmt->error;
-				// }
-
 			}
 			// echo "insert thành công";
 			
