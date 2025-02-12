@@ -825,8 +825,6 @@
 			$config = require PATH_BASE.'/includes/configs.php';
 
 			// Kết nối PDO
-			
-
 			$servername = $config['dbHost'];
 			$username = $config['dbUser'];
 			$password = $config['dbPass'];
@@ -846,43 +844,22 @@
 			// Chuyển chuỗi JSON thành mảng PHP
 			$data = json_decode($jsonContent, true); // true để trả về mảng, false để trả về đối tượng
 
+			foreach ($data as $key => $value) {
+
+				$sql = "INSERT INTO fs_products (name,parent_id_name,code,import_price, price,price_pack,price_min,image) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+				$stmt = $conn->prepare($sql);
+				$stmt->bind_param($value['name'], $value['parent_id_name'], $value['code'], str_replace('.', '', $value['import_price']),str_replace('.', '', $value['price']),str_replace('.', '', $value['price_pack']),str_replace('.', '', $value['price_min']), trim($value['image']));
+
+				$run_insert = $stmt->execute();
+
+				// Thực thi câu lệnh
+				if (!$run_insert) {
+				     echo "Lỗi: " . $stmt->error;
+				}
+
+			}
+			echo "insert thành công";
 			
-			$dem = 0;
-
-			echo "<pre>";
-
-			print_r($data);
-
-			echo "</pre>";
-
-
-			// foreach ($data as $key => $value) {
-
-			// 	$sql = "INSERT INTO fs_products (name,parent_id_name,code,import_price, price,price_pack,price_min,image) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
-			// 	$stmt = $conn->prepare($sql);
-			// 	$stmt->bind_param("ssd", $store_code, $product_name, $price);
-
-			// }	
-
-
-			
-
-
-			// $sql = "INSERT INTO fs_products (name,parent_id_name,code,import_price, price,price_pack,price_min,image) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
-			// $stmt = $conn->prepare($sql);
-			// $stmt->bind_param("ssd", $store_code, $product_name, $price);
-
-			
-
-			// // Thực thi câu lệnh
-			// if ($stmt->execute()) {
-			//     echo "Dữ liệu đã được chèn thành công!";
-			// } else {
-			//     echo "Lỗi: " . $stmt->error;
-			// }
-
-			// $stmt->close();
-			// $conn->close();
 		}
 
 		function convert_error(){
