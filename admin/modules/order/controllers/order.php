@@ -822,61 +822,61 @@
 		function insert_data_to_pd()
 		{
 
-			$config = require PATH_BASE.'/includes/configs.php';
+			// $config = require PATH_BASE.'/includes/configs.php';
 
-			// Kết nối PDO
-			$servername = $config['dbHost'];
-			$username = $config['dbUser'];
-			$password = $config['dbPass'];
-			$dbname = $config['dbName'];
+			// // Kết nối PDO
+			// $servername = $config['dbHost'];
+			// $username = $config['dbUser'];
+			// $password = $config['dbPass'];
+			// $dbname = $config['dbName'];
 
-			$conn = new mysqli($servername, $username, $password, $dbname);
+			// $conn = new mysqli($servername, $username, $password, $dbname);
 
-			if ($conn->connect_error) {
-			    die("Kết nối thất bại: " . $conn->connect_error);
-			}
+			// if ($conn->connect_error) {
+			//     die("Kết nối thất bại: " . $conn->connect_error);
+			// }
 
-			$file = 'https://dienmayai.com/files/data.json';
+			// $file = 'https://dienmayai.com/files/data.json';
 
-			// Đọc nội dung tệp JSON
-			$jsonContent = file_get_contents($file);
+			// // Đọc nội dung tệp JSON
+			// $jsonContent = file_get_contents($file);
 
-			// Chuyển chuỗi JSON thành mảng PHP
-			$data = json_decode($jsonContent, true); // true để trả về mảng, false để trả về đối tượng
+			// // Chuyển chuỗi JSON thành mảng PHP
+			// $data = json_decode($jsonContent, true); // true để trả về mảng, false để trả về đối tượng
 
-			foreach ($data as $key => $value) {
+			// foreach ($data as $key => $value) {
 
-				$name = $value['name'];
+			// 	$name = $value['name'];
 
-				$parent_id_name = $value['parent_id_name'];
+			// 	$parent_id_name = $value['parent_id_name'];
 
-				$code = $value['code'];
+			// 	$code = $value['code'];
 
-				$import_price = str_replace('.', '', $value['import_price']);
+			// 	$import_price = str_replace('.', '', $value['import_price']);
 
-				$price =  str_replace('.', '', $value['price']);
+			// 	$price =  str_replace('.', '', $value['price']);
 
-				$price_pack =  str_replace('.', '', $value['price_pack']);
+			// 	$price_pack =  str_replace('.', '', $value['price_pack']);
 
-				$price_min = str_replace('.', '', $value['price_min']);
+			// 	$price_min = str_replace('.', '', $value['price_min']);
 
-				$image = trim($value['image']);
+			// 	$image = trim($value['image']);
 
-				$sql = "INSERT INTO fs_products (name,parent_id_name,code,import_price, price,price_pack,price_min,image) VALUES ('$name', '$parent_id_name', '$code', '$import_price', '$price', '$price_pack', '$price_min', '$image')";
+			// 	$sql = "INSERT INTO fs_products (name,parent_id_name,code,import_price, price,price_pack,price_min,image) VALUES ('$name', '$parent_id_name', '$code', '$import_price', '$price', '$price_pack', '$price_min', '$image')";
 				
-				if ($conn->query($sql) === False) {
-				    echo "Thêm dữ liệu thất bại!";
+			// 	if ($conn->query($sql) === False) {
+			// 	    echo "Thêm dữ liệu thất bại!";
 
-				    die;
-				} 
+			// 	    die;
+			// 	} 
 			
 				
-			}
+			// }
 
-			// Đóng kết nối
+			// // Đóng kết nối
 			
-			$conn->close();
-			echo "insert thành công";
+			// $conn->close();
+			// echo "insert thành công";
 			
 		}
 
