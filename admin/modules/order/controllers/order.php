@@ -837,9 +837,37 @@
 			if ($conn->connect_error) {
 			    die("Kết nối thất bại: " . $conn->connect_error);
 			}
-			else{
-				echo "kết nối thành công";
-			}
+
+			$file = 'https://dienmayai.com/files/data.json';
+
+			// Đọc nội dung tệp JSON
+			$jsonContent = file_get_contents($file);
+
+			// Chuyển chuỗi JSON thành mảng PHP
+			$data = json_decode($jsonContent, true); // true để trả về mảng, false để trả về đối tượng
+
+			
+			$dem = 0;
+
+			echo "<pre>";
+
+			print_r($data);
+
+			echo "</pre>";
+
+
+			// foreach ($data as $key => $value) {
+
+			// 	$sql = "INSERT INTO fs_products (name,parent_id_name,code,import_price, price,price_pack,price_min,image) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+			// 	$stmt = $conn->prepare($sql);
+			// 	$stmt->bind_param("ssd", $store_code, $product_name, $price);
+
+			// }	
+
+
+			
+
+
 			// $sql = "INSERT INTO fs_products (name,parent_id_name,code,import_price, price,price_pack,price_min,image) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
 			// $stmt = $conn->prepare($sql);
 			// $stmt->bind_param("ssd", $store_code, $product_name, $price);
