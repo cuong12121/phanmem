@@ -862,7 +862,7 @@
 
 				$image = $value['image'];
 
-				echo $name;
+				echo $parent_id_name;
 
 				die;
 
