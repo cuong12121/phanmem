@@ -865,8 +865,7 @@
 				$sql = "INSERT INTO fs_products (name,parent_id_name,code,import_price, price,price_pack,price_min,image) VALUES ($name, $parent_id_name, $code, $import_price, $price, $price_pack, $price_min, $image)";
 				
 				if ($conn->query($sql) === False) {
-				    echo "Thêm dữ liệu thất bại!";
-
+				     echo "Lỗi: " . $sql . "<br>" . $conn->error;
 				    die;
 				} 
 			
