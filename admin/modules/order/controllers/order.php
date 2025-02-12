@@ -846,19 +846,42 @@
 
 			foreach ($data as $key => $value) {
 
-				$sql = "INSERT INTO fs_products (name,parent_id_name,code,import_price, price,price_pack,price_min,image) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
-				$stmt = $conn->prepare($sql);
-				$stmt->bind_param($value['name'], $value['parent_id_name'], $value['code'], str_replace('.', '', $value['import_price']),str_replace('.', '', $value['price']),str_replace('.', '', $value['price_pack']),str_replace('.', '', $value['price_min']), trim($value['image']));
+				$name = $value['name'];
 
-				$run_insert = $stmt->execute();
+				$parent_id_name = $value['parent_id_name'];
 
-				// Thực thi câu lệnh
-				if (!$run_insert) {
-				     echo "Lỗi: " . $stmt->error;
-				}
+				$code = $value['code'];
+
+				$import_price = $value['import_price'];
+
+				$price = $value['price'];
+
+				$price_pack = $value['price_pack'];
+
+				$price_min = $value['price_min'];
+
+				$image = $value['image'];
+
+				echo $name;
+
+				die;
+
+				
+
+
+				// $sql = "INSERT INTO fs_products (name,parent_id_name,code,import_price, price,price_pack,price_min,image) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+				// $stmt = $conn->prepare($sql);
+				// $stmt->bind_param($value['name'], $value['parent_id_name'], $value['code'], str_replace('.', '', $value['import_price']),str_replace('.', '', $value['price']),str_replace('.', '', $value['price_pack']),str_replace('.', '', $value['price_min']), trim($value['image']));
+
+				// $run_insert = $stmt->execute();
+
+				// // Thực thi câu lệnh
+				// if (!$run_insert) {
+				//      echo "Lỗi: " . $stmt->error;
+				// }
 
 			}
-			echo "insert thành công";
+			// echo "insert thành công";
 			
 		}
 
