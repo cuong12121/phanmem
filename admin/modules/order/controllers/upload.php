@@ -41,7 +41,7 @@
 			// modules/order/views/upload/list.php
 
 		
-			echo $file_php_view;
+			// echo $file_php_view;
 
 			$pagination = $model->getPagination();
 			include $file_php_view;
