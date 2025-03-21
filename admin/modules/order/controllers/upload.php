@@ -38,9 +38,9 @@
 
 			$file_php_view = 'modules/'.$this->module.'/views/'.$this->view.'/list.php';
 
-			$query_cl = $this -> model->setQuery();
+			// $query_cl = $this -> model->setQuery();
 
-			echo $query_cl;
+			// echo $query_cl;
 
 
 
