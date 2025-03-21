@@ -37,6 +37,9 @@
 			// }
 
 			$file_php_view = 'modules/'.$this->module.'/views/'.$this->view.'/list.php';
+
+			// modules/order/views/upload/list.php
+
 		
 			echo $file_php_view;
 
