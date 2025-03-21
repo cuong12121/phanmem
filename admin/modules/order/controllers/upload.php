@@ -38,6 +38,12 @@
 
 			$file_php_view = 'modules/'.$this->module.'/views/'.$this->view.'/list.php';
 
+			$query_cl = $this -> model->setQuery();
+
+			echo $query_cl;
+
+
+
 			// modules/order/views/upload/list.php
 
 		
