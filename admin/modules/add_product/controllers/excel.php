@@ -120,6 +120,14 @@
 				$heightRow=$objexcel->setActiveSheetIndex()->getHighestRow();
 				unset($j);
 
+				echo "<pre>";
+
+				var_dump($data_upload);
+
+				echo "</pre>";
+
+				die;
+
 				$count_ss = 0;
 				$i = 0;
 				$l = 0;
