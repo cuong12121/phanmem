@@ -120,13 +120,13 @@
 				$heightRow=$objexcel->setActiveSheetIndex()->getHighestRow();
 				unset($j);
 
-				echo "<pre>";
+				// echo "<pre>";
 
-				var_dump($data_upload);
+				// var_dump($data_upload);
 
-				echo "</pre>";
+				// echo "</pre>";
 
-				die;
+				// die;
 
 				$count_ss = 0;
 				$i = 0;
@@ -231,6 +231,14 @@
 					if(!empty($check)){
 						$update_id = $model-> _update($row,'fs_products','id ='.$check->id);
 					}else{
+						echo "<pre>";
+
+						var_dump($row);
+
+						echo "</pre>";
+
+						die;
+						
 						$add_id = $model-> _add($row,'fs_products');
 					}
 
