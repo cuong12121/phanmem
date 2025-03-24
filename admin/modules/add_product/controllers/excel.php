@@ -135,7 +135,7 @@
 				$date = new DateTime();
 				$dates = $date->format("Y/m/d");
 				$dir_image = "images/products/".$dates;
-				$savePath = __DIR__ .'/'.$dir_image;
+				$savePath = PATH_BASE.'/'.$dir_image;
 
 				if (!file_exists($savePath)) {
 				    mkdir($savePath, 0775, true);
