@@ -135,12 +135,12 @@
 				for($j=2;$j<=$heightRow;$j++){
 					//sản phẩm
 					$row = array();
-					$name = trim($data_upload[$j]['A']);
+					$name = trim($data_upload[$j]['B']);
 					if($name && $name != 'null'){
 						$row['name'] = $name;
 					}
 					
-					$code = trim($data_upload[$j]['B']);
+					$code = trim($data_upload[$j]['F']);
 
 					
 					if(!$code && $code != 'null'){
