@@ -130,6 +130,17 @@
 				$heightRow=$objexcel->setActiveSheetIndex()->getHighestRow();
 				unset($j);
 
+
+
+				$date = new DateTime();
+				$dates = $date->format("Y/m/d");
+				$dir_image = "images/products/".$dates;
+				$savePath = __DIR__ .'/'.$dir_image;
+
+				if (!file_exists($savePath)) {
+				    mkdir($savePath, 0775, true);
+				}
+
 				// echo "<pre>";
 
 				// var_dump($data_upload);
@@ -145,7 +156,9 @@
 				$dem=0;
 
 				for($s=2;$s<=$heightRow;$s++){
-					if(!$this->check_image()){
+					
+					$imageUrl = trim($data_upload[$j]['V']);
+					if(!$this->check_image($imageUrl)){
 
 						$link = FSRoute::_('index.php?module=add_product&view=excel');
 
@@ -195,15 +208,7 @@
 
 					if($imageUrl && $imageUrl != 'null'){
 
-						// Thư mục lưu ảnh (đảm bảo thư mục tồn tại và có quyền ghi)
-						$date = new DateTime();
-						$dates = $date->format("Y/m/d");
-						$dir_image = "images/products/".$dates;
-						$savePath = __DIR__ .'/'.$dir_image;
-						if (!file_exists($savePath)) {
-						    mkdir($savePath, 0775, true);
-						}
-
+					
 						$extension = pathinfo(parse_url($imageUrl, PHP_URL_PATH), PATHINFO_EXTENSION);
 						$filename = basename(parse_url($imageUrl, PHP_URL_PATH));
 						$saveFile = $savePath . $filename;
@@ -685,7 +690,7 @@
 			return strtolower(substr($file, (strripos($file, '.')+1),strlen($file)));
 		}
 
-		function check_image($url, $saveTo)
+		function check_image($url)
 		{
 			$ch = curl_init($url);
 		    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
