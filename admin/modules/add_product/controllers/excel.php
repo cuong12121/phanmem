@@ -185,6 +185,13 @@
 					$barcode = trim($data_upload[$j]['F']);
 
 					if($barcode && $barcode != 'null'){
+
+						$barcodes = $model->get_record('',' fs_products','id','desc');
+
+						var_dump($barcodes);
+
+						die;
+
 						$row['barcode'] = $barcode;
 					}
 
