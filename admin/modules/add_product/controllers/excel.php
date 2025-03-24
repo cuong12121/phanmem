@@ -143,6 +143,19 @@
 				$l = 0;
 				$row_error = "";
 				$dem=0;
+
+				for($s=2;$s<=$heightRow;$s++){
+					if(!$this->check_image()){
+
+						$link = FSRoute::_('index.php?module=add_product&view=excel');
+
+						$msg = "link ảnh sản phẩm $s bị lỗi, vui lòng kiểm tra lại";
+						setRedirect($link,$msg,'error');
+						
+					}
+				}	
+
+
 				for($j=2;$j<=$heightRow;$j++){
 					$dem++;
 					//sản phẩm
@@ -195,6 +208,8 @@
 						$filename = basename(parse_url($imageUrl, PHP_URL_PATH));
 						$saveFile = $savePath . $filename;
 						$this->downloadImage($imageUrl, $saveFile);
+						
+
 						$row['image'] = $dir_image;
 					}
 
@@ -668,6 +683,20 @@
 
 		function getExt($file){
 			return strtolower(substr($file, (strripos($file, '.')+1),strlen($file)));
+		}
+
+		function check_image($url, $saveTo)
+		{
+			$ch = curl_init($url);
+		    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+		    curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
+		    $data = curl_exec($ch);
+		    $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+		    curl_close($ch);
+
+		    if ($httpCode != 200 && !$data) {
+		    	return false;
+		    }	
 		}
 
 		function downloadImage($url, $saveTo) {
