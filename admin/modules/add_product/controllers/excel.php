@@ -157,7 +157,7 @@
 
 				for($s=2;$s<=$heightRow;$s++){
 					
-					$imageUrl = trim($data_upload[$j]['V']);
+					$imageUrl = trim($data_upload[$s]['V']);
 
 					var_dump($this->check_image($imageUrl));
 
