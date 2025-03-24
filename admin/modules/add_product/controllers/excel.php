@@ -186,8 +186,14 @@
 
 					if($barcode && $barcode != 'null'){
 
-						$barcodes = $model->get_record('',' fs_products','id','desc');
+						$query_barcode = "SELECT id FROM fs_products ORDER BY id DESC LIMIT 1";
 
+						global $db;
+						$db->query($query_barcode);
+
+						$barcodes = $db->getObject();
+
+						
 						var_dump($barcodes);
 
 						die;
