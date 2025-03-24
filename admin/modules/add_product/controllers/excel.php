@@ -141,6 +141,16 @@
 					}
 					
 					$code = trim($data_upload[$j]['B']);
+
+					echo "<pre>";
+
+					var_dump($data_upload[$j]['B']);
+
+					echo "</pre>";
+
+					die;
+
+
 					if(!$code && $code != 'null'){
 						continue;
 					}
