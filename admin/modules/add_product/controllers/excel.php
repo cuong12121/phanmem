@@ -144,6 +144,7 @@
 				$row_error = "";
 				$dem=0;
 				for($j=2;$j<=$heightRow;$j++){
+					$dem++;
 					//sản phẩm
 					$row = array();
 					$name = trim($data_upload[$j]['B']);
