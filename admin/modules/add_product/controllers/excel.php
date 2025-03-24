@@ -142,15 +142,7 @@
 					
 					$code = trim($data_upload[$j]['B']);
 
-					echo "<pre>";
-
-					var_dump($data_upload[$j]['B']);
-
-					echo "</pre>";
-
-					die;
-
-
+					
 					if(!$code && $code != 'null'){
 						continue;
 					}
@@ -174,13 +166,12 @@
 						}
 					}
 
-					echo "<pre>";
+					$image_product = trim($data_upload[$j]['V']);
 
-					var_dump($data_upload[$j]['E']);
+					if($image_product && $image_product != 'null'){
+						$row['image_product'] = $image_product;
+					}	
 
-					echo "</pre>";
-
-					die;
 
 
 					$status = trim($data_upload[$j]['E']);
@@ -199,7 +190,7 @@
 
 
 
-					$import_price = trim($data_upload[$j]['G']);
+					$import_price = trim($data_upload[$j]['H']);
 					if($import_price && $import_price != 'null'){
 						$import_price = str_replace(',','',$import_price);
 						$import_price = str_replace('.','',$import_price);
@@ -209,14 +200,14 @@
 
 
 		
-					$price = trim($data_upload[$j]['H']);
+					$price = trim($data_upload[$j]['J']);
 					if($price && $price != 'null'){
 						$price = str_replace(',','',$price);
 						$price = str_replace('.','',$price);
 						$row['price'] = (int)$price;
 					}
 
-					$price_pack = trim($data_upload[$j]['I']);
+					$price_pack = trim($data_upload[$j]['L']);
 					if($price_pack && $price_pack != 'null'){
 						$price_pack = str_replace(',','',$price_pack);
 						$price_pack = str_replace('.','',$price_pack);
@@ -224,21 +215,21 @@
 					}
 		
 
-					$price_wholesale = trim($data_upload[$j]['J']);
+					$price_wholesale = trim($data_upload[$j]['K']);
 					if($price_wholesale && $price_wholesale != 'null' ){
 						$price_wholesale = str_replace(',','',$price_wholesale);
 						$price_wholesale = str_replace('.','',$price_wholesale);
 						$row['price_wholesale'] = (int)$price_wholesale;
 					}
 
-					$price_old = trim($data_upload[$j]['K']);
+					$price_old = trim($data_upload[$j]['M']);
 					if($price_old  && $price_old != 'null' ){
 						$price_old = str_replace(',','',$price_old);
 						$price_old = str_replace('.','',$price_old);
 						$row['price_old'] = (int)$price_old;
 					}
 
-					$price_min = trim($data_upload[$j]['L']);
+					$price_min = trim($data_upload[$j]['AF']);
 					if($price_min  && $price_min != 'null' ){
 						$price_min = str_replace(',','',$price_min);
 						$price_min = str_replace('.','',$price_min);
