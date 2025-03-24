@@ -212,7 +212,7 @@
 					
 						$extension = pathinfo(parse_url($imageUrl, PHP_URL_PATH), PATHINFO_EXTENSION);
 						$filename = basename(parse_url($imageUrl, PHP_URL_PATH));
-						$saveFile = $savePath . $filename;
+						$saveFile = $savePath .'/'. $filename;
 
 						$row['image'] = $dir_image.'/'.$filename;
 
