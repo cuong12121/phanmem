@@ -707,6 +707,9 @@
 
 		    if ($httpCode != 200 && !$data) {
 		    	return false;
+		    }
+		    else{
+		    	return true;
 		    }	
 		}
 
