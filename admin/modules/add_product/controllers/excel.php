@@ -215,16 +215,18 @@
 						$saveFile = $savePath . $filename;
 						$this->downloadImage($imageUrl, $saveFile);
 
+						
+						
+
+						$row['image'] = $dir_image.'/'.$filename;
+
 						echo "<pre>";
 
-						print_r($saveFile);
+						print_r($row['image']);
 
 						echo "</pre>";
 
 						die;
-						
-
-						$row['image'] = $dir_image.'/';
 					}
 
 					$status = trim($data_upload[$j]['E']);
