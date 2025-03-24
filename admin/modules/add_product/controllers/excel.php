@@ -216,29 +216,10 @@
 
 						$row['image'] = $dir_image.'/'.$filename;
 
-						echo "<pre>";
-
-						print_r($saveFile);
-
-						echo "</pre>";
-
-						die;
-
-
 						$this->downloadImage($imageUrl, $saveFile);
-
-						
-						
 
 						$row['image'] = $dir_image.'/'.$filename;
 
-						echo "<pre>";
-
-						print_r($row['image']);
-
-						echo "</pre>";
-
-						die;
 					}
 
 					$status = trim($data_upload[$j]['E']);
