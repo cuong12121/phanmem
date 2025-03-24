@@ -178,13 +178,25 @@
 						}
 					}
 
-					$image_product = trim($data_upload[$j]['V']);
+					$imageUrl = trim($data_upload[$j]['V']);
 
-					if($image_product && $image_product != 'null'){
-						$row['image_product'] = $image_product;
-					}	
+					if($imageUrl && $imageUrl != 'null'){
 
+						// Thư mục lưu ảnh (đảm bảo thư mục tồn tại và có quyền ghi)
+						$date = new DateTime();
+						$dates = $date->format("Y/m/d");
+						$dir_image = "images/products/".$dates;
+						$savePath = __DIR__ .'/'.$dir_image;
+						if (!file_exists($savePath)) {
+						    mkdir($savePath, 0775, true);
+						}
 
+						$extension = pathinfo(parse_url($imageUrl, PHP_URL_PATH), PATHINFO_EXTENSION);
+						$filename = basename(parse_url($imageUrl, PHP_URL_PATH));
+						$saveFile = $savePath . $filename;
+						$this->downloadImage($imageUrl, $saveFile);
+						$row['image'] = $dir_image;
+					}
 
 					$status = trim($data_upload[$j]['E']);
 					if($status && $status != 'null'){
@@ -194,8 +206,6 @@
 						}
 					}
 					
-					
-
 					$barcode_int = $barcodes+$dem;
 				
 					$row['barcode'] = $barcode_int;
@@ -665,6 +675,23 @@
 
 		function getExt($file){
 			return strtolower(substr($file, (strripos($file, '.')+1),strlen($file)));
+		}
+
+		function downloadImage($url, $saveTo) {
+		    $ch = curl_init($url);
+		    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+		    curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
+		    $data = curl_exec($ch);
+		    $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+		    curl_close($ch);
+		    
+		    if ($httpCode == 200 && $data) {
+		        file_put_contents($saveTo, $data);
+		       
+		    } else {
+
+		       return false;
+		    }
 		}
 
 
