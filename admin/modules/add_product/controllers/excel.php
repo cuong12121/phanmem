@@ -159,8 +159,7 @@
 					
 					$imageUrl = trim($data_upload[$s]['V']);
 
-					var_dump($imageUrl);
-					die;
+					
 					if(!$this->check_image($imageUrl)){
 
 						$link = FSRoute::_('index.php?module=add_product&view=excel');
