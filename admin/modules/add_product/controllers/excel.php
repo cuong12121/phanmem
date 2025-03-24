@@ -158,6 +158,10 @@
 				for($s=2;$s<=$heightRow;$s++){
 					
 					$imageUrl = trim($data_upload[$j]['V']);
+
+					var_dump($this->check_image($imageUrl));
+
+					die;
 					if(!$this->check_image($imageUrl)){
 
 						$link = FSRoute::_('index.php?module=add_product&view=excel');
