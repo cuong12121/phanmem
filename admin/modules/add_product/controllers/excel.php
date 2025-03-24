@@ -105,6 +105,16 @@
 			$path = PATH_BASE.'files/excel/warehouse_sales';
 			$path = str_replace('/', DS,$path);
 	        $excel = $fsFile -> upload_file("excel", $path ,100000000, '_'.time());
+	        global $db;
+
+	        $query_barcode = "SELECT id FROM fs_products ORDER BY id DESC LIMIT 1";
+
+			$db->query($query_barcode);
+
+			$barcodes = $db->getObject();
+
+			$barcodes = intval($barcodes->id);
+
 	        if(	!$excel){
 				return false;
 			}else{
@@ -132,6 +142,7 @@
 				$i = 0;
 				$l = 0;
 				$row_error = "";
+				$dem=0;
 				for($j=2;$j<=$heightRow;$j++){
 					//sản phẩm
 					$row = array();
@@ -182,23 +193,12 @@
 						}
 					}
 					
+					
+
+					$barcode_int = $barcodes+$dem;
 				
+					$row['barcode'] = $barcode_int;
 					
-					$query_barcode = "SELECT id FROM fs_products ORDER BY id DESC LIMIT 1";
-
-					global $db;
-					$db->query($query_barcode);
-
-					$barcodes = $db->getObject();
-
-					
-					var_dump($barcodes->id);
-
-					die;
-
-					$row['barcode'] = $barcode;
-					
-
 
 					$import_price = trim($data_upload[$j]['H']);
 					if($import_price && $import_price != 'null'){
