@@ -182,25 +182,22 @@
 						}
 					}
 					
-					$barcode = trim($data_upload[$j]['F']);
+				
+					
+					$query_barcode = "SELECT id FROM fs_products ORDER BY id DESC LIMIT 1";
 
-					if($barcode && $barcode != 'null'){
+					global $db;
+					$db->query($query_barcode);
 
-						$query_barcode = "SELECT id FROM fs_products ORDER BY id DESC LIMIT 1";
+					$barcodes = $db->getObject();
 
-						global $db;
-						$db->query($query_barcode);
+					
+					var_dump($barcodes->id);
 
-						$barcodes = $db->getObject();
+					die;
 
-						
-						var_dump($barcodes);
-
-						die;
-
-						$row['barcode'] = $barcode;
-					}
-
+					$row['barcode'] = $barcode;
+					
 
 
 					$import_price = trim($data_upload[$j]['H']);
