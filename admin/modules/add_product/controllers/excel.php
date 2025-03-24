@@ -164,6 +164,14 @@
 						}
 					}
 
+					echo "<pre>";
+
+					var_dump($data_upload[$j]['E']);
+
+					echo "</pre>";
+
+					die;
+
 
 					$status = trim($data_upload[$j]['E']);
 					if($status && $status != 'null'){
