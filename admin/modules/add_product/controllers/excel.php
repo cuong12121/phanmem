@@ -118,6 +118,10 @@
 	        if(	!$excel){
 				return false;
 			}else{
+
+				var_dump(1);
+
+				die;
 				$file_path = $path.$excel;
 				require_once("../libraries/PHPExcel-1.8/Classes/PHPExcel.php");
 				$objReader = PHPExcel_IOFactory::createReaderForFile($file_path);
@@ -300,12 +304,12 @@
 					$i++;
 				}
 
-				
 
-				// $link = FSRoute::_('index.php?module=add_product&view=excel');
 
-				// $msg = "Có " .$i. ' dòng thành công !';
-				// setRedirect($link,$msg);
+				$link = FSRoute::_('index.php?module=add_product&view=excel');
+
+				$msg = "Có " .$i. ' dòng thành công !';
+				setRedirect($link,$msg);
 	
 			}
 		}
