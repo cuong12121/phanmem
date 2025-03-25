@@ -192,6 +192,10 @@
 					$cat_code = trim($data_upload[$j]['N']);
 					if($cat_code && $cat_code != 'null' ){
 						$cat = $model->get_record('code = "'.$cat_code.'"','fs_products_categories','code,id,name');
+
+						print_r($cat);
+
+						die;
 						if(!empty($cat)){
 							$row['category_name'] = $cat-> name;
 							$row['category_id'] = $cat-> id;
@@ -290,7 +294,7 @@
 
 						die;
 						
-					
+
 					
 					$check = $model->get_record('code = "'.$code.'"','fs_products','code,id');
 					if(!empty($check)){
