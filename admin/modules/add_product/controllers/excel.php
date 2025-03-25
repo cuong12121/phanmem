@@ -192,7 +192,6 @@
 					$cat_name = trim($data_upload[$j]['N']);
 					
 
-						die;
 					if($cat_name && $cat_name != 'null' ){
 						$cat = $model->get_record('name = "'.$cat_name.'"','fs_products_categories','code,id,name');
 
