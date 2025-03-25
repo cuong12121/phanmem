@@ -266,27 +266,38 @@
 
 		
 					$price = trim($data_upload[$j]['J']);
-					$price = 0;
+					
 					if($price && $price != 'null'){
 						$price = str_replace(',','',$price);
 						$price = str_replace('.','',$price);
 						
 					}
+					else{
+						$price = 0;
+					}
+
 					$row['price'] = (int)$price;
 
 					$price_pack = trim($data_upload[$j]['L']);
+					$price_pack = 0;
 					if($price_pack && $price_pack != 'null'){
 						$price_pack = str_replace(',','',$price_pack);
 						$price_pack = str_replace('.','',$price_pack);
-						$row['price_pack'] = (int)$price_pack;
+						
+					}else{
+						$price_pack = 0;
 					}
+					$row['price_pack'] = (int)$price_pack;
 		
-
+					
 					$price_wholesale = trim($data_upload[$j]['K']);
 					if($price_wholesale && $price_wholesale != 'null' ){
 						$price_wholesale = str_replace(',','',$price_wholesale);
 						$price_wholesale = str_replace('.','',$price_wholesale);
 						$row['price_wholesale'] = (int)$price_wholesale;
+					}
+					else{
+						$row['price_wholesale'] =0;
 					}
 
 					$price_old = trim($data_upload[$j]['M']);
@@ -295,12 +306,19 @@
 						$price_old = str_replace('.','',$price_old);
 						$row['price_old'] = (int)$price_old;
 					}
+					else{
+						$row['price_old'] = 0;
+					}
+
 
 					$price_min = trim($data_upload[$j]['AF']);
 					if($price_min  && $price_min != 'null' ){
 						$price_min = str_replace(',','',$price_min);
 						$price_min = str_replace('.','',$price_min);
 						$row['price_min'] = (int)$price_min;
+					}
+					else{
+						$row['price_min'] = 0;
 					}
 					echo "<pre>";
 
