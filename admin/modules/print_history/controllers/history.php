@@ -17,7 +17,7 @@
 			$pagination = $model->getPagination();
 			$wrap_id_warehouses = $model->get_wrap_id_warehouses();
 
-			echo $wrap_id_warehouses;
+			// echo $wrap_id_warehouses;
 			
 			$warehouses = $model -> get_records('published = 1 AND id IN ('.$wrap_id_warehouses.')','fs_warehouses');
 			$platforms = $model -> get_records('published = 1','fs_platforms');
