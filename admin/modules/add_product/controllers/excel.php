@@ -185,6 +185,11 @@
 						$row['alias'] = $alias;
 
 					}
+					$name_parent = trim($data_upload[$j]['C']);
+					if($name_parent && $name_parent != 'null'){
+						$row['parent_id_name'] = $name_parent;
+					}	
+
 					
 					$code = trim($data_upload[$j]['F']);
 
