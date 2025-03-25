@@ -119,9 +119,7 @@
 				return false;
 			}else{
 
-				var_dump(1);
 
-				die;
 				$file_path = $path.$excel;
 				require_once("../libraries/PHPExcel-1.8/Classes/PHPExcel.php");
 				$objReader = PHPExcel_IOFactory::createReaderForFile($file_path);
@@ -284,19 +282,21 @@
 						$price_min = str_replace('.','',$price_min);
 						$row['price_min'] = (int)$price_min;
 					}
-					
-					$check = $model->get_record('code = "'.$code.'"','fs_products','code,id');
-					if(!empty($check)){
-						$update_id = $model-> _update($row,'fs_products','id ='.$check->id);
-					}else{
-
-						echo "<pre>";
+					echo "<pre>";
 
 						var_dump($row);
 
 						echo "</pre>";
 
 						die;
+						
+					
+					
+					$check = $model->get_record('code = "'.$code.'"','fs_products','code,id');
+					if(!empty($check)){
+						$update_id = $model-> _update($row,'fs_products','id ='.$check->id);
+					}else{
+
 						
 						// $add_id = $model-> _add($row,'fs_products');
 					}
