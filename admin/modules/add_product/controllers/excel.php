@@ -286,26 +286,26 @@
 						$update_id = $model-> _update($row,'fs_products','id ='.$check->id);
 					}else{
 
-
-						
-						$add_id = $model-> _add($row,'fs_products');
-					}
-
-					$i++;
-				}
-
-				echo "<pre>";
+						echo "<pre>";
 
 						var_dump($row);
 
 						echo "</pre>";
 
 						die;
+						
+						// $add_id = $model-> _add($row,'fs_products');
+					}
 
-				$link = FSRoute::_('index.php?module=add_product&view=excel');
+					$i++;
+				}
 
-				$msg = "Có " .$i. ' dòng thành công !';
-				setRedirect($link,$msg);
+				
+
+				// $link = FSRoute::_('index.php?module=add_product&view=excel');
+
+				// $msg = "Có " .$i. ' dòng thành công !';
+				// setRedirect($link,$msg);
 	
 			}
 		}
