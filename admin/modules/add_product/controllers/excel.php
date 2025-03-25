@@ -320,29 +320,17 @@
 					else{
 						$row['price_min'] = 0;
 					}
-					echo "<pre>";
-
-						var_dump($row);
-
-						echo "</pre>";
-
-						die;
-						
-
 					
 					$check = $model->get_record('code = "'.$code.'"','fs_products','code,id');
 					if(!empty($check)){
 						$update_id = $model-> _update($row,'fs_products','id ='.$check->id);
 					}else{
-
 						
-						// $add_id = $model-> _add($row,'fs_products');
+						$add_id = $model-> _add($row,'fs_products');
 					}
 
 					$i++;
 				}
-
-
 
 				$link = FSRoute::_('index.php?module=add_product&view=excel');
 
