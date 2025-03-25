@@ -291,6 +291,8 @@
 						var_dump($row);
 
 						echo "</pre>";
+
+						die;
 						
 						$add_id = $model-> _add($row,'fs_products');
 					}
