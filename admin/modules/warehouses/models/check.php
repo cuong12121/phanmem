@@ -445,8 +445,10 @@ function add_products_detail_excel($id,$warehouses_id,$excel){
 	echo "<pre>";
 
 	var_dump($row2);
-	
+
 	echo"</pre>";
+
+	die;
 
 	$this-> _update($row2,$this -> table_name,'id = '.$id);
 
