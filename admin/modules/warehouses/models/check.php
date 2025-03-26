@@ -435,7 +435,7 @@ function add_products_detail_excel($id,$warehouses_id,$excel){
     		$row['reality'] = $reality;
     		$row['note'] = $note;
     
-    		// $this-> _add($row,$this -> table_name_detail);
+    		$this-> _add($row,$this -> table_name_detail);
     
     		$total_product ++;
     		$total_amount += $reality;
@@ -450,16 +450,7 @@ function add_products_detail_excel($id,$warehouses_id,$excel){
 
 	$row2['total_product'] = $total_product;
 	$row2['total_amount'] = $total_amount;
-
-	echo "<pre>";
-
-	var_dump($check_add_row);
-
-	echo"</pre>";
-
-	die;
-
-	// $this-> _update($row2,$this -> table_name,'id = '.$id);
+	$this-> _update($row2,$this -> table_name,'id = '.$id);
 
 }
 
