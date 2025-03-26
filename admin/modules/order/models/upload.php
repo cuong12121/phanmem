@@ -548,9 +548,12 @@
 				$day = date('d');
 
 				// Kiểm tra xem ngày hôm nay có phải là ngày 25 hoặc 26 tháng 12 để convert lại giá nhỏ nhất
-				if ($day == 25|| $day ==26) {
-				    $produt-> price_min = $this->check_sale(trim($product_code));
-				} 
+
+				// tạm tắt 26/3/2025
+
+				// if ($day == 25|| $day ==26) {
+				//     $produt-> price_min = $this->check_sale(trim($product_code));
+				// } 
 	
 				global $config;
 				if($produt-> price_min > 0 && $house_id != 4 && $house_id != 15 && $house_id != 14 && $config['check_price_min'] == 1){
