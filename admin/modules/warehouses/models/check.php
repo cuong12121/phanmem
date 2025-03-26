@@ -402,8 +402,14 @@ function add_products_detail_excel($id,$warehouses_id,$excel){
     	   }	
 	}
 
+	$check_add_row = [];
+
+	$dem = 0;
+
 	foreach ($data as $item) {
-	
+
+		
+
 	    if(!empty($item[0])){
     		$row = array();
     		$row['bill_id'] = $id;
@@ -434,6 +440,9 @@ function add_products_detail_excel($id,$warehouses_id,$excel){
     		$total_product ++;
     		$total_amount += $reality;
 
+    		$check_add_row[$dem] = $row;
+    		$dem++;
+
 		}	// code...
 	}
 
@@ -444,7 +453,7 @@ function add_products_detail_excel($id,$warehouses_id,$excel){
 
 	echo "<pre>";
 
-	var_dump($row2);
+	var_dump($row);
 
 	echo"</pre>";
 
