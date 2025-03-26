@@ -411,14 +411,6 @@ function add_products_detail_excel($id,$warehouses_id,$excel){
     		if(!$item[0]) {
     			break;
     		}
-
-    		echo "<pre>";
-
-			var_dump($item[1]);
-
-			echo"</pre>";
-
-			die;
     
     		$product = $this-> get_record('code = "'.$item[0].'"','fs_products','*');
     
