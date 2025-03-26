@@ -450,7 +450,7 @@ function add_products_detail_excel($id,$warehouses_id,$excel){
 
 	die;
 
-	$this-> _update($row2,$this -> table_name,'id = '.$id);
+	// $this-> _update($row2,$this -> table_name,'id = '.$id);
 
 }
 
