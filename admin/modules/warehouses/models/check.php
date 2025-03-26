@@ -442,6 +442,12 @@ function add_products_detail_excel($id,$warehouses_id,$excel){
 	$row2['total_product'] = $total_product;
 	$row2['total_amount'] = $total_amount;
 
+	echo "<pre>";
+
+	var_dump($row2);
+	
+	echo"</pre>";
+
 	$this-> _update($row2,$this -> table_name,'id = '.$id);
 
 }
