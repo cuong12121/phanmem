@@ -453,7 +453,7 @@ function add_products_detail_excel($id,$warehouses_id,$excel){
 
 	echo "<pre>";
 
-	var_dump($row);
+	var_dump($check_add_row);
 
 	echo"</pre>";
 
