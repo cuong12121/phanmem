@@ -426,7 +426,7 @@ function add_products_detail_excel($id,$warehouses_id,$excel){
     
     		$product_amount = $this-> get_record('product_id = "'.$product-> id.'" AND warehouses_id = '.$warehouses_id,'fs_warehouses_products','*');
     
-    		$reality = !empty($item[1])?$item[1]:'';
+    		$reality = !empty($item[1])?intval($item[1]):0;
     		$note = !empty($item[2])?$item[2]:'';
     
     		$row['product_id'] = $product-> id;
