@@ -339,6 +339,8 @@
 							unset($row['price_min']);
 						}
 
+						unset($row['code']);
+
 						$row['edited_time'] = date('Y-m-d H:i:s');
 						echo "<pre>";
 
