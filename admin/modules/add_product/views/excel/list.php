@@ -13,6 +13,10 @@
 				<div class="input">
 					<input class="btn  btn-success" type="submit" value="<?php echo (@$cat)?'Import':'Cập nhật'?>">
 					&nbsp;
+
+					<input class="btn  btn-warning" type="submit" value="Thêm mới">
+					&nbsp;
+
 					<a class="download_file" target="_blank" href="<?php echo FSRoute::_('index.php?module=add_product&view=excel&task=download_file');?>?time=<?php echo time(); ?>">Tải File Sản phẩm</a>
 					<input class="btn btn-danger" type="button" value="Nhập file khác" onclick="javascritp: location.reload();">
 
