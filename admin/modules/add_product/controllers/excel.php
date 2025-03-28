@@ -316,23 +316,23 @@
 					if(!empty($check)){
 
 						if($row['price'] ===0){
-							unset($row['price'];
+							unset($row['price']);
 						}
 
 						if($row['price_pack'] ===0){
-							unset($row['price_pack'];
+							unset($row['price_pack']);
 						}
 
 						if($row['price_wholesale'] ===0){
-							unset($row['price_wholesale'];
+							unset($row['price_wholesale']);
 						}
 
 						if($row['price_old'] ===0){
-							unset($row['price_old'];
+							unset($row['price_old']);
 						}
 
 						if($row['price_min'] ===0){
-							unset($row['price_min'];
+							unset($row['price_min']);
 						}
 
 
