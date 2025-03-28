@@ -204,7 +204,7 @@
 					}
 					$row['code'] = $code;
 
-					$row['created_time'] = date('Y-m-d H:i:s');
+					
 					
 					$cat_name = trim($data_upload[$j]['N']);
 					
@@ -255,9 +255,7 @@
 						}
 					}
 					
-					$barcode_int = $barcodes+$dem;
-				
-					$row['barcode'] = $barcode_int;
+					
 					
 
 					$import_price = trim($data_upload[$j]['H']);
@@ -340,6 +338,8 @@
 						if($row['price_min'] ===0){
 							unset($row['price_min']);
 						}
+
+						$row['edited_time'] = date('Y-m-d H:i:s');
 						echo "<pre>";
 
 						var_dump($row);
@@ -353,8 +353,14 @@
 
 
 					}else{
+
+						$barcode_int = $barcodes+$dem;
+				
+						$row['barcode'] = $barcode_int;
+
+						$row['created_time'] = date('Y-m-d H:i:s');
 						
-						// $add_id = $model-> _add($row,'fs_products');
+						$add_id = $model-> _add($row,'fs_products');
 					}
 
 					$i++;
