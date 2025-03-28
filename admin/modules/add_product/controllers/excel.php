@@ -161,14 +161,19 @@
 					
 					$imageUrl = trim($data_upload[$s]['V']);
 
-					if(!$this->check_image($imageUrl)){
+					if($imageUrl && $imageUrl != 'null'){
 
-						$link = FSRoute::_('index.php?module=add_product&view=excel');
+						if(!$this->check_image($imageUrl)){
 
-						$msg = "link ảnh sản phẩm $s bị lỗi, vui lòng kiểm tra lại";
-						setRedirect($link,$msg,'error');
-						
+							$link = FSRoute::_('index.php?module=add_product&view=excel');
+
+							$msg = "link ảnh sản phẩm $s bị lỗi, vui lòng kiểm tra lại";
+							setRedirect($link,$msg,'error');
+							
+						}
+
 					}
+
 				}	
 
 
@@ -349,7 +354,7 @@
 
 					}else{
 						
-						$add_id = $model-> _add($row,'fs_products');
+						// $add_id = $model-> _add($row,'fs_products');
 					}
 
 					$i++;
