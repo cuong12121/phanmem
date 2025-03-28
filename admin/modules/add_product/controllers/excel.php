@@ -290,17 +290,18 @@
 					if($price_wholesale && $price_wholesale != 'null' ){
 						$price_wholesale = str_replace(',','',$price_wholesale);
 						$price_wholesale = str_replace('.','',$price_wholesale);
-						$row['price_wholesale'] = (int)$price_wholesale;
+						
 					}
+					$row['price_wholesale'] = (int)$price_wholesale;
 					
 
 					$price_old = trim($data_upload[$j]['M']);
 					if($price_old  && $price_old != 'null' ){
 						$price_old = str_replace(',','',$price_old);
 						$price_old = str_replace('.','',$price_old);
-						$row['price_old'] = (int)$price_old;
+						
 					}
-					
+					$row['price_old'] = (int)$price_old;
 
 
 					$price_min = trim($data_upload[$j]['AF']);
