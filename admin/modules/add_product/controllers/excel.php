@@ -335,6 +335,13 @@
 						if($row['price_min'] ===0){
 							unset($row['price_min']);
 						}
+						echo "<pre>";
+
+						var_dump($row);
+
+						echo "</pre>";
+
+						die;
 
 
 						$update_id = $model-> _update($row,'fs_products','id ='.$check->id);
