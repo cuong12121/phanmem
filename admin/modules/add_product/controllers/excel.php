@@ -328,6 +328,8 @@
 					var_dump($check);
 
 					echo "</pre>";
+
+					die;
 					if(!empty($check)){
 
 						$update_id = $model-> _update($row,'fs_products','id ='.$check->id);
