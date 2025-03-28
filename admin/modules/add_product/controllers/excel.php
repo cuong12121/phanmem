@@ -342,17 +342,8 @@
 						unset($row['code']);
 
 						$row['edited_time'] = date('Y-m-d H:i:s');
-						echo "<pre>";
-
-						var_dump($row);
-
-						echo "</pre>";
-
-						die;
-
-
+						
 						$update_id = $model-> _update($row,'fs_products','id ='.$check->id);
-
 
 					}else{
 
