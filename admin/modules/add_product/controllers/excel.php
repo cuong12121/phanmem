@@ -272,9 +272,7 @@
 						$price = str_replace('.','',$price);
 						
 					}
-					else{
-						$price = 0;
-					}
+					
 
 					$row['price'] = (int)$price;
 
