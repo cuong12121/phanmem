@@ -314,16 +314,26 @@
 					$check = $model->get_record('code = "'.$code.'"','fs_products','code,id');
 
 					if(!empty($check)){
-						($row['price'] ===0)?unset($row['price']):$row['price'];
 
-						($row['price_pack'] ===0)?unset($row['price_pack']):$row['price_pack'];
+						if($row['price'] ===0){
+							unset($row['price'];
+						}
 
-						($row['price_wholesale'] ===0)?unset($row['price_wholesale']):$row['price_wholesale'];
+						if($row['price_pack'] ===0){
+							unset($row['price_pack'];
+						}
 
-						($row['price_old'] ===0)?unset($row['price_old']):$row['price_old'];
+						if($row['price_wholesale'] ===0){
+							unset($row['price_wholesale'];
+						}
 
-						($row['price_min'] ===0)?unset($row['price_min']):$row['price_min'];
+						if($row['price_old'] ===0){
+							unset($row['price_old'];
+						}
 
+						if($row['price_min'] ===0){
+							unset($row['price_min'];
+						}
 
 
 						var_dump($row);
