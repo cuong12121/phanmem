@@ -308,9 +308,9 @@
 					if($price_min  && $price_min != 'null' ){
 						$price_min = str_replace(',','',$price_min);
 						$price_min = str_replace('.','',$price_min);
-						$row['price_min'] = (int)$price_min;
+						
 					}
-					
+					$row['price_min'] = (int)$price_min;
 					
 					$check = $model->get_record('code = "'.$code.'"','fs_products','code,id');
 
