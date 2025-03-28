@@ -157,6 +157,8 @@
 				$row_error = "";
 				$dem=0;
 
+				
+
 				for($s=2;$s<=$heightRow;$s++){
 					
 					$imageUrl = trim($data_upload[$s]['V']);
