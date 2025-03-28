@@ -322,11 +322,20 @@
 					}
 					
 					$check = $model->get_record('code = "'.$code.'"','fs_products','code,id');
+
+					echo "<pre>";
+
+					var_dump($check);
+
+					echo "</pre>";
 					if(!empty($check)){
+
 						$update_id = $model-> _update($row,'fs_products','id ='.$check->id);
+
+
 					}else{
 						
-						$add_id = $model-> _add($row,'fs_products');
+						// $add_id = $model-> _add($row,'fs_products');
 					}
 
 					$i++;
