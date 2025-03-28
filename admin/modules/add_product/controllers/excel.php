@@ -337,19 +337,12 @@
 						}
 
 
-						var_dump($row);
-
-						die;
-
-						// $update_id = $model-> _update($row,'fs_products','id ='.$check->id);
+						$update_id = $model-> _update($row,'fs_products','id ='.$check->id);
 
 
 					}else{
 						
-						var_dump($row);
-
-						die;
-						// $add_id = $model-> _add($row,'fs_products');
+						$add_id = $model-> _add($row,'fs_products');
 					}
 
 					$i++;
