@@ -284,8 +284,6 @@
 						$price_pack = str_replace(',','',$price_pack);
 						$price_pack = str_replace('.','',$price_pack);
 						
-					}else{
-						$price_pack = 0;
 					}
 					$row['price_pack'] = (int)$price_pack;
 		
@@ -296,9 +294,7 @@
 						$price_wholesale = str_replace('.','',$price_wholesale);
 						$row['price_wholesale'] = (int)$price_wholesale;
 					}
-					else{
-						$row['price_wholesale'] =0;
-					}
+					
 
 					$price_old = trim($data_upload[$j]['M']);
 					if($price_old  && $price_old != 'null' ){
@@ -306,9 +302,7 @@
 						$price_old = str_replace('.','',$price_old);
 						$row['price_old'] = (int)$price_old;
 					}
-					else{
-						$row['price_old'] = 0;
-					}
+					
 
 
 					$price_min = trim($data_upload[$j]['AF']);
@@ -317,9 +311,7 @@
 						$price_min = str_replace('.','',$price_min);
 						$row['price_min'] = (int)$price_min;
 					}
-					else{
-						$row['price_min'] = 0;
-					}
+					
 					
 					$check = $model->get_record('code = "'.$code.'"','fs_products','code,id');
 
@@ -336,11 +328,14 @@
 
 						die;
 
-						$update_id = $model-> _update($row,'fs_products','id ='.$check->id);
+						// $update_id = $model-> _update($row,'fs_products','id ='.$check->id);
 
 
 					}else{
 						
+						var_dump($row);
+
+						die;
 						// $add_id = $model-> _add($row,'fs_products');
 					}
 
