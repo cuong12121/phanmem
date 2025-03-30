@@ -19,9 +19,9 @@ if ($now < $mocThoiGian) {
      
     if($ip != '171.240.122.139'){ ?>
      
-     <h1>Server đang bảo trì, xin vui lòng quay lại sau</h1>
+        <h1>Server đang bảo trì, xin vui lòng quay lại sau</h1>
     <?php
-    
+
         die;
      
     }
