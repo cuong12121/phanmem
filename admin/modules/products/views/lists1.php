@@ -75,7 +75,7 @@
     </div>
     <!--end: .wrap-toolbar-->
 </div>
-    
+
 
 <form  action="https://<?= DOMAIN  ?>/admin/product/search-fast/check" name="adminForm" method="get">    
     <div class="filter_area">
@@ -173,6 +173,7 @@
         <li><a aria-label="Next" title="Last page" href="https://dienmayai.com/admin/product?page=<?= intval($page)+1 ?>"><?= intval($page)+1 ?></a></li>
     </ul>
 </nav>
+<script type="text/javascript" src="https://dienmayai.com/admin/templates/default/js/helper.js?t=1743337731"></script>
 
 </body>
 </html>
