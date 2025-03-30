@@ -173,6 +173,8 @@
         <li><a aria-label="Next" title="Last page" href="https://dienmayai.com/admin/product?page=<?= intval($page)+1 ?>"><?= intval($page)+1 ?></a></li>
     </ul>
 </nav>
+  <script type="text/javascript" src="https://dienmayai.com/admin/templates/default/js/jquery-confirm.min.js"></script>
+        <script type="text/javascript" src="https://dienmayai.com/admin/templates/default/js/select2.min.js"></script>
 <script type="text/javascript" src="https://dienmayai.com/admin/templates/default/js/helper.js?t=1743337731"></script>
 
 </body>
