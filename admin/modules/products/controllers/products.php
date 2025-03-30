@@ -21,23 +21,9 @@ class ProductsControllersProducts  extends Controllers
 		// Xác định trang hiện tại (mặc định là trang 1)
 		$page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
 		$page = max($page, 1); // Đảm bảo không có số âm
-
-		if(!empty($get_template)){
-
-			$query = 'SELECT p.*, w.*
-	        FROM fs_products AS p
-	        LEFT JOIN fs_warehouses_products_total AS w ON p.id = w.product_id
-	        WHERE  p.id BETWEEN 37898355 AND 37898669';
-	        $result = $db->query_limit($query,50,$page);
-
-	        $list = $db->getObjectList();
-
-	        
-	    }
-	    else{
-	    	$list = $model->get_data();
-	    }    
-
+		
+	    $list = $model->get_data();
+	   
 		$categories = $model->get_categories_tree();
 		$warehouses = $model -> get_records('published = 1','fs_warehouses');
 		$pagination = $model->getPagination();
@@ -47,17 +33,7 @@ class ProductsControllersProducts  extends Controllers
 
 		$tmpl->assign ( 'breadcrumbs', $breadcrumbs );
 
-		
-
-		
-
-		if(!empty($get_template)){
-
-			include 'modules/'.$this->module.'/views/lists1.php';
-		}
-		else{
-			include 'modules/'.$this->module.'/views/'.$this->view.'/list.php';
-		}
+		include 'modules/'.$this->module.'/views/lists1.php';
 		
 	}
 
