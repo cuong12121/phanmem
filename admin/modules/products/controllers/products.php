@@ -21,19 +21,26 @@ class ProductsControllersProducts  extends Controllers
 		// Xác định trang hiện tại (mặc định là trang 1)
 		$page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
 		$page = max($page, 1); // Đảm bảo không có số âm
+
 		
 	    $list = $model->get_data();
-	   
+
 		$categories = $model->get_categories_tree();
 		$warehouses = $model -> get_records('published = 1','fs_warehouses');
 		$pagination = $model->getPagination();
 		$breadcrumbs = array();
 		$breadcrumbs[] = array(0=>'Danh sách sản phẩm', 1 => '');	
 		
-
 		$tmpl->assign ( 'breadcrumbs', $breadcrumbs );
 
-		include 'modules/'.$this->module.'/views/lists1.php';
+		
+		if(!empty($get_template)){
+
+			include 'modules/'.$this->module.'/views/lists1.php';
+		}
+		else{
+			include 'modules/'.$this->module.'/views/'.$this->view.'/list.php';
+		}
 		
 	}
 
