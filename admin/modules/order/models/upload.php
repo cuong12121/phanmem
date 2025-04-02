@@ -1416,7 +1416,7 @@
 		function save($row = array(), $use_mysql_real_escape_string = 1) {
 			global $config;
 
-			if($_SESSION['ad_userid']===9){
+			if($_SESSION['ad_userid']==9){
 				$data_id_user = $_SESSION['ad_userid'];
 				if (!isset($_SESSION['tracking_code_add_'.$data_id_user])) {
 				    $_SESSION['tracking_code_add_'.$data_id_user] = [];
