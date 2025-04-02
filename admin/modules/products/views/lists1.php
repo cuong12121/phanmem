@@ -125,7 +125,7 @@ $this -> dt_form_begin(0);
         <!-- <li><a href="#fragment-2"><span><?php //echo FSText::_("Video"); ?></span></a></li> -->
     </ul>
     <div id="fragment-1">
-        <?php include_once 'detail_base.php';?>
+        <?php include_once 'products/detail_base.php';?>
     </div>
     <!-- <div id="fragment-2"> -->
         <?php  //include_once 'detail_video.php';?>
