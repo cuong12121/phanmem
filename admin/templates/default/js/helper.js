@@ -253,6 +253,7 @@ function submitbutton(pressbutton) {
 		if(confirm('Bạn có chắc chắn muốn xóa?'))
 			submitform(pressbutton);
 	}else{
+		console.log(pressbutton);
 		submitform(pressbutton);
 	}
 }
