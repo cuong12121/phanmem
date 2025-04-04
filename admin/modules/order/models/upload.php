@@ -1412,35 +1412,31 @@
 			}
 		}
 
+		function xoaPhanTuSau150($mang) {
+		    $length = count($mang);
+		    if ($length > 150) {
+		        for ($i = 150; $i < $length; $i++) {
+		            unset($mang[$i]);
+		        }
+		        $mang = array_values($mang); // tái lập chỉ mục mảng
+		    }
+		    return $mang;
+		}
+
 
 		function save($row = array(), $use_mysql_real_escape_string = 1) {
 			global $config;
 
-			if($_SESSION['ad_userid']==9){
-				$data_id_user = $_SESSION['ad_userid'];
-				if (!isset($_SESSION['tracking_code_add_'.$data_id_user])) {
-				    $_SESSION['tracking_code_add_'.$data_id_user] = [];
-				}
-
-				// Dữ liệu mới cần thêm vào mảng
-				$new_item = "Sản phẩm mới_".count($_SESSION['tracking_code_add_'.$data_id_user]);
-
-				// Thêm phần tử mới vào mảng trong session
-				$_SESSION['tracking_code_add_'.$data_id_user][] = $new_item;
-
-				echo "<pre>";
-
-				print_r($_SESSION['tracking_code_add_'.$data_id_user]);
-
-				echo "</pre>";
-
-				die;
+			$data_id_user = $_SESSION['ad_userid'];
+			// thêm tracking code vào mảng để check
+			if (!isset($_SESSION['tracking_code_add_'.$data_id_user])) {
+			    $_SESSION['tracking_code_add_'.$data_id_user] = [];
+			}
+			if(count($_SESSION['tracking_code_add_'.$data_id_user])>150){
+				$_SESSION['tracking_code_add_'.$data_id_user] = $this->xoaPhanTuSau150($_SESSION['tracking_code_add_'.$data_id_user]);
 			}
 
 			$user = $this -> get_record('id = ' . $_SESSION['ad_userid'],'fs_users');
-
-			
-
 
 			$shop_id = FSInput::get('shop_id');
 			$platform_id = FSInput::get('platform_id');
@@ -1778,6 +1774,17 @@
 					$profit_company = 0;
 					$doanh_thu_cong_ty = 0;
 					$gia_von_cong_ty = 0;
+
+					
+
+					// Dữ liệu mới cần thêm vào mảng
+					$new_tracking_code = $data_code_item[0]-> tracking_code;
+
+					// Thêm phần tử mới vào đầu mảng trong session
+					array_unshift($_SESSION['tracking_code_add_'.$data_id_user], $new_tracking_code);
+
+					
+
 					foreach($data_code_item as $data_code_it) {
 
 						$str_id .= $data_code_it->id.',';
