@@ -78,7 +78,7 @@
                    
                     dataType: 'json',
                     success: function (data) {
-                      console.log(data);
+                      console.log(1);
                     },
 
                   error: function (xhr, status, error) {
@@ -95,11 +95,12 @@
                     }
 
                     // Log ra console để debug
-                    console.log('🔥 AJAX ERROR');
-                    console.log('Status:', status);
-                    console.log('HTTP Code:', xhr.status);
-                    console.log('Response:', xhr.responseText);
-                    console.log('Error thrown:', error);
+                    // console.log('🔥 AJAX ERROR');
+                    // console.log('Status:', status);
+                    // console.log('HTTP Code:', xhr.status);
+                    // console.log('Response:', xhr.responseText);
+                    // console.log('Error thrown:', error);
+                    console.log(errorMsg)
 
                    
                   }
