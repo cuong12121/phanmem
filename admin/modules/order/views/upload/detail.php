@@ -68,13 +68,11 @@
 
                 var file = this.files[0];
                 var formData = new FormData();
-                console.log(formData);
+                
                 formData.append('excel', file);
                
-               
-
                 $.ajax({
-                    url: '/index.php?module=order&view=upload&task=returnAjax',
+                    url: 'https://test.dienmayai.com/admin/index.php?module=order&view=upload&task=returnAjax',
                     type: 'POST',
                     data: formData,
                     contentType: false,
