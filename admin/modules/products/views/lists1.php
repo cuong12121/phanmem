@@ -39,72 +39,14 @@
             color: #fff;
         }
 
-        .form-post-pd{
+        .none{
             display: none;
         }
     </style>
 </head>
 <body>
-<div class="form_head">
-    <div id="wrap-toolbar" class="wrap-toolbar">
-        <div class="fl">
-            <h1 class="page-header">Products</h1>
-            <!--end: .page-header -->
-            <!-- /.row -->    
-        </div>
-        <div class="fr">
-            <a class="toolbar" onclick="javascript: submitbutton('export')" href="#">
-                <span title="Xuất exel" style="background:url('https://dienmayai.com/admin/templates/default/images/toolbar/Excel-icon.png') no-repeat"></span>
-                Xuất exel
-            </a>
-            <a class="toolbar" onclick="javascript: submitbutton('print_barcode_open')" href="#">
-                <span title="In mã vạch" style="background:url('https://dienmayai.com/admin/templates/default/images/toolbar/print.png') no-repeat"></span>
-                In mã vạch
-            </a>
-            <a class="toolbar" onclick="javascript: submitbutton('add')" href="#">
-                <span title="Thêm mới" style="background:url('https://dienmayai.com/admin/templates/default/images/toolbar/add.png') no-repeat"></span>
-                Thêm mới
-            </a>
-            <a class="toolbar" onclick="javascript: submitbutton('reset_amount_hold')" href="#">
-                <span title="Reset tạm giữ" style="background:url('https://dienmayai.com/admin/templates/default/images/toolbar/remove.png') no-repeat"></span>
-                Reset tạm giữ
-            </a>
-            <a class="toolbar" onclick="javascript:if(document.adminForm.boxchecked.value==0){alert('Bạn phải chọn ít nhất một bản ghi');}else{ submitbutton('remove')} " href="#">
-                <span title="Xóa" style="background:url('https://dienmayai.com/admin/templates/default/images/toolbar/remove.png') no-repeat"></span>
-                Xóa
-            </a>      
-            <div class="clearfix"></div>
-        </div>
-        <div class="clearfix"></div>
-    </div>
-    <!--end: .wrap-toolbar-->
-</div>
-
-
-<form  action="https://<?= DOMAIN  ?>/admin/product/search-fast/check" name="adminForm" method="get">    
-    <div class="filter_area">
-        <div class="row">
-
-            <div class="fl-left pd-15"> 
-                <input type="text" placeholder="Tìm kiếm" name="search" id="search" value="" class="form-control fl-left">
-                <span class="input-group-btn fl-left" style="margin-left: -2px;">
-                <button type="submit" class="btn btn-search btn-default" type="button">
-                <i class="fa fa-search"></i>
-                </button>
-                </span>
-            </div>
-            <div class="fl-left">               
-                <button class="btn btn-outline btn-primary" type="submit">Tìm kiếm</button>             
-                <button class="btn btn-outline btn-primary"><a href="https://<?= DOMAIN  ?>/admin/product?get_template=1">Reset</a>  </button>           
-            </div>
-             
-            
-        </div>
-    </div>
-</form> 
-
 <!-- thêm form post sản phẩm -->
-<div class="form-post-pd">
+<div class="form-post-pd none">
 
     <!-- FOR TAB -->    
     <script>
@@ -144,6 +86,69 @@
 
 </div>
 <!-- end form -->
+
+<div class="form-search-pd">
+
+    <div class="form_head">
+        <div id="wrap-toolbar" class="wrap-toolbar">
+            <div class="fl">
+                <h1 class="page-header">Products</h1>
+                <!--end: .page-header -->
+                <!-- /.row -->    
+            </div>
+            <div class="fr">
+                <a class="toolbar" onclick="javascript: submitbutton('export')" href="#">
+                    <span title="Xuất exel" style="background:url('https://dienmayai.com/admin/templates/default/images/toolbar/Excel-icon.png') no-repeat"></span>
+                    Xuất exel
+                </a>
+                <a class="toolbar" onclick="javascript: submitbutton('print_barcode_open')" href="#">
+                    <span title="In mã vạch" style="background:url('https://dienmayai.com/admin/templates/default/images/toolbar/print.png') no-repeat"></span>
+                    In mã vạch
+                </a>
+                <a class="toolbar" onclick="showFormAdd()" href="#">
+                    <span title="Thêm mới" style="background:url('https://dienmayai.com/admin/templates/default/images/toolbar/add.png') no-repeat"></span>
+                    Thêm mới
+                </a>
+                <a class="toolbar" onclick="javascript: submitbutton('reset_amount_hold')" href="#">
+                    <span title="Reset tạm giữ" style="background:url('https://dienmayai.com/admin/templates/default/images/toolbar/remove.png') no-repeat"></span>
+                    Reset tạm giữ
+                </a>
+                <a class="toolbar" onclick="javascript:if(document.adminForm.boxchecked.value==0){alert('Bạn phải chọn ít nhất một bản ghi');}else{ submitbutton('remove')} " href="#">
+                    <span title="Xóa" style="background:url('https://dienmayai.com/admin/templates/default/images/toolbar/remove.png') no-repeat"></span>
+                    Xóa
+                </a>      
+                <div class="clearfix"></div>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+        <!--end: .wrap-toolbar-->
+    </div>
+
+
+    <form  action="https://<?= DOMAIN  ?>/admin/product/search-fast/check" name="adminForm" method="get">    
+        <div class="filter_area">
+            <div class="row">
+
+                <div class="fl-left pd-15"> 
+                    <input type="text" placeholder="Tìm kiếm" name="search" id="search" value="" class="form-control fl-left">
+                    <span class="input-group-btn fl-left" style="margin-left: -2px;">
+                    <button type="submit" class="btn btn-search btn-default" type="button">
+                    <i class="fa fa-search"></i>
+                    </button>
+                    </span>
+                </div>
+                <div class="fl-left">               
+                    <button class="btn btn-outline btn-primary" type="submit">Tìm kiếm</button>             
+                    <button class="btn btn-outline btn-primary"><a href="https://<?= DOMAIN  ?>/admin/product?get_template=1">Reset</a>  </button>           
+                </div>
+                 
+                
+            </div>
+        </div>
+    </form> 
+
+</div>
+
 
 <div class="table-container">
     <table>
@@ -222,8 +227,8 @@
 </nav>
   <script type="text/javascript" src="https://dienmayai.com/admin/templates/default/js/jquery-confirm.min.js"></script>
         <script type="text/javascript" src="https://dienmayai.com/admin/templates/default/js/select2.min.js"></script>
-<script type="text/javascript" src="https://dienmayai.com/admin/templates/default/js/helper.js?t=1743337731"></script>
-     <!-- Bootstrap Core JavaScript -->
+        <script type="text/javascript" src="https://dienmayai.com/admin/templates/default/js/helper.js?t=1743337731"></script>
+        <!-- Bootstrap Core JavaScript -->
         <script src="https://dienmayai.com/admin/templates/default/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 
         <!-- Metis Menu Plugin JavaScript -->
@@ -281,7 +286,15 @@
           for (var selector in config) {
               $(selector).chosen(config[selector]);
           }
-      </script>
+        </script>
+        <script type="text/javascript">
+
+            function showFormAdd() {
+                $('.form-post-pd').removeClass('none');
+                $('.form-search-pd')addClass('none');
+            }
+          
+        </script>
 
 </body>
 </html>
