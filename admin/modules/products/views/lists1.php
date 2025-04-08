@@ -208,14 +208,9 @@
     
 </div>
 
-<script type="text/javascript">
 
-    function showFormAdd() {
-        $('.form-post-pd').removeClass('none');
-        $('.form-search-pd')addClass('none');
-    }
-  
-</script>
+    
+
 
 <nav aria-label="Page navigation">
     <div style="text-align: center; font-weight: bold; margin-top: 30px;"><font>Tổng</font> : <span style="color:red">[8044]</span> </div>
