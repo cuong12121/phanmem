@@ -147,6 +147,11 @@
             return $file_pdf_rep1;
 		}
 
+		public function returnAjax()
+		{
+			return 10;
+		}
+
 		function checkFileUpload()
 		{
 

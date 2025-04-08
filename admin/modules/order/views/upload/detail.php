@@ -64,6 +64,28 @@
                 alert('Lỗi. Vui lòng chọn đúng file Excel có đuôi .xlsx');
                 $('#file_xlsx').val('');
             }
+            // else{
+
+            //     var file = this.files[0].files[0];
+               
+            //     formData.append('excel', file);
+
+            //     $.ajax({
+            //         url: '/index.php?module=order&view=upload&task=returnAjax',
+            //         type: 'POST',
+            //         data: formData,
+            //         contentType: false,
+            //         processData: false,
+            //         dataType: 'json',
+            //         success: function (data) {
+            //           console.log(data);
+            //         },
+            //         error: function () {
+            //             alert('Đã xảy ra lỗi khi tải file.')
+                      
+            //         }
+            //   });
+            // }
         });
 
     });

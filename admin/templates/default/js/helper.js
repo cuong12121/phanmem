@@ -366,15 +366,19 @@ function submitform(pressbutton){
 
 	if (pressbutton) {
 
-		if(pressbutton=='apply_order'||pressbutton=='save_order'){
+		pressbutton = pressbutton.replaceAll("_order", "");
 
-			const isConfirmed = confirm("Đơn hàng có mã tracking này đã được đánh, bạn có muốn đánh lại đơn này không?");
-		    if (!isConfirmed) {
-		      e.preventDefault(); // Người dùng bấm Cancel
-		    }
-		    
+		console.log(pressbutton);
 
-		}
+		// if(pressbutton=='apply_order'||pressbutton=='save_order'){
+
+		// 	const isConfirmed = confirm("Đơn hàng với mã tracking này đã được đánh, bạn có muốn đánh lại đơn này không?");
+		//     if (!isConfirmed) {
+		//       e.preventDefault(); // Người dùng bấm Cancel
+		//     }
+
+
+		// }
 		// return
 		
 		document.adminForm.task.value=pressbutton;
