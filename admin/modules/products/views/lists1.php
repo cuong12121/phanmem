@@ -105,7 +105,7 @@
                     <span title="In mã vạch" style="background:url('https://dienmayai.com/admin/templates/default/images/toolbar/print.png') no-repeat"></span>
                     In mã vạch
                 </a>
-                <a class="toolbar" onclick="javascript:showFormAdd()" href="#">
+                <a class="toolbar" onclick="javascript: showFormAdd()" href="#">
                     <span title="Thêm mới" style="background:url('https://dienmayai.com/admin/templates/default/images/toolbar/add.png') no-repeat"></span>
                     Thêm mới
                 </a>
