@@ -365,11 +365,19 @@ function submitform(pressbutton){
 	}
 
 	if (pressbutton) {
-		console.log(pressbutton);
 
-		// if(pressbutton==='apply_order')
-		// return;
-		// document.adminForm.task.value=pressbutton;
+		if(pressbutton=='apply_order'||pressbutton=='save_order'){
+
+			alert('apply_order');
+
+			console.log(pressbutton);
+
+			e.preventDefault();
+
+		}
+		// return
+		
+		document.adminForm.task.value=pressbutton;
 	}
 	if (typeof document.adminForm.onsubmit == "function") {
 		document.adminForm.onsubmit();
