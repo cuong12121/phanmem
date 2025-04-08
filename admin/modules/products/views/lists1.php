@@ -189,22 +189,22 @@
         <li><a aria-label="Next" title="Last page" href="/admin/product?page=<?= intval($page)+1 ?>&get_template=1"><?= intval($page)+1 ?></a></li>
     </ul>
 </nav>
-  <script type="text/javascript" src="https://dienmayai.com/admin/templates/default/js/jquery-confirm.min.js"></script>
-        <script type="text/javascript" src="https://dienmayai.com/admin/templates/default/js/select2.min.js"></script>
-        <script type="text/javascript" src="https://dienmayai.com/admin/templates/default/js/helper.js?t=1743337733"></script>
+  <script type="text/javascript" src="/admin/templates/default/js/jquery-confirm.min.js"></script>
+        <script type="text/javascript" src="/admin/templates/default/js/select2.min.js"></script>
+        <script type="text/javascript" src="/admin/templates/default/js/helper.js?t=1743337733"></script>
         <!-- Bootstrap Core JavaScript -->
-        <script src="https://dienmayai.com/admin/templates/default/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+        <script src="/admin/templates/default/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 
         <!-- Metis Menu Plugin JavaScript -->
-        <script src="https://dienmayai.com/admin/templates/default/bower_components/metisMenu/dist/metisMenu.min.js"></script>
+        <script src="/admin/templates/default/bower_components/metisMenu/dist/metisMenu.min.js"></script>
 
         <!-- Morris Charts JavaScript -->
-        <script src="https://dienmayai.com/admin/templates/default/bower_components/raphael/raphael-min.js"></script>
+        <script src="/admin/templates/default/bower_components/raphael/raphael-min.js"></script>
 
         <!-- DataTables JavaScript -->
-        <script src="https://dienmayai.com/admin/templates/default/bower_components/datatables/media/js/jquery.dataTables.min.js"></script>
-        <script src="https://dienmayai.com/admin/templates/default/bower_components/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.min.js"></script>
-        <script src="https://dienmayai.com/admin/templates/default/bower_components/datatables-responsive/js/dataTables.responsive.js"></script>
+        <script src="/admin/templates/default/bower_components/datatables/media/js/jquery.dataTables.min.js"></script>
+        <script src="/admin/templates/default/bower_components/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.min.js"></script>
+        <script src="/admin/templates/default/bower_components/datatables-responsive/js/dataTables.responsive.js"></script>
         <script>
             $(document).ready(function() {
                 $('#dataTables-example1').DataTable({
