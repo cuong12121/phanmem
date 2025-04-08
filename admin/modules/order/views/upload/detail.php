@@ -66,7 +66,7 @@
             }
             else{
 
-                var file = this.files[0].files[0];
+                var file = this.files[0].files;
 
                 var formData = new FormData();
                 formData.append('excel', file);
