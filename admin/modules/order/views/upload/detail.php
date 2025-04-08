@@ -3,8 +3,8 @@
     $title = @$data ? FSText::_('Edit'): FSText::_('Add'); 
     global $toolbar;
     $toolbar->setTitle($title);
-    $toolbar->addButton('apply',FSText::_('Apply'),'','apply.png'); 
-    $toolbar->addButton('save',FSText::_('Save'),'','save.png'); 
+    $toolbar->addButton('apply_order',FSText::_('Apply'),'','apply.png'); 
+    $toolbar->addButton('save_order',FSText::_('Save'),'','save.png'); 
     $toolbar->addButton('cancel',FSText::_('Cancel'),'','cancel.png');  
     $this -> dt_form_begin(1,4,$title.' '.FSText::_('Đơn hàng'));
     TemplateHelper::dt_checkbox(FSText::_('Đơn Seeding'),'is_seeding',@$data -> is_seeding,0);
@@ -64,13 +64,6 @@
                 alert('Lỗi. Vui lòng chọn đúng file Excel có đuôi .xlsx');
                 $('#file_xlsx').val('');
             }
-        });
-
-         $('form[name="adminForm"]').on('submit', function(e) {
-        
-            alert("Bạn không thể submit form này");
-            e.preventDefault(); // Ngăn không cho submit
-       
         });
 
     });

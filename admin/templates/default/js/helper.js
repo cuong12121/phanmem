@@ -366,8 +366,10 @@ function submitform(pressbutton){
 
 	if (pressbutton) {
 		console.log(pressbutton);
+
+		// if(pressbutton==='apply_order')
 		// return;
-		document.adminForm.task.value=pressbutton;
+		// document.adminForm.task.value=pressbutton;
 	}
 	if (typeof document.adminForm.onsubmit == "function") {
 		document.adminForm.onsubmit();
