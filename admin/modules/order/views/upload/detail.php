@@ -67,8 +67,11 @@
             else{
 
                 var file = this.files[0].files[0];
-               
+
+                var formData = new FormData();
                 formData.append('excel', file);
+               
+               
 
                 $.ajax({
                     url: '/index.php?module=order&view=upload&task=returnAjax',
