@@ -191,7 +191,7 @@
 </nav>
   <script type="text/javascript" src="https://dienmayai.com/admin/templates/default/js/jquery-confirm.min.js"></script>
         <script type="text/javascript" src="https://dienmayai.com/admin/templates/default/js/select2.min.js"></script>
-        <script type="text/javascript" src="https://dienmayai.com/admin/templates/default/js/helper.js?t=1743337732"></script>
+        <script type="text/javascript" src="https://dienmayai.com/admin/templates/default/js/helper.js?t=1743337733"></script>
         <!-- Bootstrap Core JavaScript -->
         <script src="https://dienmayai.com/admin/templates/default/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 
