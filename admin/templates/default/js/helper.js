@@ -368,11 +368,11 @@ function submitform(pressbutton){
 
 		if(pressbutton=='apply_order'||pressbutton=='save_order'){
 
-			alert('apply_order');
-
-			console.log(pressbutton);
-
-			e.preventDefault();
+			const isConfirmed = confirm("Đơn hàng có mã tracking này đã được đánh, bạn có muốn đánh lại đơn này không?");
+		    if (!isConfirmed) {
+		      e.preventDefault(); // Người dùng bấm Cancel
+		    }
+		    
 
 		}
 		// return
