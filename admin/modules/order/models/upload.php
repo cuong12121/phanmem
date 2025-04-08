@@ -1582,7 +1582,7 @@
 				// 	echo $cmd;
 				    
 				    if (0 === $status) {
-                        var_dump($cmd);
+                        // var_dump($cmd);
                     } else {
                         echo "Command failed with status: $status";
                     }
