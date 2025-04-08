@@ -244,8 +244,9 @@ function edit_text_ajax(id,element_id,field,module,view)
 }
 
 function showFormAdd() {
-    $('.form-post-pd').removeClass('none');
-    $('.form-search-pd')addClass('none');
+	alert('ok');
+    // $('.form-post-pd').removeClass('none');
+    // $('.form-search-pd').addClass('none');
 }
 
 
