@@ -179,14 +179,14 @@
         <?php
             if($page>1){
         ?>
-        <li><a title="Page 2" href="https://dienmayai.com/admin/product?page=<?= intval($page)-1 ?>"><?= intval($page)-1 ?></a></li>
+        <li><a title="Page 2" href="/admin/product?page=<?= intval($page)-1 ?>"><?= intval($page)-1 ?></a></li>
         <?php
             }
         ?>
-        <li><a title="Page 2" href="https://dienmayai.com/admin/product?page=<?= intval($page) ?>"><?= intval($page) ?></a></li>
+        <li><a title="Page 2" href="/admin/product?page=<?= intval($page) ?>"><?= intval($page) ?></a></li>
         
     
-        <li><a aria-label="Next" title="Last page" href="https://dienmayai.com/admin/product?page=<?= intval($page)+1 ?>"><?= intval($page)+1 ?></a></li>
+        <li><a aria-label="Next" title="Last page" href="/admin/product?page=<?= intval($page)+1 ?>"><?= intval($page)+1 ?></a></li>
     </ul>
 </nav>
   <script type="text/javascript" src="https://dienmayai.com/admin/templates/default/js/jquery-confirm.min.js"></script>
