@@ -1750,11 +1750,6 @@
 
 					// }
 
-					echo "<pre>";
-					var_dump($data_code_item[0]-> tracking_code);
-					echo "</pre>";
-
-					die;
 
 					////////chi tiết lợi nhuận
 					$row3 = array();
@@ -1846,6 +1841,12 @@
 						$this->_update($row3,'fs_profits','id = '.$check_add->id);
 					}
 				}
+
+				echo "<pre>";
+				var_dump($_SESSION['tracking_code_add_'.$data_id_user]);
+				echo "</pre>";
+
+				die;
 			}
 			return $result_id;
 		}
