@@ -1750,6 +1750,12 @@
 
 					// }
 
+					echo "<pre>";
+					var_dump($data_code_item[0]-> tracking_code);
+					echo "</pre>";
+
+					die;
+
 					////////chi tiết lợi nhuận
 					$row3 = array();
 					$row3['code'] = $code_item-> code;
