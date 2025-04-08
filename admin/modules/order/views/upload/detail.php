@@ -67,4 +67,13 @@
         });
 
     });
+
+    $(function() {
+        $('form[name="adminForm"]').on('submit', function(e) {
+        
+            alert("Bạn không thể submit form này");
+            e.preventDefault(); // Ngăn không cho submit
+       
+        });
+    });
 </script>
