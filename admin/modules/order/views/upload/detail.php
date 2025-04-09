@@ -79,7 +79,9 @@
                     success: function (data) {
                       console.log(data);
                     },error: function (xhr, status, error) {
-                    console.log('Error thrown:', error);
+
+                        console.log(2);
+                    // console.log('Error thrown:', error);
                     // let errorMsg = 'Lỗi không xác định';
 
                     // // Trường hợp trả về JSON lỗi (do PHP chủ động set)
