@@ -77,7 +77,7 @@
                     data: 1,
                 
                     success: function (data) {
-                      console.log(1);
+                      console.log(data);
                     },error: function (xhr, status, error) {
                     console.log('Error thrown:', error);
                     // let errorMsg = 'Lỗi không xác định';
