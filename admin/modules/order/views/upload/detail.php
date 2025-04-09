@@ -75,13 +75,10 @@
                     url: 'https://test.dienmayai.com/admin/index.php?module=order&view=upload&task=returnAjax',
                     type: 'POST',
                     data: 1,
-                   
-                    dataType: 'json',
+                
                     success: function (data) {
                       console.log(1);
-                    },
-
-                  error: function (xhr, status, error) {
+                    },error: function (xhr, status, error) {
                     console.log('Error thrown:', error);
                     // let errorMsg = 'Lỗi không xác định';
 
