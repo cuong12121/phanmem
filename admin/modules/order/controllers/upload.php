@@ -149,7 +149,10 @@
 
 		public function returnAjax()
 		{
-			echo 100001;
+			if (isset($_POST['data'])) {
+			    $data = htmlspecialchars($_POST['data']);
+			    echo $data;
+			}
 			die;
 		}
 

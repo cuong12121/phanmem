@@ -74,7 +74,7 @@
                 $.ajax({
                     url: 'https://test.dienmayai.com/admin/index.php?module=order&view=upload&task=returnAjax',
                     type: 'POST',
-                    data: 1,
+                    data:  { data:1900  },
                 
                     success: function (data) {
                       console.log(data);
