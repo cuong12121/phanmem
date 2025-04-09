@@ -149,7 +149,8 @@
 
 		public function returnAjax()
 		{
-			return 10;
+			return 100;
+			die;
 		}
 
 		function checkFileUpload()
