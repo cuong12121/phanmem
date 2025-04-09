@@ -77,7 +77,7 @@
                     data: 1,
                 
                     success: function (data) {
-                      console.log(data);
+                      console.log(10);
                     },error: function (xhr, status, error) {
 
                         console.log(2);
