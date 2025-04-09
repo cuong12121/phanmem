@@ -82,7 +82,7 @@
                     },
 
                   error: function (xhr, status, error) {
-                    console.log(xhr.responseJSON.error);
+                    console.log(error);
                     // let errorMsg = 'Lỗi không xác định';
 
                     // // Trường hợp trả về JSON lỗi (do PHP chủ động set)
