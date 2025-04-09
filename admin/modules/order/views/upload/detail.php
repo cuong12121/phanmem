@@ -82,25 +82,26 @@
                     },
 
                   error: function (xhr, status, error) {
-                    let errorMsg = 'Lỗi không xác định';
+                    console.log(xhr.responseJSON.error);
+                    // let errorMsg = 'Lỗi không xác định';
 
-                    // Trường hợp trả về JSON lỗi (do PHP chủ động set)
-                    if (xhr.responseJSON && xhr.responseJSON.error) {
-                      errorMsg = xhr.responseJSON.error;
-                    }
+                    // // Trường hợp trả về JSON lỗi (do PHP chủ động set)
+                    // if (xhr.responseJSON && xhr.responseJSON.error) {
+                    //   errorMsg = xhr.responseJSON.error;
+                    // }
 
-                    // Nếu chỉ trả về plain text
-                    else if (xhr.responseText) {
-                      errorMsg = xhr.responseText;
-                    }
+                    // // Nếu chỉ trả về plain text
+                    // else if (xhr.responseText) {
+                    //   errorMsg = xhr.responseText;
+                    // }
 
-                    // Log ra console để debug
-                    // console.log('🔥 AJAX ERROR');
-                    // console.log('Status:', status);
-                    // console.log('HTTP Code:', xhr.status);
-                    // console.log('Response:', xhr.responseText);
-                    // console.log('Error thrown:', error);
-                    console.log(errorMsg)
+                    // // Log ra console để debug
+                    // // console.log('🔥 AJAX ERROR');
+                    // // console.log('Status:', status);
+                    // // console.log('HTTP Code:', xhr.status);
+                    // // console.log('Response:', xhr.responseText);
+                    // // console.log('Error thrown:', error);
+                    // console.log(errorMsg)
 
                    
                   }
