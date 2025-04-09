@@ -149,7 +149,7 @@
 
 		public function returnAjax()
 		{
-			return 100;
+			echo 100;
 			die;
 		}
 
