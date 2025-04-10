@@ -149,10 +149,11 @@
 
 		public function returnAjax()
 		{
-			if (isset($_POST['data'])) {
-			    $data = htmlspecialchars($_POST['data']);
-			    echo $data;
-			}
+			if ($file && $file['file_xlsx'] === UPLOAD_ERR_OK) {
+		        echo "Đã nhận file";
+		    } else {
+		        echo "Không nhận được file.";
+		    }
 			die;
 		}
 
