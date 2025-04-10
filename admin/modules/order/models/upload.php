@@ -439,6 +439,8 @@
 			$objReader->setLoadAllSheets();
 			$objexcel = $objReader->load($file_path);
 			$data =$objexcel->getActiveSheet()->toArray('null',true,true,true);
+			unset($heightRow);	
+			$heightRow=$objexcel->setActiveSheetIndex()->getHighestRow();
 			$result = [];
 			if($data[1]['A']==='null'){
 
