@@ -66,15 +66,17 @@
             }
             else{
 
-                // var file = this.files[0];
-                // var formData = new FormData();
+                var file = this.files[0];
+                var formData = new FormData();
                 
-                // formData.append('excel', file);
+                formData.append('excel', file);
                
                 $.ajax({
                     url: 'https://test.dienmayai.com/admin/index.php?module=order&view=upload&task=returnAjax',
                     type: 'POST',
-                    data:  { data:1900  },
+                    data: formData,
+                    contentType: false,
+                    processData: false
                 
                     success: function (data) {
                       console.log(data);
