@@ -149,8 +149,16 @@
 
 		public function returnAjax()
 		{
+			$model = $this->model;
+
 			if ($_FILES && $_FILES['excel']['error'] === UPLOAD_ERR_OK) {
-		        echo "Đã nhận file";
+
+		        $tmpPath = $_FILES['excel']['tmp_name'];
+
+		        $data = $model->return_data_trackingcode_excel($tmpPath);
+
+		        print_r($data);
+
 		    } else {
 		        echo "Không nhận được file.";
 		    }

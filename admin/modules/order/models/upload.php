@@ -430,6 +430,32 @@
             return($row);  
         }
 
+        function return_data_trackingcode_excel($file_path)
+        {
+        	require_once("../libraries/PHPExcel-1.8/Classes/PHPExcel.php");
+			$objReader = PHPExcel_IOFactory::createReaderForFile($file_path);
+			// $data = new PHPExcel_IOFactory();
+			// $data->setOutputEncoding('UTF-8');
+			$objReader->setLoadAllSheets();
+			$objexcel = $objReader->load($file_path);
+			$data =$objexcel->getActiveSheet()->toArray('null',true,true,true);
+			$result = [];
+			if($data[1]['A']==='null'){
+
+				$msg = 'File excel không đúng định dạng ban đầu, vui lòng chuyển về đúng định dạng!';
+
+				die;
+				
+			}
+
+			
+			//chạy vòng đầu để check lỗi trước
+			for($j=2;$j<=$heightRow;$j++){
+				array_push($result, trim($data[$j]['F'])); 
+			}	
+			return $result;
+        }
+
 		function upload_excel_shopee($file_path,$result_id,$shop_code,$house_id, $mvdpdf){
 			require_once("../libraries/PHPExcel-1.8/Classes/PHPExcel.php");
 			$objReader = PHPExcel_IOFactory::createReaderForFile($file_path);
