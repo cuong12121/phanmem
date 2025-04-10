@@ -149,7 +149,7 @@
 
 		public function returnAjax()
 		{
-			if ($_FILES && $_FILES['file_xlsx']['error'] === UPLOAD_ERR_OK) {
+			if ($_FILES && $_FILES['excel']['error'] === UPLOAD_ERR_OK) {
 		        echo "Đã nhận file";
 		    } else {
 		        echo "Không nhận được file.";
