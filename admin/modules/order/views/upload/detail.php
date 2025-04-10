@@ -76,7 +76,7 @@
                     type: 'POST',
                     data: formData,
                     contentType: false,
-                    processData: false
+                    processData: false,
                 
                     success: function (data) {
                       console.log(data);
