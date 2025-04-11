@@ -68,7 +68,8 @@
 
                 var file = this.files[0];
                 var formData = new FormData();
-                
+                var platform = $('#warehouse_id').val();
+                console.log(platform);
                 formData.append('excel', file);
                
                 $.ajax({
@@ -86,7 +87,7 @@
                       
                     },error: function (xhr, status, error) {
 
-                        console.log(2);
+                        console.log(error);
         
                   }
                    
