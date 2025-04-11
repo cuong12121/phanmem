@@ -161,7 +161,7 @@
 
 		        $data_tracking_user = [];
 
-		        if (!isset($_SESSION['tracking_code_add_'.$data_id_user])){
+		        if (isset($_SESSION['tracking_code_add_'.$data_id_user])){
 
 		        	$data_tracking_user = $_SESSION['tracking_code_add_'.$data_id_user];
 		        }
