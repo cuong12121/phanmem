@@ -23,6 +23,7 @@
             border-collapse: collapse;
             position: relative;
         }
+
         th, td {
             border: 1px solid #ddd;
             padding: 8px;
@@ -35,7 +36,7 @@
             z-index: 10;
         }
         img {
-            max-width: 50px;
+            max-width: 100px;
             height: auto;
         }
 
