@@ -175,7 +175,7 @@
 					}
 		        }
 		        else{
-		        	print_r($data_tracking_user);
+		        	print_r($data);
 		        }
 
 		       
