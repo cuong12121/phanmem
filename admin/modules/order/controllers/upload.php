@@ -166,6 +166,10 @@
 		        	$data_tracking_user = $_SESSION['tracking_code_add_'.$data_id_user];
 		        }
 
+		        print_r($data_tracking_user);
+
+		        die;
+
 		        if(!empty($data_tracking_user)){
 		        	$check = array_intersect($data, $data_tracking_user);
 
