@@ -1870,11 +1870,11 @@
 					}
 				}
 
-				echo "<pre>";
-				var_dump($_SESSION['tracking_code_add_'.$data_id_user]);
-				echo "</pre>";
+				// echo "<pre>";
+				// var_dump($_SESSION['tracking_code_add_'.$data_id_user]);
+				// echo "</pre>";
 
-				die;
+				// die;
 			}
 			return $result_id;
 		}
