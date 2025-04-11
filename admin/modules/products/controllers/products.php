@@ -33,18 +33,7 @@ class ProductsControllersProducts  extends Controllers
 		
 		$tmpl->assign ( 'breadcrumbs', $breadcrumbs );
 
-		
-		if(!empty($get_template)){
-			$manufactories = $model->get_manufactories();
-			$status = $model -> get_records('published = 1','fs_products_status');
-			$types = $model -> get_records('published = 1','fs_products_types');
-			$origins = $model -> get_records('published = 1','fs_products_origins');
-
-			include 'modules/'.$this->module.'/views/lists1.php';
-		}
-		else{
-			include 'modules/'.$this->module.'/views/'.$this->view.'/list.php';
-		}
+		include 'modules/'.$this->module.'/views/lists1.php';
 		
 	}
 
