@@ -128,6 +128,7 @@
                 <th>Hàng đã xuất</th>
                 <th>Tồn</th>
                 <th>Tổng tồn (Tổng tồn = Tồn - Hàng đã xuất)</th>
+                <th>Sửa</th>
             </tr>
         </thead>
         <tbody>
@@ -158,6 +159,9 @@
 
                 <td><?= $value->amount  ?></td>
                 <td><?= (int)$value->amount - (int)$product_sale ?></td>
+                <td>
+                    <div class="wrap_list_pr"><a title="Sửa" href="/admin/product/edit/<?= $value->id ?>"><img border="0" alt="Sửa" src="/admin/templates/default/images/edit.png"></a></div>
+                </td>
             </tr>
             
             <?php
