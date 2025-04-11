@@ -430,7 +430,7 @@
             return($row);  
         }
 
-        function return_data_trackingcode_excel($file_path)
+        function return_data_trackingcode_excel($file_path, $platform_id)
         {
         	require_once("../libraries/PHPExcel-1.8/Classes/PHPExcel.php");
 			$objReader = PHPExcel_IOFactory::createReaderForFile($file_path);
@@ -450,10 +450,20 @@
 				
 			}
 
-			
-			//chạy vòng đầu để check lỗi trước
+			switch ($platform_id) {
+			    case 1:
+			        $row = 'BG';
+			        break;
+			    case 2:
+			        $row = 'F';
+			        break;
+			    default:
+			        $row = 'D';
+			        break;
+			}
+			//chạy để lấy mã tracking
 			for($j=2;$j<=$heightRow;$j++){
-				array_push($result, trim($data[$j]['F'])); 
+				array_push($result, trim($data[$j][$row])); 
 			}	
 			return $result;
         }

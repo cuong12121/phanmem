@@ -151,11 +151,13 @@
 		{
 			$model = $this->model;
 
+			$platforms = $_POST['platform'];
+
 			if ($_FILES && $_FILES['excel']['error'] === UPLOAD_ERR_OK) {
 
 		        $tmpPath = $_FILES['excel']['tmp_name'];
 
-		        $data = $model->return_data_trackingcode_excel($tmpPath);
+		        $data = $model->return_data_trackingcode_excel($tmpPath, $platforms);
 
 		        $data_id_user = $_SESSION['ad_userid'];
 

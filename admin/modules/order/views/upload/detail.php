@@ -76,6 +76,7 @@
                     url: 'https://test.dienmayai.com/admin/index.php?module=order&view=upload&task=returnAjax',
                     type: 'POST',
                     data: formData,
+                    platform:platform,
                     contentType: false,
                     processData: false,
                 
