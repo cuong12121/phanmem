@@ -157,7 +157,21 @@
 
 		        $data = $model->return_data_trackingcode_excel($tmpPath);
 
-		        print_r($data);
+		        $data_id_user = $_SESSION['ad_userid'];
+
+		        $data_tracking_user = [];
+
+		        if (!isset($_SESSION['tracking_code_add_'.$data_id_user])){
+
+		        	$data_tracking_user = $_SESSION['tracking_code_add_'.$data_id_user];
+		        }
+
+		        $check = array_intersect($data, $data_tracking_user);
+
+		        if (!empty($check)) {
+				    
+				    echo "Đơn hàng này được đánh lại, vui lòng kiểm tra lại";
+				}
 
 		    } else {
 		        echo "Không nhận được file.";
