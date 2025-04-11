@@ -10,9 +10,13 @@
             margin: 20px;
         }
         .table-container {
-            max-height: 400px; /* Giới hạn chiều cao bảng */
+            max-height: 700px; /* Giới hạn chiều cao bảng */
             overflow-y: auto; /* Cho phép cuộn dọc */
             border: 1px solid #ddd;
+        }
+
+        body #page-wrapper tr th, body #page-wrapper tr td{
+            font-size: 17px;
         }
         table {
             width: 100%;
