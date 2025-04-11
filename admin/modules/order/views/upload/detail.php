@@ -68,7 +68,7 @@
 
                 var file = this.files[0];
                 var formData = new FormData();
-                var platform = $('#warehouse_id').val();
+                var platform = $('#platform_id').val();
                 console.log(platform);
                 formData.append('excel', file);
                
