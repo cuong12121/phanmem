@@ -165,7 +165,7 @@
 
 		        	$data_tracking_user = $_SESSION['tracking_code_add_'.$data_id_user];
 		        }
-		        
+
 		        if(!empty($data_tracking_user)){
 		        	$check = array_intersect($data, $data_tracking_user);
 
@@ -174,10 +174,7 @@
 					    echo "Đơn hàng này được đánh lại, vui lòng kiểm tra lại";
 					}
 		        }
-		        else{
-		        	print_r($data);
-		        }
-
+		        
 		       
 
 		    } else {

@@ -79,7 +79,11 @@
                     processData: false,
                 
                     success: function (data) {
-                      console.log(data);
+
+                        if(data != ''){
+                            alert('đơn được đánh lại, vui lòng kiểm tra');
+                        }
+                      
                     },error: function (xhr, status, error) {
 
                         console.log(2);
