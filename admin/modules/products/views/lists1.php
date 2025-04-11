@@ -71,14 +71,14 @@
                     <span title="Thêm mới" style="background:url('https://dienmayai.com/admin/templates/default/images/toolbar/add.png') no-repeat"></span>
                     Thêm mới
                 </a>
-                <a class="toolbar" onclick="javascript: submitbutton('reset_amount_hold')" href="#">
+               <!--  <a class="toolbar" onclick="javascript: submitbutton('reset_amount_hold')" href="#">
                     <span title="Reset tạm giữ" style="background:url('https://dienmayai.com/admin/templates/default/images/toolbar/remove.png') no-repeat"></span>
                     Reset tạm giữ
                 </a>
                 <a class="toolbar" onclick="javascript:if(document.adminForm.boxchecked.value==0){alert('Bạn phải chọn ít nhất một bản ghi');}else{ submitbutton('remove')} " href="#">
                     <span title="Xóa" style="background:url('https://dienmayai.com/admin/templates/default/images/toolbar/remove.png') no-repeat"></span>
                     Xóa
-                </a>      
+                </a>       -->
                 <div class="clearfix"></div>
             </div>
             <div class="clearfix"></div>
