@@ -59,7 +59,7 @@
             <div class="fr">
 
                 <!-- <button onclick="showFormAdd()">test</button> -->
-                <a class="toolbar" onclick="javascript: submitbutton('export')" href="#">
+                <a class="toolbar"  href="/index.php?module=products&view=products&task=export">
                     <span title="Xuất exel" style="background:url('https://dienmayai.com/admin/templates/default/images/toolbar/Excel-icon.png') no-repeat"></span>
                     Xuất exel
                 </a>
