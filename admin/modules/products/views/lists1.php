@@ -61,6 +61,16 @@
                 <!--end: .page-header -->
                 <!-- /.row -->    
             </div>
+            <?php 
+                if(!empty($_GET['search'])){
+            ?>
+            <div>
+                <h3>Bạn đang tìm kiếm với chuỗi : <?= $_GET['search'] ?></h3>
+            </div>
+            <?php 
+                }
+            ?>
+
             <div class="fr">
 
                 <!-- <button onclick="showFormAdd()">test</button> -->
