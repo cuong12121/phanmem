@@ -78,7 +78,7 @@ class ProductsControllersProducts  extends Controllers
 		$sql = "SELECT p.*, w.*
 		        FROM fs_products AS p
 		        LEFT JOIN fs_warehouses_products_total AS w ON p.id = w.product_id
-		        WHERE p.id = :search OR p.name LIKE :name_search";
+		        WHERE p.id = :search OR p.name LIKE :name_search OR p.code LIKE :code";
 
 		$stmt = $pdo->prepare($sql);
 
@@ -86,6 +86,7 @@ class ProductsControllersProducts  extends Controllers
 		// Bind giá trị vào tham số
 		$stmt->bindValue(':search', $search, is_numeric($search) ? PDO::PARAM_INT : PDO::PARAM_STR);
 		$stmt->bindValue(':name_search', "%$search%", PDO::PARAM_STR);
+		$stmt->bindValue(':code', "%$search%", PDO::PARAM_STR);
 
 		
 
