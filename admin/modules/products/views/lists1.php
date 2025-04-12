@@ -61,6 +61,7 @@
                 <!--end: .page-header -->
                 <!-- /.row -->    
             </div>
+            <br>
             <?php 
                 if(!empty($_GET['search'])){
             ?>
