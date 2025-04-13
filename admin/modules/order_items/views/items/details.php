@@ -9,7 +9,7 @@
 
 <!-- Latest compiled JavaScript -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
- <style type="text/css">
+<style type="text/css">
     table, th, td{
         border:1px solid #868585;
     }
@@ -17,7 +17,7 @@
         border-collapse:collapse;
         width:100%;
     }
-    th, td{
+    th, td{\
         text-align:left;
         padding:10px;
     }
