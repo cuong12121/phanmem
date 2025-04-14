@@ -66,7 +66,7 @@
                 if(!empty($_GET['search'])){
             ?>
             <div>
-                <h3>Bạn đang tìm kiếm với chuỗi : <?= $_GET['search'] ?></h3>
+                <h3>Bạn đang tìm kiếm với chuỗii : <?= $_GET['search'] ?></h3>
             </div>
             <?php 
                 }
