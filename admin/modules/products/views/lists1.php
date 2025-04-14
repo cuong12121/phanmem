@@ -66,7 +66,7 @@
                 if(!empty($_GET['search'])){
             ?>
             <div>
-                <h3>Bạn đang tìm kiếm với chuỗii : <?= $_GET['search'] ?></h3>
+                <h3>Bạn đang tìm kiếm với chuỗi : <?= $_GET['search'] ?></h3>
             </div>
             <?php 
                 }
@@ -110,7 +110,7 @@
             <div class="row">
 
                 <div class="fl-left pd-15"> 
-                    <input type="text" placeholder="Tìm kiếm" name="search" id="search" value="" class="form-control fl-left" value="11">
+                    <input type="text" placeholder="Tìm kiếm" name="search" id="search" value="<?= $_GET['search'] ?>" class="form-control fl-left" >
                     <span class="input-group-btn fl-left" style="margin-left: -2px;">
                     <button type="submit" class="btn btn-search btn-default" type="button">
                     <i class="fa fa-search"></i>
