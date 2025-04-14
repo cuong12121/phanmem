@@ -102,13 +102,18 @@
         <!--end: .wrap-toolbar-->
     </div>
 
+    <?php 
+
+        $inputs_search = $_GET['search']??'';
+    ?>
+
 
     <form  action="/admin/product/search-fast/check" name="adminForm" method="get">    
         <div class="filter_area">
             <div class="row">
 
                 <div class="fl-left pd-15"> 
-                    <input type="text" placeholder="Tìm kiếm" name="search" id="search" value="" class="form-control fl-left">
+                    <input type="text" placeholder="Tìm kiếm" name="search" id="search" value="" class="form-control fl-left" value="<?= $inputs_search ?>">
                     <span class="input-group-btn fl-left" style="margin-left: -2px;">
                     <button type="submit" class="btn btn-search btn-default" type="button">
                     <i class="fa fa-search"></i>
