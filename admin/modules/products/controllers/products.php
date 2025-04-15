@@ -112,10 +112,10 @@ class ProductsControllersProducts  extends Controllers
 			        FROM fs_products AS p
 			        LEFT JOIN fs_warehouses_products_total AS w ON p.id = w.product_id
 			        LEFT JOIN fs_warehouses_products AS wpt ON p.id = wpt.product_id
-			        WHERE (wpt.warehouses_id = :kho)";
+			        WHERE (wpt.warehouses_id = :kho)  LIMIT :limit OFFSET :offset";
 			    $stmt = $pdo->prepare($sql);    
 			    $stmt->bindValue(':kho', $kho, PDO::PARAM_INT);
-			    $stmt->bindValue(':limit', 12, PDO::PARAM_INT);
+			    $stmt->bindValue(':limit', $perPage, PDO::PARAM_INT);
 				$stmt->bindValue(':offset', $offset, PDO::PARAM_INT);    
 			}
 
