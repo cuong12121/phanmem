@@ -122,13 +122,13 @@
                 <div class="fl-left">
                     <select name="filter1" class="form-control " onchange="this.form.submit()">                 
                         <option value="0"> -- Kho -- </option>
-                        <option value="1" <?=  $_GET['filter1']==1?'selected':'' ?>>Kho Hà Nội</option>
-                        <option value="2" <?=  $_GET['filter1']==2?'selected':'' ?>>Kho Hồ Chí Minh</option>
-                        <option value="3" <?=  $_GET['filter1']==3?'selected':'' ?>>Kho test</option>
-                        <option value="4" <?=  $_GET['filter1']==4?'selected':'' ?>>Kho hàng Cao Duy Hoan</option>
-                        <option value="5" <?=  $_GET['filter1']==5?'selected':'' ?>>Tầng 1</option>
-                        <option value="6" <?=  $_GET['filter1']==6?'selected':'' ?>>Kho Văn La</option>
-                        <option value="7" <?=  $_GET['filter1']==7?'selected':'' ?>>Kho Văn Phú</option>                
+                        <option value="1" <?=  !empty($_GET['filter1'])&&$_GET['filter1']==1?'selected':'' ?>>Kho Hà Nội</option>
+                        <option value="2" <?=  !empty($_GET['filter1'])&&$_GET['filter1']==2?'selected':'' ?>>Kho Hồ Chí Minh</option>
+                        <option value="3" <?=  !empty($_GET['filter1'])&&$_GET['filter1']==3?'selected':'' ?>>Kho test</option>
+                        <option value="4" <?=  !empty($_GET['filter1'])&&$_GET['filter1']==4?'selected':'' ?>>Kho hàng Cao Duy Hoan</option>
+                        <option value="5" <?=  !empty($_GET['filter1'])&&$_GET['filter1']==5?'selected':'' ?>>Tầng 1</option>
+                        <option value="6" <?=  !empty($_GET['filter1'])&&$_GET['filter1']==6?'selected':'' ?>>Kho Văn La</option>
+                        <option value="7" <?=  !empty($_GET['filter1'])&&$_GET['filter1']==7?'selected':'' ?>>Kho Văn Phú</option>                
                     </select>
                 </div>
                 <div class="fl-left">               
