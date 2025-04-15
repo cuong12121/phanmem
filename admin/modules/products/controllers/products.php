@@ -70,41 +70,30 @@ class ProductsControllersProducts  extends Controllers
 		$search = isset($_GET['search']) ? trim($_GET['search']) : '';
 		$kho = $_GET['filter1'];
 
+		if($kho==0){
+			// Chuẩn bị truy vấn SQL với Prepared Statements để tránh SQL Injection
+			$sql = "SELECT p.*, w.*
+			        FROM fs_products AS p
+			        LEFT JOIN fs_warehouses_products_total AS w ON p.id = w.product_id
+			        WHERE p.id = :search OR p.name LIKE :name_search OR p.code LIKE :code";
 
+			$stmt = $pdo->prepare($sql);
 
-		// Chuẩn bị truy vấn SQL với Prepared Statements để tránh SQL Injection
-		$sql = "SELECT p.*, w.*
-		        FROM fs_products AS p
-		        LEFT JOIN fs_warehouses_products_total AS w ON p.id = w.product_id
-		        WHERE p.id = :search OR p.name LIKE :name_search OR p.code LIKE :code";
+			// Bind giá trị vào tham số
+			$stmt->bindValue(':search', $search, is_numeric($search) ? PDO::PARAM_INT : PDO::PARAM_STR);
+			$stmt->bindValue(':name_search', "%$search%", PDO::PARAM_STR);
+			$stmt->bindValue(':code', "%$search%", PDO::PARAM_STR);
 
-		$stmt = $pdo->prepare($sql);
+			// Thực thi truy vấn
+			$stmt->execute();
+			// Lấy tất cả kết quả
+			$list = $stmt->fetchAll(PDO::FETCH_OBJ);
 
-
-		// Bind giá trị vào tham số
-		$stmt->bindValue(':search', $search, is_numeric($search) ? PDO::PARAM_INT : PDO::PARAM_STR);
-		$stmt->bindValue(':name_search', "%$search%", PDO::PARAM_STR);
-		$stmt->bindValue(':code', "%$search%", PDO::PARAM_STR);
-
-		
-
-		// Thực thi truy vấn
-		$stmt->execute();
-
-
-
-		global $db;
-
-		// Lấy tất cả kết quả
-		$list = $stmt->fetchAll(PDO::FETCH_OBJ);
-
-		$stmt->closeCursor();
-		$stmt = null; 
-
+			$stmt->closeCursor();
+			$stmt = null; 
+		}	
 
 		include 'modules/'.$this->module.'/views/lists1.php';
-
-
 
 	}
 	
