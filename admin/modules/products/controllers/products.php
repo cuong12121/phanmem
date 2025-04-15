@@ -70,7 +70,7 @@ class ProductsControllersProducts  extends Controllers
 		$search = isset($_GET['search']) ? trim($_GET['search']) : '';
 		$kho = $_GET['filter1'];
 
-		
+		if($kho==0){
 		// Chuẩn bị truy vấn SQL với Prepared Statements để tránh SQL Injection
 		$sql = "SELECT p.*, w.*
 		        FROM fs_products AS p
@@ -88,8 +88,8 @@ class ProductsControllersProducts  extends Controllers
 		$stmt->execute();
 		// Lấy tất cả kết quả
 		$list = $stmt->fetchAll(PDO::FETCH_OBJ);
-
-		if($kho>0){
+		}
+		else{
 
 			$sql = "SELECT DISTINCT p.id AS product_id
 			        FROM fs_products AS p
@@ -107,7 +107,7 @@ class ProductsControllersProducts  extends Controllers
 			$stmt->execute();
 
 			// Lấy tất cả product_id duy nhất
-			$productIds = $stmt->fetchAll(PDO::FETCH_COLUMN);
+			$list = $stmt->fetchAll(PDO::FETCH_COLUMN);
 
 		}
 
