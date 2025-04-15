@@ -40,7 +40,7 @@ class ProductsControllersProducts  extends Controllers
 
 	function SearchBYNamePD()
 	{
-		
+		global $db;
 
 		$page =1;
 
