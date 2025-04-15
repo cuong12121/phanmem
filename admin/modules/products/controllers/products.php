@@ -115,7 +115,7 @@ class ProductsControllersProducts  extends Controllers
 			        WHERE (wpt.warehouses_id = :kho)";
 			    $stmt = $pdo->prepare($sql);    
 			    $stmt->bindValue(':kho', $kho, PDO::PARAM_INT);
-			    $stmt->bindValue(':limit', $perPage, PDO::PARAM_INT);
+			    $stmt->bindValue(':limit', 12, PDO::PARAM_INT);
 				$stmt->bindValue(':offset', $offset, PDO::PARAM_INT);    
 			}
 
