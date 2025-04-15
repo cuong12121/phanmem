@@ -86,19 +86,28 @@ class ProductsControllersProducts  extends Controllers
 		}
 		else{
 
-			$sql = "SELECT DISTINCT p.id AS product_id
-	        FROM fs_products AS p
-	        LEFT JOIN fs_warehouses_products_total AS w ON p.id = w.product_id
-	        LEFT JOIN fs_warehouses_products AS wp ON p.id = wp.product_id
-	        WHERE (p.id = :search OR p.name LIKE :name_search OR p.code LIKE :code)
-	        AND wp.warehouses_id = :kho";
+			$sql = "SELECT p.*, w.*, wpt.*
+			        FROM fs_products AS p
+			        LEFT JOIN fs_warehouses_products_total AS w ON p.id = w.product_id
+			        LEFT JOIN fs_warehouses_products AS wpt ON p.id = wpt.product_id
+			        WHERE (p.id = :search OR p.name LIKE :name_search OR p.code LIKE :code)
+			        AND wpt.warehouses_id = :kho";
+
 			$stmt = $pdo->prepare($sql);
 
-			// Bind giá trị vào tham số
-			$stmt->bindValue(':search', $search, is_numeric($search) ? PDO::PARAM_INT : PDO::PARAM_STR);
-			$stmt->bindValue(':name_search', "%$search%", PDO::PARAM_STR);
-			$stmt->bindValue(':code', "%$search%", PDO::PARAM_STR);
+			// nếu để search rỗng thì chỉ hiển thị kho
+
+			if(empty(!$search)){
+				$stmt->bindValue(':search', $search, is_numeric($search) ? PDO::PARAM_INT : PDO::PARAM_STR);
+				$stmt->bindValue(':name_search', "%$search%", PDO::PARAM_STR);
+				$stmt->bindValue(':code', "%$search%", PDO::PARAM_STR);
+
+			}
+
+			// Bind parameters
+			
 			$stmt->bindValue(':kho', $kho, PDO::PARAM_INT);
+
 
 		}
 
