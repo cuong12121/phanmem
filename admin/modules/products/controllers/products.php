@@ -116,16 +116,6 @@ class ProductsControllersProducts  extends Controllers
 		// Lấy tất cả kết quả
 		$list = $stmt->fetchAll(PDO::FETCH_OBJ);
 
-		echo "<pre>";
-
-		var_dump($list);
-
-		echo"</pre>";
-
-		die;
-
-
-
 		$stmt->closeCursor();
 		$stmt = null; 
 		
