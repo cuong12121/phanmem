@@ -119,7 +119,7 @@
                     </button>
                     </span>
                 </div>
-                <div>
+                <div class="fl-left">
                     <select name="filter1" class="form-control " onchange="this.form.submit()">                 
                         <option value="0"> -- Kho -- </option>
                         <option value="1">Kho Hà Nội</option>
