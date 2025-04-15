@@ -104,13 +104,19 @@ class ProductsControllersProducts  extends Controllers
 
 			}
 			else{
+
+				$page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
+				$perPage = 12;
+				$offset = ($page - 1) * $perPage;
 				$sql = "SELECT p.*, w.*, wpt.*
 			        FROM fs_products AS p
 			        LEFT JOIN fs_warehouses_products_total AS w ON p.id = w.product_id
 			        LEFT JOIN fs_warehouses_products AS wpt ON p.id = wpt.product_id
 			        WHERE (wpt.warehouses_id = :kho)";
 			    $stmt = $pdo->prepare($sql);    
-			    $stmt->bindValue(':kho', $kho, PDO::PARAM_INT);    
+			    $stmt->bindValue(':kho', $kho, PDO::PARAM_INT);
+			    $stmt->bindValue(':limit', $perPage, PDO::PARAM_INT);
+				$stmt->bindValue(':offset', $offset, PDO::PARAM_INT);    
 			}
 
 		}
