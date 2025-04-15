@@ -34,8 +34,8 @@ class ProductsControllersProducts  extends Controllers
 		$tmpl->assign ( 'breadcrumbs', $breadcrumbs );
 
 		
-		// include 'modules/'.$this->module.'/views/'.$this->view.'/list.php';
-		include 'modules/'.$this->module.'/views/lists1.php';
+		include 'modules/'.$this->module.'/views/'.$this->view.'/list.php';
+		// include 'modules/'.$this->module.'/views/lists1.php';
 	}
 
 	function SearchBYNamePD()
@@ -68,6 +68,7 @@ class ProductsControllersProducts  extends Controllers
 
 		// Nhận giá trị tìm kiếm từ request (GET hoặc POST)
 		$search = isset($_GET['search']) ? trim($_GET['search']) : '';
+		$kho = $_GET['filter1'];
 
 
 
