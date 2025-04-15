@@ -85,11 +85,6 @@ class ProductsControllersProducts  extends Controllers
 		$stmt->bindValue(':code', "%$search%", PDO::PARAM_STR);
 		}
 		else{
-
-			
-
-			
-
 			// nếu để search rỗng thì chỉ hiển thị kho
 
 			if(empty(!$search)){
@@ -113,8 +108,8 @@ class ProductsControllersProducts  extends Controllers
 			        FROM fs_products AS p
 			        LEFT JOIN fs_warehouses_products_total AS w ON p.id = w.product_id
 			        LEFT JOIN fs_warehouses_products AS wpt ON p.id = wpt.product_id
-			        WHERE (wpt.warehouses_id = :kho)
-			        ";
+			        WHERE (wpt.warehouses_id = :kho)";
+			    $stmt = $pdo->prepare($sql);    
 			    $stmt->bindValue(':kho', $kho, PDO::PARAM_INT);    
 			}
 
