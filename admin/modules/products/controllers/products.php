@@ -89,6 +89,28 @@ class ProductsControllersProducts  extends Controllers
 		// Lấy tất cả kết quả
 		$list = $stmt->fetchAll(PDO::FETCH_OBJ);
 
+		if($kho>0){
+
+			$sql = "SELECT DISTINCT p.id AS product_id
+			        FROM fs_products AS p
+			        LEFT JOIN fs_warehouses_products_total AS w ON p.id = w.product_id
+			        WHERE p.id = :search OR p.name LIKE :name_search OR p.code LIKE :code";
+
+			$stmt = $pdo->prepare($sql);
+
+			// Bind giá trị vào tham số
+			$stmt->bindValue(':search', $search, is_numeric($search) ? PDO::PARAM_INT : PDO::PARAM_STR);
+			$stmt->bindValue(':name_search', "%$search%", PDO::PARAM_STR);
+			$stmt->bindValue(':code', "%$search%", PDO::PARAM_STR);
+
+			// Thực thi truy vấn
+			$stmt->execute();
+
+			// Lấy tất cả product_id duy nhất
+			$productIds = $stmt->fetchAll(PDO::FETCH_COLUMN);
+
+		}
+
 		echo "<pre>";
 
 		var_dump($list);
