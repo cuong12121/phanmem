@@ -87,6 +87,17 @@
                     <span title="Thêm mới" style="background:url('https://dienmayai.com/admin/templates/default/images/toolbar/add.png') no-repeat"></span>
                     Thêm mới
                 </a>
+
+                <select name="filter1" class="form-control " onchange="this.form.submit()">                 
+                    <option value="0"> -- Kho -- </option>
+                    <option value="1">Kho Hà Nội</option>
+                    <option value="2">Kho Hồ Chí Minh</option>
+                    <option value="3">Kho test</option>
+                    <option value="4">Kho hàng Cao Duy Hoan</option>
+                    <option value="5">Tầng 1</option>
+                    <option value="6">Kho Văn La</option>
+                    <option value="7">Kho Văn Phú</option>                
+                </select>
                <!--  <a class="toolbar" onclick="javascript: submitbutton('reset_amount_hold')" href="#">
                     <span title="Reset tạm giữ" style="background:url('https://dienmayai.com/admin/templates/default/images/toolbar/remove.png') no-repeat"></span>
                     Reset tạm giữ
