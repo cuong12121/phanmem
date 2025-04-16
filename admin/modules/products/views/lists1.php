@@ -83,7 +83,7 @@
                     <span title="In mã vạch" style="background:url('https://dienmayai.com/admin/templates/default/images/toolbar/print.png') no-repeat"></span>
                     In mã vạch
                 </a>
-                <a class="toolbar" href="/admin/add_product/excel">
+                <a class="toolbar" href="/admin/product/add/1">
                     <span title="Thêm mới" style="background:url('https://dienmayai.com/admin/templates/default/images/toolbar/add.png') no-repeat"></span>
                     Thêm mới
                 </a>
