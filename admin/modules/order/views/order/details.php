@@ -114,7 +114,7 @@
         <input type="date" class="input-search ui-autocomplete-input"   name="date1" autocomplete="off" maxlength="100" required="" > 
          <label>đến</label>
         <input type="date" class="input-search ui-autocomplete-input"   name="date2" autocomplete="off" maxlength="100" required="" > 
-        <select name="kho" class="form-control ">                 
+        <select name="kho">                 
             <option value="0"> -- Kho -- </option>
             <option value="1" <?=  !empty($_GET['kho'])&&$_GET['kho']==1?'selected':'' ?>>Kho Hà Nội</option>
             <option value="2" <?=  !empty($_GET['kho'])&&$_GET['kho']==2?'selected':'' ?>>Kho Hồ Chí Minh</option>
