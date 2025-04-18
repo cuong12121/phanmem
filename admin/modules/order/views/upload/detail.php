@@ -73,7 +73,7 @@
                 formData.append('excel', file);
                
                 $.ajax({
-                    url: 'https://test.dienmayai.com/admin/index.php?module=order&view=upload&task=returnAjax',
+                    url: 'https://dienmayai.com/admin/index.php?module=order&view=upload&task=returnAjax',
                     type: 'POST',
                     data: formData,
                     platform:platform,
