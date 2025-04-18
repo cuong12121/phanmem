@@ -227,6 +227,7 @@ endif;
             <th>Tracking code</th>
             <th>Tên sản phẩm </th>
             <th>Tên shop</th>
+            <th>Kho</th>
             <th>Mã shop</th>
             <th>Số lượng</th>
             <th>Id đơn hàng</th>
@@ -234,7 +235,9 @@ endif;
             <th>Người đánh đơn</th>
             <th>Ngày đánh đơn</th>
 
+
             <th>Thời gian đóng đơn hàng</th>
+
             <th>Đơn vị vận chuyển</th>
             <th>Thành tiền</th>
             <th>Hoàn đơn</th>
@@ -272,6 +275,8 @@ endif;
             <td><?= $value->tracking_code  ?></td>
             <td><?= $value->product_name  ?></td>
             <td><?= $value->shop_name  ?></td>
+            <td><?= @$value->warehouse_id  ?></td>
+
             <td><?= $value->shop_code  ?></td>
             <td><?= $value->count  ?></td>
             <td><?= $value->record_id  ?></td>
