@@ -95,6 +95,8 @@
 
 
             $define_id = ['252'=>'PHUONGDGMB', '253'=>'LANDGMB', '254'=>'LOANDGMB','255'=>'CANHDGMB', '256'=>'TRANGDGMB', '9'=>'admin', '257'=>'HAIDGMB', '258'=>'ANHDGMN', '259'=>'THOADGMN', '260'=>'THUDGMN'];
+
+            $kho_define = ['kho', 'Kho Hà Nội', 'Kho Hồ Chí Minh','Kho test', 'Kho hàng Cao Duy Hoan', 'Tầng 1', 'Kho Văn La', 'Kho Văn Phú'];
               
         ?>
 
@@ -275,7 +277,7 @@ endif;
             <td><?= $value->tracking_code  ?></td>
             <td><?= $value->product_name  ?></td>
             <td><?= $value->shop_name  ?></td>
-            <td><?= @$value->warehouse_id  ?></td>
+            <td><?= @$kho_define[$value->warehouse_id]  ?></td>
 
             <td><?= $value->shop_code  ?></td>
             <td><?= $value->count  ?></td>
