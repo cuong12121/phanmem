@@ -994,7 +994,7 @@
 
 			$kho = $_GET['kho'];
 
-			$link_search = 'https://api.'.DOMAIN.'/api/search-data-user-id-package?name='.$name.'&date1='.$date1.'&date2='.$date2.'&$kho='.$kho;
+			$link_search = 'https://api.'.DOMAIN.'/api/search-data-user-id-package?name='.$name.'&date1='.$date1.'&date2='.$date2.'&kho='.$kho;
 
 			$context = stream_context_create(array(
 	            'http' => array(
