@@ -114,7 +114,7 @@
         <input type="date" class="input-search ui-autocomplete-input"   name="date1" autocomplete="off" maxlength="100" required="" > 
          <label>đến</label>
         <input type="date" class="input-search ui-autocomplete-input"   name="date2" autocomplete="off" maxlength="100" required="" > 
-        &nbsp;
+        &nbsp; &nbsp;
         <select name="kho">                 
             <option value="0"> -- Kho -- </option>
             <option value="1" <?=  !empty($_GET['kho'])&&$_GET['kho']==1?'selected':'' ?>>Kho Hà Nội</option>
@@ -125,7 +125,7 @@
             <option value="6" <?=  !empty($_GET['kho'])&&$_GET['kho']==6?'selected':'' ?>>Kho Văn La</option>
             <option value="7" <?=  !empty($_GET['kho'])&&$_GET['kho']==7?'selected':'' ?>>Kho Văn Phú</option>                
         </select>
-
+        &nbsp; &nbsp;
         <input type="checkbox" name="options" value="1"> xuất file excel<br>
         
        
