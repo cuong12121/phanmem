@@ -992,7 +992,9 @@
 
 			$filename = 'danh_sach_don_hang';
 
+			$kho = $_GET['kho'];
 
+			$link_search = 'https://api.'.DOMAIN.'/api/search-data-user-id-package?name='.$name.'&date1='.$date1.'&date2='.$date2.'&$kho='.$kho;
 
 			$context = stream_context_create(array(
 	            'http' => array(
@@ -1009,7 +1011,7 @@
 
 	        // Send the request
 
-	        $response = file_get_contents('https://api.'.DOMAIN.'/api/search-data-user-id-package?name='.$name.'&date1='.$date1.'&date2='.$date2, FALSE, $context);
+	        $response = file_get_contents($link_search, FALSE, $context);
 
 	        $info_data  = json_decode($response);
 
