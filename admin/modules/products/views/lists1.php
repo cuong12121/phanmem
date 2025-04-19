@@ -120,7 +120,7 @@
                     </span>
                 </div>
                 <div class="fl-left">
-                    <select name="filter1" class="form-control " onchange="this.form.submit()">                 
+                    <select name="filter1" class="form-control " >                 
                         <option value="0"> -- Kho -- </option>
                         <option value="1" <?=  !empty($_GET['filter1'])&&$_GET['filter1']==1?'selected':'' ?>>Kho Hà Nội</option>
                         <option value="2" <?=  !empty($_GET['filter1'])&&$_GET['filter1']==2?'selected':'' ?>>Kho Hồ Chí Minh</option>

@@ -224,7 +224,7 @@
    			$sql = $db->query_limit($query, 10, $page);
 			$result = $db->getObjectList();	
 
-			$kho = ['Kho','Kho Hà nội','Kho HCM'];
+			$kho = ['Kho','Kho Hà nội','Kho HCM',];
 
 			
 
@@ -742,7 +742,7 @@
 
 	      
 
-	        $kho = ['Kho','Kho Hà nội','Kho HCM'];
+	        $kho = ['kho', 'Kho Hà Nội', 'Kho Hồ Chí Minh','Kho test', 'Kho hàng Cao Duy Hoan', 'Tầng 1', 'Kho Văn La', 'Kho Văn Phú'];
 
 			
 			$san = ['Sàn','Lazada','Shopee','Tiki','Lex ngoài HCM','Đơn ngoài','','Best','Ticktok','Viettel','Shopee ngoài'];
