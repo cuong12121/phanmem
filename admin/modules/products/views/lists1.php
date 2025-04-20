@@ -16,7 +16,7 @@
         }
 
         body #page-wrapper tr th, body #page-wrapper tr td{
-            font-size: 17px;
+            font-size: 14px;
         }
         table {
             width: 100%;
