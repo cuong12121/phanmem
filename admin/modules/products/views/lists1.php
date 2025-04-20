@@ -149,17 +149,56 @@
         <thead>
             <tr>
                 <th>Ảnh</th>
-                <th>Mã vạch</th>
-                <th>Mã</th>
-                <th>Tên</th>
-                <th>Giá bán</th>
-                <th>Giá nhập</th>
-                <th>Giá bán đóng gói</th>
-                <th>Giá bán thấp nhất</th>
-                
-                <th>Hàng đã xuất</th>
-                <th>Tồn</th>
-                <th>Tổng tồn (Tổng tồn = Tồn - Hàng đã xuất)</th>
+                <th>
+                    Mã vạch
+                    <a href="?sort=barcode_asc">▲</a>
+                    <a href="?sort=barcode_desc">▼</a>
+                </th>
+                <th>
+                    Mã
+                    <a href="?sort=code_asc">▲</a>
+                    <a href="?sort=code_desc">▼</a>
+                </th>
+                <th>
+                    Tên
+                    <a href="?sort=name_asc">▲</a>
+                    <a href="?sort=name_desc">▼</a>
+                </th>
+                <th>
+                    Giá bán
+                    <a href="?sort=sell_asc">▲</a>
+                    <a href="?sort=sell_desc">▼</a>
+                </th>
+                <th>
+                    Giá nhập
+                    <a href="?sort=import_asc">▲</a>
+                    <a href="?sort=import_desc">▼</a>
+                </th>
+                <th>
+                    Giá bán đóng gói
+                    <a href="?sort=pack_asc">▲</a>
+                    <a href="?sort=pack_desc">▼</a>
+                </th>
+                <th>
+                    Giá bán thấp nhất
+                    <a href="?sort=min_asc">▲</a>
+                    <a href="?sort=min_desc">▼</a>
+                </th>
+                <th>
+                    Hàng đã xuất
+                    <a href="?sort=exported_asc">▲</a>
+                    <a href="?sort=exported_desc">▼</a>
+                </th>
+                <th>
+                    Tồn
+                    <a href="?sort=stock_asc">▲</a>
+                    <a href="?sort=stock_desc">▼</a>
+                </th>
+                <th>
+                    Tổng tồn
+                    <a href="?sort=total_asc">▲</a>
+                    <a href="?sort=total_desc">▼</a>
+                </th>
                 <th>Sửa</th>
             </tr>
         </thead>
