@@ -15,7 +15,10 @@
             border: 1px solid #ddd;
         }
 
-        body #page-wrapper tr th, body #page-wrapper tr td{
+        body #page-wrapper tr td{
+            font-size: 17px;
+        }
+        body #page-wrapper tr th{
             font-size: 14px;
         }
         table {
