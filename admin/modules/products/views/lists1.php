@@ -16,10 +16,7 @@
         }
 
         body #page-wrapper tr td{
-            font-size: 17px;
-        }
-        body #page-wrapper tr th{
-            font-size: 14px;
+            font-size: 15px;
         }
         table {
             width: 100%;
