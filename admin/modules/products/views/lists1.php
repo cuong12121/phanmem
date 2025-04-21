@@ -187,8 +187,8 @@
 
                         echo "<th>
                                 $label
-                                <a  target="_blank" href=\"$ascHref\" $ascStyle>▲</a>
-                                <a  target="_blank" href=\"$descHref\" $descStyle>▼</a>
+                                <a  target='_blank' href=\"$ascHref\" $ascStyle>▲</a>
+                                <a  target='_blank' href=\"$descHref\" $descStyle>▼</a>
                             </th>";
                     }
                 ?>    
