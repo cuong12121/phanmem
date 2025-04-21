@@ -15,7 +15,12 @@ class ProductsControllersProducts  extends Controllers
 		$sort_field = $this -> sort_field;
 		$sort_direct = $this -> sort_direct;
 
-		$get_template = $_GET['get_template']??'';
+		// $get_template = $_GET['get_template']??'';
+
+		$query = $model->setQuery();
+
+		var_dump($query);
+		die;
 
 		
 		// Xác định trang hiện tại (mặc định là trang 1)
