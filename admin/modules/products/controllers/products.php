@@ -22,7 +22,7 @@ class ProductsControllersProducts  extends Controllers
 
 		if(!empty($sort)){
 			$table = $_GET['table']??'';
-			$query = "SELECT a.*,b.* FROM fs_products as a LEFT JOIN fs_warehouses_products_total as b ON a.id = b.product_id WHERE 1=1 ORDER BY ".$table.'.'. str_replace('_', ' ', $sort);
+			$query = "SELECT a.*,b.* FROM fs_products as a LEFT JOIN fs_warehouses_products_total as b ON a.id = b.product_id WHERE 1=1 ORDER BY ".$table.'.'. str_replace(['_asc', '_desc'], [' asc', ' desc'], $sort);
 
 
 			$sql = $db->query_limit($query,$this->limit,$this->page);
