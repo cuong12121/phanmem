@@ -166,6 +166,8 @@
             <tr>
                 <th>Ảnh</th>
                 <?php
+                $currentUrl = $_SERVER['REQUEST_URI'];
+
                     foreach ($columns as $col) {
                         $label = $col['label'];
                         $key = $col['key'];
