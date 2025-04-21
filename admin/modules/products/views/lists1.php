@@ -16,7 +16,7 @@
         }
 
         body #page-wrapper a{
-            color: #337ab7 !important;
+            color: #337ab7;
         }
 
         body #page-wrapper tr td{
