@@ -207,7 +207,7 @@
             <tr>
                 <td> <?php if(!empty($value->image)){ ?> <img src="/<?= $value->image  ?>" alt="Ảnh SP"> <?php } ?></td>
                 <td><?= $value->id ?></td>
-                <td><?= $value->code ?></td>
+                <td> <a href="/admin/warehouses/bill_detail/<?= $value->id ?>"><?= $value->code ?></a> </td>
                 <td><?= $value->name ?></td>
                 <td><?= number_format((float)$value->price, 0, ',', '.')   ?></td>
                 <td><?= number_format((float)$value->import_price, 0, ',', '.')   ?></td>
