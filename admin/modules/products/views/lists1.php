@@ -166,6 +166,7 @@
             <tr>
                 <th>Ảnh</th>
                 <?php
+                $currentUrls = $_SERVER['REQUEST_URI'];
                 $currentUrl = $_SERVER['REQUEST_URI'];
                 $currentUrl =str_replace('/admin/product', '', $currentUrl);
                 echo $currentUrl;
