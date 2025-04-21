@@ -143,62 +143,40 @@
 
 </div>
 
+<?php 
+    $columns = [
+        ['label' => 'Mã vạch', 'key' => 'id', 'table' => 'a'],
+        ['label' => 'Mã', 'key' => 'code', 'table' => 'a'],
+        ['label' => 'Tên', 'key' => 'name', 'table' => 'a'],
+        ['label' => 'Giá bán', 'key' => 'sell', 'table' => 'a'],
+        ['label' => 'Giá nhập', 'key' => 'import_price', 'table' => 'a'],
+        ['label' => 'Giá bán đóng gói', 'key' => 'price_pack', 'table' => 'a'],
+        ['label' => 'Giá bán thấp nhất', 'key' => 'price_min', 'table' => 'a'],
+        ['label' => 'Hàng đã xuất', 'key' => 'exported', 'table' => 'a'],
+        ['label' => 'Tồn', 'key' => 'stock', 'table' => 'a'],
+        ['label' => 'Tổng tồn', 'key' => 'total', 'table' => 'a'],
+    ];
+
+?>
+
 
 <div class="table-container">
     <table>
         <thead>
             <tr>
                 <th>Ảnh</th>
-                <th>
-                    Mã vạch
-                    <a href="?sort=id_asc">▲</a>
-                    <a href="?sort=id_desc">▼</a>
-                </th>
-                <th>
-                    Mã
-                    <a href="?sort=code_asc">▲</a>
-                    <a href="?sort=code_desc">▼</a>
-                </th>
-                <th>
-                    Tên
-                    <a href="?sort=name_asc">▲</a>
-                    <a href="?sort=name_desc">▼</a>
-                </th>
-                <th>
-                    Giá bán
-                    <a href="?sort=sell_asc">▲</a>
-                    <a href="?sort=sell_desc">▼</a>
-                </th>
-                <th>
-                    Giá nhập
-                    <a href="?sort=import_price_asc">▲</a>
-                    <a href="?sort=import_price_desc">▼</a>
-                </th>
-                <th>
-                    Giá bán đóng gói
-                    <a href="?sort=price_pack_asc">▲</a>
-                    <a href="?sort=price_pack_desc">▼</a>
-                </th>
-                <th>
-                    Giá bán thấp nhất
-                    <a href="?sort=price_min_asc">▲</a>
-                    <a href="?sort=price_min_desc">▼</a>
-                </th>
-                <th>
-                    Hàng đã xuất
-                    <a href="?sort=exported_asc">▲</a>
-                    <a href="?sort=exported_desc">▼</a>
-                </th>
-                <th>
-                    Tồn
-                    <a href="?sort=stock_asc">▲</a>
-                    <a href="?sort=stock_desc">▼</a>
-                </th>
-                <th>
-                    Tổng tồn
-                    <a href="?sort=total_asc">▲</a>
-                    <a href="?sort=total_desc">▼</a>
-                </th>
+                <?php
+                    foreach ($columns as $col) {
+                        $label = $col['label'];
+                        $key = $col['key'];
+                        $table = $col['table'];
+                        echo "<th>
+                                $label
+                                <a href=\"?sort={$key}_asc&table={$table}\">▲</a>
+                                <a href=\"?sort={$key}_desc&table={$table}\">▼</a>
+                            </th>";
+                    }
+                ?>    
                 <th>Sửa</th>
             </tr>
         </thead>
