@@ -19,8 +19,9 @@ class ProductsControllersProducts  extends Controllers
 		// Xác định trang hiện tại (mặc định là trang 1)
 		$page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
 		$page = max($page, 1); // Đảm bảo không có số âm
+		$no_sort = ['exported asc', 'exported desc'];
 
-		if(!empty($sort)){
+		if(!empty($sort) && !in_array($sort, $no_sort)){
 			$table = $_GET['table']??'';
 			$query = "SELECT a.*,b.* FROM fs_products as a LEFT JOIN fs_warehouses_products_total as b ON a.id = b.product_id WHERE 1=1 ORDER BY ".$table.'.'. str_replace(['_asc', '_desc'], [' asc', ' desc'], $sort);
 
