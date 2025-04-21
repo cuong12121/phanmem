@@ -79,7 +79,7 @@ class ProductsControllersProducts  extends Controllers
 
 		// Nhận giá trị tìm kiếm từ request (GET hoặc POST)
 		$search = isset($_GET['search']) ? trim($_GET['search']) : '';
-		$kho = $_GET['filter1'];
+		$kho = $_GET['filter1']??'';
 
 		if($kho==0){
 		// Chuẩn bị truy vấn SQL với Prepared Statements để tránh SQL Injection
