@@ -15,6 +15,10 @@
             border: 1px solid #ddd;
         }
 
+        body #page-wrapper a{
+            color: #337ab7 !important;
+        }
+
         body #page-wrapper tr td{
             font-size: 15px;
         }
