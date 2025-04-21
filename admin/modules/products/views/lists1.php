@@ -148,7 +148,7 @@
         ['label' => 'Mã vạch', 'key' => 'id', 'table' => 'a'],
         ['label' => 'Mã', 'key' => 'code', 'table' => 'a'],
         ['label' => 'Tên', 'key' => 'name', 'table' => 'a'],
-        ['label' => 'Giá bán', 'key' => 'sell', 'table' => 'a'],
+        ['label' => 'Giá bán', 'key' => 'price', 'table' => 'a'],
         ['label' => 'Giá nhập', 'key' => 'import_price', 'table' => 'a'],
         ['label' => 'Giá bán đóng gói', 'key' => 'price_pack', 'table' => 'a'],
         ['label' => 'Giá bán thấp nhất', 'key' => 'price_min', 'table' => 'a'],
@@ -169,8 +169,7 @@
                 $currentUrls =  str_replace('?page='.$page, '', $_SERVER['REQUEST_URI']) ;
                 $currentUrl = $_SERVER['REQUEST_URI'];
                 $currentUrl =str_replace('/admin/product', '', $currentUrl);
-                echo $currentUrl;
-
+               
                     foreach ($columns as $col) {
                         $label = $col['label'];
                         $key = $col['key'];
@@ -266,7 +265,7 @@ if($task ==='display'){ ?>
         
         <?php
             if(!empty($sort)){ ?>
-            ?>
+           
              <li><a aria-label="Next" title="Last page" href="<?= $currentUrls ?>&page=<?= intval($page)+1 ?>"><?= intval($page)+1 ?></a></li>
              
             <?php }else{?>
