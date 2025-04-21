@@ -19,7 +19,7 @@ class ProductsControllersProducts  extends Controllers
 		// Xác định trang hiện tại (mặc định là trang 1)
 		$page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
 		$page = max($page, 1); // Đảm bảo không có số âm
-		$no_sort = ['exported asc', 'exported desc'];
+		$no_sort = ['exported_asc', 'exported_desc'];
 
 		if(!empty($sort) && !in_array($sort, $no_sort)){
 			$table = $_GET['table']??'';
