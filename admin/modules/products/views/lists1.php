@@ -266,10 +266,10 @@ if($task ==='display'){ ?>
         <?php
             if(!empty($sort)){ ?>
             ?>
-             <li><a aria-label="Next" title="Last page" href="&page=<?= intval($page)+1 ?>"><?= intval($page)+1 ?></a></li>
+             <li><a aria-label="Next" title="Last page" href="/&page=<?= intval($page)+1 ?>"><?= intval($page)+1 ?></a></li>
              
             <?php }else{?>
-             <li><a aria-label="Next" title="Last page" href="?page=<?= intval($page)+1 ?>"><?= intval($page)+1 ?></a></li>
+            <li><a title="Page" href="/admin/product?page=<?= intval($page)-1 ?>"><?= intval($page)-1 ?></a></li>
             <?php } ?>
        
     </ul>
