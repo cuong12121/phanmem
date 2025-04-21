@@ -170,10 +170,17 @@
                         $label = $col['label'];
                         $key = $col['key'];
                         $table = $col['table'];
+
+                        $ascHref = "?sort={$key}_asc&table={$table}";
+                        $descHref = "?sort={$key}_desc&table={$table}";
+
+                        $ascStyle = (strpos($currentUrl, $ascHref) !== false) ? 'style="color:red"' : '';
+                        $descStyle = (strpos($currentUrl, $descHref) !== false) ? 'style="color:red"' : '';
+
                         echo "<th>
                                 $label
-                                <a href=\"?sort={$key}_asc&table={$table}\">▲</a>
-                                <a href=\"?sort={$key}_desc&table={$table}\">▼</a>
+                                <a href=\"$ascHref\" $ascStyle>▲</a>
+                                <a href=\"$descHref\" $descStyle>▼</a>
                             </th>";
                     }
                 ?>    
