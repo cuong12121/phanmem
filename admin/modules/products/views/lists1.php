@@ -167,6 +167,7 @@
                 <th>Ảnh</th>
                 <?php
                 $currentUrl = $_SERVER['REQUEST_URI'];
+                str_replace('https://test.dienmayai.com/admin/product', '', $currentUrl);
 
                     foreach ($columns as $col) {
                         $label = $col['label'];
