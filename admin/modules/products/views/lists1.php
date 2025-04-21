@@ -153,8 +153,8 @@
         ['label' => 'Giá bán đóng gói', 'key' => 'price_pack', 'table' => 'a'],
         ['label' => 'Giá bán thấp nhất', 'key' => 'price_min', 'table' => 'a'],
         ['label' => 'Hàng đã xuất', 'key' => 'exported', 'table' => 'a'],
-        ['label' => 'Tồn', 'key' => 'stock', 'table' => 'b'],
-        ['label' => 'Tổng tồn', 'key' => 'total', 'table' => 'b'],
+        ['label' => 'Tồn', 'key' => 'amount', 'table' => 'b'],
+        ['label' => 'Tổng tồn', 'key' => 'amount', 'table' => 'b'],
     ];
 
 ?>
