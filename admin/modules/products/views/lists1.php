@@ -302,7 +302,7 @@ else{
         <li><a title="Page 2" href="/admin/product/search-fast/check?search=&filter1=<?= $_GET['filter1'] ?>"><?= intval($page) ?></a></li>
         
     
-        <li><a aria-label="Next" title="Last page" href="&page=<?= intval($page)+1 ?>"><?= intval($page)+1 ?></a></li>
+        <li><a aria-label="Next" title="Last page" href="/admin/product/search-fast/check?search=&filter1=<?= $_GET['filter1']?>&page=<?= intval($page)+1 ?>"><?= intval($page)+1 ?></a></li>
     </ul>
 </nav>
 
