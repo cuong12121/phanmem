@@ -23,9 +23,7 @@ class ProductsControllersProducts  extends Controllers
 		if(!empty($sort)){
 			$query = "SELECT a.*,b.* FROM fs_products as a LEFT JOIN fs_warehouses_products_total as b ON a.id = b.product_id WHERE 1=1 ORDER BY a.". str_replace('_', ' ', $sort);
 
-			var_dump($query);
-
-			die;
+			
 			$sql = $db->query_limit($query,$this->limit,$this->page);
 			$list = $db->getObjectList();
 			
