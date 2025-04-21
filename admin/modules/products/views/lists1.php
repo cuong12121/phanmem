@@ -238,7 +238,11 @@
     
 <?php
  $task = FSInput::get('task', 'display');
-if($task ==='display'){ ?> 
+if($task ==='display'){ ?>
+
+    <?php  
+    $sort = $_GET['sort']??'' ?>;
+
 
 <nav aria-label="Page navigation">
     <div style="text-align: center; font-weight: bold; margin-top: 30px;"><font>Tổng</font> : <span style="color:red">[8044]</span> </div>
@@ -247,14 +251,20 @@ if($task ==='display'){ ?>
         <?php
             if($page>1){
         ?>
-        <li><a title="Page 2" href="/admin/product?page=<?= intval($page)-1 ?>"><?= intval($page)-1 ?></a></li>
+             <?php
+            if(!empty($sort)){ ?>
+            ?>
+             <li><a title="Page 2" href="&page=<?= intval($page)-1 ?>"><?= intval($page)-1 ?></a></li>
+            <?php }else{?>
+            <li><a title="Page 2" href="/admin/product?page=<?= intval($page)-1 ?>"><?= intval($page)-1 ?></a></li>
+            <?php } ?>
         <?php
             }
         ?>
         <li><a title="Page 2" href="/admin/product?page=<?= intval($page) ?>"><?= intval($page) ?></a></li>
         
     
-        <li><a aria-label="Next" title="Last page" href="/admin/product?page=<?= intval($page)+1 ?>&get_template=1"><?= intval($page)+1 ?></a></li>
+        <li><a aria-label="Next" title="Last page" href="/admin/product?page=<?= intval($page)+1 ?>"><?= intval($page)+1 ?></a></li>
     </ul>
 </nav>
 
@@ -273,14 +283,14 @@ else{
         <?php
             if($page>1){
         ?>
-        <li><a title="Page 2" href="/admin/product/search-fast/check?search=&filter1=<?= $_GET['filter1'] ?>&page=<?= intval($page)-1 ?>"><?= intval($page)-1 ?></a></li>
+        <li><a title="Page 2" href="&page=<?= intval($page)-1 ?>"><?= intval($page)-1 ?></a></li>
         <?php
             }
         ?>
         <li><a title="Page 2" href="/admin/product/search-fast/check?search=&filter1=<?= $_GET['filter1'] ?>"><?= intval($page) ?></a></li>
         
     
-        <li><a aria-label="Next" title="Last page" href="/admin/product/search-fast/check?search=&filter1=<?= $_GET['filter1'] ?>&page=<?= intval($page)+1 ?>"><?= intval($page)+1 ?></a></li>
+        <li><a aria-label="Next" title="Last page" href="&page=<?= intval($page)+1 ?>"><?= intval($page)+1 ?></a></li>
     </ul>
 </nav>
 
