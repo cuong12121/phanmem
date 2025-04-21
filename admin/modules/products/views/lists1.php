@@ -256,7 +256,7 @@ if($task ==='display'){ ?>
             ?>
              <li><a title="Page 2" href="&page=<?= intval($page)-1 ?>"><?= intval($page)-1 ?></a></li>
             <?php }else{?>
-            <li><a title="Page 2" href="/admin/product?page=<?= intval($page)-1 ?>"><?= intval($page)-1 ?></a></li>
+            <li><a title="Page" href="/admin/product?page=<?= intval($page)-1 ?>"><?= intval($page)-1 ?></a></li>
             <?php } ?>
         <?php
             }
