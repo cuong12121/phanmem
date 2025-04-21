@@ -167,7 +167,7 @@
                 <th>Ảnh</th>
                 <?php
                 $currentUrl = $_SERVER['REQUEST_URI'];
-                str_replace('admin/product', '', $currentUrl);
+                // str_replace('admin/product', '', $currentUrl);
                 echo $currentUrl;
 
                     foreach ($columns as $col) {
