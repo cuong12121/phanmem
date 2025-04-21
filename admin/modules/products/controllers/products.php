@@ -21,9 +21,10 @@ class ProductsControllersProducts  extends Controllers
 		$page = max($page, 1); // Đảm bảo không có số âm
 
 		if(!empty($sort)){
-			$query = "SELECT a.*,b.* FROM fs_products as a LEFT JOIN fs_warehouses_products_total as b ON a.id = b.product_id WHERE 1=1 ORDER BY a.". str_replace('_', ' ', $sort);
+			$table = $_GET['table']??'';
+			$query = "SELECT a.*,b.* FROM fs_products as a LEFT JOIN fs_warehouses_products_total as b ON a.id = b.product_id WHERE 1=1 ORDER BY ".$table.'.'. str_replace('_', ' ', $sort);
 
-			
+
 			$sql = $db->query_limit($query,$this->limit,$this->page);
 			$list = $db->getObjectList();
 			
