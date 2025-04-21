@@ -255,9 +255,9 @@ if($task ==='display'){ ?>
              <?php
             if(!empty($sort)){ ?>
             ?>
-             <li><a title="Page 2" href="&page=<?= intval($page)-1 ?>"><?= intval($page)-1 ?></a></li>
+             <li><a title="Page 2" href="<?= $currentUrls ?>&page=<?= intval($page)-1 ?>"><?= intval($page)-1 ?></a></li>
             <?php }else{?>
-            <li><a title="Page" href="/admin/product?page=<?= intval($page)-1 ?>"><?= intval($page)-1 ?></a></li>
+            <li><a title="Page" href="<?= $currentUrls ?>?page=<?= intval($page)-1 ?>"><?= intval($page)-1 ?></a></li>
             <?php } ?>
         <?php
             }
@@ -267,10 +267,11 @@ if($task ==='display'){ ?>
         <?php
             if(!empty($sort)){ ?>
             ?>
-             <li><a aria-label="Next" title="Last page" href="/&page=<?= intval($page)+1 ?>"><?= intval($page)+1 ?></a></li>
+             <li><a aria-label="Next" title="Last page" href="<?= $currentUrls ?>&page=<?= intval($page)+1 ?>"><?= intval($page)+1 ?></a></li>
              
             <?php }else{?>
-            <li><a title="Page" href="/admin/product?page=<?= intval($page)-1 ?>"><?= intval($page)-1 ?></a></li>
+             <li><a aria-label="Next" title="Last page" href="<?= $currentUrls ?>?page=<?= intval($page)+1 ?>"><?= intval($page)+1 ?></a></li>   
+            
             <?php } ?>
        
     </ul>
