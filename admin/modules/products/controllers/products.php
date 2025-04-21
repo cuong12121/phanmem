@@ -19,16 +19,17 @@ class ProductsControllersProducts  extends Controllers
 
 		$query = $model->setQuery();
 
-		var_dump($query);
-		die;
 
-		
+
 		// Xác định trang hiện tại (mặc định là trang 1)
 		$page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
 		$page = max($page, 1); // Đảm bảo không có số âm
 
+		$sql = $db->query_limit($query,$this->limit,$this->page);
+		$list = $db->getObjectList();
+
 		
-	    $list = $model->get_data();
+	    // $list = $model->get_data();
 
 		$categories = $model->get_categories_tree();
 		$warehouses = $model -> get_records('published = 1','fs_warehouses');
