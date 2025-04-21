@@ -19,6 +19,10 @@ class ProductsControllersProducts  extends Controllers
 
 		$query = $model->setQuery();
 
+		var_dump($query);
+
+		die;
+
 
 
 		// Xác định trang hiện tại (mặc định là trang 1)

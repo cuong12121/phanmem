@@ -151,8 +151,8 @@
                 <th>Ảnh</th>
                 <th>
                     Mã vạch
-                    <a href="?sort=barcode_asc">▲</a>
-                    <a href="?sort=barcode_desc">▼</a>
+                    <a href="?sort=id_asc">▲</a>
+                    <a href="?sort=id_desc">▼</a>
                 </th>
                 <th>
                     Mã
@@ -171,18 +171,18 @@
                 </th>
                 <th>
                     Giá nhập
-                    <a href="?sort=import_asc">▲</a>
-                    <a href="?sort=import_desc">▼</a>
+                    <a href="?sort=import_price_asc">▲</a>
+                    <a href="?sort=import_price_desc">▼</a>
                 </th>
                 <th>
                     Giá bán đóng gói
-                    <a href="?sort=pack_asc">▲</a>
-                    <a href="?sort=pack_desc">▼</a>
+                    <a href="?sort=price_pack_asc">▲</a>
+                    <a href="?sort=price_pack_desc">▼</a>
                 </th>
                 <th>
                     Giá bán thấp nhất
-                    <a href="?sort=min_asc">▲</a>
-                    <a href="?sort=min_desc">▼</a>
+                    <a href="?sort=price_min_asc">▲</a>
+                    <a href="?sort=price_min_desc">▼</a>
                 </th>
                 <th>
                     Hàng đã xuất
