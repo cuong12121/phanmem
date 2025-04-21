@@ -15,25 +15,26 @@ class ProductsControllersProducts  extends Controllers
 		$sort_field = $this -> sort_field;
 		$sort_direct = $this -> sort_direct;
 
-		// $get_template = $_GET['get_template']??'';
-
-		$query = $model->setQuery();
-
-		var_dump($query);
-
-		die;
-
-
-
+		$sort = $_GET['sort']??'';
 		// Xác định trang hiện tại (mặc định là trang 1)
 		$page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
 		$page = max($page, 1); // Đảm bảo không có số âm
 
-		$sql = $db->query_limit($query,$this->limit,$this->page);
-		$list = $db->getObjectList();
+		if(!empty($sort)){
+			$query = "SELECT a.*,b.* FROM fs_products as a LEFT JOIN fs_warehouses_products_total as b ON a.id = b.product_id WHERE 1=1 ORDER BY a.". str_replace('_', ' ', $sort);
 
+			var_dump($query);
+
+			die;
+			$sql = $db->query_limit($query,$this->limit,$this->page);
+			$list = $db->getObjectList();
+			
+		}
+		else{
+			 $list = $model->get_data();
+		}
 		
-	    // $list = $model->get_data();
+		
 
 		$categories = $model->get_categories_tree();
 		$warehouses = $model -> get_records('published = 1','fs_warehouses');
