@@ -112,71 +112,69 @@
 </head>
 <body>
 
-<button onclick="showPopup()">Mở Popup</button>
-
-  <div class="popup-overlay" id="popupOverlay">
-    <div class="popup">
-        <div class="product-info">
-    <h2>Thông Tin Sản Phẩm</h2>
-    <table>
-        <tr>
-            <td class="">Tên:</td>
-            <td id="name">Khay đựng nước rô bốt hút bụi 281I - Không màu - Không size</td>
-        </tr>
-        <tr>
-            <td class="">Mã:</td>
-            <td id="code">282E-MT-00</td>
-        </tr>
-        <tr>
-            <td class="">Mã vạch:</td>
-            <td id="bar_code">282E-MT-00</td>
-        </tr>
-        <tr>
-            <td class="">Mã sản phẩm cha:</td>
-            <td id="parent">Khay đựng nước rô bốt hút bụi 281I</td>
-        </tr>
-        <tr>
-            <td class="">Danh mục:</td>
-            <td id="category_name">Dự Án Hải Sản</td>
-        </tr>
-        <tr>
-            <td class="">Thương hiệu:</td>
-            <td>(Chưa có)</td>
-        </tr>
-        
-        <tr>
-            <td class="">Ngày tạo:</td>
-            <td id="created">2025-01-20 09:20:02</td>
-        </tr>
-        <tr>
-            <td class="">Giá nhập:</td>
-            <td id="import_price">0</td>
-        </tr>
-        <tr>
-            <td class="">Giá bán lẻ:</td>
-            <td id="price">0</td>
-        </tr>
-        <tr>
-            <td class="">Giá đón gói:</td>
-            <td id="price_pack">0</td>
-        </tr>
-        <tr>
-            <td class="">Giá sỉ:</td>
-            <td id="price_wholesale">0</td>
-        </tr>
-        <tr>
-            <td class="">Giá cũ:</td>
-            <td id="price_old">0</td>
-        </tr>
-        <tr>
-            <td class="">Đơn vị tính:</td>
-            <td>vnđ</td>
-        </tr>
-    </table>
-</div>
-        <button onclick="closePopup()">Đóng</button>
+    <div class="popup-overlay" id="popupOverlay">
+        <div class="popup">
+            <div class="product-info">
+                <h2>Thông Tin Sản Phẩm</h2>
+                <table>
+                    <tr>
+                        <td class="">Tên:</td>
+                        <td id="name">Khay đựng nước rô bốt hút bụi 281I - Không màu - Không size</td>
+                    </tr>
+                    <tr>
+                        <td class="">Mã:</td>
+                        <td id="code">282E-MT-00</td>
+                    </tr>
+                    <tr>
+                        <td class="">Mã vạch:</td>
+                        <td id="bar_code">282E-MT-00</td>
+                    </tr>
+                    <tr>
+                        <td class="">Mã sản phẩm cha:</td>
+                        <td id="parent">Khay đựng nước rô bốt hút bụi 281I</td>
+                    </tr>
+                    <tr>
+                        <td class="">Danh mục:</td>
+                        <td id="category_name">Dự Án Hải Sản</td>
+                    </tr>
+                    <tr>
+                        <td class="">Thương hiệu:</td>
+                        <td>(Chưa có)</td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="">Ngày tạo:</td>
+                        <td id="created">2025-01-20 09:20:02</td>
+                    </tr>
+                    <tr>
+                        <td class="">Giá nhập:</td>
+                        <td id="import_price">0</td>
+                    </tr>
+                    <tr>
+                        <td class="">Giá bán lẻ:</td>
+                        <td id="price">0</td>
+                    </tr>
+                    <tr>
+                        <td class="">Giá đón gói:</td>
+                        <td id="price_pack">0</td>
+                    </tr>
+                    <tr>
+                        <td class="">Giá sỉ:</td>
+                        <td id="price_wholesale">0</td>
+                    </tr>
+                    <tr>
+                        <td class="">Giá cũ:</td>
+                        <td id="price_old">0</td>
+                    </tr>
+                    <tr>
+                        <td class="">Đơn vị tính:</td>
+                        <td>vnđ</td>
+                    </tr>
+                </table>
+            </div>
+            <button onclick="closePopup()">Đóng</button>
+        </div>
     </div>
-  </div>
 
   <script>
     function showPopup(name,code,bar_code,parent,category_name, created,import_price,price,price_pack,price_wholesale,price_old) {
