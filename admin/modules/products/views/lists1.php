@@ -53,105 +53,133 @@
         }
 
         .popup-overlay {
-              display: none; /* Ẩn mặc định */
-              position: fixed;
-              top: 0; left: 0;
-              width: 100%;
-              height: 100%;
-              background: rgba(0, 0, 0, 0.5);
-              justify-content: center;
-              align-items: center;
-              z-index: 1000;
-            }
+          display: none; /* Ẩn mặc định */
+          position: fixed;
+          top: 0; left: 0;
+          width: 100%;
+          height: 100%;
+          background: rgba(0, 0, 0, 0.5);
+          justify-content: center;
+          align-items: center;
+          z-index: 1000;
+        }
 
-            .popup {
-              background: white;
-              padding: 20px;
-              border-radius: 10px;
-              min-width: 300px;
-              box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-              text-align: center;
-            }
+        .popup {
+          background: white;
+          padding: 20px;
+          border-radius: 10px;
+          min-width: 300px;
+          box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+          text-align: center;
+        }
 
-            .popup button {
-              margin-top: 15px;
-            }
+        .popup button {
+          margin-top: 15px;
+        }
+
+        .product-info {
+          max-width: 900px;
+          margin: auto;
+          background: #fff;
+          border-radius: 10px;
+          padding: 20px;
+          box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        h2 {
+          text-align: center;
+          margin-bottom: 20px;
+          color: #333;
+        }
+        table {
+          width: 100%;
+          border-collapse: collapse;
+        }
+        td {
+          padding: 10px 12px;
+          border-bottom: 1px solid #ddd;
+          vertical-align: top;
+        }
+        td.label {
+          font-weight: bold;
+          width: 30%;
+          color: #555;
+          white-space: nowrap;
+        }
+        tr:last-child td {
+          border-bottom: none;
+        }
     </style>
 </head>
 <body>
 
 <button onclick="showPopup()">Mở Popup</button>
 
-    <div class="popup-overlay" id="popupOverlay">
-        <div class="popup">
-            <div class="slider-wrapper relative" id="slider-1801912752">
-                <div class="slider slider-nav-dots-simple slider-nav-simple slider-nav-normal slider-nav-light slider-style-normal slider-lazy-load-active is-draggable flickity-enabled" data-flickity-options="{
-                    &quot;cellAlign&quot;: &quot;center&quot;,
-                    &quot;imagesLoaded&quot;: true,
-                    &quot;lazyLoad&quot;: 1,
-                    &quot;freeScroll&quot;: false,
-                    &quot;wrapAround&quot;: true,
-                    &quot;autoPlay&quot;: 6000,
-                    &quot;pauseAutoPlayOnHover&quot; : true,
-                    &quot;prevNextButtons&quot;: true,
-                    &quot;contain&quot; : true,
-                    &quot;adaptiveHeight&quot; : true,
-                    &quot;dragThreshold&quot; : 10,
-                    &quot;percentPosition&quot;: true,
-                    &quot;pageDots&quot;: true,
-                    &quot;rightToLeft&quot;: false,
-                    &quot;draggable&quot;: true,
-                    &quot;selectedAttraction&quot;: 0.1,
-                    &quot;parallax&quot; : 0,
-                    &quot;friction&quot;: 0.6        }" tabindex="0">
-                    <div class="flickity-viewport" style="height: 713.375px; touch-action: pan-y;">
-                        <div class="flickity-slider" style="left: 0px; transform: translateX(-100%);">
-                            <div class="img has-hover x md-x lg-x y md-y lg-y" id="image_925925367" style="position: absolute; left: 0%;" aria-hidden="true">
-                                <div data-animate="flipInX" data-animated="true">
-                                    <div class="img-inner dark">
-                                        <img fetchpriority="high" decoding="async" width="1920" height="719" src="https://mypham13.maugiaodien.com/wp-content/uploads/2022/06/banner-naciva-270622.jpg" data-src="https://mypham13.maugiaodien.com/wp-content/uploads/2022/06/banner-naciva-270622.jpg" class="attachment-original size-original lazy-load-active" alt="banner naciva 1" srcset="https://mypham13.maugiaodien.com/wp-content/uploads/2022/06/banner-naciva-270622.jpg 1920w, https://mypham13.maugiaodien.com/wp-content/uploads/2022/06/banner-naciva-270622-300x112.jpg 300w, https://mypham13.maugiaodien.com/wp-content/uploads/2022/06/banner-naciva-270622-1024x383.jpg 1024w, https://mypham13.maugiaodien.com/wp-content/uploads/2022/06/banner-naciva-270622-768x288.jpg 768w, https://mypham13.maugiaodien.com/wp-content/uploads/2022/06/banner-naciva-270622-1536x575.jpg 1536w, https://mypham13.maugiaodien.com/wp-content/uploads/2022/06/banner-naciva-270622-600x225.jpg 600w" data-srcset="https://mypham13.maugiaodien.com/wp-content/uploads/2022/06/banner-naciva-270622.jpg 1920w, https://mypham13.maugiaodien.com/wp-content/uploads/2022/06/banner-naciva-270622-300x112.jpg 300w, https://mypham13.maugiaodien.com/wp-content/uploads/2022/06/banner-naciva-270622-1024x383.jpg 1024w, https://mypham13.maugiaodien.com/wp-content/uploads/2022/06/banner-naciva-270622-768x288.jpg 768w, https://mypham13.maugiaodien.com/wp-content/uploads/2022/06/banner-naciva-270622-1536x575.jpg 1536w, https://mypham13.maugiaodien.com/wp-content/uploads/2022/06/banner-naciva-270622-600x225.jpg 600w" sizes="(max-width: 1920px) 100vw, 1920px">                      
-                                    </div>
-                                </div>
-                                <style>
-                                    #image_925925367 {
-                                    width: 100%;
-                                    }
-                                </style>
-                            </div>
-                            <div class="img has-hover x md-x lg-x y md-y lg-y is-selected" id="image_1823311835" style="position: absolute; left: 100%;">
-                                <div data-animate="flipInY" data-animated="true">
-                                    <div class="img-inner dark">
-                                        <img decoding="async" width="1920" height="719" src="https://mypham13.maugiaodien.com/wp-content/uploads/2022/06/SLIDER1.jpg" data-src="https://mypham13.maugiaodien.com/wp-content/uploads/2022/06/SLIDER1.jpg" class="attachment-original size-original lazy-load-active" alt="" srcset="https://mypham13.maugiaodien.com/wp-content/uploads/2022/06/SLIDER1.jpg 1920w, https://mypham13.maugiaodien.com/wp-content/uploads/2022/06/SLIDER1-300x112.jpg 300w, https://mypham13.maugiaodien.com/wp-content/uploads/2022/06/SLIDER1-600x225.jpg 600w, https://mypham13.maugiaodien.com/wp-content/uploads/2022/06/SLIDER1-1024x383.jpg 1024w, https://mypham13.maugiaodien.com/wp-content/uploads/2022/06/SLIDER1-768x288.jpg 768w, https://mypham13.maugiaodien.com/wp-content/uploads/2022/06/SLIDER1-1536x575.jpg 1536w" data-srcset="https://mypham13.maugiaodien.com/wp-content/uploads/2022/06/SLIDER1.jpg 1920w, https://mypham13.maugiaodien.com/wp-content/uploads/2022/06/SLIDER1-300x112.jpg 300w, https://mypham13.maugiaodien.com/wp-content/uploads/2022/06/SLIDER1-600x225.jpg 600w, https://mypham13.maugiaodien.com/wp-content/uploads/2022/06/SLIDER1-1024x383.jpg 1024w, https://mypham13.maugiaodien.com/wp-content/uploads/2022/06/SLIDER1-768x288.jpg 768w, https://mypham13.maugiaodien.com/wp-content/uploads/2022/06/SLIDER1-1536x575.jpg 1536w" sizes="(max-width: 1920px) 100vw, 1920px">                        
-                                    </div>
-                                </div>
-                                <style>
-                                    #image_1823311835 {
-                                    width: 100%;
-                                    }
-                                </style>
-                            </div>
-                        </div>
-                    </div>
-                    <button class="flickity-button flickity-prev-next-button previous" type="button" aria-label="Previous">
-                        <svg class="flickity-button-icon" viewBox="0 0 100 100">
-                            <path d="M 10,50 L 60,100 L 70,90 L 30,50  L 70,10 L 60,0 Z" class="arrow"></path>
-                        </svg>
-                    </button>
-                    <button class="flickity-button flickity-prev-next-button next" type="button" aria-label="Next">
-                        <svg class="flickity-button-icon" viewBox="0 0 100 100">
-                            <path d="M 10,50 L 60,100 L 70,90 L 30,50  L 70,10 L 60,0 Z" class="arrow" transform="translate(100, 100) rotate(180) "></path>
-                        </svg>
-                    </button>
-                    <ol class="flickity-page-dots">
-                        <li class="dot" aria-label="Page dot 1"></li>
-                        <li class="dot is-selected" aria-label="Page dot 2" aria-current="step"></li>
-                    </ol>
-                </div>
-                <div class="loading-spin dark large centered" style="display: none;"></div>
-            </div>
-          <button onclick="closePopup()">Đóng</button>
-        </div>
+  <div class="popup-overlay" id="popupOverlay">
+    <div class="popup">
+        <div class="product-info">
+    <h2>Thông Tin Sản Phẩm</h2>
+    <table>
+        <tr>
+            <td class="label">Tên:</td>
+            <td>Khay đựng nước rô bốt hút bụi 281I - Không màu - Không size</td>
+        </tr>
+        <tr>
+            <td class="label">Mã:</td>
+            <td>282E-MT-00</td>
+        </tr>
+        <tr>
+            <td class="label">Mã vạch:</td>
+            <td>282E-MT-00</td>
+        </tr>
+        <tr>
+            <td class="label">Mã sản phẩm cha:</td>
+            <td>Khay đựng nước rô bốt hút bụi 281I</td>
+        </tr>
+        <tr>
+            <td class="label">Danh mục:</td>
+            <td>Dự Án Hải Sản</td>
+        </tr>
+        <tr>
+            <td class="label">Thương hiệu:</td>
+            <td>(Chưa có)</td>
+        </tr>
+        <tr>
+            <td class="label">Người tạo:</td>
+            <td>NGOCANH</td>
+        </tr>
+        <tr>
+            <td class="label">Ngày tạo:</td>
+            <td>2025-01-20 09:20:02</td>
+        </tr>
+        <tr>
+            <td class="label">Giá nhập:</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td class="label">Giá bán lẻ:</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td class="label">Giá đón gói:</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td class="label">Giá sỉ:</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td class="label">Giá cũ:</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td class="label">Đơn vị tính:</td>
+            <td>(Chưa có)</td>
+        </tr>
+    </table>
+</div>
+        <button onclick="closePopup()">Đóng</button>
     </div>
+  </div>
 
   <script>
     function showPopup() {
