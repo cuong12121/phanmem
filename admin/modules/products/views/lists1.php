@@ -121,6 +121,12 @@
                         <td class="">Tên:</td>
                         <td id="name">Khay đựng nước rô bốt hút bụi 281I - Không màu - Không size</td>
                     </tr>
+
+                    <tr>
+                        <td class="">Thông tin cơ bản:</td>
+                        <td id="info">Chiều dài: , chiều rộng, chiều cao</td>
+                    </tr>
+
                     <tr>
                         <td class="">Mã:</td>
                         <td id="code">282E-MT-00</td>
@@ -177,7 +183,7 @@
     </div>
 
   <script>
-    function showPopup(name,code,bar_code,parent,category_name, created,import_price,price,price_pack,price_wholesale,price_old) {
+    function showPopup(name,info,code,bar_code,parent,category_name, created,import_price,price,price_pack,price_wholesale,price_old) {
         document.getElementById('popupOverlay').style.display = 'none';
         document.getElementById('name').innerText = name;
         document.getElementById('code').innerText = code;
@@ -357,13 +363,14 @@
                     $import_price = number_format((float)$value->import_price, 0, ',', '.');
                     $price_pack = number_format((float)$value->price_pack, 0, ',', '.');
                     $price_min = number_format((float)$value->price_min, 0, ',', '.');
+                    $info = 'Chiều dài: '.@$value->length. ' Chiều rộng: '.@$value->width.' Cân nặng: '.@$value->height; 
 
             ?>
             <tr>
                 <td> <?php if(!empty($value->image)){ ?> <img src="/<?= $value->image  ?>" alt="Ảnh SP"> <?php } ?></td>
                 <td><?= $value->id ?></td>
                 <td> <a target="_blank" href="/admin/warehouses/bill_detail/<?= $value->id ?>"><?= $value->code ?></a> </td>
-                <td><a href="#" onclick="showPopup('<?=$value->name ?>','<?=$value->code ?>', '<?=$value->barcode ?>','<?=$value->parent_id_name ?>','<?=$value->category_name ?>', '<?=$value->created_time ?>','<?=$value->import_price ?>','<?=$value->price ?>','<?=$value->price_pack ?>','<?=$value->price_wholesale ?>','<?=$value->price_old ?>')"><?= $value->name ?></a>   </td>
+                <td><a href="#" onclick="showPopup('<?=$value->name ?>','<?= $info ?>','<?=$value->code ?>', '<?=$value->barcode ?>','<?=$value->parent_id_name ?>','<?=$value->category_name ?>', '<?=$value->created_time ?>','<?=$value->import_price ?>','<?=$value->price ?>','<?=$value->price_pack ?>','<?=$value->price_wholesale ?>','<?=$value->price_old ?>')"><?= $value->name ?></a>   </td>
                 <td><?=  $price  ?></td>
                 <td><?=  $import_price  ?></td>
                 <td><?= $price_pack   ?></td>
