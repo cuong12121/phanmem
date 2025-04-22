@@ -120,59 +120,59 @@
     <h2>Thông Tin Sản Phẩm</h2>
     <table>
         <tr>
-            <td class="label">Tên:</td>
+            <td class="">Tên:</td>
             <td>Khay đựng nước rô bốt hút bụi 281I - Không màu - Không size</td>
         </tr>
         <tr>
-            <td class="label">Mã:</td>
+            <td class="">Mã:</td>
             <td>282E-MT-00</td>
         </tr>
         <tr>
-            <td class="label">Mã vạch:</td>
+            <td class="">Mã vạch:</td>
             <td>282E-MT-00</td>
         </tr>
         <tr>
-            <td class="label">Mã sản phẩm cha:</td>
+            <td class="">Mã sản phẩm cha:</td>
             <td>Khay đựng nước rô bốt hút bụi 281I</td>
         </tr>
         <tr>
-            <td class="label">Danh mục:</td>
+            <td class="">Danh mục:</td>
             <td>Dự Án Hải Sản</td>
         </tr>
         <tr>
-            <td class="label">Thương hiệu:</td>
+            <td class="">Thương hiệu:</td>
             <td>(Chưa có)</td>
         </tr>
         <tr>
-            <td class="label">Người tạo:</td>
+            <td class="">Người tạo:</td>
             <td>NGOCANH</td>
         </tr>
         <tr>
-            <td class="label">Ngày tạo:</td>
+            <td class="">Ngày tạo:</td>
             <td>2025-01-20 09:20:02</td>
         </tr>
         <tr>
-            <td class="label">Giá nhập:</td>
+            <td class="">Giá nhập:</td>
             <td>0</td>
         </tr>
         <tr>
-            <td class="label">Giá bán lẻ:</td>
+            <td class="">Giá bán lẻ:</td>
             <td>0</td>
         </tr>
         <tr>
-            <td class="label">Giá đón gói:</td>
+            <td class="">Giá đón gói:</td>
             <td>0</td>
         </tr>
         <tr>
-            <td class="label">Giá sỉ:</td>
+            <td class="">Giá sỉ:</td>
             <td>0</td>
         </tr>
         <tr>
-            <td class="label">Giá cũ:</td>
+            <td class="">Giá cũ:</td>
             <td>0</td>
         </tr>
         <tr>
-            <td class="label">Đơn vị tính:</td>
+            <td class="">Đơn vị tính:</td>
             <td>(Chưa có)</td>
         </tr>
     </table>
