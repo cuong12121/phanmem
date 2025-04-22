@@ -36,10 +36,6 @@ class ProductsControllersProducts  extends Controllers
 			 $list = $model->get_data();
 		}
 
-		
-		var_dump(count($list));
-		die;
-		
 
 		$categories = $model->get_categories_tree();
 		$warehouses = $model -> get_records('published = 1','fs_warehouses');
