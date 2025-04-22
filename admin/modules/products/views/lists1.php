@@ -187,11 +187,11 @@
         document.getElementById('parent').innerText = parent;
         document.getElementById('category_name').innerText = category_name;
         document.getElementById('created').innerText = created;
-        document.getElementById('import_price').innerText = import_price;
-        document.getElementById('price').innerText = price;
-        document.getElementById('price_pack').innerText = price_pack;
-        document.getElementById('price_wholesale').innerText = price_wholesale;
-        document.getElementById('price_old').innerText = price_old;
+        document.getElementById('import_price').innerText = import_price.toLocaleString('vi-VN');
+        document.getElementById('price').innerText = price.toLocaleString('vi-VN');
+        document.getElementById('price_pack').innerText = price_pack.toLocaleString('vi-VN');
+        document.getElementById('price_wholesale').innerText = price_wholesale.toLocaleString('vi-VN');
+        document.getElementById('price_old').innerText = price_old.toLocaleString('vi-VN');
         document.getElementById('popupOverlay').style.display = 'flex';
     }
 
