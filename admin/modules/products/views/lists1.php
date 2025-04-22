@@ -121,59 +121,56 @@
     <table>
         <tr>
             <td class="">Tên:</td>
-            <td>Khay đựng nước rô bốt hút bụi 281I - Không màu - Không size</td>
+            <td id="name">Khay đựng nước rô bốt hút bụi 281I - Không màu - Không size</td>
         </tr>
         <tr>
             <td class="">Mã:</td>
-            <td>282E-MT-00</td>
+            <td id="code">282E-MT-00</td>
         </tr>
         <tr>
             <td class="">Mã vạch:</td>
-            <td>282E-MT-00</td>
+            <td id="bar_code">282E-MT-00</td>
         </tr>
         <tr>
             <td class="">Mã sản phẩm cha:</td>
-            <td>Khay đựng nước rô bốt hút bụi 281I</td>
+            <td id="parent">Khay đựng nước rô bốt hút bụi 281I</td>
         </tr>
         <tr>
             <td class="">Danh mục:</td>
-            <td>Dự Án Hải Sản</td>
+            <td id="category_name">Dự Án Hải Sản</td>
         </tr>
         <tr>
             <td class="">Thương hiệu:</td>
             <td>(Chưa có)</td>
         </tr>
-        <tr>
-            <td class="">Người tạo:</td>
-            <td>NGOCANH</td>
-        </tr>
+        
         <tr>
             <td class="">Ngày tạo:</td>
-            <td>2025-01-20 09:20:02</td>
+            <td id="created">2025-01-20 09:20:02</td>
         </tr>
         <tr>
             <td class="">Giá nhập:</td>
-            <td>0</td>
+            <td id="import_price">0</td>
         </tr>
         <tr>
             <td class="">Giá bán lẻ:</td>
-            <td>0</td>
+            <td id="price">0</td>
         </tr>
         <tr>
             <td class="">Giá đón gói:</td>
-            <td>0</td>
+            <td id="price_pack">0</td>
         </tr>
         <tr>
             <td class="">Giá sỉ:</td>
-            <td>0</td>
+            <td id="price_wholesale">0</td>
         </tr>
         <tr>
             <td class="">Giá cũ:</td>
-            <td>0</td>
+            <td id="price_old">0</td>
         </tr>
         <tr>
             <td class="">Đơn vị tính:</td>
-            <td>(Chưa có)</td>
+            <td>vnđ</td>
         </tr>
     </table>
 </div>
@@ -182,8 +179,20 @@
   </div>
 
   <script>
-    function showPopup() {
-      document.getElementById('popupOverlay').style.display = 'flex';
+    function showPopup(name,code,bar_code,parent,category_name, created,import_price,price,price_pack,price_wholesale,price_old) {
+        document.getElementById('popupOverlay').style.display = 'none';
+        document.getElementById('name').innerText = name;
+        document.getElementById('code').innerText = code;
+        document.getElementById('bar_code').innerText = bar_code;
+        document.getElementById('parent').innerText = parent;
+        document.getElementById('category_name').innerText = category_name;
+        document.getElementById('created').innerText = created;
+        document.getElementById('import_price').innerText = import_price;
+        document.getElementById('price').innerText = price;
+        document.getElementById('price_pack').innerText = price_pack;
+        document.getElementById('price_wholesale').innerText = price_wholesale;
+        document.getElementById('price_old').innerText = price_old;
+        document.getElementById('popupOverlay').style.display = 'flex';
     }
 
     function closePopup() {
@@ -344,17 +353,23 @@
                     // echo($id_pd);
 
                     $query  = "SELECT amount FROM fs_status_packed WHERE 1=1 AND product_id = $id_pd AND status<2";
-                    $product_sale = $db->getTotal($query);                     
+                    $product_sale = $db->getTotal($query);     
+
+                    $price =  number_format((float)$value->price, 0, ',', '.');
+                    $import_price = number_format((float)$value->import_price, 0, ',', '.');
+                    $price_pack = number_format((float)$value->price_pack, 0, ',', '.');
+                    $price_min = number_format((float)$value->price_min, 0, ',', '.');
+
             ?>
             <tr>
                 <td> <?php if(!empty($value->image)){ ?> <img src="/<?= $value->image  ?>" alt="Ảnh SP"> <?php } ?></td>
                 <td><?= $value->id ?></td>
                 <td> <a target="_blank" href="/admin/warehouses/bill_detail/<?= $value->id ?>"><?= $value->code ?></a> </td>
-                <td><?= $value->name ?></td>
-                <td><?= number_format((float)$value->price, 0, ',', '.')   ?></td>
-                <td><?= number_format((float)$value->import_price, 0, ',', '.')   ?></td>
-                <td><?= number_format((float)$value->price_pack, 0, ',', '.')   ?></td>
-                <td><?= number_format((float)$value->price_min, 0, ',', '.')   ?></td>
+                <td><a href="#" onclick="showPopup('<?=$value->name ?>','<?=$value->code ?>', '<?=$value->bar_code ?>','<?=$value->parent ?>','<?=$value->category_name ?>', '<?=$value->created ?>','<?=$value->import_price ?>','<?=$value->price ?>','<?=$value->price_pack ?>','<?=$value->price_wholesale ?>','<?=$value->price_old ?>')"><?= $value->name ?></a>   </td>
+                <td><?=  $price  ?></td>
+                <td><?=  $import_price  ?></td>
+                <td><?= $price_pack   ?></td>
+                <td><?=  $price_min  ?></td>
 
                 
                 <td><?= $product_sale ?></td>
