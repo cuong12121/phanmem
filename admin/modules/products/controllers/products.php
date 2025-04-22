@@ -28,12 +28,15 @@ class ProductsControllersProducts  extends Controllers
 
 			$sql = $db->query_limit($query,$this->limit,$this->page);
 			$list = $db->getObjectList();
+
+
 			
 		}
 		else{
 			 $list = $model->get_data();
 		}
-		
+		var_dump(count($list));
+		die;
 		
 
 		$categories = $model->get_categories_tree();
