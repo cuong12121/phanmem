@@ -51,9 +51,56 @@
         .none{
             display: none;
         }
+
+        .popup-overlay {
+              display: none; /* Ẩn mặc định */
+              position: fixed;
+              top: 0; left: 0;
+              width: 100%;
+              height: 100%;
+              background: rgba(0, 0, 0, 0.5);
+              justify-content: center;
+              align-items: center;
+              z-index: 1000;
+            }
+
+            .popup {
+              background: white;
+              padding: 20px;
+              border-radius: 10px;
+              min-width: 300px;
+              box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+              text-align: center;
+            }
+
+            .popup button {
+              margin-top: 15px;
+            }
     </style>
 </head>
 <body>
+
+<button onclick="showPopup()">Mở Popup</button>
+
+  <div class="popup-overlay" id="popupOverlay">
+    <div class="popup">
+      <h2>Xin chào!</h2>
+      <p>Đây là nội dung của popup.</p>
+      <button onclick="closePopup()">Đóng</button>
+    </div>
+  </div>
+
+  <script>
+    function showPopup() {
+      document.getElementById('popupOverlay').style.display = 'flex';
+    }
+
+    function closePopup() {
+      document.getElementById('popupOverlay').style.display = 'none';
+    }
+  </script>
+
+    
 
 
 <div class="form-search-pd">
