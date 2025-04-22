@@ -93,17 +93,17 @@
         table {
           width: 100%;
           border-collapse: collapse;
-          table-layout: fixed; /* Đảm bảo cột có chiều rộng bằng nhau */
         }
         td {
           padding: 10px 12px;
           border-bottom: 1px solid #ddd;
           vertical-align: top;
-          width: 50%;
         }
-        .label {
+        td.label {
           font-weight: bold;
+          width: 30%;
           color: #555;
+          white-space: nowrap;
         }
         tr:last-child td {
           border-bottom: none;
