@@ -45,8 +45,8 @@ class ProductsControllersProducts  extends Controllers
 		$tmpl->assign ( 'breadcrumbs', $breadcrumbs );
 
 		
-		// include 'modules/'.$this->module.'/views/'.$this->view.'/list.php';
-		include 'modules/'.$this->module.'/views/lists1.php';
+		include 'modules/'.$this->module.'/views/'.$this->view.'/list.php';
+		// include 'modules/'.$this->module.'/views/lists1.php';
 	}
 
 	function SearchBYNamePD()
