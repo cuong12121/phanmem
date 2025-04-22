@@ -82,13 +82,76 @@
 
 <button onclick="showPopup()">Mở Popup</button>
 
-  <div class="popup-overlay" id="popupOverlay">
-    <div class="popup">
-      <h2>Xin chào!</h2>
-      <p>Đây là nội dung của popup.</p>
-      <button onclick="closePopup()">Đóng</button>
+    <div class="popup-overlay" id="popupOverlay">
+        <div class="popup">
+            <div class="slider-wrapper relative" id="slider-1801912752">
+                <div class="slider slider-nav-dots-simple slider-nav-simple slider-nav-normal slider-nav-light slider-style-normal slider-lazy-load-active is-draggable flickity-enabled" data-flickity-options="{
+                    &quot;cellAlign&quot;: &quot;center&quot;,
+                    &quot;imagesLoaded&quot;: true,
+                    &quot;lazyLoad&quot;: 1,
+                    &quot;freeScroll&quot;: false,
+                    &quot;wrapAround&quot;: true,
+                    &quot;autoPlay&quot;: 6000,
+                    &quot;pauseAutoPlayOnHover&quot; : true,
+                    &quot;prevNextButtons&quot;: true,
+                    &quot;contain&quot; : true,
+                    &quot;adaptiveHeight&quot; : true,
+                    &quot;dragThreshold&quot; : 10,
+                    &quot;percentPosition&quot;: true,
+                    &quot;pageDots&quot;: true,
+                    &quot;rightToLeft&quot;: false,
+                    &quot;draggable&quot;: true,
+                    &quot;selectedAttraction&quot;: 0.1,
+                    &quot;parallax&quot; : 0,
+                    &quot;friction&quot;: 0.6        }" tabindex="0">
+                    <div class="flickity-viewport" style="height: 713.375px; touch-action: pan-y;">
+                        <div class="flickity-slider" style="left: 0px; transform: translateX(-100%);">
+                            <div class="img has-hover x md-x lg-x y md-y lg-y" id="image_925925367" style="position: absolute; left: 0%;" aria-hidden="true">
+                                <div data-animate="flipInX" data-animated="true">
+                                    <div class="img-inner dark">
+                                        <img fetchpriority="high" decoding="async" width="1920" height="719" src="https://mypham13.maugiaodien.com/wp-content/uploads/2022/06/banner-naciva-270622.jpg" data-src="https://mypham13.maugiaodien.com/wp-content/uploads/2022/06/banner-naciva-270622.jpg" class="attachment-original size-original lazy-load-active" alt="banner naciva 1" srcset="https://mypham13.maugiaodien.com/wp-content/uploads/2022/06/banner-naciva-270622.jpg 1920w, https://mypham13.maugiaodien.com/wp-content/uploads/2022/06/banner-naciva-270622-300x112.jpg 300w, https://mypham13.maugiaodien.com/wp-content/uploads/2022/06/banner-naciva-270622-1024x383.jpg 1024w, https://mypham13.maugiaodien.com/wp-content/uploads/2022/06/banner-naciva-270622-768x288.jpg 768w, https://mypham13.maugiaodien.com/wp-content/uploads/2022/06/banner-naciva-270622-1536x575.jpg 1536w, https://mypham13.maugiaodien.com/wp-content/uploads/2022/06/banner-naciva-270622-600x225.jpg 600w" data-srcset="https://mypham13.maugiaodien.com/wp-content/uploads/2022/06/banner-naciva-270622.jpg 1920w, https://mypham13.maugiaodien.com/wp-content/uploads/2022/06/banner-naciva-270622-300x112.jpg 300w, https://mypham13.maugiaodien.com/wp-content/uploads/2022/06/banner-naciva-270622-1024x383.jpg 1024w, https://mypham13.maugiaodien.com/wp-content/uploads/2022/06/banner-naciva-270622-768x288.jpg 768w, https://mypham13.maugiaodien.com/wp-content/uploads/2022/06/banner-naciva-270622-1536x575.jpg 1536w, https://mypham13.maugiaodien.com/wp-content/uploads/2022/06/banner-naciva-270622-600x225.jpg 600w" sizes="(max-width: 1920px) 100vw, 1920px">                      
+                                    </div>
+                                </div>
+                                <style>
+                                    #image_925925367 {
+                                    width: 100%;
+                                    }
+                                </style>
+                            </div>
+                            <div class="img has-hover x md-x lg-x y md-y lg-y is-selected" id="image_1823311835" style="position: absolute; left: 100%;">
+                                <div data-animate="flipInY" data-animated="true">
+                                    <div class="img-inner dark">
+                                        <img decoding="async" width="1920" height="719" src="https://mypham13.maugiaodien.com/wp-content/uploads/2022/06/SLIDER1.jpg" data-src="https://mypham13.maugiaodien.com/wp-content/uploads/2022/06/SLIDER1.jpg" class="attachment-original size-original lazy-load-active" alt="" srcset="https://mypham13.maugiaodien.com/wp-content/uploads/2022/06/SLIDER1.jpg 1920w, https://mypham13.maugiaodien.com/wp-content/uploads/2022/06/SLIDER1-300x112.jpg 300w, https://mypham13.maugiaodien.com/wp-content/uploads/2022/06/SLIDER1-600x225.jpg 600w, https://mypham13.maugiaodien.com/wp-content/uploads/2022/06/SLIDER1-1024x383.jpg 1024w, https://mypham13.maugiaodien.com/wp-content/uploads/2022/06/SLIDER1-768x288.jpg 768w, https://mypham13.maugiaodien.com/wp-content/uploads/2022/06/SLIDER1-1536x575.jpg 1536w" data-srcset="https://mypham13.maugiaodien.com/wp-content/uploads/2022/06/SLIDER1.jpg 1920w, https://mypham13.maugiaodien.com/wp-content/uploads/2022/06/SLIDER1-300x112.jpg 300w, https://mypham13.maugiaodien.com/wp-content/uploads/2022/06/SLIDER1-600x225.jpg 600w, https://mypham13.maugiaodien.com/wp-content/uploads/2022/06/SLIDER1-1024x383.jpg 1024w, https://mypham13.maugiaodien.com/wp-content/uploads/2022/06/SLIDER1-768x288.jpg 768w, https://mypham13.maugiaodien.com/wp-content/uploads/2022/06/SLIDER1-1536x575.jpg 1536w" sizes="(max-width: 1920px) 100vw, 1920px">                        
+                                    </div>
+                                </div>
+                                <style>
+                                    #image_1823311835 {
+                                    width: 100%;
+                                    }
+                                </style>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="flickity-button flickity-prev-next-button previous" type="button" aria-label="Previous">
+                        <svg class="flickity-button-icon" viewBox="0 0 100 100">
+                            <path d="M 10,50 L 60,100 L 70,90 L 30,50  L 70,10 L 60,0 Z" class="arrow"></path>
+                        </svg>
+                    </button>
+                    <button class="flickity-button flickity-prev-next-button next" type="button" aria-label="Next">
+                        <svg class="flickity-button-icon" viewBox="0 0 100 100">
+                            <path d="M 10,50 L 60,100 L 70,90 L 30,50  L 70,10 L 60,0 Z" class="arrow" transform="translate(100, 100) rotate(180) "></path>
+                        </svg>
+                    </button>
+                    <ol class="flickity-page-dots">
+                        <li class="dot" aria-label="Page dot 1"></li>
+                        <li class="dot is-selected" aria-label="Page dot 2" aria-current="step"></li>
+                    </ol>
+                </div>
+                <div class="loading-spin dark large centered" style="display: none;"></div>
+            </div>
+          <button onclick="closePopup()">Đóng</button>
+        </div>
     </div>
-  </div>
 
   <script>
     function showPopup() {
@@ -100,7 +163,7 @@
     }
   </script>
 
-    
+
 
 
 <div class="form-search-pd">
