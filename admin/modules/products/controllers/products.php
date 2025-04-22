@@ -37,8 +37,8 @@ class ProductsControllersProducts  extends Controllers
 		}
 
 		
-		var_dump($list);
-		die;
+		// var_dump($list);
+		// die;
 		
 
 		$categories = $model->get_categories_tree();
