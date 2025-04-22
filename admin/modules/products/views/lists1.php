@@ -364,7 +364,7 @@
                     $import_price = number_format((float)$value->import_price, 0, ',', '.');
                     $price_pack = number_format((float)$value->price_pack, 0, ',', '.');
                     $price_min = number_format((float)$value->price_min, 0, ',', '.');
-                    $info = 'Chiều dài: '.@$value->length. ' Chiều rộng: '.@$value->width.' Cân nặng: '.@$value->height; 
+                    $info = 'Chiều dài: '.@$value->length. 'cm, Chiều rộng: '.@$value->width.'cm, Chiều cao: '.@$value->height.'cm, Cân nặng: '.@$value->height.'kg'; 
 
             ?>
             <tr>
