@@ -119,7 +119,7 @@
                 <table>
                     <tr>
                         <td class="">Tên:</td>
-                        <td id="name">Khay đựng nước rô bốt hút bụi 281I - Không màu - Không size</td>
+                        <td  id="name">Khay đựng nước rô bốt hút bụi 281I - Không màu - Không size</td>
                     </tr>
 
                     <tr>
@@ -199,7 +199,15 @@
         document.getElementById('price_old').innerText = parseInt(price_old).toLocaleString('vi-VN');
         document.getElementById('popupOverlay').style.display = 'flex';
     }
+     // Lấy tất cả phần tử có class 'click-me'
+      const elements = document.getElementsByClassName("popup-click");
 
+      // Lặp qua từng phần tử và gán sự kiện click
+      for (let i = 0; i < elements.length; i++) {
+        elements[i].onclick = function() {
+          this.classList.add("red");
+        };
+      }
     function closePopup() {
       document.getElementById('popupOverlay').style.display = 'none';
     }
@@ -371,7 +379,7 @@
                 <td> <?php if(!empty($value->image)){ ?> <img src="/<?= $value->image  ?>" alt="Ảnh SP"> <?php } ?></td>
                 <td><?= $value->id ?></td>
                 <td> <a target="_blank" href="/admin/warehouses/bill_detail/<?= $value->id ?>"><?= $value->code ?></a> </td>
-                <td><a href="#" onclick="showPopup('<?=$value->name ?>','<?= $info ?>','<?=$value->code ?>', '<?=$value->barcode ?>','<?=$value->parent_id_name ?>','<?=$value->category_name ?>', '<?=$value->created_time ?>','<?=$value->import_price ?>','<?=$value->price ?>','<?=$value->price_pack ?>','<?=$value->price_wholesale ?>','<?=$value->price_old ?>')"><?= $value->name ?></a>   </td>
+                <td><a href="#" class="popup-click" onclick="showPopup('<?=$value->name ?>','<?= $info ?>','<?=$value->code ?>', '<?=$value->barcode ?>','<?=$value->parent_id_name ?>','<?=$value->category_name ?>', '<?=$value->created_time ?>','<?=$value->import_price ?>','<?=$value->price ?>','<?=$value->price_pack ?>','<?=$value->price_wholesale ?>','<?=$value->price_old ?>')"><?= $value->name ?></a>   </td>
                 <td><?=  $price  ?></td>
                 <td><?=  $import_price  ?></td>
                 <td><?= $price_pack   ?></td>
