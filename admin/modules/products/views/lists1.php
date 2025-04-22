@@ -199,15 +199,7 @@
         document.getElementById('price_old').innerText = parseInt(price_old).toLocaleString('vi-VN');
         document.getElementById('popupOverlay').style.display = 'flex';
     }
-     // Lấy tất cả phần tử có class 'click-me'
-      const elements = document.getElementsByClassName("popup-click");
-
-      // Lặp qua từng phần tử và gán sự kiện click
-      for (let i = 0; i < elements.length; i++) {
-        elements[i].onclick = function() {
-          this.classList.add("red");
-        };
-      }
+     
     function closePopup() {
       document.getElementById('popupOverlay').style.display = 'none';
     }
