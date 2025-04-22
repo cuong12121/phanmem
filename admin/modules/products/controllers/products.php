@@ -35,7 +35,9 @@ class ProductsControllersProducts  extends Controllers
 		else{
 			 $list = $model->get_data();
 		}
-		var_dump(count($list));
+
+		
+		var_dump($list);
 		die;
 		
 
