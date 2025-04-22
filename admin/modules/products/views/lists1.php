@@ -365,7 +365,7 @@
                 <td> <?php if(!empty($value->image)){ ?> <img src="/<?= $value->image  ?>" alt="Ảnh SP"> <?php } ?></td>
                 <td><?= $value->id ?></td>
                 <td> <a target="_blank" href="/admin/warehouses/bill_detail/<?= $value->id ?>"><?= $value->code ?></a> </td>
-                <td><a href="#" onclick="showPopup('<?=$value->name ?>','<?=$value->code ?>', '<?=$value->bar_code ?>','<?=$value->parent ?>','<?=$value->category_name ?>', '<?=$value->created ?>','<?=$value->import_price ?>','<?=$value->price ?>','<?=$value->price_pack ?>','<?=$value->price_wholesale ?>','<?=$value->price_old ?>')"><?= $value->name ?></a>   </td>
+                <td><a href="#" onclick="showPopup('<?=$value->name ?>','<?=$value->code ?>', '<?=$value->barcode ?>','<?=$value->parent_id_name ?>','<?=$value->category_name ?>', '<?=$value->created_time ?>','<?=$value->import_price ?>','<?=$value->price ?>','<?=$value->price_pack ?>','<?=$value->price_wholesale ?>','<?=$value->price_old ?>')"><?= $value->name ?></a>   </td>
                 <td><?=  $price  ?></td>
                 <td><?=  $import_price  ?></td>
                 <td><?= $price_pack   ?></td>
