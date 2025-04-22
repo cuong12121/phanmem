@@ -186,6 +186,7 @@
     function showPopup(name,info,code,bar_code,parent,category_name, created,import_price,price,price_pack,price_wholesale,price_old) {
         document.getElementById('popupOverlay').style.display = 'none';
         document.getElementById('name').innerText = name;
+        document.getElementById('info').innerText = info;
         document.getElementById('code').innerText = code;
         document.getElementById('bar_code').innerText = bar_code;
         document.getElementById('parent').innerText = parent;
