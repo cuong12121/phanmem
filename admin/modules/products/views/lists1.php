@@ -386,7 +386,7 @@
                 <td>
                     <div class="wrap_list_pr"><a title="Sửa" href="/admin/product/edit/<?= $value->id ?>"><img border="0" alt="Sửa" src="/admin/templates/default/images/edit.png"></a></div>
                 </td>
-                <td><a title="Xóa" href="/index.php?module=products&view=products&task=delete_product&product_id=<?= $value->id ?>"><img border="0" alt="xóa" src="/admin/templates/default/images/toolbar/remove.png"></a></td>
+                <td><a title="Xóa" href="/index.php?module=products&view=products&task=delete_product&product_id=<?= $value->id ?>" id ="link_delete"><img border="0" alt="xóa" src="/admin/templates/default/images/toolbar/remove.png"></a></td>
             </tr>
             
             <?php
@@ -539,6 +539,17 @@ else{
 
             });
         </script>
+        <script>
+            document.getElementById("link_delete").addEventListener("click", function(event) {
+            const isConfirmed = confirm("Bạn có chắc chắn muốn xóa sản phẩm?");
+            if (!isConfirmed) {
+                event.preventDefault(); // Ngăn không cho chuyển trang nếu không đồng ý
+            }
+          });
+        </script>
+
+
+
         <!-- Custom Theme JavaScript -->
         <script src="https://dienmayai.com/admin/templates/default/dist/js/sb-admin-2.js"></script>
         <script src="https://dienmayai.com/admin/templates/default/dist/js/jquery.cookie.js"></script>
