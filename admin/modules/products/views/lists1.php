@@ -110,6 +110,10 @@
         }
     </style>
 </head>
+
+<?php 
+$user_id = $_SESSION['ad_userid'];
+?>
 <body>
 
     <div class="popup-overlay" id="popupOverlay">
@@ -152,10 +156,19 @@
                         <td class="">Ngày tạo:</td>
                         <td id="created">2025-01-20 09:20:02</td>
                     </tr>
+
+                    <?php 
+                        if($user_id ==9){
+                    ?>
+                    
                     <tr>
                         <td class="">Giá nhập:</td>
                         <td id="import_price">0</td>
                     </tr>
+                    <?php 
+                        }
+                    ?>
+
                     <tr>
                         <td class="">Giá bán lẻ:</td>
                         <td id="price">0</td>
@@ -192,7 +205,7 @@
         document.getElementById('parent').innerText = parent;
         document.getElementById('category_name').innerText = category_name;
         document.getElementById('created').innerText = created;
-        document.getElementById('import_price').innerText = parseInt(import_price).toLocaleString('vi-VN');
+        // document.getElementById('import_price').innerText = parseInt(import_price).toLocaleString('vi-VN');
         document.getElementById('price').innerText =  parseInt(price).toLocaleString('vi-VN');
         document.getElementById('price_pack').innerText = parseInt(price_pack).toLocaleString('vi-VN');
         document.getElementById('price_wholesale').innerText = parseInt(price_wholesale).toLocaleString('vi-VN');
@@ -325,8 +338,17 @@
                 $currentUrls =  str_replace('?page='.$page, '', $_SERVER['REQUEST_URI']) ;
                 $currentUrl = $_SERVER['REQUEST_URI'];
                 $currentUrl =str_replace('/admin/product', '', $currentUrl);
+
+
                
-                    foreach ($columns as $col) {
+                    foreach ($columns as $dem => $col) {
+                        <?php 
+                            if($dem == 4 && $user_id !=9){
+
+                                continue;
+                            }    
+                        
+
                         $label = $col['label'];
                         $key = $col['key'];
                         $table = $col['table'];
@@ -374,7 +396,9 @@
                 <td> <a target="_blank" href="/admin/warehouses/bill_detail/<?= $value->id ?>"><?= $value->code ?></a> </td>
                 <td><a href="#" class="popup-click" onclick="showPopup('<?=$value->name ?>','<?= $info ?>','<?=$value->code ?>', '<?=$value->barcode ?>','<?=$value->parent_id_name ?>','<?=$value->category_name ?>', '<?=$value->created_time ?>','<?=$value->import_price ?>','<?=$value->price ?>','<?=$value->price_pack ?>','<?=$value->price_wholesale ?>','<?=$value->price_old ?>')"><?= $value->name ?></a>   </td>
                 <td><?=  $price  ?></td>
+
                 <td><?=  $import_price  ?></td>
+
                 <td><?= $price_pack   ?></td>
                 <td><?=  $price_min  ?></td>
 
