@@ -345,6 +345,7 @@
                     }
                 ?>    
                 <th>Sửa</th>
+                <th>Xóa</th>
             </tr>
         </thead>
         <tbody>
@@ -385,6 +386,7 @@
                 <td>
                     <div class="wrap_list_pr"><a title="Sửa" href="/admin/product/edit/<?= $value->id ?>"><img border="0" alt="Sửa" src="/admin/templates/default/images/edit.png"></a></div>
                 </td>
+                <td><a title="Xóa" href="/index.php?module=products&view=products&task=delete_product&product_id=<?= $value->id ?>"><img border="0" alt="xóa" src="/admin/templates/default/images/toolbar/remove.png"></a></td>
             </tr>
             
             <?php
