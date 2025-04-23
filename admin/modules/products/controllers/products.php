@@ -1605,6 +1605,7 @@ class ProductsControllersProducts  extends Controllers
 
 	function delete_product()
 	{
+		global $db;
 		$product_id = $_GET['product_id'];
 
 		if(!empty($product_id)){
