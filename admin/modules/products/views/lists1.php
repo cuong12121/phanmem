@@ -313,18 +313,36 @@ $user_id = $_SESSION['ad_userid'];
 </div>
 
 <?php 
-    $columns = [
-        ['label' => 'Mã vạch', 'key' => 'id', 'table' => 'a'],
-        ['label' => 'Mã', 'key' => 'code', 'table' => 'a'],
-        ['label' => 'Tên', 'key' => 'name', 'table' => 'a'],
-        ['label' => 'Giá bán', 'key' => 'price', 'table' => 'a'],
-        ['label' => 'Giá nhập', 'key' => 'import_price', 'table' => 'a'],
-        ['label' => 'Giá bán đóng gói', 'key' => 'price_pack', 'table' => 'a'],
-        ['label' => 'Giá bán thấp nhất', 'key' => 'price_min', 'table' => 'a'],
-        ['label' => 'Hàng đã xuất', 'key' => 'exported', 'table' => 'a'],
-        ['label' => 'Tồn', 'key' => 'amount', 'table' => 'b'],
-        ['label' => 'Tổng tồn', 'key' => 'amount', 'table' => 'b'],
-    ];
+
+    if($user_id !=9){
+        $columns = [
+            ['label' => 'Mã vạch', 'key' => 'id', 'table' => 'a'],
+            ['label' => 'Mã', 'key' => 'code', 'table' => 'a'],
+            ['label' => 'Tên', 'key' => 'name', 'table' => 'a'],
+            ['label' => 'Giá bán', 'key' => 'price', 'table' => 'a'],
+            ['label' => 'Giá bán đóng gói', 'key' => 'price_pack', 'table' => 'a'],
+            ['label' => 'Giá bán thấp nhất', 'key' => 'price_min', 'table' => 'a'],
+            ['label' => 'Hàng đã xuất', 'key' => 'exported', 'table' => 'a'],
+            ['label' => 'Tồn', 'key' => 'amount', 'table' => 'b'],
+            ['label' => 'Tổng tồn', 'key' => 'amount', 'table' => 'b'],
+        ];
+   } 
+   else{
+        $columns = [
+            ['label' => 'Mã vạch', 'key' => 'id', 'table' => 'a'],
+            ['label' => 'Mã', 'key' => 'code', 'table' => 'a'],
+            ['label' => 'Tên', 'key' => 'name', 'table' => 'a'],
+            ['label' => 'Giá bán', 'key' => 'price', 'table' => 'a'],
+            ['label' => 'Giá nhập', 'key' => 'import_price', 'table' => 'a'],
+            ['label' => 'Giá bán đóng gói', 'key' => 'price_pack', 'table' => 'a'],
+            ['label' => 'Giá bán thấp nhất', 'key' => 'price_min', 'table' => 'a'],
+            ['label' => 'Hàng đã xuất', 'key' => 'exported', 'table' => 'a'],
+            ['label' => 'Tồn', 'key' => 'amount', 'table' => 'b'],
+            ['label' => 'Tổng tồn', 'key' => 'amount', 'table' => 'b'],
+        ];
+   }                          
+
+    
 
 ?>
 
@@ -342,12 +360,6 @@ $user_id = $_SESSION['ad_userid'];
 
                
                     foreach ($columns as $dem => $col) {
-                       
-                            if($dem == 4 && $user_id !=9){
-
-                                continue;
-                            }    
-                        
 
                         $label = $col['label'];
                         $key = $col['key'];
