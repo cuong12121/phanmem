@@ -342,7 +342,7 @@ $user_id = $_SESSION['ad_userid'];
 
                
                     foreach ($columns as $dem => $col) {
-                        <?php 
+                       
                             if($dem == 4 && $user_id !=9){
 
                                 continue;
