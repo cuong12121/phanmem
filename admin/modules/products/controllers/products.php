@@ -46,8 +46,8 @@ class ProductsControllersProducts  extends Controllers
 		$tmpl->assign ( 'breadcrumbs', $breadcrumbs );
 
 		
-		include 'modules/'.$this->module.'/views/'.$this->view.'/list.php';
-		// include 'modules/'.$this->module.'/views/lists1.php';
+		// include 'modules/'.$this->module.'/views/'.$this->view.'/list.php';
+		include 'modules/'.$this->module.'/views/lists1.php';
 	}
 
 	function SearchBYNamePD()
@@ -1602,6 +1602,31 @@ class ProductsControllersProducts  extends Controllers
 		echo $html;
 		return;
 	}
+
+	function delete_product()
+	{
+		$id_product = $_GET['id_product'];
+
+		if(!empty($id_product)){
+
+			$sql = " DELETE FROM fs_products
+			WHERE id = ".$id_product."".
+			$whewe;
+			$db->query ( $sql );
+			$rows = $db->affected_rows ();
+
+			$link = FSRoute::_('index.php?module='.$this -> module.'&view='.$this -> view);
+			
+			
+			setRedirect($link,FSText :: _('Xóa thành công sản phẩm với id = '. $id_product));	
+
+		}
+		else{
+			setRedirect($link,FSText :: _('Link sản phẩm không đúng'));	
+		}
+	}
+
+
 
 	function ajax_show_all_image(){
 		$model = $this -> model;
