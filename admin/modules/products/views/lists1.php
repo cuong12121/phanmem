@@ -322,7 +322,7 @@ $user_id = $_SESSION['ad_userid'];
             ['label' => 'Giá bán', 'key' => 'price', 'table' => 'a'],
             ['label' => 'Giá bán đóng gói', 'key' => 'price_pack', 'table' => 'a'],
             ['label' => 'Giá bán thấp nhất', 'key' => 'price_min', 'table' => 'a'],
-            ['label' => 'Hàng đã xuất', 'key' => 'exported', 'table' => 'a'],
+           
             ['label' => 'Tồn', 'key' => 'amount', 'table' => 'b'],
             ['label' => 'Tổng tồn', 'key' => 'amount', 'table' => 'b'],
         ];
@@ -336,7 +336,7 @@ $user_id = $_SESSION['ad_userid'];
             ['label' => 'Giá nhập', 'key' => 'import_price', 'table' => 'a'],
             ['label' => 'Giá bán đóng gói', 'key' => 'price_pack', 'table' => 'a'],
             ['label' => 'Giá bán thấp nhất', 'key' => 'price_min', 'table' => 'a'],
-            ['label' => 'Hàng đã xuất', 'key' => 'exported', 'table' => 'a'],
+            
             ['label' => 'Tồn', 'key' => 'amount', 'table' => 'b'],
             ['label' => 'Tổng tồn', 'key' => 'amount', 'table' => 'b'],
         ];
@@ -418,11 +418,10 @@ $user_id = $_SESSION['ad_userid'];
                 <?php 
                     }
                 ?>
-                <td><?=  $price_min  ?></td>
 
                 <td><?= $price_pack   ?></td>
 
-                
+                <td><?=  $price_min  ?></td>
 
                 
                 <td><?= $product_sale ?></td>
