@@ -1605,16 +1605,12 @@ class ProductsControllersProducts  extends Controllers
 
 	function delete_product()
 	{
-		$id_product = $_GET['id_product'];
+		$product_id = $_GET['product_id'];
 
-		var_dump($id_product);
-
-		die;
-
-		if(!empty($id_product)){
+		if(!empty($product_id)){
 
 			$sql = " DELETE FROM fs_products
-			WHERE id = ".$id_product."".
+			WHERE id = ".$product_id."".
 			$whewe;
 			$db->query ( $sql );
 			$rows = $db->affected_rows ();
@@ -1622,7 +1618,7 @@ class ProductsControllersProducts  extends Controllers
 			$link = FSRoute::_('index.php?module='.$this -> module.'&view='.$this -> view);
 			
 			
-			setRedirect($link,FSText :: _('Xóa thành công sản phẩm với id = '. $id_product));	
+			setRedirect($link,FSText :: _('Xóa thành công sản phẩm với id = '. $product_id));	
 
 		}
 		else{
