@@ -320,8 +320,8 @@ $user_id = $_SESSION['ad_userid'];
             ['label' => 'Mã', 'key' => 'code', 'table' => 'a'],
             ['label' => 'Tên', 'key' => 'name', 'table' => 'a'],
             ['label' => 'Giá bán', 'key' => 'price', 'table' => 'a'],
-            ['label' => 'Giá bán đóng gói', 'key' => 'price_min', 'table' => 'a'],
-            ['label' => 'Giá bán thấp nhất', 'key' => 'price_pack', 'table' => 'a'],
+            ['label' => 'Giá bán đóng gói', 'key' => 'price_pack', 'table' => 'a'],
+            ['label' => 'Giá bán thấp nhất', 'key' => 'price_min', 'table' => 'a'],
            
             ['label' => 'Tồn', 'key' => 'amount', 'table' => 'b'],
             ['label' => 'Tổng tồn', 'key' => 'amount', 'table' => 'b'],
@@ -419,7 +419,7 @@ $user_id = $_SESSION['ad_userid'];
                     }
                 ?>
 
-                <td><?= $price_pack   ?></td>
+                <td></td>
 
                 <td><?=  $price_min  ?></td>
 
