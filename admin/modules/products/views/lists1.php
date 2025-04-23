@@ -418,10 +418,11 @@ $user_id = $_SESSION['ad_userid'];
                 <?php 
                     }
                 ?>
+                <td><?=  $price_min  ?></td>
 
                 <td><?= $price_pack   ?></td>
 
-                <td><?=  $price_min  ?></td>
+                
 
                 
                 <td><?= $product_sale ?></td>
