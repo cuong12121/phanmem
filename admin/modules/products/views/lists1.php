@@ -424,7 +424,7 @@ $user_id = $_SESSION['ad_userid'];
                 <td><?=  $price_min  ?></td>
 
                 
-                <td><?= $product_sale ?></td>
+                
 
                 <td><?= $value->amount  ?></td>
                 <td><?= (int)$value->amount - (int)$product_sale ?></td>
