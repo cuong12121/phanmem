@@ -1607,6 +1607,10 @@ class ProductsControllersProducts  extends Controllers
 	{
 		$id_product = $_GET['id_product'];
 
+		var_dump($id_product);
+
+		die;
+
 		if(!empty($id_product)){
 
 			$sql = " DELETE FROM fs_products
