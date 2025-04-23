@@ -410,7 +410,7 @@ $user_id = $_SESSION['ad_userid'];
                 <td><?=  $price  ?></td>
 
                 <?php 
-                if($user_id !=9){
+                if($user_id ==9){
 
                 ?>
                 <td><?=  $import_price  ?></td>
@@ -419,7 +419,7 @@ $user_id = $_SESSION['ad_userid'];
                     }
                 ?>
 
-                <td></td>
+                <td><?= $price_pack   ?></td>
 
                 <td><?=  $price_min  ?></td>
 
