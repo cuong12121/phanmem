@@ -409,9 +409,18 @@ $user_id = $_SESSION['ad_userid'];
                 <td><a href="#" class="popup-click" onclick="showPopup('<?=$value->name ?>','<?= $info ?>','<?=$value->code ?>', '<?=$value->barcode ?>','<?=$value->parent_id_name ?>','<?=$value->category_name ?>', '<?=$value->created_time ?>','<?=$value->import_price ?>','<?=$value->price ?>','<?=$value->price_pack ?>','<?=$value->price_wholesale ?>','<?=$value->price_old ?>')"><?= $value->name ?></a>   </td>
                 <td><?=  $price  ?></td>
 
+                <?php 
+                if($user_id !=9){
+
+                ?>
                 <td><?=  $import_price  ?></td>
 
+                <?php 
+                    }
+                ?>
+
                 <td><?= $price_pack   ?></td>
+
                 <td><?=  $price_min  ?></td>
 
                 
