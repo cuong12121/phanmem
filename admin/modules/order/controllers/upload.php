@@ -153,7 +153,7 @@
 
 			var_dump($tracking);
 
-			
+
 
 		}
 
@@ -192,12 +192,8 @@
 					}
 		        }
 		        
-		       
-
-		    } else {
-		        echo "Không nhận được file.";
 		    }
-			die;
+			
 		}
 
 		function checkFileUpload()
