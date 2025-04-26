@@ -149,8 +149,8 @@
 
 		function show_tracking_shop()
 		{
-			 
-			$tracking = $_SESSION['ad_userid'];
+
+			$tracking = $_SESSION;
 
 			var_dump($tracking);
 
