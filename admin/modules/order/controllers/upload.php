@@ -147,6 +147,16 @@
             return $file_pdf_rep1;
 		}
 
+		function show_tracking_shop()
+		{
+			$tracking = $_SESSION['tracking_code_add_372'];
+
+			var_dump($tracking);
+
+			
+
+		}
+
 		public function returnAjax()
 		{
 			$model = $this->model;
@@ -157,17 +167,22 @@
 
 		        $tmpPath = $_FILES['excel']['tmp_name'];
 
+		        // lấy thông tin đơn từ file excel
+
 		        $data = $model->return_data_trackingcode_excel($tmpPath, $platforms);
 
 		        $data_id_user = $_SESSION['ad_userid'];
 
 		        $data_tracking_user = [];
 
+		        // lấy thông tin tracking code  đơn đã đánh của shop
+
 		        if (isset($_SESSION['tracking_code_add_'.$data_id_user])){
 
 		        	$data_tracking_user = $_SESSION['tracking_code_add_'.$data_id_user];
 		        }
 
+		        // so sánh mã tracking  đơn trong file excel của shop và đơn đã đánh hiện tại xem có giống nhau không rồi thông báo
 		        if(!empty($data_tracking_user)){
 		        	$check = array_intersect($data, $data_tracking_user);
 
