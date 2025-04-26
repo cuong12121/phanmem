@@ -149,7 +149,7 @@
 
 		function show_tracking_shop()
 		{
-			$tracking = $_SESSION['tracking_code_add_372'];
+			$tracking = $_SESSION['tracking_code_add_9'];
 
 			var_dump($tracking);
 
