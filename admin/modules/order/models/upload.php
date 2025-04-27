@@ -1467,7 +1467,7 @@
 
 			$data_id_user = $_SESSION['ad_userid'];
 			// thêm tracking code vào mảng để check
-			if (!isset($_SESSION['tracking_code_add_'.$data_id_user])) {
+			if (empty($_SESSION['tracking_code_add_'.$data_id_user])) {
 			    $_SESSION['tracking_code_add_'.$data_id_user] = [];
 			}
 			if(count($_SESSION['tracking_code_add_'.$data_id_user])>150){
