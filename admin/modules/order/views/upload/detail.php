@@ -61,7 +61,7 @@
             //console.log(this.files[0]);
             var type = this.files[0].type;
             if(type != 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'){
-                alert('Lỗi. Vui lòng chọn đúng file Excel có đuôi .xlsx');
+                alert('Lỗi. Vui lòng chọn đúng file Excel có đuôi .xlsx nhé');
                 $('#file_xlsx').val('');
             }
             else{
