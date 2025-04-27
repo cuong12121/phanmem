@@ -151,7 +151,7 @@
 		{
 			$data_id_user = $_SESSION['ad_userid'];
 			$tracking = $_SESSION;
-			if (!isset($_SESSION['tracking_code_add_'.$data_id_user])) {
+			if (empty($_SESSION['tracking_code_add_'.$data_id_user])) {
 			    $_SESSION['tracking_code_add_'.$data_id_user] = [];
 			    var_dump($data_id_user);
 			}
