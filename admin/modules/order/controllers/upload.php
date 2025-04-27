@@ -152,7 +152,7 @@
 			$data_id_user = $_SESSION['ad_userid'];
 			$tracking = $_SESSION;
 
-			var_dump($tracking);
+			var_dump($data_id_user);
 
 
 
