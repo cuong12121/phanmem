@@ -69,14 +69,15 @@
                 var file = this.files[0];
                 var formData = new FormData();
                 var platform = $('#platform_id').val();
-                console.log(platform);
+                
                 formData.append('excel', file);
+                formData.append('platform', platform); 
                
                 $.ajax({
                     url: 'https://dienmayai.com/admin/index.php?module=order&view=upload&task=returnAjax',
                     type: 'POST',
                     data: formData,
-                    platform:platform,
+                    
                     contentType: false,
                     processData: false,
                 
