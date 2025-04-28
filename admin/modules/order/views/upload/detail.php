@@ -64,37 +64,37 @@
                 alert('Lỗi. Vui lòng chọn đúng file Excel có đuôi .xlsx');
                 $('#file_xlsx').val('');
             }
-            else{
+            // else{
 
-                var file = this.files[0];
-                var formData = new FormData();
-                var platform = $('#platform_id').val();
+            //     var file = this.files[0];
+            //     var formData = new FormData();
+            //     var platform = $('#platform_id').val();
                 
-                formData.append('excel', file);
-                formData.append('platform', platform); 
+            //     // formData.append('excel', file);
+            //     // formData.append('platform', platform); 
                
-                $.ajax({
-                    url: 'https://dienmayai.com/admin/index.php?module=order&view=upload&task=returnAjax',
-                    type: 'POST',
-                    data: formData,
+            //   //   $.ajax({
+            //   //       url: 'https://dienmayai.com/admin/index.php?module=order&view=upload&task=returnAjax',
+            //   //       type: 'POST',
+            //   //       data: formData,
                     
-                    contentType: false,
-                    processData: false,
+            //   //       contentType: false,
+            //   //       processData: false,
                 
-                    success: function (data) {
+            //   //       success: function (data) {
 
-                        if(data.trim() != ''){
-                            alert('đơn được đánh lại, vui lòng kiểm tra');
-                        }
+            //   //           if(data.trim() != ''){
+            //   //               alert('đơn được đánh lại, vui lòng kiểm tra');
+            //   //           }
                       
-                    },error: function (xhr, status, error) {
+            //   //       },error: function (xhr, status, error) {
 
-                        console.log(error);
+            //   //           console.log(error);
         
-                  }
+            //   //     }
                    
-              });
-            }
+            //   // });
+            // }
         });
 
     });
