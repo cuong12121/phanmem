@@ -1611,8 +1611,7 @@ class ProductsControllersProducts  extends Controllers
 		if(!empty($product_id)){
 
 			$sql = " DELETE FROM fs_products
-			WHERE id = ".$product_id."".
-			$whewe;
+			WHERE id = ".$product_id;
 			$db->query ( $sql );
 			$rows = $db->affected_rows ();
 
