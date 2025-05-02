@@ -1830,8 +1830,7 @@
 						array_push($data_array, $new_tracking_code);
 						$_SESSION['tracking_code_add_'.$data_id_user] = $data_array;
 					}
-					die;
-
+					
 					foreach($data_code_item as $data_code_it) {
 
 						$str_id .= $data_code_it->id.',';
