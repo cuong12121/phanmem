@@ -1819,6 +1819,10 @@
 					// Dữ liệu mới cần thêm vào mảng
 					$new_tracking_code = $data_code_item[0]-> tracking_code;
 
+					var_dump($new_tracking_code);
+
+					die;
+
 					// Thêm phần tử mới vào đầu mảng trong session
 					array_unshift($_SESSION['tracking_code_add_'.$data_id_user], $new_tracking_code);
 
