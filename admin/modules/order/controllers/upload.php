@@ -152,7 +152,7 @@
 			$data_id_user = $_SESSION['ad_userid'];
 			// $tracking = $_SESSION;
 
-			$_SESSION['test_'.$data_id_user] = 1234;
+			// $_SESSION['test_'.$data_id_user] = 1234;
 			// if (empty($_SESSION['tracking_code_add_'.$data_id_user])) {
 			//     $_SESSION['tracking_code_add_'.$data_id_user] = [];
 			    
