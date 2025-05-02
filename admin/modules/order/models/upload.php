@@ -1819,13 +1819,17 @@
 					// Dữ liệu mới cần thêm vào mảng
 					$new_tracking_code = $data_code_item[0]-> tracking_code;
 
+					if(is_array($_SESSION['tracking_code_add_'.$data_id_user])){
+						// Thêm phần tử mới vào đầu mảng trong session
+						array_unshift($_SESSION['tracking_code_add_'.$data_id_user], $new_tracking_code);
 
+					}
+					else{
+						$data_array = [];
 
-					// Thêm phần tử mới vào đầu mảng trong session
-					array_unshift($_SESSION['tracking_code_add_'.$data_id_user], $new_tracking_code);
-
-					var_dump($_SESSION);
-
+						array_push($data_array, $new_tracking_code);
+						$_SESSION['tracking_code_add_'.$data_id_user] = $data_array;
+					}
 					die;
 
 					foreach($data_code_item as $data_code_it) {
