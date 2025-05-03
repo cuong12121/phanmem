@@ -1466,12 +1466,27 @@
 			global $config;
 
 			$data_id_user = $_SESSION['ad_userid'];
-			// thêm tracking code vào mảng để check
-			if (empty($_SESSION['tracking_code_add_'.$data_id_user])) {
-			    $_SESSION['tracking_code_add_'.$data_id_user] = [];
-			}
-			if(count($_SESSION['tracking_code_add_'.$data_id_user])>150){
-				$_SESSION['tracking_code_add_'.$data_id_user] = $this->xoaPhanTuSau150($_SESSION['tracking_code_add_'.$data_id_user]);
+
+			$redis = $this->connect_redis();
+
+			$data_tracking = [];
+
+			$keyExists = $redis->exists('tracking_order_'.$data_id_user);
+
+			// thêm tracking của user vào để kiểm tra xem đơn nào đánh chưa để so sánh báo cho user biết
+			if ($keyExists) {
+
+				$data_json = $redis->get('tracking_order_'.$data_id_user);
+
+				$data_tracking = json_decode($data_json,true);
+
+			}	
+			
+
+			// nếu có nhiều hơn 150 phần tử thì xóa phần tử đi
+
+			if (count($data_tracking) > 150) {
+			    $data_tracking = array_slice($data_tracking, -150);
 			}
 
 			$user = $this -> get_record('id = ' . $_SESSION['ad_userid'],'fs_users');
@@ -1819,28 +1834,12 @@
 					// Dữ liệu mới cần thêm vào mảng
 					$new_tracking_code = $data_code_item[0]-> tracking_code;
 
-					if(is_array($_SESSION['tracking_code_add_'.$data_id_user])){
 
-						// echo "1";
+					array_push($data_tracking, $new_tracking_code);
 
 
-						// Thêm phần tử mới vào đầu mảng trong session
-						array_unshift($_SESSION['tracking_code_add_'.$data_id_user], $new_tracking_code);
+					$redis->set('tracking_order_'.$data_id_user, json_encode($data_tracking));
 
-						var_dump($_SESSION['tracking_code_add_'.$data_id_user]);
-
-						die;
-
-					}
-					else{
-						echo "2";
-
-						die;
-						$data_array = [];
-
-						array_push($data_array, $new_tracking_code);
-						$_SESSION['tracking_code_add_'.$data_id_user] = $data_array;
-					}
 					
 					foreach($data_code_item as $data_code_it) {
 
