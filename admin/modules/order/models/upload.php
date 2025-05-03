@@ -1899,15 +1899,6 @@
 					}
 				}
 
-				var_dump($redis->get('tracking_order_'.$data_id_user));
-
-					die;
-
-				// echo "<pre>";
-				// var_dump($_SESSION['tracking_code_add_'.$data_id_user]);
-				// echo "</pre>";
-
-				// die;
 			}
 			return $result_id;
 		}

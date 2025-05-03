@@ -179,12 +179,21 @@
 
 		        $data_tracking_user = [];
 
-		        // lấy thông tin tracking code  đơn đã đánh của shop
+		        $redis = new Redis();
 
-		        if (isset($_SESSION['tracking_code_add_'.$data_id_user])){
+			    // Thiết lập kết nối
+			    $redis->connect('127.0.0.1', 6379);
 
-		        	$data_tracking_user = $_SESSION['tracking_code_add_'.$data_id_user];
-		        }
+			    $keyExists = $redis->exists('tracking_order_'.$data_id_user);
+
+				
+				if ($keyExists) {
+
+					$data_json = $redis->get('tracking_order_'.$data_id_user);
+
+					$data_tracking_user = json_decode($data_json,true);
+				}	
+			    
 
 		        // so sánh mã tracking  đơn trong file excel của shop và đơn đã đánh hiện tại xem có giống nhau không rồi thông báo
 		        if(!empty($data_tracking_user)){
