@@ -1840,9 +1840,7 @@
 
 					$redis->set('tracking_order_'.$data_id_user, json_encode($data_tracking));
 
-					var_dump($redis->get('tracking_order_'.$data_id_user));
 
-					die;
 
 					
 					foreach($data_code_item as $data_code_it) {
@@ -1900,6 +1898,10 @@
 						$this->_update($row3,'fs_profits','id = '.$check_add->id);
 					}
 				}
+
+				var_dump($redis->get('tracking_order_'.$data_id_user));
+
+					die;
 
 				// echo "<pre>";
 				// var_dump($_SESSION['tracking_code_add_'.$data_id_user]);
