@@ -1820,11 +1820,18 @@
 					$new_tracking_code = $data_code_item[0]-> tracking_code;
 
 					if(is_array($_SESSION['tracking_code_add_'.$data_id_user])){
+
+						echo "1";
+
+						die;
 						// Thêm phần tử mới vào đầu mảng trong session
 						array_unshift($_SESSION['tracking_code_add_'.$data_id_user], $new_tracking_code);
 
 					}
 					else{
+						echo "2";
+
+						die;
 						$data_array = [];
 
 						array_push($data_array, $new_tracking_code);
