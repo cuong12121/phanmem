@@ -83,11 +83,9 @@
                 
                     success: function (data) {
 
-                        console.log(data);
-
-                        // if(data.trim() != ''){
-                        //     alert('đơn được đánh lại, vui lòng kiểm tra');
-                        // }
+                        if(data.trim() != ''){
+                            alert('đơn được đánh lại, vui lòng kiểm tra');
+                        }
                       
                     },error: function (xhr, status, error) {
 
