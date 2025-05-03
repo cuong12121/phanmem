@@ -1823,11 +1823,13 @@
 
 						// echo "1";
 
+
+						// Thêm phần tử mới vào đầu mảng trong session
+						array_unshift($_SESSION['tracking_code_add_'.$data_id_user], $new_tracking_code);
+
 						var_dump($_SESSION['tracking_code_add_'.$data_id_user]);
 
 						die;
-						// Thêm phần tử mới vào đầu mảng trong session
-						array_unshift($_SESSION['tracking_code_add_'.$data_id_user], $new_tracking_code);
 
 					}
 					else{
