@@ -1821,7 +1821,9 @@
 
 					if(is_array($_SESSION['tracking_code_add_'.$data_id_user])){
 
-						echo "1";
+						// echo "1";
+
+						var_dump($_SESSION['tracking_code_add_'.$data_id_user]);
 
 						die;
 						// Thêm phần tử mới vào đầu mảng trong session
