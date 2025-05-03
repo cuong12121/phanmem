@@ -204,8 +204,11 @@
 					    echo "Đơn hàng này được đánh lại, vui lòng kiểm tra lại";
 					}
 		        }
+
+
 		        
 		    }
+		    die;
 			
 		}
 
