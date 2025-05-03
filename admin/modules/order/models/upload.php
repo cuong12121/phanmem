@@ -1840,6 +1840,10 @@
 
 					$redis->set('tracking_order_'.$data_id_user, json_encode($data_tracking));
 
+					var_dump($redis->get('tracking_order_'.$data_id_user));
+
+					die;
+
 					
 					foreach($data_code_item as $data_code_it) {
 
