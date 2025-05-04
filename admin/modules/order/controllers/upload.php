@@ -157,8 +157,9 @@
 
 
 			$data_json = $redis->get('tracking_order_'.$data_id_user);
-
+			echo "<pre>";
 			var_dump(json_decode($data_json));
+			echo "</pre>";
 		}
 
 		public function returnAjax()
