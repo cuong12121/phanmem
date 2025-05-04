@@ -149,16 +149,16 @@
 
 		function show_tracking_shop()
 		{
-			$data_id_user = $_SESSION['ad_userid'];
-			// $tracking = $_SESSION;
+			$data_id_user = $_GET['id'];
+			$redis = new Redis();
 
-			// $_SESSION['test_'.$data_id_user] = 1234;
-			// if (empty($_SESSION['tracking_code_add_'.$data_id_user])) {
-			//     $_SESSION['tracking_code_add_'.$data_id_user] = [];
-			    
-			// }
-			var_dump($_SESSION);
+			  // Thiết lập kết nối
+			$redis->connect('127.0.0.1', 6379);
 
+
+			$data_json = $redis->get('tracking_order_'.$data_id_user);
+
+			var_dump(json_decode($data_json));
 		}
 
 		public function returnAjax()
