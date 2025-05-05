@@ -84,7 +84,7 @@
                     success: function (data) {
 
                         if(data.trim() != ''){
-                            alert('đơn được đánh lại, vui lòng kiểm tra');
+                            alert(data);
                         }
                       
                     },error: function (xhr, status, error) {

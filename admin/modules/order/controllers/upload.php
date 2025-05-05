@@ -198,9 +198,9 @@
 
 		        // so sánh mã tracking  đơn trong file excel của shop và đơn đã đánh hiện tại xem có giống nhau không rồi thông báo
 		        if(!empty($data_tracking_user)){
-		        	$check = array_intersect($data, $data_tracking_user);
+		        	$check = array_diff($data, $data_tracking_user);
 
-			        if (!empty($check)) {
+			        if (!empty($check) && count($check)>0) {
 					    
 					    echo "Đơn hàng này được đánh lại, vui lòng kiểm tra lại";
 					}
