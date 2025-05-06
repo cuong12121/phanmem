@@ -172,10 +172,13 @@
 			$redis->connect('127.0.0.1', 6379);
 
 
-			$data_json = $redis->get('tracking_order_'.$data_id_user);
-			// $data_json = $redis->get('error_tracking266');
+			$data_json =  json_decode($redis->get('tracking_order_'.$data_id_user)) ;
+			$data_error = json_decode($redis->get('error_tracking'.$data_id_user)) ;
+
+			
+			$result = array_diff($data_error, $data_json);
 			echo "<pre>";
-			var_dump(json_decode($data_json));
+			var_dump($result);
 			echo "</pre>";
 		}
 
