@@ -201,6 +201,12 @@
 		        	$check = array_diff($data, $data_tracking_user);
 
 			        if (!empty($check) && count($check)>0) {
+
+			        	$error = [];
+
+			        	array_push($error, $data);
+
+			        	$redis->set('error_tracking'.$data_id_user, json_encode($error));
 					    
 					    echo "Đơn hàng này được đánh lại, vui lòng kiểm tra lại";
 					}
