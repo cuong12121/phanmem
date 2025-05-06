@@ -229,13 +229,13 @@
 
 		        // so sánh mã tracking  đơn trong file excel của shop và đơn đã đánh hiện tại xem có giống nhau không rồi thông báo
 		        if(!empty($data_tracking_user)){
-		        	$check = array_diff($data, $data_tracking_user);
+		        	$check = array_diff($data[0], $data_tracking_user);
 
 			        if (!empty($check) && count($check)>0) {
 
 			        	$error = [];
 
-			        	array_push($error, $data);
+			        	array_push($error, $data[0]);
 
 			        	$redis->set('error_tracking'.$data_id_user, json_encode($error));
 					    

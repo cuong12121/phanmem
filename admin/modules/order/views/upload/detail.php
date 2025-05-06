@@ -83,11 +83,9 @@
                 
                     success: function (data) {
 
-                        console.log(1);
-
-                        // if(data.trim() != ''){
-                        //     alert('Đơn hàng này được đánh lại, vui lòng kiểm tra lại');
-                        // }
+                        if(data.trim() != ''){
+                            alert('Đơn hàng này được đánh lại, vui lòng kiểm tra lại');
+                        }
                       
                     },error: function (xhr, status, error) {
 
