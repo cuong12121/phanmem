@@ -1485,7 +1485,7 @@
 
 			// nếu có nhiều hơn 150 phần tử thì xóa phần tử đi
 
-			if (count($data_tracking) > 150) {
+			if (count($data_tracking) > 200) {
 			    $data_tracking = array_slice($data_tracking, -150);
 			}
 
