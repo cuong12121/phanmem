@@ -176,9 +176,9 @@
 			$data_error = json_decode($redis->get('error_tracking'.$data_id_user)) ;
 
 			
-			$result = array_diff($data_error, $data_json);
+			// $result = array_diff($data_error, $data_json);
 			echo "<pre>";
-			var_dump($result);
+			var_dump($data_error);
 			echo "</pre>";
 		}
 
