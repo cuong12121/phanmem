@@ -181,15 +181,15 @@
 			// var_dump($result);
 			// echo "</pre>";
 
-			$file = PATH_BASE;
+			$file = PATH_BASE.'files/orders/2025/05/06/order-toship-20250504_20250505_1746490097.xlsx';
 
-			// $model = $this->model;
+			$model = $this->model;
 
-			// $data = $model->return_data_trackingcode_excel($file, 2);
+			$data = $model->return_data_trackingcode_excel($file, 2);
 
 			echo "<pre>";
 
-			var_dump($file);
+			var_dump($data);
 			echo "</pre>";
 		}
 
