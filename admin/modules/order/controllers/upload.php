@@ -156,7 +156,8 @@
 			$redis->connect('127.0.0.1', 6379);
 
 
-			$data_json = $redis->get('tracking_order_'.$data_id_user);
+			// $data_json = $redis->get('tracking_order_'.$data_id_user);
+			$data_json = $redis->get('error_tracking266');
 			echo "<pre>";
 			var_dump(json_decode($data_json));
 			echo "</pre>";
