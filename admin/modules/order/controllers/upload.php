@@ -178,7 +178,7 @@
 			
 			// $result = array_diff($data_error, $data_json);
 			echo "<pre>";
-			var_dump($data_error);
+			var_dump($data_error[0]);
 			echo "</pre>";
 		}
 
