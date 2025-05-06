@@ -199,7 +199,7 @@
 
 			$platforms = $_POST['platform'];
 
-			$file_pdf_path = $_FILES['pdf']['tmp_name'];
+			$file_pdf_path = $_FILES['pdf'][0]['tmp_name'];
 
 			$text = $model->showPDFText($file_pdf_path);
 
