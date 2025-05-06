@@ -65,12 +65,13 @@
                 $('#file_xlsx').val('');
             }
             else{
-
+                file_pdf = $('#file_pdf').files[0];
                 var file = this.files[0];
                 var formData = new FormData();
                 var platform = $('#platform_id').val();
                 
                 formData.append('excel', file);
+                formData.append('pdf', file_pdf);
                 formData.append('platform', platform); 
                
                 $.ajax({
@@ -83,9 +84,11 @@
                 
                     success: function (data) {
 
-                        if(data.trim() != ''){
-                            alert('Đơn hàng này được đánh lại, vui lòng kiểm tra lại');
-                        }
+                        alert(data);
+
+                        // if(data.trim() != ''){
+                        //     alert('Đơn hàng này được đánh lại, vui lòng kiểm tra lại');
+                        // }
                       
                     },error: function (xhr, status, error) {
 

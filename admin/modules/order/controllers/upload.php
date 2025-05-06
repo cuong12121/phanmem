@@ -199,53 +199,59 @@
 
 			$platforms = $_POST['platform'];
 
-			if ($_FILES && $_FILES['excel']['error'] === UPLOAD_ERR_OK) {
+			$file_pdf_path = $_FILES['pdf']['tmp_name'];
 
-		        $tmpPath = $_FILES['excel']['tmp_name'];
+			$text = $model->showPDFText($file_pdf_path);
 
-		        // lấy thông tin đơn từ file excel
+			echo $text;
 
-		        $data = $model->return_data_trackingcode_excel($tmpPath, $platforms);
+			// if ($_FILES && $_FILES['excel']['error'] === UPLOAD_ERR_OK) {
 
-		        $data_id_user = $_SESSION['ad_userid'];
+		    //     $tmpPath = $_FILES['excel']['tmp_name'];
 
-		        $data_tracking_user = [];
+		    //     // lấy thông tin đơn từ file excel
 
-		        $redis = new Redis();
+		    //     $data = $model->return_data_trackingcode_excel($tmpPath, $platforms);
 
-			    // Thiết lập kết nối
-			    $redis->connect('127.0.0.1', 6379);
+		    //     $data_id_user = $_SESSION['ad_userid'];
 
-			    $keyExists = $redis->exists('tracking_order_'.$data_id_user);
+		    //     $data_tracking_user = [];
+
+		    //     $redis = new Redis();
+
+			//     // Thiết lập kết nối
+			//     $redis->connect('127.0.0.1', 6379);
+
+			//     $keyExists = $redis->exists('tracking_order_'.$data_id_user);
 
 				
-				if ($keyExists) {
+			// 	if ($keyExists) {
 
-					$data_json = $redis->get('tracking_order_'.$data_id_user);
+			// 		$data_json = $redis->get('tracking_order_'.$data_id_user);
 
-					$data_tracking_user = json_decode($data_json,true);
-				}	
+			// 		$data_tracking_user = json_decode($data_json,true);
+			// 	}	
 			    
 
-		        // so sánh mã tracking  đơn trong file excel của shop và đơn đã đánh hiện tại xem có giống nhau không rồi thông báo
-		        if(!empty($data_tracking_user)){
-		        	$check = array_diff($data[0], $data_tracking_user);
+		    //     // so sánh mã tracking  đơn trong file excel của shop và đơn đã đánh hiện tại xem có giống nhau không rồi thông báo
+		    //     if(!empty($data_tracking_user)){
+		    //     	$check = array_diff($data[0], $data_tracking_user);
 
-			        if (!empty($check) && count($check)>0) {
+			//         if (!empty($check) && count($check)>0) {
 
-			        	$error = [];
+			//         	$error = [];
 
-			        	array_push($error, $data[0]);
+			//         	array_push($error, $data[0]);
 
-			        	$redis->set('error_tracking'.$data_id_user, json_encode($error));
+			//         	$redis->set('error_tracking'.$data_id_user, json_encode($error));
 					    
-					    echo "Đơn hàng này được đánh lại, vui lòng kiểm tra lại";
-					}
-		        }
+			// 		    echo "Đơn hàng này được đánh lại, vui lòng kiểm tra lại";
+			// 		}
+		    //     }
 
 
 		        
-		    }
+		    // }
 		    die;
 			
 		}
