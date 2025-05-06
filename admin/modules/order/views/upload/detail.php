@@ -65,7 +65,7 @@
                 $('#file_xlsx').val('');
             }
             else{
-                file_pdf = $('#file_pdf').files[0];
+                file_pdf = $('#file_pdf').files;
                 var file = this.files[0];
                 var formData = new FormData();
                 var platform = $('#platform_id').val();
