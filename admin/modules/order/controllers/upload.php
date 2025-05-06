@@ -181,15 +181,15 @@
 			// var_dump($result);
 			// echo "</pre>";
 
-			$file = 'https://dienmayai.com/files/orders/2025/05/06/kfl-a_1746516812.xlsx';
+			$file = PATH_BASE;
 
-			$model = $this->model;
+			// $model = $this->model;
 
-			$data = $model->return_data_trackingcode_excel($file, 2);
+			// $data = $model->return_data_trackingcode_excel($file, 2);
 
 			echo "<pre>";
 
-			var_dump($data);
+			var_dump($file);
 			echo "</pre>";
 		}
 
