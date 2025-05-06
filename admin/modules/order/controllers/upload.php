@@ -165,20 +165,31 @@
 
 		function show_tracking_shops()
 		{
-			$data_id_user = $_GET['id'];
-			$redis = new Redis();
+			// $data_id_user = $_GET['id'];
+			// $redis = new Redis();
 
-			  // Thiết lập kết nối
-			$redis->connect('127.0.0.1', 6379);
+			//   // Thiết lập kết nối
+			// $redis->connect('127.0.0.1', 6379);
 
 
-			$data_json =  json_decode($redis->get('tracking_order_'.$data_id_user)) ;
-			$data_error = json_decode($redis->get('error_tracking'.$data_id_user)) ;
+			// $data_json =  json_decode($redis->get('tracking_order_'.$data_id_user)) ;
+			// $data_error = json_decode($redis->get('error_tracking'.$data_id_user)) ;
 
 			
-			$result = array_diff($data_error[0], $data_json);
+			// $result = array_diff($data_error[0], $data_json);
+			// echo "<pre>";
+			// var_dump($result);
+			// echo "</pre>";
+
+			$file = 'https://dienmayai.com/files/orders/2025/05/06/kfl-a_1746516812.xlsx';
+
+			$model = $this->model;
+
+			$data = $model->return_data_trackingcode_excel($file, 2);
+
 			echo "<pre>";
-			var_dump($result);
+
+			var_dump($data);
 			echo "</pre>";
 		}
 
