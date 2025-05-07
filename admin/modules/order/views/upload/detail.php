@@ -50,6 +50,8 @@
 
         $('#file_pdf').change(function(){
             var type = this.files[0].type;
+
+            var pdf_file = this.files[0];
              console.log(this.files[0]);
             if(type != 'application/pdf'){
                 alert('Lỗi. Vui lòng chọn đúng file PDF');
@@ -60,43 +62,46 @@
         $('#file_xlsx').change(function(){
             //console.log(this.files[0]);
             var type = this.files[0].type;
-            if(type != 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'){
-                alert('Lỗi. Vui lòng chọn đúng file Excel có đuôi .xlsx');
-                $('#file_xlsx').val('');
-            }
-            else{
-                file_pdf = $('#file_pdf').files;
-                var file = this.files[0];
-                var formData = new FormData();
-                var platform = $('#platform_id').val();
+
+            console.log(pdf_file);
+            
+            // if(type != 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'){
+            //     alert('Lỗi. Vui lòng chọn đúng file Excel có đuôi .xlsx');
+            //     $('#file_xlsx').val('');
+            // }
+            // else{
+            //     file_pdf = $('#file_pdf').files;
+            //     var file = this.files[0];
+            //     var formData = new FormData();
+            //     var platform = $('#platform_id').val();
                 
-                formData.append('excel', file);
-                formData.append('pdf', file_pdf);
-                formData.append('platform', platform); 
+            //     formData.append('excel', file);
+            //     formData.append('pdf', file_pdf);
+            //     formData.append('platform', platform); 
                
-                $.ajax({
-                    url: 'https://test.dienmayai.com/admin/index.php?module=order&view=upload&task=returnAjax',
-                    type: 'POST',
-                    data: formData,
+            //     $.ajax({
+            //         url: 'https://test.dienmayai.com/admin/index.php?module=order&view=upload&task=returnAjax',
+            //         type: 'POST',
+            //         data: formData,
                     
-                    contentType: false,
-                    processData: false,
+            //         contentType: false,
+            //         processData: false,
                 
-                    success: function (data) {
+            //         success: function (data) {
 
-                        alert(data);
+            //             alert(data);
 
-                        // if(data.trim() != ''){
-                        //     alert('Đơn hàng này được đánh lại, vui lòng kiểm tra lại');
-                        // }
+            //             // if(data.trim() != ''){
+            //             //     alert('Đơn hàng này được đánh lại, vui lòng kiểm tra lại');
+            //             // }
                       
-                    },error: function (xhr, status, error) {
+            //         },error: function (xhr, status, error) {
 
-                        console.log(error);
+            //             console.log(error);
         
-                  }
+            //       }
                    
-              });
+            //   });
             }
         });
 
