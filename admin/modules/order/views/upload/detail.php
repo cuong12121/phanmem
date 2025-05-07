@@ -52,7 +52,7 @@
             var type = this.files[0].type;
 
             var pdf_file = this.files[0];
-             console.log(this.files[0]);
+             // console.log(this.files[0]);
             if(type != 'application/pdf'){
                 alert('Lỗi. Vui lòng chọn đúng file PDF');
                 $('#file_pdf').val('');
@@ -63,7 +63,7 @@
             //console.log(this.files[0]);
             var type = this.files[0].type;
 
-            console.log(pdf_file);
+            console.log($('#file_pdf').files);
             
             // if(type != 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'){
             //     alert('Lỗi. Vui lòng chọn đúng file Excel có đuôi .xlsx');
