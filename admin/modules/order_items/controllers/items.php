@@ -78,14 +78,15 @@
 			$warehouses = $model -> get_records('published = 1 AND id IN ('.$wrap_id_warehouses.')','fs_warehouses');
 			$platforms = $model -> get_records('published = 1','fs_platforms');
 
-			var_dump($platforms);
-
-			die;
+			
 			$houses = $model -> get_records('published = 1','fs_house');
 			$shipping_unit = $model -> get_records('published = 1','fs_shipping_unit');
 			$list = $this -> model->get_data();
 			$pagination = $model->getPagination();
 			$users = $model -> get_record('id = ' . $_SESSION['ad_userid'],'fs_users');
+			var_dump($platforms);
+
+			die;
 			include 'modules/'.$this->module.'/views/'.$this->view.'/list.php';
 		}
 
