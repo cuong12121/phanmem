@@ -84,9 +84,7 @@
 			$list = $this -> model->get_data();
 			$pagination = $model->getPagination();
 			$users = $model -> get_record('id = ' . $_SESSION['ad_userid'],'fs_users');
-			var_dump($platforms);
-
-			die;
+			
 			include 'modules/'.$this->module.'/views/'.$this->view.'/list.php';
 		}
 
