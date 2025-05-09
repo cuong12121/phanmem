@@ -370,14 +370,16 @@
 		function excel_nhat(){
 			 $model  = $this -> model;
 		    
+		    
+		    $combo_code = $model->show_product_combo(23538660);
+
 		    echo "<pre>";
 
-			var_dump(1);
+			var_dump($combo_code);
 
 			echo "</pre>";
 
 			die;
-		    $combo_code = $model->show_product_combo(23538660);
 		    
 			// xóa các file cũ trong thư mục cho nhẹ server
 			$path_remove_file = PATH_ADMINISTRATOR.DS.'export'.DS.'excel'.DS.'order_item'.DS;
