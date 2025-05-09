@@ -84,7 +84,7 @@
 			$list = $this -> model->get_data();
 			$pagination = $model->getPagination();
 			$users = $model -> get_record('id = ' . $_SESSION['ad_userid'],'fs_users');
-			
+
 			include 'modules/'.$this->module.'/views/'.$this->view.'/list.php';
 		}
 
@@ -383,6 +383,14 @@
 			$filename = strtoupper($filename);
 			
 			$list = $model->get_excel_nhat(0,50000);
+
+			echo "<pre>";
+
+			var_dump($list);
+
+			echo "</pre>";
+
+			die;
 
 			// printr($list);
 			if(empty($list)){
