@@ -73,6 +73,10 @@
 			$sort_direct = $this -> sort_direct;
 			$model  = $this -> model;
 			$wrap_id_warehouses = $model->get_wrap_id_warehouses();
+
+			var_dump(1);
+
+			die;
 			$warehouses = $model -> get_records('published = 1 AND id IN ('.$wrap_id_warehouses.')','fs_warehouses');
 			$platforms = $model -> get_records('published = 1','fs_platforms');
 			$houses = $model -> get_records('published = 1','fs_house');
