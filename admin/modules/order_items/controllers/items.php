@@ -451,6 +451,8 @@
 					$excel->obj_php_excel->getActiveSheet()->setCellValueExplicit('D'.$key,$item->size,PHPExcel_Cell_DataType::TYPE_STRING);
 					$excel->obj_php_excel->getActiveSheet()->setCellValue('E'.$key, $item->count);
 					$excel->obj_php_excel->getActiveSheet()->setCellValue('F'.$key, $combo_code);
+
+					
 					
 				}
 				
