@@ -35,7 +35,6 @@
 			// 	$row['warehouse_id'] = $l->warehouse_id;
 			// 	$model->_update($row,'fs_order_uploads_detail','record_id = '.$l->id);
 			// }
-
 			$file_php_view = 'modules/'.$this->module.'/views/'.$this->view.'/list.php';
 
 			// $query_cl = $this -> model->setQuery();
