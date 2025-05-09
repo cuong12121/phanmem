@@ -370,6 +370,13 @@
 		function excel_nhat(){
 			 $model  = $this -> model;
 		    
+		    echo "<pre>";
+
+			var_dump(1);
+
+			echo "</pre>";
+
+			die;
 		    $combo_code = $model->show_product_combo(23538660);
 		    
 			// xóa các file cũ trong thư mục cho nhẹ server
@@ -384,13 +391,7 @@
 			
 			$list = $model->get_excel_nhat(0,50000);
 
-			echo "<pre>";
 
-			var_dump($list);
-
-			echo "</pre>";
-
-			die;
 
 			// printr($list);
 			if(empty($list)){
