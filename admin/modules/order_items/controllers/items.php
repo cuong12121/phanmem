@@ -371,20 +371,20 @@
 			 $model  = $this -> model;
 		    
 		    
-		    $combo_code = $model->show_product_combo(37896642);
+		    // $combo_code = $model->show_product_combo(37896642);
 
-		    echo "<pre>";
+		    // echo "<pre>";
 
-			var_dump($combo_code);
+			// var_dump($combo_code);
 
-			echo "</pre>";
+			// echo "</pre>";
 
-			die;
+			// die;
 		    
 			// xóa các file cũ trong thư mục cho nhẹ server
-			$path_remove_file = PATH_ADMINISTRATOR.DS.'export'.DS.'excel'.DS.'order_item'.DS;
-			array_map('unlink', array_filter(
-       		(array) array_merge(glob($path_remove_file."*"))));
+			// $path_remove_file = PATH_ADMINISTRATOR.DS.'export'.DS.'excel'.DS.'order_item'.DS;
+			// array_map('unlink', array_filter(
+       		// (array) array_merge(glob($path_remove_file."*"))));
 
 			FSFactory::include_class('excel','excel');
 			
@@ -392,6 +392,12 @@
 			$filename = strtoupper($filename);
 			
 			$list = $model->get_excel_nhat(0,50000);
+
+			echo "<pre>";
+
+			var_dump($list);
+
+			echo "</pre>";
 
 
 
