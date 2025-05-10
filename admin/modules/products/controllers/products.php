@@ -1410,7 +1410,7 @@ class ProductsControllersProducts  extends Controllers
 			}
 
 			// Truy vấn các mã tồn tại trong bảng
-			$sql = "SELECT code FROM products WHERE code IN ($in_clause)";
+			$sql = "SELECT code FROM fs_products WHERE code IN ($in_clause)";
 			$result = $mysqli->query($sql);
 
 			// Lấy danh sách các mã tồn tại
