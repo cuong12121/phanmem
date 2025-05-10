@@ -603,25 +603,7 @@ function add_products_detail_excel($id,$excel){
 	    return !is_null($item[0]) || !is_null($item[1]);
 	});
 
-	echo "<pre>";
-
 	
-
-	// Kết quả:
-	
-
-	var_dump($data);
-
-	echo "</pre>";
-
-	die;
-
-
-
-	foreach ($variable as $key => $value) {
-		// code...
-	}
-
 	$link = FSRoute::_('index.php?module='.$this -> module.'&view='.$this -> view.'&task=edit&id='.$id);
 	foreach ($data as $item) {
 
