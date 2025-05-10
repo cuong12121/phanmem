@@ -398,7 +398,7 @@
 			var_dump($list);
 
 			echo "</pre>";
-
+			die;
 
 
 			// printr($list);
