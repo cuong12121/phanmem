@@ -1395,14 +1395,7 @@ class ProductsControllersProducts  extends Controllers
 
 			$in_clause = implode(',', $escaped_codes);
 
-			echo "<pre>";
-
-			var_dump($in_clause);
-
-			echo "</pre>";
-
-			die;
-
+			
 			// Kết nối MySQLi
 			$mysqli = new mysqli("localhost", "sql_dienmay_bak", "bfsHT6wL4GBJnAYA", "sql_dienmay_bak");
 			if ($mysqli->connect_error) {
