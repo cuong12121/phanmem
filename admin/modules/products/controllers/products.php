@@ -1395,7 +1395,7 @@ class ProductsControllersProducts  extends Controllers
 
 			$in_clause = implode(',', $escaped_codes);
 
-			
+
 			// Kết nối MySQLi
 			$mysqli = new mysqli("localhost", "sql_dienmay_bak", "bfsHT6wL4GBJnAYA", "sql_dienmay_bak");
 			if ($mysqli->connect_error) {
@@ -1414,14 +1414,16 @@ class ProductsControllersProducts  extends Controllers
 			    }
 			}
 
-			// In ra kết quả
-			echo "Các mã tồn tại trong DB:\n";
-			print_r($existing_codes);
+			
 
 			// So sánh với mã ban đầu để tìm những mã không tồn tại (nếu cần)
 			$not_found = array_diff($codess, $existing_codes);
 			echo "Các mã không tìm thấy:\n";
+
+			echo "<pre>";
 			print_r($not_found);
+
+			echo "</pre>";
 
 			$mysqli->close();
 		}
