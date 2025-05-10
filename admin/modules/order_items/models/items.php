@@ -390,7 +390,7 @@
 				return array();
 			$sql = $db->query_limit_export($query,$start,$end);
 			$result = $db->getObjectList();
-			return $result;
+			return $query;
 		}
 
 		function show_product_combo($id_product){
