@@ -598,8 +598,14 @@ function add_products_detail_excel($id,$excel){
 	$total_weight = 0;
 	$total_discount = 0;
 	$data_bill = $this->get_record('id = '.$id,$this-> table_name);
+	$data = array_filter($data);
 
 	echo "<pre>";
+
+	
+
+	// Kết quả:
+	
 
 	var_dump($data);
 
