@@ -1293,6 +1293,141 @@ class ProductsControllersProducts  extends Controllers
 				setRedirect($link,FSText :: _('Error when un_new record'),'error');	
 			}
 		}
+
+		function checkproduct(){
+			$code = "N024-BK-04
+			N024-BK-05
+			N030-BL-04
+			N031-BE-04
+			n031-be-05
+			N016-BK-00
+			N063-PK-05
+			N032-VI-03
+			N018-PK-04
+			N010-PK-04
+			N010-PK-05
+			N014-BL-04
+			K014-BL-00
+			N024-BK-04
+			N024-BK-05
+			N031-BE-03
+			N025-BK-04
+			K009-BK-00
+			K009-PK-00
+			N012-BK-04
+			N012-WH-04
+			N012-PK-04
+			N016-BK-00
+			N025-PK-04
+			N030-BL-04
+			N087-BL-00
+			N014-BL-05
+			N063-RE-05
+			K014-BL-00
+			N014-bl-04
+			N010-PK-04
+			N010-PK-05
+			N063-RE-04
+			N063-RE-05
+			N063-PK-04
+			N063-PK-05
+			N063-BK-04
+			N063-BK-05
+			N063-GR-04
+			N063-GR-05
+			k063-re-00
+			k063-pk-00
+			k063-bk-00
+			n093-be-04
+			n111-wh-04
+			n115-be-04
+			n115-bl-04
+			n115-bk-04
+			n111-wh-05
+			N016-BK-00
+			N009-BK-04
+			N009-PK-04
+			N024-AP-04
+			N024-BK-04
+			N024-BK-05
+			N025-BK-04
+			N053-BE-04
+			N053-RE-05
+			n114-pk-04
+			n114-pk-05
+			n111-bk-04
+			n111-bk-05
+			n115-be-04
+			n115-be-05
+			n116-bk-04
+			n116-bk-05
+			n116-be-04
+			n116-be-05
+			n117-pk-04
+			n117-wh-04
+			n117-bk-04
+			n118-re-04
+			n118-re-05
+			n118-bk-04
+			n118-bk-05
+			n119-pk-04
+			n119-bk-04
+			n119-re-04
+			n120-wh-04
+			n120-bl-04
+			n120-wh-05
+			n120-bl-05
+			n121-pk-04
+			n121-bk-04
+			n121-wh-04
+			L010-pk-00";
+
+			$codess = explode(PHP_EOL, $code);
+
+			// Chuẩn hóa về chữ in hoa nếu cần (tuỳ vào DB có phân biệt hoa thường không)
+			$codess = array_map('trim', $codess);
+			$codess = array_map('strtoupper', $codess);
+			$codess = array_filter($codess); // Loại bỏ dòng trống nếu có
+
+			// Escape và chuẩn bị cho truy vấn SQL
+			$escaped_codes = array_map(function($c) {
+			    return "'" . addslashes($c) . "'";
+			}, $codess);
+
+			$in_clause = implode(',', $escaped_codes);
+
+
+			// Kết nối MySQLi
+			$mysqli = new mysqli("localhost", "sql_dienmay_bak", "bfsHT6wL4GBJnAYA", "sql_dienmay_bak");
+			if ($mysqli->connect_error) {
+			    die("Connection failed: " . $mysqli->connect_error);
+			}
+
+			// Truy vấn các mã tồn tại trong bảng
+			$sql = "SELECT code FROM fs_products WHERE code IN ($in_clause)";
+			$result = $mysqli->query($sql);
+
+			// Lấy danh sách các mã tồn tại
+			$existing_codes = [];
+			if ($result && $result->num_rows > 0) {
+			    while ($row = $result->fetch_assoc()) {
+			        $existing_codes[] = $row['code'];
+			    }
+			}
+
+			
+
+			// So sánh với mã ban đầu để tìm những mã không tồn tại (nếu cần)
+			$not_found = array_diff($codess, $existing_codes);
+			echo "Các mã không tìm thấy:\n";
+
+			echo "<pre>";
+			print_r($not_found);
+
+			echo "</pre>";
+
+			$mysqli->close();
+		}
 		function unis_sell()
 		{
 			$model = $this -> model;

@@ -131,7 +131,7 @@
 								<td><?php echo $i; ?></td>
 								<td><?php echo $pro-> code; ?></td>
 								<td><?php echo $pro-> name; ?></td>
-								<td class="show_amount_<?php echo $product->id ?>"><?php echo $pro_amount-> amount?$pro_amount-> amount:'0'; ?></td>
+								<td class="show_amount_<?php echo $product->id ?>"><?= !empty($pro_amount-> amount)?$pro_amount-> amount:'0'; ?></td>
 								<td>
 									<?php if($_SESSION['ad_userid'] == 9){ ?>
 										<input type="number" data-bill-id = "<?php echo $data->id ?>"  data-amount-old = "<?php echo $product-> amount; ?>"  class="form-control change_amount_item_bill_<?php echo $product->id ?>" value="<?php echo $product-> amount; ?>">

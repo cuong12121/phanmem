@@ -599,8 +599,15 @@ function add_products_detail_excel($id,$excel){
 	$total_discount = 0;
 	$data_bill = $this->get_record('id = '.$id,$this-> table_name);
 
+	$data = array_filter($data, function($item) {
+	    return !is_null($item[0]) || !is_null($item[1]);
+	});
+
+	
 	$link = FSRoute::_('index.php?module='.$this -> module.'&view='.$this -> view.'&task=edit&id='.$id);
 	foreach ($data as $item) {
+
+
 		$product = $this-> get_record('code = "'.$item[0].'"','fs_products');
 		if(empty($product)){
 			setRedirect($link,'Mã sản phẩm ' .$item[0]. ' không tồn tại, vui lòng kiểm tra lại !.','error');	
