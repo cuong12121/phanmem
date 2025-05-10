@@ -391,7 +391,7 @@
 			$filename = 'FILE_NHAT'.$this->file_export_name;
 			$filename = strtoupper($filename);
 			
-			$list = $model->get_excel_nhat(0,50000);
+			$list = $model->get_excel_nhat(0,500);
 
 			echo "<pre>";
 
