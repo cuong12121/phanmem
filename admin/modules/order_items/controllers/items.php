@@ -371,7 +371,7 @@
 			 $model  = $this -> model;
 		    
 		    
-		    $combo_code = $model->show_product_combo(23538660);
+		    $combo_code = $model->show_product_combo(37899262);
 
 		    echo "<pre>";
 
