@@ -1386,6 +1386,7 @@ class ProductsControllersProducts  extends Controllers
 
 			// Chuẩn hóa về chữ in hoa nếu cần (tuỳ vào DB có phân biệt hoa thường không)
 			$codess = array_map('trim', $codess);
+			$codess = array_map('strtoupper', $codess);
 			$codess = array_filter($codess); // Loại bỏ dòng trống nếu có
 
 			// Escape và chuẩn bị cho truy vấn SQL
