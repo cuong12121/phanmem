@@ -366,21 +366,25 @@
 
 		}
 
+		function test_excel_nhat()
+		{
+			 $model  = $this -> model;
+			$id = $_GET['id'];
+			$combo_code = $model->show_product_combo($id);
+			echo "<pre>";
+			var_dump($combo_code);
+			echo "</pre>";
+
+
+		}
+
 
 		function excel_nhat(){
 			 $model  = $this -> model;
 		    
 		    
-		    // $combo_code = $model->show_product_combo(37896642);
+		    $combo_code = $model->show_product_combo(23538660);
 
-		    // echo "<pre>";
-
-			// var_dump($combo_code);
-
-			// echo "</pre>";
-
-			// die;
-		    
 			// xóa các file cũ trong thư mục cho nhẹ server
 			// $path_remove_file = PATH_ADMINISTRATOR.DS.'export'.DS.'excel'.DS.'order_item'.DS;
 			// array_map('unlink', array_filter(
@@ -391,15 +395,7 @@
 			$filename = 'FILE_NHAT'.$this->file_export_name;
 			$filename = strtoupper($filename);
 			
-			$list = $model->get_excel_nhat(0,500);
-
-			echo "<pre>";
-
-			var_dump($list);
-
-			echo "</pre>";
-			die;
-
+			$list = $model->get_excel_nhat(0,50000);
 
 			// printr($list);
 			if(empty($list)){
@@ -521,12 +517,6 @@
 			
 			$list = $model->get_excel_tong();
 
-			echo "<pre>";
-			var_dump($list);
-			echo "</pre>";
-
-			die;
-			
 			if(empty($list)){
 				echo 'Không có đơn nào được tìm thấy !';exit;
 			}else {
