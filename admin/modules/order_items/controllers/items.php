@@ -511,13 +511,6 @@
 			
 			$list = $model->get_excel_tong();
 
-			if($_SESSION['ad_userid']==9){
-				echo "<pre>";
-				var_dump($list);
-				echo "</pre>";
-				die;
-			}
-			
 			if(empty($list)){
 				echo 'Không có đơn nào được tìm thấy !';exit;
 			}else {
