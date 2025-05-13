@@ -1331,6 +1331,16 @@
 				}
 			}
 
+			if($_SESSION['ad_userid']==9){
+
+				echo "<pre>";
+				var_dump($produt);
+
+				echo "</pre>";
+
+				die;
+			}
+
 			// kiểm tra mã này có phải là mã combo hay ko
 			// 1. Nếu là combo thì tách mã combo đó ra để tính toán cho từng mã
 			// printr($produt);
