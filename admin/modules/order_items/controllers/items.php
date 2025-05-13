@@ -363,7 +363,7 @@
 
 		function test_excel_nhat()
 		{
-
+			 $model  = $this -> model;
 			$id = $_GET['id'];
 			$combo_code = $model->show_product_combo($id);
 			echo "<pre>";
