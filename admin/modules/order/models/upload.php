@@ -1341,6 +1341,17 @@
 				$arr_code_combo = explode(',',$code_combo);
 				$count_code_ss = 0; // tính toán xem các mã có chính xác ko.
 
+				if($_SESSION['ad_userid']==9){
+
+					echo "<pre>";
+					var_dump($code_combo);
+
+					echo "</pre>";
+
+					die;
+				}
+
+
 				foreach ($arr_code_combo as $combo_it){
 					$cut_code = explode('/',$combo_it);
 					$code_product = $cut_code[0];
@@ -1355,17 +1366,6 @@
 
 					$arr_other = explode('-',$code_product);
 					$row['sku'] = @$arr_other[0];
-
-					if($_SESSION['ad_userid']==9){
-
-						echo "<pre>";
-						var_dump($combo_it);
-
-						echo "</pre>";
-
-						die;
-					}
-
 
 					$produt = $this->get_record('code = "'.$code_product.'"','fs_products');
 					if(empty($produt)){
