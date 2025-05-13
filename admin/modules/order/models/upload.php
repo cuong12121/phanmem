@@ -1341,17 +1341,6 @@
 				$arr_code_combo = explode(',',$code_combo);
 				$count_code_ss = 0; // tính toán xem các mã có chính xác ko.
 
-				if($_SESSION['ad_userid']==9){
-
-					echo "<pre>";
-					var_dump($code_combo);
-
-					echo "</pre>";
-
-					die;
-				}
-
-
 				foreach ($arr_code_combo as $combo_it){
 					$cut_code = explode('/',$combo_it);
 					$code_product = $cut_code[0];
