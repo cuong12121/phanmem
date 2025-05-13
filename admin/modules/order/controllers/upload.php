@@ -148,7 +148,14 @@
 		function show_tracking_shop()
 		{
 
-			var_dump($_SESSION['ad_userid']);
+			if($_SESSION['ad_userid']==9){
+				var_dump(1);
+
+				die;
+			}
+			else{
+				var_dump(2);
+			}
 			// $data_id_user = $_GET['id'];
 			// $redis = new Redis();
 
