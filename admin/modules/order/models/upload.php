@@ -1331,15 +1331,6 @@
 				}
 			}
 
-			if($_SESSION['ad_userid']==9){
-
-				echo "<pre>";
-				var_dump($produt);
-
-				echo "</pre>";
-
-				die;
-			}
 
 			// kiểm tra mã này có phải là mã combo hay ko
 			// 1. Nếu là combo thì tách mã combo đó ra để tính toán cho từng mã
@@ -1364,6 +1355,17 @@
 
 					$arr_other = explode('-',$code_product);
 					$row['sku'] = @$arr_other[0];
+
+					if($_SESSION['ad_userid']==9){
+
+						echo "<pre>";
+						var_dump($sku);
+
+						echo "</pre>";
+
+						die;
+					}
+
 
 					$produt = $this->get_record('code = "'.$code_product.'"','fs_products');
 					if(empty($produt)){
@@ -1414,6 +1416,10 @@
 					}
 					$count_code_ss +=1;
 				}
+
+				if($_SESSION['ad_userid']==9){
+					die;	
+				}	
 
 				if($count_code_ss == 0){
 					return false;
