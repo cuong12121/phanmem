@@ -361,6 +361,18 @@
 
 		}
 
+		function test_excel_nhat()
+		{
+
+			$id = $_GET['id'];
+			$combo_code = $model->show_product_combo($id);
+			echo "<pre>";
+			var_dump($combo_code);
+			echo "</pre>";
+
+
+		}
+
 
 		function excel_nhat(){
 			 $model  = $this -> model;
