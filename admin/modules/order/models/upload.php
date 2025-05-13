@@ -1406,9 +1406,7 @@
 					$count_code_ss +=1;
 				}
 
-				if($_SESSION['ad_userid']==9){
-					die;	
-				}	
+				
 
 				if($count_code_ss == 0){
 					return false;
