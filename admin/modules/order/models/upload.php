@@ -1359,7 +1359,7 @@
 					if($_SESSION['ad_userid']==9){
 
 						echo "<pre>";
-						var_dump($row['sku']);
+						var_dump($cut_code[0]);
 
 						echo "</pre>";
 
