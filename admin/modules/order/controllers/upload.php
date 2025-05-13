@@ -147,18 +147,20 @@
 
 		function show_tracking_shop()
 		{
-			$data_id_user = $_GET['id'];
-			$redis = new Redis();
 
-			  // Thiết lập kết nối
-			$redis->connect('127.0.0.1', 6379);
+			var_dump($_SESSION['ad_userid']);
+			// $data_id_user = $_GET['id'];
+			// $redis = new Redis();
+
+			//   // Thiết lập kết nối
+			// $redis->connect('127.0.0.1', 6379);
 
 
-			$data_json = $redis->get('tracking_order_'.$data_id_user);
-			// $data_json = $redis->get('error_tracking266');
-			echo "<pre>";
-			var_dump(json_decode($data_json));
-			echo "</pre>";
+			// $data_json = $redis->get('tracking_order_'.$data_id_user);
+			// // $data_json = $redis->get('error_tracking266');
+			// echo "<pre>";
+			// var_dump(json_decode($data_json));
+			// echo "</pre>";
 		}
 
 		function show_tracking_shops()
