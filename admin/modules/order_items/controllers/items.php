@@ -510,6 +510,12 @@
 			$filename = strtoupper($filename);
 			
 			$list = $model->get_excel_tong();
+
+			if($_SESSION['ad_userid']==9){
+				var_dump($list);
+
+				die;
+			}
 			
 			if(empty($list)){
 				echo 'Không có đơn nào được tìm thấy !';exit;
