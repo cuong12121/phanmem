@@ -1359,7 +1359,7 @@
 					if($_SESSION['ad_userid']==9){
 
 						echo "<pre>";
-						var_dump($cut_code[0]);
+						var_dump($combo_it);
 
 						echo "</pre>";
 
