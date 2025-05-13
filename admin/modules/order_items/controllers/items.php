@@ -520,6 +520,12 @@
 			$filename = strtoupper($filename);
 			
 			$list = $model->get_excel_tong();
+
+			echo "<pre>";
+			var_dump($list);
+			echo "</pre>";
+
+			die;
 			
 			if(empty($list)){
 				echo 'Không có đơn nào được tìm thấy !';exit;
