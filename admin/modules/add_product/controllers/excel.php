@@ -337,9 +337,9 @@
 							unset($row['price_old']);
 						}
 
-						if($row['price_min'] ===0){
-							unset($row['price_min']);
-						}
+						// if($row['price_min'] ===0){
+						// 	unset($row['price_min']);
+						// }
 
 						unset($row['code']);
 
