@@ -1142,7 +1142,7 @@
 
 		        $info_house = [];
 
-		        // chạy đơn lúc 7h10
+		        // chạy đơn lúc 7h10 12h40 và 14h30
 
 		        $H = date('G');
 
