@@ -1146,7 +1146,13 @@
 
 		        $H = date('G');
 
-		        $house_id =  $H<8?13:18; 
+		        if ($H < 8) {
+				    $house_id = 13;
+				} elseif ($H >= 8 && $H < 13) {
+				    $house_id = 18;
+				} else {
+				    $house_id = 15;
+				} 
 
 		        $data_info = [];
 
