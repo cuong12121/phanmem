@@ -512,7 +512,7 @@
 					$total_sheet->setCellValue('O1', 'Giá ưu đãi');
 					$total_sheet->setCellValue('P1', 'Số lượng');
 					$total_sheet->setCellValue('Q1', 'Tổng giá bán (sản phẩm)');
-					$list_detail = $model->get_list_detail_tong();
+					$list_detail = $this->get_list_detail_tong();
 					
 					foreach ($list_detail as $item_dt){
 
