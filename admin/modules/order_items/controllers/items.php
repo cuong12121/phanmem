@@ -715,8 +715,10 @@
 				
 				
 
-				$output = $excel->obj_php_excel->save($link_excel);
+				$output = $excel->obj_php_excel->createWriter($objPHPExcel, 'Excel2007');
 
+
+				$output->save($link_excel);
 				echo "thành công";
 				// end xuất file
 
