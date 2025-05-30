@@ -410,14 +410,6 @@
 
 			$user = $_SESSION['ad_userid'];
 
-			if($user==9){
-				echo "<pre>";
-					print_r($query);
-				echo "</pre>";
-				die;
-
-			}
-
 			if(!$query)
 				return array();
 			$sql = $db->query($query);
@@ -435,12 +427,6 @@
 			$result = $db->getObjectList();
 			return $result;
 		}
-
-		
-
-
-		
-
 	}
 	
 ?>
