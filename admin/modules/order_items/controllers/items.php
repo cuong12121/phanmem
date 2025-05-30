@@ -384,7 +384,7 @@
 			$result = $db->getObjectList();
 
 			echo "<pre>";
-			print_r($query);
+			print_r($result);
 			echo "</pre>";
 			
 
