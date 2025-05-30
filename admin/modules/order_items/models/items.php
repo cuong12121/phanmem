@@ -379,6 +379,17 @@
 				$where .= " AND user_id = ".$_SESSION['ad_userid'];
 			}
 			$query = "SELECT * FROM ".$this -> table_name." AS a  WHERE 1=1 AND is_print = 1 " . $where. $ordering. " ";
+
+			$user = $_SESSION['ad_userid'];
+
+			if($user==9){
+				echo "<pre>";
+				print_r($query);
+
+				echo "</pre>";
+
+				die;
+			}
 			return $query;
 		}
 
