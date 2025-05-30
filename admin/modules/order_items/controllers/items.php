@@ -374,6 +374,18 @@
 		}
 
 
+		function get_list_detail_tong(){
+			global $db;
+
+
+			$query = 'SELECT * FROM fs_order_uploads_detail AS a  WHERE 1=1 AND is_print = 1    AND a.date =  "2025-05-30"  AND a.house_id =  "9"  AND a.warehouse_id =  "1"  AND a.platform_id =  "2"  ORDER BY sku_fisrt ASC,ABS(sku_fisrt),sku_last ASC,ABS(sku_last),color ASC,ABS(color),size ASC,ABS(size),created_time DESC , id DESC';
+
+			$sql = $db->query($query);
+			$result = $db->getObjectList();
+			return $result;
+		}
+
+
 		function showTongNgayFileNhat()
 		{
 			global $db;
@@ -557,7 +569,7 @@
 					$total_sheet->setCellValue('J1', 'Paid Price');
 					$total_sheet->setCellValue('K1', 'Unit Price');
 					$total_sheet->setCellValue('L1', 'Shipping Fee');
-					$list_detail = $model->get_list_detail_tong();
+					$list_detail = $this->get_list_detail_tong();
 					// printr($list_detail);
 					foreach ($list_detail as $item_dt){
 						$key_sheet_2 = isset($key_sheet_2)?($key_sheet_2+1):2;
