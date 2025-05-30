@@ -408,7 +408,7 @@
 			global $db;
 			$query = $this->setQueryExportTong();
 
-			$user = $_SESSION['ad_userid'];
+			// $user = $_SESSION['ad_userid'];
 
 			if(!$query)
 				return array();
