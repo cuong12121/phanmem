@@ -544,6 +544,7 @@
 
 				
 				$link_excel = URL_ROOT.'admin/export/excel/order_item/'. $filename.'.xlsx';
+				$excel->set_params(array('out_put_xls'=>'export/excel/order_item/'.$filename.'.xlsx','out_put_xlsx'=>'export/excel/order_item/'.$filename.'.xlsx'));
 				
 				$output = $excel->write_files();
 
