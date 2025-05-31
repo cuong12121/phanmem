@@ -1156,11 +1156,13 @@
 
 		        $data_info = [];
 
-		        for($i=1; $i<3; $i++){
+		        $warehouse_id_define = [1,2,6]; 
+
+		        for($i=0; $i<count($warehouse_id_define); $i++){
 
 		            foreach ($platform as  $platforms) {
 		                
-		                 $query =  "SELECT id FROM fs_order_uploads AS a WHERE 1=1 AND warehouse_id = ".$i." AND house_id = ".$house_id." AND platform_id = ".$platforms." AND date ='".date('Y-m-d')."' ORDER BY created_time DESC , id DESC";
+		                 $query =  "SELECT id FROM fs_order_uploads AS a WHERE 1=1 AND warehouse_id = ".$warehouse_id_define[$i]." AND house_id = ".$house_id." AND platform_id = ".$platforms." AND date ='".date('Y-m-d')."' ORDER BY created_time DESC , id DESC";
 
 		                $sql = $db->query ($query);
 		                $result = $db->getObjectList ();
@@ -1183,7 +1185,7 @@
 
 			                $data_info['platform_id'] = $platforms;
 
-			                $data_info['warehouse_id'] = $i;
+			                $data_info['warehouse_id'] = $warehouse_id_define[$i];
 
 			                $list_ar_str = implode(',', $list_Ar);
 
@@ -1193,7 +1195,7 @@
 
 			                $sql = " INSERT INTO check_auto_print
 		     							(list_ar_str, platform_id, warehouse_id, house_id)
-		     							VALUES ('$list_ar_str','$platforms','$i','$house_id')
+		     							VALUES ('$list_ar_str','$platforms','$warehouse_id_define[$i]','$house_id')
 		    							";
 		    				
 		    				$db->insert($sql);
