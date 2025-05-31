@@ -715,6 +715,12 @@
 				
 				$output = $excel->write_files();
 
+				echo "<pre>";
+				print_r($output);
+				echo "<pre>";
+
+				die;
+
 				
 				echo "thành công";
 				// end xuất file
