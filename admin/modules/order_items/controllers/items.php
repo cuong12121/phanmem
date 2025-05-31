@@ -713,12 +713,9 @@
 				
 				$link_excel = URL_ROOT.'admin/export/excel/order_item/'. $filename.'.xlsx';
 				
+				$output = $excel->write_files();
+
 				
-
-				$output = $excel->obj_php_excel->createWriter($objPHPExcel, 'Excel2007');
-
-
-				$output->save($link_excel);
 				echo "thành công";
 				// end xuất file
 
