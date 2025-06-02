@@ -2568,6 +2568,17 @@
 					setRedirect($link,FSText :: _('Vui lòng chọn lọc khung ngày, giờ, kho, sàn trước khi in!'),'error');
 				}
 
+				$time_print = $_SESSION[$this -> prefix.'filter0'];
+
+				// khóa in bằng tay khung giờ 7h10, 14h30, 12h40
+
+				// 15
+
+				$time_auto_defint = [13,18];
+				if (in_array($time_print, $time_auto_defint)) {
+				    setRedirect($link,FSText :: _('Khung giờ này đã được in tự động, in bằng tay không thể được'),'error');
+				}
+
 				
 
 
