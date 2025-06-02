@@ -2576,7 +2576,7 @@
 
 				$time_auto_defint = [13,18];
 				if (in_array($time_print, $time_auto_defint)) {
-				    setRedirect($link,FSText :: _('Khung giờ này đã được in tự động, in bằng tay không thể được'),'error');
+				    setRedirect($link,FSText :: _('Khung giờ này đã được in tự động, in bằng tay không thể thực hiện được'),'error');
 				}
 
 				
