@@ -179,7 +179,7 @@
 			$filePath = PATH_BASE.'2.pdf';
 
 			
-			$pageCount = $pdf->setSourceFile($filePath);
+			$pageCount = $pdf->parseFile($filePath);
 
 			$y = [175, 191, 205, 219, 233, 247];
 
