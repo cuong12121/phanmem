@@ -116,7 +116,7 @@
 		            $fileName = "file_$index.$ext";
 		        }
 
-		        $link = downloadFile($url, $saveFolder, $fileName);
+		        $link = $this->downloadFile($url, $saveFolder, $fileName);
 
 		        $results[] = [
 		            'url' => $url,
