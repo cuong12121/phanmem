@@ -198,7 +198,7 @@
 		            $data[$i][$j]['count'] = $skuTotals[$sku];
 		            $data[$i][$j]['parent_index'] =  intval($this->findIndexInArray($item['sku'],$data));
 		            $data[$i][$j]['all'] = $totals_sku[$sku];
-		            $data[$i][$j]['all_to_sku'] = countSKuInArray($data, $item['sku']);
+		            $data[$i][$j]['all_to_sku'] = $this->countSKuInArray($data, $item['sku']);
 		        }   
 		    }
 		}
