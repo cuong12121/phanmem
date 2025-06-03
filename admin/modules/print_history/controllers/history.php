@@ -17,12 +17,23 @@
 			$pagination = $model->getPagination();
 			$wrap_id_warehouses = $model->get_wrap_id_warehouses();
 
+			$test = !empty($_GET['test'])?1:0;
+
+
 			// echo $wrap_id_warehouses;
 			
 			$warehouses = $model -> get_records('published = 1 AND id IN ('.$wrap_id_warehouses.')','fs_warehouses');
 			$platforms = $model -> get_records('published = 1','fs_platforms');
 			$houses = $model -> get_records('published = 1','fs_house');
-			include 'modules/'.$this->module.'/views/'.$this->view.'/list.php';
+			if($test==1){
+				
+				include 'modules/'.$this->module.'/views/'.$this->view.'/list1.php';
+			}
+			else{
+				include 'modules/'.$this->module.'/views/'.$this->view.'/list.php';
+			}
+
+
 		}
 
 		function add()
