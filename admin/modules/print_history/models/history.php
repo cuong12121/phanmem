@@ -196,7 +196,7 @@
 		 
 		            $skuTotals[$sku] += $qty;
 		            $data[$i][$j]['count'] = $skuTotals[$sku];
-		            $data[$i][$j]['parent_index'] =  intval(findIndexInArray($item['sku'],$data));
+		            $data[$i][$j]['parent_index'] =  intval($this->findIndexInArray($item['sku'],$data));
 		            $data[$i][$j]['all'] = $totals_sku[$sku];
 		            $data[$i][$j]['all_to_sku'] = countSKuInArray($data, $item['sku']);
 		        }   
@@ -233,7 +233,7 @@
 
 		function findIndexInArray($sku, $data) {
 
-		    $skuList = listSKu($data);
+		    $skuList = $this->listSKu($data);
 		 
 		    // Bước 2: Xóa trùng lặp và sắp xếp lại index
 		    $uniqueSkuList = array_values(array_unique($skuList));
@@ -270,7 +270,7 @@
 		function countSKuInArray($data_result, $target)
 		{
 		    
-		    $datas = listSKu($data_result);
+		    $datas = $this->listSKu($data_result);
 
 		    $counts = array_count_values($datas);
 
