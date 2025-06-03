@@ -100,6 +100,191 @@
 			return $query;
 		}
 
+
+		//function hỗ trợ in file pdf
+
+		function downloadMultipleFiles($urlArray, $saveFolder = PATH_BASE.'/admin/export/pdf/count_print') {
+		    $results = [];
+
+		    foreach ($urlArray as $index => $url) {
+		        $fileName = '2.pdf';
+		        $fileNames = basename(parse_url($url, PHP_URL_PATH));
+		        // Lấy extension (pdf, xlsx, xls, etc.)
+		        $ext = pathinfo($fileNames, PATHINFO_EXTENSION);
+		        if (!$ext) {
+		            $ext = 'bin';
+		            $fileName = "file_$index.$ext";
+		        }
+
+		        $link = downloadFile($url, $saveFolder, $fileName);
+
+		        $results[] = [
+		            'url' => $url,
+		            'type' => $ext,
+		            'saved' => $link ? true : false,
+		            'file_link' => $link
+		        ];
+		    }
+
+		    return $results;
+		}
+
+		function downloadFile($url, $saveFolder = PATH_BASE.'/admin/export/pdf/count_print', $fileName = null) {
+		    if (!is_dir($saveFolder)) {
+		        mkdir($saveFolder, 0755, true);
+		    }
+
+		    // Lấy tên file từ URL nếu không cung cấp
+		    if (!$fileName) {
+		        $fileName = basename(parse_url($url, PHP_URL_PATH));
+		        // Nếu không có tên file, gán tên tạm
+		        if (!$fileName || strpos($fileName, '.') === false) {
+		            $fileName = 'file_' . uniqid() . '.bin';
+		        }
+		    }
+
+		    $savePath = rtrim($saveFolder, '/') . '/' . $fileName;
+
+		    $fileContent = @file_get_contents($url);
+		    if ($fileContent === false) {
+		        return false;
+		    }
+
+		    $result = file_put_contents($savePath, $fileContent);
+		    if ($result === false) {
+		        return false;
+		    }
+
+		    $baseUrl = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http");
+		    $baseUrl .= "://$_SERVER[HTTP_HOST]";
+		    $fileUrl = $baseUrl . '/' . ltrim($savePath, '/');
+
+		    return $fileUrl;
+		}
+
+		function calculateCumulativeQuantities(&$data) {
+		 
+		 
+		     $totals_sku = [];
+		 
+		    // Bước 1: Duyệt qua toàn bộ mảng để tính tổng quantity cho từng SKU
+		    foreach ($data as $group) {
+		        foreach ($group as $item) {
+		            $sku = $item['sku'];
+		            $qty = $item['quantity'];
+		 
+		            if (isset($totals_sku[$sku])) {
+		                $totals_sku[$sku] +=  intval($qty);
+		            } else {
+		                $totals_sku[$sku] = $qty;
+		            }
+		 
+		        }
+		    }
+		 
+		    $skuTotals = [];
+		 
+		 
+		    foreach ($data as $i => $group) {
+		        foreach ($group as $j => $item) {
+		            $sku = $item['sku'];
+		            $qty = $item['quantity'];
+		 
+		            if (!isset($skuTotals[$sku])) {
+		                $skuTotals[$sku] = 0;
+		            }
+		 
+		            $skuTotals[$sku] += $qty;
+		            $data[$i][$j]['count'] = $skuTotals[$sku];
+		            $data[$i][$j]['parent_index'] =  intval(findIndexInArray($item['sku'],$data));
+		            $data[$i][$j]['all'] = $totals_sku[$sku];
+		            $data[$i][$j]['all_to_sku'] = countSKuInArray($data, $item['sku']);
+		        }   
+		    }
+		}
+
+		function show_list_array_run($data)
+		{
+		    // Khởi tạo bộ đếm show_list cho từng SKU
+		    $sku_counters = [];
+
+		    foreach ($data as &$group) {
+		        foreach ($group as &$item) {
+		            $sku = $item['sku'];
+		            $quantity = $item['quantity'];
+
+		            // Nếu chưa có vị trí bắt đầu cho SKU, khởi tạo là 1
+		            if (!isset($sku_counters[$sku])) {
+		                $sku_counters[$sku] = 1;
+		            }
+
+		            // Tính show_list từ vị trí hiện tại đến vị trí sau quantity
+		            $start = $sku_counters[$sku];
+		            $end = $start + $quantity - 1;
+		            $item['show_list'] = implode(',', range($start, $end));
+
+		            // Cập nhật bộ đếm tiếp theo cho SKU này
+		            $sku_counters[$sku] = $end + 1;
+		        }
+		    }
+		    return $data;
+
+		}
+
+		function findIndexInArray($sku, $data) {
+
+		    $skuList = listSKu($data);
+		 
+		    // Bước 2: Xóa trùng lặp và sắp xếp lại index
+		    $uniqueSkuList = array_values(array_unique($skuList));
+		   
+		    $index = array_search($sku, $uniqueSkuList);
+		 
+		    return $index !== false ? $index+1 : -1; // -1 nếu không tìm thấy
+		   
+		}
+
+
+		function listSKu($data)
+		{
+		   $skuList = [];
+		    foreach ($data as $group) {
+		        foreach ($group as $item) {
+		            $skuList[] = $item['sku'];
+		        }
+		    }
+		    return $skuList;
+		}
+
+		function listSKuFull($data)
+		{
+		   $skuList = [];
+		    foreach ($data as $group) {
+		        foreach ($group as $item) {
+		            $skuList[] = $item['sku_full'];
+		        }
+		    }
+		    return $skuList;
+		}
+
+		function countSKuInArray($data_result, $target)
+		{
+		    
+		    $datas = listSKu($data_result);
+
+		    $counts = array_count_values($datas);
+
+
+		    if (isset($counts[$target])) {
+
+		        return $counts[$target];
+
+		    } else {
+		        return 0;
+		    }
+		   
+		}
+
 	
 	}
 	
