@@ -95,14 +95,9 @@
 			$filename = $model->downloadMultipleFiles($urls);
 
 
-			$filename = str_replace('http://localhost/', '', $filename[0]['file_link']) ;
+			$filename = str_replace('https://dienmayai.com', '', $filename[0]['file_link']) ;
 
-			print_r($filename);
-
-			die;
-
-
-
+		
 			// Load PDF file
 			$pdf = $parser->parseFile($filename);
 			// Get all pages
