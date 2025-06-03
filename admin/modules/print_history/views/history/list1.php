@@ -97,6 +97,8 @@
                     <th>Sàn</th>
                     <th>Giờ</th>
                     <th>File in</th>
+                    <th>File đếm</th>
+                    <th>File tổng hợp ngày</th>
                     <th>Trạng thái</th>
                     <th>Người in</th>
                     <th>Thời gian tạo</th>
@@ -113,36 +115,8 @@
                     <td>admin</td>
                     <td>03/06/2025 07:11</td>
                 </tr>
-                <tr>
-                    <td><input type="checkbox"></td>
-                    <td>HCM</td>
-                    <td>Tiktok</td>
-                    <td>7H10</td>
-                    <td><a href="#">Xem file</a></td>
-                    <td>In thành công 24/24 order</td>
-                    <td>admin</td>
-                    <td>03/06/2025 07:11</td>
-                </tr>
-                <tr>
-                    <td><input type="checkbox"></td>
-                    <td>HCM</td>
-                    <td>Shopee</td>
-                    <td>7H10</td>
-                    <td><a href="#">Xem file</a></td>
-                    <td>In thành công 130/130 order</td>
-                    <td>admin</td>
-                    <td>03/06/2025 07:11</td>
-                </tr>
-                <tr>
-                    <td><input type="checkbox"></td>
-                    <td>HCM</td>
-                    <td>Lazada</td>
-                    <td>7H10</td>
-                    <td><a href="#">Xem file</a></td>
-                    <td>In thành công 12/12 order</td>
-                    <td>admin</td>
-                    <td>03/06/2025 07:11</td>
-                </tr>
+                
+                
             </tbody>
         </table>
 
