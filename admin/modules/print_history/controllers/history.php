@@ -226,7 +226,7 @@
 			// Xuất file
 			// $pdf->Output('I', 'print/output3.pdf') ///i là xem trực tiếp còn F là lưu vào đường dẫn;
 
-			$pdf->Output('F', PATH_BASE.'/admin/export/pdf/count_print/output.pdf') ///i là xem trực tiếp còn F là lưu vào đường dẫn;
+			$pdf->Output('F', PATH_BASE.'/admin/export/pdf/count_print/output.pdf'); ///i là xem trực tiếp còn F là lưu vào đường dẫn;
 		}
 
 
