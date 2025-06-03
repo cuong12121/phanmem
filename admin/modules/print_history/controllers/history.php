@@ -46,9 +46,11 @@
 
 			
 			$query = "SELECT file_pdf 
-			        FROM fs_order_uploads_history_prints 
-			        WHERE platform_id = :platform_id 
-			        AND warehouse_id IN (1, 2)";
+        FROM fs_order_uploads_history_prints 
+        WHERE platform_id = :platform_id 
+        AND warehouse_id IN (1, 2)
+        ORDER BY id DESC 
+        LIMIT 2";
 			$values = $db->getObjectList($query);
 
 			echo "<pre>";
