@@ -36,6 +36,32 @@
 
 		}
 
+
+		function export_pdf_count_shopee()
+		{
+			global $db;
+			$platform_id = 2;
+			$warehouse1 = 1;
+			$warehouse2 = 2;
+
+			
+			$query = "SELECT file_pdf 
+			        FROM fs_order_uploads_history_prints 
+			        WHERE platform_id = :platform_id 
+			        AND warehouse_id IN (1, 2)";
+			$values = $db->getObjectList($query);
+
+			foreach ($values as $key => $value) {     
+
+				echo "<pre>";
+				print_r($values);
+				echo "</pre>";
+
+				die;
+			}   
+		}
+
+
 		function add()
 		{
 			$model = $this -> model;
