@@ -177,6 +177,10 @@
 
 			// $pdf = new PDF_Rotate_FPDI();
 			$filePath = $filename;
+
+			echo $filePath;
+
+			die;
 			$pageCount = $pdf->setSourceFile($filePath);
 
 			$y = [175, 191, 205, 219, 233, 247];
