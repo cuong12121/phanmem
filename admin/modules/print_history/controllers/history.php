@@ -175,7 +175,7 @@
 			//     }
 			// }
 
-			$pdf = new PDF_Rotate_FPDI();
+			// $pdf = new PDF_Rotate_FPDI();
 			$filePath = $filename;
 			$pageCount = $pdf->setSourceFile($filePath);
 
