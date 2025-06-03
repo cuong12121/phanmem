@@ -19,6 +19,11 @@
           background: #f8f9fa;
         }
 
+        body #page-wrapper a {
+            color: blue !important;
+            font-size: 14px;
+        }
+
         h2 {
           margin-bottom: 20px;
         }
