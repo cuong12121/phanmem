@@ -97,6 +97,10 @@
 
 			$filename = str_replace('http://localhost/', '', $filename[0]['file_link']) ;
 
+			print_r($filename);
+
+			die;
+
 
 
 			// Load PDF file
