@@ -41,12 +41,13 @@
 		{
 			global $db;
 			
-
+			$houseid = 15;
 			
 			$query = "SELECT file_pdf 
         FROM fs_order_uploads_history_prints 
         WHERE platform_id = 2 
         AND warehouse_id IN (1, 2)
+        AND house_id = $houseid 
         ORDER BY id DESC 
         LIMIT 2";
 			$values = $db->getObjectList($query);
