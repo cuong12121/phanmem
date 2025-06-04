@@ -1465,6 +1465,21 @@
 		}
 
 
+		function convert_name_file($str)
+		{
+			// Bước 1: Chuyển tiếng Việt có dấu thành không dấu
+		    $str = iconv('UTF-8', 'ASCII//TRANSLIT//IGNORE', $str);
+
+		    // Bước 2: Xóa tất cả ký tự ngoại trừ chữ, số, khoảng trắng và dấu chấm
+		    $str = preg_replace('/[^a-zA-Z0-9\s\.]/', '', $str);
+
+		    // Bước 3 (tuỳ chọn): Xoá khoảng trắng thừa 2 bên
+		    $str = trim($str);
+
+		    return $str;
+		}
+
+
 		function save($row = array(), $use_mysql_real_escape_string = 1) {
 			global $config;
 
@@ -1586,7 +1601,12 @@
 				foreach ($arr_file_pdf_name as $item_file_pdf_name){
 					//chuyển file pdf về 1.4(thì thư viện mới cắt và ghép đc)
 					$InputFile  = PATH_BASE.'files/orders/'.$cyear.'/'.$cmonth.'/'.$cday.'/'.$item_file_pdf_name;
-					$OutputFile = PATH_BASE.'files/orders/'.$cyear.'/'.$cmonth.'/'.$cday.'/'.str_replace('.pdf','_cv.pdf',$item_file_pdf_name);
+
+					// Sửa lại tên file không cho nhập ký tự đặc biệt
+
+					$files_convert_name_pdf = $this->convert_name_file($item_file_pdf_name);
+
+					$OutputFile = PATH_BASE.'files/orders/'.$cyear.'/'.$cmonth.'/'.$cday.'/'.str_replace('.pdf','_cv.pdf',$files_convert_name_pdf);
 					
 					$text_pdf_check = $this->showPDFText($InputFile);
 
