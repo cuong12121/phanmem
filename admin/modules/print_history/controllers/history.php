@@ -178,7 +178,7 @@
 
 			$data_result = $model->show_list_array_run($data_result);
 			
-			$pdf = new FPDI();
+			$pdf = new Fpdi();
 
 			$filePath = $filename;
 
