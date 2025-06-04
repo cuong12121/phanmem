@@ -6,7 +6,7 @@
 	use Escarter\PopplerPhp\PdfToHtml;
 
 	use setasign\fpdf;
-	
+
 	use setasign\Fpdi\Fpdi;
 
 	use setasign\Fpdi\PdfReader;
@@ -202,8 +202,6 @@
 
 			    $pdf->SetFont('Arial', 'B', 14);
 			    $pdf->SetTextColor(0, 0, 0); // Màu đen
-
-			    $pdf->Write(10, $imagePath);
 
 			    // === ✅ Ghi đè dữ liệu text theo danh sách ===
 			    $index_data = $pageNo - 1;
