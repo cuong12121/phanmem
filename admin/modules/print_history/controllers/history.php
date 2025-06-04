@@ -4,7 +4,11 @@
 	use Escarter\PopplerPhp\PdfToText;
 	use Escarter\PopplerPhp\getOutput;
 	use Escarter\PopplerPhp\PdfToHtml;
+
+	use setasign\fpdf;
+	
 	use setasign\Fpdi\Fpdi;
+
 	use setasign\Fpdi\PdfReader;
 
 	use Smalot\PdfParser\Parser;
