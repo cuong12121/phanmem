@@ -97,6 +97,10 @@
 
 			$filename = str_replace('https://dienmayai.com', '', $filename[0]['file_link']) ;
 
+			var_dump($filename);
+
+			die;
+
 		
 			// Load PDF file
 			$pdf = $parser->parseFile($filename);
