@@ -173,13 +173,11 @@
 			$model->calculateCumulativeQuantities($data_result);
 
 			$data_result = $model->show_list_array_run($data_result);
-
-
 			
-			// $pdf = new PDF_Rotate_FPDI();
+			$pdf = new FPDI();
+
 			$filePath = $filename;
 
-			
 			$pageCount = $pdf->setSourceFile($filePath);
 
 			$y = [175, 191, 205, 219, 233, 247];
