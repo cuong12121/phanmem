@@ -1471,7 +1471,7 @@
 		    $str = iconv('UTF-8', 'ASCII//TRANSLIT//IGNORE', $str);
 
 		    // Bước 2: Xóa tất cả ký tự ngoại trừ chữ, số, khoảng trắng và dấu chấm
-		    $str = preg_replace('/[^a-zA-Z0-9\s\.]/', '', $str);
+		    $str = preg_replace('/[^a-zA-Z0-9\s\._]/', '', $str);
 
 		    // Bước 3 (tuỳ chọn): Xoá khoảng trắng thừa 2 bên
 		    $str = trim($str);
