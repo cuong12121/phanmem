@@ -1649,7 +1649,7 @@
 					
 					$cmd = str_replace('/',DS,$cmd);
 					//lấy theo đường dẫn đã được convert sang bản 1.4
-					$file_pdf_names .= $item_file_pdf_name.'t,t';
+					$file_pdf_names .= $files_convert_name_pdf.'t,t';
 	
 					exec($cmd, $out, $status);
 	
@@ -1663,7 +1663,7 @@
                         echo "Command failed with status: $status";
                     }
 
-                    $id_google_drive = file_get_contents('https://drive.'.DOMAIN.'/createfile_gg.php?link=https://'.DOMAIN.'/files/orders/'.$cyear.'/'.$cmonth.'/'.$cday.'/'.$item_file_pdf_name);
+                    $id_google_drive = file_get_contents('https://drive.'.DOMAIN.'/createfile_gg.php?link=https://'.DOMAIN.'/files/orders/'.$cyear.'/'.$cmonth.'/'.$cday.'/'.$files_convert_name_pdf);
 
                     // $id_google_drive ='file1_pdf';
 
