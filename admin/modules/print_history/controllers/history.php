@@ -269,6 +269,17 @@
 		return '<a target="_blink" href="' . $link . '">Xem file</a>';
 	}
 
+	function view_pdf_dem($controle,$id){
+		$model = $controle -> model;
+		$data = $model->get_record('id = ' .$id,'fs_order_uploads_history_prints','id,file_pdf_dem');
+		$link = URL_ROOT.$data-> file_pdf_dem;
+
+		$check = !empty($data-> file_pdf_dem)?'<a target="_blink" href="' . $link . '">Xem file</a>':'';
+
+		
+		return $check;
+	}
+
 
 	function view_status($controle,$id){
 		$model = $controle -> model;

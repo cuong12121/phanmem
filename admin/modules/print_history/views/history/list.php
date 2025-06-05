@@ -57,7 +57,7 @@
 	
 	$list_config[] = array('title'=>'File in','field'=>'id','type'=>'text','arr_params'=>array('function'=>'view_pdf'));
 
-	$list_config[] = array('title'=>'File pdf đếm','field'=>'id','type'=>'text','arr_params'=>array('function'=>'view_pdf'));
+	$list_config[] = array('title'=>'File pdf đếm','field'=>'id','type'=>'text','arr_params'=>array('function'=>'view_pdf_dem'));
 
 
 
