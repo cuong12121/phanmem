@@ -56,6 +56,11 @@
 	$list_config[] = array('title'=>'Giờ','field'=>'house_id','type'=>'text','arr_params'=>array('function'=>'view_house'));
 	
 	$list_config[] = array('title'=>'File in','field'=>'id','type'=>'text','arr_params'=>array('function'=>'view_pdf'));
+
+	$list_config[] = array('title'=>'File pdf đếm','field'=>'id','type'=>'text','arr_params'=>array('function'=>'view_pdf'));
+
+
+
 	$list_config[] = array('title'=>'Trạng thái','field'=>'id','type'=>'text','arr_params'=>array('function'=>'view_status'));
 	$list_config[] = array('title'=>'Người in','field'=>'action_username','ordering'=> 1, 'type'=>'text','col_width' => '30%','arr_params'=>array('size'=> 20));
 
