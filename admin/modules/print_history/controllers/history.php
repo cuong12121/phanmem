@@ -44,18 +44,18 @@
 			$warehouses = $model -> get_records('published = 1 AND id IN ('.$wrap_id_warehouses.')','fs_warehouses');
 			$platforms = $model -> get_records('published = 1','fs_platforms');
 			$houses = $model -> get_records('published = 1','fs_house');
-			if($test==1){
-				// echo "<pre>";
-				// var_dump($list);
-				// echo "</pre>";
+			// if($test==1){
+			// 	// echo "<pre>";
+			// 	// var_dump($list);
+			// 	// echo "</pre>";
 
-				// die;
+			// 	// die;
 				
-				include 'modules/'.$this->module.'/views/'.$this->view.'/list1.php';
-			}
-			else{
-				include 'modules/'.$this->module.'/views/'.$this->view.'/list.php';
-			}
+			// 	include 'modules/'.$this->module.'/views/'.$this->view.'/list1.php';
+			// }
+			
+			include 'modules/'.$this->module.'/views/'.$this->view.'/list.php';
+			
 
 
 		}
