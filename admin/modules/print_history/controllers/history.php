@@ -1,6 +1,8 @@
 <?php
 
    	require_once(PATH_BASE.'vendor/autoload.php');
+
+   	require_once('vendor/autoload.php');
 	use Escarter\PopplerPhp\PdfToText;
 	use Escarter\PopplerPhp\getOutput;
 	use Escarter\PopplerPhp\PdfToHtml;
