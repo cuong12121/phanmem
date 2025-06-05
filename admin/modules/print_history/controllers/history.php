@@ -31,6 +31,14 @@
 			$sort_direct = $this -> sort_direct;
 			$model  = $this -> model;
 			$list = $this -> model->get_data();
+
+			$user_id = $_SESSION['user_id'];
+
+			if($user_id==9){
+				var_dump($list);
+
+				die;
+			}
 			$pagination = $model->getPagination();
 			$wrap_id_warehouses = $model->get_wrap_id_warehouses();
 
