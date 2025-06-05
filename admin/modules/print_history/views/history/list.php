@@ -67,7 +67,7 @@
     $list_config[] = array('title'=>'Created time','field'=>'created_time','ordering'=> 1, 'type'=>'datetime');
     if($test==1){
     	echo "<pre>";
-    	var_dump($list_config);
+    	var_dump($fitler_config);
     	echo "</pre>";
     }	
 
