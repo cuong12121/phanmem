@@ -31,6 +31,8 @@
 			$sort_direct = $this -> sort_direct;
 			$model  = $this -> model;
 			$list = $this -> model->get_data();
+
+			$query = $this -> model->setQuery();
 			$pagination = $model->getPagination();
 			$wrap_id_warehouses = $model->get_wrap_id_warehouses();
 
@@ -44,7 +46,7 @@
 			$houses = $model -> get_records('published = 1','fs_house');
 			if($test==1){
 				echo "<pre>";
-				var_dump($list);
+				var_dump($query);
 				echo "</pre>";
 
 				die;
