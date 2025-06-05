@@ -46,7 +46,7 @@
 			$houses = $model -> get_records('published = 1','fs_house');
 			if($test==1){
 				echo "<pre>";
-				var_dump($query);
+				var_dump($list);
 				echo "</pre>";
 
 				die;
