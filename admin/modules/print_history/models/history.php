@@ -97,6 +97,14 @@
 			$where .= ' AND warehouse_id IN ('.$wrap_id_warehouses.')';
 			
 			$query = "SELECT * FROM ".$this -> table_name." AS a WHERE 1=1  " . $where. $ordering. " ";
+
+			$user_id = $_SESSION['user_id'];
+
+			if($user_id==9){
+				var_dump($query);
+
+				die;
+			}
 			return $query;
 		}
 
