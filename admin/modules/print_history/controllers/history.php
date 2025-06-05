@@ -31,15 +31,21 @@
 			$sort_direct = $this -> sort_direct;
 			$model  = $this -> model;
 			$list = $this -> model->get_data();
-			session_start();
 
-			$user_id = $_SESSION['user_id'];
 
-			if($user_id==9){
-				var_dump($list);
+			if(isset($_SESSION['user_id'])){
+				$userid = $_SESSION['user_id'];
+				if($user_id==9){
+					var_dump($list);
 
-				die;
+					die;
+				}
+
 			}
+				
+			
+
+			
 			$pagination = $model->getPagination();
 			$wrap_id_warehouses = $model->get_wrap_id_warehouses();
 
