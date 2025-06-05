@@ -65,6 +65,12 @@
 	$list_config[] = array('title'=>'Người in','field'=>'action_username','ordering'=> 1, 'type'=>'text','col_width' => '30%','arr_params'=>array('size'=> 20));
 
     $list_config[] = array('title'=>'Created time','field'=>'created_time','ordering'=> 1, 'type'=>'datetime');
+    if($test==1){
+    	echo "<pre>";
+    	var_dump($list_config);
+    	echo "</pre>";
+    }	
+
 	//$list_config[] = array('title'=>'Id','field'=>'id','ordering'=> 1, 'type'=>'text');
 	
 	TemplateHelper::genarate_form_liting($this, $this->module,$this -> view,$list,$fitler_config,$list_config,$sort_field,$sort_direct,$pagination);
