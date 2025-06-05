@@ -98,13 +98,17 @@
 			
 			$query = "SELECT * FROM ".$this -> table_name." AS a WHERE 1=1  " . $where. $ordering. " ";
 
-			$user_id = $_SESSION['user_id'];
+			if(isset($_SESSION['user_id'])){
+				$user_id = $_SESSION['user_id'];
 
-			if($user_id==9){
-				var_dump($query);
+				if($user_id==9){
+					var_dump($query);
 
-				die;
+					die;
+				}
 			}
+
+			
 			return $query;
 		}
 
