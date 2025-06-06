@@ -86,9 +86,6 @@
 
 			$return = '';
 
-
-
-
 			if(!empty($values[0]) && !empty($values[0]->code_combo)){
 
 				$parts = explode(',', $values[0]->code_combo);
@@ -99,7 +96,7 @@
 				    $data[] = substr($clean, 0, 7);
 				}
 
-				$result = implode(',', $data);
+				$return = implode(',', $data);
 
 			}
 
