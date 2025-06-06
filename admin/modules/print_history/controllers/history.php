@@ -285,7 +285,7 @@
 			$pageCount = $pdf->setSourceFile($filePath);
 
 			$y = [175, 191, 205, 219, 233, 247];
-			$k = [130, 140, 150];
+			$k = [130, 140, 150, 160];
 			$dem =0;
 
 			for ($pageNo = 1; $pageNo <= $pageCount; $pageNo++) {
@@ -312,6 +312,8 @@
 			    $pdf->SetTextColor(0, 0, 0); // Màu đen
 
 			    for ($i = 0; $i < count($data_all); $i++) {
+
+			    	//phần ghi mã sản phẩm khi có combo hoặc số lượng lớn hơn 1
 
 			    	if(!empty($data_result[$index_data][$i]['show_more'])){
 
