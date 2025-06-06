@@ -93,12 +93,6 @@
         LIMIT 2";
 			$values = $db->getObjectList($query);
 
-			echo "<pre>";
-				print_r($values);
-				echo "</pre>";
-			die;	
-
-
 			foreach ($values as $key => $value) {     
 
 				echo "<pre>";
