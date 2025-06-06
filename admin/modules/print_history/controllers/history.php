@@ -60,12 +60,29 @@
 
 		}
 
+		function generateDailyPath($baseDir = 'uploads') {
+		    // Get the current year, month, and day
+		    $year = date('Y');
+		    $month = date('m');
+		    $day = date('d');
+
+		    // Construct the path
+		    $path = $baseDir . '/' . $year . '/' . $month . '/' . $day;
+
+		    if (!is_dir($path)) {
+
+			    mkdir($path, 0755, true);
+			}
+
+		    return $path;
+		}
+
 
 		function export_pdf_count_shopee()
 		{
 			global $db;
 			
-			$houseid = 15;
+			$houseid = 13;
 			
 			$query = "SELECT file_pdf 
         FROM fs_order_uploads_history_prints 
@@ -85,7 +102,7 @@
 			foreach ($values as $key => $value) {     
 
 				echo "<pre>";
-				print_r($values);
+				print_r($value->file_pdf);
 				echo "</pre>";
 
 				die;
@@ -124,6 +141,9 @@
 
 		function export_file_pdf()
 		{
+
+			$baseDir =  PATH_BASE.'/admin/export/pdf/count_print/';
+
 			$parser = new Parser();
 
 			$urls = [
@@ -235,10 +255,20 @@
 			    // $pdf->SetTextColor(0, 0, 0); // Màu đen
 			}
 
+			$path_date = $this->generateDailyPath($baseDir);
+
+			$timestamp = time();
+
+			$file_name = $houseid.'_'.$timestamp.'.pdf';
+
+			$dir_file_name = $path_date.$file_name;
+
 			// Xuất file
 			// $pdf->Output('I', 'print/output3.pdf') ///i là xem trực tiếp còn F là lưu vào đường dẫn;
 
-			$pdf->Output('F', PATH_BASE.'/admin/export/pdf/count_print/output.pdf'); ///i là xem trực tiếp còn F là lưu vào đường dẫn;
+			$pdf->Output('F', $dir_file_name); ///i là xem trực tiếp còn F là lưu vào đường dẫn;
+
+			return $dir_file_name;
 		}
 
 
