@@ -282,7 +282,7 @@
 
 			$file_name = $houseid.'_'.$timestamp.'.pdf';
 
-			$dir_file_name = $path_date.$file_name;
+			$dir_file_name = $path_date.'/'.$file_name;
 
 
 
