@@ -86,11 +86,21 @@
 
 			$return = '';
 
+
+
+
 			if(!empty($values[0]) && !empty($values[0]->code_combo)){
 
-				preg_match_all('/\b.{7}/', $values[0]->code_combo, $matches);
-				
-				$return  =  implode('+', $matches[0]);
+				$parts = explode(',', $values[0]->code_combo);
+				$data = [];
+
+				foreach ($parts as $part) {
+				    $clean = trim($part); // loại bỏ khoảng trắng
+				    $data[] = substr($clean, 0, 7);
+				}
+
+				$result = implode(',', $data);
+
 			}
 
 			return $return;
@@ -326,7 +336,7 @@
 
 			    	if(!empty($data_result[$index_data][$i]['show_more'])){
 
-			    		$pdf->SetFont('Arial', 'B', 10);
+			    		$pdf->SetFont('Arial', 'B', 11);
 			    		$pdf->SetTextColor(0, 0, 0); // Màu đen
 
 			    		$pdf->SetXY(105, $k[$dem]);
@@ -334,6 +344,9 @@
 			    		$write_show_more = $data_result[$index_data][$i]['show_more']; 
 			    		$pdf->Write(10, $write_show_more);
 			    	}
+
+			    	$pdf->SetFont('Arial', 'B', 14);
+			    	$pdf->SetTextColor(0, 0, 0); // Màu đen
 
 			        $pdf->SetXY(105, $y[$i]);
 			        $write = $data_result[$index_data][$i]['parent_index'] . '--' .
