@@ -88,7 +88,7 @@
 
 			if(!empty($values[0]) && !empty($values[0]->code_combo)){
 
-				preg_match_all('/\b.{7}/', $string, $matches);
+				preg_match_all('/\b.{7}/', $values[0]->code_combo, $matches);
 				
 				$return  =  implode('+', $matches[0]);
 			}
