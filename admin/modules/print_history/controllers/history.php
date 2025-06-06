@@ -101,7 +101,7 @@
 				$id_print = $value->id;
 				
 
-				$dir_file = $this->export_file_pdf($url_file_pdf);
+				$dir_file = $this->export_file_pdf($url_file_pdf, $houseid);
 			
 
 				$sql= "UPDATE fs_order_uploads_history_prints SET file_pdf_dem = $dir_file  WHERE `id`=".$id_print;
@@ -142,7 +142,7 @@
 
 
 
-		function export_file_pdf($url_file)
+		function export_file_pdf($url_file, $houseid)
 		{
 
 			$baseDir =  PATH_BASE.'/admin/export/pdf/count_print/';
