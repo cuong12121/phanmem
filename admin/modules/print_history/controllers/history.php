@@ -77,19 +77,20 @@
 		    return $path;
 		}
 
-		function combo_Return_code()
+		function combo_Return_code($sku)
 		{
 			global $db;
 
-			$sku = 'B751-BL-00';
 			$query = " SELECT code_combo FROM  fs_products WHERE 1=1 AND code = '$sku'"; 
 			$values = $db->getObjectList($query);
 
-			echo "<pre>";
+			$return = '';
 
-			print_r($values);
+			if(!empty($values[0]) && !empty($values[0]->code_combo)){
+				$return =  str_replace('/1','',$values[0]->code_combo);
+			}
 
-			echo "</pre>";
+			return $return;
 
 		}
 
@@ -226,11 +227,32 @@
 
 			        $sku_full_check = substr(trim($skuFull), 0, 10); // Lấy 10 ký tự đầu của SKU
 
+			        $check_combo = $this->combo_Return_code($sku_full_check);
+
+			        $quantity_get = $matchesQty[1][$i];
+
+			        
+			        if(!empty($check_combo)){
+			        	$show_combo = $check_combo.':'.$quantity_get; 
+
+			        	$show_more = $show_combo;
+
+			        }
+			        elseif (intval($quantity_get) >1) {
+
+			        	$show_more = $skuShort.':'.$quantity_get;
+			        }
+			        else{
+			        	$show_more = '';
+
+			        }
+
 			        $results[] = [
 			            'sku' => $skuShort,
-			            'quantity' => $matchesQty[1][$i],
+			            'quantity' => $quantity_get,
 			            'sku_full' => $skuFull,
 			            'sku_full_check' => $sku_full_check,
+			            'show_more' => $show_more,
 
 			        ];
 			    }
