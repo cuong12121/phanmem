@@ -248,7 +248,7 @@
 
 			    // Chèn ảnh thường (logo)
 			    $imagePath =  PATH_BASE.'/admin/export/pdf/images/Capture.jpg';
-			    $pdf->Image($imagePath, 105, 2, 20, 50);
+			    $pdf->Image($imagePath, 105, 2, 40, 100);
 
 			    $pdf->SetFont('Arial', 'B', 14);
 			    $pdf->SetTextColor(0, 0, 0); // Màu đen
