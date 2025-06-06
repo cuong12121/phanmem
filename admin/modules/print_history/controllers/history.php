@@ -261,13 +261,13 @@
 			}
 			$model->calculateCumulativeQuantities($data_result);
 
-			echo "<pre>";
+			// echo "<pre>";
 
-			print_r($data_result);
+			// print_r($data_result);
 
-			echo "</pre>";
+			// echo "</pre>";
 
-			die;
+			// die;
 
 			$data_result = $model->show_list_array_run($data_result);
 
