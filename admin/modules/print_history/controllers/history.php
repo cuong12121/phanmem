@@ -81,14 +81,24 @@
 		function export_pdf_count_shopee()
 		{
 			global $db;
+
+			$H = date('G');
+
+	        if ($H < 8) {
+			    $house_id = 13;
+			} elseif ($H >= 8 && $H < 13) {
+			    $house_id = 18;
+			} else {
+			    $house_id = 15;
+			} 
 			
-			$houseid = 13;
+			// $house_id = 13;
 			
 			$query = "SELECT file_pdf, id 
         FROM fs_order_uploads_history_prints 
         WHERE platform_id = 2 
         AND warehouse_id IN (1, 2)
-        AND house_id = $houseid 
+        AND house_id = $house_id 
         ORDER BY id DESC 
         LIMIT 2";
 			$values = $db->getObjectList($query);
@@ -101,7 +111,7 @@
 				$id_print = $value->id;
 				
 
-				$dir_file = $this->export_file_pdf($url_file_pdf, $houseid);
+				$dir_file = $this->export_file_pdf($url_file_pdf, $house_id);
 			
 
 				$sql= "UPDATE fs_order_uploads_history_prints SET file_pdf_dem = '$dir_file'  WHERE `id`=".$id_print;
