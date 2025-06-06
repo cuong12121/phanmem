@@ -87,7 +87,10 @@
 			$return = '';
 
 			if(!empty($values[0]) && !empty($values[0]->code_combo)){
-				$return =  str_replace(['/1', ','],['', ' + '],$values[0]->code_combo);
+
+				preg_match_all('/\b.{7}/', $string, $matches);
+				
+				$return  =  implode('+', $matches[0]);
 			}
 
 			return $return;
@@ -322,6 +325,9 @@
 			    	//phần ghi mã sản phẩm khi có combo hoặc số lượng lớn hơn 1
 
 			    	if(!empty($data_result[$index_data][$i]['show_more'])){
+
+			    		$pdf->SetFont('Arial', 'B', 10);
+			    		$pdf->SetTextColor(0, 0, 0); // Màu đen
 
 			    		$pdf->SetXY(105, $k[$dem]);
 			    		$dem++;
