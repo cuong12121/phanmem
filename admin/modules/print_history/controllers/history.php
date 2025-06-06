@@ -87,7 +87,7 @@
 			$return = '';
 
 			if(!empty($values[0]) && !empty($values[0]->code_combo)){
-				$return =  str_replace('/1','',$values[0]->code_combo);
+				$return =  str_replace(['/1', ','],['', ' + '],$values[0]->code_combo);
 			}
 
 			return $return;
@@ -285,6 +285,8 @@
 			$pageCount = $pdf->setSourceFile($filePath);
 
 			$y = [175, 191, 205, 219, 233, 247];
+			$k = [130, 140, 150];
+			$dem =0;
 
 			for ($pageNo = 1; $pageNo <= $pageCount; $pageNo++) {
 			    $templateId = $pdf->importPage($pageNo);
@@ -310,6 +312,15 @@
 			    $pdf->SetTextColor(0, 0, 0); // Màu đen
 
 			    for ($i = 0; $i < count($data_all); $i++) {
+
+			    	if(!empty($data_result[$index_data][$i]['show_more'])){
+
+			    		$pdf->SetXY(105, $k[$dem]);
+			    		$dem++;
+			    		$write_show_more = $data_result[$index_data][$i]['show_more']; 
+			    		$pdf->Write(10, $write_show_more);
+			    	}
+
 			        $pdf->SetXY(105, $y[$i]);
 			        $write = $data_result[$index_data][$i]['parent_index'] . '--' .
 			                 $data_result[$index_data][$i]['show_list'] . '==>' .
