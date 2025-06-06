@@ -204,6 +204,11 @@
 
 			$data_result = [];
 
+			$dem =0;
+
+			$y = [175, 191, 205, 219, 233, 247];
+			$k = [130, 140, 150, 160];
+
 			foreach ($pages as $index => $page) {
 			    $pageNumber = $index + 1;
 			    $text = $page->getText();
@@ -284,9 +289,8 @@
 
 			$pageCount = $pdf->setSourceFile($filePath);
 
-			$y = [175, 191, 205, 219, 233, 247];
-			$k = [130, 140, 150, 160];
-			$dem =0;
+			
+			
 
 			for ($pageNo = 1; $pageNo <= $pageCount; $pageNo++) {
 			    $templateId = $pdf->importPage($pageNo);
