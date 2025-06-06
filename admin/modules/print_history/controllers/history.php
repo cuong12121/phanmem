@@ -208,6 +208,7 @@
 
 			$y = [175, 191, 205, 219, 233, 247];
 			$k = [130, 140, 150, 160];
+			$dem=0
 
 			foreach ($pages as $index => $page) {
 			    $pageNumber = $index + 1;
