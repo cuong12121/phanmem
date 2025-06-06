@@ -104,7 +104,7 @@
 				$dir_file = $this->export_file_pdf($url_file_pdf, $houseid);
 			
 
-				$sql= "UPDATE fs_order_uploads_history_prints SET file_pdf_dem = $dir_file  WHERE `id`=".$id_print;
+				$sql= "UPDATE fs_order_uploads_history_prints SET file_pdf_dem = '$dir_file'  WHERE `id`=".$id_print;
 
 				$db->query($sql);
 
@@ -266,12 +266,18 @@
 
 			$dir_file_name = $path_date.$file_name;
 
+
+
 			// Xuất file
 			// $pdf->Output('I', 'print/output3.pdf') ///i là xem trực tiếp còn F là lưu vào đường dẫn;
 
 			$pdf->Output('F', $dir_file_name); ///i là xem trực tiếp còn F là lưu vào đường dẫn;
 
-			return $dir_file_name;
+
+
+			$dir_file_name_convert = str_replace('/www/wwwroot/'.DOMAIN, '', $dir_file_name);
+
+			return $dir_file_name_convert;
 		}
 
 
