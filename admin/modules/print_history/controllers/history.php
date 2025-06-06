@@ -106,6 +106,8 @@
 
 				$sql= "UPDATE fs_order_uploads_history_prints SET file_pdf_dem = $dir_file  WHERE `id`=".$id_print;
 
+				$db->query($sql);
+
 		        
 			}   
 		}
