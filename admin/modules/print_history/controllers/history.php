@@ -84,7 +84,7 @@
 			
 			$houseid = 13;
 			
-			$query = "SELECT file_pdf 
+			$query = "SELECT file_pdf, id 
         FROM fs_order_uploads_history_prints 
         WHERE platform_id = 2 
         AND warehouse_id IN (1, 2)
@@ -93,13 +93,20 @@
         LIMIT 2";
 			$values = $db->getObjectList($query);
 
-			foreach ($values as $key => $value) {     
+			foreach ($values as $key => $value) {  
 
-				echo "<pre>";
-				print_r($value->file_pdf);
-				echo "</pre>";
 
+				$url_file_pdf = 'https://'.DOMAIN.'/'.$value->file_pdf;
+
+				$id_print = $value->id;
 				
+
+				$dir_file = $this->export_file_pdf($url_file_pdf);
+			
+
+				$sql= "UPDATE fs_order_uploads_history_prints SET file_pdf_dem = $dir_file  WHERE `id`=".$id_print;
+
+		        
 			}   
 		}
 
@@ -133,7 +140,7 @@
 
 
 
-		function export_file_pdf()
+		function export_file_pdf($url_file)
 		{
 
 			$baseDir =  PATH_BASE.'/admin/export/pdf/count_print/';
@@ -141,7 +148,7 @@
 			$parser = new Parser();
 
 			$urls = [
-			    "https://dienmayai.com/files/orders/2025/06/03/time_15_warehouse_1_platform_id_2_date_1748935866.pdf",
+			    $url_file
 			    
 			];
 
