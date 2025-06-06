@@ -99,7 +99,7 @@
 				print_r($value->file_pdf);
 				echo "</pre>";
 
-				die;
+				
 			}   
 		}
 
