@@ -77,6 +77,14 @@
 		    return $path;
 		}
 
+		function combo_Return_code($sku)
+		{
+			global $db;
+			$query = " SELECT code_combo FROM  fs_products WHERE 1=1 AND code = '$sku'"; 
+			$values = $db->getObjectList($query);
+
+		}
+
 
 		function export_pdf_count_shopee()
 		{
@@ -219,6 +227,14 @@
 			}
 			$model->calculateCumulativeQuantities($data_result);
 
+			echo "<pre>";
+
+			print_r($data_result);
+
+			echo "</pre>";
+
+			die;
+
 			$data_result = $model->show_list_array_run($data_result);
 
 			// check là combo và số lượng sản phẩm lớn hơn 2 thì note mã sản phẩm với số lượng sản phẩm
@@ -248,7 +264,7 @@
 
 			    // Chèn ảnh thường (logo)
 			    $imagePath =  PATH_BASE.'/admin/export/pdf/images/Capture.jpg';
-			    $pdf->Image($imagePath, 105, 2, 50, 120);
+			    $pdf->Image($imagePath, 105, 2, 40, 100);
 
 			    $pdf->SetFont('Arial', 'B', 14);
 			    $pdf->SetTextColor(0, 0, 0); // Màu đen
