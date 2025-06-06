@@ -83,10 +83,11 @@
 			global $db;
 
 			$H = date('G');
+			$M = date('i');
 
 	        if ($H < 8) {
 			    $house_id = 13;
-			} elseif ($H >= 8 && $H < 13) {
+			} elseif (($H > 8 && $H < 14) ||($H == 14 && $M < 30) ) {
 			    $house_id = 18;
 			} else {
 			    $house_id = 15;
@@ -219,6 +220,13 @@
 			$model->calculateCumulativeQuantities($data_result);
 
 			$data_result = $model->show_list_array_run($data_result);
+
+			// check là combo và số lượng sản phẩm lớn hơn 2 thì note mã sản phẩm với số lượng sản phẩm
+
+
+			// $produt-> type_id == 9 && $produt-> code_combo && $produt-> code_combo !=''
+
+			// Đang làm
 			
 			$pdf = new Fpdi();
 
