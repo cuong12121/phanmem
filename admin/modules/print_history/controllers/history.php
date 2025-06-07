@@ -96,7 +96,7 @@
 				    $data[] = substr($clean, 0, 7);
 				}
 
-				$return = implode(',', $data);
+				$return = $data;
 
 			}
 
@@ -237,6 +237,7 @@
 			    // Đảm bảo số lượng SKU và số lượng khớp nhau về thứ tự
 			    $count = min(count($matchesSku[0]), count($matchesQty[1]));
 			    for ($i = 0; $i < $count; $i++) {
+			    	
 			        $skuFull = $matchesSku[0][$i];
 			        $skuShort = substr($skuFull, 0, 7); // Lấy 4 ký tự đầu của SKU
 
@@ -248,11 +249,9 @@
 
 			        
 			        if(!empty($check_combo)){
+			        	$show_combo = $check_combo.':'.$quantity_get; 
 
-			        	$show_more = str_replace(',', ",\n", $check_combo);
-			        	$show_more  = $show_more.':'.$quantity_get; 
-
-			        	
+			        	$show_more = $show_combo;
 
 			        }
 			        elseif (intval($quantity_get) >1) {
@@ -270,6 +269,7 @@
 			            'sku_full' => $skuFull,
 			            'sku_full_check' => $sku_full_check,
 			            'show_more' => $show_more,
+			            'i'=>$i,
 
 			        ];
 			    }
@@ -278,13 +278,13 @@
 			}
 			$model->calculateCumulativeQuantities($data_result);
 
-			// echo "<pre>";
+			echo "<pre>";
 
-			// print_r($data_result);
+			print_r($data_result);
 
-			// echo "</pre>";
+			echo "</pre>";
 
-			// die;
+			die;
 
 			$data_result = $model->show_list_array_run($data_result);
 
