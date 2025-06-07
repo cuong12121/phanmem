@@ -217,9 +217,7 @@
 			
 
 			$y = [175, 191, 205, 219, 233, 247];
-			$k = [130, 140, 150, 160, 170];
-
-			$show_more_sku = [];
+			$k = [130, 140, 150, 160];
 
 			foreach ($pages as $index => $page) {
 			    $pageNumber = $index + 1;
@@ -250,36 +248,26 @@
 
 			        
 			        if(!empty($check_combo)){
-			        	$show_combo = $check_combo;
+			        	$show_combo = $check_combo.':'.$quantity_get; 
 
-			        	$show_more = $show_combo; 
+			        	$show_more = $show_combo;
 
-			        	$convert_to_array_write_show_more = explode(',', $show_more);
+			        }
+			        elseif (intval($quantity_get) >1) {
 
-			        	foreach ($convert_to_array_write_show_more as $key => $value) {
-			        		
-			        		array_push($show_more_sku, $value.':'.$quantity_get);
-			        	}
-
-			  
+			        	$show_more = $skuShort.':'.$quantity_get;
 			        }
 			        else{
+			        	$show_more = '';
 
-			        	if(intval($quantity_get) >1){
-
-			        		array_push($show_more_sku,$skuShort.':'.$quantity_get);
-			        	}
-			        	
-			        	
 			        }
-			        
 
 			        $results[] = [
 			            'sku' => $skuShort,
 			            'quantity' => $quantity_get,
 			            'sku_full' => $skuFull,
 			            'sku_full_check' => $sku_full_check,
-			            
+			            'show_more' => $show_more,
 
 			        ];
 			    }
@@ -343,20 +331,16 @@
 
 			    	//phần ghi mã sản phẩm khi có combo hoặc số lượng lớn hơn 1
 
-			    	$pdf->SetFont('Arial', 'B', 15);
-			    	$pdf->SetTextColor(0, 0, 0); // Màu đen
+			    	if(!empty($data_result[$index_data][$i]['show_more'])){
 
-			    	if(!empty($show_more_sku)){
+			    		$pdf->SetFont('Arial', 'B', 14);
+			    		$pdf->SetTextColor(0, 0, 0); // Màu đen
 
-			    		for ($z=0; $z < count($show_more_sku); $z++) { 
-			    			
-			    			$pdf->SetXY(105, $k[$z]);
-
-			    			$pdf->Write(10, $show_more_sku[$z]);
-			    		}
-
+			    		$pdf->SetXY(105, $k[$dem]);
+			    		$dem++;
+			    		$write_show_more = $data_result[$index_data][$i]['show_more']; 
+			    		$pdf->Write(10, $write_show_more);
 			    	}
-
 
 			    	$pdf->SetFont('Arial', 'B', 14);
 			    	$pdf->SetTextColor(0, 0, 0); // Màu đen
