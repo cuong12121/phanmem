@@ -256,7 +256,7 @@
 
 			        	$show_more = $check_combo;
 
-			        	$ar_sku_show[$index][$i][] =  $show_more;
+			        	$ar_sku_show[$index][$i] =  $show_more;
 
 			        }
 			        else {
