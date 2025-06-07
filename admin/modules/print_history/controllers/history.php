@@ -348,7 +348,7 @@
 
 			    			$write_show_more_value = $value.':'.$data_result[$index_data][$i]['quantity'];
 
-			    			$pdf->Write(10, $write_show_more);
+			    			$pdf->Write(10, $write_show_more_value);
 			    			// code...
 			    		}
 
