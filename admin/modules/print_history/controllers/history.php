@@ -336,15 +336,22 @@
 
 			    	//phần ghi mã sản phẩm khi có combo hoặc số lượng lớn hơn 1
 
-			    	if(!empty($data_result[$index_data][$i]['show_more'])){
+			    	if(!empty($ar_sku_show[$index_data][$i])){
 
+			    		$show_sku = $ar_sku_show[$index_data][$i];
 			    		$pdf->SetFont('Arial', 'B', 14);
 			    		$pdf->SetTextColor(0, 0, 0); // Màu đen
 
-			    		$pdf->SetXY(105, $k[$dem]);
-			    		$dem++;
-			    		$write_show_more = $data_result[$index_data][$i]['show_more']; 
-			    		$pdf->Write(10, $write_show_more);
+			    		for ($z=0; $z < count($show_sku); $z++) { 
+			    			
+			    			$pdf->SetXY(105, $k[$dem]);
+			    			$dem++;
+
+			    			$write_show_more = $ar_sku_show[$index_data][$i][$z].':'.$data_result[$index_data][$i]['quantity'];
+
+			    			$pdf->Write(10, $write_show_more);
+			    		}
+			    		
 			    	}
 
 			    	$pdf->SetFont('Arial', 'B', 14);
