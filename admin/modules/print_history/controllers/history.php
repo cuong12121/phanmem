@@ -275,7 +275,7 @@
 			            'quantity' => $quantity_get,
 			            'sku_full' => $skuFull,
 			            'sku_full_check' => $sku_full_check,
-			            'show_more' => $show_more,
+			            'show_more' => $ar_sku_show,
 
 			        ];
 			    }
