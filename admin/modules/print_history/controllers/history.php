@@ -283,7 +283,7 @@
 
 			echo "<pre>";
 
-			print_r($ar_sku_show);
+			print_r($data_result);
 
 			echo "</pre>";
 
