@@ -217,7 +217,7 @@
 			
 
 			$y = [175, 191, 205, 219, 233, 247];
-			$k = [130, 140, 150, 160];
+			$k = [130, 140, 150, 160, 170];
 
 			foreach ($pages as $index => $page) {
 			    $pageNumber = $index + 1;
@@ -248,14 +248,14 @@
 
 			        
 			        if(!empty($check_combo)){
-			        	$show_combo = $check_combo.':'.$quantity_get; 
+			        	$show_combo = $check_combo; 
 
 			        	$show_more = $show_combo;
 
 			        }
 			        elseif (intval($quantity_get) >1) {
 
-			        	$show_more = $skuShort.':'.$quantity_get;
+			        	$show_more = $skuShort;
 			        }
 			        else{
 			        	$show_more = '';
@@ -333,13 +333,27 @@
 
 			    	if(!empty($data_result[$index_data][$i]['show_more'])){
 
-			    		$pdf->SetFont('Arial', 'B', 11);
+			    		$pdf->SetFont('Arial', 'B', 15);
 			    		$pdf->SetTextColor(0, 0, 0); // Màu đen
 
-			    		$pdf->SetXY(105, $k[$dem]);
-			    		$dem++;
+			    		
 			    		$write_show_more = $data_result[$index_data][$i]['show_more']; 
-			    		$pdf->Write(10, $write_show_more);
+
+			    		$convert_to_array_write_show_more = explode(',', $write_show_more);
+
+			    		foreach ($convert_to_array_write_show_more as  $value) {
+
+			    			$pdf->SetXY(105, $k[$dem]);
+			    			$dem++;
+
+			    			$write_show_more_value = $value.':'.$data_result[$index_data][$i]['quantity'];
+
+			    			$pdf->Write(10, $write_show_more);
+			    			// code...
+			    		}
+
+
+			    		
 			    	}
 
 			    	$pdf->SetFont('Arial', 'B', 14);
