@@ -268,10 +268,7 @@
 			        	}
 			        	
 			        }
-			        else{
-			        	$show_more = '';
-
-			        }
+			        
 
 			        $results[] = [
 			            'sku' => $skuShort,
