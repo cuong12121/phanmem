@@ -249,7 +249,7 @@
 
 			        
 			        if(!empty($check_combo)){
-			        	$show_combo = $check_combo.':'.$quantity_get; 
+			        	$show_combo = $check_combo; 
 
 			        	$show_more = $show_combo;
 
