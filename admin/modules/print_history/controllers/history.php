@@ -248,7 +248,9 @@
 
 			        
 			        if(!empty($check_combo)){
-			        	$show_combo = $check_combo.':'.$quantity_get; 
+
+			        	$show_more = str_replace(',', ",\n", $check_combo);
+			        	$show_more  = $show_more.':'.$quantity_get; 
 
 			        	$show_more = $show_combo;
 
