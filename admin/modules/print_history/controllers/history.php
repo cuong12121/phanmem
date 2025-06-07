@@ -252,7 +252,7 @@
 			        	$show_more = str_replace(',', ",\n", $check_combo);
 			        	$show_more  = $show_more.':'.$quantity_get; 
 
-			        	$show_more = $show_combo;
+			        	
 
 			        }
 			        elseif (intval($quantity_get) >1) {
