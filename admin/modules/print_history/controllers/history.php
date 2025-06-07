@@ -264,7 +264,7 @@
 
 			        		
 
-			        		$ar_sku_show[$index] =  [$skuShort.':'.$quantity_get];
+			        		$ar_sku_show[$index] =  [$skuShort];
 			        	}
 			        	
 			        }
@@ -275,7 +275,7 @@
 			            'quantity' => $quantity_get,
 			            'sku_full' => $skuFull,
 			            'sku_full_check' => $sku_full_check,
-			            'show_more' => $ar_sku_show,
+			           
 
 			        ];
 			    }
@@ -286,7 +286,7 @@
 
 			echo "<pre>";
 
-			print_r($data_result);
+			print_r($ar_sku_show);
 
 			echo "</pre>";
 
