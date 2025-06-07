@@ -281,22 +281,7 @@
 			}
 			$model->calculateCumulativeQuantities($data_result);
 
-			echo "<pre>";
-
-			print_r($data_result);
-
-			echo "</pre>";
-
-			die;
-
 			$data_result = $model->show_list_array_run($data_result);
-
-			// check là combo và số lượng sản phẩm lớn hơn 2 thì note mã sản phẩm với số lượng sản phẩm
-
-
-			// $produt-> type_id == 9 && $produt-> code_combo && $produt-> code_combo !=''
-
-			// Đang làm
 			
 			$pdf = new Fpdi();
 
