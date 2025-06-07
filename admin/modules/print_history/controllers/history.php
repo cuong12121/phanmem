@@ -278,6 +278,14 @@
 			}
 			$model->calculateCumulativeQuantities($data_result);
 
+			echo "<pre>";
+
+			print_r($data_result);
+
+			echo "</pre>";
+
+			die;
+
 			// echo "<pre>";
 
 			// print_r($data_result);
