@@ -264,7 +264,7 @@
 
 			        		
 
-			        		$ar_sku_show[$index][$i][] =  [$skuShort.':'.$quantity_get];
+			        		$ar_sku_show[$index] =  [$skuShort.':'.$quantity_get];
 			        	}
 			        	
 			        }
