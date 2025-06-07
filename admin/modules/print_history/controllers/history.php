@@ -218,6 +218,8 @@
 
 			$y = [175, 191, 205, 219, 233, 247];
 			$k = [130, 140, 150, 160];
+			$ar_sku_show =[];
+
 
 			foreach ($pages as $index => $page) {
 			    $pageNumber = $index + 1;
@@ -237,6 +239,8 @@
 			    // Đảm bảo số lượng SKU và số lượng khớp nhau về thứ tự
 			    $count = min(count($matchesSku[0]), count($matchesQty[1]));
 			    for ($i = 0; $i < $count; $i++) {
+
+
 			    	
 			        $skuFull = $matchesSku[0][$i];
 			        $skuShort = substr($skuFull, 0, 7); // Lấy 4 ký tự đầu của SKU
@@ -249,14 +253,20 @@
 
 			        
 			        if(!empty($check_combo)){
-			        	$show_combo = $check_combo; 
 
-			        	$show_more = $show_combo;
+			        	$show_more = $check_combo;
+
+			        	$ar_sku_show[$index][$i][] =  $show_more;
 
 			        }
-			        elseif (intval($quantity_get) >1) {
+			        else {
+			        	if (intval($quantity_get) >1){
 
-			        	$show_more = $skuShort.':'.$quantity_get;
+			        		
+
+			        		$ar_sku_show[$index][$i][] =  [$skuShort.':'.$quantity_get];
+			        	}
+			        	
 			        }
 			        else{
 			        	$show_more = '';
@@ -269,7 +279,6 @@
 			            'sku_full' => $skuFull,
 			            'sku_full_check' => $sku_full_check,
 			            'show_more' => $show_more,
-			            'i'=>$i,
 
 			        ];
 			    }
