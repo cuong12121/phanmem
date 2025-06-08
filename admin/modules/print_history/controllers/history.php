@@ -344,7 +344,7 @@
 
 			    		$show_sku = $ar_sku_show[$index_data][$i];
 
-			    		$show_sku_merge = array_merge(...$show_sku);
+			    		$show_sku_merge = array_merge($show_sku);
 
 					    // Gán lại thành một mảng duy nhất chứa mảng đã gộp
 					    $show_sku_merges = [ $show_sku_merge ];
