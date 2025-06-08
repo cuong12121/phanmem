@@ -256,12 +256,12 @@
 
 			        	$show_more = $check_combo;
 
-			        	$ar_sku_show[$index][] =  $show_more;
+			        	$ar_sku_show[$index][$i] =  $show_more;
 
 			        }
 			        
 			        if (intval($quantity_get) >1){
-			        	$ar_sku_show[$index][] =  $skuShort;
+			        	$ar_sku_show[$index][$i] =  $skuShort;
 			        }
 			        	
 			        
