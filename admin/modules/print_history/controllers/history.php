@@ -340,15 +340,9 @@
 
 			    	//phần ghi mã sản phẩm khi có combo 
 
-			    	if(!empty($ar_sku_show[$index_data][$i])){
+			    	if(!empty($ar_sku_show[$index_data][$i])  && count($ar_sku_show[$index_data][$i])>0){
 
 			    		$show_sku = $ar_sku_show[$index_data][$i];
-
-			    		echo "<pre>";
-			    		print_r($show_sku);
-			    		echo "</pre>";
-
-			    		die;
 
 			    		$show_sku_merge = array_merge(...$show_sku);
 
