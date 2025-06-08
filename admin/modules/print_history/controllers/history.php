@@ -465,6 +465,17 @@
 		return $check;
 	}
 
+	function view_excel_nhat($controle,$id){
+		$model = $controle -> model;
+		$data = $model->get_record('id = ' .$id,'fs_order_uploads_history_prints','id,file_xlsx');
+		$link = URL_ROOT.$data-> file_xlsx;
+
+		$check = !empty($data-> file_xlsx)?'<a target="_blink" href="' . $link . '">Xem file</a>':'';
+
+		
+		return $check;
+	}
+
 
 	function view_status($controle,$id){
 		$model = $controle -> model;
