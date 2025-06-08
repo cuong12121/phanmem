@@ -428,7 +428,7 @@
 			$query = "SELECT  id, warehouse_id,platform_id FROM fs_order_uploads_history_prints WHERE platform_id = 2 AND warehouse_id IN (1, 2)  AND house_id = $house_id ORDER BY id DESC LIMIT 2";
 			$values = $db->getObjectList($query);
 			FSFactory::include_class('excel','excel');
-			$excel = FSExcel();
+			
 
 			foreach ($values as $key => $value) { 
 
@@ -436,6 +436,7 @@
 
 				$sql = $db->query($query);
 				$list = $db->getObjectList();
+				$excel = FSExcel();
 
 				$filename = 'file_nhat_'.$value->warehouse_id.'_'.$value->platform_id.'_'.$dates_fix.'_'.$house_id;
 
