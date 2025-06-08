@@ -436,7 +436,7 @@
 				$list = $db->getObjectList();
 
 				echo"<pre>";
-				print_r($query);
+				print_r($list);
 				echo"</pre>";
 
 				die;
