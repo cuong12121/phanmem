@@ -363,10 +363,6 @@
 
 			    		$show_skus = $ar_sku_quantity_on_2[$index_data][$i];
 
-			    		echo "<pre>";
-			    		print_r($show_skus);
-			    		echo "</pre>";
-
 
 			    		$pdf->SetFont('Arial', 'B', 14);
 			    		$pdf->SetTextColor(0, 0, 0); // Màu đen
@@ -382,7 +378,7 @@
 			    		}
 			    		
 			    	}
-			    	die;
+			    	
 
 			    	$pdf->SetFont('Arial', 'B', 14);
 			    	$pdf->SetTextColor(0, 0, 0); // Màu đen
