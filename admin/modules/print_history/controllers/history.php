@@ -370,7 +370,7 @@
 			    			$pdf->SetXY(105, $kz[$y]);
 			    			
 
-			    			$write_show_more = $ar_sku_quantity_on_2[$index_data][$i][$z].':'.$data_result[$index_data][$i]['quantity'];
+			    			$write_show_more = $ar_sku_quantity_on_2[$index_data][$i][$y].':'.$data_result[$index_data][$i]['quantity'];
 
 			    			$pdf->Write(10, $write_show_more);
 			    		}
