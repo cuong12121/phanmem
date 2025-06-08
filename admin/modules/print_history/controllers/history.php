@@ -367,10 +367,10 @@
 
 			    		for ($yx=0; $yx < count($show_skus); $yx++) { 
 			    			
-			    			$pdf->SetXY(105, $kz[$y]);
+			    			$pdf->SetXY(105, $kz[$yx]);
 			    			
 
-			    			$write_show_more = $show_skus[$y].':'.$data_result[$index_data][$i]['quantity'];
+			    			$write_show_more = $show_skus[$yx].':'.$data_result[$index_data][$i]['quantity'];
 
 			    			$pdf->Write(10, $write_show_more);
 			    		}
