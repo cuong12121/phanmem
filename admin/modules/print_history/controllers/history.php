@@ -365,7 +365,7 @@
 			    		$pdf->SetFont('Arial', 'B', 14);
 			    		$pdf->SetTextColor(0, 0, 0); // Màu đen
 
-			    		for ($y=0; $y < count($show_skus); $y++) { 
+			    		for ($yx=0; $yx < count($show_skus); $yx++) { 
 			    			
 			    			$pdf->SetXY(105, $kz[$y]);
 			    			
