@@ -295,15 +295,15 @@
 			 
 			}
 
-			echo"<pre>";
+			// echo"<pre>";
 
-			print_r($ar_sku_quantity_on_2);
+			// print_r($ar_sku_quantity_on_2);
 
-			echo"</pre>";
+			// echo"</pre>";
 
 
 			
-			die;
+			// die;
 			$model->calculateCumulativeQuantities($data_result);
 
 			$data_result = $model->show_list_array_run($data_result);
