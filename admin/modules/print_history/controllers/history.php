@@ -282,17 +282,12 @@
 
 			echo"<pre>";
 
-			print_r($url_file);
+			print_r($ar_sku_show);
 
 			echo"</pre>";
 
 
-			echo"<pre>";
-
-			print_r($data_result);
-
-			echo"</pre>";
-
+			
 			die;
 			$model->calculateCumulativeQuantities($data_result);
 
