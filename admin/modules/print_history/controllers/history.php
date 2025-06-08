@@ -295,11 +295,7 @@
 			 
 			}
 
-			echo "<pre>";
-			print_r($ar_sku_show);
-			echo "</pre>";
-
-			die;
+			
 
 			
 			$model->calculateCumulativeQuantities($data_result);
@@ -340,19 +336,21 @@
 			    $pdf->SetTextColor(0, 0, 0); // Màu đen
 
 			    for ($i = 0; $i < count($data_all); $i++) {
-			    	$dem =0;
+			    	$demss =0;
 
 			    	//phần ghi mã sản phẩm khi có combo 
 
 			    	if(!empty($ar_sku_show[$index_data][$i])){
 
 			    		$show_sku = $ar_sku_show[$index_data][$i];
+
+
 			    		$pdf->SetFont('Arial', 'B', 14);
 			    		$pdf->SetTextColor(0, 0, 0); // Màu đen
 
 			    		for ($z=0; $z < count($show_sku); $z++) { 
-			    			
-			    			$pdf->SetXY(105, $k[$z]);
+			    			$demss++;
+			    			$pdf->SetXY(105, $k[$demss]);
 			    			
 
 			    			$write_show_more = $ar_sku_show[$index_data][$i][$z].':'.$data_result[$index_data][$i]['quantity'];
