@@ -261,7 +261,9 @@
 			        }
 			        
 			        if (intval($quantity_get) >1){
-			        	$ar_sku_show[$index][$i][] =  $skuShort;
+
+			        	array_push($ar_sku_show[$index][$i], $skuShort);
+			        	
 			        }
 			        	
 			        
