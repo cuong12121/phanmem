@@ -588,7 +588,9 @@
 
 					$dir_file = str_replace('/www/wwwroot/'.DOMAIN, '', $link_excel);
 
-					$sql= "UPDATE fs_order_uploads_history_prints SET file_xlsx = '$dir_file'  WHERE `id`=".$id_print;
+					$id_xlsx = $value->id;
+
+					$sql= "UPDATE fs_order_uploads_history_prints SET file_xlsx = '$dir_file'  WHERE `id`=".$id_xlsx;
 
 					$db->query($sql);
 
