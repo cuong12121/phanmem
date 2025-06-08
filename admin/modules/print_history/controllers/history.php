@@ -266,6 +266,8 @@
 			        if (intval($quantity_get) >1){
 
 			        	array_push($check_sl, $skuShort);
+
+			        	$ar_sku_show[$index][$i] =$check_sl;
 			        	
 			        }
 			        	
