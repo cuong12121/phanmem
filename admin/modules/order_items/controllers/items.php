@@ -439,6 +439,10 @@
 
 				if(!empty($list)){
 
+					// printr($arr_total_count);
+					FSFactory::include_class('excel','excel');
+					$excel = FSExcel();
+
 					//tính tổng
 					$arr_total_count = array();
 					foreach($list as $item) {
@@ -450,9 +454,7 @@
 						}
 					}
 					$list = $arr_total_count;
-					// printr($arr_total_count);
-					FSFactory::include_class('excel','excel');
-					$excel = FSExcel();
+					
 					$excel->set_params(array('out_put_xls'=>'export/excel/order_item/'.$filename.'.xlsx','out_put_xlsx'=>'export/excel/order_item/'.$filename.'.xlsx'));
 					$style_header = array(
 						'fill' => array(
