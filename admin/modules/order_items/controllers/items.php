@@ -430,7 +430,7 @@
 
 			foreach ($values as $key => $value) { 
 
-				$query = 'SELECT id,count,product_id,sku,product_name,`date`,is_print,house_id,warehouse_id,platform_id,shipping_unit_id FROM fs_order_uploads_detail AS a where 1=1 AND is_print = 1    AND a.date =  "$date"  AND a.house_id =  "$house_id"  AND a.warehouse_id =  "$value->warehouse_id"  AND a.platform_id =  "$value->platform_id"  AND warehouse_id IN (1,2,4,6,7) ORDER BY sku_fisrt ASC,ABS(sku_fisrt),sku_last ASC,ABS(sku_last),color ASC,ABS(color),size ASC,ABS(size),created_time DESC , id DESC';
+				$query = "SELECT id,count,product_id,sku,product_name,`date`,is_print,house_id,warehouse_id,platform_id,shipping_unit_id FROM fs_order_uploads_detail AS a where 1=1 AND is_print = 1    AND a.date =  '$date'  AND a.house_id =  '$house_id'  AND a.warehouse_id =  '$value->warehouse_id'  AND a.platform_id =  '$value->platform_id'  AND warehouse_id IN (1,2,4,6,7) ORDER BY sku_fisrt ASC,ABS(sku_fisrt),sku_last ASC,ABS(sku_last),color ASC,ABS(color),size ASC,ABS(size),created_time DESC , id DESC";
 
 				$sql = $db->query($query);
 				$list = $db->getObjectList();
