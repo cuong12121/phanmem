@@ -456,7 +456,7 @@
 					}
 					$list = $arr_total_count;
 					
-					$excel->set_params(array('out_put_xls'=>'export/excel/order_item/'.$filename.'.xlsx','out_put_xlsx'=>'export/excel/order_item/'.$filename.'.xlsx'));
+					
 					$style_header = array(
 						'fill' => array(
 							'type' => PHPExcel_Style_Fill::FILL_SOLID,
