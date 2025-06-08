@@ -219,7 +219,7 @@
 			$y = [175, 191, 205, 219, 233, 247];
 			$k = [130, 140, 150, 160];
 			$ar_sku_show =[];
-			$dems =0;
+			
 
 
 
@@ -244,7 +244,7 @@
 			    $count = min(count($matchesSku[0]), count($matchesQty[1]));
 			    for ($i = 0; $i < $count; $i++) {
 
-
+			    	$dems =0;
 			    	
 			        $skuFull = $matchesSku[0][$i];
 			        $skuShort = substr($skuFull, 0, 7); // Lấy 4 ký tự đầu của SKU
@@ -265,10 +265,12 @@
 			        }
 			        
 			        if (intval($quantity_get) >1){
-
+			        	
 			        	array_push($check_sl, $skuShort);
 
-			        	$ar_sku_show[$index] =$check_sl;
+			        	$ar_sku_show[$index][$dems] =$check_sl;
+
+			        	$dems++;
 			        	
 			        }
 			        	
