@@ -282,6 +282,13 @@
 
 			echo"<pre>";
 
+			print_r($url_file);
+
+			echo"</pre>";
+
+
+			echo"<pre>";
+
 			print_r($data_result);
 
 			echo"</pre>";
