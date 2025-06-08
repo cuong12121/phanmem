@@ -217,7 +217,9 @@
 			
 
 			$y = [175, 191, 205, 219, 233, 247];
-			$k = [130, 140, 150, 160];
+			$k = [130, 140];
+
+			$kz = [150, 160];
 			$ar_sku_show =[];
 
 			$ar_sku_quantity_on_2 =[];
@@ -268,7 +270,7 @@
 			        
 			        if (intval($quantity_get) >1){
 			        	
-			        	
+
 			        	array_push($check_sl, $skuShort);
 
 			        	$ar_sku_quantity_on_2[$index][$i] =$check_sl;
@@ -342,7 +344,7 @@
 			    for ($i = 0; $i < count($data_all); $i++) {
 			    	$dem =0;
 
-			    	//phần ghi mã sản phẩm khi có combo hoặc số lượng lớn hơn 1
+			    	//phần ghi mã sản phẩm khi có combo 
 
 			    	if(!empty($ar_sku_show[$index_data][$i])){
 
@@ -352,10 +354,31 @@
 
 			    		for ($z=0; $z < count($show_sku); $z++) { 
 			    			
-			    			$pdf->SetXY(105, $k[$dem]);
-			    			$dem++;
+			    			$pdf->SetXY(105, $k[$z]);
+			    			
 
 			    			$write_show_more = $ar_sku_show[$index_data][$i][$z].':'.$data_result[$index_data][$i]['quantity'];
+
+			    			$pdf->Write(10, $write_show_more);
+			    		}
+			    		
+			    	}
+
+			    	// phần ghi sku sản phẩm có sl >1
+
+
+			    	if(!empty($ar_sku_quantity_on_2[$index_data][$i])){
+
+			    		$show_sku = $ar_sku_quantity_on_2[$index_data][$i];
+			    		$pdf->SetFont('Arial', 'B', 14);
+			    		$pdf->SetTextColor(0, 0, 0); // Màu đen
+
+			    		for ($y=0; $y < count($show_sku); $y++) { 
+			    			
+			    			$pdf->SetXY(105, $kz[$y]);
+			    			
+
+			    			$write_show_more = $ar_sku_quantity_on_2[$index_data][$i][$z].':'.$data_result[$index_data][$i]['quantity'];
 
 			    			$pdf->Write(10, $write_show_more);
 			    		}
