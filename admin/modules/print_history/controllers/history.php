@@ -221,7 +221,10 @@
 			$ar_sku_show =[];
 
 
+
 			foreach ($pages as $index => $page) {
+
+				$check_sl = [];
 			    $pageNumber = $index + 1;
 			    $text = $page->getText();
 			    $texts = preg_replace('/\r?\n/', '', $text);
@@ -262,7 +265,7 @@
 			        
 			        if (intval($quantity_get) >1){
 
-			        	array_push($ar_sku_show[$index][$i], $skuShort);
+			        	array_push($check_sl, $skuShort);
 			        	
 			        }
 			        	
