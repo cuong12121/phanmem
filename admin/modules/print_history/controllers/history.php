@@ -336,7 +336,7 @@
 			    $pdf->SetTextColor(0, 0, 0); // Màu đen
 
 			    for ($i = 0; $i < count($data_all); $i++) {
-			    	$demss =0;
+			    	$dem =0;
 
 			    	//phần ghi mã sản phẩm khi có combo 
 
@@ -344,13 +344,18 @@
 
 			    		$show_sku = $ar_sku_show[$index_data][$i];
 
+			    		$show_sku_merge = array_merge(...$show_sku);
+
+					    // Gán lại thành một mảng duy nhất chứa mảng đã gộp
+					    $show_sku_merges = [ $show_sku_merge ];
+
 
 			    		$pdf->SetFont('Arial', 'B', 14);
 			    		$pdf->SetTextColor(0, 0, 0); // Màu đen
 
-			    		for ($z=0; $z < count($show_sku); $z++) { 
-			    			$demss++;
-			    			$pdf->SetXY(105, $k[$demss]);
+			    		for ($z=0; $z < count($show_sku_merges); $z++) { 
+			    			
+			    			$pdf->SetXY(105, $k[$z]);
 			    			
 
 			    			$write_show_more = $ar_sku_show[$index_data][$i][$z].':'.$data_result[$index_data][$i]['quantity'];
