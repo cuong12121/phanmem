@@ -224,7 +224,7 @@
 
 			foreach ($pages as $index => $page) {
 
-				$check_sl = [];
+				
 			    $pageNumber = $index + 1;
 			    $text = $page->getText();
 			    $texts = preg_replace('/\r?\n/', '', $text);
@@ -243,7 +243,7 @@
 			    $count = min(count($matchesSku[0]), count($matchesQty[1]));
 			    for ($i = 0; $i < $count; $i++) {
 
-
+			    	$check_sl = [];
 			    	
 			        $skuFull = $matchesSku[0][$i];
 			        $skuShort = substr($skuFull, 0, 7); // Lấy 4 ký tự đầu của SKU
