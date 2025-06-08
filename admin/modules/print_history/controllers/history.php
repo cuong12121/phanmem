@@ -285,10 +285,23 @@
 			 
 			}
 
+			foreach ($ar_sku_show as $key => $group) {
+			    // Nếu là mảng chứa nhiều mảng con, thì gộp lại
+			    $merged = [];
+			    foreach ($group as $subArray) {
+			        $merged = array_merge($merged, $subArray);
+			    }
+			    // Gán lại mảng đã gộp dưới dạng một mảng 2 chiều như cũ
+			    $ar_sku_show[$key] = [ $merged ];
+			}
+
 			echo "<pre>";
 			print_r($ar_sku_show);
 			echo "</pre>";
 			die;
+
+
+
 			// $show_sku_merge = array_merge($show_sku);
 
 			// 		    // Gán lại thành một mảng duy nhất chứa mảng đã gộp
