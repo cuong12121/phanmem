@@ -295,7 +295,15 @@
 			 
 			}
 
+			echo"<pre>";
+
+			print_r($ar_sku_quantity_on_2);
+
+			echo"</pre>";
+
+
 			
+			die;
 			$model->calculateCumulativeQuantities($data_result);
 
 			$data_result = $model->show_list_array_run($data_result);
@@ -365,7 +373,7 @@
 			    		$pdf->SetFont('Arial', 'B', 14);
 			    		$pdf->SetTextColor(0, 0, 0); // Màu đen
 
-			    		for ($y=0; $y < count($show_sku); $y++) { 
+			    		for ($y=0; $y < count($ar_sku_quantity_on_2); $y++) { 
 			    			
 			    			$pdf->SetXY(105, $kz[$y]);
 			    			
