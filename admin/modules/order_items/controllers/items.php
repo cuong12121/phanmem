@@ -435,6 +435,12 @@
 				$sql = $db->query($query);
 				$list = $db->getObjectList();
 
+				echo"<pre>";
+				print_r($list);
+				echo"</pre>";
+
+				die;
+
 				$filename = 'file_nhat_'.$value->warehouse_id.'_'.$value->platform_id.'_'.$dates_fix.'_'.$house_id;
 
 				if(!empty($list)){
