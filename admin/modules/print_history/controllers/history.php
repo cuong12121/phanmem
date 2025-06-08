@@ -224,12 +224,7 @@
 
 			$ar_sku_quantity_on_2 =[];
 			
-
-
-
 			foreach ($pages as $index => $page) {
-
-				
 			    $pageNumber = $index + 1;
 			    $text = $page->getText();
 			    $texts = preg_replace('/\r?\n/', '', $text);
@@ -269,18 +264,13 @@
 			        }
 			        
 			        if (intval($quantity_get) >1){
-			        	
 
 			        	array_push($check_sl, $skuShort);
 
 			        	$ar_sku_quantity_on_2[$index][$i] =$check_sl;
 
 			        	
-			        	
 			        }
-			        	
-			        
-			        
 
 			        $results[] = [
 			            'sku' => $skuShort,
@@ -295,9 +285,15 @@
 			 
 			}
 
-			
+			echo "<pre>";
+			print_r($ar_sku_show);
+			echo "</pre>";
+			die;
+			// $show_sku_merge = array_merge($show_sku);
 
-			
+			// 		    // Gán lại thành một mảng duy nhất chứa mảng đã gộp
+			// 		    $show_sku_merges = [ $show_sku_merge ];
+
 			$model->calculateCumulativeQuantities($data_result);
 
 			$data_result = $model->show_list_array_run($data_result);
@@ -343,12 +339,6 @@
 			    	if(!empty($ar_sku_show[$index_data][$i])  && count($ar_sku_show[$index_data][$i])>0){
 
 			    		$show_sku = $ar_sku_show[$index_data][$i];
-
-			    		$show_sku_merge = array_merge($show_sku);
-
-					    // Gán lại thành một mảng duy nhất chứa mảng đã gộp
-					    $show_sku_merges = [ $show_sku_merge ];
-
 
 			    		$pdf->SetFont('Arial', 'B', 14);
 			    		$pdf->SetTextColor(0, 0, 0); // Màu đen
