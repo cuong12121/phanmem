@@ -309,11 +309,11 @@
 
 			$data_result = $model->show_list_array_run($data_result);
 
-			echo "<pre>";
-			print_r($data_result);
-			echo "<pre>";
+			// echo "<pre>";
+			// print_r($data_result);
+			// echo "<pre>";
 
-			die;
+			// die;
 			
 			$pdf = new Fpdi();
 
@@ -383,15 +383,18 @@
 		    		//phần ghi mã sản phẩm khi có số sản phẩm lớn hơn 2
 		    		if(count($data_all)>1){
 
-		    			for ($zz=0; $zz < count($data_all); $zz++) { 
+		    			
+
+		    				if($index_data==152){
 		    				
-		    				// $dem = $data_result[$index_data][$i][$zz]['count_show_more'];
+			    				$dem = $data_result[$index_data][$i]['count_show_more'];
 
-		    				echo "<pre>";
-							print_r($data_result[$index_data]);
-							echo "<pre>";
-
-							die;
+			    				echo "<pre>";
+								print_r($dem);
+								echo "<pre>";
+								die;
+							}
+							
 
 		    				$pdf->SetFont('Arial', 'B', 14);
 					    	$pdf->SetTextColor(0, 0, 0); // Màu đen
@@ -401,8 +404,7 @@
 
 					        $pdf->Write(10, $write_show_more_pd);
 
-		    			}
-
+		    			
 		    			
 		    		}
 			    	
