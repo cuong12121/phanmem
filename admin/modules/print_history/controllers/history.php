@@ -284,9 +284,9 @@
 			 
 			}
 
-			echo "<pre>";
-			print_r($data_result);
-			echo "<pre>";
+			// echo "<pre>";
+			// print_r($data_result);
+			// echo "<pre>";
 
 			die;
 
@@ -380,6 +380,12 @@
 		    			for ($zz=0; $zz < count($data_all); $zz++) { 
 		    				
 		    				$dem = $data_result[$index_data][$i][$zz]['count_show_more'];
+
+		    				echo "<pre>";
+							print_r($dem);
+							echo "<pre>";
+
+							die;
 
 		    				$pdf->SetFont('Arial', 'B', 14);
 					    	$pdf->SetTextColor(0, 0, 0); // Màu đen
