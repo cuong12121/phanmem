@@ -337,8 +337,10 @@
 			    
 			    for ($i = 0; $i < count($data_all); $i++) {
 			    	
-			    	$dem = !empty($ar_sku_show[$index_data][$i])?count($ar_sku_show[$index_data][$i]):0;
+			    	
 			    	//phần ghi mã sản phẩm khi có combo 
+
+			    	$ar_dem_combo =[];
 
 			    	if(!empty($ar_sku_show[$index_data][$i])  && count($ar_sku_show[$index_data][$i])>0){
 
@@ -348,6 +350,8 @@
 			    		$pdf->SetTextColor(0, 0, 0); // Màu đen
 
 			    		for ($z=0; $z < count($show_sku); $z++) { 
+
+			    			array_push($ar_dem_combo, $z);
 			    			
 			    			$pdf->SetXY(105, $k[$z]);
 			    			
@@ -359,7 +363,9 @@
 			    		
 			    	}
 			    	else{
-			    		$dem++;
+
+			    		$dem = count($ar_dem_combo);
+			    		
 			    		//phần ghi mã sản phẩm khi có số sản phẩm lớn hơn 2
 			    		if(count($data_all)>1){
 
