@@ -390,7 +390,7 @@
 			    				
 
 			    				echo "<pre>";
-								print_r($dem);
+								print_r($dem+$i);
 								echo "<pre>";
 								die;
 							}
