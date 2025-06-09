@@ -363,7 +363,7 @@
 			    	}
 			    	
 
-		    		$dem = count($ar_sku_show[$index_data][$i]);
+		    		$dem = !empty($ar_sku_show[$index_data][$i])?count($ar_sku_show[$index_data][$i]):0;
 
 		    		
 		    		
