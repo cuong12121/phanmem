@@ -405,207 +405,208 @@
 
 		function showTongNgayFileNhat()
 		{
-			global $db;
-
 			$baseDir =  PATH_BASE.'admin/export/excel/order_item/';
 
 			$date = date('Y-m-d');
 
 			$dates_fix = date('d_m_y');
 
+			$warehouse_id = 1;
 
-			$H = date('G');
-			$M = date('i');
+			$platform_id = 2;
 
-	        if ($H < 13) {
-			    $house_id = 13;
-			} elseif (($H > 13 && $H < 14) ||($H == 14 && $M < 30) ) {
-			    $house_id = 18;
-			} else {
-			    $house_id = 15;
-			} 
+			$house_id = 13;
 
-			$query = "SELECT  id, warehouse_id,platform_id FROM fs_order_uploads_history_prints WHERE platform_id = 2 AND warehouse_id IN (1, 2)  AND house_id = $house_id ORDER BY id DESC LIMIT 2";
-			$values = $db->getObjectList($query);
-			FSFactory::include_class('excel','excel');
-			// $excel = FSExcel();
-			
+			$filename = 'file_nhat_'.$warehouse_id .'_'.$platform_id.'_'.$dates_fix.'_'.$house_id;
 
-			// foreach ($values as $key => $value) { 
+			global $db;
 
-			// 	$query = "SELECT id,count,product_id,sku,product_name,`date`,is_print,house_id,warehouse_id,platform_id,shipping_unit_id FROM fs_order_uploads_detail AS a where 1=1 AND is_print = 1    AND a.date =  '$date'  AND a.house_id =  '$house_id'  AND a.warehouse_id =  '$value->warehouse_id'  AND a.platform_id =  '$value->platform_id'  AND warehouse_id IN (1,2,4,6,7) ORDER BY sku_fisrt ASC,ABS(sku_fisrt),sku_last ASC,ABS(sku_last),color ASC,ABS(color),size ASC,ABS(size),created_time DESC , id DESC";
+			$query = "SELECT id,count,product_id,sku,product_name,`date`,is_print,house_id,warehouse_id,platform_id,shipping_unit_id FROM fs_order_uploads_detail AS a where 1=1 AND is_print = 1    AND a.date =  '$date'  AND a.house_id =  '$house_id'  AND a.warehouse_id =  '$warehouse_id'  AND a.platform_id =  "$platform_id"  AND warehouse_id IN (1,2,4,6,7) ORDER BY sku_fisrt ASC,ABS(sku_fisrt),sku_last ASC,ABS(sku_last),color ASC,ABS(color),size ASC,ABS(size),created_time DESC , id DESC";
 
-			// 	$sql = $db->query($query);
-			// 	$list = $db->getObjectList();
-			// }	
+			$sql = $db->query($query);
 
-			// $filename = 'file_nhat_'.$value->warehouse_id.'_'.$value->platform_id.'_'.$dates_fix.'_'.$house_id;
+			$list = $db->getObjectList();
 
-			// if(!empty($list)){
+			$querys = "SELECT  id FROM fs_order_uploads_history_prints WHERE platform_id = '$platform_id' AND warehouse_id = '$warehouse_id' AND house_id = $house_id ORDER BY id DESC";
 
-			// 	// printr($arr_total_count);
-				
+			$sqls = $db->query($querys);
 
-			// 	//tính tổng
-			// 	$arr_total_count = array();
-			// 	foreach($list as $item) {
-			// 		$item->sku = strtoupper($item->sku);
-			// 		if(empty($arr_total_count[$item->sku])){
-			// 			$arr_total_count[$item->sku] = $item;
-			// 		}else{
-			// 			$arr_total_count[$item->sku]->count = $arr_total_count[$item->sku]->count + $item->count;
-			// 		}
-			// 	}
-			// 	$list = $arr_total_count;
-				
-				
-			// 	$style_header = array(
-			// 		'fill' => array(
-			// 			'type' => PHPExcel_Style_Fill::FILL_SOLID,
-			// 			'color' => array('rgb'=>'fff'),
-			// 		),
-			// 		'font' => array(
-			// 			'bold' => true,
-			// 		)
-			// 	);
-			// 	$style_header1 = array(
-			// 		'font' => array(
-			// 			'bold' => true,
-			// 		)
-			// 	);
+			$id_xlsx = $db->getResult();
 
-			// 	$excel->obj_php_excel->getActiveSheet()->setTitle("Tổng In");
-			// 	$excel->obj_php_excel->getActiveSheet()->mergeCells('A1:E1');
-			// 	$excel->obj_php_excel->getActiveSheet()->setCellValue ('A1', $filename);
-			// 	$excel->obj_php_excel->getActiveSheet()->getStyle('A1')->getAlignment()->setHorizontal(PHPExcel_Style_Alignment::HORIZONTAL_CENTER);
-
-			// 	$excel->obj_php_excel->getActiveSheet()->getColumnDimension('A')->setWidth(10);
-			// 	$excel->obj_php_excel->getActiveSheet()->getColumnDimension('B')->setWidth(60);
-			// 	$excel->obj_php_excel->getActiveSheet()->getColumnDimension('C')->setWidth(15);
-			// 	$excel->obj_php_excel->getActiveSheet()->getColumnDimension('D')->setWidth(15);
-			// 	$excel->obj_php_excel->getActiveSheet()->getColumnDimension('E')->setWidth(15);
-		
-			// 	$excel->obj_php_excel->getActiveSheet()->setCellValue('A2', 'Mã');
-			// 	$excel->obj_php_excel->getActiveSheet()->setCellValue('B2', 'Tên sản phẩm');
-			// 	$excel->obj_php_excel->getActiveSheet()->setCellValue('C2', 'Tổng đơn');
-			// 	$excel->obj_php_excel->getActiveSheet()->setCellValue('D2', 'Thực xuất');
-			// 	$excel->obj_php_excel->getActiveSheet()->setCellValue('E2', 'NV đóng gói');
-			// 	// printr($list);
-			// 	foreach ($list as $item){
-			// 		$key = isset($key)?($key+1):3;
-			// 		$excel->obj_php_excel->getActiveSheet()->setCellValue('A'.$key, $item->sku);
-			// 		$excel->obj_php_excel->getActiveSheet()->setCellValue('B'.$key, $item->product_name);
-			// 		$excel->obj_php_excel->getActiveSheet()->setCellValue('C'.$key, $item->count);
-			// 		$excel->obj_php_excel->getActiveSheet()->setCellValue('D'.$key,'');
-			// 		$excel->obj_php_excel->getActiveSheet()->setCellValue('E'.$key, '');
-			// 	}
-
-				
-			// 	$excel->obj_php_excel->getActiveSheet()->getRowDimension(1)->setRowHeight(20);
-			// 	$excel->obj_php_excel->getActiveSheet()->getStyle('A1')->getFont()->setSize(12);
-			// 	$excel->obj_php_excel->getActiveSheet()->getStyle('A1')->getFont()->setName('Arial');
-			// 	$excel->obj_php_excel->getActiveSheet()->getStyle('A1')->applyFromArray( $style_header );
-			// 	$excel->obj_php_excel->getActiveSheet()->duplicateStyle( $excel->obj_php_excel->getActiveSheet()->getStyle('A1'), 'B1:E1' );
+			echo "$id_xlsx";
 
 
-			// 	// Add new sheet
-
-				
-			//     $total_sheet = $excel->obj_php_excel->createSheet(1);
-			//     $total_sheet->setTitle("Tổng đơn 1");
-
-			//     // echo $_SESSION[$this -> prefix.'filter2'];
-			//     // die;
-			  
-			//     $total_sheet->getColumnDimension('A')->setWidth(20);
-			// 	$total_sheet->getColumnDimension('B')->setWidth(20);
-			// 	$total_sheet->getColumnDimension('C')->setWidth(20);
-			// 	$total_sheet->getColumnDimension('D')->setWidth(20);
-			// 	$total_sheet->getColumnDimension('E')->setWidth(20);
-			// 	$total_sheet->getColumnDimension('F')->setWidth(20);
-			// 	$total_sheet->getColumnDimension('G')->setWidth(25);
-			// 	$total_sheet->getColumnDimension('H')->setWidth(20);
-			// 	$total_sheet->getColumnDimension('I')->setWidth(40);
-			// 	$total_sheet->getColumnDimension('J')->setWidth(40);
-			// 	// $total_sheet->getColumnDimension('K')->setWidth(15);
-			// 	// $total_sheet->getColumnDimension('L')->setWidth(20);
-			// 	// $total_sheet->getColumnDimension('M')->setWidth(20);
-			// 	// $total_sheet->getColumnDimension('N')->setWidth(30);
-			// 	// $total_sheet->getColumnDimension('O')->setWidth(15);
-			// 	$total_sheet->getColumnDimension('K')->setWidth(20);
-			// 	$total_sheet->getColumnDimension('L')->setWidth(30);
-		
-			// 	$total_sheet->setCellValue('A1', 'Tên gian hàng');
-			// 	$total_sheet->setCellValue('B1', 'Số chứng từ');
-			// 	$total_sheet->setCellValue('C1', 'Mã SKU đúng');
-			// 	$total_sheet->setCellValue('D1', 'Mã đơn hàng');
-			// 	$total_sheet->setCellValue('E1', 'Mã kiện hàng');
-			// 	$total_sheet->setCellValue('F1', 'Ngày đặt hàng');
-			// 	$total_sheet->setCellValue('G1', 'Mã vận đơn');
-			// 	$total_sheet->setCellValue('H1', 'Ngày gửi hàng');
-			// 	$total_sheet->setCellValue('I1', 'Tên sản phẩm');
-			// 	$total_sheet->setCellValue('J1', 'SKU phân loại hàng');
-			// 	// $total_sheet->setCellValue('K1', 'Giá gốc');
-			// 	// $total_sheet->setCellValue('L1', 'Người bán trợ giá');
-			// 	// $total_sheet->setCellValue('M1', 'Được Shopee trợ giá');
-			// 	// $total_sheet->setCellValue('N1', 'Tổng số tiền được người bán trợ giá');
-			// 	// $total_sheet->setCellValue('O1', 'Giá ưu đãi');
-			// 	$total_sheet->setCellValue('K1', 'Số lượng');
-			// 	$total_sheet->setCellValue('L1', 'Tổng giá bán (sản phẩm)');
-			// 	$list_detail = $this->get_list_detail_tong();
-				
-			// 	foreach ($list_detail as $item_dt){
-			// 		if($item_dt->ma_kien_hang == 'null'){
-			// 			$item_dt->ma_kien_hang = '';
-			// 		}
-			// 		$key_sheet_2 = isset($key_sheet_2)?($key_sheet_2+1):2;
-			// 		$total_sheet->setCellValue('A'.$key_sheet_2, $item_dt->shop_name);
-			// 		$total_sheet->setCellValue('B'.$key_sheet_2, $item_dt->shop_code);
-			// 		$total_sheet->setCellValue('C'.$key_sheet_2, $item_dt->sku);
-			// 		$total_sheet->setCellValue('D'.$key_sheet_2, $item_dt->code);
-			// 		$total_sheet->setCellValue('E'.$key_sheet_2, $item_dt->ma_kien_hang);
-			// 		$total_sheet->setCellValue('F'.$key_sheet_2, $item_dt->created_at);
-			// 		$total_sheet->setCellValue('G'.$key_sheet_2, $item_dt->tracking_code);
-			// 		$total_sheet->setCellValue('H'.$key_sheet_2, $item_dt->ngay_gui_hang);
-			// 		$total_sheet->setCellValue('I'.$key_sheet_2, $item_dt->product_name);
-			// 		$total_sheet->setCellValue('J'.$key_sheet_2, $item_dt->sku_nhanh);
-			// 		// $total_sheet->setCellValue('K'.$key_sheet_2, $item_dt->gia_goc);
-			// 		// $total_sheet->setCellValue('L'.$key_sheet_2, $item_dt->nguoi_ban_tro_gia);
-			// 		// $total_sheet->setCellValue('M'.$key_sheet_2, $item_dt->shopee_tro_gia);
-			// 		// $total_sheet->setCellValue('N'.$key_sheet_2, $item_dt->tong_so_tien_duoc_nguoi_ban_tro_gia);
-			// 		// $total_sheet->setCellValue('O'.$key_sheet_2, $item_dt->gia_uu_dai);
-			// 		$total_sheet->setCellValue('K'.$key_sheet_2, $item_dt->count);
-			// 		$total_sheet->setCellValue('L'.$key_sheet_2, $item_dt->don_ngoai_tong_gia_tri_don);
-			// 	}
-			// 	$total_sheet->getRowDimension(1)->setRowHeight(20);
-			// 	$total_sheet->getStyle('A1')->getFont()->setSize(12);
-			// 	$total_sheet->getStyle('A1')->getFont()->setName('Arial');
-			// 	$total_sheet->getStyle('A1')->applyFromArray($style_header);
-			// 	$total_sheet->duplicateStyle( $total_sheet->getStyle('A1'),'B1:L1');
-
-			// 	$path = $this->generateDailyPath($baseDir);
-
-				
-			// 	$link_excel = $path.'/'. $filename.'.xlsx';
-			// 	$excel->set_params(array('out_put_xls'=>$link_excel,'out_put_xlsx'=>$link_excel));
-
-			// 	$output = $excel->write_files();
-
-			// 	$dir_file = str_replace('/www/wwwroot/'.DOMAIN, '', $link_excel);
-
-			// 	$id_xlsx = $value->id;
-
-			// 	$sql= "UPDATE fs_order_uploads_history_prints SET file_xlsx = '$dir_file'  WHERE `id`=".$id_xlsx;
-
-			// 	$db->query($sql);
-
-			// }
+			die;
 
 			 
-			echo "thành công";
-			// end xuất file
+
+			
+
+			// phần xuất file excel 
+
+			if(empty($list)){
+				echo 'Không có đơn nào được tìm thấy !';exit;
+			}else {
+
+				//tính tổng
+				$arr_total_count = array();
+				foreach($list as $item) {
+					$item->sku = strtoupper($item->sku);
+					if(empty($arr_total_count[$item->sku])){
+						$arr_total_count[$item->sku] = $item;
+					}else{
+						$arr_total_count[$item->sku]->count = $arr_total_count[$item->sku]->count + $item->count;
+					}
+				}
+				$list = $arr_total_count;
+				// printr($arr_total_count);
+				FSFactory::include_class('excel','excel');
+				$excel = FSExcel();
+				$excel->set_params(array('out_put_xls'=>'export/excel/order_item/'.$filename.'.xlsx','out_put_xlsx'=>'export/excel/order_item/'.$filename.'.xlsx'));
+				$style_header = array(
+					'fill' => array(
+						'type' => PHPExcel_Style_Fill::FILL_SOLID,
+						'color' => array('rgb'=>'fff'),
+					),
+					'font' => array(
+						'bold' => true,
+					)
+				);
+				$style_header1 = array(
+					'font' => array(
+						'bold' => true,
+					)
+				);
+
+				$excel->obj_php_excel->getActiveSheet()->setTitle("Tổng In");
+				$excel->obj_php_excel->getActiveSheet()->mergeCells('A1:E1');
+				$excel->obj_php_excel->getActiveSheet()->setCellValue ('A1', $filename);
+				$excel->obj_php_excel->getActiveSheet()->getStyle('A1')->getAlignment()->setHorizontal(PHPExcel_Style_Alignment::HORIZONTAL_CENTER);
+
+				$excel->obj_php_excel->getActiveSheet()->getColumnDimension('A')->setWidth(10);
+				$excel->obj_php_excel->getActiveSheet()->getColumnDimension('B')->setWidth(60);
+				$excel->obj_php_excel->getActiveSheet()->getColumnDimension('C')->setWidth(15);
+				$excel->obj_php_excel->getActiveSheet()->getColumnDimension('D')->setWidth(15);
+				$excel->obj_php_excel->getActiveSheet()->getColumnDimension('E')->setWidth(15);
+		
+				$excel->obj_php_excel->getActiveSheet()->setCellValue('A2', 'Mã');
+				$excel->obj_php_excel->getActiveSheet()->setCellValue('B2', 'Tên sản phẩm');
+				$excel->obj_php_excel->getActiveSheet()->setCellValue('C2', 'Tổng đơn');
+				$excel->obj_php_excel->getActiveSheet()->setCellValue('D2', 'Thực xuất');
+				$excel->obj_php_excel->getActiveSheet()->setCellValue('E2', 'NV đóng gói');
+				// printr($list);
+				foreach ($list as $item){
+					$key = isset($key)?($key+1):3;
+					$excel->obj_php_excel->getActiveSheet()->setCellValue('A'.$key, $item->sku);
+					$excel->obj_php_excel->getActiveSheet()->setCellValue('B'.$key, $item->product_name);
+					$excel->obj_php_excel->getActiveSheet()->setCellValue('C'.$key, $item->count);
+					$excel->obj_php_excel->getActiveSheet()->setCellValue('D'.$key,'');
+					$excel->obj_php_excel->getActiveSheet()->setCellValue('E'.$key, '');
+				}
+
+				
+				$excel->obj_php_excel->getActiveSheet()->getRowDimension(1)->setRowHeight(20);
+				$excel->obj_php_excel->getActiveSheet()->getStyle('A1')->getFont()->setSize(12);
+				$excel->obj_php_excel->getActiveSheet()->getStyle('A1')->getFont()->setName('Arial');
+				$excel->obj_php_excel->getActiveSheet()->getStyle('A1')->applyFromArray( $style_header );
+				$excel->obj_php_excel->getActiveSheet()->duplicateStyle( $excel->obj_php_excel->getActiveSheet()->getStyle('A1'), 'B1:E1' );
+
+
+				// Add new sheet
+
+				
+			    $total_sheet = $excel->obj_php_excel->createSheet(1);
+			    $total_sheet->setTitle("Tổng đơn 1");
+
+			    // echo $_SESSION[$this -> prefix.'filter2'];
+			    // die;
+			  
+			    $total_sheet->getColumnDimension('A')->setWidth(20);
+				$total_sheet->getColumnDimension('B')->setWidth(20);
+				$total_sheet->getColumnDimension('C')->setWidth(20);
+				$total_sheet->getColumnDimension('D')->setWidth(20);
+				$total_sheet->getColumnDimension('E')->setWidth(20);
+				$total_sheet->getColumnDimension('F')->setWidth(20);
+				$total_sheet->getColumnDimension('G')->setWidth(25);
+				$total_sheet->getColumnDimension('H')->setWidth(20);
+				$total_sheet->getColumnDimension('I')->setWidth(40);
+				$total_sheet->getColumnDimension('J')->setWidth(40);
+				// $total_sheet->getColumnDimension('K')->setWidth(15);
+				// $total_sheet->getColumnDimension('L')->setWidth(20);
+				// $total_sheet->getColumnDimension('M')->setWidth(20);
+				// $total_sheet->getColumnDimension('N')->setWidth(30);
+				// $total_sheet->getColumnDimension('O')->setWidth(15);
+				$total_sheet->getColumnDimension('K')->setWidth(20);
+				$total_sheet->getColumnDimension('L')->setWidth(30);
+		
+				$total_sheet->setCellValue('A1', 'Tên gian hàng');
+				$total_sheet->setCellValue('B1', 'Số chứng từ');
+				$total_sheet->setCellValue('C1', 'Mã SKU đúng');
+				$total_sheet->setCellValue('D1', 'Mã đơn hàng');
+				$total_sheet->setCellValue('E1', 'Mã kiện hàng');
+				$total_sheet->setCellValue('F1', 'Ngày đặt hàng');
+				$total_sheet->setCellValue('G1', 'Mã vận đơn');
+				$total_sheet->setCellValue('H1', 'Ngày gửi hàng');
+				$total_sheet->setCellValue('I1', 'Tên sản phẩm');
+				$total_sheet->setCellValue('J1', 'SKU phân loại hàng');
+				// $total_sheet->setCellValue('K1', 'Giá gốc');
+				// $total_sheet->setCellValue('L1', 'Người bán trợ giá');
+				// $total_sheet->setCellValue('M1', 'Được Shopee trợ giá');
+				// $total_sheet->setCellValue('N1', 'Tổng số tiền được người bán trợ giá');
+				// $total_sheet->setCellValue('O1', 'Giá ưu đãi');
+				$total_sheet->setCellValue('K1', 'Số lượng');
+				$total_sheet->setCellValue('L1', 'Tổng giá bán (sản phẩm)');
+				$list_detail = $this->get_list_detail_tong();
+				
+				foreach ($list_detail as $item_dt){
+					if($item_dt->ma_kien_hang == 'null'){
+						$item_dt->ma_kien_hang = '';
+					}
+					$key_sheet_2 = isset($key_sheet_2)?($key_sheet_2+1):2;
+					$total_sheet->setCellValue('A'.$key_sheet_2, $item_dt->shop_name);
+					$total_sheet->setCellValue('B'.$key_sheet_2, $item_dt->shop_code);
+					$total_sheet->setCellValue('C'.$key_sheet_2, $item_dt->sku);
+					$total_sheet->setCellValue('D'.$key_sheet_2, $item_dt->code);
+					$total_sheet->setCellValue('E'.$key_sheet_2, $item_dt->ma_kien_hang);
+					$total_sheet->setCellValue('F'.$key_sheet_2, $item_dt->created_at);
+					$total_sheet->setCellValue('G'.$key_sheet_2, $item_dt->tracking_code);
+					$total_sheet->setCellValue('H'.$key_sheet_2, $item_dt->ngay_gui_hang);
+					$total_sheet->setCellValue('I'.$key_sheet_2, $item_dt->product_name);
+					$total_sheet->setCellValue('J'.$key_sheet_2, $item_dt->sku_nhanh);
+					// $total_sheet->setCellValue('K'.$key_sheet_2, $item_dt->gia_goc);
+					// $total_sheet->setCellValue('L'.$key_sheet_2, $item_dt->nguoi_ban_tro_gia);
+					// $total_sheet->setCellValue('M'.$key_sheet_2, $item_dt->shopee_tro_gia);
+					// $total_sheet->setCellValue('N'.$key_sheet_2, $item_dt->tong_so_tien_duoc_nguoi_ban_tro_gia);
+					// $total_sheet->setCellValue('O'.$key_sheet_2, $item_dt->gia_uu_dai);
+					$total_sheet->setCellValue('K'.$key_sheet_2, $item_dt->count);
+					$total_sheet->setCellValue('L'.$key_sheet_2, $item_dt->don_ngoai_tong_gia_tri_don);
+				}
+				$total_sheet->getRowDimension(1)->setRowHeight(20);
+				$total_sheet->getStyle('A1')->getFont()->setSize(12);
+				$total_sheet->getStyle('A1')->getFont()->setName('Arial');
+				$total_sheet->getStyle('A1')->applyFromArray($style_header);
+				$total_sheet->duplicateStyle( $total_sheet->getStyle('A1'),'B1:L1');
+
+				$path = $this->generateDailyPath($baseDir);
+
+				$link_excel = $path.'/'. $filename.'.xlsx';
+
+				$excel->set_params(array('out_put_xls'=>$link_excel,'out_put_xlsx'=>$link_excel));
+
+				$output = $excel->write_files();
+
+				$dir_file = str_replace('/www/wwwroot/'.DOMAIN, '', $link_excel);
+
+				
+				$sql= "UPDATE fs_order_uploads_history_prints SET file_xlsx = '$dir_file'  WHERE `id`=".$id_xlsx;
+				
+				echo "thành công";
+				// end xuất file
+
+			}
 
 		}
+
 
 
 		function excel_nhat(){
