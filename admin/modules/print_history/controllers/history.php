@@ -141,18 +141,19 @@
 
 				$dir_file = $this->export_file_pdf($url_file_pdf, $house_id);
 
-				echo "<pre>";
-
-				var_dump($dir_file);
-
-				echo "</pre>";
-
-				die;
-			
+				
+				$dir_file = str_replace('//admin', '/admin', $dir_file);
+		
 
 				$sql= "UPDATE fs_order_uploads_history_prints SET file_pdf_dem = '$dir_file'  WHERE `id`=".$id_print;
 
-				$db->query($sql);
+				$result = $db->query($sql);
+
+				echo "<pre>";
+				print_r($result);
+				echo "</pre>";
+
+				die;
 
 		        
 			}   
