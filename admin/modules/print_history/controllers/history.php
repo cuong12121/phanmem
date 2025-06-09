@@ -365,53 +365,40 @@
 
 		    		$dem = !empty($ar_sku_show[$index_data][$i])?count($ar_sku_show[$index_data][$i]):0;
 
-		    		echo "<pre>";
-		    			print_r($dem);
-		    		echo "</pre>";
-
-		    		
-		    		
 		    		//phần ghi mã sản phẩm khi có số sản phẩm lớn hơn 2
 		    		if(count($data_all)>1){
-
-		    			$dem++;
 
 		    			$pdf->SetFont('Arial', 'B', 14);
 				    	$pdf->SetTextColor(0, 0, 0); // Màu đen
 
-				        $pdf->SetXY(105, $k[$dem]);
+				        $pdf->SetXY(105, $k[$dem+$i]);
 				        $write_show_more_pd = $data_result[$index_data][$i]['sku'].':'.$data_result[$index_data][$i]['quantity'];
 
 				        $pdf->Write(10, $write_show_more_pd);
 		    		}
 			    	
-			    	
 
-			    	
+			    	$pdf->SetFont('Arial', 'B', 14);
+			    	$pdf->SetTextColor(0, 0, 0); // Màu đen
 
-			    	// $pdf->SetFont('Arial', 'B', 14);
-			    	// $pdf->SetTextColor(0, 0, 0); // Màu đen
-
-			        // $pdf->SetXY(105, $y[$i]);
-			        // $write = $data_result[$index_data][$i]['parent_index'] . '--' .
-			        //          $data_result[$index_data][$i]['show_list'] . '==>' .
-			        //          $data_result[$index_data][$i]['all'] . '--' .
-			        //          $data_result[$index_data][$i]['all_to_sku'];
-			        // $pdf->Write(10, $write);
+			        $pdf->SetXY(105, $y[$i]);
+			        $write = $data_result[$index_data][$i]['parent_index'] . '--' .
+			                 $data_result[$index_data][$i]['show_list'] . '==>' .
+			                 $data_result[$index_data][$i]['all'] . '--' .
+			                 $data_result[$index_data][$i]['all_to_sku'];
+			        $pdf->Write(10, $write);
 			    }
 
 			    
-
-			    // $pdf->SetFont('Arial', 'B', 14);
-			    // $pdf->SetTextColor(0, 0, 0); // Màu đen
-			    // $pdf->SetXY(105, $y[count($data_all)]); // Tọa độ X-Y
-			    // $pdf->Write(10, $pageNo);
-			    // $pdf->SetFont('Arial', 'B', 14);
-			    // $pdf->SetTextColor(0, 0, 0); // Màu đen
+			    $pdf->SetFont('Arial', 'B', 14);
+			    $pdf->SetTextColor(0, 0, 0); // Màu đen
+			    $pdf->SetXY(105, $y[count($data_all)]); // Tọa độ X-Y
+			    $pdf->Write(10, $pageNo);
+			    $pdf->SetFont('Arial', 'B', 14);
+			    $pdf->SetTextColor(0, 0, 0); // Màu đen
 			}
 
-			die;
-
+			
 			$path_date = $this->generateDailyPath($baseDir);
 
 			$timestamp = time();
@@ -420,14 +407,10 @@
 
 			$dir_file_name = $path_date.'/'.$file_name;
 
-
-
 			// Xuất file
 			// $pdf->Output('I', 'print/output3.pdf') ///i là xem trực tiếp còn F là lưu vào đường dẫn;
 
 			$pdf->Output('F', $dir_file_name); ///i là xem trực tiếp còn F là lưu vào đường dẫn;
-
-
 
 			$dir_file_name_convert = str_replace('/www/wwwroot/'.DOMAIN, '', $dir_file_name);
 
