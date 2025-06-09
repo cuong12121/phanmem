@@ -93,7 +93,7 @@
 
 				foreach ($parts as $part) {
 				    $clean = trim($part); // loại bỏ khoảng trắng
-				    $data[] = substr($clean, 0, 7);
+				    $data[] = substr($clean, 0, 10);
 				}
 
 				$return = $data;
