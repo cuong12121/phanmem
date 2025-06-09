@@ -407,15 +407,26 @@
 		{
 			$baseDir =  PATH_BASE.'admin/export/excel/order_item/';
 
+			$warehouse_id = $_GET['warehouse_id'];
+
 			$date = date('Y-m-d');
 
 			$dates_fix = date('d_m_y');
 
-			$warehouse_id = 1;
-
 			$platform_id = 2;
 
-			$house_id = 13;
+			$H = date('G');
+			$M = date('i');
+
+			if ($H < 13) {
+			    $house_id = 13;
+			} elseif (($H > 13 && $H < 14) ||($H == 14 && $M < 30) ) {
+			    $house_id = 18;
+			} else {
+			    $house_id = 15;
+			} 
+
+			
 
 			$filename = 'file_nhat_'.$warehouse_id .'_'.$platform_id.'_'.$dates_fix.'_'.$house_id;
 
