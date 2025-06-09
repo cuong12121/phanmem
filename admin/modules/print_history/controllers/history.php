@@ -383,11 +383,11 @@
 		    		//phần ghi mã sản phẩm khi có số sản phẩm lớn hơn 2
 		    		if(count($data_all)>1){
 
-		    			
+		    				$dem = $data_result[$index_data][$i]['count_show_more'];
 
 		    				if($index_data==152){
 		    				
-			    				$dem = $data_result[$index_data][$i]['count_show_more'];
+			    				
 
 			    				echo "<pre>";
 								print_r($dem);
