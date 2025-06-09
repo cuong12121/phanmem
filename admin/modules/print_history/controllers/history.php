@@ -378,16 +378,16 @@
 			    	}
 			    	else{
 
-			    		
+			    		$kk = !empty($z)?$z+1:0;
 			    		//phần ghi mã sản phẩm khi có số sản phẩm lớn hơn 2
 			    		if(count($data_all)>1){
 
-			    				$dem = $data_result[$index_data][$i]['count_show_more'];
+			    				// $dem = $data_result[$index_data][$i]['count_show_more'];
 
 			    				$pdf->SetFont('Arial', 'B', 14);
 						    	$pdf->SetTextColor(0, 0, 0); // Màu đen
 
-						        $pdf->SetXY(105, $k[$dem+$i+2]);
+						        $pdf->SetXY(105, $k[$kk+$i]);
 						        $write_show_more_pd = $data_result[$index_data][$i]['sku'].':'.$data_result[$index_data][$i]['quantity'].'_'.$k[$dem+$i+2];
 
 						        $pdf->Write(10, $write_show_more_pd);
