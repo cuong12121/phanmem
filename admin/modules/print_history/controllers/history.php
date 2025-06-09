@@ -220,9 +220,9 @@
 			
 
 			$y = [190, 200, 210, 220, 230, 240];
-			$k = [100, 108,116, 124,132,140,148,156];
+			$k = [100, 108,116, 124,132,140,148,156,164,172,180, 188];
 
-			$kz = [164, 172, 180, 188];
+			
 			$ar_sku_show =[];
 
 			$ar_sku_quantity_on_2 =[];
@@ -359,7 +359,7 @@
 			    		
 			    	}
 			    	else{
-			    		
+			    		$dem = count($show_sku);
 			    		//phần ghi mã sản phẩm khi có số sản phẩm lớn hơn 2
 			    		if(count($data_all)>1){
 
@@ -368,7 +368,7 @@
 			    			$pdf->SetFont('Arial', 'B', 14);
 					    	$pdf->SetTextColor(0, 0, 0); // Màu đen
 
-					        $pdf->SetXY(105, $kz[$dem]);
+					        $pdf->SetXY(105, $k[$dem]);
 					        $write_show_more_pd = $data_result[$index_data][$i]['sku'].':'.$data_result[$index_data][$i]['quantity'];
 
 					        $pdf->Write(10, $write_show_more_pd);
