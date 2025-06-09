@@ -382,7 +382,7 @@
 		    				// $dem = $data_result[$index_data][$i][$zz]['count_show_more'];
 
 		    				echo "<pre>";
-							print_r($data_result[$index_data][$i]);
+							print_r($data_result[$index_data]);
 							echo "<pre>";
 
 							die;
