@@ -379,10 +379,10 @@
 
 		    			for ($zz=0; $zz < count($data_all); $zz++) { 
 		    				
-		    				$dem = $data_result[$index_data][$i][$zz]['count_show_more'];
+		    				// $dem = $data_result[$index_data][$i][$zz]['count_show_more'];
 
 		    				echo "<pre>";
-							print_r($dem);
+							print_r($data_result[$index_data][$i]);
 							echo "<pre>";
 
 							die;
