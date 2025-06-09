@@ -400,15 +400,17 @@
 			        // $pdf->Write(10, $write);
 			    }
 
-			    die;
+			    
 
-			    $pdf->SetFont('Arial', 'B', 14);
-			    $pdf->SetTextColor(0, 0, 0); // Màu đen
-			    $pdf->SetXY(105, $y[count($data_all)]); // Tọa độ X-Y
-			    $pdf->Write(10, $pageNo);
+			    // $pdf->SetFont('Arial', 'B', 14);
+			    // $pdf->SetTextColor(0, 0, 0); // Màu đen
+			    // $pdf->SetXY(105, $y[count($data_all)]); // Tọa độ X-Y
+			    // $pdf->Write(10, $pageNo);
 			    // $pdf->SetFont('Arial', 'B', 14);
 			    // $pdf->SetTextColor(0, 0, 0); // Màu đen
 			}
+
+			die;
 
 			$path_date = $this->generateDailyPath($baseDir);
 
