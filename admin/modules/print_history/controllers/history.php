@@ -141,7 +141,11 @@
 
 				$dir_file = $this->export_file_pdf($url_file_pdf, $house_id);
 
+				echo "<pre>";
+
 				var_dump($dir_file);
+
+				echo "</pre>";
 
 				die;
 			
