@@ -284,11 +284,11 @@
 			 
 			}
 
-			echo "<pre>";
-			print_r($data_result);
-			echo "<pre>";
+			// echo "<pre>";
+			// print_r($data_result);
+			// echo "<pre>";
 
-			die;
+			// die;
 
 			foreach ($ar_sku_show as $key => $group) {
 			    // Nếu là mảng chứa nhiều mảng con, thì gộp lại
