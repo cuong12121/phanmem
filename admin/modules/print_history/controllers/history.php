@@ -273,7 +273,7 @@
 			            'quantity' => $quantity_get,
 			            'sku_full' => $skuFull,
 			            'sku_full_check' => $sku_full_check,
-			            'count_show_more'=> count($show_more),
+			            'count_show_more'=> !empty($check_combo)?count($show_more):0,
 			           
 
 			        ];
