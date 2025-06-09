@@ -433,14 +433,7 @@
 
 			$id_xlsx = $db->getResult();
 
-			echo "$id_xlsx";
-
-
-			die;
-
-			 
-
-			
+		
 
 			// phần xuất file excel 
 
