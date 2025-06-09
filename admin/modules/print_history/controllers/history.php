@@ -365,6 +365,10 @@
 
 		    		$dem = !empty($ar_sku_show[$index_data][$i])?count($ar_sku_show[$index_data][$i]):0;
 
+		    		echo "<pre>";
+		    			print_r($dem);
+		    		echo "</pre>";
+
 		    		
 		    		
 		    		//phần ghi mã sản phẩm khi có số sản phẩm lớn hơn 2
@@ -385,16 +389,18 @@
 
 			    	
 
-			    	$pdf->SetFont('Arial', 'B', 14);
-			    	$pdf->SetTextColor(0, 0, 0); // Màu đen
+			    	// $pdf->SetFont('Arial', 'B', 14);
+			    	// $pdf->SetTextColor(0, 0, 0); // Màu đen
 
-			        $pdf->SetXY(105, $y[$i]);
-			        $write = $data_result[$index_data][$i]['parent_index'] . '--' .
-			                 $data_result[$index_data][$i]['show_list'] . '==>' .
-			                 $data_result[$index_data][$i]['all'] . '--' .
-			                 $data_result[$index_data][$i]['all_to_sku'];
-			        $pdf->Write(10, $write);
+			        // $pdf->SetXY(105, $y[$i]);
+			        // $write = $data_result[$index_data][$i]['parent_index'] . '--' .
+			        //          $data_result[$index_data][$i]['show_list'] . '==>' .
+			        //          $data_result[$index_data][$i]['all'] . '--' .
+			        //          $data_result[$index_data][$i]['all_to_sku'];
+			        // $pdf->Write(10, $write);
 			    }
+
+			    die;
 
 			    $pdf->SetFont('Arial', 'B', 14);
 			    $pdf->SetTextColor(0, 0, 0); // Màu đen
