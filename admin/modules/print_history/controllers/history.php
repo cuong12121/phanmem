@@ -333,7 +333,7 @@
 			    $pdf->SetFont('Arial', 'B', 14);
 			    $pdf->SetTextColor(0, 0, 0); // Màu đen
 
-
+			    $dem =0;
 
 			    for ($i = 0; $i < count($data_all); $i++) {
 			    	
@@ -359,7 +359,7 @@
 			    		
 			    	}
 			    	else{
-			    		$dem =0;
+			    		
 			    		//phần ghi mã sản phẩm khi có số sản phẩm lớn hơn 2
 			    		if(count($data_all)>1){
 
