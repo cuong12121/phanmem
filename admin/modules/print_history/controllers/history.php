@@ -363,7 +363,7 @@
 			    	}
 			    	
 
-		    		$dem = count($show_sku);
+		    		$dem = count($ar_sku_show[$index_data][$i]);
 
 		    		
 		    		
