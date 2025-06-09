@@ -334,8 +334,7 @@
 			    $pdf->SetTextColor(0, 0, 0); // Màu đen
 
 			    
-			    $ar_dem_combo =[];
-
+			   
 			    for ($i = 0; $i < count($data_all); $i++) {
 			    	
 			    	
@@ -351,7 +350,7 @@
 
 			    		for ($z=0; $z < count($show_sku); $z++) { 
 
-			    			array_push($ar_dem_combo, $z);
+			    			
 			    			
 			    			$pdf->SetXY(105, $k[$z]);
 			    			
@@ -364,14 +363,14 @@
 			    	}
 			    	
 
-		    		$dem = count($ar_dem_combo);
+		    		$dem = count($show_sku);
 
-		    		$dem++;
+		    		
 		    		
 		    		//phần ghi mã sản phẩm khi có số sản phẩm lớn hơn 2
 		    		if(count($data_all)>1){
 
-		    			
+		    			$dem++;
 
 		    			$pdf->SetFont('Arial', 'B', 14);
 				    	$pdf->SetTextColor(0, 0, 0); // Màu đen
