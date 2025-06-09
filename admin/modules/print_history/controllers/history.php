@@ -370,7 +370,7 @@
 			    			$pdf->SetXY(105, $k[$z]);
 			    			
 
-			    			$write_show_more = $ar_sku_show[$index_data][$i][$z].':'.$data_result[$index_data][$i]['quantity'];
+			    			$write_show_more = $ar_sku_show[$index_data][$i][$z].':'.$data_result[$index_data][$i]['quantity'].'_'.$k[$z];
 
 			    			$pdf->Write(10, $write_show_more);
 			    		}
@@ -385,8 +385,8 @@
 			    				$pdf->SetFont('Arial', 'B', 14);
 						    	$pdf->SetTextColor(0, 0, 0); // Màu đen
 
-						        $pdf->SetXY(105, $k[$dem+$i+1]);
-						        $write_show_more_pd = $data_result[$index_data][$i]['sku'].':'.$data_result[$index_data][$i]['quantity'];
+						        $pdf->SetXY(105, $k[$dem+$i+2]);
+						        $write_show_more_pd = $data_result[$index_data][$i]['sku'].':'.$data_result[$index_data][$i]['quantity'].'_'.$k[$z];
 
 						        $pdf->Write(10, $write_show_more_pd);
 
