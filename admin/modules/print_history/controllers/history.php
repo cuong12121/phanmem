@@ -93,7 +93,9 @@
 
 				foreach ($parts as $part) {
 				    $clean = trim($part); // loại bỏ khoảng trắng
-				    $data[] = substr($clean, 0, 10);
+
+				    array_push($data, substr($clean, 0, 10));
+				    
 				}
 
 				$return = $data;
@@ -281,6 +283,12 @@
 			    array_push($data_result, array_reverse($results));
 			 
 			}
+
+			echo "<pre>";
+			print_r($data_result);
+			echo "<pre>";
+
+			die;
 
 			foreach ($ar_sku_show as $key => $group) {
 			    // Nếu là mảng chứa nhiều mảng con, thì gộp lại
