@@ -149,12 +149,6 @@
 
 				$result = $db->query($sql);
 
-				echo "<pre>";
-				print_r($result);
-				echo "</pre>";
-
-				die;
-
 		        
 			}   
 		}
@@ -368,7 +362,7 @@
 			    		$dem =0;
 			    		//phần ghi mã sản phẩm khi có số sản phẩm lớn hơn 2
 			    		if(count($data_all)>1){
-			    			
+
 			    			$dem++;
 
 			    			$pdf->SetFont('Arial', 'B', 14);
