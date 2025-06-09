@@ -485,6 +485,12 @@
 		return $txt;
 	}
 
+	function view_id($controle,$id){
+		
+		
+		return $id;
+	}
+
 
 	//chỗ này 
 

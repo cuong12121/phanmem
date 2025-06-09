@@ -60,17 +60,17 @@
 	$list_config[] = array('title'=>'File pdf đếm','field'=>'id','type'=>'text','arr_params'=>array('function'=>'view_pdf_dem'));
 	$list_config[] = array('title'=>'File excel nhặt','field'=>'id','type'=>'text','arr_params'=>array('function'=>'view_excel_nhat'));
 
+	
+
 
 
 	$list_config[] = array('title'=>'Trạng thái','field'=>'id','type'=>'text','arr_params'=>array('function'=>'view_status'));
 	$list_config[] = array('title'=>'Người in','field'=>'action_username','ordering'=> 1, 'type'=>'text','col_width' => '30%','arr_params'=>array('size'=> 20));
 
     $list_config[] = array('title'=>'Created time','field'=>'created_time','ordering'=> 1, 'type'=>'datetime');
-    if($test==1){
-    	echo "<pre>";
-    	var_dump($list);
-    	echo "</pre>";
-    }	
+
+    $list_config[] = array('title'=>'id','field'=>'id','type'=>'text','arr_params'=>array('function'=>'view_id'));
+  
 
 	//$list_config[] = array('title'=>'Id','field'=>'id','ordering'=> 1, 'type'=>'text');
 	
