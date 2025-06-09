@@ -140,6 +140,10 @@
 				
 
 				$dir_file = $this->export_file_pdf($url_file_pdf, $house_id);
+
+				var_dump($dir_file);
+
+				die;
 			
 
 				$sql= "UPDATE fs_order_uploads_history_prints SET file_pdf_dem = '$dir_file'  WHERE `id`=".$id_print;
@@ -217,9 +221,9 @@
 			
 
 			$y = [183, 197, 211, 225, 239, 253];
-			$k = [100, 110,120, 130, 140, 150];
+			$k = [100, 110,120, 130];
 
-			$kz = [160, 167, 176];
+			$kz = [140,150,160, 167, 176];
 			$ar_sku_show =[];
 
 			$ar_sku_quantity_on_2 =[];
@@ -263,14 +267,7 @@
 
 			        }
 			        
-			        if (intval($quantity_get) >1){
-
-			        	array_push($check_sl, $skuShort);
-
-			        	$ar_sku_quantity_on_2[$index][$i] =$check_sl;
-
-			        	
-			        }
+			       
 
 			        $results[] = [
 			            'sku' => $skuShort,
@@ -337,6 +334,8 @@
 			    $pdf->SetFont('Arial', 'B', 14);
 			    $pdf->SetTextColor(0, 0, 0); // Màu đen
 
+
+
 			    for ($i = 0; $i < count($data_all); $i++) {
 			    	$dem =0;
 
@@ -360,29 +359,23 @@
 			    		}
 			    		
 			    	}
+			    	else{
+			    		$dem++;
+			    		//phần ghi mã sản phẩm khi có số sản phẩm lớn hơn 2
+			    		if(count($data_all)>1){
 
-			    	// phần ghi sku sản phẩm có sl >1
+			    			$pdf->SetFont('Arial', 'B', 14);
+					    	$pdf->SetTextColor(0, 0, 0); // Màu đen
 
+					        $pdf->SetXY(105, $kz[$dem]);
+					        $write_show_more_pd = $data_result[$index_data][$i]['sku'].':'.$data_result[$index_data][$i]['quantity'];
 
-			    	if(!empty($ar_sku_quantity_on_2[$index_data][$i])){
-
-			    		$show_skus = $ar_sku_quantity_on_2[$index_data][$i];
-
-
-			    		$pdf->SetFont('Arial', 'B', 14);
-			    		$pdf->SetTextColor(0, 0, 0); // Màu đen
-
-			    		for ($yx=0; $yx < count($show_skus); $yx++) { 
-			    			
-			    			$pdf->SetXY(105, $kz[$yx]);
-			    			
-
-			    			$write_show_more = $show_skus[$yx].':'.$data_result[$index_data][$i]['quantity'];
-
-			    			$pdf->Write(10, $write_show_more);
+					        $pdf->Write(10, $write);
 			    		}
-			    		
 			    	}
+
+			    	
+
 			    	
 
 			    	$pdf->SetFont('Arial', 'B', 14);
