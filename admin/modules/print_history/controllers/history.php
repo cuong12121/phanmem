@@ -333,11 +333,11 @@
 			    $pdf->SetFont('Arial', 'B', 14);
 			    $pdf->SetTextColor(0, 0, 0); // Màu đen
 
-			    $dem =0;
-
+			    
+			    
 			    for ($i = 0; $i < count($data_all); $i++) {
 			    	
-
+			    	$dem = !empty($ar_sku_show[$index_data][$i])?count($ar_sku_show[$index_data][$i]):0;
 			    	//phần ghi mã sản phẩm khi có combo 
 
 			    	if(!empty($ar_sku_show[$index_data][$i])  && count($ar_sku_show[$index_data][$i])>0){
@@ -359,7 +359,7 @@
 			    		
 			    	}
 			    	else{
-			    		$dem = !empty($ar_sku_show[$index_data][$i])?count($ar_sku_show[$index_data][$i]):0;
+			    		$dem++;
 			    		//phần ghi mã sản phẩm khi có số sản phẩm lớn hơn 2
 			    		if(count($data_all)>1){
 
