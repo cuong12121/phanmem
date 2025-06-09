@@ -273,6 +273,7 @@
 			            'quantity' => $quantity_get,
 			            'sku_full' => $skuFull,
 			            'sku_full_check' => $sku_full_check,
+			            'count_show_more'=> count($show_more),
 			           
 
 			        ];
@@ -363,7 +364,7 @@
 			    	}
 			    	
 
-		    		$dem = !empty($ar_sku_show[$index_data][$i])?count($ar_sku_show[$index_data][$i]):0;
+		    		$dem = $data_result[$index_data][$i]['count_show_more'];
 
 		    		//phần ghi mã sản phẩm khi có số sản phẩm lớn hơn 2
 		    		if(count($data_all)>1){
@@ -409,6 +410,7 @@
 
 			// Xuất file
 			// $pdf->Output('I', 'print/output3.pdf') ///i là xem trực tiếp còn F là lưu vào đường dẫn;
+
 
 			$pdf->Output('F', $dir_file_name); ///i là xem trực tiếp còn F là lưu vào đường dẫn;
 
