@@ -151,6 +151,8 @@
 
 				$result = $db->query($sql);
 
+				echo $id_print;
+
 		        
 			}   
 		}
