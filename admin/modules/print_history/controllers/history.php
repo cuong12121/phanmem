@@ -253,26 +253,28 @@
 			    return preg_replace('/\s+/', '', $sku);
 			}, $matches[0]);
 
-			echo "<pre>";
-
-			print_r($cleaned);
-
-			echo "</pre>";
-
-			die;
-
+			
 			// $array_sku =[['sku'=>'663D', 'name'=>'Túi Ngủ Văn Phòng KAW'], ['sku'=>'360A', 'name'=>'Nhiệt kế']];
 
 			if(!empty($cleaned) && count($cleaned)>0){
 
 				foreach ($cleaned as $key => $value) {
 
-					$sku_short = substr(0, 10, $value);
+					$sku_short = substr(0, 10, trim($value));
 					
 					$produt = $model->get_record('code = "'.$sku_short.'"','fs_products','name');
 
-					$array_sku[]['name'] = $produt->name;
-					$array_sku[]['sku'] = $sku_short;
+					echo "<pre>";
+
+					print_r($produt);
+
+					echo "</pre>";
+
+					die;
+
+
+					// $array_sku[]['name'] = $produt->name;
+					// $array_sku[]['sku'] = $sku_short;
 				}
 
 			}
