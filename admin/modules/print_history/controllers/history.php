@@ -272,8 +272,8 @@
 					
 					$produt = $model->get_record('code = "'.$sku_short.'"','fs_products','name');
 
-					$array_sku[]['name'] = $produt->name;
-					$array_sku[]['sku'] = $sku_short;
+					$array_sku[$key]['name'] = $produt->name;
+					$array_sku[$key]['sku'] = $sku_short;
 				}
 
 			}
