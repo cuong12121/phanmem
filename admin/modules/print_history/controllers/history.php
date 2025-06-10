@@ -157,33 +157,117 @@
 			}   
 		}
 
-		// class PDF_Rotate_FPDI extends FPDI {
-			//     protected $angle = 0;
+		//phần thử return quantity vs sku
 
-			//     function Rotate($angle, $x = -1, $y = -1) {
-			//         if ($x == -1) $x = $this->x;
-			//         if ($y == -1) $y = $this->y;
-			//         if ($this->angle != 0) $this->_out('Q');
-			//         $this->angle = $angle;
-			//         if ($angle != 0) {
-			//             $angle *= M_PI / 180;
-			//             $c = cos($angle);
-			//             $s = sin($angle);
-			//             $cx = $x * $this->k;
-			//             $cy = ($this->h - $y) * $this->k;
-			//             $this->_out(sprintf('q %.5F %.5F %.5F %.5F %.2F %.2F cm',
-			//                 $c, $s, -$s, $c, $cx, $cy));
-			//         }
-			//     }
 
-			//     function _endpage() {
-			//         if ($this->angle != 0) {
-			//             $this->angle = 0;
-			//             $this->_out('Q');
-			//         }
-			//         parent::_endpage();
-			//     }
-			// }
+		function findBestMatch($productName, $categories) {
+		    $productWords = array_map('mb_strtolower', preg_split('/\s+/', $productName));
+
+		    $bestMatch = null;
+		    $maxMatches = 0;
+
+		    foreach ($categories as $category) {
+		        $categoryWords = array_map('mb_strtolower', preg_split('/[\/\s]+/', $category));
+		        $matches = count(array_intersect($productWords, $categoryWords));
+
+		        if ($matches > $maxMatches) {
+		            $maxMatches = $matches;
+		            $bestMatch = $category;
+		        }
+		    }
+
+		    return $bestMatch;
+		}
+
+		function getProductQuantityByFuzzyName($searchName, $products) {
+		    // Lấy danh sách tên sản phẩm từ mảng
+		    $productNames = array_column($products, 'name');
+
+		    // Tìm tên gần giống nhất
+		    $bestMatch = $this->findBestMatch($searchName, $productNames);
+
+		    // Tìm lại trong mảng gốc để lấy số lượng
+		    foreach ($products as $product) {
+		        if ($product['name'] === $bestMatch) {
+		            return $product['quantity'];
+		        }
+		    }
+
+		    return 0; // Nếu không tìm thấy
+		}
+
+
+		function return_ar_pd_sl($array, $rawText)
+		{
+
+		    $cleanText = preg_replace("/\r|\n/", " ", $rawText);
+
+		    // Regex bắt tên sản phẩm và số lượng tương ứng
+		    preg_match_all('/\d+\.\s(.*?)(?:SL:\s*(\d+))/', $cleanText, $matches, PREG_SET_ORDER);
+
+		    // Mảng kết quả
+		    $products = [];
+
+		    foreach ($matches as $match) {
+		        $products[] = [
+		            'name' => trim($match[1]),
+		            'quantity' => (int)$match[2]
+		        ];
+		    }
+
+		    $result = [];
+		    for ($i=0; $i<count($array);$i++) {
+
+		        $quantity = $this->getProductQuantityByFuzzyName($array[$i]['name'], $products);
+
+		        $result[$i]['sku'] = $array[$i]['sku'];
+
+		        $result[$i]['quantity'] =  $quantity;
+
+		    }
+
+		    return $result;
+		}
+
+		function return_sku_in_pdf()
+		{
+			
+
+			$filePath = 'https://dienmayai.com/files/orders/2025/06/10/106dmshn1_1749531353_cv.pdf';
+
+			$page =1;
+
+			$data = shell_exec('pdftotext -layout -f '.$page.' -l '.$page.' '.$filePath.' -');
+
+			echo "<pre>";
+
+			print_r($data);
+
+			echo "</pre>";
+
+			die;
+
+
+
+			$pattern = '/\b[A-Z0-9]{4}\s*-\s*[A-Z]{2}\s*-\s*\d{2}\s*-\s*[A-Z]{3}\s*-\s*\d{2}\s*-\s*\d{3}\b/';
+
+			preg_match_all($pattern, $string, $matches);
+
+			// Loại bỏ khoảng trắng trong mỗi kết quả
+			$cleaned = array_map(function($sku) {
+			    return preg_replace('/\s+/', '', $sku);
+			}, $matches[0]);
+
+			echo "<pre>";
+
+			print_r($cleaned);
+
+			echo "</pre>";
+		}
+ 
+
+
+
 
 
 
