@@ -232,7 +232,7 @@
 
 		function return_sku_in_pdf()
 		{
-			
+			$model  = $this -> model;
 
 			$filePath = 'https://dienmayai.com/files/orders/2025/06/10/106dmshn1_1749531353_cv.pdf';
 
@@ -261,7 +261,7 @@
 
 					$sku_short = substr(0, 7);
 					
-					$produt = $this->get_record('code = "'.$sku_short.'"','fs_products','name');
+					$produt = $model->get_record('code = "'.$sku_short.'"','fs_products','name');
 
 					$array_sku[]['name'] = $produt->name;
 					$array_sku[]['sku'] = $sku_short;
