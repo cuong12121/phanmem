@@ -122,7 +122,7 @@
 			    $house_id = 15;
 			} 
 
-			echo $house_id
+			echo $house_id;
 
 			die;
 			
