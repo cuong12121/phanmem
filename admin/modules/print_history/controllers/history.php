@@ -253,17 +253,32 @@
 			    return preg_replace('/\s+/', '', $sku);
 			}, $matches[0]);
 
+			// $array_sku =[['sku'=>'663D', 'name'=>'Túi Ngủ Văn Phòng KAW'], ['sku'=>'360A', 'name'=>'Nhiệt kế']];
+
+			if(!empty($cleaned) && count($cleaned)>0){
+
+				foreach ($cleaned as $key => $value) {
+
+					$sku_short = substr(0, 7);
+					
+					$produt = $this->get_record('code = "'.$sku_short.'"','fs_products','name');
+
+					$array_sku[]['name'] = $produt->name;
+					$array_sku[]['sku'] = $sku_short;
+				}
+
+			}
+
+			$data = $this->return_ar_pd_sl($array_sku, $string);
+
 			echo "<pre>";
 
-			print_r($cleaned);
+			print_r($data);
 
 			echo "</pre>";
+
 		}
  
-
-
-
-
 
 
 		function export_file_pdf($url_file, $houseid)
