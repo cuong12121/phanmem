@@ -269,11 +269,11 @@
 
 			}
 
-			$data = $this->return_ar_pd_sl($array_sku, $string);
+			// $data = $this->return_ar_pd_sl($array_sku, $string);
 
 			echo "<pre>";
 
-			print_r($data);
+			print_r($array_sku);
 
 			echo "</pre>";
 
