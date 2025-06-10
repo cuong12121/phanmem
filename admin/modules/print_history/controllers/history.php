@@ -274,7 +274,7 @@
 
 			echo "<pre>";
 
-			print_r($array_sku);
+			print_r($data);
 
 			echo "</pre>";
 
