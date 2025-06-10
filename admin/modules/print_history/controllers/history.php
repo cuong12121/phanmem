@@ -241,17 +241,7 @@
 			$pdf = $parser->parseFile($filePath);
 
 			// Extract text
-			$text = $pdf->getText();
-
-			echo "<pre>";
-
-			print_r($text);
-
-			echo "</pre>";
-			
-
-			die;
-
+			$string = $pdf->getText();
 
 
 			$pattern = '/\b[A-Z0-9]{4}\s*-\s*[A-Z]{2}\s*-\s*\d{2}\s*-\s*[A-Z]{3}\s*-\s*\d{2}\s*-\s*\d{3}\b/';
