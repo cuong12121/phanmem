@@ -90,6 +90,8 @@
 
 	$list_config[] = array('title'=>'Actions','field'=>'id','type'=>'text','col_width' => '15%','arr_params'=>array('function'=>'view_actions'));
 
+	$list_config[] = array('title'=>'record_id','field'=>'id','type'=>'text','arr_params'=>array('function'=>'view_record_id'));
+
 	$list_config[] = array('title'=>'Edit','type'=>'edit');
     //$list_config[] = array('title'=>'Created time','field'=>'created_time','ordering'=> 1, 'type'=>'datetime');
 	$list_config[] = array('title'=>'Id','field'=>'id','ordering'=> 1, 'type'=>'text');

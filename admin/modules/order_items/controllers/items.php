@@ -373,6 +373,14 @@
 
 		}
 
+		function view_record_id($controle, $id)
+		{
+			$model = $controle -> model;
+			$data = $model->get_record('id = ' .$id,'fs_order_uploads_detail','record_id');
+			
+			return $data->id;
+		}
+
 
 		function get_list_detail_tong(){
 			global $db;
