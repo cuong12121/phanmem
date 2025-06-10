@@ -223,7 +223,7 @@
 
 		        echo "<pre>";
 
-				print_r($quantity);
+				print_r($array);
 
 				echo "</pre>";
 
