@@ -248,6 +248,7 @@
 			print_r($text);
 
 			echo "</pre>";
+			
 
 			die;
 
