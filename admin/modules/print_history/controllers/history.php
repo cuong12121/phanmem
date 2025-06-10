@@ -236,13 +236,16 @@
 
 			$filePath = 'https://dienmayai.com/files/orders/2025/06/10/106dmshn1_1749531353_cv.pdf';
 
-			$page =1;
+			// Load PDF file
+			$parser = new Parser();
+			$pdf = $parser->parseFile($filePath);
 
-			$data = shell_exec('pdftotext -layout -f '.$page.' -l '.$page.' '.$filePath.' -');
+			// Extract text
+			$text = $pdf->getText();
 
 			echo "<pre>";
 
-			print_r($data);
+			print_r($text);
 
 			echo "</pre>";
 
