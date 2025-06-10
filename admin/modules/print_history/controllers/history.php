@@ -260,7 +260,7 @@
 
 				foreach ($cleaned as $key => $value) {
 
-					$sku_short = substr(0, 10, trim($value));
+					$sku_short = substr(trim($value), 0, 10);
 					
 					$produt = $model->get_record('code = "'.$sku_short.'"','fs_products','name');
 
