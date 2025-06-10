@@ -264,22 +264,13 @@
 					
 					$produt = $model->get_record('code = "'.$sku_short.'"','fs_products','name');
 
-					echo "<pre>";
-
-					print_r($produt);
-
-					echo "</pre>";
-
-					die;
-
-
-					// $array_sku[]['name'] = $produt->name;
-					// $array_sku[]['sku'] = $sku_short;
+					$array_sku[]['name'] = $produt->name;
+					$array_sku[]['sku'] = $sku_short;
 				}
 
 			}
 
-			// $data = $this->return_ar_pd_sl($array_sku, $string);
+			$data = $this->return_ar_pd_sl($array_sku, $string);
 
 			echo "<pre>";
 
