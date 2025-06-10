@@ -121,6 +121,10 @@
 			} else {
 			    $house_id = 15;
 			} 
+
+			echo $house_id
+
+			die;
 			
 			// $house_id = 13;
 			
