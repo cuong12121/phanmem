@@ -259,7 +259,7 @@
 
 				foreach ($cleaned as $key => $value) {
 
-					$sku_short = substr(0, 10);
+					$sku_short = substr(0, 10, $value);
 					
 					$produt = $model->get_record('code = "'.$sku_short.'"','fs_products','name');
 
@@ -269,13 +269,11 @@
 
 			}
 
-			
-
-			// $data = $this->return_ar_pd_sl($array_sku, $string);
+			$data = $this->return_ar_pd_sl($array_sku, $string);
 
 			echo "<pre>";
 
-			print_r($cleaned);
+			print_r($data);
 
 			echo "</pre>";
 
