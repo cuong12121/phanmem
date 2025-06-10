@@ -221,17 +221,9 @@
 
 		        $quantity = $this->getProductQuantityByFuzzyName($array[$i]['name'], $products);
 
-		        echo "<pre>";
+		        $result[$i]['sku'] = $array[$i]['sku'];
 
-				print_r($array);
-
-				echo "</pre>";
-
-				die;
-
-		        // $result[$i]['sku'] = $array[$i]['sku'];
-
-		        // $result[$i]['quantity'] =  $quantity;
+		        $result[$i]['quantity'] =  $quantity;
 
 		    }
 
