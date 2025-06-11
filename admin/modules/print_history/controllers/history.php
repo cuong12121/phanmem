@@ -328,243 +328,6 @@
  
 
 
-		// function export_file_pdf($url_file, $houseid)
-		// {
-
-		// 	$baseDir =  PATH_BASE.'/admin/export/pdf/count_print/';
-
-		// 	$parser = new Parser();
-
-		// 	$urls = [
-		// 	    $url_file
-			    
-		// 	];
-
-
-		// 	$model = $this -> model;
-
-		// 	$filename = $model->downloadMultipleFiles($urls);
-
-
-		// 	$filename = str_replace('https://dienmayai.com', '', $filename[0]['file_link']) ;
-
-		// 	// Load PDF file
-		// 	$pdf = $parser->parseFile($filename);
-		// 	// Get all pages
-		// 	$pages = $pdf->getPages();
-		// 	$data_result = [];
-			 
-		// 	$pattern = '/([A-Z0-9]{4})-[A-Z]{2}-[0-9]{2}-[A-Z]{3}-[0-9]{2}-(SL[0-9]|[0-9]{2,3})/i';
-
-		// 	// $patternSku = '/([A-Z0-9]{4})-[A-Z]{2}-[0-9]{2}-[A-Z]{3}-[0-9]{2}-(SL[0-9]|[0-9]{2,3})/i';
-		// 	//     // Pattern cho SL (số lượng)
-		// 	// $patternQty = '/S[\s\S]*?L:\s*(\d+)/'; //kể cả trường hợp S L 
-
-			
-
-			
-
-		// 	$y = [190, 200, 210, 220, 230, 240];
-		// 	$k = [100, 108,116, 124,132,140,148,156,164,172,180, 188];
-
-			
-		// 	$ar_sku_show =[];
-
-		// 	$ar_sku_quantity_on_2 =[];
-			
-		// 	foreach ($pages as $index => $page) {
-		// 	    $pageNumber = $index + 1;
-		// 	    $text = $page->getText();
-
-		// 	    $data = $this->return_product_sku_quantity_to_text($text);
-
-		// 	    if(!empty($data) && count($data)>0){
-
-		// 		    for ($i = 0; $i < count($data); $i++) {
-
-		// 		    	$check_sl = [];
-				    	
-		// 		        $skuFull = $data[$i]['sku'];
-		// 		        $skuShort = substr($skuFull, 0, 7); // Lấy 4 ký tự đầu của SKU
-
-		// 		        $sku_full_check = substr(trim($skuFull), 0, 10); // Lấy 10 ký tự đầu của SKU
-
-		// 		        $check_combo = $this->combo_Return_code($sku_full_check);
-
-		// 		        $quantity_get = $data[$i]['quantity'];
-
-		// 		        if(!empty($check_combo)){
-				        	
-		// 		        	$show_more = $check_combo;
-
-		// 		        	$ar_sku_show[$index][] =  $show_more;
-
-		// 		        }
-				        
-		// 		        $results[] = [
-		// 		            'sku' => $skuShort,
-		// 		            'quantity' => $quantity_get,
-		// 		            'sku_full' => $skuFull,
-		// 		            'sku_full_check' => $sku_full_check,
-		// 		            'count_show_more'=> !empty($check_combo)?count($show_more):0,
-				           
-		// 		        ];
-		// 		    }
-		// 		}    
-		// 	    array_push($data_result, array_reverse($results));
-			 
-		// 	}
-		// 	echo "<pre>";
-
-		// 	print_r($data_result);
-
-		// 	echo "<pre>";
-
-		// 	die;
-
-		// 	foreach ($ar_sku_show as $key => $group) {
-		// 	    // Nếu là mảng chứa nhiều mảng con, thì gộp lại
-		// 	    $merged = [];
-		// 	    foreach ($group as $subArray) {
-		// 	        $merged = array_merge($merged, $subArray);
-		// 	    }
-		// 	    // Gán lại mảng đã gộp dưới dạng một mảng 2 chiều như cũ
-		// 	    $ar_sku_show[$key] = [ $merged ];
-		// 	}
-
-		
-
-		// 	$model->calculateCumulativeQuantities($data_result);
-
-		// 	$data_result = $model->show_list_array_run($data_result);
-
-		// 	echo "<pre>";
-		// 	print_r($data_result);
-		// 	echo "<pre>";
-
-		// 	die;
-			
-		// 	$pdf = new Fpdi();
-
-		// 	$filePath = $filename;
-
-		// 	$pageCount = $pdf->setSourceFile($filePath);
-
-			
-			
-
-		// 	for ($pageNo = 1; $pageNo <= $pageCount; $pageNo++) {
-
-		// 	    $templateId = $pdf->importPage($pageNo);
-		// 	    $size = $pdf->getTemplateSize($templateId);
-		// 	    $pdf->AddPage($size['orientation'], [$size['width'], $size['height']]);
-
-		// 	    // Chèn template gốc
-		// 	    $pdf->useTemplate($templateId);
-
-		// 	    // $pdf->Image('z6666321666436_8c947a3b83f172e254bee07a90a68508.jpg', $x, $y, $w, $h);
-
-		// 	    // Chèn ảnh thường (logo)
-		// 	    $imagePath =  PATH_BASE.'/admin/export/pdf/images/Capture.jpg';
-		// 	    $pdf->Image($imagePath, 105, 2, 40, 90);
-
-		// 	    $pdf->SetFont('Arial', 'B', 14);
-		// 	    $pdf->SetTextColor(0, 0, 0); // Màu đen
-
-		// 	    // === ✅ Ghi đè dữ liệu text theo danh sách ===
-		// 	    $index_data = $pageNo - 1;
-		// 	    $data_all = $data_result[$index_data];
-		// 	    $pdf->SetFont('Arial', 'B', 14);
-		// 	    $pdf->SetTextColor(0, 0, 0); // Màu đen
-
-			    
-			   
-		// 	    for ($i = 0; $i < count($data_all); $i++) {
-			    	
-			    	
-		// 	    	//phần ghi mã sản phẩm khi có combo 
-
-			    	
-		// 	    	if(!empty($ar_sku_show[$index_data][$i])  && count($ar_sku_show[$index_data][$i])>0){
-
-		// 	    		$show_sku = $ar_sku_show[$index_data][$i];
-
-		// 	    		$pdf->SetFont('Arial', 'B', 14);
-		// 	    		$pdf->SetTextColor(0, 0, 0); // Màu đen
-
-		// 	    		for ($z=0; $z < count($show_sku); $z++) { 
-
-			    			
-			    			
-		// 	    			$pdf->SetXY(105, $k[$z]);
-			    			
-
-		// 	    			$write_show_more = $ar_sku_show[$index_data][$i][$z].':'.$data_result[$index_data][$i]['quantity'];
-
-		// 	    			$pdf->Write(10, $write_show_more);
-		// 	    		}
-			    		
-		// 	    	}
-		// 	    	else{
-
-		// 	    		$kk = !empty($z)?$z:0;
-		// 	    		//phần ghi mã sản phẩm khi có số sản phẩm lớn hơn 2
-		// 	    		if(count($data_all)>1){
-
-		// 	    				// $dem = $data_result[$index_data][$i]['count_show_more'];
-
-		// 	    				$pdf->SetFont('Arial', 'B', 14);
-		// 				    	$pdf->SetTextColor(0, 0, 0); // Màu đen
-
-		// 				        $pdf->SetXY(105, $k[$kk+$i]);
-		// 				        $write_show_more_pd = $data_result[$index_data][$i]['sku'].':'.$data_result[$index_data][$i]['quantity'];
-
-		// 				        $pdf->Write(10, $write_show_more_pd);
-
-			    			
-		// 	    		}
-		// 	    	}
-
-		// 	    	$pdf->SetFont('Arial', 'B', 14);
-		// 	    	$pdf->SetTextColor(0, 0, 0); // Màu đen
-
-		// 	        $pdf->SetXY(105, $y[$i]);
-		// 	        $write = $data_result[$index_data][$i]['parent_index'] . '--' .
-		// 	                 $data_result[$index_data][$i]['show_list'] . '==>' .
-		// 	                 $data_result[$index_data][$i]['all'] . '--' .
-		// 	                 $data_result[$index_data][$i]['all_to_sku'];
-		// 	        $pdf->Write(10, $write);
-		// 	    }
-
-			    
-		// 	    $pdf->SetFont('Arial', 'B', 14);
-		// 	    $pdf->SetTextColor(0, 0, 0); // Màu đen
-		// 	    $pdf->SetXY(105, $y[count($data_all)]); // Tọa độ X-Y
-		// 	    $pdf->Write(10, $pageNo);
-		// 	    $pdf->SetFont('Arial', 'B', 14);
-		// 	    $pdf->SetTextColor(0, 0, 0); // Màu đen
-		// 	}
-
-			
-		// 	$path_date = $this->generateDailyPath($baseDir);
-
-		// 	$timestamp = time();
-
-		// 	$file_name = $houseid.'_'.$timestamp.'.pdf';
-
-		// 	$dir_file_name = $path_date.'/'.$file_name;
-
-		// 	// Xuất file
-		// 	// $pdf->Output('I', 'print/output3.pdf') ///i là xem trực tiếp còn F là lưu vào đường dẫn;
-
-
-		// 	$pdf->Output('F', $dir_file_name); ///i là xem trực tiếp còn F là lưu vào đường dẫn;
-
-		// 	$dir_file_name_convert = str_replace('/www/wwwroot/'.DOMAIN, '', $dir_file_name);
-
-		// 	return $dir_file_name_convert;
-		// }
-
 		function export_file_pdf($url_file, $houseid)
 		{
 
@@ -589,17 +352,14 @@
 			$pdf = $parser->parseFile($filename);
 			// Get all pages
 			$pages = $pdf->getPages();
+
 			$data_result = [];
 			 
 			$pattern = '/([A-Z0-9]{4})-[A-Z]{2}-[0-9]{2}-[A-Z]{3}-[0-9]{2}-(SL[0-9]|[0-9]{2,3})/i';
 
-			$patternSku = '/([A-Z0-9]{4})-[A-Z]{2}-[0-9]{2}-[A-Z]{3}-[0-9]{2}-(SL[0-9]|[0-9]{2,3})/i';
-			    // Pattern cho SL (số lượng)
-			$patternQty = '/S[\s\S]*?L:\s*(\d+)/'; //kể cả trường hợp S L 
-
-			$data_result = [];
-
-			
+			// $patternSku = '/([A-Z0-9]{4})-[A-Z]{2}-[0-9]{2}-[A-Z]{3}-[0-9]{2}-(SL[0-9]|[0-9]{2,3})/i';
+			//     // Pattern cho SL (số lượng)
+			// $patternQty = '/S[\s\S]*?L:\s*(\d+)/'; //kể cả trường hợp S L 
 
 			$y = [190, 200, 210, 220, 230, 240];
 			$k = [100, 108,116, 124,132,140,148,156,164,172,180, 188];
@@ -612,65 +372,49 @@
 			foreach ($pages as $index => $page) {
 			    $pageNumber = $index + 1;
 			    $text = $page->getText();
-			    $texts = preg_replace('/\r?\n/', '', $text);
-			   
-			    // Lấy tất cả các kết quả
-			    preg_match_all($patternSku, $texts, $matchesSku);
-			    preg_match_all($patternQty, $text, $matchesQty);
-			 
-			    //xóa kết quả trùng nhau trong mảng sku tìm thấy
-			 
-			    $matchesSku[0] = array_reverse(array_unique($matchesSku[0]));
-			    
+
 			    // Chuẩn bị mảng kết quả
 			    $results = [];
-			    // Đảm bảo số lượng SKU và số lượng khớp nhau về thứ tự
-			    $count = min(count($matchesSku[0]), count($matchesQty[1]));
-			    for ($i = 0; $i < $count; $i++) {
 
-			    	$check_sl = [];
-			    	
-			        $skuFull = $matchesSku[0][$i];
-			        $skuShort = substr($skuFull, 0, 7); // Lấy 4 ký tự đầu của SKU
+			    $data = $this->return_product_sku_quantity_to_text($text);
 
-			        $sku_full_check = substr(trim($skuFull), 0, 10); // Lấy 10 ký tự đầu của SKU
+			    if(!empty($data) && count($data)>0){
 
-			        $check_combo = $this->combo_Return_code($sku_full_check);
+				    for ($i = 0; $i < count($data); $i++) {
 
-			        $quantity_get = $matchesQty[1][$i];
+				    	$check_sl = [];
+				    	
+				        $skuFull = $data[$i]['sku'];
+				        $skuShort = substr($skuFull, 0, 7); // Lấy 4 ký tự đầu của SKU
 
-			        
-			        if(!empty($check_combo)){
-			        	
-			        	$show_more = $check_combo;
+				        $sku_full_check = substr(trim($skuFull), 0, 10); // Lấy 10 ký tự đầu của SKU
 
-			        	$ar_sku_show[$index][] =  $show_more;
+				        $check_combo = $this->combo_Return_code($sku_full_check);
 
-			        }
-			        
-			       
+				        $quantity_get = $data[$i]['quantity'];
 
-			        $results[] = [
-			            'sku' => $skuShort,
-			            'quantity' => $quantity_get,
-			            'sku_full' => $skuFull,
-			            'sku_full_check' => $sku_full_check,
-			            'count_show_more'=> !empty($check_combo)?count($show_more):0,
-			           
+				        if(!empty($check_combo)){
+				        	
+				        	$show_more = $check_combo;
 
-			        ];
-			    }
+				        	$ar_sku_show[$index][] =  $show_more;
+
+				        }
+				        
+				        $results[] = [
+				            'sku' => $skuShort,
+				            'quantity' => $quantity_get,
+				            'sku_full' => $skuFull,
+				            'sku_full_check' => $sku_full_check,
+				            'count_show_more'=> !empty($check_combo)?count($show_more):0,
+				           
+				        ];
+				    }
+				}    
 			    array_push($data_result, array_reverse($results));
 			 
 			}
-
 			
-
-			echo "<pre>";
-			print_r($data_result);
-			echo "<pre>";
-
-			die;
 
 			foreach ($ar_sku_show as $key => $group) {
 			    // Nếu là mảng chứa nhiều mảng con, thì gộp lại
@@ -682,29 +426,18 @@
 			    $ar_sku_show[$key] = [ $merged ];
 			}
 
-			// $show_sku_merge = array_merge($show_sku);
-
-			// 		    // Gán lại thành một mảng duy nhất chứa mảng đã gộp
-			// 		    $show_sku_merges = [ $show_sku_merge ];
+		
 
 			$model->calculateCumulativeQuantities($data_result);
 
 			$data_result = $model->show_list_array_run($data_result);
 
-			// echo "<pre>";
-			// print_r($data_result);
-			// echo "<pre>";
-
-			// die;
-			
 			$pdf = new Fpdi();
 
 			$filePath = $filename;
 
 			$pageCount = $pdf->setSourceFile($filePath);
 
-			
-			
 
 			for ($pageNo = 1; $pageNo <= $pageCount; $pageNo++) {
 
@@ -818,7 +551,7 @@
 			return $dir_file_name_convert;
 		}
 
-
+		
 		function add()
 		{
 			$model = $this -> model;
