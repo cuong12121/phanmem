@@ -218,7 +218,7 @@
 
 		    echo "<pre>";
 
-		    print_r($matches);
+		    print_r($rawText);
 
 		    echo "</pre>";
 
