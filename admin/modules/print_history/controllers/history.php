@@ -247,15 +247,15 @@
 			// Extract text
 			$string = $pdf->getText();
 
-			echo $string;
-
+			
 			$cleanText = preg_replace("/\r|\n/", " ", $string);
 
+			$pattern = '/\d+\.\s(.*?)(?:S\s*L:\s*(\d+))/';
 
-			preg_match_all('/\d+\.\s(.*?)(?:SL:\s*(\d+))/', $cleanText, $matches, PREG_SET_ORDER);
 
-			echo "<br>";
+			preg_match_all($pattern, $cleanText, $matches, PREG_SET_ORDER);
 
+			
 			print_r($matches);
 
 			die;
