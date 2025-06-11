@@ -234,7 +234,9 @@
 		{
 			$model  = $this -> model;
 
-			$filePath = 'https://dienmayai.com/files/orders/2025/06/08/hn86nnt3_1749400132_cv.pdf';
+			$filePath = $_ENV['file'];
+
+			// $filePath = 'https://dienmayai.com/files/orders/2025/06/08/hn86nnt3_1749400132_cv.pdf';
 
 			// Load PDF file
 			$parser = new Parser();
