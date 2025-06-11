@@ -575,13 +575,8 @@
 				// $total_sheet->setCellValue('O1', 'Giá ưu đãi');
 				$total_sheet->setCellValue('K1', 'Số lượng');
 				$total_sheet->setCellValue('L1', 'Tổng giá bán (sản phẩm)');
+
 				$list_detail = $result;
-
-				echo "<pre>";
-				print_r($list_detail);
-				echo "</pre>";
-
-				die;
 				
 				foreach ($list_detail as $item_dt){
 					if($item_dt->ma_kien_hang == 'null'){
