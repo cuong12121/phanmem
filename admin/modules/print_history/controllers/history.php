@@ -119,7 +119,7 @@
 				$id = $value->id;
 				$id_google_drive = file_get_contents('https://drive.'.DOMAIN.'/createfile_gg.php?link=https://'.DOMAIN.'/'.$link);
 
-				$sql = "UPDATE fs_order_uploads SET id_file_pdf_google_drive = '$id_google_drive' WHERE id = $id";
+				$sql = "UPDATE fs_order_uploads SET id_file_pdf_google_drive = '$id_google_drive' WHERE id = '$id'";
 
 				$values = $db->query($sql);
 			}
