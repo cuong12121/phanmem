@@ -255,6 +255,14 @@
 			    return preg_replace('/\s+/', '', $sku);
 			}, $matches[0]);
 
+			echo "<pre>";
+
+			print_r($data);
+
+			echo "</pre>";
+
+			die;
+
 			
 			// $array_sku =[['sku'=>'663D', 'name'=>'Túi Ngủ Văn Phòng KAW'], ['sku'=>'360A', 'name'=>'Nhiệt kế']];
 
@@ -279,6 +287,7 @@
 			print_r($data);
 
 			echo "</pre>";
+
 
 		}
  
