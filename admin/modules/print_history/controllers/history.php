@@ -249,6 +249,13 @@
 
 			echo $string;
 
+			$cleanText = preg_replace("/\r|\n/", " ", $string);
+
+
+			preg_match_all('/\d+\.\s(.*?)(?:SL:\s*(\d+))/', $cleanText, $matches, PREG_SET_ORDER);
+
+			print_r($matches);
+
 			die;
 
 
