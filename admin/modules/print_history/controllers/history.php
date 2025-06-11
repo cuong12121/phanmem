@@ -106,6 +106,27 @@
 
 		}
 
+		function update_pdf_false()
+		{
+			global $db;
+			$query = "SELECT * FROM fs_order_uploads WHERE created_time BETWEEN '2025-06-01 00:00:00.000000' AND '2025-06-12 00:00:00.000000' AND id_file_pdf_google_drive LIKE '%<b>Warning</b>:%' ORDER BY fs_order_uploads.id ASC";
+
+			$values = $db->getObjectList($query);
+
+			foreach ($values as $key => $value) {
+				
+				$link = $value->file_pdf;
+				$id = $value->id;
+				$id_google_drive = file_get_contents('https://drive.'.DOMAIN.'/createfile_gg.php?link=https://'.DOMAIN.'/'.$link);
+
+				$sql = "UPDATE fs_order_uploads SET id_file_pdf_google_drive = '$id_google_drive' WHERE id = $id";
+
+				$values = $db->query($sql);
+			}
+			echo "thành công";
+
+		}
+
 
 		function export_pdf_count_shopee()
 		{
