@@ -216,6 +216,15 @@
 		        ];
 		    }
 
+		    echo "<pre>";
+
+		    print_r($products);
+
+		    echo "</pre>";
+
+		    die;
+
+
 		    $result = [];
 		    for ($i=0; $i<count($array);$i++) {
 
