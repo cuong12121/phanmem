@@ -378,46 +378,51 @@
 
 			    $data = $this->return_product_sku_quantity_to_text($text);
 
-			    if(!empty($data) && count($data)>0)
+			    echo "<pre>";
 
-				    for ($i = 0; $i < count($data); $i++) {
+			    print_r($data);
+			    echo "</pre>";
 
-				    	$check_sl = [];
+			    // if(!empty($data) && count($data)>0)
+
+				//     for ($i = 0; $i < count($data); $i++) {
+
+				//     	$check_sl = [];
 				    	
-				        $skuFull = $data[$i]['sku'];
-				        $skuShort = substr($skuFull, 0, 7); // Lấy 4 ký tự đầu của SKU
+				//         $skuFull = $data[$i]['sku'];
+				//         $skuShort = substr($skuFull, 0, 7); // Lấy 4 ký tự đầu của SKU
 
-				        $sku_full_check = substr(trim($skuFull), 0, 10); // Lấy 10 ký tự đầu của SKU
+				//         $sku_full_check = substr(trim($skuFull), 0, 10); // Lấy 10 ký tự đầu của SKU
 
-				        $check_combo = $this->combo_Return_code($sku_full_check);
+				//         $check_combo = $this->combo_Return_code($sku_full_check);
 
-				        $quantity_get = $data[$i]['quantity'];
+				//         $quantity_get = $data[$i]['quantity'];
 
-				        if(!empty($check_combo)){
+				//         if(!empty($check_combo)){
 				        	
-				        	$show_more = $check_combo;
+				//         	$show_more = $check_combo;
 
-				        	$ar_sku_show[$index][] =  $show_more;
+				//         	$ar_sku_show[$index][] =  $show_more;
 
-				        }
+				//         }
 				        
-				        $results[] = [
-				            'sku' => $skuShort,
-				            'quantity' => $quantity_get,
-				            'sku_full' => $skuFull,
-				            'sku_full_check' => $sku_full_check,
-				            'count_show_more'=> !empty($check_combo)?count($show_more):0,
+				//         $results[] = [
+				//             'sku' => $skuShort,
+				//             'quantity' => $quantity_get,
+				//             'sku_full' => $skuFull,
+				//             'sku_full_check' => $sku_full_check,
+				//             'count_show_more'=> !empty($check_combo)?count($show_more):0,
 				           
-				        ];
-				    }
-				}    
-			    array_push($data_result, array_reverse($results));
+				//         ];
+				//     }
+				// }    
+			    // array_push($data_result, array_reverse($results));
 			 
 			}
 			// echo "<pre>";
 
 			// print_r($data_result);
-			
+
 			// echo "<pre>";
 
 			// die;
