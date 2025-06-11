@@ -301,12 +301,17 @@
 
 			//xóa kết quả trùng nhau trong mảng sku tìm thấy
 	 
-	    	$matches[0] = array_reverse(array_unique($matches[0]));
-
+	    	
 			// Loại bỏ khoảng trắng trong mỗi kết quả
 			$cleaned = array_map(function($sku) {
 			    return preg_replace('/\s+/', '', $sku);
 			}, $matches[0]);
+
+			echo "<pre>";
+			print_r($cleaned);
+			echo "</pre>";
+
+			die;
 
 			$data = [];
 
