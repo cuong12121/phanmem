@@ -16,8 +16,10 @@ if ($now < $mocThoiGian) {
     } else {
          $ip = $_SERVER['REMOTE_ADDR'];
      }
+
+     $ar_ip = ['116.101.246.1', '103.77.208.213'];
      
-    if($ip != '116.101.246.1'){
+    if(in_array($ip, $ar_ip)){
      
         echo"<h1>Server đang bảo trì, xin vui lòng quay lại sau</h1>";
    
