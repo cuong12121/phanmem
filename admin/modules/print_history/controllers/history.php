@@ -234,7 +234,7 @@
 		{
 			$model  = $this -> model;
 
-			$filePath = $_ENV['file'];
+			$filePath = $_GET['file'];
 
 			// $filePath = 'https://dienmayai.com/files/orders/2025/06/08/hn86nnt3_1749400132_cv.pdf';
 
