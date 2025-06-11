@@ -257,13 +257,9 @@
 			    return preg_replace('/\s+/', '', $sku);
 			}, $matches[0]);
 
-			echo "<pre>";
+			
 
-			print_r($cleaned);
-
-			echo "</pre>";
-
-			die;
+			$data = [];
 
 			
 			// $array_sku =[['sku'=>'663D', 'name'=>'Túi Ngủ Văn Phòng KAW'], ['sku'=>'360A', 'name'=>'Nhiệt kế']];
@@ -279,10 +275,11 @@
 					$array_sku[$key]['name'] = $produt->name;
 					$array_sku[$key]['sku'] = $sku_short;
 				}
+				$data = $this->return_ar_pd_sl($array_sku, $string);
 
 			}
 
-			$data = $this->return_ar_pd_sl($array_sku, $string);
+			
 
 			echo "<pre>";
 
