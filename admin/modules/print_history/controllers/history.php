@@ -299,19 +299,16 @@
 
 			preg_match_all($pattern, $string, $matches);
 
-			//xóa kết quả trùng nhau trong mảng sku tìm thấy
+			
 	 
 	    	
 			// Loại bỏ khoảng trắng trong mỗi kết quả
-			$cleaned = array_map(function($sku) {
+			$cleaneds = array_map(function($sku) {
 			    return preg_replace('/\s+/', '', $sku);
 			}, $matches[0]);
 
-			echo "<pre>";
-			print_r($cleaned);
-			echo "</pre>";
+			$cleaned = array_reverse(array_unique($cleaneds));
 
-			die;
 
 			$data = [];
 
