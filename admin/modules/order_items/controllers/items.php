@@ -452,6 +452,13 @@
 
 			$id_xlsx = $db->getResult();
 
+
+
+			$querys = "SELECT * FROM fs_order_uploads_detail AS a  WHERE 1=1 AND is_print = 1    AND a.date =  '$date'  AND a.house_id =  '$house_id'  AND a.warehouse_id =  '$warehouse_id'  AND a.platform_id =  '$platform_id'  ORDER BY sku_fisrt ASC,ABS(sku_fisrt),sku_last ASC,ABS(sku_last),color ASC,ABS(color),size ASC,ABS(size),created_time DESC , id DESC";
+
+			$sqls = $db->query($querys);
+			$result = $db->getObjectList();
+
 		
 
 			// phần xuất file excel 
@@ -568,7 +575,7 @@
 				// $total_sheet->setCellValue('O1', 'Giá ưu đãi');
 				$total_sheet->setCellValue('K1', 'Số lượng');
 				$total_sheet->setCellValue('L1', 'Tổng giá bán (sản phẩm)');
-				$list_detail = $this->get_list_detail_tong();
+				$list_detail = $result;
 
 				echo "<pre>";
 				print_r($list_detail);
