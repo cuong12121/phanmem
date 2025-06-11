@@ -1676,8 +1676,7 @@
 				    
 				}
 
-				$row['id_file_pdf_google_drive'] = implode(",", $ar_id_file_pdf_google);
-			
+				
 
 				$file_pdf_names = substr($file_pdf_names,0,-3);
 
@@ -1688,7 +1687,11 @@
 
 				$id_google_drive = file_get_contents('https://drive.'.DOMAIN.'/createfile_gg.php?link=https://'.DOMAIN.'/'.$file_pdf_converts);
 
-				 array_push($ar_id_file_pdf_google, $id_google_drive);
+				array_push($ar_id_file_pdf_google, $id_google_drive);
+
+
+				$row['id_file_pdf_google_drive'] = implode(",", $ar_id_file_pdf_google);
+			
 				
 				// cuong:viết lại dòng trên này xem sao
 				// $row['file_pdf'] = 'files/orders/'.$cyear.'/'.$cmonth.'/'.$cday.'/'.$file_pdf_name;
