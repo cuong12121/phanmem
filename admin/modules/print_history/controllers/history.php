@@ -218,7 +218,7 @@
 
 		    echo "<pre>";
 
-		    print_r($products);
+		    print_r($rawText);
 
 		    echo "</pre>";
 
