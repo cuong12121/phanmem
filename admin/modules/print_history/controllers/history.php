@@ -288,6 +288,43 @@
 			die;
 
 		}
+
+
+		function return_product_sku_quantity_to_text($string)
+		{
+			
+			// $pattern = '/\b[A-Z0-9]{4}\s*-\s*[A-Z]{2}\s*-\s*\d{2}\s*-\s*[A-Z]{3}\s*-\s*\d{2}\s*-\s*\d{3}\b/';
+
+			$pattern = '/\b[A-Z0-9]{4}\s*-\s*[A-Z]{2}\s*-\s*\d{2}\s*-\s*[A-Z]{3}\s*-\s*\d{2}\b/';
+
+			preg_match_all($pattern, $string, $matches);
+
+			// Loại bỏ khoảng trắng trong mỗi kết quả
+			$cleaned = array_map(function($sku) {
+			    return preg_replace('/\s+/', '', $sku);
+			}, $matches[0]);
+
+			$data = [];
+
+			// $array_sku =[['sku'=>'663D', 'name'=>'Túi Ngủ Văn Phòng KAW'], ['sku'=>'360A', 'name'=>'Nhiệt kế']];
+
+			if(!empty($cleaned) && count($cleaned)>0){
+
+				foreach ($cleaned as $key => $value) {
+
+					$sku_short = substr(trim($value), 0, 10);
+					
+					$produt = $model->get_record('code = "'.$sku_short.'"','fs_products','name');
+
+					$array_sku[$key]['name'] = $produt->name;
+					$array_sku[$key]['sku'] = $sku_short;
+				}
+				$data = $this->return_ar_pd_sl($array_sku, $string);
+
+			}
+
+			return $data;
+		}
  
 
 
@@ -338,62 +375,49 @@
 			foreach ($pages as $index => $page) {
 			    $pageNumber = $index + 1;
 			    $text = $page->getText();
-			    $texts = preg_replace('/\r?\n/', '', $text);
-			   
-			    // Lấy tất cả các kết quả
-			    preg_match_all($patternSku, $texts, $matchesSku);
-			    preg_match_all($patternQty, $text, $matchesQty);
-			 
-			    //xóa kết quả trùng nhau trong mảng sku tìm thấy
-			 
-			    $matchesSku[0] = array_reverse(array_unique($matchesSku[0]));
-			    
-			    // Chuẩn bị mảng kết quả
-			    $results = [];
-			    // Đảm bảo số lượng SKU và số lượng khớp nhau về thứ tự
-			    $count = min(count($matchesSku[0]), count($matchesQty[1]));
-			    for ($i = 0; $i < $count; $i++) {
 
-			    	$check_sl = [];
-			    	
-			        $skuFull = $matchesSku[0][$i];
-			        $skuShort = substr($skuFull, 0, 7); // Lấy 4 ký tự đầu của SKU
+			    $data = $this->return_product_sku_quantity_to_text($text);
 
-			        $sku_full_check = substr(trim($skuFull), 0, 10); // Lấy 10 ký tự đầu của SKU
+			    if(!empty($data) && count($data)>0)
 
-			        $check_combo = $this->combo_Return_code($sku_full_check);
+				    for ($i = 0; $i < count($data); $i++) {
 
-			        $quantity_get = $matchesQty[1][$i];
+				    	$check_sl = [];
+				    	
+				        $skuFull = $data[$i]['sku'];
+				        $skuShort = substr($skuFull, 0, 7); // Lấy 4 ký tự đầu của SKU
 
-			        
-			        if(!empty($check_combo)){
-			        	
-			        	$show_more = $check_combo;
+				        $sku_full_check = substr(trim($skuFull), 0, 10); // Lấy 10 ký tự đầu của SKU
 
-			        	$ar_sku_show[$index][] =  $show_more;
+				        $check_combo = $this->combo_Return_code($sku_full_check);
 
-			        }
-			        
-			       
+				        $quantity_get = $data[$i]['quantity'];
 
-			        $results[] = [
-			            'sku' => $skuShort,
-			            'quantity' => $quantity_get,
-			            'sku_full' => $skuFull,
-			            'sku_full_check' => $sku_full_check,
-			            'count_show_more'=> !empty($check_combo)?count($show_more):0,
-			           
+				        if(!empty($check_combo)){
+				        	
+				        	$show_more = $check_combo;
 
-			        ];
-			    }
+				        	$ar_sku_show[$index][] =  $show_more;
+
+				        }
+				        
+				        $results[] = [
+				            'sku' => $skuShort,
+				            'quantity' => $quantity_get,
+				            'sku_full' => $skuFull,
+				            'sku_full_check' => $sku_full_check,
+				            'count_show_more'=> !empty($check_combo)?count($show_more):0,
+				           
+				        ];
+				    }
+				}    
 			    array_push($data_result, array_reverse($results));
 			 
 			}
-
-			
-
 			echo "<pre>";
+
 			print_r($data_result);
+			
 			echo "<pre>";
 
 			die;
