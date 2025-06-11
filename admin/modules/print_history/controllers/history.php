@@ -259,7 +259,7 @@
 
 			echo "<pre>";
 
-			print_r($string);
+			print_r($cleaned);
 
 			echo "</pre>";
 
