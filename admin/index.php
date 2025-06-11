@@ -19,7 +19,7 @@ if ($now < $mocThoiGian) {
      
     if($ip != '116.101.246.1'){
      
-        echo"<h1>Server đang bảo trì, xin vui lòng quay lại sau</h1>"
+        echo"<h1>Server đang bảo trì, xin vui lòng quay lại sau</h1>";
    
         die;
      
