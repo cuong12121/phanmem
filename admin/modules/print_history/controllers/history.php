@@ -383,6 +383,8 @@
 			    print_r($data);
 			    echo "</pre>";
 
+			    die;
+
 			    // if(!empty($data) && count($data)>0)
 
 				//     for ($i = 0; $i < count($data); $i++) {
