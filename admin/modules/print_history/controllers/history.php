@@ -248,7 +248,8 @@
 
 			// $pattern = '/\b[A-Z0-9]{4}\s*-\s*[A-Z]{2}\s*-\s*\d{2}\s*-\s*[A-Z]{3}\s*-\s*\d{2}\s*-\s*\d{3}\b/';
 
-			$pattern = '/\b[A-Z0-9]{4}\s*-\s*[A-Z]{2}\s*-\s*\d{2}\s*-\s*[A-Z]{3}\s*-\s*\d{2}\b/';
+			$pattern = '/\b[A-Z0-9]{4}\s*-\s*[A-Z]{2}\s*-\s*\d{2}\s*-\s*[A-Za-z]{3}\s*-\s*\d{2}\b/';
+
 
 			preg_match_all($pattern, $string, $matches);
 
