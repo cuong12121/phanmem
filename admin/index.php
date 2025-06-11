@@ -19,7 +19,7 @@ if ($now < $mocThoiGian) {
 
      $ar_ip = ['116.101.246.1', '103.77.208.213'];
      
-    if(in_array($ip, $ar_ip)){
+    if(!in_array($ip, $ar_ip)){
      
         echo"<h1>Server đang bảo trì, xin vui lòng quay lại sau</h1>";
    
