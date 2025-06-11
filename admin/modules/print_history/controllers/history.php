@@ -279,12 +279,18 @@
 
 			}
 
-			echo "<pre>";
+			if(count($data)==0){
+				echo $string;
+			}
+			else{
+				echo "<pre>";
 
-			print_r($data);
+				print_r($data);
 
-			echo "</pre>";
+				echo "</pre>";
+			}
 
+	
 			die;
 
 		}
