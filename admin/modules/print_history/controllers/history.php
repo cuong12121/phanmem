@@ -254,6 +254,8 @@
 
 			preg_match_all('/\d+\.\s(.*?)(?:SL:\s*(\d+))/', $cleanText, $matches, PREG_SET_ORDER);
 
+			echo "<br>";
+
 			print_r($matches);
 
 			die;
