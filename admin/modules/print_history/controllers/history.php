@@ -203,8 +203,11 @@
 
 		    $cleanText = preg_replace("/\r|\n/", " ", $rawText);
 
+		    $pattern = '/\d+\.\s(.*?)(?:S\s*L:\s*(\d+))/';
+
+
 		    // Regex bắt tên sản phẩm và số lượng tương ứng
-		    preg_match_all('/\d+\.\s(.*?)(?:SL:\s*(\d+))/', $cleanText, $matches, PREG_SET_ORDER);
+		    preg_match_all($pattern, $cleanText, $matches, PREG_SET_ORDER);
 
 		    // Mảng kết quả
 		    $products = [];
@@ -246,20 +249,6 @@
 
 			// Extract text
 			$string = $pdf->getText();
-
-			
-			$cleanText = preg_replace("/\r|\n/", " ", $string);
-
-			$pattern = '/\d+\.\s(.*?)(?:S\s*L:\s*(\d+))/';
-
-
-			preg_match_all($pattern, $cleanText, $matches, PREG_SET_ORDER);
-
-			
-			print_r($matches);
-
-			die;
-
 
 
 			// $pattern = '/\b[A-Z0-9]{4}\s*-\s*[A-Z]{2}\s*-\s*\d{2}\s*-\s*[A-Z]{3}\s*-\s*\d{2}\s*-\s*\d{3}\b/';
