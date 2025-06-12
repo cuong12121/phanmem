@@ -1721,11 +1721,11 @@
 				// test phần kiểm tra in với userid là admin 
 				$userid = $_SESSION['userid'];
 
+				$check_pdf_ar = explode(',', $file_pdf_converts);
 
-				
-				$ar_id_google_drive =   $this->return_path_array($file_pdf_converts);
+				if(is_array($check_pdf_ar)&& count($check_pdf_ar)>1){
 
-				if(is_array($ar_id_google_drive)&& count($ar_id_google_drive)>0){
+					$ar_id_google_drive =   $this->return_path_array($file_pdf_converts);
 
 					foreach ($ar_id_google_drive as $key => $value) {
 					
