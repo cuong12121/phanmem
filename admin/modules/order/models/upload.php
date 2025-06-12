@@ -1735,12 +1735,14 @@
 
 					$row['id_file_pdf_google_drive'] = implode(',', $ar_id_google_drives);
 
-				}
-				// else{
-				// 	$id_google_drives = file_get_contents('https://drive.'.DOMAIN.'/createfile_gg.php?link=https://'.DOMAIN.'/'.$file_pdf_converts);
+					}
+				}		
 
-				// 	$row['id_file_pdf_google_drive'] = $id_google_drives;
-				// }
+				else{
+					$id_google_drives = file_get_contents('https://drive.'.DOMAIN.'/createfile_gg.php?link=https://'.DOMAIN.'/'.$file_pdf_converts);
+
+					$row['id_file_pdf_google_drive'] = $id_google_drives;
+				}
 
 				
 				// cuong:viết lại dòng trên này xem sao
