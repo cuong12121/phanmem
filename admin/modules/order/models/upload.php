@@ -1715,7 +1715,7 @@
 				
 				$row['file_pdf'] = $file_pdf_converts;	
 
-				$ar_$id_google_drive =   return_path_array($file_pdf_converts);
+				$ar_$id_google_drive =   $this->return_path_array($file_pdf_converts);
 
 				foreach ($ar_$id_google_drive as $key => $value) {
 					
