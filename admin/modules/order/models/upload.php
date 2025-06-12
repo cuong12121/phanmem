@@ -1729,7 +1729,7 @@
 					
 						$id_google_drives = file_get_contents('https://drive.'.DOMAIN.'/createfile_gg.php?link=https://'.DOMAIN.'/'.$value);
 
-						array_push($ar_id_file_pdf_googles, $id_google_drive);
+						array_push($ar_id_file_pdf_googles, $id_google_drives);
 
 				}
 
