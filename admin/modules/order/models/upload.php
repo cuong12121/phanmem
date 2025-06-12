@@ -1715,7 +1715,7 @@
 
 
 				// test phần kiểm tra in với userid là admin 
-				$userid = $_SESSION['userid'];
+			
 
 				$check_pdf_ar = explode(',', $file_pdf_converts);
 

@@ -135,9 +135,9 @@
 			$H = date('G');
 			$M = date('i');
 
-	        if ($H < 13) {
+	        if ($H < 12) {
 			    $house_id = 13;
-			} elseif (($H >= 13 && $H < 14) ||($H == 14 && $M < 30) ) {
+			} elseif (($H >= 12 && $H < 14) ||($H == 14 && $M < 30) ) {
 			    $house_id = 18;
 			} else {
 			    $house_id = 15;
