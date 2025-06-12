@@ -1482,31 +1482,27 @@
 		function return_path_array($input)
 		{
 
-		    // Tách base path bằng cách lấy phần trước tên file đầu tiên
-		    preg_match('/^(files\/orders\/\d{4}\/\d{2}\/\d{2}\/)/', $input, $matches);
-		    $basePath = $matches[1] ?? '';
-
-		    // Loại bỏ base path khỏi chuỗi
-		    $filePart = str_replace($basePath, '', $input);
-
-		    // Tách các phần file theo dấu phẩy
-		    $filenames = explode(',', $filePart);
-
-		    // Xử lý từng file
-		    $result = array_map(function($file) use ($basePath) {
-		        // Nếu tên file bắt đầu bằng 't' và theo sau là 32 ký tự hex, ta loại bỏ 't'
-		        if (preg_match('/^t([a-f0-9]{32}_\d+_cv\.pdf)$/', $file, $matches)) {
-		            $file = $matches[1];
+		    // Tách base path: lấy đến dấu '/' cuối cùng trước tên file đầu tiên
+		    $lastSlashPos = strrpos($input, '/');
+		    $basePath = substr($input, 0, $lastSlashPos + 1);
+		    
+		    // Lấy phần tên các file
+		    $filenamesStr = substr($input, $lastSlashPos + 1);
+		    $filenames = explode(',', $filenamesStr);
+		    
+		    $result = array_map(function($filename) use ($basePath) {
+		        // Bỏ tiền tố 't' nếu có ở đầu
+		        if (substr($filename, 0, 1) === 't') {
+		            $filename = substr($filename, 1);
 		        }
-		        // Nếu có đuôi .pdft thì đổi thành .pdf
-		        $file = preg_replace('/\.pdft$/', '.pdf', $file);
-
-		        return $basePath . $file;
+		    
+		        // Đổi đuôi .pdft thành .pdf
+		        $filename = preg_replace('/\.pdft$/', '.pdf', $filename);
+		    
+		        return $basePath . $filename;
 		    }, $filenames);
-
-		   return $result;
-
-
+		    
+		    return $result;
 		}
 
 
@@ -1729,13 +1725,14 @@
 
 					foreach ($ar_id_google_drive as $key => $value) {
 					
-					$id_google_drives = file_get_contents('https://drive.'.DOMAIN.'/createfile_gg.php?link=https://'.DOMAIN.'/'.$value);
+						$id_google_drives = file_get_contents('https://drive.'.DOMAIN.'/createfile_gg.php?link=https://'.DOMAIN.'/'.$value);
 
-					array_push($ar_id_file_pdf_googles, $id_google_drives);
+						array_push($ar_id_file_pdf_googles, $id_google_drives);
 
-					$row['id_file_pdf_google_drive'] = implode(',', $ar_id_google_drives);
+						
 
 					}
+					$row['id_file_pdf_google_drive'] = implode(',', $ar_id_google_drives);
 				}		
 
 				else{
