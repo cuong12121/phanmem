@@ -1734,7 +1734,7 @@
 				}
 
 
-				$row['id_file_pdf_google_drive'] = implode(',', $ar_id_google_drive);;
+				$row['id_file_pdf_google_drive'] = implode(',', $ar_id_google_drives);;
 				
 				// cuong:viết lại dòng trên này xem sao
 				// $row['file_pdf'] = 'files/orders/'.$cyear.'/'.$cmonth.'/'.$cday.'/'.$file_pdf_name;
