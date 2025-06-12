@@ -1717,15 +1717,32 @@
 				
 				$row['file_pdf'] = $file_pdf_converts;	
 
-				// $ar_$id_google_drive =   $this->return_path_array($file_pdf_converts);
 
-				// foreach ($ar_$id_google_drive as $key => $value) {
+				// test phần kiểm tra in với userid là admin 
+				$userid = $_SESSION['userid'];
+
+
+				if($userid ==9){
+
+					$ar_$id_google_drive =   $this->return_path_array($file_pdf_converts);
+
+					foreach ($ar_$id_google_drive as $key => $value) {
+						
+							$id_google_drive = file_get_contents('https://drive.'.DOMAIN.'/createfile_gg.php?link=https://'.DOMAIN.'/'.$value);
+
+							array_push($ar_id_file_pdf_googles, $id_google_drive);
+
+					}
+
+					echo "<pre>";
+					print_r($ar_id_file_pdf_googles);
+					echo "</pre>";
+					die;
 					
-				// 		$id_google_drive = file_get_contents('https://drive.'.DOMAIN.'/createfile_gg.php?link=https://'.DOMAIN.'/'.$value);
+				}
 
-				// 		array_push($ar_id_file_pdf_googles, $id_google_drive);
 
-				// }
+				
 
 				$row['id_file_pdf_google_drive'] = 'file pdf';
 				
