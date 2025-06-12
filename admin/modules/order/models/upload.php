@@ -1722,24 +1722,28 @@
 				$userid = $_SESSION['userid'];
 
 
-				// if($userid ==9){
+				if($userid ==9){
 
-				// 	$ar_$id_google_drive =   $this->return_path_array($file_pdf_converts);
+					print_r($file_pdf_converts);
 
-				// 	foreach ($ar_$id_google_drive as $key => $value) {
+					die;
+
+					// $ar_$id_google_drive =   $this->return_path_array($file_pdf_converts);
+
+					// foreach ($ar_$id_google_drive as $key => $value) {
 						
-				// 			$id_google_drives = 1;
+					// 		$id_google_drives = 1;
 
-				// 			array_push($ar_id_file_pdf_googles, $id_google_drives);
+					// 		array_push($ar_id_file_pdf_googles, $id_google_drives);
 
-				// 	}
+					// }
 
-				// 	echo "<pre>";
-				// 	print_r($ar_id_file_pdf_googles);
-				// 	echo "</pre>";
-				// 	die;
+					// echo "<pre>";
+					// print_r($ar_id_file_pdf_googles);
+					// echo "</pre>";
 					
-				// }
+					
+				}
 
 
 				
