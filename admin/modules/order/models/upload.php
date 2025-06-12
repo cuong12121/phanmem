@@ -1506,7 +1506,7 @@
 
 		   return $result;
 
-		   
+
 		}
 
 
@@ -1717,17 +1717,17 @@
 				
 				$row['file_pdf'] = $file_pdf_converts;	
 
-				$ar_$id_google_drive =   $this->return_path_array($file_pdf_converts);
+				// $ar_$id_google_drive =   $this->return_path_array($file_pdf_converts);
 
-				foreach ($ar_$id_google_drive as $key => $value) {
+				// foreach ($ar_$id_google_drive as $key => $value) {
 					
-						$id_google_drive = file_get_contents('https://drive.'.DOMAIN.'/createfile_gg.php?link=https://'.DOMAIN.'/'.$value);
+				// 		$id_google_drive = file_get_contents('https://drive.'.DOMAIN.'/createfile_gg.php?link=https://'.DOMAIN.'/'.$value);
 
-						array_push($ar_id_file_pdf_googles, $id_google_drive);
+				// 		array_push($ar_id_file_pdf_googles, $id_google_drive);
 
-				}
+				// }
 
-				$row['id_file_pdf_google_drive'] = implode(",", $ar_id_file_pdf_googles);
+				$row['id_file_pdf_google_drive'] = 'file pdf';
 				
 				// cuong:viết lại dòng trên này xem sao
 				// $row['file_pdf'] = 'files/orders/'.$cyear.'/'.$cmonth.'/'.$cday.'/'.$file_pdf_name;
