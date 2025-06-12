@@ -1729,8 +1729,6 @@
 
 						array_push($ar_id_file_pdf_googles, $id_google_drives);
 
-						
-
 					}
 					$row['id_file_pdf_google_drive'] = implode(',', $ar_id_google_drives);
 				}		
