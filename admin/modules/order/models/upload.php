@@ -1479,6 +1479,35 @@
 		    return $str;
 		}
 
+		function return_path_array($input)
+		{
+
+		    // Tách base path bằng cách lấy phần trước tên file đầu tiên
+		    preg_match('/^(files\/orders\/\d{4}\/\d{2}\/\d{2}\/)/', $input, $matches);
+		    $basePath = $matches[1] ?? '';
+
+		    // Loại bỏ base path khỏi chuỗi
+		    $filePart = str_replace($basePath, '', $input);
+
+		    // Tách các phần file theo dấu phẩy
+		    $filenames = explode(',', $filePart);
+
+		    // Xử lý từng file
+		    $result = array_map(function($file) use ($basePath) {
+		        // Nếu tên file bắt đầu bằng 't' và theo sau là 32 ký tự hex, ta loại bỏ 't'
+		        if (preg_match('/^t([a-f0-9]{32}_\d+_cv\.pdf)$/', $file, $matches)) {
+		            $file = $matches[1];
+		        }
+		        // Nếu có đuôi .pdft thì đổi thành .pdf
+		        $file = preg_replace('/\.pdft$/', '.pdf', $file);
+
+		        return $basePath . $file;
+		    }, $filenames);
+
+		   return $result;
+		}
+
+
 
 		function save($row = array(), $use_mysql_real_escape_string = 1) {
 			global $config;
@@ -1488,6 +1517,8 @@
 			$redis = $this->connect_redis();
 
 			$data_tracking = [];
+
+			$ar_id_file_pdf_googles = [];
 
 			$keyExists = $redis->exists('tracking_order_'.$data_id_user);
 
@@ -1663,7 +1694,7 @@
                         echo "Command failed with status: $status";
                     }
 
-                    $id_google_drive = file_get_contents('https://drive.'.DOMAIN.'/createfile_gg.php?link=https://'.DOMAIN.'/files/orders/'.$cyear.'/'.$cmonth.'/'.$cday.'/'.$files_convert_name_pdf);
+                    // $id_google_drive = file_get_contents('https://drive.'.DOMAIN.'/createfile_gg.php?link=https://'.DOMAIN.'/files/orders/'.$cyear.'/'.$cmonth.'/'.$cday.'/'.$files_convert_name_pdf);
 
                     // $id_google_drive ='file1_pdf';
 
@@ -1684,14 +1715,17 @@
 				
 				$row['file_pdf'] = $file_pdf_converts;	
 
+				$ar_$id_google_drive =   return_path_array($file_pdf_converts);
 
-				$id_google_drive = file_get_contents('https://drive.'.DOMAIN.'/createfile_gg.php?link=https://'.DOMAIN.'/'.$file_pdf_converts);
+				foreach ($ar_$id_google_drive as $key => $value) {
+					
+						$id_google_drive = file_get_contents('https://drive.'.DOMAIN.'/createfile_gg.php?link=https://'.DOMAIN.'/'.$value);
 
-				array_push($ar_id_file_pdf_google, $id_google_drive);
+						array_push($ar_id_file_pdf_googles, $id_google_drive);
 
+				}
 
-				$row['id_file_pdf_google_drive'] = implode(",", $ar_id_file_pdf_google);
-			
+				$row['id_file_pdf_google_drive'] = implode(",", $ar_id_file_pdf_googles);
 				
 				// cuong:viết lại dòng trên này xem sao
 				// $row['file_pdf'] = 'files/orders/'.$cyear.'/'.$cmonth.'/'.$cday.'/'.$file_pdf_name;
