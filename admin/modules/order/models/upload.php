@@ -1725,18 +1725,23 @@
 				
 				$ar_id_google_drive =   $this->return_path_array($file_pdf_converts);
 
-				foreach ($ar_id_google_drive as $key => $value) {
-					
-						$id_google_drives = file_get_contents('https://drive.'.DOMAIN.'/createfile_gg.php?link=https://'.DOMAIN.'/'.$value);
+				if(is_array($ar_id_google_drive)&& count($ar_id_google_drive)>0){
 
-						array_push($ar_id_file_pdf_googles, $id_google_drives);
+					foreach ($ar_id_google_drive as $key => $value) {
+					
+					$id_google_drives = file_get_contents('https://drive.'.DOMAIN.'/createfile_gg.php?link=https://'.DOMAIN.'/'.$value);
+
+					array_push($ar_id_file_pdf_googles, $id_google_drives);
+
+					$row['id_file_pdf_google_drive'] = implode(',', $ar_id_google_drives);
 
 				}
+				else{
+					$id_google_drives = file_get_contents('https://drive.'.DOMAIN.'/createfile_gg.php?link=https://'.DOMAIN.'/'.$file_pdf_converts);
 
+					$row['id_file_pdf_google_drive'] = $id_google_drives;
+				}
 
-				$row['id_file_pdf_google_drive'] = implode(',', $ar_id_google_drives);
-
-				
 				
 				// cuong:viết lại dòng trên này xem sao
 				// $row['file_pdf'] = 'files/orders/'.$cyear.'/'.$cmonth.'/'.$cday.'/'.$file_pdf_name;
