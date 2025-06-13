@@ -219,7 +219,7 @@
 		}
 
 
-		function return_ar_pd_sl($array, $rawText)
+		function return_ar_pd_sl($mang3, $rawText)
 		{
 
 		    $cleanText = preg_replace("/\r|\n/", " ", $rawText);
@@ -231,10 +231,10 @@
 		    preg_match_all($pattern, $cleanText, $matches, PREG_SET_ORDER);
 
 		    // Mảng kết quả
-		    $products = [];
+		    $mang2 = [];
 
 		    foreach ($matches as $match) {
-		        $products[] = [
+		        $mang2[] = [
 		            'name' => trim($match[1]),
 		            'quantity' => (int)$match[2]
 		        ];
@@ -243,13 +243,13 @@
 
 		    $ketQua = [];
 
-			if (count($products) !== count($array)) {
+			if (count($mang2) !== count($mang3)) {
 			    // Lấy các từ khóa quan trọng trong name của mảng 2, ví dụ: K650, K670
-			    preg_match_all('/K\d+/', $products[0]['name'], $matches);
+			    preg_match_all('/K\d+/', $mang2[0]['name'], $matches);
 			    $tuKhoa = $matches[0];
 
 			    foreach ($tuKhoa as $key) {
-			        foreach ($array as $array) {
+			        foreach ($mang3 as $item3) {
 			            if (stripos($item3['name'], $key) !== false) {
 			                $ketQua[] = $item3;
 			                break 2; // Chỉ lấy phần tử đầu tiên khớp
