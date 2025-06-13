@@ -240,8 +240,12 @@
 		        ];
 		    }
 
+
+
+
 			if (count($mang2) !== count($mang3)) {
-			    
+				$ketQua = [];
+			    $targetName = $mang2[0]['name'];
 				// Tính độ giống nhau (percentage) giữa từng phần tử trong $mang3 với $targetName
 				foreach ($mang3 as $index => $item) {
 				    similar_text($targetName, $item['name'], $percent);
@@ -253,8 +257,7 @@
 
 				// Lấy đúng số lượng phần tử như mảng $mang2
 				$soLuongCanLay = count($mang2);
-				$ketQua = [];
-
+				
 				foreach (array_keys($similarities) as $index) {
 				    $ketQua[] = $mang3[$index];
 				    if (count($ketQua) >= $soLuongCanLay) {
