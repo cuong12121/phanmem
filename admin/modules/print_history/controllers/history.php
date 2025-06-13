@@ -240,26 +240,33 @@
 		        ];
 		    }
 
-
-		    $ketQua = [];
-
 			if (count($mang2) !== count($mang3)) {
-			    // Lấy các từ khóa quan trọng trong name của mảng 2, ví dụ: K650, K670
-			    preg_match_all('/K\d+/', $mang2[0]['name'], $matches);
-			    $tuKhoa = $matches[0];
+			    
+				// Tính độ giống nhau (percentage) giữa từng phần tử trong $mang3 với $targetName
+				foreach ($mang3 as $index => $item) {
+				    similar_text($targetName, $item['name'], $percent);
+				    $similarities[$index] = $percent;
+				}
 
-			    foreach ($tuKhoa as $key) {
-			        foreach ($mang3 as $item3) {
-			            if (stripos($item3['name'], $key) !== false) {
-			                $ketQua[] = $item3;
-			                break 2; // Chỉ lấy phần tử đầu tiên khớp
-			            }
-			        }
-			    }
+				// Sắp xếp giảm dần theo mức độ giống nhau
+				arsort($similarities);
+
+				// Lấy đúng số lượng phần tử như mảng $mang2
+				$soLuongCanLay = count($mang2);
+				$ketQua = [];
+
+				foreach (array_keys($similarities) as $index) {
+				    $ketQua[] = $mang3[$index];
+				    if (count($ketQua) >= $soLuongCanLay) {
+				        break;
+				    }
+				}
+
+			  
 			}
 
 			 echo "<pre>";
-		    print_r($mang2);
+		    print_r($ketQua);
 		    echo "</pre>";
 
 		    die;
