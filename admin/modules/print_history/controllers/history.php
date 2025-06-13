@@ -264,7 +264,7 @@
 
 		        $quantity = $this->getProductQuantityByFuzzyName($ketQua[$i]['name'], $mang2);
 
-		        $result[$i]['sku'] = $array[$i]['sku'];
+		        $result[$i]['sku'] = $ketQua[$i]['sku'];
 
 		        $result[$i]['quantity'] =  $quantity;
 
