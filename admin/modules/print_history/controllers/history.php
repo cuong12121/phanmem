@@ -251,15 +251,17 @@
 				// Cắt $mang3 từ index 0 đến $maxIndex
 				$mang3_filtered = array_slice($mang3, 0, $maxIndex + 1);
 
+				$mang3 = $mang3_filtered;
+
 			}
 
 
 		    $result = [];
-		    for ($i=0; $i<count($mang3_filtered);$i++) {
+		    for ($i=0; $i<count($mang3);$i++) {
 
-		        $quantity = $this->getProductQuantityByFuzzyName($mang3_filtered[$i]['name'], $mang2);
+		        $quantity = $this->getProductQuantityByFuzzyName($mang3[$i]['name'], $mang2);
 
-		        $result[$i]['sku'] = $mang3_filtered[$i]['sku'];
+		        $result[$i]['sku'] = $mang3[$i]['sku'];
 
 		        $result[$i]['quantity'] =  $quantity;
 
