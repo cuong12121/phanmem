@@ -259,7 +259,7 @@
 			}
 
 			 echo "<pre>";
-		    print_r($ketQua);
+		    print_r($mang3);
 		    echo "</pre>";
 
 		    die;
