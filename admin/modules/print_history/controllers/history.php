@@ -242,44 +242,23 @@
 		        ];
 		    }
 
-		    echo "<pre>";
 
-		    	print_r($mang2);
-
-		    echo "</pre>";
-
-		    die;
 
 
 
 
 			if (count($mang2) !== count($mang3)) {
-				$ketQua = [];
-			    $targetName = $mang2[0]['name'];
-				// Tính độ giống nhau (percentage) giữa từng phần tử trong $mang3 với $targetName
-				foreach ($mang3 as $index => $item) {
-				    similar_text($targetName, $item['name'], $percent);
-				    $similarities[$index] = $percent;
-				}
+				// Lấy chỉ số lớn nhất trong $mang2
+				$maxIndex = count($mang2) - 1;
 
-				// Sắp xếp giảm dần theo mức độ giống nhau
-				arsort($similarities);
-
-				// Lấy đúng số lượng phần tử như mảng $mang2
-				$soLuongCanLay = count($mang2);
-				
-				foreach (array_keys($similarities) as $index) {
-				    $ketQua[] = $mang3[$index];
-				    if (count($ketQua) >= $soLuongCanLay) {
-				        break;
-				    }
-				}
+				// Cắt $mang3 từ index 0 đến $maxIndex
+				$mang3_filtered = array_slice($mang3, 0, $maxIndex + 1);
 
 			  
 			}
 
 			 echo "<pre>";
-		    print_r($ketQua);
+		    print_r($mang3_filtered);
 		    echo "</pre>";
 
 		    die;
