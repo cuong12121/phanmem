@@ -257,17 +257,11 @@
 			  
 			}
 
-			 echo "<pre>";
-		    print_r($mang3_filtered);
-		    echo "</pre>";
-
-		    die;
-
 
 		    $result = [];
-		    for ($i=0; $i<count($ketQua);$i++) {
+		    for ($i=0; $i<count($mang3_filtered);$i++) {
 
-		        $quantity = $this->getProductQuantityByFuzzyName($ketQua[$i]['name'], $mang2);
+		        $quantity = $this->getProductQuantityByFuzzyName($mang3_filtered[$i]['name'], $mang2);
 
 		        $result[$i]['sku'] = $ketQua[$i]['sku'];
 
