@@ -230,6 +230,8 @@
 		    // Regex bắt tên sản phẩm và số lượng tương ứng
 		    preg_match_all($pattern, $cleanText, $matches, PREG_SET_ORDER);
 
+
+
 		    // Mảng kết quả
 		    $mang2 = [];
 
@@ -239,6 +241,14 @@
 		            'quantity' => (int)$match[2]
 		        ];
 		    }
+
+		    echo "<pre>";
+
+		    	print_r($mang2);
+
+		    echo "</pre>";
+
+		    die;
 
 
 
