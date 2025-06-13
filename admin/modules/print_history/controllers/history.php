@@ -259,7 +259,7 @@
 			}
 
 			 echo "<pre>";
-		    print_r($mang3);
+		    print_r($mang2);
 		    echo "</pre>";
 
 		    die;
