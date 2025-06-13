@@ -243,14 +243,16 @@
 
 		    $ketQua = [];
 
-			if (count($products) !== count($array)) {
-			    foreach ($products as $item2) {
-			        foreach ($array as $item3) {
-			            // So sánh mờ bằng cách kiểm tra xem tên trong mảng 3 có chứa mã như K670 hoặc K650 từ mảng 2 không
-			            if (stripos($item2['name'], 'K670') !== false && stripos($item3['name'], 'K670') !== false) {
+			if (count($mang2) !== count($mang3)) {
+			    // Lấy các từ khóa quan trọng trong name của mảng 2, ví dụ: K650, K670
+			    preg_match_all('/K\d+/', $mang2[0]['name'], $matches);
+			    $tuKhoa = $matches[0];
+
+			    foreach ($tuKhoa as $key) {
+			        foreach ($mang3 as $item3) {
+			            if (stripos($item3['name'], $key) !== false) {
 			                $ketQua[] = $item3;
-			            } elseif (stripos($item2['name'], 'K650') !== false && stripos($item3['name'], 'K650') !== false) {
-			                $ketQua[] = $item3;
+			                break 2; // Chỉ lấy phần tử đầu tiên khớp
 			            }
 			        }
 			    }
