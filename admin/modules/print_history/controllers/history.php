@@ -240,6 +240,12 @@
 		        ];
 		    }
 
+		    echo "<pre>";
+
+		    print_r($products);
+		    echo "</pre>";
+		    die;
+
 
 
 		    $result = [];
