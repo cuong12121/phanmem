@@ -258,6 +258,12 @@
 			    }
 			}
 
+			 echo "<pre>";
+		    print_r($result);
+		    echo "</pre>";
+
+		    die;
+
 
 		    $result = [];
 		    for ($i=0; $i<count($ketQua);$i++) {
@@ -270,11 +276,7 @@
 
 		    }
 
-		    echo "<pre>";
-		    print_r($result);
-		    echo "</pre>";
-
-		    die;
+		   
 
 		    return $result;
 		}
