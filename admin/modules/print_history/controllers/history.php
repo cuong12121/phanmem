@@ -262,7 +262,7 @@
 		    $result = [];
 		    for ($i=0; $i<count($ketQua);$i++) {
 
-		        $quantity = $this->getProductQuantityByFuzzyName($ketQua[$i]['name'], $products);
+		        $quantity = $this->getProductQuantityByFuzzyName($ketQua[$i]['name'], $ketQua);
 
 		        $result[$i]['sku'] = $array[$i]['sku'];
 
