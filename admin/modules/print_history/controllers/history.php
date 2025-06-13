@@ -240,15 +240,31 @@
 		        ];
 		    }
 
-		    echo "<pre>";
 
-		    print_r($products);
+		    $ketQua = [];
 
-		    echo "</pre>";
+			if (count($products) !== count($array)) {
+			    foreach ($products as $item2) {
+			        foreach ($array as $item3) {
+			            // So sánh mờ bằng cách kiểm tra xem tên trong mảng 3 có chứa mã như K670 hoặc K650 từ mảng 2 không
+			            if (stripos($item2['name'], 'K670') !== false && stripos($item3['name'], 'K670') !== false) {
+			                $ketQua[] = $item3;
+			            } elseif (stripos($item2['name'], 'K650') !== false && stripos($item3['name'], 'K650') !== false) {
+			                $ketQua[] = $item3;
+			            }
+			        }
+			    }
+			}
 
-		    echo "<pre>";
 
-		    print_r($array);
+
+			// In kết quả
+			echo "</pre>";
+			
+			print_r($ketQua);
+
+		    
+		    
 		    echo "</pre>";
 
 		    die;
