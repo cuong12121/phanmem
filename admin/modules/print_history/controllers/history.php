@@ -94,7 +94,7 @@
 				foreach ($parts as $part) {
 				    $clean = trim($part); // loại bỏ khoảng trắng
 
-				    array_push($data, substr($clean, 0, 10));
+				    array_push($data, str_replace('/', ':', $clean));
 				    
 				}
 
@@ -541,7 +541,7 @@
 			    			$pdf->SetXY(105, $k[$z]);
 			    			
 
-			    			$write_show_more = $ar_sku_show[$index_data][$i][$z].':'.$data_result[$index_data][$i]['quantity'];
+			    			$write_show_more = $ar_sku_show[$index_data][$i][$z];
 
 			    			$pdf->Write(10, $write_show_more);
 			    		}
