@@ -243,13 +243,13 @@
 
 		    $ketQua = [];
 
-			if (count($mang2) !== count($mang3)) {
+			if (count($products) !== count($array)) {
 			    // Lấy các từ khóa quan trọng trong name của mảng 2, ví dụ: K650, K670
-			    preg_match_all('/K\d+/', $mang2[0]['name'], $matches);
+			    preg_match_all('/K\d+/', $products[0]['name'], $matches);
 			    $tuKhoa = $matches[0];
 
 			    foreach ($tuKhoa as $key) {
-			        foreach ($mang3 as $item3) {
+			        foreach ($array as $array) {
 			            if (stripos($item3['name'], $key) !== false) {
 			                $ketQua[] = $item3;
 			                break 2; // Chỉ lấy phần tử đầu tiên khớp
