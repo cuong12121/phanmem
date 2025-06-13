@@ -259,24 +259,8 @@
 			}
 
 
-
-			// In kết quả
-			echo "</pre>";
-			
-			print_r($ketQua);
-
-		    
-		    
-		    echo "</pre>";
-
-		    die;
-
-
-
-
-
 		    $result = [];
-		    for ($i=0; $i<count($array);$i++) {
+		    for ($i=0; $i<count($ketQua);$i++) {
 
 		        $quantity = $this->getProductQuantityByFuzzyName($array[$i]['name'], $products);
 
@@ -285,6 +269,12 @@
 		        $result[$i]['quantity'] =  $quantity;
 
 		    }
+
+		    echo "<pre>";
+		    print_r($result);
+		    echo "</pre>";
+
+		    die;
 
 		    return $result;
 		}
