@@ -258,6 +258,12 @@
 			    }
 			}
 
+			echo "<pre>";
+			print_r($ketQua);
+			echo "<pre>";
+
+			die;
+
 
 		    $result = [];
 		    for ($i=0; $i<count($ketQua);$i++) {
