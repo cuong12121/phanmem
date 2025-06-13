@@ -242,10 +242,7 @@
 		        ];
 		    }
 
-
-
-
-
+		    // Trường hợp sai lệch số lượng sku và tên tìm được thì lấy số lượng theo tên tìm được
 
 			if (count($mang2) !== count($mang3)) {
 				// Lấy chỉ số lớn nhất trong $mang2
@@ -254,7 +251,6 @@
 				// Cắt $mang3 từ index 0 đến $maxIndex
 				$mang3_filtered = array_slice($mang3, 0, $maxIndex + 1);
 
-			  
 			}
 
 
