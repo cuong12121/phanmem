@@ -465,6 +465,15 @@
 
 			    echo "<pre>";
 
+			    print_r($text);
+
+			    echo "</pre>";
+
+
+
+		
+			    echo "<pre>";
+
 			    print_r($maVanDonMatches);
 
 			    echo "</pre>";
