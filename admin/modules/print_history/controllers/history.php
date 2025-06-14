@@ -393,9 +393,14 @@
 
 			// Extract text
 			$string = $pdf->getText();
+			$pattern = '/Mã đơn hàng:\s*(.*?)\s*Từ:/';
 
+			preg_match_all($pattern, $string, $matches);
 
 			echo $string;
+			echo "<br>";
+
+			print_r($matches) ;
 
 			die;
 
