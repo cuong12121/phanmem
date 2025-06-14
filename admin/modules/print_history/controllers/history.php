@@ -459,28 +459,7 @@
 			    $pageNumber = $index + 1;
 			    $text = $page->getText();
 
-			    
-
-			    $mvd =  preg_match_all('/Mã đơn hàng:\s*([A-Z0-9]+)/', $text, $maVanDonMatches);
-
-			    echo "<pre>";
-
-			    print_r($text);
-
-			    echo "</pre>";
-
-
-
-		
-			    echo "<pre>";
-
-			    print_r($maVanDonMatches);
-
-			    echo "</pre>";
-
-			    die;
-
-			    $mvd = $this->findMVD($text);
+			    $mvd = $this->findMVD($text)[1];
 
 			    // Chuẩn bị mảng kết quả
 			    $results = [];
