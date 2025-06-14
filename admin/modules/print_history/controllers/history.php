@@ -420,16 +420,10 @@
 
 		function return_mvd_shopee($content){
 
-        	// Tìm mã vận đơn (sau "Mã vận đơn:" và trên cùng một dòng)
-            preg_match_all('/Mã vận đơn:\s*(\S+)/', $content, $maVanDonMatches);
+     
+            preg_match_all('/Mã đơn hàng:\s*([A-Z0-9]+)/', $content, $maVanDonMatches);
             $maVanDon = isset($maVanDonMatches[1]) ? $maVanDonMatches[1] : null;
-
-            if(empty($maVanDon)){
-
-            	preg_match_all('/Mã đơn hàng:\s*([A-Z0-9]+)/', $content, $maVanDonMatches);
-            	$maVanDon = isset($maVanDonMatches[1]) ? $maVanDonMatches[1] : null;
-            	
-            }
+           
             return $maVanDon;
         }
 
