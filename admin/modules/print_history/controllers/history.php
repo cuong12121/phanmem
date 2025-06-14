@@ -461,7 +461,7 @@
 
 			    
 
-			    $mvd =  preg_match_all('/Mã vận đơn:\s*(\S+)/', $text, $maVanDonMatches);
+			    $mvd =  preg_match_all('/Mã đơn hàng:\s*([A-Z0-9]+)/', $text, $maVanDonMatches);
 
 			    echo "<pre>";
 
