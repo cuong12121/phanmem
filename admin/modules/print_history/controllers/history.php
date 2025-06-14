@@ -398,7 +398,7 @@
 			if (preg_match($pattern, $string, $matches)) {
 			    echo "Kết quả: " . $matches[1];  // SPXVN054643113956 250613EKPY3BNW
 			} else {
-			    echo "Không tìm thấy.";
+			    echo $string;
 			}
 
 			die;
