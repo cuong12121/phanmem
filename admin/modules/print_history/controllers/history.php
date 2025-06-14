@@ -394,7 +394,7 @@
 			// Extract text
 			$string = $pdf->getText();
 
-		
+
 			$pattern = '/Mã đơn hàng:\s*([\s\S]*?)\s*Từ:/';
 
 
@@ -504,10 +504,19 @@
 		    
             // $text = trim(PdfToText::getText($filePath));
 
-        	preg_match_all('/Mã đơn hàng:\s*([A-Z0-9]+)/', $content, $maVanDonMatches);
-        	$maVanDon = isset($maVanDonMatches[1]) ? $maVanDonMatches[1] : null;
+            $pattern = '/Mã đơn hàng:\s*([\s\S]*?)\s*Từ:/';
+
+            preg_match($pattern, $content, $matches);
+
+        	$maVanDon_ar = isset($matches[1]) ? $matches[1] : null;
+
+        	$maVanDon  = [];
+
+        	if(!empty($maVanDon_ar)){
+        		$maVanDon  = implode('', $maVanDon_ar);
+        	}
            
-            return $maVanDonMatches;
+            return $maVanDon;
             
 		}   
 		function return_info_to_file_pdf($url_file)
@@ -548,7 +557,9 @@
 			    $pageNumber = $index + 1;
 			    $text = $page->getText();
 
-			    $mvd = $this->findMVD($text)[1][0];
+			    $mvd_ar = $this->findMVD($text);
+
+			    $mvd = !empty($mvd_ar)?$mvd_ar[0]:'';
 
 			    // Chuẩn bị mảng kết quả
 			    $results = [];
