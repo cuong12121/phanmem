@@ -453,7 +453,7 @@
 			    $pageNumber = $index + 1;
 			    $text = $page->getText();
 
-			    $mvd = $this->findMVD($text)[1];
+			    $mvd = $this->findMVD($text)[1][0];
 
 			    // Chuẩn bị mảng kết quả
 			    $results = [];
