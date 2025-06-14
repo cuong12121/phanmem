@@ -784,6 +784,12 @@
             // printr($data);
             unset($j);
 
+            echo "<pre>";
+            print_r($data);
+            echo "</pre>";
+
+            die;
+
 
             $row = [];
             //chạy vòng đầu để check lỗi trước
