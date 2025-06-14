@@ -272,6 +272,22 @@
 		    return $result;
 		}
 
+		function export_file_compare_pdf_excel()
+		{
+			$model  = $this -> model;
+
+			$filePath = $_GET['file'];
+
+			$data = $this->return_info_to_file_pdf($filePath);
+
+			echo"<pre>";
+
+			print_r($data);
+
+			echo"</pre>";
+
+		}
+
 
 		
 
@@ -300,16 +316,12 @@
 
 			$pattern = '/\b[A-Z0-9]{4}\s*-\s*[A-Z]{2}\s*-\s*\d{2}\s*-\s*[A-Za-z]{3}\s*-\s*\d{2}\b/';
 
-
-
 			preg_match_all($pattern, $string, $matches);
 
 			// Loại bỏ khoảng trắng trong mỗi kết quả
 			$cleaned = array_map(function($sku) {
 			    return preg_replace('/\s+/', '', $sku);
 			}, $matches[0]);
-
-			
 
 			$data = [];
 
@@ -346,6 +358,21 @@
 			die;
 
 		}
+
+		function findMVD($content){
+
+        	// Tìm mã vận đơn (sau "Mã vận đơn:" và trên cùng một dòng)
+            preg_match_all('/Mã vận đơn:\s*(\S+)/', $content, $maVanDonMatches);
+            $maVanDon = isset($maVanDonMatches[1]) ? $maVanDonMatches[1] : null;
+
+            if(empty($maVanDon)){
+
+            	preg_match_all('/Mã đơn hàng:\s*([A-Z0-9]+)/', $content, $maVanDonMatches);
+            	$maVanDon = isset($maVanDonMatches[1]) ? $maVanDonMatches[1] : null;
+            	
+            }
+            return maVanDon;
+        }
 
 
 		function return_product_sku_quantity_to_text($string)
@@ -389,6 +416,120 @@
 
 			return $data;
 		}
+
+
+		function return_mvd_shopee($content){
+
+        	// Tìm mã vận đơn (sau "Mã vận đơn:" và trên cùng một dòng)
+            preg_match_all('/Mã vận đơn:\s*(\S+)/', $content, $maVanDonMatches);
+            $maVanDon = isset($maVanDonMatches[1]) ? $maVanDonMatches[1] : null;
+
+            if(empty($maVanDon)){
+
+            	preg_match_all('/Mã đơn hàng:\s*([A-Z0-9]+)/', $content, $maVanDonMatches);
+            	$maVanDon = isset($maVanDonMatches[1]) ? $maVanDonMatches[1] : null;
+            	
+            }
+            return $maVanDon;
+        }
+
+		function return_info_to_file_pdf($urls)
+		{
+			$baseDir =  PATH_BASE.'/admin/export/pdf/count_print/';
+
+			$parser = new Parser();
+
+			$urls = [
+			    $url_file
+			    
+			];
+
+
+			$model = $this -> model;
+
+			$filename = $model->downloadMultipleFiles($urls);
+
+
+			$filename = str_replace('https://dienmayai.com', '', $filename[0]['file_link']) ;
+
+			// Load PDF file
+			$pdf = $parser->parseFile($filename);
+			// Get all pages
+			$pages = $pdf->getPages();
+
+			$data_result = [];
+			 
+			$pattern = '/([A-Z0-9]{4})-[A-Z]{2}-[0-9]{2}-[A-Z]{3}-[0-9]{2}-(SL[0-9]|[0-9]{2,3})/i';
+
+			// $patternSku = '/([A-Z0-9]{4})-[A-Z]{2}-[0-9]{2}-[A-Z]{3}-[0-9]{2}-(SL[0-9]|[0-9]{2,3})/i';
+			//     // Pattern cho SL (số lượng)
+			// $patternQty = '/S[\s\S]*?L:\s*(\d+)/'; //kể cả trường hợp S L 
+			
+			$ar_sku_show =[];
+			
+			foreach ($pages as $index => $page) {
+			    $pageNumber = $index + 1;
+			    $text = $page->getText();
+
+			    $mvd = $this->return_mvd_shopee($text);
+
+			    // Chuẩn bị mảng kết quả
+			    $results = [];
+
+			    $data = $this->return_product_sku_quantity_to_text($text);
+
+
+
+			    if(!empty($data) && count($data)>0){
+
+				    for ($i = 0; $i < count($data); $i++) {
+
+				    	$check_sl = [];
+				    	
+				        $skuFull = $data[$i]['sku'];
+				        $skuShort = substr($skuFull, 0, 7); // Lấy 4 ký tự đầu của SKU
+
+				        $sku_full_check = substr(trim($skuFull), 0, 10); // Lấy 10 ký tự đầu của SKU
+
+				        $check_combo = $this->combo_Return_code($sku_full_check);
+
+				        $quantity_get = $data[$i]['quantity'];
+
+				        if(!empty($check_combo)){
+				        	
+				        	$show_more = $check_combo;
+
+				        	$ar_sku_show[$index][] =  $show_more;
+
+				        }
+				        
+				        $results[] = [
+				        	'mvd'=> $mvd,
+				            'sku' => $skuShort,
+				            'quantity' => $quantity_get,
+				            'sku_full' => $skuFull,
+				            'sku_full_check' => $sku_full_check,
+				            'count_show_more'=> !empty($check_combo)?count($show_more):0,
+				           
+				        ];
+				    }
+				}    
+			    array_push($data_result, array_reverse($results));
+			 
+			}
+
+			return $data_result;
+			
+		}
+
+
+
+
+
+
+
+
+
  
 
 
