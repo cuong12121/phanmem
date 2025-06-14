@@ -289,7 +289,7 @@
 
 			echo"<pre>";
 
-			print_r($data_pdfs);
+			print_r($data_pdf);
 
 			echo"</pre>";
 
