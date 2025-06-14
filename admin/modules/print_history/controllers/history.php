@@ -364,16 +364,19 @@
 
 			// In ra kết quả
 			echo "Sku not in excel:\n";
-			foreach ($onlyInArray1 as $item) {
-			    list($mvd, $sku) = explode('|', $item);
-			    echo "- MVD: $mvd, SKU: $sku\n";
-			}
+
+			echo "<pre>";
+			print_r($onlyInArray1);
+			echo "</pre>";
+			// foreach ($onlyInArray1 as $item) {
+			//     list($mvd, $sku) = explode('|', $item);
+			//     echo "- MVD: $mvd, SKU: $sku\n";
+			// }
 
 			echo "\nSku in excel not in pdf:\n";
-			foreach ($onlyInArray2 as $item) {
-			    list($mvd, $sku) = explode('|', $item);
-			    echo "- MVD: $mvd, SKU: $sku\n";
-			}
+			echo "<pre>";
+			print_r($onlyInArray2);
+			echo "</pre>";
 		}
 
 
