@@ -459,6 +459,14 @@
 			    $pageNumber = $index + 1;
 			    $text = $page->getText();
 
+			    echo "<pre>";
+
+			    print_r($text);
+
+			    echo "</pre>";
+
+			    die;
+
 			    $mvd = $this->findMVD($text);
 
 			    // Chuẩn bị mảng kết quả
