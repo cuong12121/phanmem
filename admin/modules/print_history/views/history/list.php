@@ -60,6 +60,8 @@
 	$list_config[] = array('title'=>'File pdf đếm','field'=>'id','type'=>'text','arr_params'=>array('function'=>'view_pdf_dem'));
 	$list_config[] = array('title'=>'File excel nhặt','field'=>'id','type'=>'text','arr_params'=>array('function'=>'view_excel_nhat'));
 
+	$list_config[] = array('title'=>'File excel so khớp','field'=>'id','type'=>'text','arr_params'=>array('function'=>'view_so_khop'));
+
 	
 
 
