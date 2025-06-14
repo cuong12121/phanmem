@@ -755,7 +755,7 @@
 
 
             $objexcel = $objReader->load($file_path);
-            $data =$objexcel->getActiveSheet(1)->toArray('null',true,true,true);
+            $data =$objexcel->getActiveSheet(2)->toArray('null',true,true,true);
 
             echo "<pre>";
             print_r($data);
