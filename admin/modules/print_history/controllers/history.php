@@ -516,7 +516,7 @@
         		$maVanDon  = explode(' ', $maVanDon_ar);
         	}
            
-            return $maVanDon;
+            return $maVanDon_ar;
             
 		}   
 		function return_info_to_file_pdf($url_file)
