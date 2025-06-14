@@ -513,7 +513,7 @@
         	$maVanDon  = [];
 
         	if(!empty($maVanDon_ar)){
-        		$maVanDon  = explode(' ', $maVanDon_ar);
+        		$maVanDon  = explode("\n", $maVanDon_ar);
         	}
            
             return $maVanDon_ar;
