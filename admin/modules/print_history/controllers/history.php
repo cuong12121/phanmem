@@ -465,7 +465,7 @@
 
 			    echo "<pre>";
 
-			    print_r($mvd);
+			    print_r($maVanDonMatches);
 
 			    echo "</pre>";
 
