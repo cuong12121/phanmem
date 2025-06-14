@@ -272,6 +272,12 @@
 		    return $result;
 		}
 
+		function normalize_array($array) {
+		    return array_map(function($item) {
+		        return $item['mvd'] . '|' . $item['sku'];
+		    }, $array);
+		}
+
 		function export_file_compare_pdf_excel()
 		{
 			$model  = $this -> model;
@@ -298,8 +304,8 @@
 
 			
 
-			$norm1 = normalize_array($data_pdfs);
-			$norm2 = normalize_array($data_ex);
+			$norm1 = $this->normalize_array($data_pdfs);
+			$norm2 = $this->normalize_array($data_ex);
 
 			$onlyInArray1 = array_diff($norm1, $norm2);
 			$onlyInArray2 = array_diff($norm2, $norm1);
