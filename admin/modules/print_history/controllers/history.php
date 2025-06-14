@@ -273,17 +273,7 @@
 		}
 
 
-		function view_so_khop($controle,$id)
-		{
-			$model = $controle -> model;
-			$data = $model->get_record('id = ' .$id,'fs_order_uploads_history_prints','id,compare_ex_pdf');
-			$link = URL_ROOT.$data-> compare_ex_pdf;
-
-			$check = !empty($data-> compare_ex_pdf)?'<a target="_blink" href="' . $link . '">Xem file</a>':'';
-
 		
-			return $check;
-		}
 
 		function return_sku_in_pdf()
 		{
@@ -642,6 +632,22 @@
 		
 			include 'modules/'.$this->module.'/views/'.$this->view.'/detail.php';
 		}
+	}
+
+
+
+	// phần này để in ra view
+
+	function view_so_khop($controle,$id)
+	{
+		$model = $controle -> model;
+		$data = $model->get_record('id = ' .$id,'fs_order_uploads_history_prints','id,compare_ex_pdf');
+		$link = URL_ROOT.$data-> compare_ex_pdf;
+
+		$check = !empty($data-> compare_ex_pdf)?'<a target="_blink" href="' . $link . '">Xem file</a>':'';
+
+	
+		return $check;
 	}
 
 	
