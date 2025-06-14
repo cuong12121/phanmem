@@ -283,9 +283,19 @@
 		{
 			$model  = $this -> model;
 
-			$filePath = $_GET['file'];
+			$filePath = 'https://dienmayai.com//admin/export/pdf/count_print//2025/06/14/13_1749860119.pdf';
 
 			$data_pdf = $this->return_info_to_file_pdf($filePath);
+
+			echo"<pre>";
+
+			print_r($data_pdfs);
+
+			echo"</pre>";
+
+			die;
+
+
 
 
 			// gộp mảng lại 
