@@ -276,13 +276,17 @@
 		{
 			$model  = $this -> model;
 
-			$filePath = $_GET['file'];
+			// $filePath = $_GET['file'];
 
-			$data = $this->return_info_to_file_pdf($filePath);
+			// $data_pdf = $this->return_info_to_file_pdf($filePath);
+
+			$url_ex = 'https://dienmayai.com/admin/export/excel/order_item//2025/06/14/file_nhat_2_2_14_06_25_13.xlsx';
+
+			$data_ex = $this->data_excel($url_ex);
 
 			echo"<pre>";
 
-			print_r($data);
+			print_r($data_ex);
 
 			echo"</pre>";
 
@@ -736,6 +740,38 @@
 			$dir_file_name_convert = str_replace('/www/wwwroot/'.DOMAIN, '', $dir_file_name);
 
 			return $dir_file_name_convert;
+		}
+
+		function data_excel($url)
+		{
+			// $files = 'ex2.xlsx';
+            // $file_path = PATH_BASE.'files/'.$files;
+            require_once("PHPExcel-1.8/Classes/PHPExcel.php");
+            $objReader = PHPExcel_IOFactory::createReaderForFile($file_path);
+            // $data = new PHPExcel_IOFactory();
+            // $data->setOutputEncoding('UTF-8');
+            $objReader->setLoadAllSheets();
+            $objexcel = $objReader->load($file_path);
+            $data =$objexcel->getActiveSheet()->toArray('null',true,true,true);
+            // $data->load($file_path);
+            unset($heightRow);  
+            $heightRow=$objexcel->setActiveSheetIndex()->getHighestRow();
+            // printr($data);
+            unset($j);
+
+
+            $row = [];
+            //chạy vòng đầu để check lỗi trước
+            for($j=2;$j<=$heightRow;$j++){
+            	$k= $j-2;
+            	if(!empty($data[$j][$mvd])){
+            		$row[$k]['maVanDon'] = trim($data[$j]['BG']);
+            		$row[$k]['sku'] = trim($data[$j]['F']);
+	                
+            	}
+            }	
+
+            return $row;
 		}
 
 		
