@@ -418,15 +418,22 @@
 		}
 
 
-		function return_mvd_shopee($content){
-
-     
-            preg_match_all('/Mã đơn hàng:\s*([A-Z0-9]+)/', $content, $maVanDonMatches);
+		function findMVD($content){
+		    
+            // $text = trim(PdfToText::getText($filePath));
+        
+            // Tìm mã vận đơn (sau "Mã vận đơn:" và trên cùng một dòng)
+            preg_match_all('/Mã vận đơn:\s*(\S+)/', $content, $maVanDonMatches);
             $maVanDon = isset($maVanDonMatches[1]) ? $maVanDonMatches[1] : null;
-           
-            return $maVanDon;
-        }
 
+            if(empty($maVanDon)){
+
+            	preg_match_all('/Mã đơn hàng:\s*([A-Z0-9]+)/', $content, $maVanDonMatches);
+            	$maVanDon = isset($maVanDonMatches[1]) ? $maVanDonMatches[1] : null;
+            }
+            return $maVanDon;
+            
+		}   
 		function return_info_to_file_pdf($url_file)
 		{
 			$baseDir =  PATH_BASE.'/admin/export/pdf/count_print/';
@@ -465,7 +472,7 @@
 			    $pageNumber = $index + 1;
 			    $text = $page->getText();
 
-			    $mvd = $this->return_mvd_shopee($text)[0];
+			    $mvd = $this->findMVD($text)[0];
 
 			    // Chuẩn bị mảng kết quả
 			    $results = [];
