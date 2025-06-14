@@ -280,6 +280,15 @@
 
 			$data_pdf = $this->return_info_to_file_pdf($filePath);
 
+			echo"<pre>";
+
+			print_r($data_pdf);
+
+			echo"</pre>";
+
+			die;
+
+
 			$url_ex = 'https://dienmayai.com/admin/export/excel/order_item//2025/06/14/file_nhat_2_2_14_06_25_13.xlsx';
 
 			$data_ex = $this->data_excel($url_ex);
