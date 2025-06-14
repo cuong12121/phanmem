@@ -433,7 +433,7 @@
             return $maVanDon;
         }
 
-		function return_info_to_file_pdf($urls)
+		function return_info_to_file_pdf($url_file)
 		{
 			$baseDir =  PATH_BASE.'/admin/export/pdf/count_print/';
 
