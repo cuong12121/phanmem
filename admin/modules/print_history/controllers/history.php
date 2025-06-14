@@ -276,9 +276,9 @@
 		{
 			$model  = $this -> model;
 
-			// $filePath = $_GET['file'];
+			$filePath = $_GET['file'];
 
-			// $data_pdf = $this->return_info_to_file_pdf($filePath);
+			$data_pdf = $this->return_info_to_file_pdf($filePath);
 
 			$url_ex = 'https://dienmayai.com/admin/export/excel/order_item//2025/06/14/file_nhat_2_2_14_06_25_13.xlsx';
 
@@ -465,7 +465,6 @@
 			    $data = $this->return_product_sku_quantity_to_text($text);
 
 
-
 			    if(!empty($data) && count($data)>0){
 
 				    for ($i = 0; $i < count($data); $i++) {
@@ -491,12 +490,8 @@
 				        
 				        $results[] = [
 				        	'mvd'=> $mvd,
-				            'sku' => $skuShort,
-				            'quantity' => $quantity_get,
-				            'sku_full' => $skuFull,
-				            'sku_full_check' => $sku_full_check,
-				            'count_show_more'=> !empty($check_combo)?count($show_more):0,
-				           
+				            'sku' => $sku_full_check,
+				            
 				        ];
 				    }
 				}    
@@ -757,11 +752,6 @@
             $objexcel = $objReader->load($file_path);
             $data =$objexcel->getSheet(1)->toArray('null',true,true,true);
 
-            echo "<pre>";
-            print_r($data);
-            echo "<pre>";
-
-            die;
             // $data->load($file_path);
             unset($heightRow);  
             $heightRow=$objexcel->setActiveSheetIndex()->getHighestRow();
@@ -774,8 +764,8 @@
             for($j=2;$j<=$heightRow;$j++){
             	$k= $j-2;
             	if(!empty($data[$j][$mvd])){
-            		$row[$k]['maVanDon'] = trim($data[$j]['BG']);
-            		$row[$k]['sku'] = trim($data[$j]['F']);
+            		$row[$k]['maVanDon'] = trim($data[$j]['G']);
+            		$row[$k]['sku'] =  substr(trim($data[$j]['j']), 0, 10)   ;
 	                
             	}
             }	
