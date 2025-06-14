@@ -465,7 +465,7 @@
 			    $pageNumber = $index + 1;
 			    $text = $page->getText();
 
-			    $mvd = $this->return_mvd_shopee($text);
+			    $mvd = $this->return_mvd_shopee($text)[0];
 
 			    // Chuẩn bị mảng kết quả
 			    $results = [];
