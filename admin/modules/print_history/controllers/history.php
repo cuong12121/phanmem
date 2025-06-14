@@ -459,9 +459,13 @@
 			    $pageNumber = $index + 1;
 			    $text = $page->getText();
 
+			    
+
+			    $mvd =  preg_match_all('/Mã vận đơn:\s*(\S+)/', $text, $maVanDonMatches);
+
 			    echo "<pre>";
 
-			    print_r($text);
+			    print_r($mvd);
 
 			    echo "</pre>";
 
