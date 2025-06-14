@@ -751,6 +751,8 @@
             // $data = new PHPExcel_IOFactory();
             // $data->setOutputEncoding('UTF-8');
             $objReader->setLoadAllSheets();
+
+            $file_path ='/export/excel/order_item//2025/06/14/file_nhat_2_2_14_06_25_13.xlsx'
             $objexcel = $objReader->load($file_path);
             $data =$objexcel->getActiveSheet()->toArray('null',true,true,true);
             // $data->load($file_path);
