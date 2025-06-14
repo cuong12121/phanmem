@@ -296,10 +296,7 @@
 
 			$data_ex = $this->data_excel($url_ex);
 
-			echo"<pre>";
-			print_r($data_ex);
-			echo"</pre>";
-			die;
+			
 
 			$norm1 = normalize_array($data_pdfs);
 			$norm2 = normalize_array($data_ex);
