@@ -756,6 +756,12 @@
 
             $objexcel = $objReader->load($file_path);
             $data =$objexcel->getActiveSheet()->toArray('null',true,true,true);
+
+            echo "<pre>";
+            print_r($data);
+            echo "<pre>";
+
+            die;
             // $data->load($file_path);
             unset($heightRow);  
             $heightRow=$objexcel->setActiveSheetIndex()->getHighestRow();
