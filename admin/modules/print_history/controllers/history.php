@@ -838,7 +838,7 @@
 
             // $data->load($file_path);
             unset($heightRow);  
-            $heightRow=$objexcel->setActiveSheetIndex()->getHighestRow();
+            $heightRow=$objexcel->setActiveSheetIndex(1)->getHighestRow();
             // printr($data);
             unset($j);
 
