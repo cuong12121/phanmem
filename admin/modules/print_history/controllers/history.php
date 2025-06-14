@@ -789,7 +789,7 @@
             for($j=2;$j<=$heightRow;$j++){
             	$k= $j-2;
             	if(!empty($data[$j][$mvd])){
-            		$row[$k]['maVanDon'] = trim($data[$j]['G']);
+            		$row[$k]['mvd'] = trim($data[$j]['G']);
             		$row[$k]['sku'] =  substr(trim($data[$j]['j']), 0, 10)   ;
 	                
             	}
