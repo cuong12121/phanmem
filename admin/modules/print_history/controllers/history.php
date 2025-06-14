@@ -784,20 +784,14 @@
             // printr($data);
             unset($j);
 
-            echo "<pre>";
-            print_r($data);
-            echo "</pre>";
-
-            die;
-
-
+          
             $row = [];
             //chạy vòng đầu để check lỗi trước
             for($j=2;$j<=$heightRow;$j++){
             	$k= $j-2;
             	if(!empty($data[$j]['G'])){
             		$row[$k]['mvd'] = trim($data[$j]['G']);
-            		$row[$k]['sku'] =  substr(trim($data[$j]['j']), 0, 10)   ;
+            		$row[$k]['sku'] =  substr(trim($data[$j]['J']), 0, 10)   ;
 	                
             	}
             }	
