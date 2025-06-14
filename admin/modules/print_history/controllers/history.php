@@ -278,6 +278,46 @@
 		    }, $array);
 		}
 
+
+		function show_export_file_compare_pdf_excel()
+		{
+			$model  = $this -> model;
+
+			$filePath = $_GET['file'];
+
+			$data_pdf = $this->return_info_to_file_pdf($filePath);
+
+
+			// gộp mảng lại 
+
+			$data_pdfs = [];
+			foreach ($data_pdf as $subArray) {
+			    foreach ($subArray as $item) {
+			        $data_pdfs[] = $item;
+			    }
+			}
+
+			
+
+			$url_ex = 'https://dienmayai.com/admin/export/excel/order_item//2025/06/14/file_nhat_2_2_14_06_25_13.xlsx';
+
+			$data_ex = $this->data_excel($url_ex);
+
+			echo"<pre>";
+
+			print_r($data_ex);
+
+			echo"</pre>";
+
+			echo"<pre>";
+
+			print_r($data_pdfs);
+
+			echo"</pre>";
+
+
+		}
+
 		function export_file_compare_pdf_excel()
 		{
 			$model  = $this -> model;
