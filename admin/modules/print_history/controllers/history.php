@@ -559,17 +559,8 @@
 
 			    $mvd_ar = $this->findMVD($text);
 
-			    echo "<pre>";
 
-			    print_r($mvd_ar);
-
-			    echo "</pre>";
-
-			    die;
-
-
-
-			    $mvd = !empty($mvd_ar)?$mvd_ar[0]:'';
+			    $mvd = !empty($mvd_ar)&& count($mvd_ar)>0?$mvd_ar[0]:'';
 
 			    // Chuẩn bị mảng kết quả
 			    $results = [];
