@@ -393,14 +393,13 @@
 
 			// Extract text
 			$string = $pdf->getText();
-			$pattern = '/Mã đơn hàng:\s*(.*?)Từ:/';
+			$pattern = '/Mã đơn hàng:\s*(.*?)\s*Từ:/';
 
-			preg_match_all($pattern, $string, $matches);
-
-			echo $string;
-			echo "<br>";
-
-			print_r($matches) ;
+			if (preg_match($pattern, $string, $matches)) {
+			    echo "Kết quả: " . $matches[1];  // SPXVN054643113956 250613EKPY3BNW
+			} else {
+			    echo "Không tìm thấy.";
+			}
 
 			die;
 
