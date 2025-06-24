@@ -620,7 +620,7 @@
 			$houseid = 6;
 
 
-			$urls = ['https://dienmayai.com/files/orders/2025/06/23/spx_1750690940_cv.pdf'];
+			$urls = ['https://dienmayai.com/files/orders/2025/06/24/1623840_to_1623825.pdf'];
 
 
 			$filename = $model->downloadMultipleFiles($urls);
@@ -636,13 +636,13 @@
 
 			$data_result = json_decode($content, true);
 
-			echo "<pre>";
+			// echo "<pre>";
 
-			print_r($data_result);
+			// print_r($data_result);
 
-			echo "</pre>";
+			// echo "</pre>";
 
-			die;
+			// die;
 
 
 
