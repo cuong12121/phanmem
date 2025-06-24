@@ -611,6 +611,7 @@
 
 		function clone_function()
 		{
+			$model = $this -> model;
 			// $url_file = 'https://dienmayai.com/files/orders/2025/06/22/time_15_warehouse_6_platform_id_2_date_1750577782.pdf';
 
 			$url_json = 'https://api.phanmemttp.xyz/api.php';
