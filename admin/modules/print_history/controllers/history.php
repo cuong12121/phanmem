@@ -617,15 +617,15 @@
 
 			$content = file_get_contents($url_json);
 
-			echo $content;
+			
 
-			// $data_result = json_decode($content, true);
+			$data_result = json_decode($content);
 
-			// echo "<pre>";
+			echo "<pre>";
 
-			// print_r($data_result);
+			print_r($data_result);
 
-			// echo "</pre>";
+			echo "</pre>";
 
 
 			// foreach ($ar_sku_show as $key => $group) {
