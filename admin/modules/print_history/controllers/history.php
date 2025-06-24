@@ -617,153 +617,155 @@
 
 			$content = file_get_contents($url_json);
 
-			if ($content === false) {
-			    echo "Lỗi: Không thể lấy nội dung từ URL: " . htmlspecialchars($url_json) . "\n";
-			    // Kiểm tra thêm nếu cần: var_dump(error_get_last());
-			} else {
-			    echo "--- Nội dung nhận được từ URL ---\n";
-			    echo $content; // In ra nội dung thô
-			    echo "\n--- Hết nội dung ---\n\n";
+			$ar_sku_show = [];
 
-			    $data_result = json_decode($content);
+			$data_result = json_decode($content, true);
 
-			    if (json_last_error() !== JSON_ERROR_NONE) {
-			        echo "Lỗi JSON decode: " . json_last_error_msg() . "\n";
-			        echo "Kiểm tra nội dung trên để tìm lỗi cú pháp JSON.\n";
-			    } else {
-			        echo "<pre>";
-			        print_r($data_result);
-			        echo "</pre>";
+			foreach ($data_result as $i => $order) {
+			    foreach ($order as $j => $item) {
+			        $sku_full_check = $item['sku_full_check'];
+			       
+		         	$check_combo = $this->combo_Return_code($sku_full_check);
+			       
+			        if(!empty($check_combo)){
+			        	
+			        	$show_more = $check_combo;
+
+			        	$ar_sku_show[$i][] =  $show_more;
+
+			        }
+
+			        $data_result[$i][$j]['count_show_more'] =  !empty($check_combo)?count($show_more):0,
+
 			    }
 			}
 
 
-			// foreach ($ar_sku_show as $key => $group) {
-			//     // Nếu là mảng chứa nhiều mảng con, thì gộp lại
-			//     $merged = [];
-			//     foreach ($group as $subArray) {
-			//         $merged = array_merge($merged, $subArray);
-			//     }
-			//     // Gán lại mảng đã gộp dưới dạng một mảng 2 chiều như cũ
-			//     $ar_sku_show[$key] = [ $merged ];
-			// }
+			foreach ($ar_sku_show as $key => $group) {
+			    // Nếu là mảng chứa nhiều mảng con, thì gộp lại
+			    $merged = [];
+			    foreach ($group as $subArray) {
+			        $merged = array_merge($merged, $subArray);
+			    }
+			    // Gán lại mảng đã gộp dưới dạng một mảng 2 chiều như cũ
+			    $ar_sku_show[$key] = [ $merged ];
+			}
 
 		
 
-			// $model->calculateCumulativeQuantities($data_result);
+			$model->calculateCumulativeQuantities($data_result);
 
-			// $data_result = $model->show_list_array_run($data_result);
+			$data_result = $model->show_list_array_run($data_result);
 
-			// $pdf = new Fpdi();
+			$pdf = new Fpdi();
 
-			// $filePath = $filename;
+			$filePath = $filename;
 
-			// $pageCount = $pdf->setSourceFile($filePath);
+			$pageCount = $pdf->setSourceFile($filePath);
 
 
-			// for ($pageNo = 1; $pageNo <= $pageCount; $pageNo++) {
+			for ($pageNo = 1; $pageNo <= $pageCount; $pageNo++) {
 
-			//     $templateId = $pdf->importPage($pageNo);
-			//     $size = $pdf->getTemplateSize($templateId);
-			//     $pdf->AddPage($size['orientation'], [$size['width'], $size['height']]);
+			    $templateId = $pdf->importPage($pageNo);
+			    $size = $pdf->getTemplateSize($templateId);
+			    $pdf->AddPage($size['orientation'], [$size['width'], $size['height']]);
 
-			//     // Chèn template gốc
-			//     $pdf->useTemplate($templateId);
+			    // Chèn template gốc
+			    $pdf->useTemplate($templateId);
 
-			//     // $pdf->Image('z6666321666436_8c947a3b83f172e254bee07a90a68508.jpg', $x, $y, $w, $h);
+			    // $pdf->Image('z6666321666436_8c947a3b83f172e254bee07a90a68508.jpg', $x, $y, $w, $h);
 
-			//     // Chèn ảnh thường (logo)
-			//     $imagePath =  PATH_BASE.'/admin/export/pdf/images/Capture.jpg';
-			//     $pdf->Image($imagePath, 105, 2, 40, 90);
+			    // Chèn ảnh thường (logo)
+			    $imagePath =  PATH_BASE.'/admin/export/pdf/images/Capture.jpg';
+			    $pdf->Image($imagePath, 105, 2, 40, 90);
 
-			//     $pdf->SetFont('Arial', 'B', 14);
-			//     $pdf->SetTextColor(0, 0, 0); // Màu đen
+			    $pdf->SetFont('Arial', 'B', 14);
+			    $pdf->SetTextColor(0, 0, 0); // Màu đen
 
-			//     // === ✅ Ghi đè dữ liệu text theo danh sách ===
-			//     $index_data = $pageNo - 1;
-			//     $data_all = $data_result[$index_data];
-			//     $pdf->SetFont('Arial', 'B', 14);
-			//     $pdf->SetTextColor(0, 0, 0); // Màu đen
+			    // === ✅ Ghi đè dữ liệu text theo danh sách ===
+			    $index_data = $pageNo - 1;
+			    $data_all = $data_result[$index_data];
+			    $pdf->SetFont('Arial', 'B', 14);
+			    $pdf->SetTextColor(0, 0, 0); // Màu đen
 
 			    
 			   
-			//     for ($i = 0; $i < count($data_all); $i++) {
+			    for ($i = 0; $i < count($data_all); $i++) {
 			    	
 			    	
-			//     	//phần ghi mã sản phẩm khi có combo 
+			    	//phần ghi mã sản phẩm khi có combo 
 
 			    	
-			//     	if(!empty($ar_sku_show[$index_data][$i])  && count($ar_sku_show[$index_data][$i])>0){
+			    	if(!empty($ar_sku_show[$index_data][$i])  && count($ar_sku_show[$index_data][$i])>0){
 
-			//     		$show_sku = $ar_sku_show[$index_data][$i];
+			    		$show_sku = $ar_sku_show[$index_data][$i];
 
-			//     		$pdf->SetFont('Arial', 'B', 14);
-			//     		$pdf->SetTextColor(0, 0, 0); // Màu đen
+			    		$pdf->SetFont('Arial', 'B', 14);
+			    		$pdf->SetTextColor(0, 0, 0); // Màu đen
 
-			//     		for ($z=0; $z < count($show_sku); $z++) { 
+			    		for ($z=0; $z < count($show_sku); $z++) { 
 
 			    			
 			    			
-			//     			$pdf->SetXY(105, $k[$z]);
+			    			$pdf->SetXY(105, $k[$z]);
 			    			
 
-			//     			$write_show_more = $ar_sku_show[$index_data][$i][$z];
+			    			$write_show_more = $ar_sku_show[$index_data][$i][$z];
 
-			//     			$pdf->Write(10, $write_show_more);
-			//     		}
+			    			$pdf->Write(10, $write_show_more);
+			    		}
 			    		
-			//     	}
-			//     	else{
+			    	}
+			    	else{
 
-			//     		$kk = !empty($z)?$z:0;
-			//     		//phần ghi mã sản phẩm khi có số sản phẩm lớn hơn 2
-			//     		if(count($data_all)>1){
+			    		$kk = !empty($z)?$z:0;
+			    		//phần ghi mã sản phẩm khi có số sản phẩm lớn hơn 2
+			    		if(count($data_all)>1){
 
-			//     				// $dem = $data_result[$index_data][$i]['count_show_more'];
+		    				// $dem = $data_result[$index_data][$i]['count_show_more'];
 
-			//     				$pdf->SetFont('Arial', 'B', 14);
-			// 			    	$pdf->SetTextColor(0, 0, 0); // Màu đen
+		    				$pdf->SetFont('Arial', 'B', 14);
+					    	$pdf->SetTextColor(0, 0, 0); // Màu đen
 
-			// 			        $pdf->SetXY(105, $k[$kk+$i]);
-			// 			        $write_show_more_pd = $data_result[$index_data][$i]['sku'].':'.$data_result[$index_data][$i]['quantity'];
+					        $pdf->SetXY(105, $k[$kk+$i]);
+					        $write_show_more_pd = $data_result[$index_data][$i]['sku'].':'.$data_result[$index_data][$i]['quantity'];
 
-			// 			        $pdf->Write(10, $write_show_more_pd);
-
+					        $pdf->Write(10, $write_show_more_pd);
 			    			
-			//     		}
-			//     	}
+			    		}
+			    	}
 
-			//     	$pdf->SetFont('Arial', 'B', 14);
-			//     	$pdf->SetTextColor(0, 0, 0); // Màu đen
+			    	$pdf->SetFont('Arial', 'B', 14);
+			    	$pdf->SetTextColor(0, 0, 0); // Màu đen
 
-			//         $pdf->SetXY(105, $y[$i]);
-			//         $write = $data_result[$index_data][$i]['parent_index'] . '--' .
-			//                  $data_result[$index_data][$i]['show_list'] . '==>' .
-			//                  $data_result[$index_data][$i]['all'] . '--' .
-			//                  $data_result[$index_data][$i]['all_to_sku'];
-			//         $pdf->Write(10, $write);
-			//     }
+			        $pdf->SetXY(105, $y[$i]);
+			        $write = $data_result[$index_data][$i]['parent_index'] . '--' .
+			                 $data_result[$index_data][$i]['show_list'] . '==>' .
+			                 $data_result[$index_data][$i]['all'] . '--' .
+			                 $data_result[$index_data][$i]['all_to_sku'];
+			        $pdf->Write(10, $write);
+			    }
 
 			    
-			//     $pdf->SetFont('Arial', 'B', 14);
-			//     $pdf->SetTextColor(0, 0, 0); // Màu đen
-			//     $pdf->SetXY(105, $y[count($data_all)]); // Tọa độ X-Y
-			//     $pdf->Write(10, $pageNo);
-			//     $pdf->SetFont('Arial', 'B', 14);
-			//     $pdf->SetTextColor(0, 0, 0); // Màu đen
-			// }
+			    $pdf->SetFont('Arial', 'B', 14);
+			    $pdf->SetTextColor(0, 0, 0); // Màu đen
+			    $pdf->SetXY(105, $y[count($data_all)]); // Tọa độ X-Y
+			    $pdf->Write(10, $pageNo);
+			    $pdf->SetFont('Arial', 'B', 14);
+			    $pdf->SetTextColor(0, 0, 0); // Màu đen
+			}
 
 			
-			// $path_date = $this->generateDailyPath($baseDir);
+			$path_date = $this->generateDailyPath($baseDir);
 
-			// $timestamp = time();
+			$timestamp = time();
 
-			// $file_name = $houseid.'_'.$timestamp.'.pdf';
+			$file_name = $houseid.'_'.$timestamp.'.pdf';
 
-			// $dir_file_name = $path_date.'/'.$file_name;
+			$dir_file_name = $path_date.'/'.$file_name;
 
-			// // Xuất file
-			// // $pdf->Output('I', 'print/output3.pdf') ///i là xem trực tiếp còn F là lưu vào đường dẫn;
+			// Xuất file
+			$pdf->Output('I', 'print/output3.pdf') ///i là xem trực tiếp còn F là lưu vào đường dẫn;
 
 
 			// $pdf->Output('F', $dir_file_name); ///i là xem trực tiếp còn F là lưu vào đường dẫn;
@@ -771,18 +773,8 @@
 			// $dir_file_name_convert = str_replace('/www/wwwroot/'.DOMAIN, '', $dir_file_name);
 
 
-
-
 			
 		}
-
-
-
-
-
-
-
- 
 
 
 		function export_file_pdf($url_file, $houseid)
