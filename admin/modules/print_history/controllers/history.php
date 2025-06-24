@@ -636,6 +636,16 @@
 
 			$data_result = json_decode($content, true);
 
+			echo "<pre>";
+
+			print_r($data_result);
+
+			echo "</pre>";
+
+			die;
+
+
+
 			foreach ($data_result as $i => $order) {
 			    foreach ($order as $j => $item) {
 			        $sku_full_check = $item['sku_full_check'];
@@ -668,18 +678,12 @@
 
 		
 
-			// $model->calculateCumulativeQuantities($data_result);
+			$model->calculateCumulativeQuantities($data_result);
 
-			// $data_result = $model->show_list_array_run($data_result);
+			$data_result = $model->show_list_array_run($data_result);
 
-			echo "<pre>";
-
-			print_r($data_result);
-
-			echo "</pre>";
-
-			die;
-
+			
+			
 			$pdf = new Fpdi();
 
 			$filePath = $filename;
