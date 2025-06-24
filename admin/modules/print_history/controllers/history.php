@@ -617,15 +617,22 @@
 
 			$content = file_get_contents($url_json);
 
-			
+			if ($content === false) {
+			    echo "Lỗi: Không thể lấy nội dung từ URL: $url_json\n";
+			    // Bạn có thể kiểm tra lỗi chi tiết hơn nếu cần
+			    // (ví dụ: var_dump(error_get_last());)
+			} else {
+			    echo "Đã lấy được nội dung. Tiến hành decode...\n";
+			    $data_result = json_decode($content);
+			    echo "<pre>";
+			    print_r($data_result);
+			    echo "</pre>";
 
-			$data_result = json_decode($content);
-
-			echo "<pre>";
-
-			print_r($data_result);
-
-			echo "</pre>";
+			    // Kiểm tra lỗi JSON sau khi decode
+			    if (json_last_error() !== JSON_ERROR_NONE) {
+			        echo "Lỗi JSON decode: " . json_last_error_msg() . "\n";
+			    }
+			}
 
 
 			// foreach ($ar_sku_show as $key => $group) {
