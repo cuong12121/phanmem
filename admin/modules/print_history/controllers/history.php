@@ -696,7 +696,7 @@
 			 
 			}
 			echo "<pre>";
-			print_r($data_result)
+			print_r($data_result);
 
 			echo "</pre>";
 		}
