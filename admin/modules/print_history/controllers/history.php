@@ -780,12 +780,14 @@
 			$dir_file_name = $path_date.'/'.$file_name;
 
 			// Xuất file
-			$pdf->Output('I', 'print/output3.pdf'); ///i là xem trực tiếp còn F là lưu vào đường dẫn;
+			// $pdf->Output('I', 'print/output3.pdf'); ///i là xem trực tiếp còn F là lưu vào đường dẫn;
 
 
-			// $pdf->Output('F', $dir_file_name); ///i là xem trực tiếp còn F là lưu vào đường dẫn;
+			$pdf->Output('F', $dir_file_name); ///i là xem trực tiếp còn F là lưu vào đường dẫn;
 
 			// $dir_file_name_convert = str_replace('/www/wwwroot/'.DOMAIN, '', $dir_file_name);
+
+			echo $dir_file_name;
 
 
 			
