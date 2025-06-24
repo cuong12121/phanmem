@@ -612,7 +612,13 @@
 		function clone_function()
 		{
 			$model = $this -> model;
-			$filename = 'https://dienmayai.com/files/orders/2025/06/22/time_15_warehouse_6_platform_id_2_date_1750577782.pdf';
+			
+			$urls = 'https://dienmayai.com/files/orders/2025/06/22/time_15_warehouse_6_platform_id_2_date_1750577782.pdf';
+
+			$filename = $model->downloadMultipleFiles($urls);
+
+
+			$filename = str_replace('https://dienmayai.com', '', $filename[0]['file_link']) ;
 
 			$url_json = 'https://api.phanmemttp.xyz/api.php';
 
@@ -883,6 +889,7 @@
 			$data_result = $model->show_list_array_run($data_result);
 
 			$pdf = new Fpdi();
+
 
 			$filePath = $filename;
 
