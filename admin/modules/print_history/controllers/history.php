@@ -609,7 +609,97 @@
 			
 		}
 
+		function Clone_function()
+		{
+			$url_file = 'https://dienmayai.com/files/orders/2025/06/22/time_15_warehouse_6_platform_id_2_date_1750577782.pdf';
+			$baseDir =  PATH_BASE.'/admin/export/pdf/count_print/';
 
+			$parser = new Parser();
+
+			$urls = [
+			    $url_file
+			    
+			];
+
+
+			$model = $this -> model;
+
+			$filename = $model->downloadMultipleFiles($urls);
+
+
+			$filename = str_replace('https://dienmayai.com', '', $filename[0]['file_link']) ;
+
+			// Load PDF file
+			$pdf = $parser->parseFile($filename);
+			// Get all pages
+			$pages = $pdf->getPages();
+
+			$data_result = [];
+			 
+			$pattern = '/([A-Z0-9]{4})-[A-Z]{2}-[0-9]{2}-[A-Z]{3}-[0-9]{2}-(SL[0-9]|[0-9]{2,3})/i';
+
+			// $patternSku = '/([A-Z0-9]{4})-[A-Z]{2}-[0-9]{2}-[A-Z]{3}-[0-9]{2}-(SL[0-9]|[0-9]{2,3})/i';
+			//     // Pattern cho SL (số lượng)
+			// $patternQty = '/S[\s\S]*?L:\s*(\d+)/'; //kể cả trường hợp S L 
+
+			$y = [190, 200, 210, 220, 230, 240];
+			$k = [100, 108,116, 124,132,140,148,156,164,172,180, 188];
+
+			
+			$ar_sku_show =[];
+
+			$ar_sku_quantity_on_2 =[];
+			
+			foreach ($pages as $index => $page) {
+			    $pageNumber = $index + 1;
+			    $text = $page->getText();
+
+			    // Chuẩn bị mảng kết quả
+			    $results = [];
+
+			    $data = $this->return_product_sku_quantity_to_text($text);
+
+			    if(!empty($data) && count($data)>0){
+
+				    for ($i = 0; $i < count($data); $i++) {
+
+				    	$check_sl = [];
+				    	
+				        $skuFull = $data[$i]['sku'];
+				        $skuShort = substr($skuFull, 0, 7); // Lấy 4 ký tự đầu của SKU
+
+				        $sku_full_check = substr(trim($skuFull), 0, 10); // Lấy 10 ký tự đầu của SKU
+
+				        $check_combo = $this->combo_Return_code($sku_full_check);
+
+				        $quantity_get = $data[$i]['quantity'];
+
+				        if(!empty($check_combo)){
+				        	
+				        	$show_more = $check_combo;
+
+				        	$ar_sku_show[$index][] =  $show_more;
+
+				        }
+				        
+				        $results[] = [
+				            'sku' => $skuShort,
+				            'quantity' => $quantity_get,
+				            'sku_full' => $skuFull,
+				            'sku_full_check' => $sku_full_check,
+				            'count_show_more'=> !empty($check_combo)?count($show_more):0,
+				           
+				        ];
+				    }
+				}    
+			    array_push($data_result, array_reverse($results));
+			 
+			}
+			echo "<pre>";
+			print_r($data_result)
+
+			echo "</pre>";
+		}
 
 
 
