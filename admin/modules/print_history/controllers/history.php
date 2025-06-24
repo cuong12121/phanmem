@@ -620,7 +620,7 @@
 			$houseid = 6;
 
 
-			$urls = ['https://dienmayai.com/files/orders/2025/06/23/time_13_warehouse_6_platform_id_2_date_1750723911.pdf'];
+			$urls = ['https://dienmayai.com/files/orders/2025/06/23/spx_1750690940_cv.pdf'];
 
 
 			$filename = $model->downloadMultipleFiles($urls);
