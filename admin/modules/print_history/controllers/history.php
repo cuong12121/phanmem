@@ -616,6 +616,9 @@
 			$y = [190, 200, 210, 220, 230, 240];
 			$k = [100, 108,116, 124,132,140,148,156,164,172,180, 188];
 
+			$baseDir =  PATH_BASE.'/admin/export/pdf/count_print/';
+			$houseid = 6;
+
 
 			$urls = ['https://dienmayai.com/files/orders/2025/06/22/time_15_warehouse_6_platform_id_2_date_1750577782.pdf'];
 
