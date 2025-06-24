@@ -660,9 +660,8 @@
 
 			$pdf = new Fpdi();
 
-			$filePath = $filename;
 
-			$pageCount = $pdf->setSourceFile($filePath);
+			$pageCount = count($data_result);
 
 
 			for ($pageNo = 1; $pageNo <= $pageCount; $pageNo++) {
