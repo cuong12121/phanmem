@@ -635,7 +635,7 @@
 
 			        }
 
-			        $data_result[$i][$j]['count_show_more'] =  !empty($check_combo)?count($show_more):0,
+			        $data_result[$i][$j]['count_show_more'] =  !empty($check_combo)?count($show_more):0;
 
 			    }
 			}
