@@ -636,13 +636,13 @@
 
 			$data_result = json_decode($content, true);
 
-			// echo "<pre>";
+			echo "<pre>";
 
-			// print_r($data_result);
+			print_r($data_result);
 
-			// echo "</pre>";
+			echo "</pre>";
 
-			// die;
+			die;
 
 
 
