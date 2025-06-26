@@ -1150,8 +1150,12 @@
 				    $house_id = 13;
 				} elseif ($H >= 8 && $H < 13) {
 				    $house_id = 18;
-				} else {
+				}
+				elseif ($H >= 14 && $H < 15) {
 				    $house_id = 15;
+				} 
+				else {
+				    $house_id = 21;
 				} 
 
 		        $data_info = [];
