@@ -1152,6 +1152,7 @@
 				    $house_id = 18;
 				}
 				elseif ($H >= 14 && $H < 15) {
+					$platform = [1,3,4,6,8,9,10,11];
 				    $house_id = 15;
 				} 
 				else {
