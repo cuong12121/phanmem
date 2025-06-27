@@ -1144,7 +1144,9 @@
 
 		        // chạy đơn lúc 7h10 12h40 và 14h30
 
-		        $H = date('G');
+		        // $H = date('G');
+
+		        $H =15;
 
 		        if ($H < 8) {
 				    $house_id = 13;
