@@ -1161,9 +1161,7 @@
 				    $house_id = 21;
 				} 
 
-				print_r($platform);
-
-				die;
+				
 
 		        $data_info = [];
 
@@ -1190,6 +1188,10 @@
 		                } 
 
 		                $list_ar_str = implode(',', $list_Ar);
+
+		                print_r($list_ar_str);
+
+						die;
 
 		                if(!empty($list_ar_str)){
 		                	$data_info['house_id'] = $house_id;
