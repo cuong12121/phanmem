@@ -1189,7 +1189,7 @@
 
 		                $list_ar_str = implode(',', $list_Ar);
 
-		                print_r($list_ar_str);
+		                print_r($result);
 
 						die;
 
