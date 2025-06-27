@@ -1161,6 +1161,10 @@
 				    $house_id = 21;
 				} 
 
+				print_r($house_id);
+
+				die;
+
 		        $data_info = [];
 
 		        $warehouse_id_define = [1,2,6]; 
