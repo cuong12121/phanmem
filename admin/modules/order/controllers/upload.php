@@ -1161,7 +1161,7 @@
 				    $house_id = 21;
 				} 
 
-				print_r($house_id);
+				print_r($platform);
 
 				die;
 
