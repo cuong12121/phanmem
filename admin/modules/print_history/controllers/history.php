@@ -636,15 +636,6 @@
 
 			$data_result = json_decode($content, true);
 
-			echo "<pre>";
-
-			print_r($content);
-
-			echo "</pre>";
-
-			die;
-
-
 
 			foreach ($data_result as $i => $order) {
 			    foreach ($order as $j => $item) {
