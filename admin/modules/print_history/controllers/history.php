@@ -638,7 +638,7 @@
 
 			echo "<pre>";
 
-			print_r($data_result);
+			print_r($content);
 
 			echo "</pre>";
 
