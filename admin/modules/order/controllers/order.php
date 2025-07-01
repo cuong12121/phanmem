@@ -237,7 +237,7 @@
 		function update_pack($file_path)
 		{
 			$row_time ='6/30/2025 9:12:27';
-			$date_time = new DateTime($row_time)->format('Y-m-d H:i:s');
+			$date_time = (new DateTime($row_time))->format('Y-m-d H:i:s');
 
 			echo "<pre>";
 
