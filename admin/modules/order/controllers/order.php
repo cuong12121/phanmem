@@ -358,7 +358,7 @@
 
 					$datetime = (new DateTime($row_time))->format('Y-m-d H:i:s');
 					echo "<pre>";
-						print_r($row_time);
+						print_r($datetime);
 					echo "</pre>";
 					die;	
 
