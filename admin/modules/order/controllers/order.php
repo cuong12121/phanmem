@@ -356,9 +356,9 @@
 
 					$row_time = trim($data[$j]['B']);
 
-					$datetime = (new DateTime($row_time))->format('Y-m-d H:i:s');
+					// $datetime = (new DateTime($row_time))->format('Y-m-d H:i:s');
 					echo "<pre>";
-						print_r($datetime);
+						print_r($row_time);
 					echo "</pre>";
 					die;	
 
