@@ -236,14 +236,14 @@
 
 		function update_pack($file_path)
 		{
-			$row_time ='6/30/2025 9:12:27';
-			$date_time = (new DateTime($row_time))->format('Y-m-d H:i:s');
+			// $row_time ='6/30/2025 9:12:27';
+			// $date_time = (new DateTime($row_time))->format('Y-m-d H:i:s');
 
-			echo "<pre>";
+			// echo "<pre>";
 
-				print_r($date_time);
-			echo "</pre>";
-			die;
+			// 	print_r($date_time);
+			// echo "</pre>";
+			// die;
 			
 			require_once("../libraries/PHPExcel-1.8/Classes/PHPExcel.php");
 			$objReader = PHPExcel_IOFactory::createReaderForFile($file_path);
@@ -353,6 +353,12 @@
 					}
 
 					$row_time =  $row_time = str_replace('/', '-', trim($data[$j]['B']));
+
+					$datetime = (new DateTime($row_time))->format('Y-m-d H:i:s');
+					echo "<pre>";
+						print_r($datetime);
+					echo "</pre>";
+					die;	
 
 					$user_id = $define_id[$kytudefine];
 
