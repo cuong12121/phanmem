@@ -637,7 +637,7 @@
 
 				$filename = str_replace('https://dienmayai.com', '', $filename[0]['file_link']) ;
 
-				$url_json = 'https://api.phanmemttp.xyz/api.php';
+				$url_json = 'https://api.phanmemttp.xyz/api.php?key_number='.$value+1;
 
 				$content = file_get_contents($url_json);
 
