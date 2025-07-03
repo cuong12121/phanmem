@@ -619,181 +619,187 @@
 			$baseDir =  PATH_BASE.'/admin/export/pdf/count_print/';
 			$houseid = 6;
 
+			$data_in = file_get_contents('https://drive.dienmayai.com/file_in.php');
 
-			$urls = ['https://dienmayai.com/files/orders/2025/06/28/time_18_warehouse_2_platform_id_2_date_1751089283.pdf'];
+			$data_json = json_decode($data_in,true);
 
+			foreach ($data_json as $key => $value) {
 
-			$filename = $model->downloadMultipleFiles($urls);
-
-
-			$filename = str_replace('https://dienmayai.com', '', $filename[0]['file_link']) ;
-
-			$url_json = 'https://api.phanmemttp.xyz/api.php';
-
-			$content = file_get_contents($url_json);
-
-			$ar_sku_show = [];
-
-			$data_result = json_decode($content, true);
+				$urls = ['https://dienmayai.com/'.$value['file_pdf'] ];
 
 
-			foreach ($data_result as $i => $order) {
-			    foreach ($order as $j => $item) {
-			        $sku_full_check = $item['sku_full_check'];
-			       
-		         	$check_combo = $this->combo_Return_code($sku_full_check);
-			       
-			        if(!empty($check_combo)){
-			        	
-			        	$show_more = $check_combo;
+				$filename = $model->downloadMultipleFiles($urls);
 
-			        	$ar_sku_show[$i][] =  $show_more;
 
-			        }
+				$filename = str_replace('https://dienmayai.com', '', $filename[0]['file_link']) ;
 
-			        $data_result[$i][$j]['count_show_more'] =  !empty($check_combo)?count($show_more):0;
+				$url_json = 'https://api.phanmemttp.xyz/api.php';
 
-			    }
+				$content = file_get_contents($url_json);
+
+				$ar_sku_show = [];
+
+				$data_result = json_decode($content, true);
+
+
+				foreach ($data_result as $i => $order) {
+				    foreach ($order as $j => $item) {
+				        $sku_full_check = $item['sku_full_check'];
+				       
+			         	$check_combo = $this->combo_Return_code($sku_full_check);
+				       
+				        if(!empty($check_combo)){
+				        	
+				        	$show_more = $check_combo;
+
+				        	$ar_sku_show[$i][] =  $show_more;
+
+				        }
+
+				        $data_result[$i][$j]['count_show_more'] =  !empty($check_combo)?count($show_more):0;
+
+				    }
+				}
+
+
+				foreach ($ar_sku_show as $key => $group) {
+				    // Nếu là mảng chứa nhiều mảng con, thì gộp lại
+				    $merged = [];
+				    foreach ($group as $subArray) {
+				        $merged = array_merge($merged, $subArray);
+				    }
+				    // Gán lại mảng đã gộp dưới dạng một mảng 2 chiều như cũ
+				    $ar_sku_show[$key] = [ $merged ];
+				}
+
+			
+
+				$model->calculateCumulativeQuantities($data_result);
+
+				$data_result = $model->show_list_array_run($data_result);
+
+				
+				
+				$pdf = new Fpdi();
+
+				$filePath = $filename;
+
+				$pageCount = $pdf->setSourceFile($filePath);
+
+
+				for ($pageNo = 1; $pageNo <= $pageCount; $pageNo++) {
+
+				    $templateId = $pdf->importPage($pageNo);
+				    $size = $pdf->getTemplateSize($templateId);
+				    $pdf->AddPage($size['orientation'], [$size['width'], $size['height']]);
+
+				    // Chèn template gốc
+				    $pdf->useTemplate($templateId);
+
+				    // $pdf->Image('z6666321666436_8c947a3b83f172e254bee07a90a68508.jpg', $x, $y, $w, $h);
+
+				    // Chèn ảnh thường (logo)
+				    $imagePath =  PATH_BASE.'/admin/export/pdf/images/Capture.jpg';
+				    $pdf->Image($imagePath, 105, 2, 40, 90);
+
+				    $pdf->SetFont('Arial', 'B', 14);
+				    $pdf->SetTextColor(0, 0, 0); // Màu đen
+
+				    // === ✅ Ghi đè dữ liệu text theo danh sách ===
+				    $index_data = $pageNo - 1;
+				    $data_all = $data_result[$index_data];
+				    $pdf->SetFont('Arial', 'B', 14);
+				    $pdf->SetTextColor(0, 0, 0); // Màu đen
+
+				    
+				   
+				    for ($i = 0; $i < count($data_all); $i++) {
+				    	
+				    	
+				    	//phần ghi mã sản phẩm khi có combo 
+
+				    	
+				    	if(!empty($ar_sku_show[$index_data][$i])  && count($ar_sku_show[$index_data][$i])>0){
+
+				    		$show_sku = $ar_sku_show[$index_data][$i];
+
+				    		$pdf->SetFont('Arial', 'B', 14);
+				    		$pdf->SetTextColor(0, 0, 0); // Màu đen
+
+				    		for ($z=0; $z < count($show_sku); $z++) { 
+
+				    			
+				    			
+				    			$pdf->SetXY(105, $k[$z]);
+				    			
+
+				    			$write_show_more = $ar_sku_show[$index_data][$i][$z];
+
+				    			$pdf->Write(10, $write_show_more);
+				    		}
+				    		
+				    	}
+				    	else{
+
+				    		$kk = !empty($z)?$z:0;
+				    		//phần ghi mã sản phẩm khi có số sản phẩm lớn hơn 2
+				    		if(count($data_all)>1){
+
+			    				// $dem = $data_result[$index_data][$i]['count_show_more'];
+
+			    				$pdf->SetFont('Arial', 'B', 14);
+						    	$pdf->SetTextColor(0, 0, 0); // Màu đen
+
+						        $pdf->SetXY(105, $k[$kk+$i]);
+						        $write_show_more_pd = $data_result[$index_data][$i]['sku'].':'.$data_result[$index_data][$i]['quantity'];
+
+						        $pdf->Write(10, $write_show_more_pd);
+				    			
+				    		}
+				    	}
+
+				    	$pdf->SetFont('Arial', 'B', 14);
+				    	$pdf->SetTextColor(0, 0, 0); // Màu đen
+
+				        $pdf->SetXY(105, $y[$i]);
+				        $write = $data_result[$index_data][$i]['parent_index'] . '--' .
+				                 $data_result[$index_data][$i]['show_list'] . '==>' .
+				                 $data_result[$index_data][$i]['all'] . '--' .
+				                 $data_result[$index_data][$i]['all_to_sku'];
+				        $pdf->Write(10, $write);
+				    }
+
+				    
+				    $pdf->SetFont('Arial', 'B', 14);
+				    $pdf->SetTextColor(0, 0, 0); // Màu đen
+				    $pdf->SetXY(105, $y[count($data_all)]); // Tọa độ X-Y
+				    $pdf->Write(10, $pageNo);
+				    $pdf->SetFont('Arial', 'B', 14);
+				    $pdf->SetTextColor(0, 0, 0); // Màu đen
+				}
+
+				
+				$path_date = $this->generateDailyPath($baseDir);
+
+				$timestamp = time();
+
+				$file_name = $houseid.'_'.$timestamp.'.pdf';
+
+				$dir_file_name = $path_date.'/'.$file_name;
+
+				// Xuất file
+				// $pdf->Output('I', 'print/output3.pdf'); ///i là xem trực tiếp còn F là lưu vào đường dẫn;
+
+
+				$pdf->Output('F', $dir_file_name); ///i là xem trực tiếp còn F là lưu vào đường dẫn;
+
+				// $dir_file_name_convert = str_replace('/www/wwwroot/'.DOMAIN, '', $dir_file_name);
+
+				echo $dir_file_name;
+
+				die;
 			}
 
-
-			foreach ($ar_sku_show as $key => $group) {
-			    // Nếu là mảng chứa nhiều mảng con, thì gộp lại
-			    $merged = [];
-			    foreach ($group as $subArray) {
-			        $merged = array_merge($merged, $subArray);
-			    }
-			    // Gán lại mảng đã gộp dưới dạng một mảng 2 chiều như cũ
-			    $ar_sku_show[$key] = [ $merged ];
-			}
-
-		
-
-			$model->calculateCumulativeQuantities($data_result);
-
-			$data_result = $model->show_list_array_run($data_result);
-
-			
-			
-			$pdf = new Fpdi();
-
-			$filePath = $filename;
-
-			$pageCount = $pdf->setSourceFile($filePath);
-
-
-			for ($pageNo = 1; $pageNo <= $pageCount; $pageNo++) {
-
-			    $templateId = $pdf->importPage($pageNo);
-			    $size = $pdf->getTemplateSize($templateId);
-			    $pdf->AddPage($size['orientation'], [$size['width'], $size['height']]);
-
-			    // Chèn template gốc
-			    $pdf->useTemplate($templateId);
-
-			    // $pdf->Image('z6666321666436_8c947a3b83f172e254bee07a90a68508.jpg', $x, $y, $w, $h);
-
-			    // Chèn ảnh thường (logo)
-			    $imagePath =  PATH_BASE.'/admin/export/pdf/images/Capture.jpg';
-			    $pdf->Image($imagePath, 105, 2, 40, 90);
-
-			    $pdf->SetFont('Arial', 'B', 14);
-			    $pdf->SetTextColor(0, 0, 0); // Màu đen
-
-			    // === ✅ Ghi đè dữ liệu text theo danh sách ===
-			    $index_data = $pageNo - 1;
-			    $data_all = $data_result[$index_data];
-			    $pdf->SetFont('Arial', 'B', 14);
-			    $pdf->SetTextColor(0, 0, 0); // Màu đen
-
-			    
-			   
-			    for ($i = 0; $i < count($data_all); $i++) {
-			    	
-			    	
-			    	//phần ghi mã sản phẩm khi có combo 
-
-			    	
-			    	if(!empty($ar_sku_show[$index_data][$i])  && count($ar_sku_show[$index_data][$i])>0){
-
-			    		$show_sku = $ar_sku_show[$index_data][$i];
-
-			    		$pdf->SetFont('Arial', 'B', 14);
-			    		$pdf->SetTextColor(0, 0, 0); // Màu đen
-
-			    		for ($z=0; $z < count($show_sku); $z++) { 
-
-			    			
-			    			
-			    			$pdf->SetXY(105, $k[$z]);
-			    			
-
-			    			$write_show_more = $ar_sku_show[$index_data][$i][$z];
-
-			    			$pdf->Write(10, $write_show_more);
-			    		}
-			    		
-			    	}
-			    	else{
-
-			    		$kk = !empty($z)?$z:0;
-			    		//phần ghi mã sản phẩm khi có số sản phẩm lớn hơn 2
-			    		if(count($data_all)>1){
-
-		    				// $dem = $data_result[$index_data][$i]['count_show_more'];
-
-		    				$pdf->SetFont('Arial', 'B', 14);
-					    	$pdf->SetTextColor(0, 0, 0); // Màu đen
-
-					        $pdf->SetXY(105, $k[$kk+$i]);
-					        $write_show_more_pd = $data_result[$index_data][$i]['sku'].':'.$data_result[$index_data][$i]['quantity'];
-
-					        $pdf->Write(10, $write_show_more_pd);
-			    			
-			    		}
-			    	}
-
-			    	$pdf->SetFont('Arial', 'B', 14);
-			    	$pdf->SetTextColor(0, 0, 0); // Màu đen
-
-			        $pdf->SetXY(105, $y[$i]);
-			        $write = $data_result[$index_data][$i]['parent_index'] . '--' .
-			                 $data_result[$index_data][$i]['show_list'] . '==>' .
-			                 $data_result[$index_data][$i]['all'] . '--' .
-			                 $data_result[$index_data][$i]['all_to_sku'];
-			        $pdf->Write(10, $write);
-			    }
-
-			    
-			    $pdf->SetFont('Arial', 'B', 14);
-			    $pdf->SetTextColor(0, 0, 0); // Màu đen
-			    $pdf->SetXY(105, $y[count($data_all)]); // Tọa độ X-Y
-			    $pdf->Write(10, $pageNo);
-			    $pdf->SetFont('Arial', 'B', 14);
-			    $pdf->SetTextColor(0, 0, 0); // Màu đen
-			}
-
-			
-			$path_date = $this->generateDailyPath($baseDir);
-
-			$timestamp = time();
-
-			$file_name = $houseid.'_'.$timestamp.'.pdf';
-
-			$dir_file_name = $path_date.'/'.$file_name;
-
-			// Xuất file
-			// $pdf->Output('I', 'print/output3.pdf'); ///i là xem trực tiếp còn F là lưu vào đường dẫn;
-
-
-			$pdf->Output('F', $dir_file_name); ///i là xem trực tiếp còn F là lưu vào đường dẫn;
-
-			// $dir_file_name_convert = str_replace('/www/wwwroot/'.DOMAIN, '', $dir_file_name);
-
-			echo $dir_file_name;
-
-
-			
 		}
 
 
