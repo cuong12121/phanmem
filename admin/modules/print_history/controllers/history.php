@@ -623,9 +623,9 @@
 
 			$data_json = json_decode($data_in,true);
 
-			
+			$dem = 0;
 			foreach ($data_json as $key => $value) {
-
+				$dem++;
 				$urls = ['https://dienmayai.com/'.$value['file_pdf'] ];
 
 
@@ -634,7 +634,7 @@
 
 				$filename = str_replace('https://dienmayai.com', '', $filename[0]['file_link']) ;
 
-				$url_json = 'https://api.phanmemttp.xyz/api.php?key_number='.$key+1;
+				$url_json = 'https://api.phanmemttp.xyz/api.php?key_number='.$dem;
 
 				$content = file_get_contents($url_json);
 
