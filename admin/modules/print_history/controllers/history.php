@@ -623,10 +623,7 @@
 
 			$data_json = json_decode($data_in,true);
 
-			echo "<pre>";
-			print_r($data_json);
-			echo "</pre>";
-			die;
+			
 			foreach ($data_json as $key => $value) {
 
 				$urls = ['https://dienmayai.com/'.$value['file_pdf'] ];
