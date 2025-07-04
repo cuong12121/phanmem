@@ -799,9 +799,7 @@
 
 				$pdf->Output('F', $dir_file_name); ///i là xem trực tiếp còn F là lưu vào đường dẫn;
 
-				$sql = "UPDATE fs_order_uploads SET id_file_pdf_google_drive = '$id_google_drive' WHERE id = '$id'";
-
-				$values = $db->query($sql);
+				
 
 				$dir_file_name_convert = str_replace('/www/wwwroot/'.DOMAIN, '', $dir_file_name);
 
