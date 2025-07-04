@@ -611,6 +611,8 @@
 
 		function clone_function()
 		{
+			global $db;
+
 			$model = $this -> model;
 
 			$y = [190, 200, 210, 220, 230, 240];
@@ -626,6 +628,9 @@
 			$dem = 0;
 			foreach ($data_json as $key => $value) {
 				$dem++;
+
+				$id = $value['id'];
+
 				$urls = ['https://dienmayai.com/'.$value['file_pdf'] ];
 
 
@@ -794,12 +799,20 @@
 
 				$pdf->Output('F', $dir_file_name); ///i là xem trực tiếp còn F là lưu vào đường dẫn;
 
-				// $dir_file_name_convert = str_replace('/www/wwwroot/'.DOMAIN, '', $dir_file_name);
+				$sql = "UPDATE fs_order_uploads SET id_file_pdf_google_drive = '$id_google_drive' WHERE id = '$id'";
 
-				echo $dir_file_name;
+				$values = $db->query($sql);
 
-				die;
+				$dir_file_name_convert = str_replace('/www/wwwroot/'.DOMAIN, '', $dir_file_name);
+
+				$sql = "UPDATE fs_order_uploads_history_prints SET file_pdf_dem = '$dir_file_name_convert' WHERE id = '$id'";
+
+				$values = $db->query($sql);
+
+				// echo $dir_file_name;
+
 			}
+			echo "Thành công";
 
 		}
 
