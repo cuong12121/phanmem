@@ -665,7 +665,7 @@
 
 			$model = $this -> model;
 
-			$y = [190, 200, 210, 220, 230, 240];
+			$y = [190, 200, 210, 220, 230, 240,250];
 			$k = [100, 108,116, 124,132,140,148,156,164,172,180, 188];
 
 			$baseDir =  PATH_BASE.'/admin/export/pdf/count_print/';
@@ -750,26 +750,31 @@
 				    $pdf->SetFont('Arial', 'B', 14);
 				    $pdf->SetTextColor(0, 0, 0); // Màu đen
 
+				    $dl = 0;
 
+				   	$cb = 0;
 
-				   	
+				   	$count_combo = 0;
+				    	
+					foreach ($data_all as $items) {
+					    if (is_array($items['combo']) && count($items['combo']) > 0) {
+					        $count_combo++;
+					    }
+					}
+
+					if($count_combo==0){
+						$dl++;
+					}
+					else{
+						$cb++;
+					}
 				   
 				    for ($i = 0; $i < count($data_all); $i++) {
 
 				    	//phần ghi mã sản phẩm khi có combo 
 
-				    	// $item->combo =  !empty($array_data)?$array_data['list']:'';
-				        // $item->product_combo_code =  !empty($array_data)?$array_data['product_code']:'';
-				    	
-				    	
-				    	$count_combo = 0;
-						foreach ($data_all as $items) {
-						    if (is_array($items['combo']) && count($items['combo']) > 0) {
-						        $count_combo++;
-						    }
-						}
-				    	if(!empty($data_all[$i]['combo']) && count($data_all[$i]['combo'])>0){
 
+				    	if(!empty($data_all[$i]['combo']) && count($data_all[$i]['combo'])>0){
 
 				    		$show_sku = $data_all[$i]['combo'];
 
@@ -778,11 +783,8 @@
 
 				    		for ($z=0; $z < count($show_sku); $z++) { 
 
-				    			
-				    			
 				    			$pdf->SetXY(105, $k[$z]);
 				    			
-
 				    			$write_show_more = $show_sku[$z];
 
 				    			$pdf->Write(10, $write_show_more);
@@ -835,8 +837,19 @@
 				    $pdf->SetTextColor(0, 0, 0); // Màu đen
 				    $pdf->SetXY(105, $y[count($data_all)]); // Tọa độ X-Y
 				    $pdf->Write(10, $pageNo);
-				    $pdf->SetFont('Arial', 'B', 14);
-				    $pdf->SetTextColor(0, 0, 0); // Màu đen
+
+				    if($count_combo==0){
+				    	$pdf->SetXY(105, $y[count($data_all)]+1); // Tọa độ X-Y
+				    	$writes_cate = 'DL:'.$dl;
+				    	$pdf->Write(10, $writes_cate);
+						
+					}
+					else{
+						$pdf->SetXY(105, $y[count($data_all)]+1); // Tọa độ X-Y
+				    	$writes_cate = 'CB:'.$cb;
+						$pdf->Write(10, $writes_cate);
+					}
+				   
 				}
 
 				
