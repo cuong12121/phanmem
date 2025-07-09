@@ -765,7 +765,7 @@
 				    	
 				    	$count_combo = !empty($data_all[$i]['combo'])?count($data_all[$i]['combo']):0;
 
-				    	if($i=54){
+				    	if($i=55){
 				    		print_r($count_combo);
 
 				    		die;
