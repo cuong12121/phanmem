@@ -724,17 +724,6 @@
 
 				$pageCount = $pdf->setSourceFile($filePath);
 
-			 	echo "<pre>";
-
-		        	print_r($data_result);
-
-		        echo "</pre>";
-
-		        die;
-
-				    
-
-				
 
 				for ($pageNo = 1; $pageNo <= $pageCount; $pageNo++) {
 
@@ -773,11 +762,8 @@
 				        // $item->product_combo_code =  !empty($array_data)?$array_data['product_code']:'';
 
 
-				    	if(!empty($data_all[$i]['combo'])){
+				    	if(!empty($data_all[$i]['combo']) && count($data_all[$i]['combo'])>0){
 
-
-
-					        die;
 
 				    		$show_sku = $data_all[$i]['combo'];
 
