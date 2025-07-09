@@ -697,6 +697,11 @@
 
 				$data_result = json_decode($content, true);
 
+				echo "<pre>";
+				print_r($data_result);
+				echo "</pre>";
+				die;
+
 				foreach ($data_result as &$group) {
 				    foreach ($group as &$item) {
 				    	$array_data = $this->combo_Return_code($item->sku_full_check);
