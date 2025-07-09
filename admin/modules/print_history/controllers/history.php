@@ -725,7 +725,9 @@
 
 				$pageCount = $pdf->setSourceFile($filePath);
 
-				
+				$dl = 0;
+
+				$cb = 0;
 				for ($pageNo = 1; $pageNo <= $pageCount; $pageNo++) {
 
 				    $templateId = $pdf->importPage($pageNo);
@@ -750,9 +752,7 @@
 				    $pdf->SetFont('Arial', 'B', 14);
 				    $pdf->SetTextColor(0, 0, 0); // Màu đen
 
-				    $dl = 0;
-
-				   	$cb = 0;
+				    
 
 				   	$count_combo = 0;
 				    	
@@ -837,15 +837,16 @@
 				    $pdf->SetTextColor(0, 0, 0); // Màu đen
 				    $pdf->SetXY(105, $y[count($data_all)]); // Tọa độ X-Y
 				    $pdf->Write(10, $pageNo);
+				    $add_td = count($data_all)+1;
 
 				    if($count_combo==0){
-				    	$pdf->SetXY(105, $y[count($data_all)]+1); // Tọa độ X-Y
+				    	$pdf->SetXY(105, $y[$add_td]); // Tọa độ X-Y
 				    	$writes_cate = 'DL:'.$dl;
 				    	$pdf->Write(10, $writes_cate);
 						
 					}
 					else{
-						$pdf->SetXY(105, $y[count($data_all)]+1); // Tọa độ X-Y
+						$pdf->SetXY(105,  $y[$add_td]); // Tọa độ X-Y
 				    	$writes_cate = 'CB:'.$cb;
 						$pdf->Write(10, $writes_cate);
 					}
