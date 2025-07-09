@@ -609,6 +609,28 @@
 			
 		}
 
+		function show_combo()
+		{
+			$code  = file_get_contents('https://api.phanmemttp.xyz/api.php?key_number=1');
+
+			$data = json_decode($code);
+
+			$ar = [];
+
+			// Thêm trường sku_add
+			foreach ($data as &$group) {
+			    foreach ($group as &$item) {
+			        $item->combo =  $this->combo_Return_code($item->sku_full);
+			    }
+			}
+
+			// In kết quả
+			echo "<pre>";
+			print_r($data);
+			echo "</pre>";
+
+		}
+
 		function clone_function()
 		{
 			global $db;
