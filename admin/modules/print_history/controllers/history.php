@@ -93,7 +93,7 @@
 
 				foreach ($parts as $key=> $part) {
 				    $clean = trim($part); // loại bỏ khoảng trắng
-				    $data[$key]['list'] = str_replace('/', ':', $clean)
+				    $data[$key]['list'] = str_replace('/', ':', $clean);
 				    $data[$key]['product_code'] = $sku;
 				   
 				    
