@@ -778,7 +778,7 @@
 				    		for ($z=0; $z < $count_combo; $z++) { 
 
 				    			
-				    			$v++;
+				    			
 				    			$pdf->SetXY(105, $k[$z]);
 				    			
 
