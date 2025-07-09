@@ -761,7 +761,7 @@
 				    	// $item->combo =  !empty($array_data)?$array_data['list']:'';
 				        // $item->product_combo_code =  !empty($array_data)?$array_data['product_code']:'';
 				    	
-
+				    	$count_combo = !empty($data_all[$i]['combo'])?count($data_all[$i]['combo']):0;
 				    	if(!empty($data_all[$i]['combo']) && count($data_all[$i]['combo'])>0){
 
 
@@ -789,7 +789,7 @@
 
 			    			
 			    			if(!empty($z)){
-			    				$kk = $z+1+$i;
+			    				$kk = $count_combo+$i;
 
 			    			}
 			    			else{
