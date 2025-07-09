@@ -91,10 +91,11 @@
 				$parts = explode(',', $values[0]->code_combo);
 				$data = [];
 
-				foreach ($parts as $part) {
+				foreach ($parts as $key=> $part) {
 				    $clean = trim($part); // loại bỏ khoảng trắng
-
-				    array_push($data, str_replace('/', ':', $clean));
+				    $data[$key]['list'] = str_replace('/', ':', $clean)
+				    $data[$key]['product_code'] = $sku;
+				   
 				    
 				}
 
@@ -622,7 +623,9 @@
 			// Thêm trường sku_add
 			foreach ($data as &$group) {
 			    foreach ($group as &$item) {
-			        $item->combo =  $this->combo_Return_code($item->sku_full_check);
+			    	$array_data = $this->combo_Return_code($item->sku_full_check);
+			        $item->combo =  $array_data['list'];
+			        $item->product_combo_code =  $array_data['product_code'];
 			    }
 			}
 
