@@ -624,8 +624,10 @@
 			foreach ($data as &$group) {
 			    foreach ($group as &$item) {
 			    	$array_data = $this->combo_Return_code($item->sku_full_check);
-			        $item->combo =  $array_data['list'];
-			        $item->product_combo_code =  $array_data['product_code'];
+			    	
+
+			        $item->combo =  !empty($array_data)?$array_data['list']:'';
+			        $item->product_combo_code =  !empty($array_data)?$array_data['product_code']:'';
 			    }
 			}
 
