@@ -787,8 +787,11 @@
 			    		//phần ghi mã sản phẩm khi có số sản phẩm lớn hơn 2
 			    		if(count($data_all)>1){
 			    			if(!empty($z)){
-			    				$i = $z+1;
+			    				$kk = $z+1;
 
+			    			}
+			    			else{
+			    				$kk = $i;
 			    			}
 			    			
 
@@ -799,8 +802,8 @@
 				    			$pdf->SetFont('Arial', 'B', 14);
 						    	$pdf->SetTextColor(0, 0, 0); // Màu đen
 
-						        $pdf->SetXY(105, $k[$i]);
-						        $write_show_more_pd = $data_result[$index_data][$i]['sku'].':'.$data_result[$index_data][$i]['quantity'];
+						        $pdf->SetXY(105, $k[$kk]);
+						        $write_show_more_pd = $data_all[$i]['sku'].':'.$data_result[$index_data][$i]['quantity'];
 
 						        $pdf->Write(10, $write_show_more_pd);
 
