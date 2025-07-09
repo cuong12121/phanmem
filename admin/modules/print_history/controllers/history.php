@@ -701,7 +701,7 @@
 
 				foreach ($data_result as &$group) {
 				    foreach ($group as &$item) {
-				    	$array_data = $this->combo_Return_code($item->sku_full_check);
+				    	$array_data = $this->combo_Return_code($item['sku_full_check']);
 				    	
 
 				        $item['combo'] = !empty($array_data) ? $array_data['list'] : '';
