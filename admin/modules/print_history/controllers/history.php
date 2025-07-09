@@ -759,6 +759,14 @@
 
 				    	// $item->combo =  !empty($array_data)?$array_data['list']:'';
 				        // $item->product_combo_code =  !empty($array_data)?$array_data['product_code']:'';
+
+				        echo "<pre>";
+
+				        	print_r($data_all[$i]['combo']);
+
+				        echo "</pre>";
+
+				        die;
 				    	if(!empty($data_all[$i]['combo'])){
 
 				    		$show_sku = $data_all[$i]['combo'];
