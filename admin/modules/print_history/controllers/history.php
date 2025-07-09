@@ -726,7 +726,11 @@
 				$pageCount = $pdf->setSourceFile($filePath);
 
 				
+				echo "<pre>";
+				print_r($data_result);
+				echo "</pre>";
 
+				die;
 				for ($pageNo = 1; $pageNo <= $pageCount; $pageNo++) {
 
 				    $templateId = $pdf->importPage($pageNo);
@@ -770,8 +774,6 @@
 
 				    		$show_sku = $data_all[$i]['combo'];
 
-				    		$count_combo = count($show_sku);
-
 				    		$pdf->SetFont('Arial', 'B', 14);
 				    		$pdf->SetTextColor(0, 0, 0); // Màu đen
 
@@ -793,6 +795,8 @@
 			    		if(count($data_all)>1){
 
 			    			if($count_combo>0){
+
+
 			    				$kk = $count_combo+$i;
 
 			    			}
