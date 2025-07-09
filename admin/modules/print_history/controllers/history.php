@@ -796,7 +796,7 @@
 					    			$pdf->SetFont('Arial', 'B', 14);
 							    	$pdf->SetTextColor(0, 0, 0); // Màu đen
 
-							        $pdf->SetXY(105, $k[$run_for+$i]);
+							        $pdf->SetXY(105, $k[$run_for]);
 							        $write_show_more_pd = $data_result[$index_data][$i]['sku'].':'.$data_result[$index_data][$i]['quantity'];
 
 							        $pdf->Write(10, $write_show_more_pd);
