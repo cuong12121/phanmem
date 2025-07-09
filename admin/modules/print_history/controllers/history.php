@@ -676,7 +676,7 @@
 			$data_json = json_decode($data_in,true);
 
 			$dem = 0;
-			$run_for = 0;
+			
 			foreach ($data_json as $key => $value) {
 				$dem++;
 
@@ -755,7 +755,7 @@
 				   
 				   
 				    for ($i = 0; $i < count($data_all); $i++) {
-				    	
+				    	$run_for = 0;
 				    	
 				    	//phần ghi mã sản phẩm khi có combo 
 
