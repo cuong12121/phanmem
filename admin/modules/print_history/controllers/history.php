@@ -750,6 +750,16 @@
 				    $pdf->SetFont('Arial', 'B', 14);
 				    $pdf->SetTextColor(0, 0, 0); // Màu đen
 
+
+
+				    echo "<pre>";
+
+			        	print_r($data_all);
+
+			        echo "</pre>";
+
+			        die;
+
 				    
 				   
 				    for ($i = 0; $i < count($data_all); $i++) {
@@ -763,11 +773,7 @@
 
 				    	if(!empty($data_all[$i]['combo'])){
 
-				    		echo "<pre>";
 
-					        	print_r($data_all[$i]['combo']);
-
-					        echo "</pre>";
 
 					        die;
 
