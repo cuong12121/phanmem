@@ -617,6 +617,8 @@
 
 			$ar = [];
 
+			$ar_sku_show= [];
+
 			// Thêm trường sku_add
 			foreach ($data as &$group) {
 			    foreach ($group as &$item) {
@@ -624,9 +626,28 @@
 			    }
 			}
 
+			foreach ($data as $i => $order) {
+			    foreach ($order as $j => $item) {
+			        $sku_full_check = $item['sku_full_check'];
+			       
+		         	$check_combo = $this->combo_Return_code($sku_full_check);
+			       
+			        if(!empty($check_combo)){
+			        	
+			        	$show_more = $check_combo;
+
+			        	$ar_sku_show[$i][] =  $show_more;
+
+			        }
+
+			        $data[$i][$j]['count_show_more'] =  !empty($check_combo)?count($show_more):0;
+
+			    }
+			}
+
 			// In kết quả
 			echo "<pre>";
-			print_r($data);
+			print_r($ar_sku_show);
 			echo "</pre>";
 
 		}
@@ -714,14 +735,8 @@
 
 				$pageCount = $pdf->setSourceFile($filePath);
 
-				echo "<pre>";
-
-					print_r($ar_sku_show);
-
-				echo "</pre>";
-
-				die;
 				
+
 				for ($pageNo = 1; $pageNo <= $pageCount; $pageNo++) {
 
 				    $templateId = $pdf->importPage($pageNo);
