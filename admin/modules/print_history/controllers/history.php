@@ -627,8 +627,8 @@
 			}
 
 			foreach ($data as $i => $order) {
-			    foreach ($order as $j => $item) {
-			        $sku_full_check = $item['sku_full_check'];
+			    foreach ($order as $j => $items) {
+			        $sku_full_check = $items['sku_full_check'];
 			       
 		         	$check_combo = $this->combo_Return_code($sku_full_check);
 			       
