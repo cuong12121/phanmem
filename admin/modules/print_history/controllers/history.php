@@ -706,7 +706,7 @@
 
 				        $item['combo'] = !empty($array_data) ? $array_data['list'] : '';
 				        $item['product_combo_code'] = !empty($array_data) ? $array_data['product_code'] : '';
-				        $item['count_show_more'] = !empty($array_data['list']) ? count($array_data['list']) : 0;
+				        // $item['count_show_more'] = !empty($array_data['list']) ? count($array_data['list']) : 0;
 				    }
 				}
 
@@ -757,8 +757,8 @@
 				    	
 				    	//phần ghi mã sản phẩm khi có combo 
 
-				    	$item->combo =  !empty($array_data)?$array_data['list']:'';
-				        $item->product_combo_code =  !empty($array_data)?$array_data['product_code']:'';
+				    	// $item->combo =  !empty($array_data)?$array_data['list']:'';
+				        // $item->product_combo_code =  !empty($array_data)?$array_data['product_code']:'';
 				    	if(!empty($data_all[$i]['combo'])  && count($data_all[$i]['combo'])>0){
 
 				    		$show_sku = $data_all[$i]['combo'];
