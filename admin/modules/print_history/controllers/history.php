@@ -726,11 +726,6 @@
 				$pageCount = $pdf->setSourceFile($filePath);
 
 				
-				echo "<pre>";
-				print_r($data_result);
-				echo "</pre>";
-
-				die;
 				for ($pageNo = 1; $pageNo <= $pageCount; $pageNo++) {
 
 				    $templateId = $pdf->importPage($pageNo);
