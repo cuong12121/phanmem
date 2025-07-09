@@ -761,14 +761,18 @@
 				   
 				    for ($i = 0; $i < count($data_all); $i++) {
 
-
-				    
 				    	//phần ghi mã sản phẩm khi có combo 
 
 				    	// $item->combo =  !empty($array_data)?$array_data['list']:'';
 				        // $item->product_combo_code =  !empty($array_data)?$array_data['product_code']:'';
 				    	
-				    	$count_combo =0;
+				    	
+				    	$count_combo = 0;
+						foreach ($data_all as $items) {
+						    if (is_array($items['combo']) && count($items['combo']) > 0) {
+						        $count_combo++;
+						    }
+						}
 				    	if(!empty($data_all[$i]['combo']) && count($data_all[$i]['combo'])>0){
 
 
