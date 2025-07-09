@@ -697,19 +697,16 @@
 
 				$data_result = json_decode($content, true);
 
-				echo "<pre>";
-				print_r($data_result);
-				echo "</pre>";
-				die;
+				
 
 				foreach ($data_result as &$group) {
 				    foreach ($group as &$item) {
 				    	$array_data = $this->combo_Return_code($item->sku_full_check);
 				    	
 
-				        $item->combo =  !empty($array_data)?$array_data['list']:'';
-				        $item->product_combo_code =  !empty($array_data)?$array_data['product_code']:'';
-				        $item->count_show_more = !empty($array_data['list'])?count($array_data['list']):0;
+				        $item['combo'] = !empty($array_data) ? $array_data['list'] : '';
+				        $item['product_combo_code'] = !empty($array_data) ? $array_data['product_code'] : '';
+				        $item['count_show_more'] = !empty($array_data['list']) ? count($array_data['list']) : 0;
 				    }
 				}
 
@@ -762,9 +759,9 @@
 
 				    	$item->combo =  !empty($array_data)?$array_data['list']:'';
 				        $item->product_combo_code =  !empty($array_data)?$array_data['product_code']:'';
-				    	if(!empty($data_all[$i]->combo)  && count($data_all[$i]->combo)>0){
+				    	if(!empty($data_all[$i]['combo'])  && count($data_all[$i]['combo'])>0){
 
-				    		$show_sku = $data_all[$i]->combo;
+				    		$show_sku = $data_all[$i]['combo'];
 
 				    		$pdf->SetFont('Arial', 'B', 14);
 				    		$pdf->SetTextColor(0, 0, 0); // Màu đen
@@ -787,7 +784,7 @@
 				    		//phần ghi mã sản phẩm khi có số sản phẩm lớn hơn 2
 				    		if(count($data_all)>1){
 				    			// trường hợp tồn tại sản phẩm combo thì không in sku combo
-					    		if(empty($data_all[$i]->code) ){
+					    		if(empty($data_all[$i]['product_combo_code']) ){
 
 					    			$pdf->SetFont('Arial', 'B', 14);
 							    	$pdf->SetTextColor(0, 0, 0); // Màu đen
