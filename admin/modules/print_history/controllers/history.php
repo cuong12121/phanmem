@@ -620,7 +620,7 @@
 			// Thêm trường sku_add
 			foreach ($data as &$group) {
 			    foreach ($group as &$item) {
-			        $item->combo =  $this->combo_Return_code($item->sku_full);
+			        $item->combo =  $this->combo_Return_code($item->sku_full_check);
 			    }
 			}
 
