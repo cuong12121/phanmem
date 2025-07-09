@@ -796,7 +796,7 @@
 			    			if($count_combo>0){
 
 
-			    				$kk = $count_combo+$i;
+			    				$kk = $count_combo+$i+2;
 
 			    			}
 			    			else{
