@@ -781,7 +781,7 @@
 				    		$pdf->SetFont('Arial', 'B', 14);
 				    		$pdf->SetTextColor(0, 0, 0); // Màu đen
 
-				    		for ($z=0; $z < $count_combo; $z++) { 
+				    		for ($z=0; $z < count($show_sku); $z++) { 
 
 				    			
 				    			
