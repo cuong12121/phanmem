@@ -725,12 +725,7 @@
 
 				$pageCount = $pdf->setSourceFile($filePath);
 
-				echo "<pre>";
-					print_r($data_result);
-
-				echo "</pre>";
-
-				  die;
+				
 
 				for ($pageNo = 1; $pageNo <= $pageCount; $pageNo++) {
 
@@ -769,25 +764,21 @@
 				    	// $item->combo =  !empty($array_data)?$array_data['list']:'';
 				        // $item->product_combo_code =  !empty($array_data)?$array_data['product_code']:'';
 				    	
-				    	$count_combo = !empty($data_all[$i]['combo'])?count($data_all[$i]['combo']):0;
-
-				    	if($i=55){
-				    		print_r($count_combo);
-
-				    		die;
-				    	}
+				    	$count_combo =0;
 				    	if(!empty($data_all[$i]['combo']) && count($data_all[$i]['combo'])>0){
 
 
 				    		$show_sku = $data_all[$i]['combo'];
 
+				    		$count_combo = count($show_sku);
+
 				    		$pdf->SetFont('Arial', 'B', 14);
 				    		$pdf->SetTextColor(0, 0, 0); // Màu đen
 
-				    		for ($z=0; $z < count($show_sku); $z++) { 
+				    		for ($z=0; $z < $count_combo; $z++) { 
 
 				    			
-				    			
+				    			$v++;
 				    			$pdf->SetXY(105, $k[$z]);
 				    			
 
