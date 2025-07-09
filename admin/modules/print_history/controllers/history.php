@@ -759,7 +759,7 @@
 
 				    	// $item->combo =  !empty($array_data)?$array_data['list']:'';
 				        // $item->product_combo_code =  !empty($array_data)?$array_data['product_code']:'';
-				    	if(!empty($data_all[$i]['combo'])  && count($data_all[$i]['combo'])>0){
+				    	if(!empty($data_all[$i]['combo'])){
 
 				    		$show_sku = $data_all[$i]['combo'];
 
@@ -773,7 +773,7 @@
 				    			$pdf->SetXY(105, $k[$z]);
 				    			
 
-				    			$write_show_more = $ar_sku_show[$index_data][$i][$z];
+				    			$write_show_more = $show_sku[$z];
 
 				    			$pdf->Write(10, $write_show_more);
 				    		}
