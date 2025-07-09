@@ -755,13 +755,12 @@
 				   
 				   
 				    for ($i = 0; $i < count($data_all); $i++) {
-				    	$run_for = 0;
-				    	
+				    
 				    	//phần ghi mã sản phẩm khi có combo 
 
 				    	// $item->combo =  !empty($array_data)?$array_data['list']:'';
 				        // $item->product_combo_code =  !empty($array_data)?$array_data['product_code']:'';
-
+				    	
 
 				    	if(!empty($data_all[$i]['combo']) && count($data_all[$i]['combo'])>0){
 
@@ -773,7 +772,7 @@
 
 				    		for ($z=0; $z < count($show_sku); $z++) { 
 
-				    			$run_for++;
+				    			
 				    			
 				    			$pdf->SetXY(105, $k[$z]);
 				    			
@@ -784,27 +783,26 @@
 				    		}
 				    		
 				    	}
-				    	else{
-				    		
-				    		//phần ghi mã sản phẩm khi có số sản phẩm lớn hơn 2
-				    		if(count($data_all)>1){
+				    	
+			    		//phần ghi mã sản phẩm khi có số sản phẩm lớn hơn 2
+			    		if(count($data_all)>1){
+			    			$kk = !empty($z)?$z+1:0
+			    			
+			    			// trường hợp tồn tại sản phẩm combo thì không in sku combo
+				    		if(empty($data_all[$i]['product_combo_code']) ){
 
+				    			$pdf->SetFont('Arial', 'B', 14);
+						    	$pdf->SetTextColor(0, 0, 0); // Màu đen
 
-				    			// trường hợp tồn tại sản phẩm combo thì không in sku combo
-					    		if(empty($data_all[$i]['product_combo_code']) ){
+						        $pdf->SetXY(105, $k[$kk]);
+						        $write_show_more_pd = $data_result[$index_data][$i]['sku'].':'.$data_result[$index_data][$i]['quantity'];
 
-					    			$pdf->SetFont('Arial', 'B', 14);
-							    	$pdf->SetTextColor(0, 0, 0); // Màu đen
-
-							        $pdf->SetXY(105, $k[$run_for]);
-							        $write_show_more_pd = $data_result[$index_data][$i]['sku'].':'.$data_result[$index_data][$i]['quantity'];
-
-							        $pdf->Write(10, $write_show_more_pd);
-
-					    		}
+						        $pdf->Write(10, $write_show_more_pd);
 
 				    		}
-				    	}
+
+			    		}
+			    	
 
 				    	$pdf->SetFont('Arial', 'B', 14);
 				    	$pdf->SetTextColor(0, 0, 0); // Màu đen
