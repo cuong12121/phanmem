@@ -640,7 +640,7 @@
 
 			        }
 
-			        $data[$i][$j]['count_show_more'] =  !empty($check_combo)?count($show_more):0;
+			       
 
 			    }
 			}
