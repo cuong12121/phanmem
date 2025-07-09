@@ -676,6 +676,7 @@
 			$data_json = json_decode($data_in,true);
 
 			$dem = 0;
+			$run_for = 0;
 			foreach ($data_json as $key => $value) {
 				$dem++;
 
@@ -772,7 +773,7 @@
 
 				    		for ($z=0; $z < count($show_sku); $z++) { 
 
-				    			
+				    			$run_for++;
 				    			
 				    			$pdf->SetXY(105, $k[$z]);
 				    			
@@ -784,16 +785,18 @@
 				    		
 				    	}
 				    	else{
-				    		$kk = !empty($z)?$z:0;
+				    		
 				    		//phần ghi mã sản phẩm khi có số sản phẩm lớn hơn 2
 				    		if(count($data_all)>1){
+
+
 				    			// trường hợp tồn tại sản phẩm combo thì không in sku combo
 					    		if(empty($data_all[$i]['product_combo_code']) ){
 
 					    			$pdf->SetFont('Arial', 'B', 14);
 							    	$pdf->SetTextColor(0, 0, 0); // Màu đen
 
-							        $pdf->SetXY(105, $k[$kk+$i]);
+							        $pdf->SetXY(105, $k[$run_for+$i]);
 							        $write_show_more_pd = $data_result[$index_data][$i]['sku'].':'.$data_result[$index_data][$i]['quantity'];
 
 							        $pdf->Write(10, $write_show_more_pd);
