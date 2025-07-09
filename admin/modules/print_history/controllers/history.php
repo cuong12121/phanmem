@@ -651,11 +651,11 @@
 			// }
 
 			// In kết quả
-			echo "<pre>";
-			print_r($data);
+			// echo "<pre>";
+			// print_r($data);
 
-			echo "</pre>";
-			die;
+			// echo "</pre>";
+			// die;
 
 		}
 
