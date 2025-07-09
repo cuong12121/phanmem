@@ -755,6 +755,8 @@
 				   
 				   
 				    for ($i = 0; $i < count($data_all); $i++) {
+
+
 				    
 				    	//phần ghi mã sản phẩm khi có combo 
 
@@ -762,6 +764,12 @@
 				        // $item->product_combo_code =  !empty($array_data)?$array_data['product_code']:'';
 				    	
 				    	$count_combo = !empty($data_all[$i]['combo'])?count($data_all[$i]['combo']):0;
+
+				    	if($i=54){
+				    		print_r($count_combo);
+
+				    		die;
+				    	}
 				    	if(!empty($data_all[$i]['combo']) && count($data_all[$i]['combo'])>0){
 
 
