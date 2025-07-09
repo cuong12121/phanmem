@@ -693,39 +693,19 @@
 
 				$content = file_get_contents($url_json);
 
-				$ar_sku_show = [];
+				
 
 				$data_result = json_decode($content, true);
 
+				foreach ($data_result as &$group) {
+				    foreach ($group as &$item) {
+				    	$array_data = $this->combo_Return_code($item->sku_full_check);
+				    	
 
-				foreach ($data_result as $i => $order) {
-				    foreach ($order as $j => $item) {
-				        $sku_full_check = $item['sku_full_check'];
-				       
-			         	$check_combo = $this->combo_Return_code($sku_full_check);
-				       
-				        if(!empty($check_combo)){
-				        	
-				        	$show_more = $check_combo;
-
-				        	$ar_sku_show[$i][] =  $show_more;
-
-				        }
-
-				        $data_result[$i][$j]['count_show_more'] =  !empty($check_combo)?count($show_more):0;
-
+				        $item->combo =  !empty($array_data)?$array_data['list']:'';
+				        $item->product_combo_code =  !empty($array_data)?$array_data['product_code']:'';
+				        $item->count_show_more = !empty($array_data['list'])?count($array_data['list']):0;
 				    }
-				}
-
-
-				foreach ($ar_sku_show as $key => $group) {
-				    // Nếu là mảng chứa nhiều mảng con, thì gộp lại
-				    $merged = [];
-				    foreach ($group as $subArray) {
-				        $merged = array_merge($merged, $subArray);
-				    }
-				    // Gán lại mảng đã gộp dưới dạng một mảng 2 chiều như cũ
-				    $ar_sku_show[$key] = [ $merged ];
 				}
 
 			
@@ -775,10 +755,11 @@
 				    	
 				    	//phần ghi mã sản phẩm khi có combo 
 
-				    	
-				    	if(!empty($ar_sku_show[$index_data][$i])  && count($ar_sku_show[$index_data][$i])>0){
+				    	$item->combo =  !empty($array_data)?$array_data['list']:'';
+				        $item->product_combo_code =  !empty($array_data)?$array_data['product_code']:'';
+				    	if(!empty($data_all[$i]->combo)  && count($data_all[$i]->combo)>0){
 
-				    		$show_sku = $ar_sku_show[$index_data][$i];
+				    		$show_sku = $data_all[$i]->combo;
 
 				    		$pdf->SetFont('Arial', 'B', 14);
 				    		$pdf->SetTextColor(0, 0, 0); // Màu đen
@@ -797,21 +778,22 @@
 				    		
 				    	}
 				    	else{
-
 				    		$kk = !empty($z)?$z:0;
 				    		//phần ghi mã sản phẩm khi có số sản phẩm lớn hơn 2
 				    		if(count($data_all)>1){
+				    			// trường hợp tồn tại sản phẩm combo thì không in sku combo
+					    		if(empty($data_all[$i]->code) ){
 
-			    				// $dem = $data_result[$index_data][$i]['count_show_more'];
+					    			$pdf->SetFont('Arial', 'B', 14);
+							    	$pdf->SetTextColor(0, 0, 0); // Màu đen
 
-			    				$pdf->SetFont('Arial', 'B', 14);
-						    	$pdf->SetTextColor(0, 0, 0); // Màu đen
+							        $pdf->SetXY(105, $k[$kk+$i]);
+							        $write_show_more_pd = $data_result[$index_data][$i]['sku'].':'.$data_result[$index_data][$i]['quantity'];
 
-						        $pdf->SetXY(105, $k[$kk+$i]);
-						        $write_show_more_pd = $data_result[$index_data][$i]['sku'].':'.$data_result[$index_data][$i]['quantity'];
+							        $pdf->Write(10, $write_show_more_pd);
 
-						        $pdf->Write(10, $write_show_more_pd);
-				    			
+					    		}
+
 				    		}
 				    	}
 
