@@ -787,8 +787,7 @@
 			    		//phần ghi mã sản phẩm khi có số sản phẩm lớn hơn 2
 			    		if(count($data_all)>1){
 
-			    			
-			    			if(!empty($z)){
+			    			if($count_combo>0){
 			    				$kk = $count_combo+$i;
 
 			    			}
