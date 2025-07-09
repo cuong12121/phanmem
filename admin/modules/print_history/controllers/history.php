@@ -787,6 +787,7 @@
 			    		//phần ghi mã sản phẩm khi có số sản phẩm lớn hơn 2
 			    		if(count($data_all)>1){
 			    			$kk = !empty($z)?$z+1:0;
+			    			$kk++;
 			    			
 			    			// trường hợp tồn tại sản phẩm combo thì không in sku combo
 				    		if(empty($data_all[$i]['product_combo_code']) ){
