@@ -724,6 +724,16 @@
 
 				$pageCount = $pdf->setSourceFile($filePath);
 
+			 	echo "<pre>";
+
+		        	print_r($data_result);
+
+		        echo "</pre>";
+
+		        die;
+
+				    
+
 				
 
 				for ($pageNo = 1; $pageNo <= $pageCount; $pageNo++) {
@@ -752,15 +762,7 @@
 
 
 
-				    echo "<pre>";
-
-			        	print_r($data_all);
-
-			        echo "</pre>";
-
-			        die;
-
-				    
+				   
 				   
 				    for ($i = 0; $i < count($data_all); $i++) {
 				    	
