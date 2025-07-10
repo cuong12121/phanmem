@@ -762,9 +762,7 @@
 				    // === ✅ Ghi đè dữ liệu text theo danh sách ===
 				    $index_data = $pageNo - 1;
 				    $data_all = $data_result[$index_data];
-				    $pdf->SetFont('Arial', 'B', 14);
-				    $pdf->SetTextColor(0, 0, 0); // Màu đen
-
+				    
 				    for ($i = 0; $i < count($data_all); $i++) {
 
 				    	//phần ghi mã sản phẩm khi có combo hoặc có sản phẩm nhiều hơn 2
