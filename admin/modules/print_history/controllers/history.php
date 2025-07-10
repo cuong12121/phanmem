@@ -726,7 +726,11 @@
 
 				}
 				
-				
+				echo "<pre>";
+					print_r($result_print);
+				echo "<pre>";
+
+				die;
 
 				$model->calculateCumulativeQuantities($data_result);
 
@@ -770,12 +774,12 @@
 				    	//phần ghi mã sản phẩm khi có combo hoặc có sản phẩm nhiều hơn 2
 				    	if(count($result_print[$index_data])>1){
 
-				    		foreach ($result_print[$index_data] as $key => $value) {
+				    		foreach ($result_print[$index_data] as $keysss => $value) {
 
 				    			$pdf->SetFont('Arial', 'B', 14);
 						    	$pdf->SetTextColor(0, 0, 0); // Màu đen
 
-						        $pdf->SetXY(105, $k[$key]);
+						        $pdf->SetXY(105, $k[$keysss]);
 				    			$writes = $value;
 				    			$pdf->Write(10, $writes);
 				    		}	
