@@ -725,15 +725,15 @@
 				    $dems++;
 
 				}
-				echo"<pre>";
-				print_r($data_result);
-				echo"</pre>";
-				die;
+				
 				
 				$model->calculateCumulativeQuantities($data_result);
 
 				$data_result = $model->show_list_array_run($data_result);
-
+				echo"<pre>";
+				print_r($data_result);
+				echo"</pre>";
+				die;
 				
 				
 				$pdf = new Fpdi();
