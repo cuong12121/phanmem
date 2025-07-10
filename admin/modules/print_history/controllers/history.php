@@ -712,12 +712,12 @@
 				foreach ($data_result as &$group) {
 					
 				    foreach ($group as &$item) {
-				    	if (is_array($item->combo) && count($item->combo) > 0) {
-					        foreach ($item->combo as $combo_item) {
+				    	if (is_array($item['combo']) && count($item['combo']) > 0) {
+					        foreach ($item['combo'] as $combo_item) {
 					            $result[$dem][] = $combo_item;
 					        }
 					    } else {
-					        $result[$dem][] = $item->sku . ':' . $item->quantity;
+					        $result[$dem][] = $item['sku'] . ':' . $item['quantity'];
 					    }
 				    }	
 				    $dem++;
