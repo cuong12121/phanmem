@@ -727,7 +727,7 @@
 				    $dems++;
 
 				}
-				
+
 				$model->calculateCumulativeQuantities($data_result);
 
 				$data_result = $model->show_list_array_run($data_result);
@@ -793,7 +793,7 @@
 
 				        if(!empty($data_result[$index_data][$i]['combo'] &&count($data_result[$index_data][$i]['combo'])>0)){
 				        	$in_cb = 'CB:'.$data_result[$index_data][$i]['product_combo_code'].':'.$data_result[$index_data][$i]['all'];
-				        	$y_in = $i+intval(count($data_all));
+				        	$y_in = $i+1+intval(count($data_all));
 				        	$pdf->SetXY(105, $y[$y_in]);
 				        	$pdf->Write(10, $in_cb);
 				        }
