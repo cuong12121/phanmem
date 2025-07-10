@@ -711,8 +711,9 @@
 				        // $item['count_show_more'] = !empty($array_data['list']) ? count($array_data['list']) : 0;
 				    }
 				}
-
+				echo "<pre>";
 				print_r($data_result);
+				echo "</pre>";
 
 				die;
 
