@@ -769,16 +769,7 @@
 				    $pdf->SetFont('Arial', 'B', 14);
 				    $pdf->SetTextColor(0, 0, 0); // Màu đen
 
-				    
-
-				   	$count_combo = 0;
-				    	
-					foreach ($data_all as $items) {
-					    if (is_array($items['combo']) && count($items['combo']) > 0) {
-					        $count_combo++;
-					    }
-					}
-
+				 
 					
 				   
 				    for ($i = 0; $i < count($data_all); $i++) {
