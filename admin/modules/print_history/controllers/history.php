@@ -714,7 +714,8 @@
 					        }
 					    } else {
 					    	$result[$key][$keys] = $item['sku'] . ':' . $item['quantity'];
-					    }	
+					    }
+					}    	
 				}	
 				echo "<pre>";
 				print_r($result);
