@@ -716,22 +716,17 @@
 				    foreach ($groups as &$item) {
 				    	if (is_array($item['combo']) && count($item['combo']) > 0) {
 					        foreach ($item['combo'] as $combo_item) {
-					            $result_print[$dem][] = $combo_item;
+					            $result_print[$dems][] = $combo_item;
 					        }
 					    } else {
-					        $result_print[$dem][] = $item['sku'] . ':' . $item['quantity'];
+					        $result_print[$dems][] = $item['sku'] . ':' . $item['quantity'];
 					    }
 				    }	
 				    $dems++;
 
 				}
 				
-				echo "<pre>";
-					print_r($result_print);
-				echo "<pre>";
-
-				die;
-
+				
 				$model->calculateCumulativeQuantities($data_result);
 
 				$data_result = $model->show_list_array_run($data_result);
