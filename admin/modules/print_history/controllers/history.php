@@ -693,17 +693,11 @@
 
 				$data_result = json_decode($content, true);
 
-				if($key==1){
-					echo "<pre>";
-					print_r($data_result);
-					echo "</pre>";
-
-					die;
-				}
+				
 
 				$result_print = [];
 
-				$dem=0;
+				$dems=0;
 
 				foreach ($data_result as &$group) {
 				    foreach ($group as &$item) {
@@ -728,7 +722,7 @@
 					        $result_print[$dem][] = $item['sku'] . ':' . $item['quantity'];
 					    }
 				    }	
-				    $dem++;
+				    $dems++;
 
 				}
 				
@@ -738,11 +732,7 @@
 
 				$data_result = $model->show_list_array_run($data_result);
 
-				// echo "<pre>";
-				// print_r($data_result);
-				// echo "</pre>";
-
-				// die;
+				
 				
 				$pdf = new Fpdi();
 
@@ -775,45 +765,35 @@
 				    $pdf->SetFont('Arial', 'B', 14);
 				    $pdf->SetTextColor(0, 0, 0); // Màu đen
 
-				 
-					if(is_array($data_all)){
+				    for ($i = 0; $i < count($data_all); $i++) {
 
-					    for ($i = 0; $i < count($data_all); $i++) {
+				    	//phần ghi mã sản phẩm khi có combo hoặc có sản phẩm nhiều hơn 2
+				    	if(count($result_print[$index_data])>1){
 
-					    	//phần ghi mã sản phẩm khi có combo hoặc có sản phẩm nhiều hơn 2
-					    	if(count($result_print[$index_data])>1){
+				    		foreach ($result_print[$index_data] as $key => $value) {
 
-					    		foreach ($result_print[$index_data] as $key => $value) {
+				    			$pdf->SetFont('Arial', 'B', 14);
+						    	$pdf->SetTextColor(0, 0, 0); // Màu đen
 
-					    			$pdf->SetFont('Arial', 'B', 14);
-							    	$pdf->SetTextColor(0, 0, 0); // Màu đen
+						        $pdf->SetXY(105, $k[$key]);
+				    			$writes = $value;
+				    			$pdf->Write(10, $writes);
+				    		}	
 
-							        $pdf->SetXY(105, $k[$key]);
-					    			$writes = $value;
-					    			$pdf->Write(10, $writes);
-					    		}	
-
-					    	}
+				    	}
 
 
-					    	$pdf->SetFont('Arial', 'B', 14);
-					    	$pdf->SetTextColor(0, 0, 0); // Màu đen
+				    	$pdf->SetFont('Arial', 'B', 14);
+				    	$pdf->SetTextColor(0, 0, 0); // Màu đen
 
-					        $pdf->SetXY(105, $y[$i]);
-					        $write = $data_result[$index_data][$i]['parent_index'] . '--' .
-					                 $data_result[$index_data][$i]['show_list'] . '==>' .
-					                 $data_result[$index_data][$i]['all'] . '--' .
-					                 $data_result[$index_data][$i]['all_to_sku'];
-					        $pdf->Write(10, $write);
-					    }
-					}   
-					else{
-						echo "<pre>";
-						print_r($data_all);
-						echo "</pre>";
-						die;
-					} 
-				    
+				        $pdf->SetXY(105, $y[$i]);
+				        $write = $data_result[$index_data][$i]['parent_index'] . '--' .
+				                 $data_result[$index_data][$i]['show_list'] . '==>' .
+				                 $data_result[$index_data][$i]['all'] . '--' .
+				                 $data_result[$index_data][$i]['all_to_sku'];
+				        $pdf->Write(10, $write);
+				    }
+					
 				    $pdf->SetFont('Arial', 'B', 14);
 				    $pdf->SetTextColor(0, 0, 0); // Màu đen
 				    $pdf->SetXY(105, $y[count($data_all)]); // Tọa độ X-Y
