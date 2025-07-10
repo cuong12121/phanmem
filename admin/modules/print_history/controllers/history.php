@@ -709,9 +709,9 @@
 				    }
 				}
 
-				foreach ($data_result as &$group) {
+				foreach ($data_result as &$groups) {
 					
-				    foreach ($group as &$item) {
+				    foreach ($groups as &$item) {
 				    	if (is_array($item['combo']) && count($item['combo']) > 0) {
 					        foreach ($item['combo'] as $combo_item) {
 					            $result_print[$dem][] = $combo_item;
