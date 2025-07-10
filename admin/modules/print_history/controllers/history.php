@@ -630,32 +630,9 @@
 			        $item->product_combo_code =  !empty($array_data)?$array_data['product_code']:'';
 			    }
 			}
-
-			// foreach ($data as $i => $order) {
-			//     foreach ($order as $j => $items) {
-			//         $sku_full_check = $items->sku_full_check;
-			       
-		    //      	$check_combo = $this->combo_Return_code($sku_full_check);
-			       
-			//         if(!empty($check_combo)){
-			        	
-			//         	$show_more = $check_combo;
-
-			//         	$ar_sku_show[$i][] =  $show_more;
-
-			//         }
-
-			       
-
-			//     }
-			// }
-
-			// In kết quả
-			// echo "<pre>";
-			// print_r($data);
-
-			// echo "</pre>";
-			// die;
+			echo "<pre>";
+			print_r($data);
+			echo "</pre>";
 
 		}
 
