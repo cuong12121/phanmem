@@ -695,6 +695,8 @@
 
 				$result = [];
 
+				$dem=0;
+
 				foreach ($data_result as &$group) {
 				    foreach ($group as &$item) {
 				    	$array_data = $this->combo_Return_code($item['sku_full_check']);
@@ -706,17 +708,22 @@
 				        // $item['count_show_more'] = !empty($array_data['list']) ? count($array_data['list']) : 0;
 				    }
 				}
-				foreach ($data_result as $key=> $group) {
-					foreach ($group as $keys=> $item) {
-					    if (is_array($item['combo']) && count($item['combo']) > 0) {
-					        foreach ($item['combo'] as $combo_item) {
-					            $result[$key][$keys] = $combo_item;
+
+				foreach ($data_result as &$group) {
+					
+				    foreach ($group as &$item) {
+				    	if (is_array($item->combo) && count($item->combo) > 0) {
+					        foreach ($item->combo as $combo_item) {
+					            $result[$dem][] = $combo_item;
 					        }
 					    } else {
-					    	$result[$key][$keys] = $item['sku'] . ':' . $item['quantity'];
+					        $result[$dem][] = $item->sku . ':' . $item->quantity;
 					    }
-					}    	
-				}	
+				    }	
+				    $dem++;
+
+				}
+				
 				echo "<pre>";
 				print_r($result);
 				echo "</pre>";
