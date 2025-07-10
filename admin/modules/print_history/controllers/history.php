@@ -725,7 +725,10 @@
 				    $dems++;
 
 				}
-				
+				echo"<pre>";
+				print_r($data_result);
+				echo"</pre>";
+				die;
 				
 				$model->calculateCumulativeQuantities($data_result);
 
