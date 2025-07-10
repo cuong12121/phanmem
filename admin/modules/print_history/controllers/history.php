@@ -622,12 +622,20 @@
 
 			// Thêm trường sku_add
 			foreach ($data as &$group) {
+				$total_combo_count = 0;
 			    foreach ($group as &$item) {
+
 			    	$array_data = $this->combo_Return_code($item->sku_full_check);
 			    	
 
 			        $item->combo =  !empty($array_data)?$array_data['list']:'';
 			        $item->product_combo_code =  !empty($array_data)?$array_data['product_code']:'';
+			        if (is_array($item->combo)) {
+				        $total_combo_count += count($item->combo);
+				    } else {
+				        $total_combo_count += 1;
+				    }
+				    $item->count_combo = $total_combo_count;
 			    }
 			}
 			echo "<pre>";
