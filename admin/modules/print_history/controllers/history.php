@@ -693,7 +693,7 @@
 
 				$data_result = json_decode($content, true);
 
-				$result = [];
+				$result_print = [];
 
 				$dem=0;
 
@@ -714,10 +714,10 @@
 				    foreach ($group as &$item) {
 				    	if (is_array($item['combo']) && count($item['combo']) > 0) {
 					        foreach ($item['combo'] as $combo_item) {
-					            $result[$dem][] = $combo_item;
+					            $result_print[$dem][] = $combo_item;
 					        }
 					    } else {
-					        $result[$dem][] = $item['sku'] . ':' . $item['quantity'];
+					        $result_print[$dem][] = $item['sku'] . ':' . $item['quantity'];
 					    }
 				    }	
 				    $dem++;
@@ -725,7 +725,7 @@
 				}
 				
 				echo "<pre>";
-				print_r($result);
+				print_r($result_print);
 				echo "</pre>";
 
 				die;
@@ -785,55 +785,21 @@
 				   
 				    for ($i = 0; $i < count($data_all); $i++) {
 
-				    	//phần ghi mã sản phẩm khi có combo 
+				    	//phần ghi mã sản phẩm khi có combo hoặc có sản phẩm nhiều hơn 2
+				    	if(count($result_print[$index_data][$i])>1){
 
-
-				    	if(!empty($data_all[$i]['combo']) && count($data_all[$i]['combo'])>0){
-
-				    		$show_sku = $data_all[$i]['combo'];
-
-				    		$pdf->SetFont('Arial', 'B', 14);
-				    		$pdf->SetTextColor(0, 0, 0); // Màu đen
-
-				    		for ($z=0; $z < count($show_sku); $z++) { 
-
-				    			$pdf->SetXY(105, $k[$z]);
-				    			
-				    			$write_show_more = $show_sku[$z];
-
-				    			$pdf->Write(10, $write_show_more);
-				    		}
-				    		
-				    	}
-				    	
-			    		//phần ghi mã sản phẩm khi có số sản phẩm lớn hơn 2
-			    		if(count($data_all)>1){
-
-			    			if($count_combo>0){
-
-
-			    				$kk = $count_combo+$i+2;
-
-			    			}
-			    			else{
-			    				$kk = $i;
-			    			}
-			    			
-			    			// trường hợp tồn tại sản phẩm combo thì không in sku combo
-				    		if(empty($data_all[$i]['product_combo_code']) ){
+				    		foreach ($result_print[$index_data][$i] as $key => $value) {
 
 				    			$pdf->SetFont('Arial', 'B', 14);
 						    	$pdf->SetTextColor(0, 0, 0); // Màu đen
 
-						        $pdf->SetXY(105, $k[$kk]);
-						        $write_show_more_pd = $data_all[$i]['sku'].':'.$data_result[$index_data][$i]['quantity'];
+						        $pdf->SetXY(105, $k[$key]);
+				    			$writes = $value;
+				    			$pdf->Write(10, $writes);
+				    		}	
 
-						        $pdf->Write(10, $write_show_more_pd);
+				    	}
 
-				    		}
-
-			    		}
-			    	
 
 				    	$pdf->SetFont('Arial', 'B', 14);
 				    	$pdf->SetTextColor(0, 0, 0); // Màu đen
