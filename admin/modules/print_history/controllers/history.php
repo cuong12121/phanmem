@@ -725,15 +725,12 @@
 				    $dems++;
 
 				}
-				
+
 				
 				$model->calculateCumulativeQuantities($data_result);
 
 				$data_result = $model->show_list_array_run($data_result);
-				echo"<pre>";
-				print_r($data_result);
-				echo"</pre>";
-				die;
+				
 				
 				
 				$pdf = new Fpdi();
@@ -794,6 +791,13 @@
 				                 $data_result[$index_data][$i]['all'] . '--' .
 				                 $data_result[$index_data][$i]['all_to_sku'];
 				        $pdf->Write(10, $write);
+
+				        if(!empty($data_result[$index_data][$i]['combo'] &&count($data_result[$index_data][$i]['combo'])>0)){
+				        	$in_cb = 'CB:'.$data_result[$index_data][$i]['product_combo_code'].':'.$data_result[$index_data][$i]['all'];
+				        	$y_in = $i+intval(count($data_all));
+				        	$pdf->SetXY(105, $y_in);
+				        	$pdf->Write(10, $in_cb);
+				        }
 				    }
 					
 				    $pdf->SetFont('Arial', 'B', 14);
