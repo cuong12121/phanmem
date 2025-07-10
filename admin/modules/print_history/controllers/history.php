@@ -768,37 +768,43 @@
 				    $pdf->SetTextColor(0, 0, 0); // Màu đen
 
 				 
-					
-				   
-				    for ($i = 0; $i < count($data_all); $i++) {
+					if(is_array($data_all)){
 
-				    	//phần ghi mã sản phẩm khi có combo hoặc có sản phẩm nhiều hơn 2
-				    	if(count($result_print[$index_data])>1){
+					    for ($i = 0; $i < count($data_all); $i++) {
 
-				    		foreach ($result_print[$index_data] as $key => $value) {
+					    	//phần ghi mã sản phẩm khi có combo hoặc có sản phẩm nhiều hơn 2
+					    	if(count($result_print[$index_data])>1){
 
-				    			$pdf->SetFont('Arial', 'B', 14);
-						    	$pdf->SetTextColor(0, 0, 0); // Màu đen
+					    		foreach ($result_print[$index_data] as $key => $value) {
 
-						        $pdf->SetXY(105, $k[$key]);
-				    			$writes = $value;
-				    			$pdf->Write(10, $writes);
-				    		}	
+					    			$pdf->SetFont('Arial', 'B', 14);
+							    	$pdf->SetTextColor(0, 0, 0); // Màu đen
 
-				    	}
+							        $pdf->SetXY(105, $k[$key]);
+					    			$writes = $value;
+					    			$pdf->Write(10, $writes);
+					    		}	
+
+					    	}
 
 
-				    	$pdf->SetFont('Arial', 'B', 14);
-				    	$pdf->SetTextColor(0, 0, 0); // Màu đen
+					    	$pdf->SetFont('Arial', 'B', 14);
+					    	$pdf->SetTextColor(0, 0, 0); // Màu đen
 
-				        $pdf->SetXY(105, $y[$i]);
-				        $write = $data_result[$index_data][$i]['parent_index'] . '--' .
-				                 $data_result[$index_data][$i]['show_list'] . '==>' .
-				                 $data_result[$index_data][$i]['all'] . '--' .
-				                 $data_result[$index_data][$i]['all_to_sku'];
-				        $pdf->Write(10, $write);
-				    }
-
+					        $pdf->SetXY(105, $y[$i]);
+					        $write = $data_result[$index_data][$i]['parent_index'] . '--' .
+					                 $data_result[$index_data][$i]['show_list'] . '==>' .
+					                 $data_result[$index_data][$i]['all'] . '--' .
+					                 $data_result[$index_data][$i]['all_to_sku'];
+					        $pdf->Write(10, $write);
+					    }
+					}   
+					else{
+						echo "<pre>";
+						print_r($data_all);
+						echo "</pre>";
+						die;
+					} 
 				    
 				    $pdf->SetFont('Arial', 'B', 14);
 				    $pdf->SetTextColor(0, 0, 0); // Màu đen
