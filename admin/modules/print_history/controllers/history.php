@@ -693,6 +693,12 @@
 
 				$data_result = json_decode($content, true);
 
+				echo "<pre>";
+				print_r($data_result);
+				echo "</pre>";
+
+				die;
+
 				
 
 				$result_print = [];
@@ -771,9 +777,7 @@
 
 				    		foreach ($result_print[$index_data] as $keysss => $value) {
 
-				    			$pdf->SetFont('Arial', 'B', 14);
-						    	$pdf->SetTextColor(0, 0, 0); // Màu đen
-
+				    			
 						        $pdf->SetXY(105, $k[$keysss]);
 				    			$writes = $value;
 				    			$pdf->Write(10, $writes);
@@ -795,7 +799,7 @@
 				        if(!empty($data_result[$index_data][$i]['combo'] &&count($data_result[$index_data][$i]['combo'])>0)){
 				        	$in_cb = 'CB:'.$data_result[$index_data][$i]['product_combo_code'].':'.$data_result[$index_data][$i]['all'];
 				        	$y_in = $i+intval(count($data_all));
-				        	$pdf->SetXY(105, $y_in);
+				        	$pdf->SetXY(105, $y[$y_in]);
 				        	$pdf->Write(10, $in_cb);
 				        }
 				    }
