@@ -725,6 +725,8 @@
 				}
 
 				print_r($result_print);
+
+				die;
 				
 
 				$model->calculateCumulativeQuantities($data_result);
