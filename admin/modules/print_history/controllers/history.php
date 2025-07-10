@@ -620,6 +620,8 @@
 
 			$ar_sku_show= [];
 
+			$result = [];
+
 			// Thêm trường sku_add
 			foreach ($data as &$group) {
 			    foreach ($group as &$item) {
@@ -631,22 +633,23 @@
 			    }
 			}
 
-			foreach ($data as &$group) {
-				$result = [];
+			foreach ($data as $key &$group) {
+				
 			    foreach ($group as &$item) {
 			    	if (is_array($item->combo) && count($item->combo) > 0) {
 				        foreach ($item->combo as $combo_item) {
-				            $result[] = $combo_item;
+				            $result[$key][] = $combo_item;
 				        }
 				    } else {
-				        $result[] = $item->sku . ':' . $item->quantity;
+				        $result[$key][] = $item->sku . ':' . $item->quantity;
 				    }
 			    }	
-			    echo "<pre>";
-			    	print_r($result);
-			    echo "</pre>";
+			    
 
-			}			
+			}
+			echo "<pre>";
+		    	print_r($result);
+		    echo "</pre>";		
 		}
 
 		function clone_function()
