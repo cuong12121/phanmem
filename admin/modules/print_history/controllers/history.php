@@ -723,11 +723,11 @@
 				    $dem++;
 
 				}
-				// echo "<pre>";
-				// print_r($result_print);
-				// echo "</pre>";
+				echo "<pre>";
+				print_r($data_result);
+				echo "</pre>";
 
-				// die;
+				die;
 				
 
 				$model->calculateCumulativeQuantities($data_result);
@@ -742,9 +742,7 @@
 
 				$pageCount = $pdf->setSourceFile($filePath);
 
-				$dl = 0;
-
-				$cb = 0;
+			
 				for ($pageNo = 1; $pageNo <= $pageCount; $pageNo++) {
 
 				    $templateId = $pdf->importPage($pageNo);
