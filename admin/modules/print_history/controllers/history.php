@@ -622,6 +622,8 @@
 
 			$result = [];
 
+			$dem = 0;
+
 			// Thêm trường sku_add
 			foreach ($data as &$group) {
 			    foreach ($group as &$item) {
@@ -633,18 +635,18 @@
 			    }
 			}
 
-			foreach ($data as $key &$group) {
-				
+			foreach ($data as &$group) {
+					
 			    foreach ($group as &$item) {
 			    	if (is_array($item->combo) && count($item->combo) > 0) {
 				        foreach ($item->combo as $combo_item) {
-				            $result[$key][] = $combo_item;
+				            $result[$dem][] = $combo_item;
 				        }
 				    } else {
-				        $result[$key][] = $item->sku . ':' . $item->quantity;
+				        $result[$dem][] = $item->sku . ':' . $item->quantity;
 				    }
 			    }	
-			    
+			    $dem++;
 
 			}
 			echo "<pre>";
