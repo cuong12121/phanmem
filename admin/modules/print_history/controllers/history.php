@@ -693,6 +693,14 @@
 
 				$data_result = json_decode($content, true);
 
+				if($key==1){
+					echo "<pre>";
+					print_r($data_result);
+					echo "</pre>";
+
+					die;
+				}
+
 				$result_print = [];
 
 				$dem=0;
@@ -730,11 +738,11 @@
 
 				$data_result = $model->show_list_array_run($data_result);
 
-				echo "<pre>";
-				print_r($data_result);
-				echo "</pre>";
+				// echo "<pre>";
+				// print_r($data_result);
+				// echo "</pre>";
 
-				die;
+				// die;
 				
 				$pdf = new Fpdi();
 
