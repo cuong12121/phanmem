@@ -762,12 +762,7 @@
 					    }
 					}
 
-					if($count_combo==0){
-						$dl++;
-					}
-					else{
-						$cb++;
-					}
+					
 				   
 				    for ($i = 0; $i < count($data_all); $i++) {
 
@@ -837,19 +832,7 @@
 				    $pdf->SetTextColor(0, 0, 0); // Màu đen
 				    $pdf->SetXY(105, $y[count($data_all)]); // Tọa độ X-Y
 				    $pdf->Write(10, $pageNo);
-				    $add_td = count($data_all)+1;
-
-				    if($count_combo==0){
-				    	$pdf->SetXY(105, $y[$add_td]); // Tọa độ X-Y
-				    	$writes_cate = 'DL:'.$dl;
-				    	$pdf->Write(10, $writes_cate);
-						
-					}
-					else{
-						$pdf->SetXY(105,  $y[$add_td]); // Tọa độ X-Y
-				    	$writes_cate = 'CB:'.$cb;
-						$pdf->Write(10, $writes_cate);
-					}
+				    
 				   
 				}
 
