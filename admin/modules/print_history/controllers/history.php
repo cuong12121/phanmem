@@ -723,6 +723,8 @@
 				    $dem++;
 
 				}
+
+				print_r($result_print);
 				
 
 				$model->calculateCumulativeQuantities($data_result);
