@@ -690,7 +690,7 @@
 				$content = file_get_contents($url_json);
 
 				
-
+				$result = [];
 				$data_result = json_decode($content, true);
 
 				
@@ -702,17 +702,23 @@
 
 				        $item['combo'] = !empty($array_data) ? $array_data['list'] : '';
 				        $item['product_combo_code'] = !empty($array_data) ? $array_data['product_code'] : '';
-				        // Thêm result vào đây
-				        if (!empty($item['combo']) && is_array($item['combo'])) {
-				            $item['result'] = $item['combo'];
-				        } else {
-				            $item['result'] = [$item['sku'] . ':' . $item['quantity']];
-				        }
+				        
 				        // $item['count_show_more'] = !empty($array_data['list']) ? count($array_data['list']) : 0;
 				    }
 				}
+				foreach ($data_result as $key=> $group) {
+					foreach ($group as $keys=> $item) {
+					    if (is_array($item->combo) && count($item->combo) > 0) {
+					        foreach ($item->combo as $combo_item) {
+					            $result[$key][$keys][] = $combo_item;
+					        }
+					    } else {
+					        $result[$key][$keys][] = $item->sku . ':' . $item->quantity;
+					    }
+					}
+				}	
 				echo "<pre>";
-				print_r($data_result);
+				print_r($result);
 				echo "</pre>";
 
 				die;
