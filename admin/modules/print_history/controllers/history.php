@@ -702,9 +702,19 @@
 
 				        $item['combo'] = !empty($array_data) ? $array_data['list'] : '';
 				        $item['product_combo_code'] = !empty($array_data) ? $array_data['product_code'] : '';
+				        // Thêm result vào đây
+				        if (!empty($item['combo']) && is_array($item['combo'])) {
+				            $item['result'] = $item['combo'];
+				        } else {
+				            $item['result'] = [$item['sku'] . ':' . $item['quantity']];
+				        }
 				        // $item['count_show_more'] = !empty($array_data['list']) ? count($array_data['list']) : 0;
 				    }
 				}
+
+				print_r($data_result);
+
+				die;
 
 			
 
