@@ -723,8 +723,9 @@
 				    $dem++;
 
 				}
-
+				echo "<pre>";
 				print_r($result_print);
+				echo "</pre>";
 
 				die;
 				
