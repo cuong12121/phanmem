@@ -724,9 +724,6 @@
 
 				}
 				
-				
-
-			
 
 				$model->calculateCumulativeQuantities($data_result);
 
