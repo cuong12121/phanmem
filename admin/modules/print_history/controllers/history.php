@@ -690,10 +690,10 @@
 				$content = file_get_contents($url_json);
 
 				
-				$result = [];
+
 				$data_result = json_decode($content, true);
 
-				
+				$result = [];
 
 				foreach ($data_result as &$group) {
 				    foreach ($group as &$item) {
@@ -708,14 +708,13 @@
 				}
 				foreach ($data_result as $key=> $group) {
 					foreach ($group as $keys=> $item) {
-					    if (is_array($item->combo) && count($item->combo) > 0) {
-					        foreach ($item->combo as $combo_item) {
-					            $result[$key][$keys][] = $combo_item;
+					    if (is_array($item['combo']) && count($item['combo']) > 0) {
+					        foreach ($item['combo'] as $combo_item) {
+					            $result[$key][$keys] = $combo_item;
 					        }
 					    } else {
-					        $result[$key][$keys][] = $item->sku . ':' . $item->quantity;
-					    }
-					}
+					    	$result[$key][$keys] = $item['sku'] . ':' . $item['quantity'];
+					    }	
 				}	
 				echo "<pre>";
 				print_r($result);
