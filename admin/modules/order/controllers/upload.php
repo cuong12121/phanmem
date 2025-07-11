@@ -1148,7 +1148,10 @@
 
 		        if ($H < 8) {
 				    $house_id = 13;
-				} elseif ($H >= 8 && $H < 13) {
+				}
+				elseif ($H >= 8 && $H < 12){
+					$house_id = 14;
+				} elseif ($H >= 12 && $H < 13) {
 				    $house_id = 18;
 				}
 				elseif ($H >= 14 && $H < 15) {
