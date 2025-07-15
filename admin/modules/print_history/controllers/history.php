@@ -1065,7 +1065,7 @@
 			// $files = 'ex2.xlsx';
             // $file_path = PATH_BASE.'files/'.$files;
             require_once("../libraries/PHPExcel-1.8/Classes/PHPExcel.php");
-            $file_path =PATH_BASE.'/admin/export/excel/order_item//2025/06/14/file_nhat_2_2_14_06_25_13.xlsx';
+            $file_path =$url;
             $objReader = PHPExcel_IOFactory::createReaderForFile($file_path);
             // $data = new PHPExcel_IOFactory();
             // $data->setOutputEncoding('UTF-8');
