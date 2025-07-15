@@ -310,7 +310,7 @@
 
 			
 
-			$url_ex = 'https://dienmayai.com/admin/export/excel/order_item//2025/06/14/file_nhat_2_2_14_06_25_13.xlsx';
+			$url_ex = 'https://dienmayai.com/admin/export/excel/order_item//2025/07/07/file_nhat_2_2_07_07_25_13.xlsx';
 
 			$data_ex = $this->data_excel($url_ex);
 
