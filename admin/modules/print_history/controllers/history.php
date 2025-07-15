@@ -1065,7 +1065,7 @@
 			// $files = 'ex2.xlsx';
             // $file_path = PATH_BASE.'files/'.$files;
             require_once("../libraries/PHPExcel-1.8/Classes/PHPExcel.php");
-            $file_path =$url;
+            $file_path =PATH_BASE.str_replace('https://dienmayai.com', '', $url);
             $objReader = PHPExcel_IOFactory::createReaderForFile($file_path);
             // $data = new PHPExcel_IOFactory();
             // $data->setOutputEncoding('UTF-8');
