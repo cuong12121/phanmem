@@ -312,11 +312,11 @@
 
 			$url_ex = 'https://dienmayai.com/admin/export/excel/order_item//2025/07/07/file_nhat_2_2_07_07_25_13.xlsx';
 
-			$data_ex = $this->data_excel($url_ex);
+			// $data_ex = $this->data_excel($url_ex);
 
 			echo"<pre>";
 
-			print_r($data_ex);
+			print_r($url_ex);
 
 			echo"</pre>";
 
