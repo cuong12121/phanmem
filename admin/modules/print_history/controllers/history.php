@@ -316,7 +316,7 @@
 
 			echo"<pre>";
 
-			print_r($url_ex);
+			print_r($data_ex);
 
 			echo"</pre>";
 
