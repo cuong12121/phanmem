@@ -703,9 +703,9 @@
 
 			$file_xlsx = $data_in[intval($dem)-1]['file_xlsx'];
 
-			echo $file_xlsx;
+			// echo $file_xlsx;
 
-			die;
+			// die;
 
 			$dataexcel  =  $this->data_excel($file_xlsx);
 
