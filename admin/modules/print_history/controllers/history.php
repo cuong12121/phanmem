@@ -709,6 +709,14 @@
 
 			$dataexcel  =  $this->data_excel($file_xlsx);
 
+			echo "<pre>";
+
+			print_r($dataexcel);
+
+			echo "</pre>";
+
+			die;
+
 			// Gọi hàm với 2 mảng đã cho
 			$this->compare_arrays($dataexcel, $pdf);
 
