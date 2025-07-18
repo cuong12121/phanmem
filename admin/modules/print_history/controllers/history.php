@@ -656,7 +656,7 @@
 
 		function show_tracking_code()
 		{
-			$dem =1;
+			$dem =2;
 
 			$url_json = 'https://api.phanmemttp.xyz/apis.php?key_number='.$dem;
 
