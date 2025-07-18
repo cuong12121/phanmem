@@ -629,18 +629,18 @@
 		    echo "</pre>";		
 		}
 
-		function compare_arrays($mang1, $mang2) {
+		function compare_arrays($mang1, $mang2, $filename) {
 		    $all_keys = array_unique(array_merge(array_keys($mang1), array_keys($mang2)));
-
+		    $output = '';
 		    foreach ($all_keys as $key) {
 		        // Kiểm tra key chỉ tồn tại ở một bên
 		        if (!isset($mang1[$key])) {
-		            echo "Mã vận đơn $key chỉ có trong file pdf<br>";
+		            $output .= "Mã vận đơn $key chỉ có trong file pdf<br>";
 		            continue;
 		        }
 
 		        if (!isset($mang2[$key])) {
-		            echo "Mã vận đơn $key chỉ có trong file excel<br>";
+		            $output .= "Mã vận đơn $key chỉ có trong file excel<br>";
 		            continue;
 		        }
 
@@ -659,67 +659,77 @@
 
 		        foreach ($all_skus as $sku) {
 		            if (!isset($items1[$sku])) {
-		                echo "SKU $sku chỉ có trong file pdf với mã vận đơn $key<br>";
+		                $output .= "SKU $sku chỉ có trong file pdf với mã vận đơn $key<br>";
 		            } elseif (!isset($items2[$sku])) {
-		                echo "SKU $sku chỉ có trong file excel với mã vận đơn $key<br>";
+		                $output .= "SKU $sku chỉ có trong file excel với mã vận đơn $key<br>";
 		            } elseif ($items1[$sku] != $items2[$sku]) {
-		                echo "Sai số lượng SKU $sku với mã vận đơn $key (sku excel: {$items1[$sku]}, sku pdf: {$items2[$sku]})<br>";
+		                $output .= "Sai số lượng SKU $sku với mã vận đơn $key (sku excel: {$items1[$sku]}, sku pdf: {$items2[$sku]})<br>";
 		            }
 		        }
 		    }
+		    file_put_contents($filename, $output);
 		}
 
 
 
 		function show_tracking_code()
 		{
-			$dem =1;
+			global $db;
+			
+			for ($i=1; $i <=2 ; $i++) { 
+			
+				$dem =$i;
 
-			$url_json = 'https://api.phanmemttp.xyz/apis.php?key_number='.$dem;
+				$url_json = 'https://api.phanmemttp.xyz/apis.php?key_number='.$dem;
 
-			$content = file_get_contents($url_json);
+				$content = file_get_contents($url_json);
 
-			$content = json_decode($content);
+				$content = json_decode($content);
 
-			$pdf = [];
+				$pdf = [];
 
-			foreach ($content as $group) {
-			    foreach ($group as $item) {
-			        // Nếu mã vận đơn là 'none', dùng mã đơn hàng thay thế
-			        $key = ($item->mvd === 'none' || empty($item->mvd)) ? $item->mdh : $item->mvd;
+				foreach ($content as $group) {
+				    foreach ($group as $item) {
+				        // Nếu mã vận đơn là 'none', dùng mã đơn hàng thay thế
+				        $key = ($item->mvd === 'none' || empty($item->mvd)) ? $item->mdh : $item->mvd;
 
-			        // Thêm vào mảng kết quả
-			        $pdf[$key][] = [
-			            'sku' => trim($item->sku),
-			            'sl' => (int) $item->quantity
-			        ];
-			    }
+				        // Thêm vào mảng kết quả
+				        $pdf[$key][] = [
+				            'sku' => trim($item->sku),
+				            'sl' => (int) $item->quantity
+				        ];
+				    }
+				}
+
+
+				$data_in = file_get_contents('https://drive.dienmayai.com/file_in.php');
+
+				$data_in = json_decode($data_in, true);
+
+				$file_xlsx = $data_in[intval($dem)-1]['file_xlsx'];
+
+				$id = $data_in[intval($dem)-1]['id'];
+
+
+				$dataexcel  =  $this->data_excel($file_xlsx);
+
+				$baseDir = PATH_BASE.'/admin/export/txt/';
+
+
+				$file_name = $baseDir.$id.'.txt';
+
+				
+				// Gọi hàm với 2 mảng đã cho
+				$this->compare_arrays($dataexcel, $pdf, $file_name);
+
+				$dir_file_name_convert = str_replace('/www/wwwroot/'.DOMAIN, '', $file_name);
+
+
+				$sql = "UPDATE fs_order_uploads_history_prints SET compare_ex_pdf = '$dir_file_name_convert' WHERE id = '$id'";
+
+				$values = $db->query($sql);
 			}
-
-
-			$data_in = file_get_contents('https://drive.dienmayai.com/file_in.php');
-
-			$data_in = json_decode($data_in, true);
-
-			$file_xlsx = $data_in[intval($dem)-1]['file_xlsx'];
-
-			// echo $file_xlsx;
-
-			// die;
-
-			$dataexcel  =  $this->data_excel($file_xlsx);
-
-			echo "<pre>";
-
-			print_r($pdf);
-
-			echo "</pre>";
-
-			die;
-
-			// Gọi hàm với 2 mảng đã cho
-			$this->compare_arrays($dataexcel, $pdf);
-
+		
 		}
 
 		function clone_function()
