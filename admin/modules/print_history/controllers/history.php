@@ -654,6 +654,21 @@
 		    echo "</pre>";		
 		}
 
+		function show_tracking_code()
+		{
+			$dem =1;
+
+			$url_json = 'https://api.phanmemttp.xyz/apis.php?key_number='.$dem;
+
+			$content = file_get_contents($url_json);
+
+			echo "<pre>";
+
+			print_r($content);
+
+			echo "</pre>";
+		}
+
 		function clone_function()
 		{
 			global $db;
