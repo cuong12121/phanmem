@@ -1094,7 +1094,20 @@
             	}
             }	
 
-            return $row;
+            $result = [];
+
+            if(!empty($row) && count($row)>0){
+
+				foreach ($row as $item) {
+				    $mvd = $item['mvd'];
+				    $result[$mvd][] = [
+				        'sku' => $item['sku'],
+				        'sl'  => $item['sl']
+				    ];
+				}
+
+	        }   
+	        return $result; 
 		}
 
 		
