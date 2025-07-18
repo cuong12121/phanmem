@@ -635,12 +635,12 @@
 		    foreach ($all_keys as $key) {
 		        // Kiểm tra key chỉ tồn tại ở một bên
 		        if (!isset($mang1[$key])) {
-		            echo "Key $key chỉ có trong mảng 2\n";
+		            echo "Key $key chỉ có trong mảng 2<br>";
 		            continue;
 		        }
 
 		        if (!isset($mang2[$key])) {
-		            echo "Key $key chỉ có trong mảng 1\n";
+		            echo "Key $key chỉ có trong mảng 1<br>";
 		            continue;
 		        }
 
@@ -659,11 +659,11 @@
 
 		        foreach ($all_skus as $sku) {
 		            if (!isset($items1[$sku])) {
-		                echo "SKU $sku chỉ có trong mảng 2 tại key $key\n";
+		                echo "SKU $sku chỉ có trong mảng 2 tại key $key<br>";
 		            } elseif (!isset($items2[$sku])) {
-		                echo "SKU $sku chỉ có trong mảng 1 tại key $key\n";
+		                echo "SKU $sku chỉ có trong mảng 1 tại key $key<br>";
 		            } elseif ($items1[$sku] != $items2[$sku]) {
-		                echo "Sai số lượng SKU $sku tại key $key (mang1: {$items1[$sku]}, mang2: {$items2[$sku]})\n";
+		                echo "Sai số lượng SKU $sku tại key $key (mang1: {$items1[$sku]}, mang2: {$items2[$sku]})<br>";
 		            }
 		        }
 		    }
