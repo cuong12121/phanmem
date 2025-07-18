@@ -659,11 +659,11 @@
 
 		        foreach ($all_skus as $sku) {
 		            if (!isset($items1[$sku])) {
-		                echo "SKU $sku chỉ có trong file pdf tại key $key<br>";
+		                echo "SKU $sku chỉ có trong file pdf với mã vận đơn $key<br>";
 		            } elseif (!isset($items2[$sku])) {
-		                echo "SKU $sku chỉ có trong file excel tại key $key<br>";
+		                echo "SKU $sku chỉ có trong file excel với mã vận đơn $key<br>";
 		            } elseif ($items1[$sku] != $items2[$sku]) {
-		                echo "Sai số lượng SKU $sku tại key $key (mang1: {$items1[$sku]}, mang2: {$items2[$sku]})<br>";
+		                echo "Sai số lượng SKU $sku với mã vận đơn $key (sku excel: {$items1[$sku]}, sku pdf: {$items2[$sku]})<br>";
 		            }
 		        }
 		    }
