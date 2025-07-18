@@ -669,6 +669,12 @@
 
 			echo "</pre>";
 
+			echo "<pre>";
+
+			print_r($result);
+
+			echo "</pre>";
+
 			die;
 		}
 
