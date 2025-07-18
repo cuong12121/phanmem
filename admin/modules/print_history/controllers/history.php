@@ -667,7 +667,8 @@
 		            }
 		        }
 		    }
-		    file_put_contents($filename, $output);
+		    file_put_contents($filename, mb_convert_encoding($output, 'UTF-8', 'auto'));
+
 		}
 
 
