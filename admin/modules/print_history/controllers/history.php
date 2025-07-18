@@ -703,6 +703,10 @@
 
 			$file_xlsx = $data_in[intval($dem)-1]['file_xlsx'];
 
+			echo $file_xlsx;
+
+			die;
+
 			$dataexcel  =  $this->data_excel($file_xlsx);
 
 			// Gọi hàm với 2 mảng đã cho
