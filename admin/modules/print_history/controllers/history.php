@@ -675,7 +675,7 @@
 		function show_tracking_code()
 		{
 			global $db;
-			
+
 			for ($i=1; $i <=2 ; $i++) { 
 			
 				$dem =$i;
@@ -729,6 +729,8 @@
 
 				$values = $db->query($sql);
 			}
+
+			echo "thành công";
 		
 		}
 
