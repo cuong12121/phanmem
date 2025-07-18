@@ -356,6 +356,9 @@
 
 					$row_time = trim($data[$j]['B']);
 
+					$date = DateTime::createFromFormat('d/m/Y H:i:s', $row_time);
+					$date_time = $date->format('Y/m/d H:i:s');
+
 					
 
 					$user_id = $define_id[$kytudefine];
@@ -394,7 +397,7 @@
 							$params = [
 							    'is_package' => 1,
 							    'user_package_id' => $user_package_id,
-							    'date_package' =>   (new DateTime($row_time))->format('Y-m-d H:i:s'),
+							    'date_package' =>   ($date_time),
 							    'id' => $checkorders_id
 							];
 
