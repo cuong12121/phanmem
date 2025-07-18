@@ -706,7 +706,7 @@
 			$dataexcel  =  $this->data_excel($file_xlsx);
 
 			// Gọi hàm với 2 mảng đã cho
-			compare_arrays($dataexcel, $result);
+			$this->compare_arrays($dataexcel, $result);
 
 		}
 
