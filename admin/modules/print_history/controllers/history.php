@@ -1088,7 +1088,7 @@
             	$k= $j-2;
             	if(!empty($data[$j]['G'])){
             		$row[$k]['mvd'] = trim($data[$j]['G']);
-            		$row[$k]['sku'] =  substr(trim($data[$j]['J']), 0, 10)   ;
+            		$row[$k]['sku'] =  substr(trim($data[$j]['J']), 0, 10);
 	                
             	}
             }	
