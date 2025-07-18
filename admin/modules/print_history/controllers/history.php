@@ -635,12 +635,12 @@
 		    foreach ($all_keys as $key) {
 		        // Kiểm tra key chỉ tồn tại ở một bên
 		        if (!isset($mang1[$key])) {
-		            echo "Key $key chỉ có trong mảng 2<br>";
+		            echo "Key $key chỉ có trong file pdf<br>";
 		            continue;
 		        }
 
 		        if (!isset($mang2[$key])) {
-		            echo "Key $key chỉ có trong mảng 1<br>";
+		            echo "Key $key chỉ có trong file excel<br>";
 		            continue;
 		        }
 
@@ -659,9 +659,9 @@
 
 		        foreach ($all_skus as $sku) {
 		            if (!isset($items1[$sku])) {
-		                echo "SKU $sku chỉ có trong mảng 2 tại key $key<br>";
+		                echo "SKU $sku chỉ có trong file pdf tại key $key<br>";
 		            } elseif (!isset($items2[$sku])) {
-		                echo "SKU $sku chỉ có trong mảng 1 tại key $key<br>";
+		                echo "SKU $sku chỉ có trong file excel tại key $key<br>";
 		            } elseif ($items1[$sku] != $items2[$sku]) {
 		                echo "Sai số lượng SKU $sku tại key $key (mang1: {$items1[$sku]}, mang2: {$items2[$sku]})<br>";
 		            }
@@ -681,7 +681,7 @@
 
 			$content = json_decode($content);
 
-			$result = [];
+			$pdf = [];
 
 			foreach ($content as $group) {
 			    foreach ($group as $item) {
@@ -689,7 +689,7 @@
 			        $key = ($item->mvd === 'none' || empty($item->mvd)) ? $item->mdh : $item->mvd;
 
 			        // Thêm vào mảng kết quả
-			        $result[$key][] = [
+			        $pdf[$key][] = [
 			            'sku' => trim($item->sku),
 			            'sl' => (int) $item->quantity
 			        ];
@@ -706,7 +706,7 @@
 			$dataexcel  =  $this->data_excel($file_xlsx);
 
 			// Gọi hàm với 2 mảng đã cho
-			$this->compare_arrays($dataexcel, $result);
+			$this->compare_arrays($dataexcel, $pdf);
 
 		}
 
