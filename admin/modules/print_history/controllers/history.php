@@ -716,7 +716,7 @@
 				$baseDir = PATH_BASE.'/admin/export/txt/';
 
 
-				$file_name = $baseDir.$id.'.txt';
+				$file_name = $baseDir.$id.'.html';
 
 				
 				// Gọi hàm với 2 mảng đã cho
