@@ -657,9 +657,15 @@
 
 			$data_in = file_get_contents('https://drive.dienmayai.com/file_in.php');
 
+			$data_in = json_decode($data_in, true);
+
+			$file_xlsx = $data_in[intval($dem)-1]['file_xlsx'];
+
+			$dataexcel  =  $this->data_excel($file_xlsx)
+
 			echo "<pre>";
 
-			print_r(json_decode($data_in, true));
+			print_r($dataexcel);
 
 			echo "</pre>";
 
