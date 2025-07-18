@@ -662,6 +662,8 @@
 
 			$content = file_get_contents($url_json);
 
+			$content = json_decode($content);
+
 			echo "<pre>";
 
 			print_r($content);
