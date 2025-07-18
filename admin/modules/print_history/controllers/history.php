@@ -1089,6 +1089,7 @@
             	if(!empty($data[$j]['G'])){
             		$row[$k]['mvd'] = trim($data[$j]['G']);
             		$row[$k]['sku'] =  substr(trim($data[$j]['J']), 0, 10);
+            		$row[$k]['sl'] =  substr(trim($data[$j]['K']), 0, 10);
 	                
             	}
             }	
