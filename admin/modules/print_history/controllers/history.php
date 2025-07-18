@@ -284,32 +284,7 @@
 		{
 			$model  = $this -> model;
 
-			// $filePath = 'https://dienmayai.com//admin/export/pdf/count_print//2025/06/14/13_1749860119.pdf';
-
-			// $data_pdf = $this->return_info_to_file_pdf($filePath);
-
-			// echo"<pre>";
-
-			// print_r($data_pdf);
-
-			// echo"</pre>";
-
-			// die;
-
-
-
-
-			// // gộp mảng lại 
-
-			// $data_pdfs = [];
-			// foreach ($data_pdf as $subArray) {
-			//     foreach ($subArray as $item) {
-			//         $data_pdfs[] = $item;
-			//     }
-			// }
-
 			
-
 			$url_ex = 'https://dienmayai.com/admin/export/excel/order_item//2025/07/07/file_nhat_2_2_07_07_25_13.xlsx';
 
 			$data_ex = $this->data_excel($url_ex);
@@ -679,10 +654,12 @@
 			    }
 			}
 
+			
+			$data_in = file_get_contents('https://drive.dienmayai.com/file_in.php');
 
 			echo "<pre>";
 
-			print_r($result);
+			print_r($data_in);
 
 			echo "</pre>";
 
