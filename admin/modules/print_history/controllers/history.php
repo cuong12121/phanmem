@@ -635,12 +635,12 @@
 		    foreach ($all_keys as $key) {
 		        // Kiểm tra key chỉ tồn tại ở một bên
 		        if (!isset($mang1[$key])) {
-		            echo "Mã vận đơn $key chỉ có trong file pdf<br>";
+		            echo "Mã vận đơn $key chỉ có trong file excel<br>";
 		            continue;
 		        }
 
 		        if (!isset($mang2[$key])) {
-		            echo "Mã vận đơn $key chỉ có trong file excel<br>";
+		            echo "Mã vận đơn $key chỉ có trong file pdf<br>";
 		            continue;
 		        }
 
