@@ -667,6 +667,8 @@
 			print_r($content);
 
 			echo "</pre>";
+
+			die;
 		}
 
 		function clone_function()
