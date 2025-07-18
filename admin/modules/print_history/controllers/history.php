@@ -629,6 +629,48 @@
 		    echo "</pre>";		
 		}
 
+		function compare_arrays($mang1, $mang2) {
+		    $all_keys = array_unique(array_merge(array_keys($mang1), array_keys($mang2)));
+
+		    foreach ($all_keys as $key) {
+		        // Kiểm tra key chỉ tồn tại ở một bên
+		        if (!isset($mang1[$key])) {
+		            echo "Key $key chỉ có trong mảng 2\n";
+		            continue;
+		        }
+
+		        if (!isset($mang2[$key])) {
+		            echo "Key $key chỉ có trong mảng 1\n";
+		            continue;
+		        }
+
+		        // So sánh chi tiết sku và sl nếu key tồn tại ở cả hai
+		        $items1 = [];
+		        foreach ($mang1[$key] as $item) {
+		            $items1[$item['sku']] = $item['sl'];
+		        }
+
+		        $items2 = [];
+		        foreach ($mang2[$key] as $item) {
+		            $items2[$item['sku']] = $item['sl'];
+		        }
+
+		        $all_skus = array_unique(array_merge(array_keys($items1), array_keys($items2)));
+
+		        foreach ($all_skus as $sku) {
+		            if (!isset($items1[$sku])) {
+		                echo "SKU $sku chỉ có trong mảng 2 tại key $key\n";
+		            } elseif (!isset($items2[$sku])) {
+		                echo "SKU $sku chỉ có trong mảng 1 tại key $key\n";
+		            } elseif ($items1[$sku] != $items2[$sku]) {
+		                echo "Sai số lượng SKU $sku tại key $key (mang1: {$items1[$sku]}, mang2: {$items2[$sku]})\n";
+		            }
+		        }
+		    }
+		}
+
+
+
 		function show_tracking_code()
 		{
 			$dem =1;
@@ -663,19 +705,9 @@
 
 			$dataexcel  =  $this->data_excel($file_xlsx);
 
-			echo "<pre>";
+			// Gọi hàm với 2 mảng đã cho
+			compare_arrays($dataexcel, $result);
 
-			print_r($dataexcel);
-
-			echo "</pre>";
-
-			echo "<pre>";
-
-			print_r($result);
-
-			echo "</pre>";
-
-			die;
 		}
 
 		function clone_function()
