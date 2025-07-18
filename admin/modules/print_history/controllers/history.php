@@ -631,7 +631,13 @@
 
 		function compare_arrays($mang1, $mang2, $filename) {
 		    $all_keys = array_unique(array_merge(array_keys($mang1), array_keys($mang2)));
-		    $output = '';
+		    $output = '
+			<!DOCTYPE html>
+			<html lang="vi">
+			<head>
+			  <meta charset="UTF-8">
+			  <title>Vận đơn</title>
+			</head>';
 		    foreach ($all_keys as $key) {
 		        // Kiểm tra key chỉ tồn tại ở một bên
 		        if (!isset($mang1[$key])) {
@@ -667,7 +673,7 @@
 		            }
 		        }
 		    }
-		    file_put_contents($filename, mb_convert_encoding($output, 'UTF-8', 'auto'));
+		    file_put_contents($filename, $output);
 
 		}
 
