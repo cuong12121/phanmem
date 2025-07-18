@@ -654,12 +654,12 @@
 			    }
 			}
 
-			
+
 			$data_in = file_get_contents('https://drive.dienmayai.com/file_in.php');
 
 			echo "<pre>";
 
-			print_r($data_in);
+			print_r(json_decode($data_in, true));
 
 			echo "</pre>";
 
