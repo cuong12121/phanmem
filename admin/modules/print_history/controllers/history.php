@@ -661,7 +661,7 @@
 
 			$file_xlsx = $data_in[intval($dem)-1]['file_xlsx'];
 
-			$dataexcel  =  $this->data_excel($file_xlsx)
+			$dataexcel  =  $this->data_excel($file_xlsx);
 
 			echo "<pre>";
 
