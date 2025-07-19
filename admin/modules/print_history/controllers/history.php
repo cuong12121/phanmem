@@ -679,8 +679,8 @@
 		            } 
 		            elseif ($items1[$sku] != $items2[$sku]) {
 		            	
-		            	
-		                $output .= "Sai số lượng SKU $sku với mã vận đơn $key (sku excel: {$items1[$sku]}, sku pdf: {$items2[$sku]})<br>";
+		            	$pages = $mang2[$key][0]['page'];
+		                $output .= "Sai số lượng SKU $sku với mã vận đơn $key với trang pdf là $pages (sku excel: {$items1[$sku]}, sku pdf: {$items2[$sku]})<br>";
 		            }
 		        }
 		    }
