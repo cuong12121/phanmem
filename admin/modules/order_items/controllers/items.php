@@ -531,7 +531,7 @@
 				// printr($list);
 				foreach ($list as $item){
 					$key = isset($key)?($key+1):3;
-					$combo_code = $model->show_product_combo($item->product_id);
+					
 					$excel->obj_php_excel->getActiveSheet()->setCellValue('A'.$key, $item->sku);
 					$excel->obj_php_excel->getActiveSheet()->setCellValue('B'.$key, $item->product_name);
 					$excel->obj_php_excel->getActiveSheet()->setCellValue('C'.$key, $item->color);
