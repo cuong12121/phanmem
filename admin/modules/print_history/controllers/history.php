@@ -641,11 +641,8 @@
 		    foreach ($all_keys as $key) {
 		        // Kiểm tra key chỉ tồn tại ở một bên
 		        if (!isset($mang1[$key])) {
-		        	echo "<pre>";
-		        	print_r($mang1);
-		        	echo "</pre>";
-		        	die;
-		            $output .= "Mã vận đơn $key chỉ có trong file pdf <br>";
+		        	$page = $mang2[$key][0]['page'];
+		            $output .= "Mã vận đơn $key chỉ có trong file pdf trang $page <br>";
 		            continue;
 		        }
 
@@ -671,14 +668,14 @@
 
 		        	
 		            if (!isset($items1[$sku])) {
-		            	$page = $items1[$sku][0]['page'];
+		            	$page = $items2[$sku][0]['page'];
 		                $output .= "SKU $sku chỉ có trong file pdf với mã vận đơn $key ở trang $page file pdf<br>";
 		            } elseif (!isset($items2[$sku])) {
 		                $output .= "SKU $sku chỉ có trong file excel với mã vận đơn $key<br>";
 		            } 
 		            elseif ($items1[$sku] != $items2[$sku]) {
-
-		            	$page = !empty($items1[$sku][0]['page'])?$items1[$sku][0]['page']:'';
+		            	$page = $items2[$sku][0]['page'];
+		            	
 		                $output .= "Sai số lượng SKU $sku với mã vận đơn $key ở trang ở trang $page file pdf (sku excel: {$items1[$sku]}, sku pdf: {$items2[$sku]})<br>";
 		            }
 		        }
