@@ -641,8 +641,8 @@
 		    foreach ($all_keys as $key) {
 		        // Kiểm tra key chỉ tồn tại ở một bên
 		        if (!isset($mang1[$key])) {
-		        	$page = $items1[$sku][0]['page'];
-		            $output .= "Mã vận đơn $key chỉ có trong file pdf ở trang $page<br>";
+		        	
+		            $output .= "Mã vận đơn $key chỉ có trong file pdf <br>";
 		            continue;
 		        }
 
