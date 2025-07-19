@@ -664,12 +664,18 @@
 		        $all_skus = array_unique(array_merge(array_keys($items1), array_keys($items2)));
 
 		        foreach ($all_skus as $sku) {
+
+		        	
 		            if (!isset($items1[$sku])) {
-		                $output .= "SKU $sku chỉ có trong file pdf với mã vận đơn $key ở trang $items1[$sku][0]['page'] file pdf<br>";
+		            	$page = $items1[$sku][0]['page'];
+		                $output .= "SKU $sku chỉ có trong file pdf với mã vận đơn $key ở trang $page file pdf<br>";
 		            } elseif (!isset($items2[$sku])) {
 		                $output .= "SKU $sku chỉ có trong file excel với mã vận đơn $key<br>";
-		            } elseif ($items1[$sku] != $items2[$sku]) {
-		                $output .= "Sai số lượng SKU $sku với mã vận đơn $key ở trang ở trang $items1[$sku][0]['page'] file pdf (sku excel: {$items1[$sku]}, sku pdf: {$items2[$sku]})<br>";
+		            } 
+		            elseif ($items1[$sku] != $items2[$sku]) {
+
+		            	$page = $items1[$sku][0]['page'];
+		                $output .= "Sai số lượng SKU $sku với mã vận đơn $key ở trang ở trang $page file pdf (sku excel: {$items1[$sku]}, sku pdf: {$items2[$sku]})<br>";
 		            }
 		        }
 		    }
