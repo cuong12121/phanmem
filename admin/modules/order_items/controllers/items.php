@@ -413,6 +413,8 @@
 
 		function showTongNgayFileNhat()
 		{
+
+			$model  = $this -> model;
 			$baseDir =  PATH_BASE.'admin/export/excel/order_item/';
 
 			$warehouse_id = $_GET['warehouse_id'];
