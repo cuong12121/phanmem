@@ -1188,7 +1188,7 @@
 				foreach ($row as $item) {
 				    $mvd = $item['mvd'];
 				    $result[$mvd][] = [
-				        'sku' => $item['sku'],
+				        'sku' => strtoupper($item['sku']),
 				        'sl'  => $item['sl']
 				    ];
 				}
