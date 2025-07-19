@@ -448,7 +448,7 @@
 
 			global $db;
 
-			$query = "SELECT id,count,product_id,sku,product_name,`date`,is_print,house_id,warehouse_id,color,size,platform_id,shipping_unit_id FROM fs_order_uploads_detail AS a where 1=1 AND is_print = 1    AND a.date =  '$date'  AND a.house_id =  '$house_id'  AND a.warehouse_id =  '$warehouse_id'  AND a.platform_id =  '$platform_id'  AND warehouse_id IN (1,2,4,6,7) ORDER BY sku_fisrt ASC,ABS(sku_fisrt),sku_last ASC,ABS(sku_last),color ASC,ABS(color),size ASC,ABS(size),created_time DESC , id DESC";
+			$query = "SELECT id,count,product_id,sku,product_name,`date`,is_print,product_id,house_id,warehouse_id,color,size,platform_id,shipping_unit_id FROM fs_order_uploads_detail AS a where 1=1 AND is_print = 1    AND a.date =  '$date'  AND a.house_id =  '$house_id'  AND a.warehouse_id =  '$warehouse_id'  AND a.platform_id =  '$platform_id'  AND warehouse_id IN (1,2,4,6,7) ORDER BY sku_fisrt ASC,ABS(sku_fisrt),sku_last ASC,ABS(sku_last),color ASC,ABS(color),size ASC,ABS(size),created_time DESC , id DESC";
 
 			$sql = $db->query($query);
 
@@ -531,6 +531,7 @@
 				// printr($list);
 				foreach ($list as $item){
 					$key = isset($key)?($key+1):3;
+					$combo_code = $model->show_product_combo($item->product_id);
 					$excel->obj_php_excel->getActiveSheet()->setCellValue('A'.$key, $item->sku);
 					$excel->obj_php_excel->getActiveSheet()->setCellValue('B'.$key, $item->product_name);
 					$excel->obj_php_excel->getActiveSheet()->setCellValue('C'.$key, $item->color);
