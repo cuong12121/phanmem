@@ -638,6 +638,10 @@
 			  <meta charset="UTF-8">
 			  <title>Vận đơn</title>
 			</head>';
+
+			print_r($mang2);
+
+			die;
 		    foreach ($all_keys as $key) {
 		        // Kiểm tra key chỉ tồn tại ở một bên
 		        if (!isset($mang1[$key])) {
