@@ -426,12 +426,20 @@
 			$H = date('G');
 			$M = date('i');
 
-			if ($H < 12) {
+			if ($H < 8) {
 			    $house_id = 13;
-			} elseif (($H > 12 && $H < 14) ||($H == 14 && $M < 30) ) {
+			}
+			elseif ($H >= 8 && $H < 12){
+				$house_id = 14;
+			} elseif ($H >= 12 && $H < 13) {
 			    $house_id = 18;
-			} else {
+			}
+			elseif ($H >= 14 && $H < 15) {
+				$platform = [1,3,4,6,8,9,10,11];
 			    $house_id = 15;
+			} 
+			else {
+			    $house_id = 8;
 			} 
 
 			
