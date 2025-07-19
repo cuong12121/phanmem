@@ -642,7 +642,7 @@
 		        // Kiểm tra key chỉ tồn tại ở một bên
 		        if (!isset($mang1[$key])) {
 		        	echo "<pre>";
-		        	print_r($mang1[$key]);
+		        	print_r($mang1);
 		        	echo "</pre>";
 		        	die;
 		            $output .= "Mã vận đơn $key chỉ có trong file pdf <br>";
