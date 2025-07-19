@@ -676,7 +676,7 @@
 		                $output .= "SKU $sku chỉ có trong file excel với mã vận đơn $key<br>";
 		            } 
 		            elseif ($items1[$sku] != $items2[$sku]) {
-		            	$page = $items2[$key][0]['page'];
+		            	$page = $items2[$sku][0]['page'];
 		            	
 		                $output .= "Sai số lượng SKU $sku với mã vận đơn $key file pdf trang $page(sku excel: {$items1[$sku]}, sku pdf: {$items2[$sku]})<br>";
 		            }
