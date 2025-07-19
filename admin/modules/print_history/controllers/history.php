@@ -641,7 +641,10 @@
 		    foreach ($all_keys as $key) {
 		        // Kiểm tra key chỉ tồn tại ở một bên
 		        if (!isset($mang1[$key])) {
-		        	
+		        	echo "<pre>";
+		        	print_r($mang1[$key]);
+		        	echo "</pre>";
+		        	die;
 		            $output .= "Mã vận đơn $key chỉ có trong file pdf <br>";
 		            continue;
 		        }
