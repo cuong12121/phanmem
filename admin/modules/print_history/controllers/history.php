@@ -639,7 +639,7 @@
 			  <title>Vận đơn</title>
 			</head>';
 
-			
+
 		    foreach ($all_keys as $key) {
 		        // Kiểm tra key chỉ tồn tại ở một bên
 		        if (!isset($mang1[$key])) {
@@ -676,9 +676,9 @@
 		                $output .= "SKU $sku chỉ có trong file excel với mã vận đơn $key<br>";
 		            } 
 		            elseif ($items1[$sku] != $items2[$sku]) {
-		            	$page = $items2[$sku][0]['page'];
 		            	
-		                $output .= "Sai số lượng SKU $sku với mã vận đơn $key file pdf trang $page(sku excel: {$items1[$sku]}, sku pdf: {$items2[$sku]})<br>";
+		            	
+		                $output .= "Sai số lượng SKU $sku với mã vận đơn $key (sku excel: {$items1[$sku]}, sku pdf: {$items2[$sku]})<br>";
 		            }
 		        }
 		    }
