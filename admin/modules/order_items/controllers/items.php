@@ -515,20 +515,32 @@
 				$excel->obj_php_excel->getActiveSheet()->getColumnDimension('C')->setWidth(15);
 				$excel->obj_php_excel->getActiveSheet()->getColumnDimension('D')->setWidth(15);
 				$excel->obj_php_excel->getActiveSheet()->getColumnDimension('E')->setWidth(15);
-		
+				$excel->obj_php_excel->getActiveSheet()->getColumnDimension('F')->setWidth(15);
+				$excel->obj_php_excel->getActiveSheet()->getColumnDimension('G')->setWidth(15);
+				$excel->obj_php_excel->getActiveSheet()->getColumnDimension('H')->setWidth(15);
+				$excel->obj_php_excel->getActiveSheet()->getColumnDimension('I')->setWidth(15);
 				$excel->obj_php_excel->getActiveSheet()->setCellValue('A2', 'Mã');
 				$excel->obj_php_excel->getActiveSheet()->setCellValue('B2', 'Tên sản phẩm');
-				$excel->obj_php_excel->getActiveSheet()->setCellValue('C2', 'Tổng đơn');
-				$excel->obj_php_excel->getActiveSheet()->setCellValue('D2', 'Thực xuất');
-				$excel->obj_php_excel->getActiveSheet()->setCellValue('E2', 'NV đóng gói');
+				$excel->obj_php_excel->getActiveSheet()->setCellValue('C2', 'Mã màu');
+				$excel->obj_php_excel->getActiveSheet()->setCellValue('D2', 'Mã size');
+				$excel->obj_php_excel->getActiveSheet()->setCellValue('E2', 'SL');
+				$excel->obj_php_excel->getActiveSheet()->setCellValue('F2', 'Mã con');
+				$excel->obj_php_excel->getActiveSheet()->setCellValue('G2', 'Tổng đơn');
+				$excel->obj_php_excel->getActiveSheet()->setCellValue('H2', 'Thực xuất');
+				$excel->obj_php_excel->getActiveSheet()->setCellValue('I2', 'NV đóng gói');
 				// printr($list);
 				foreach ($list as $item){
 					$key = isset($key)?($key+1):3;
 					$excel->obj_php_excel->getActiveSheet()->setCellValue('A'.$key, $item->sku);
 					$excel->obj_php_excel->getActiveSheet()->setCellValue('B'.$key, $item->product_name);
-					$excel->obj_php_excel->getActiveSheet()->setCellValue('C'.$key, $item->count);
-					$excel->obj_php_excel->getActiveSheet()->setCellValue('D'.$key,'');
-					$excel->obj_php_excel->getActiveSheet()->setCellValue('E'.$key, '');
+					$excel->obj_php_excel->getActiveSheet()->setCellValue('C'.$key, $item->color);
+					$excel->obj_php_excel->getActiveSheet()->setCellValueExplicit('D'.$key,$item->size,PHPExcel_Cell_DataType::TYPE_STRING);
+					$excel->obj_php_excel->getActiveSheet()->setCellValue('E'.$key, $item->count);
+					$excel->obj_php_excel->getActiveSheet()->setCellValue('F'.$key, $combo_code);
+
+					$excel->obj_php_excel->getActiveSheet()->setCellValue('G'.$key, $item->count);
+					$excel->obj_php_excel->getActiveSheet()->setCellValue('H'.$key,'');
+					$excel->obj_php_excel->getActiveSheet()->setCellValue('I'.$key, '');
 				}
 
 				
