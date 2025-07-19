@@ -413,8 +413,6 @@
 
 		function showTongNgayFileNhat()
 		{
-
-			$model  = $this -> model;
 			$baseDir =  PATH_BASE.'admin/export/excel/order_item/';
 
 			$warehouse_id = $_GET['warehouse_id'];
@@ -526,7 +524,7 @@
 				$excel->obj_php_excel->getActiveSheet()->setCellValue('C2', 'Mã màu');
 				$excel->obj_php_excel->getActiveSheet()->setCellValue('D2', 'Mã size');
 				$excel->obj_php_excel->getActiveSheet()->setCellValue('E2', 'SL');
-				$excel->obj_php_excel->getActiveSheet()->setCellValue('F2', 'Mã con');
+				
 				$excel->obj_php_excel->getActiveSheet()->setCellValue('G2', 'Tổng đơn');
 				$excel->obj_php_excel->getActiveSheet()->setCellValue('H2', 'Thực xuất');
 				$excel->obj_php_excel->getActiveSheet()->setCellValue('I2', 'NV đóng gói');
@@ -539,7 +537,7 @@
 					$excel->obj_php_excel->getActiveSheet()->setCellValue('C'.$key, $item->color);
 					$excel->obj_php_excel->getActiveSheet()->setCellValueExplicit('D'.$key,$item->size,PHPExcel_Cell_DataType::TYPE_STRING);
 					$excel->obj_php_excel->getActiveSheet()->setCellValue('E'.$key, $item->count);
-					$excel->obj_php_excel->getActiveSheet()->setCellValue('F'.$key, $combo_code);
+					
 
 					$excel->obj_php_excel->getActiveSheet()->setCellValue('G'.$key, $item->count);
 					$excel->obj_php_excel->getActiveSheet()->setCellValue('H'.$key,'');
