@@ -665,11 +665,11 @@
 
 		        foreach ($all_skus as $sku) {
 		            if (!isset($items1[$sku])) {
-		                $output .= "SKU $sku chỉ có trong file pdf với mã vận đơn $key<br>";
+		                $output .= "SKU $sku chỉ có trong file pdf với mã vận đơn $key ở trang $items1[$sku][0]['page'] file pdf<br>";
 		            } elseif (!isset($items2[$sku])) {
 		                $output .= "SKU $sku chỉ có trong file excel với mã vận đơn $key<br>";
 		            } elseif ($items1[$sku] != $items2[$sku]) {
-		                $output .= "Sai số lượng SKU $sku với mã vận đơn $key (sku excel: {$items1[$sku]}, sku pdf: {$items2[$sku]})<br>";
+		                $output .= "Sai số lượng SKU $sku với mã vận đơn $key ở trang ở trang $items1[$sku][0]['page'] file pdf (sku excel: {$items1[$sku]}, sku pdf: {$items2[$sku]})<br>";
 		            }
 		        }
 		    }
@@ -695,23 +695,23 @@
 
 				$pdf = [];
 
-				// foreach ($content as $group) {
-				//     foreach ($group as $item) {
-				//         // Nếu mã vận đơn là 'none', dùng mã đơn hàng thay thế
-				//         $key = ($item->mvd === 'none' || empty($item->mvd)) ? $item->mdh : $item->mvd;
+				foreach ($content as $group) {
+				    foreach ($group as $item) {
+				        // Nếu mã vận đơn là 'none', dùng mã đơn hàng thay thế
+				        $key = ($item->mvd === 'none' || empty($item->mvd)) ? $item->mdh : $item->mvd;
 
-				//         // Thêm vào mảng kết quả
-				//         $pdf[$key][] = [
-				//         	'page' => trim($item->page),
-				//             'sku' => trim($item->sku),
-				//             'sl' => (int) $item->quantity
-				//         ];
-				//     }
-				// }
-				echo "<pre>";
-				print_r($content);
-				echo "</pre>";
-				die;
+				        // Thêm vào mảng kết quả
+				        $pdf[$key][] = [
+				        	'page' => trim($item->page),
+				            'sku' => trim($item->sku),
+				            'sl' => (int) $item->quantity
+				        ];
+				    }
+				}
+				// echo "<pre>";
+				// print_r($content);
+				// echo "</pre>";
+				// die;
 
 				$data_in = file_get_contents('https://drive.dienmayai.com/file_in.php');
 
