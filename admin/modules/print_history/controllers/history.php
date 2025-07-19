@@ -668,9 +668,7 @@
 
 		        foreach ($all_skus as $sku) {
 
-		        	print_r($items2);
-
-		        	die;
+		        	
 		            if (!isset($items1[$sku])) {
 		            	$page = $items2[$sku][0]['page'];
 		                $output .= "SKU $sku chỉ có trong file pdf với mã vận đơn $key ở trang $page file pdf<br>";
