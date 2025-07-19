@@ -695,21 +695,21 @@
 
 				$pdf = [];
 
-				foreach ($content as $group) {
-				    foreach ($group as $item) {
-				        // Nếu mã vận đơn là 'none', dùng mã đơn hàng thay thế
-				        $key = ($item->mvd === 'none' || empty($item->mvd)) ? $item->mdh : $item->mvd;
+				// foreach ($content as $group) {
+				//     foreach ($group as $item) {
+				//         // Nếu mã vận đơn là 'none', dùng mã đơn hàng thay thế
+				//         $key = ($item->mvd === 'none' || empty($item->mvd)) ? $item->mdh : $item->mvd;
 
-				        // Thêm vào mảng kết quả
-				        $pdf[$key][] = [
-				        	'page' => trim($item->page),
-				            'sku' => trim($item->sku),
-				            'sl' => (int) $item->quantity
-				        ];
-				    }
-				}
+				//         // Thêm vào mảng kết quả
+				//         $pdf[$key][] = [
+				//         	'page' => trim($item->page),
+				//             'sku' => trim($item->sku),
+				//             'sl' => (int) $item->quantity
+				//         ];
+				//     }
+				// }
 				echo "<pre>";
-				print_r($pdf);
+				print_r($content);
 				echo "</pre>";
 				die;
 
