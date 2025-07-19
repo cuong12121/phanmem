@@ -674,7 +674,7 @@
 		            } 
 		            elseif ($items1[$sku] != $items2[$sku]) {
 
-		            	$page = $items1[$sku][0]['page'];
+		            	$page = !empty($items1[$sku][0]['page'])?$items1[$sku][0]['page']:'';
 		                $output .= "Sai số lượng SKU $sku với mã vận đơn $key ở trang ở trang $page file pdf (sku excel: {$items1[$sku]}, sku pdf: {$items2[$sku]})<br>";
 		            }
 		        }
