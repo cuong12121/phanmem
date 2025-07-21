@@ -705,20 +705,27 @@
 				$pdf = [];
 
 				
-
+				$quantity_combo =1;
 				foreach ($content as $group) {
 				    foreach ($group as $item) {
 				        // Nếu mã vận đơn là 'none', dùng mã đơn hàng thay thế
 				        $key = ($item->mvd === 'none' || empty($item->mvd)) ? $item->mdh : $item->mvd;
 				        $combo_item = $this->combo_Return_code($item->sku);
 
-				       
+				        if(!empty($combo_item)){
+				        	$combo_first =  trim($combo_item['list'][0]);
+				        	$parts = explode(':', $combo_first);
+							// The last element of the array will be "50"
+							$quantity_combo = intval(end($parts));
+				        }
+
+				       	
 
 				        // Thêm vào mảng kết quả
 				        $pdf[$key][] = [
 				        	'page' => trim($item->page),
 				            'sku' => trim($item->sku),
-				            'sl' => (int) $item->quantity,
+				            'sl' => (int) $item->quantity*$quantity_combo,
 				            'combo' =>  !empty($combo_item)?$combo_item:''
 				        ];
 				    }
