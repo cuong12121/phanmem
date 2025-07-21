@@ -704,6 +704,12 @@
 
 				$pdf = [];
 
+				echo "<pre>";
+				print_r($content);
+				echo "</pre>";
+
+				die;
+
 				foreach ($content as $group) {
 				    foreach ($group as $item) {
 				        // Nếu mã vận đơn là 'none', dùng mã đơn hàng thay thế
