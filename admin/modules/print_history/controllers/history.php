@@ -705,7 +705,7 @@
 				$pdf = [];
 
 				
-				$quantity_combo =1;
+				
 				foreach ($content as $group) {
 				    foreach ($group as $item) {
 				        // Nếu mã vận đơn là 'none', dùng mã đơn hàng thay thế
@@ -717,6 +717,9 @@
 				        	$parts = explode(':', $combo_first);
 							// The last element of the array will be "50"
 							$quantity_combo = intval(end($parts));
+				        }
+				        else{
+				        	$quantity_combo =1;
 				        }
 
 				       	
