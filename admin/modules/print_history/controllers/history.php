@@ -710,7 +710,7 @@
 				    foreach ($group as $item) {
 				        // Nếu mã vận đơn là 'none', dùng mã đơn hàng thay thế
 				        $key = ($item->mvd === 'none' || empty($item->mvd)) ? $item->mdh : $item->mvd;
-				        $tracking_code = $this->combo_Return_code($item['sku_full_check']);
+				        $tracking_code = $this->combo_Return_code($item->sku);
 
 				        echo "<pre>";
 						print_r($tracking_code);
