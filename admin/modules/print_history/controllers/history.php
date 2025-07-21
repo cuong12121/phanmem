@@ -712,24 +712,21 @@
 				        $key = ($item->mvd === 'none' || empty($item->mvd)) ? $item->mdh : $item->mvd;
 				        $combo_item = $this->combo_Return_code($item->sku);
 
-				        echo "<pre>";
-						print_r($combo_item);
-						echo "</pre>";
-
-						die;
+				       
 
 				        // Thêm vào mảng kết quả
 				        $pdf[$key][] = [
 				        	'page' => trim($item->page),
 				            'sku' => trim($item->sku),
-				            'sl' => (int) $item->quantity
+				            'sl' => (int) $item->quantity,
+				            'combo' =>  !empty($combo_item)?$combo_item:''
 				        ];
 				    }
 				}
-				// echo "<pre>";
-				// print_r($content);
-				// echo "</pre>";
-				// die;
+				echo "<pre>";
+				print_r($pdf);
+				echo "</pre>";
+				die;
 
 				$data_in = file_get_contents('https://drive.dienmayai.com/file_in.php');
 
