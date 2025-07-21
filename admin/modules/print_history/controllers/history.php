@@ -733,10 +733,13 @@
 				        ];
 				    }
 				}
-				echo "<pre>";
-				print_r($pdf);
-				echo "</pre>";
-				die;
+				if($dem==2){
+					echo "<pre>";
+					print_r($pdf);
+					echo "</pre>";
+					die;
+				}
+				
 
 				$data_in = file_get_contents('https://drive.dienmayai.com/file_in.php');
 
