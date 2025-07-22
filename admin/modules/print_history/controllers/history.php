@@ -751,7 +751,7 @@
 				$file_name = $baseDir.$id.'.html';
 
 				echo "<pre>";
-				print_r($pdf);
+				print_r($content);
 				echo "</pre>";
 
 				die;
