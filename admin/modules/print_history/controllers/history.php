@@ -709,7 +709,7 @@
 				// Đếm số lần xuất hiện của từng mvd
 				$mvdCount = [];
 
-				foreach ($data as $page => $orders) {
+				foreach ($content as $page => $orders) {
 				    if (!empty($orders) && isset($orders[0]->mvd)) {
 				        $mvd = $orders[0]->mvd;
 				        if (!isset($mvdCount[$mvd])) {
