@@ -687,10 +687,7 @@
 		        }
 		    }
 
-		    echo "<pre>";
-		    print_r($output);
-		    echo "</pre>";
-		    die;
+		    
 		    file_put_contents($filename, $output);
 
 		}
