@@ -704,6 +704,9 @@
 
 				$pdf = [];
 
+				
+
+				// Đếm số lần xuất hiện của từng mvd
 				$mvdCount = [];
 
 				foreach ($content as $entries) {
@@ -716,17 +719,16 @@
 				    }
 				}
 
-				// Bước 2: Thêm thuộc tính 'unique' vào từng object
-				foreach ($content as &$entries) {
-				    foreach ($entries as &$item) {
-				        $item->unique = $mvdCount[$item->mvd];
+				// Lọc ra các mvd bị trùng (xuất hiện >= 2)
+				$duplicateMvds = [];
+
+				foreach ($mvdCount as $mvd => $count) {
+				    if ($count >= 2) {
+				        $duplicateMvds[] = $mvd;
 				    }
 				}
 
-				// Kiểm tra kết quả
-				echo "<pre>";
-				print_r($content);
-				echo "</pre>";
+				print_r($duplicateMvds);
 
 				die;
 				
