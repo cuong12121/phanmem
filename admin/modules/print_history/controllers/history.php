@@ -732,14 +732,6 @@
 				    }
 				}
 
-				echo"<pre>"; 
-				print_r($duplicateMvds);
-				echo"</pre>";
-
-				
-
-				die;
-				
 				foreach ($content as $group) {
 				    foreach ($group as $item) {
 				        // Nếu mã vận đơn là 'none', dùng mã đơn hàng thay thế
@@ -784,12 +776,7 @@
 
 				$file_name = $baseDir.$id.'.html';
 
-				echo "<pre>";
-				print_r($content);
-				echo "</pre>";
-
-				die;
-
+				
 				
 				// Gọi hàm với 2 mảng đã cho
 				$this->compare_arrays($dataexcel, $pdf, $file_name, $duplicateMvds);
