@@ -704,7 +704,31 @@
 
 				$pdf = [];
 
-				
+				$mvdCount = [];
+
+				foreach ($content as $entries) {
+				    foreach ($entries as $item) {
+				        $mvd = $item->mvd;
+				        if (!isset($mvdCount[$mvd])) {
+				            $mvdCount[$mvd] = 0;
+				        }
+				        $mvdCount[$mvd]++;
+				    }
+				}
+
+				// Bước 2: Thêm thuộc tính 'unique' vào từng object
+				foreach ($content as &$entries) {
+				    foreach ($entries as &$item) {
+				        $item->unique = $mvdCount[$item->mvd];
+				    }
+				}
+
+				// Kiểm tra kết quả
+				echo "<pre>";
+				print_r($content);
+				echo "</pre>";
+
+				die;
 				
 				foreach ($content as $group) {
 				    foreach ($group as $item) {
