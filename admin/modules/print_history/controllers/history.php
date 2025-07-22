@@ -729,7 +729,7 @@
 				}
 
 				echo"<pre>"; 
-				print_r($mvdCount);
+				print_r($content);
 				echo"</pre>";
 
 				print_r($duplicateMvds);
