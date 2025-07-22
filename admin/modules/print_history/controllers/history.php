@@ -709,9 +709,9 @@
 				// Đếm số lần xuất hiện của từng mvd
 				$mvdCount = [];
 
-				foreach ($content as $entries) {
-				    foreach ($entries as $item) {
-				        $mvd = $item->mvd;
+				foreach ($data as $page => $orders) {
+				    if (!empty($orders) && isset($orders[0]->mvd)) {
+				        $mvd = $orders[0]->mvd;
 				        if (!isset($mvdCount[$mvd])) {
 				            $mvdCount[$mvd] = 0;
 				        }
@@ -719,7 +719,7 @@
 				    }
 				}
 
-				// Lọc ra các mvd bị trùng (xuất hiện >= 2)
+				// Tìm các mvd bị trùng (xuất hiện từ 2 trang trở lên)
 				$duplicateMvds = [];
 
 				foreach ($mvdCount as $mvd => $count) {
@@ -729,10 +729,10 @@
 				}
 
 				echo"<pre>"; 
-				print_r($content);
+				print_r($duplicateMvds);
 				echo"</pre>";
 
-				print_r($duplicateMvds);
+				
 
 				die;
 				
