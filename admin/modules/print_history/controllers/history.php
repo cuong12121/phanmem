@@ -639,7 +639,7 @@
 			  <title>Vận đơn</title>
 			</head>';
 
-			if(!empty()){
+			if(!empty(!$duplicateMvds) && count($duplicateMvds)>0){
 				$output.= 'Mã vận đơn bị trùng tìm được ở  file pdf là'.implode(",", $duplicateMvds).'<br>';
 			}
 
