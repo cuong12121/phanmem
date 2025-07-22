@@ -640,7 +640,7 @@
 			</head>';
 
 			if(!empty($duplicateMvds) && count($duplicateMvds)>0){
-				$output.= 'Mã vận đơn bị trùng tìm được ở  file pdf là'.implode(",", $duplicateMvds).'<br>';
+				$output.= 'Mã vận đơn bị trùng tìm được ở  file pdf là '.implode(",", $duplicateMvds).'<br>';
 			}
 			echo "<pre>";
 		    	print_r($output);
