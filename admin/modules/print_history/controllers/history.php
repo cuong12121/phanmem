@@ -736,12 +736,6 @@
 				    }
 				}
 
-
-				echo "<pre>";
-				print_r($duplicateMvds);
-				echo "</pre>";
-
-				die;
 				foreach ($content as $group) {
 				    foreach ($group as $item) {
 				        // Nếu mã vận đơn là 'none', dùng mã đơn hàng thay thế
