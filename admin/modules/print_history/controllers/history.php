@@ -629,7 +629,7 @@
 		    echo "</pre>";		
 		}
 
-		function compare_arrays($mang1, $mang2, $filename) {
+		function compare_arrays($mang1, $mang2, $filename, $duplicateMvds) {
 		    $all_keys = array_unique(array_merge(array_keys($mang1), array_keys($mang2)));
 		    $output = '
 			<!DOCTYPE html>
@@ -638,6 +638,10 @@
 			  <meta charset="UTF-8">
 			  <title>Vận đơn</title>
 			</head>';
+
+			if(!empty()){
+				$output.= 'Mã vận đơn bị trùng tìm được ở  file pdf là'.implode(",", $duplicateMvds).'<br>';
+			}
 
 
 		    foreach ($all_keys as $key) {
@@ -788,7 +792,7 @@
 
 				
 				// Gọi hàm với 2 mảng đã cho
-				$this->compare_arrays($dataexcel, $pdf, $file_name);
+				$this->compare_arrays($dataexcel, $pdf, $file_name, $duplicateMvds);
 
 				$dir_file_name_convert = str_replace('/www/wwwroot/'.DOMAIN, '', $file_name);
 
