@@ -860,7 +860,7 @@
 				    	if (is_array($item['combo']) && count($item['combo']) > 0) {
 					        foreach ($item['combo'] as $combo_item) {
 
-					            $combo_item = preg_replace_callback('/:(\d+)/', function($matches) use ($sl) {
+					            $combo_item = preg_replace_callback('/:(\d+)/', function($matches) use ($item['quantity']) {
 								    return ':' . ($matches[1] * intval($item['quantity']));
 								}, $combo_item);
 					            $result_print[$dems][] = $combo_item;
