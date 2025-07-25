@@ -938,7 +938,7 @@
 				        $pdf->Write(10, $write);
 
 				        if(!empty($data_result[$index_data][$i]['combo'] &&count($data_result[$index_data][$i]['combo'])>0)){
-				        	$in_cb = 'CB:'.$data_result[$index_data][$i]['product_combo_code'].':'.$data_result[$index_data][$i]['all'];
+				        	$in_cb = 'CB:'.$data_result[$index_data][$i]['product_combo_code'].':'.$data_result[$index_data][$i]['all_to_sku'];
 				        	$y_in = $i+1+intval(count($data_all));
 				        	$pdf->SetXY(105, $y[$y_in]);
 				        	$pdf->Write(10, $in_cb);
