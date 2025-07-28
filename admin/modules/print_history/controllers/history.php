@@ -917,15 +917,13 @@
 				    	if(count($result_print[$index_data])>1){
 
 				    		foreach ($result_print[$index_data] as $keysss => $value) {
-				    			echo $k[$keysss].'<br>';
 				    			
 						        $pdf->SetXY(105, $k[$keysss]);
 				    			$writes = $value;
 				    			$pdf->Write(10, $writes);
 				    		}	
 
-				    		die;
-
+				    		
 				    	}
 
 
