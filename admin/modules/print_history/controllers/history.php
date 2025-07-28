@@ -919,33 +919,34 @@
 				    		foreach ($result_print[$index_data] as $keysss => $value) {
 				    			echo $k[$keysss].'<br>';
 				    			
-						        $pdf->SetXY(105, $k[$keysss]);
-				    			$writes = $value;
-				    			$pdf->Write(10, $writes);
+						        // $pdf->SetXY(105, $k[$keysss]);
+				    			// $writes = $value;
+				    			// $pdf->Write(10, $writes);
 				    		}	
 
-				    		die;
+				    		
 
 				    	}
 
 
-				    	$pdf->SetFont('Arial', 'B', 14);
-				    	$pdf->SetTextColor(0, 0, 0); // Màu đen
+				    	// $pdf->SetFont('Arial', 'B', 14);
+				    	// $pdf->SetTextColor(0, 0, 0); // Màu đen
 
-				        $pdf->SetXY(105, $y[$i]);
-				        $write = $data_result[$index_data][$i]['parent_index'] . '--' .
-				                 $data_result[$index_data][$i]['show_list'] . '==>' .
-				                 $data_result[$index_data][$i]['all'] . '--' .
-				                 $data_result[$index_data][$i]['all_to_sku'];
-				        $pdf->Write(10, $write);
+				        // $pdf->SetXY(105, $y[$i]);
+				        // $write = $data_result[$index_data][$i]['parent_index'] . '--' .
+				        //          $data_result[$index_data][$i]['show_list'] . '==>' .
+				        //          $data_result[$index_data][$i]['all'] . '--' .
+				        //          $data_result[$index_data][$i]['all_to_sku'];
+				        // $pdf->Write(10, $write);
 
-				        if(!empty($data_result[$index_data][$i]['combo'] &&count($data_result[$index_data][$i]['combo'])>0)){
-				        	$in_cb = 'CB:'.$data_result[$index_data][$i]['product_combo_code'].':'.$data_result[$index_data][$i]['all_to_sku'];
-				        	$y_in = $i+1+intval(count($data_all));
-				        	$pdf->SetXY(105, $y[$y_in]);
-				        	$pdf->Write(10, $in_cb);
-				        }
+				        // if(!empty($data_result[$index_data][$i]['combo'] &&count($data_result[$index_data][$i]['combo'])>0)){
+				        // 	$in_cb = 'CB:'.$data_result[$index_data][$i]['product_combo_code'].':'.$data_result[$index_data][$i]['all_to_sku'];
+				        // 	$y_in = $i+1+intval(count($data_all));
+				        // 	$pdf->SetXY(105, $y[$y_in]);
+				        // 	$pdf->Write(10, $in_cb);
+				        // }
 				    }
+				    die;
 					
 				    $pdf->SetFont('Arial', 'B', 14);
 				    $pdf->SetTextColor(0, 0, 0); // Màu đen
