@@ -708,6 +708,131 @@
 			return $text;
 		}
 
+		function upload_excel_tiktok($file_path,$result_id,$shop_code,$house_id)
+		{
+			require_once("../libraries/PHPExcel-1.8/Classes/PHPExcel.php");
+			$objReader = PHPExcel_IOFactory::createReaderForFile($file_path);
+			// $data = new PHPExcel_IOFactory();
+			// $data->setOutputEncoding('UTF-8');
+			$objReader->setLoadAllSheets();
+			$objexcel = $objReader->load($file_path);
+			$data =$objexcel->getActiveSheet()->toArray('null',true,true,true);
+			// $data->load($file_path);
+			unset($heightRow);	
+			$heightRow=$objexcel->setActiveSheetIndex()->getHighestRow();
+			// printr($data);
+			unset($j);
+
+			if(!$result_id){
+				$link = FSRoute::_('index.php?module=order&view=upload&task=add');
+			}else{
+				$link = FSRoute::_('index.php?module=order&view=upload&task=edit&id='.$result_id);
+			}
+
+
+			//chạy vòng đầu để check lỗi trước
+			for($j=2;$j<=$heightRow;$j++){
+				$row = array();
+				$row['code'] = trim($data[$j]['A']);
+				if(!$row['code'] || $row['code'] == 'null' ){
+					$this->remove_xml($result_id,$file_path);
+					$msg = 'Không được để trống Mã đơn hàng(cột A) dòng '.$j;
+					setRedirect($link,$msg,'error');
+					return false;
+				}
+				$row['sku_nhanh'] = trim($data[$j]['G']);
+				if(!$row['sku_nhanh'] || $row['sku_nhanh'] == 'null' ){
+					$this->remove_xml($result_id,$file_path);
+					$msg = 'Không được để trống SKU phân loại(cột G) dòng '.$j;
+					setRedirect($link,$msg,'error');
+					return false;
+				}
+				$row['count'] = trim($data[$j]['J']);
+				if(!$row['count'] || $row['count'] == 'null' ){
+					$this->remove_xml($result_id,$file_path);
+					$msg = 'Không được để trống Số lượng(cột J) dòng '.$j;
+					setRedirect($link,$msg,'error');
+					return false;
+				}
+				$row['shipping_unit_name'] = trim($data[$j]['AK']);
+				if(!$row['shipping_unit_name'] || $row['shipping_unit_name'] == 'null' ){
+					$this->remove_xml($result_id,$file_path);
+					$msg = 'Không được để trống Đơn vị vận chuyển(cột AK) dòng '.$j;
+					setRedirect($link,$msg,'error');
+					return false;
+				}
+
+				$row['tracking_code'] = trim($data[$j]['AI']);
+				if(!$row['tracking_code'] || $row['tracking_code'] == 'null' ){
+					$this->remove_xml($result_id,$file_path);
+					$msg = 'Không được để trống Mã vận đơn(cột AI) dòng '.$j;
+					setRedirect($link,$msg,'error');
+					return false;
+				}
+
+				
+
+				$arr_other = explode('-',$row['sku_nhanh']);
+				$row['sku'] = $arr_other[0]??'';
+				$row['color'] = $arr_other[1]??'';
+				$row['size'] = $arr_other[2]??'';
+				$row['shop_code'] = $arr_other[3]??'';
+
+				if($row['color'] == '00' && $row['size'] == '00'){
+					$product_code = $row['sku'];
+				}else{
+					$product_code = $row['sku'].'-'.$row['color'].'-'.$row['size'];
+				}
+
+				
+				
+				$produt = $this->get_record('code = "'.$product_code.'"','fs_products');
+				if(empty($produt)){
+					$this->remove_xml($result_id,$file_path);
+					$msg = 'Không tìm thấy sản phẩm có sku '.$product_code.' trong kho.';
+					setRedirect($link,$msg,'error');
+					return false;
+				}
+
+				if(strtolower($shop_code) !== strtolower($row['shop_code'])){
+					$this->remove_xml($result_id,$file_path);
+					$msg = 'Mã shop không đúng (cột L) dòng '.$j;
+					setRedirect($link,$msg,'error');
+					return false;
+				}
+
+				
+			}
+
+
+			$count_ss = 0;
+			for($j=2;$j<=$heightRow;$j++){
+				$row = array();
+				$row['code'] = trim($data[$j]['A']);
+				$row['sku_nhanh'] = trim($data[$j]['G']);
+				$row['count'] = trim($data[$j]['J']);
+				$row['shipping_unit_name'] = !empty($data[$j]['AK'])?trim($data[$j]['AK']):'';
+				$row['tracking_code'] =  trim($data[$j]['AI']);
+				$row['find_pdf'] = $row['code'];
+
+				// $row['gia_tri_don_hang'] = !empty($data[$j]['P'])?trim($data[$j]['P']):''; // giá trị đơn hàng
+
+				$row['don_ngoai_tong_gia_tri_don'] = trim($data[$j]['P']);
+				$row['don_ngoai_phi_van_chuyen_du_kien'] = !empty($data[$j]['T'])?trim($data[$j]['T']):'';
+				
+				$row['created_at'] = !empty($data[$j]['Y'])?trim($data[$j]['Y']):'';
+				$row['ngay_gui_hang'] =  !empty($data[$j]['AA'])?trim($data[$j]['AA']):'';
+
+				$upload_exel = $this->save_excel($row,$result_id);
+				if(!$upload_exel){
+					continue;
+				}else{
+					$count_ss++;
+				}
+			}
+			return $count_ss;
+		}
+
 
 
 		function upload_excel_don_ngoai($file_path,$result_id,$shop_code,$house_id){
@@ -1821,6 +1946,9 @@
 					$add = $this->upload_excel_tiki($file_path,$result_id,$shop->code,$house_id);
 				}elseif($platform_id == 4){
 					$add = $this->upload_excel_viettel($file_path,$result_id,$shop->code,$house_id);
+				}
+				elseif($platform_id == 9){
+					$add = $this->upload_excel_tiktok($file_path,$result_id,$shop->code,$house_id);
 				}else{
 					$add = $this->upload_excel_don_ngoai($file_path,$result_id,$shop->code,$house_id);
 				}
