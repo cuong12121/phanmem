@@ -1643,23 +1643,23 @@
 
 			$ar_id_file_pdf_googles = [];
 
-			$keyExists = $redis->exists('tracking_order_'.$data_id_user);
+			// $keyExists = $redis->exists('tracking_order_'.$data_id_user);
 
-			// thêm tracking của user vào để kiểm tra xem đơn nào đánh chưa để so sánh báo cho user biết
-			if ($keyExists) {
+			// // thêm tracking của user vào để kiểm tra xem đơn nào đánh chưa để so sánh báo cho user biết
+			// if ($keyExists) {
 
-				$data_json = $redis->get('tracking_order_'.$data_id_user);
+			// 	$data_json = $redis->get('tracking_order_'.$data_id_user);
 
-				$data_tracking = json_decode($data_json,true);
+			// 	$data_tracking = json_decode($data_json,true);
 
-			}	
+			// }	
 			
 
-			// nếu có nhiều hơn 150 phần tử thì xóa phần tử đi
+			// // nếu có nhiều hơn 150 phần tử thì xóa phần tử đi
 
-			if (count($data_tracking) > 200) {
-			    $data_tracking = array_slice($data_tracking, -150);
-			}
+			// if (count($data_tracking) > 200) {
+			//     $data_tracking = array_slice($data_tracking, -150);
+			// }
 
 			$user = $this -> get_record('id = ' . $_SESSION['ad_userid'],'fs_users');
 
@@ -1847,7 +1847,7 @@
 
 				$check_pdf_ar = explode(',', $file_pdf_converts);
 
-				if(is_array($check_pdf_ar)&& count($check_pdf_ar)>1){
+				if(is_array($check_pdf_ar)&& count($check_pdf_ar)>0){
 
 					$ar_id_google_drive =   $this->return_path_array($file_pdf_converts);
 
@@ -2046,10 +2046,10 @@
 					$new_tracking_code = $data_code_item[0]-> tracking_code;
 
 
-					array_push($data_tracking, $new_tracking_code);
+					// array_push($data_tracking, $new_tracking_code);
 
 
-					$redis->set('tracking_order_'.$data_id_user, json_encode($data_tracking));
+					// $redis->set('tracking_order_'.$data_id_user, json_encode($data_tracking));
 
 
 
