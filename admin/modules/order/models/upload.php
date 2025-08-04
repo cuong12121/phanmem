@@ -1844,8 +1844,6 @@
 				$check_pdf_ar = explode(',', $file_pdf_converts);
 
 				if(is_array($check_pdf_ar)&& count($check_pdf_ar)>1){
-
-					
 					// phần này chạy lưu lên drive, sửa lại
 
 					foreach ($check_pdf_ar as $key => $value) {
@@ -1881,7 +1879,6 @@
 					
 				}
 
-				
 				// cuong:viết lại dòng trên này xem sao
 				// $row['file_pdf'] = 'files/orders/'.$cyear.'/'.$cmonth.'/'.$cday.'/'.$file_pdf_name;
 			    
