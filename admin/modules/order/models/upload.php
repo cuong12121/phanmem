@@ -1845,9 +1845,10 @@
 
 				if(is_array($check_pdf_ar)&& count($check_pdf_ar)>1){
 
-					$ar_id_google_drive =   $this->return_path_array($file_pdf_converts);
+					
+					// phần này chạy lưu lên drive, sửa lại
 
-					foreach ($ar_id_google_drive as $key => $value) {
+					foreach ($check_pdf_ar as $key => $value) {
 					
 						$id_google_drives = file_get_contents('https://drive.'.DOMAIN.'/createfile_gg.php?link=https://'.DOMAIN.'/'.$value);
 
@@ -1855,15 +1856,9 @@
 
 					}
 
-
 					$file_updrive = trim(implode(',', $ar_id_google_drives));
 
-					if($file_updrive ==''){
-						$row['id_file_pdf_google_drive'] = json_encode($arr_file_pdf_name);
-					}
-					else{
-						$row['id_file_pdf_google_drive'] = implode(',', $ar_id_google_drives);
-					}
+					$row['id_file_pdf_google_drive'] = implode(',', $ar_id_google_drives);
 					
 				}		
 
