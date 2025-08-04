@@ -1847,7 +1847,7 @@
 
 				$check_pdf_ar = explode(',', $file_pdf_converts);
 
-				if(is_array($check_pdf_ar)&& count($check_pdf_ar)>0){
+				if(is_array($check_pdf_ar)&& count($check_pdf_ar)>1){
 
 					$ar_id_google_drive =   $this->return_path_array($file_pdf_converts);
 
