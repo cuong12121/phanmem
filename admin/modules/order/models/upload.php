@@ -1856,7 +1856,14 @@
 
 					$file_updrive = trim(implode(',', $ar_id_google_drives));
 
-					$row['id_file_pdf_google_drive'] = implode(',', $ar_id_google_drives);
+					if($file_updrive ==''){
+						$row['id_file_pdf_google_drive'] = json_encode($arr_file_pdf_name);
+					}
+					else{
+						$row['id_file_pdf_google_drive'] = implode(',', $ar_id_google_drives);
+					}
+
+					// $row['id_file_pdf_google_drive'] = implode(',', $ar_id_google_drives);
 					
 				}		
 
