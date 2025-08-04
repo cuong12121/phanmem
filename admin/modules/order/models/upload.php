@@ -1841,10 +1841,6 @@
 				
 				$row['file_pdf'] = $file_pdf_converts;	
 
-
-				// test phần kiểm tra in với userid là admin 
-			
-
 				$check_pdf_ar = explode(',', $file_pdf_converts);
 
 				if(is_array($check_pdf_ar)&& count($check_pdf_ar)>1){
