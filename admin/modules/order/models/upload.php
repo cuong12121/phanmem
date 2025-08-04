@@ -1861,7 +1861,13 @@
 					$id_google_drives = file_get_contents('https://drive.'.DOMAIN.'/createfile_gg.php?link=https://'.DOMAIN.'/'.$file_pdf_converts);
 
 					if(trim($id_google_drives)==''){
-						$row['id_file_pdf_google_drive'] = 'https://'.DOMAIN.'/'.$file_pdf_converts;
+
+						$data_array_file['file_name'] = $item_file_pdf_name;
+
+						$data_array_file['url'] = 'https://'.DOMAIN.'/'.$file_pdf_converts;
+
+						$row['id_file_pdf_google_drive'] = json_encode($data_array_file);
+
 					}
 					else{
 						$row['id_file_pdf_google_drive'] = $id_google_drives;
