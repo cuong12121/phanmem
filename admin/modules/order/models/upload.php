@@ -1847,6 +1847,10 @@
 					// phần này chạy lưu lên drive, sửa lại
 
 					foreach ($check_pdf_ar as $key => $value) {
+
+						var_dump($value);
+
+						die;
 					
 						$id_google_drives = file_get_contents('https://drive.'.DOMAIN.'/createfile_gg.php?link=https://'.DOMAIN.'/'.$value);
 
