@@ -1848,11 +1848,13 @@
 
 					foreach ($check_pdf_ar as $key => $value) {
 
-						var_dump($value);
+						$vals = str_replace('cv.pdft', 'cv.pdf', $value);
+
+						var_dump($vals);
 
 						die;
 					
-						$id_google_drives = file_get_contents('https://drive.'.DOMAIN.'/createfile_gg.php?link=https://'.DOMAIN.'/'.$value);
+						$id_google_drives = file_get_contents('https://drive.'.DOMAIN.'/createfile_gg.php?link=https://'.DOMAIN.'/'.$vals);
 
 						array_push($ar_id_file_pdf_googles, $id_google_drives);
 
