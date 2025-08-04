@@ -1860,7 +1860,14 @@
 				else{
 					$id_google_drives = file_get_contents('https://drive.'.DOMAIN.'/createfile_gg.php?link=https://'.DOMAIN.'/'.$file_pdf_converts);
 
-					$row['id_file_pdf_google_drive'] = $id_google_drives;
+					if(trim($id_google_drives)==''){
+						$row['id_file_pdf_google_drive'] = 'https://'.DOMAIN.'/'.$file_pdf_converts;
+					}
+					else{
+						$row['id_file_pdf_google_drive'] = $id_google_drives;
+					}
+
+					
 				}
 
 				
