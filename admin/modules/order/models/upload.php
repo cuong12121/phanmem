@@ -1849,20 +1849,8 @@
 
 				if(is_array($check_pdf_ar)&& count($check_pdf_ar)>1){
 
-					
-
 					$check_pdf_ar_cv = $this->convert_part_url($check_pdf_ar);
 
-					if($data_id_user==9){
-
-						echo "<pre>";
-				
-						var_dump($check_pdf_ar_cv);
-
-						echo "</pre>";
-
-						die;
-					}
 					// phần này chạy lưu lên drive, sửa lại
 
 					foreach ($check_pdf_ar_cv as $key => $vals) {
@@ -1875,7 +1863,6 @@
 					}
 
 					
-
 					$file_updrive = trim(implode(',', $ar_id_google_drives));
 
 
