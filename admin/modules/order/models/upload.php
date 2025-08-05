@@ -1847,19 +1847,11 @@
 
 				if(is_array($check_pdf_ar)&& count($check_pdf_ar)>1){
 
-					if($data_id_user==9){
-
-						$check_pdf_ar_cv = $this->convert_part_url($check_pdf_ar);
-				
-						var_dump($check_pdf_ar_cv);
-
-						die;
-					}
+					$check_pdf_ar_cv = $this->convert_part_url($check_pdf_ar);
 					// phần này chạy lưu lên drive, sửa lại
 
-					foreach ($check_pdf_ar as $key => $value) {
+					foreach ($check_pdf_ar_cv as $key => $vals) {
 
-						$vals = str_replace('cv.pdft', 'cv.pdf', $value);
 
 						$id_google_drives = file_get_contents('https://drive.'.DOMAIN.'/createfile_gg.php?link=https://'.DOMAIN.'/'.$vals);
 
