@@ -1865,7 +1865,7 @@
 
 						echo "<pre>";
 				
-						var_dump($file_pdf_names);
+						var_dump($check_pdf_ar);
 
 						echo "</pre>";
 
