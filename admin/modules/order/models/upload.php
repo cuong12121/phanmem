@@ -2401,7 +2401,7 @@
 			$array[0] = preg_replace('/\.pdft$/', '.pdf', $array[0]);
 			$array[1] = preg_replace('/\.pdft$/', '.pdf', $array[1]);
 
-			if (substr($array[1], 0, 1) === 't') {
+			if (substr(trim($array[1]), 0, 1) === 't') {
 			    $array[1] = substr($array[1], 1);
 			}
 
