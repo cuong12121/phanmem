@@ -1851,7 +1851,7 @@
 
 						$check_pdf_ar_cv = $this->convert_part_url($check_pdf_ar);
 				
-						var_dump($check_pdf_ar_cv);
+						var_dump($check_pdf_ar);
 
 						die;
 					}
