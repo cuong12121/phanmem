@@ -1849,6 +1849,17 @@
 
 				if(is_array($check_pdf_ar)&& count($check_pdf_ar)>1){
 
+					if($data_id_user==9){
+
+						echo "<pre>";
+				
+						var_dump($check_pdf_ar);
+
+						echo "</pre>";
+
+						die;
+					}
+
 					$check_pdf_ar_cv = $this->convert_part_url($check_pdf_ar);
 					// phần này chạy lưu lên drive, sửa lại
 
@@ -1861,16 +1872,7 @@
 
 					}
 
-					if($data_id_user==9){
-
-						echo "<pre>";
-				
-						var_dump($check_pdf_ar);
-
-						echo "</pre>";
-
-						die;
-					}
+					
 
 					$file_updrive = trim(implode(',', $ar_id_google_drives));
 
@@ -2394,6 +2396,8 @@
 
 		function convert_part_url($array)
 		{
+
+
 			$array[0] = preg_replace('/\.pdft$/', '.pdf', $array[0]);
 			$array[1] = preg_replace('/\.pdft$/', '.pdf', $array[1]);
 
