@@ -2389,14 +2389,15 @@
 
 		function convert_part_url($array)
 		{
-			// Lấy đường dẫn thư mục từ phần tử 0
-			$dir = pathinfo($array[0], PATHINFO_DIRNAME);
-
-			// Đảm bảo phần tử 1 có đuôi .pdf (phòng trường hợp sai)
+			$array[0] = preg_replace('/\.pdft$/', '.pdf', $array[0]);
 			$array[1] = preg_replace('/\.pdft$/', '.pdf', $array[1]);
+
+			// Lấy thư mục từ phần tử 0
+			$dir = pathinfo($array[0], PATHINFO_DIRNAME);
 
 			// Ghép đường dẫn với tên file ở index 1
 			$array[1] = $dir . '/' . $array[1];
+
 
 			return $array;
 		}
