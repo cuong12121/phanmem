@@ -1857,6 +1857,10 @@
 					}
 
 					$file_updrive = trim(implode(',', $ar_id_google_drives));
+					if($id==366774){
+						var_dump($check_pdf_ar);
+						die;
+					}	
 
 					if($file_updrive ==''){
 						$row['id_file_pdf_google_drive'] = json_encode($arr_file_pdf_name);
