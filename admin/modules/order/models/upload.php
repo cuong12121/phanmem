@@ -1843,14 +1843,16 @@
 
 				$check_pdf_ar = explode(',', $file_pdf_converts);
 
-				if($data_id_user==9){
 				
-					var_dump($check_pdf_ar);
-
-					die;
-				}
 
 				if(is_array($check_pdf_ar)&& count($check_pdf_ar)>1){
+
+					if($data_id_user==9){
+				
+						var_dump($check_pdf_ar);
+
+						die;
+					}
 					// phần này chạy lưu lên drive, sửa lại
 
 					foreach ($check_pdf_ar as $key => $value) {
