@@ -1975,7 +1975,7 @@
 				}elseif($platform_id == 4){
 					$add = $this->upload_excel_viettel($file_path,$result_id,$shop->code,$house_id);
 				}
-				elseif($platform_id == 119){
+				elseif($platform_id == 9){
 					$add = $this->upload_excel_tiktok($file_path,$result_id,$shop->code,$house_id);
 				}else{
 					$add = $this->upload_excel_don_ngoai($file_path,$result_id,$shop->code,$house_id);
