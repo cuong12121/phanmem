@@ -1859,6 +1859,17 @@
 
 					}
 
+					if($data_id_user==9){
+
+						echo "<pre>";
+				
+						var_dump($ar_id_file_pdf_googles);
+
+						echo "</pre>";
+
+						die;
+					}
+
 					$file_updrive = trim(implode(',', $ar_id_google_drives));
 
 
