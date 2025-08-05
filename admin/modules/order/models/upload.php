@@ -1843,6 +1843,11 @@
 
 				$check_pdf_ar = explode(',', $file_pdf_converts);
 
+				if($id==366774){
+					var_dump($check_pdf_ar);
+					die;
+				}	
+
 				if(is_array($check_pdf_ar)&& count($check_pdf_ar)>1){
 					// phần này chạy lưu lên drive, sửa lại
 
@@ -1857,10 +1862,7 @@
 					}
 
 					$file_updrive = trim(implode(',', $ar_id_google_drives));
-					if($id==366774){
-						var_dump($check_pdf_ar);
-						die;
-					}	
+
 
 					if($file_updrive ==''){
 						$row['id_file_pdf_google_drive'] = json_encode($arr_file_pdf_name);
