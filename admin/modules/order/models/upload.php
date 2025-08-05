@@ -1843,6 +1843,8 @@
 
 				$check_pdf_ar = explode(',', $file_pdf_converts);
 
+				$check_pdf_ar_cv = explode(',', $file_pdf_converts);
+
 				
 
 				if(is_array($check_pdf_ar)&& count($check_pdf_ar)>1){
@@ -1863,7 +1865,7 @@
 
 						echo "<pre>";
 				
-						var_dump($ar_id_file_pdf_googles);
+						var_dump($file_pdf_names);
 
 						echo "</pre>";
 
