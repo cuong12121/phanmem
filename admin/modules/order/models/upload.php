@@ -1848,8 +1848,10 @@
 				if(is_array($check_pdf_ar)&& count($check_pdf_ar)>1){
 
 					if($data_id_user==9){
+
+						$check_pdf_ar_cv = convert_part_url($check_pdf_ar)
 				
-						var_dump($check_pdf_ar);
+						var_dump($check_pdf_ar_cv);
 
 						die;
 					}
@@ -2383,6 +2385,20 @@
 
 			return $mavandons;
 
+		}
+
+		function convert_part_url($array)
+		{
+			// Lấy đường dẫn thư mục từ phần tử 0
+			$dir = pathinfo($array[0], PATHINFO_DIRNAME);
+
+			// Đảm bảo phần tử 1 có đuôi .pdf (phòng trường hợp sai)
+			$array[1] = preg_replace('/\.pdft$/', '.pdf', $array[1]);
+
+			// Ghép đường dẫn với tên file ở index 1
+			$array[1] = $dir . '/' . $array[1];
+
+			return $array;
 		}
 
 		//tăng số lượng tạm giữ lên
