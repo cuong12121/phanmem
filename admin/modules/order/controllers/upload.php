@@ -1160,7 +1160,7 @@
 
             	foreach ($list as $key => $value) {
             		
-            		array_push($list_file_pdf, $value->file_pdf)
+            		array_push($list_file_pdf, $value->file_pdf);
             	}
 
             }
