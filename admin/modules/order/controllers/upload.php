@@ -1152,22 +1152,21 @@
 
             $list_file_pdf = [];
 
-            print_r(PATH_BASE);
-
-            die;
 
             if(!empty($list) && count($list)>0){
 
             	foreach ($list as $key => $value) {
             		
-            		array_push($list_file_pdf, $value->file_pdf);
+            		array_push($list_file_pdf, PATH_BASE.$value->file_pdf);
             	}
 
             }
 
+            $model->merge_file($list_file_pdf);
 
-			
 		}
+
+
 
 		function print_auto(){
 

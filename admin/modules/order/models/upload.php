@@ -136,6 +136,29 @@
 
 		}
 
+		function merge_file($files)
+		{
+			$pdf = new Fpdi();
+
+			// $day = date('Y-m-d');
+
+			foreach ($files as $file) {
+			    if (!file_exists($file)) continue;
+
+			    $pageCount = $pdf->setSourceFile($file);
+			    for ($pageNo = 1; $pageNo <= $pageCount; $pageNo++) {
+			        $templateId = $pdf->importPage($pageNo);
+			        $size = $pdf->getTemplateSize($templateId);
+
+			        $pdf->AddPage($size['orientation'], [$size['width'], $size['height']]);
+			        $pdf->useTemplate($templateId);
+			    }
+			}
+
+			// Xuất file PDF mới
+			$pdf->Output('F', PATH_BASE.'files/print/merged_output.pdf'); // Lưu ra file
+		}
+
 
 		function check_sale($model)
 		{
