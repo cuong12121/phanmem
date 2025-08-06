@@ -138,7 +138,7 @@
 
 		function merge_file($files)
 		{
-			$pdf = new Fpdi();
+			$pdf = new \setasign\Fpdi\Fpdi();
 
 			// $day = date('Y-m-d');
 
