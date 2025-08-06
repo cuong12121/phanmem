@@ -1150,7 +1150,7 @@
 
             $list = $model->get_records('id IN ('.$str_ar.')','fs_order_uploads');
             echo "<pre>";
-			print_r($list);
+			print_r($str_ar);
 			echo "</pre>";
 			
 		}
