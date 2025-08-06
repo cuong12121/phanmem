@@ -1125,6 +1125,33 @@
 			}
 		}
 
+
+		function print_tiktok_new()
+		{
+			$model = $this->model;
+			$query =  "SELECT id FROM fs_order_uploads AS a WHERE 1=1 AND warehouse_id = 2 AND house_id = 13 AND platform_id = 9 AND date ='".date('Y-m-d')."' ORDER BY created_time DESC , id DESC";
+
+            $sql = $db->query ($query);
+            $result = $db->getObjectList ();
+
+            $list_Ar = [];
+
+            if(!empty($result)){
+
+                foreach ($result as $key => $value) {
+               
+                    array_push($list_Ar, $value->id);
+                }
+
+            } 
+
+            $list = $model->get_records('id IN ('.$list_Ar.')','fs_order_uploads');
+            echo "<pre>";
+			print_r($list);
+			echo "</pre>";
+			
+		}
+
 		function print_auto(){
 
 			$run =  !empty($_GET['run'])?$_GET['run']:'';
