@@ -1149,9 +1149,23 @@
             $str_ar = implode(',', $list_Ar);
 
             $list = $model->get_records('id IN ('.$str_ar.')','fs_order_uploads');
-            echo "<pre>";
-			print_r($list);
-			echo "</pre>";
+
+            $list_file_pdf = [];
+
+            print_r(PATH_BASE);
+
+            die;
+
+            if(!empty($list) && count($list)>0){
+
+            	foreach ($list as $key => $value) {
+            		
+            		array_push($list_file_pdf, $value->file_pdf)
+            	}
+
+            }
+
+
 			
 		}
 
