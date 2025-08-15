@@ -640,7 +640,11 @@
 			</head>';
 
 			if(!empty($duplicateMvds) && count($duplicateMvds)>0){
-				$output.= 'Mã vận đơn bị trùng tìm được ở  file pdf là '.implode(",", $duplicateMvds).'<br>';
+				foreach ($duplicateMvds as $key => $values_mvd) {
+
+					$output.= 'Mã vận đơn bị trùng tìm được ở  file pdf là '.implode(",", $values_mvd['mvd']).'<br>'.' ở trang '.implode(",", $values_mvd['pages']).'<br>';
+				}
+				
 			}
 			
 
@@ -713,24 +717,34 @@
 				
 
 				// Đếm số lần xuất hiện của từng mvd
+				
 				$mvdCount = [];
+				$mvdPages = [];
 
 				foreach ($content as $page => $orders) {
 				    if (!empty($orders) && isset($orders[0]->mvd)) {
 				        $mvd = $orders[0]->mvd;
+				        $pageNum = $orders[0]->page; // Lấy số trang từ object
+
 				        if (!isset($mvdCount[$mvd])) {
 				            $mvdCount[$mvd] = 0;
+				            $mvdPages[$mvd] = [];
 				        }
+
 				        $mvdCount[$mvd]++;
+				        $mvdPages[$mvd][] = $pageNum;
 				    }
 				}
 
-				// Tìm các mvd bị trùng (xuất hiện từ 2 trang trở lên)
+				// Tìm các mvd bị trùng
 				$duplicateMvds = [];
 
 				foreach ($mvdCount as $mvd => $count) {
 				    if ($count >= 2) {
-				        $duplicateMvds[] = $mvd;
+				        $duplicateMvds[] = [
+				            'mvd' => $mvd,
+				            'pages' => $mvdPages[$mvd]
+				        ];
 				    }
 				}
 
