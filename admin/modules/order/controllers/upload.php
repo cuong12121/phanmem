@@ -1206,7 +1206,7 @@
 		        AND house_id = $house_id 
 		        ORDER BY id DESC 
 		        LIMIT 1";
-				$values = $db->get_result($query);
+				$values = $db->getResult($query);
 
 				echo "<pre>";
 
