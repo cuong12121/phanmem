@@ -1204,7 +1204,7 @@
 
             	$query = "SELECT id 
 		        FROM fs_order_uploads_history_prints 
-		        WHERE platform_id = 2 
+		        WHERE platform_id = 9 
 		        AND warehouse_id = $i
 		        AND house_id = $house_id 
 		        ORDER BY id DESC 
