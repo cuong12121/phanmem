@@ -156,7 +156,7 @@
 			}
 
 			// Xuất file PDF mới
-			$pdf->Output('I', PATH_BASE.'files/print/merged_output.pdf'); // Lưu ra file
+			$pdf->Output('F', PATH_BASE.'files/print/merged_output.pdf'); // Lưu ra file
 		}
 
 
