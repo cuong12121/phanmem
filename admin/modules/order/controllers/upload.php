@@ -1210,7 +1210,7 @@
 
 				echo "<pre>";
 
-				print_r($values)
+				print_r($values);
 
 				echo "</pre>";
 
