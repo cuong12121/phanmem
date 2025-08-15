@@ -1197,6 +1197,8 @@
  
             	// $file_pdf_print = $model->merge_file($list_file_pdf);
 
+            	$house_id =18;
+
             	$query = "SELECT id 
 		        FROM fs_order_uploads_history_prints 
 		        WHERE platform_id = 2 
