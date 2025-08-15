@@ -51,6 +51,36 @@
 			include $file_php_view;
 		}
 
+		function print_tiktok_test(){
+			$model = $this->model;
+
+			$warehouse_id = 1
+
+			$platforms = 9;
+
+			$house_id = 13;
+
+			$query =  "SELECT id, file_pdf	 FROM fs_order_uploads AS a WHERE 1=1 AND warehouse_id = ".$warehouse_id." AND house_id = ".$house_id." AND platform_id = ".$platforms." AND date ='".date('Y-m-d')."' ORDER BY created_time DESC , id DESC";
+			$sql = $db->query ($query);
+            $result = $db->getObjectList ();
+
+            $list_Ar = [];
+
+
+
+            if(!empty($result)){
+
+               	echo "<pre>";
+
+               	print_r($result);
+
+               	echo "</pre>";
+
+            }
+		}
+
+		       
+
 		function add()
 		{
 			global $config;
@@ -1215,7 +1245,7 @@
 
 		            foreach ($platform as  $platforms) {
 		                
-		                 $query =  "SELECT id FROM fs_order_uploads AS a WHERE 1=1 AND warehouse_id = ".$warehouse_id_define[$i]." AND house_id = ".$house_id." AND platform_id = ".$platforms." AND date ='".date('Y-m-d')."' ORDER BY created_time DESC , id DESC";
+		                $query =  "SELECT id FROM fs_order_uploads AS a WHERE 1=1 AND warehouse_id = ".$warehouse_id_define[$i]." AND house_id = ".$house_id." AND platform_id = ".$platforms." AND date ='".date('Y-m-d')."' ORDER BY created_time DESC , id DESC";
 
 		                $sql = $db->query ($query);
 		                $result = $db->getObjectList ();
