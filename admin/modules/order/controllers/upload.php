@@ -54,7 +54,7 @@
 		function print_tiktok_test(){
 			$model = $this->model;
 
-			$warehouse_id = 1
+			$warehouse_id = 1;
 
 			$platforms = 9;
 
