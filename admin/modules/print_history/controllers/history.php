@@ -642,7 +642,7 @@
 			if(!empty($duplicateMvds) && count($duplicateMvds)>0){
 				foreach ($duplicateMvds as $key => $values_mvd) {
 
-					$output.= 'Mã vận đơn bị trùng tìm được ở  file pdf là '.implode(",", $values_mvd['mvd']).'<br>'.' ở trang '.implode(",", $values_mvd['pages']).'<br>';
+					$output.= 'Mã vận đơn bị trùng tìm được ở  file pdf là '.$values_mvd['mvd'].'<br>'.' ở trang '.implode(",", $values_mvd['pages']).'<br>';
 				}
 				
 			}
@@ -792,8 +792,6 @@
 
 				$file_name = $baseDir.$id.'.html';
 
-				
-				
 				// Gọi hàm với 2 mảng đã cho
 				$this->compare_arrays($dataexcel, $pdf, $file_name, $duplicateMvds);
 
