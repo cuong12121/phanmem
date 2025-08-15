@@ -52,6 +52,8 @@
 		}
 
 		function print_tiktok_test(){
+			global $db;
+			
 			$model = $this->model;
 
 			$warehouse_id = 1;
