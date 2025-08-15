@@ -1216,6 +1216,8 @@
 
 				$sql = "UPDATE fs_order_uploads_history_prints SET file_pdf_dem = '$dir_file_name_convert' WHERE id = '$ids'";
 
+				$db->query($sql);
+
 			}
 			echo "Thành công";
 
