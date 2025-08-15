@@ -1193,8 +1193,11 @@
             	}
 
             }
+            echo"<pre>";
+            print_r($list_file_pdf);
+            echo"</pre>";
 
-            $model->merge_file($list_file_pdf);
+            // $model->merge_file($list_file_pdf);
 
 		}
 
