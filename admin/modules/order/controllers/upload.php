@@ -1162,42 +1162,88 @@
 		{
 			global $db;
 			$model = $this->model;
-			$query =  "SELECT id FROM fs_order_uploads AS a WHERE 1=1 AND warehouse_id = 1 AND house_id = 13 AND platform_id = 9 AND date ='".date('Y-m-d')."' ORDER BY created_time DESC , id DESC";
 
-            $sql = $db->query ($query);
-            $result = $db->getObjectList ();
+			for ($i=1; $i < 3; $i++) { 
+				// $query =  "SELECT id FROM fs_order_uploads AS a WHERE 1=1 AND warehouse_id = $i AND house_id = 13 AND platform_id = 9 AND date ='".date('Y-m-d')."' ORDER BY created_time DESC , id DESC";
 
-            $list_Ar = [];
+	            // $sql = $db->query ($query);
+	            // $result = $db->getObjectList ();
 
-            if(!empty($result)){
+	            // $list_Ar = [];
 
-                foreach ($result as $key => $value) {
-               
-                    array_push($list_Ar, $value->id);
-                }
+	            // if(!empty($result)){
 
-            } 
+	            //     foreach ($result as $key => $value) {
+	               
+	            //         array_push($list_Ar, $value->id);
+	            //     }
 
-            $str_ar = implode(',', $list_Ar);
+	            // } 
 
-            $list = $model->get_records('id IN ('.$str_ar.')','fs_order_uploads');
+	            // $str_ar = implode(',', $list_Ar);
 
-            $list_file_pdf = [];
+	            // $list = $model->get_records('id IN ('.$str_ar.')','fs_order_uploads');
+
+	            // $list_file_pdf = [];
+
+	            // if(!empty($list) && count($list)>0){
+
+	            // 	foreach ($list as $key => $value) {
+	            		
+	            // 		array_push($list_file_pdf, PATH_BASE.$value->file_pdf);
+	            // 	}
+
+            	// }
+ 
+            	// $file_pdf_print = $model->merge_file($list_file_pdf);
+
+            	$query = "SELECT id 
+		        FROM fs_order_uploads_history_prints 
+		        WHERE platform_id = 2 
+		        AND warehouse_id = $i
+		        AND house_id = $house_id 
+		        ORDER BY id DESC 
+		        LIMIT 1";
+				$values = $db->get_result($query);
+
+				echo "<pre>";
+
+				print_r($values)
+
+				echo "</pre>";
 
 
-            if(!empty($list) && count($list)>0){
+            	
 
-            	foreach ($list as $key => $value) {
-            		
-            		array_push($list_file_pdf, PATH_BASE.$value->file_pdf);
-            	}
+			}
 
-            }
-            // echo"<pre>";
-            // print_r($list_file_pdf);
-            // echo"</pre>";
+				
 
-            $model->merge_file($list_file_pdf);
+	            
+
+	            
+			// foreach ($values as $key => $value) {  
+
+
+			// 	$url_file_pdf = 'https://'.DOMAIN.'/'.$value->file_pdf;
+
+			// 	$id_print = $value->id;
+				
+
+			// 	$dir_file = $this->export_file_pdf($url_file_pdf, $house_id);
+
+				
+			// 	$dir_file = str_replace('//admin', '/admin', $dir_file);
+		
+
+			// 	$sql= "UPDATE fs_order_uploads_history_prints SET file_pdf_dem = '$dir_file'  WHERE `id`=".$id_print;
+
+			// 	$result = $db->query($sql);
+
+			// 	echo $id_print;
+
+		        
+			// }   
 
 		}
 

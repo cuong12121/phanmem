@@ -155,8 +155,12 @@
 			    }
 			}
 
+			$file_save = PATH_BASE.'files/print/merged_output.pdf';
+
 			// Xuất file PDF mới
-			$pdf->Output('F', PATH_BASE.'files/print/merged_output.pdf'); // Lưu ra file
+			$pdf->Output('F', $file_save); // Lưu ra file
+
+			return  $file_save;
 		}
 
 
