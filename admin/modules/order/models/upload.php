@@ -136,11 +136,9 @@
 
 		}
 
-		function merge_file($files)
+		function merge_file($files, $house_id)
 		{
 			$pdf = new \setasign\Fpdi\Fpdi();
-
-			// $day = date('Y-m-d');
 
 			foreach ($files as $file) {
 			    if (!file_exists($file)) continue;
@@ -155,7 +153,17 @@
 			    }
 			}
 
-			$file_save = PATH_BASE.'files/print/merged_output.pdf';
+			$day = date('Y/m/d'); // Ví dụ: 2025/08/15
+
+			// Ghép đường dẫn
+			$path = PATH_BASE."files/print/tiktok/" . $day;
+
+			// Nếu thư mục chưa tồn tại thì tạo
+			if (!is_dir($path)) {
+			    mkdir($path, 0755, true); // true để tạo cả thư mục cha
+			}
+
+			$file_save = $path.'/'.$house_id.'_'.'merged_output.pdf';
 
 			// Xuất file PDF mới
 			$pdf->Output('F', $file_save); // Lưu ra file
