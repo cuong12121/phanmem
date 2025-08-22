@@ -1213,14 +1213,14 @@
 
 				$dir_file_name_convert = str_replace('/www/wwwroot/'.DOMAIN, 'https://dienmayai.com', $file_pdf_print);
 
-				
+				$date_now = date("Y/m/d");  
+
+				$file_save = 'pythonAI/tiktok/'.$date_now.'/input'.$i.'_'.$house_id.'.pdf';
 
 				file_get_contents('https://drive.phanmemttp.xyz/pythonAI/callpy.php?file='.$dir_file_name_convert.'&warehouse_id='.$i.'&house_id='.$house_id);
 
-				die;
 
-
-				$sql = "UPDATE fs_order_uploads_history_prints SET file_pdf_dem = '$dir_file_name_convert' WHERE id = '$ids'";
+				$sql = "UPDATE fs_order_uploads_history_prints SET file_pdf_dem = '$file_save' WHERE id = '$ids'";
 
 				$db->query($sql);
 
@@ -1228,8 +1228,6 @@
 			echo "Thành công";
 
 		}
-
-
 
 		function print_auto(){
 
