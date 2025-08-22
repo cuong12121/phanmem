@@ -1215,7 +1215,7 @@
 
 				
 
-				file_get_contents('https://drive.phanmemttp.xyz/pythonAI/call.php?file='.$dir_file_name_convert.'&warehouse_id='.$i.'&house_id='.$house_id);
+				file_get_contents('https://drive.phanmemttp.xyz/pythonAI/callpy.php?file='.$dir_file_name_convert.'&warehouse_id='.$i.'&house_id='.$house_id);
 
 				die;
 
