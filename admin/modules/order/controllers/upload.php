@@ -1162,10 +1162,10 @@
 		{
 			global $db;
 			$model = $this->model;
-			$house_id =13;
+			$house_id =18;
 
 			for ($i=1; $i < 3; $i++) { 
-				$query =  "SELECT id FROM fs_order_uploads AS a WHERE 1=1 AND warehouse_id = $i AND house_id = 13 AND platform_id = 9 AND date ='".date('Y-m-d')."' ORDER BY created_time DESC , id DESC";
+				$query =  "SELECT id FROM fs_order_uploads AS a WHERE 1=1 AND warehouse_id = $i AND house_id = $house_id AND platform_id = 9 AND date ='".date('Y-m-d')."' ORDER BY created_time DESC , id DESC";
 
 	            $sql = $db->query ($query);
 	            $result = $db->getObjectList ();
