@@ -1198,7 +1198,7 @@
 
 
  
-            	$file_pdf_print = $model->merge_file($list_file_pdf, $house_id);
+            	$file_pdf_print = $model->merge_file($list_file_pdf, $house_id, $i);
 
             	
 

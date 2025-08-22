@@ -136,7 +136,7 @@
 
 		}
 
-		function merge_file($files, $house_id)
+		function merge_file($files, $house_id, $warehouse_id)
 		{
 			$pdf = new \setasign\Fpdi\Fpdi();
 
@@ -163,7 +163,7 @@
 			    mkdir($path, 0755, true); // true để tạo cả thư mục cha
 			}
 
-			$file_save = $path.'/'.$house_id.'_'.'merged_output.pdf';
+			$file_save = $path.'/'.$house_id.'_'.$warehouse_id.'_merged_output.pdf';
 
 			// Xuất file PDF mới
 			$pdf->Output('F', $file_save); // Lưu ra file
