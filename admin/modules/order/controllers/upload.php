@@ -1165,17 +1165,20 @@
 			$H = date('G');
 
 			if ($H < 8) {
+				// Khung 7h10
 			    $house_id = 13;
 			}
 			elseif ($H >= 12 && $H < 13) {
-
+				// Khung 12h30
 			    $house_id = 18;
 			}
 			elseif ($H >= 14 && $H < 15) {
-				
+				// Khung 14h30
 			    $house_id = 15;
 			} 
 			else {
+
+				// Khung 16h10
 			    $house_id = 20;
 			} 
 
