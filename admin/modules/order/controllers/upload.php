@@ -1211,7 +1211,13 @@
 		        LIMIT 1";
 				$ids = $db->getResult($query);
 
-				$dir_file_name_convert = str_replace('/www/wwwroot/'.DOMAIN, '', $file_pdf_print);
+				$dir_file_name_convert = str_replace('/www/wwwroot/'.DOMAIN, 'http://dienmayai.com/', $file_pdf_print);
+
+				echo "<pre>";
+					print_r($dir_file_name_convert);
+				echo "</pre>";
+
+				die;
 
 
 				$sql = "UPDATE fs_order_uploads_history_prints SET file_pdf_dem = '$dir_file_name_convert' WHERE id = '$ids'";
