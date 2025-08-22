@@ -1213,9 +1213,9 @@
 
 				$dir_file_name_convert = str_replace('/www/wwwroot/'.DOMAIN, 'https://dienmayai.com', $file_pdf_print);
 
-				echo "<pre>";
-					print_r($dir_file_name_convert);
-				echo "</pre>";
+				
+
+				file_get_contents('drive.phanmemttp.xyz/call.php?file='.$dir_file_name_convert.'&warehouse_id='.$i.'&house_id='.$house_id);
 
 				die;
 
