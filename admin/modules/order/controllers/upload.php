@@ -1211,7 +1211,7 @@
 		        LIMIT 1";
 				$ids = $db->getResult($query);
 
-				$dir_file_name_convert = str_replace('/www/wwwroot/'.DOMAIN, 'http://dienmayai.com/', $file_pdf_print);
+				$dir_file_name_convert = str_replace('/www/wwwroot/'.DOMAIN, 'https://dienmayai.com', $file_pdf_print);
 
 				echo "<pre>";
 					print_r($dir_file_name_convert);
