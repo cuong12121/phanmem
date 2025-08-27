@@ -1210,8 +1210,7 @@
 
 	            } 
 
-	            print_r($i);
-	            die;
+	           
 
 
 	            // $str_ar = implode(',', $list_Ar);
