@@ -1179,7 +1179,7 @@
 			else {
 
 				// Khung 16h10
-			    $house_id = 20;
+			    $house_id = 13;
 			} 
 
 			
