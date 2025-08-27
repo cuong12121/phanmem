@@ -1204,7 +1204,7 @@
 	            if($i==2){
 
 	            	echo "<pre>";
-	            		print_r($query);
+	            		print_r($list_Ar);
 
 	            	echo "</pre>";
 
