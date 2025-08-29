@@ -56,13 +56,13 @@
 
 			$model = $this->model;
 
-			$warehouse_id = 1;
+			$warehouse_id = 2;
 
 			$platforms = 9;
 
-			$house_id = 13;
+			$house_id = 18;
 
-			$query =  "SELECT id, file_pdf	 FROM fs_order_uploads AS a WHERE 1=1 AND warehouse_id = ".$warehouse_id." AND house_id = ".$house_id." AND platform_id = ".$platforms." AND date ='".date('Y-m-d')."' ORDER BY created_time DESC , id DESC";
+			$query =  "SELECT id, file_pdf	 FROM fs_order_uploads AS a WHERE 1=1 AND warehouse_id = ".$warehouse_id." AND house_id = ".$house_id." AND platform_id = ".$platforms." AND date ='2025-08-25' ORDER BY created_time DESC , id DESC";
 			$sql = $db->query ($query);
             $result = $db->getObjectList ();
 
