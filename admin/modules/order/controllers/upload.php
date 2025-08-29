@@ -69,19 +69,32 @@
             $list_Ar = [];
 
             foreach ($result as $key => $value) {
-            	
+
+            	$arr_name = explode('t,t',$value->file_pdf);
+
+            	if(!empty($arr_name)){
+
+            		echo "<pre>";
+            			print_r($arr_name);
+            		echo "</pre>";
+            		die;
+            	}
+
+
             	array_push($list_Ar, $value->file_pdf);
             }
 
-            if(!empty($list_Ar)){
+            // if(!empty($list_Ar)){
 
-               	echo "<pre>";
 
-               	print_r($list_Ar);
 
-               	echo "</pre>";
+            //    	// echo "<pre>";
 
-            }
+            //    	// print_r($list_Ar);
+
+            //    	// echo "</pre>";
+
+            // }
 		}
 
 		       
