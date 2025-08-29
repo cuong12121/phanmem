@@ -74,13 +74,21 @@
 
             	if(!empty($arr_name)){
 
-            		echo "<pre>";
-            			print_r($arr_name);
-            		echo "</pre>";
-            		
+            		$i=0;
+					foreach ($arr_name as $name_item) {
+						$base_name = basename($name_item);
+						if($i == 0){
+							$path = str_replace($base_name,'',$name_item);
+						}
+
+						$file_namesss = str_replace('admin/order/','',PATH_BASE.$path.$base_name);
+						$i++;
+
+						print_r($file_namesss);
+            		}
             	}
 
-            	
+
             	array_push($list_Ar, $value->file_pdf);
             }
 
