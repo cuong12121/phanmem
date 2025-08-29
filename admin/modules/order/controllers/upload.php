@@ -83,8 +83,9 @@
 
 						$file_namesss = str_replace('admin/order/','',PATH_BASE.$path.$base_name);
 						$i++;
-
+						echo "<pre>";
 						print_r($file_namesss);
+						echo "</pre>";
             		}
             	}
 
