@@ -77,10 +77,10 @@
             		echo "<pre>";
             			print_r($arr_name);
             		echo "</pre>";
-            		die;
+            		
             	}
 
-
+            	
             	array_push($list_Ar, $value->file_pdf);
             }
 
