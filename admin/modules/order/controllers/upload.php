@@ -83,27 +83,22 @@
 
 						$file_namesss = str_replace('admin/order/','',PATH_BASE.$path.$base_name);
 						$i++;
-						echo "<pre>";
-						print_r($file_namesss);
-						echo "</pre>";
+						
+						array_push($list_Ar, $file_namesss);
             		}
             	}
 
-
-            	array_push($list_Ar, $value->file_pdf);
             }
 
-            // if(!empty($list_Ar)){
+            if(!empty($list_Ar)){
 
+               	echo "<pre>";
 
+               	print_r($list_Ar);
 
-            //    	// echo "<pre>";
+               	echo "</pre>";
 
-            //    	// print_r($list_Ar);
-
-            //    	// echo "</pre>";
-
-            // }
+            }
 		}
 
 		       
