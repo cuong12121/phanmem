@@ -68,13 +68,16 @@
 
             $list_Ar = [];
 
+            foreach ($result as $key => $value) {
+            	
+            	array_push($list_Ar, $value->file_pdf);
+            }
 
-
-            if(!empty($result)){
+            if(!empty($list_Ar)){
 
                	echo "<pre>";
 
-               	print_r($result);
+               	print_r($list_Ar);
 
                	echo "</pre>";
 
