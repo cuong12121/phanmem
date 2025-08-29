@@ -90,15 +90,43 @@
 
             }
 
-            if(!empty($list_Ar)){
+            $file_pdf_print = $model->merge_file($list_Ar, $house_id, $warehouse_id);
 
-               	echo "<pre>";
+            $dir_file_name_convert = str_replace('/www/wwwroot/'.DOMAIN, 'https://dienmayai.com', $file_pdf_print);
 
-               	print_r($list_Ar);
+            print_r($dir_file_name_convert);
 
-               	echo "</pre>";
+        	// $query = "SELECT id 
+	        // FROM fs_order_uploads_history_prints 
+	        // WHERE platform_id = 9 
+	        // AND warehouse_id = $i
+	        // AND house_id = $house_id 
+	        // ORDER BY id DESC 
+	        // LIMIT 1";
+			// $ids = $db->getResult($query);
 
-            }
+			// $dir_file_name_convert = str_replace('/www/wwwroot/'.DOMAIN, 'https://dienmayai.com', $file_pdf_print);
+
+			// $date_now = date("Y/m/d");  
+
+			// $file_save = 'pythonAI/tiktok/'.$date_now.'/input'.$i.'_'.$house_id.'.pdf';
+
+			// file_get_contents('https://drive.phanmemttp.xyz/pythonAI/callpy.php?file='.$dir_file_name_convert.'&warehouse_id='.$i.'&house_id='.$house_id);
+
+
+			// $sql = "UPDATE fs_order_uploads_history_prints SET file_pdf_dem = '$file_save' WHERE id = '$ids'";
+
+			// $db->query($sql);
+
+            // if(!empty($list_Ar)){
+
+            //    	echo "<pre>";
+
+            //    	print_r($list_Ar);
+
+            //    	echo "</pre>";
+
+            // }
 		}
 
 		       
