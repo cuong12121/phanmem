@@ -56,7 +56,7 @@
 
 			$model = $this->model;
 
-			$str_ids = '380529,380408';
+			$str_ids = '380481,380533';
 
 			$get_list_page_pdf = $model->get_records('record_id IN ('.$str_ids.')','fs_order_uploads_page_pdf','id,file_pdf,record_id,code,find_pdf,ordering,sku_fisrt,sku_last','ordering ASC,id ASC');
 			echo "<pre>";
