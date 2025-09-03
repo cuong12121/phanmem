@@ -2876,6 +2876,10 @@
 				// test phần kiểm tra in với userid là admin 
 				$userid = $_SESSION['userid'];
 
+				var_dump($userid);
+
+			
+
 
 				// if($userid ==9){
 				// 	$str_ids ='226199,226198';
