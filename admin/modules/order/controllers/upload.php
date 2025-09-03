@@ -56,6 +56,17 @@
 
 			$model = $this->model;
 
+			$str_ids = '380529,380408';
+
+			$get_list_page_pdf = $model->get_records('record_id IN ('.$str_ids.')','fs_order_uploads_page_pdf','id,file_pdf,record_id,code,find_pdf,ordering,sku_fisrt,sku_last','ordering ASC,id ASC');
+			echo "<pre>";
+
+			print_r($get_list_page_pdf);
+
+			echo "</pre>";
+
+			die;
+
 			$warehouse_id = 2;
 
 			$platforms = 9;
