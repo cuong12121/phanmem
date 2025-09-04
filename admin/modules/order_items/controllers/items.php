@@ -662,7 +662,7 @@
 
 			if (file_exists($path_remove_file)) {
 				array_map('unlink', array_filter(
-	       		(array) array_merge(glob($path_remove_file."*"))))
+	       		(array) array_merge(glob($path_remove_file."*"))));
 			}
 
 			FSFactory::include_class('excel','excel');
