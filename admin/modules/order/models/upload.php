@@ -3149,9 +3149,6 @@
 
 		            foreach ($list as $key => $value) {
 
-		            	var_dump($value);
-						die;
-
 		            	$arr_name = explode('t,t',$value->file_pdf);
 
 		            	if(!empty($arr_name)){
@@ -3171,9 +3168,9 @@
 		            	}
 		            	$row = array();
 						$row['is_print'] = 1;
-						$row_update = $this->_update($row,'fs_order_uploads','id = ' . $value-> record_id);
+						$row_update = $this->_update($row,'fs_order_uploads','id = ' . $value->id);
 						if($row_update){
-							$this->_update($row,'fs_order_uploads_detail','record_id = ' . $value-> record_id);
+							$this->_update($row,'fs_order_uploads_detail','record_id = ' . $value->id);
 						}
 
 
