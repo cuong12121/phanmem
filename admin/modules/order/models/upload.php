@@ -3145,10 +3145,12 @@
 				else{
 					$get_list_page_pdf = [];
 
-					var_dump($list);
-					die;
+
 
 		            foreach ($list as $key => $value) {
+
+		            	var_dump($value);
+						die;
 
 		            	$arr_name = explode('t,t',$value->file_pdf);
 
