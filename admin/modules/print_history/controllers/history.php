@@ -1312,6 +1312,13 @@
 		$model = $controle -> model;
 		$data = $model->get_record('id = ' .$id,'fs_order_uploads_history_prints','id,file_pdf');
 		$link = URL_ROOT.$data-> file_pdf;
+		if (strpos($data-> file_pdf, "pythonAI/tiktok/") !== false) {
+
+			$link = 'https://drive.phanmemttp.xyz/'.$data-> file_pdf
+		   
+		}
+		
+
 		return '<a target="_blink" href="' . $link . '">Xem file</a>';
 	}
 
