@@ -3149,7 +3149,7 @@
 
 		            foreach ($list as $key => $value) {
 
-		            	var_dump($value['record_id']);
+		            	var_dump($value);
 						die;
 
 		            	$arr_name = explode('t,t',$value->file_pdf);
