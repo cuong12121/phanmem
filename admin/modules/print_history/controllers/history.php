@@ -1314,7 +1314,7 @@
 		$link = URL_ROOT.$data-> file_pdf;
 		if (strpos($data-> file_pdf, "pythonAI/tiktok/") !== false) {
 
-			$link = 'https://drive.phanmemttp.xyz/'.$data-> file_pdf
+			$link = 'https://drive.phanmemttp.xyz/'.$data-> file_pdf;
 		   
 		}
 		
