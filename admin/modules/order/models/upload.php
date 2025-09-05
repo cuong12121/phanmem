@@ -3164,6 +3164,13 @@
 								array_push($get_list_page_pdf, $file_namesss);
 		            		}
 		            	}
+		            	$row = array();
+						$row['is_print'] = 1;
+						$row_update = $this->_update($row,'fs_order_uploads','id = ' . $value-> record_id);
+						if($row_update){
+							$this->_update($row,'fs_order_uploads_detail','record_id = ' . $value-> record_id);
+						}
+
 
 		            }
 		            $i = count($get_list_page_pdf);
@@ -3176,12 +3183,6 @@
 
             		$file_save = 'pythonAI/tiktok/'.$date_now.'/input'.$warehouse_id.'_'.$house_id.'.pdf';
 
-            		$row = array();
-					$row['is_print'] = 1;
-					$row_update = $this->_update($row,'fs_order_uploads','id = ' . $value-> record_id);
-					if($row_update){
-						$this->_update($row,'fs_order_uploads_detail','record_id = ' . $value-> record_id);
-					}
 
 					file_get_contents('https://drive.phanmemttp.xyz/pythonAI/callpy.php?file='.$dir_file_name_convert.'&warehouse_id='.$warehouse_id.'&house_id='.$house_id);
 
