@@ -3145,6 +3145,8 @@
 				else{
 					$get_list_page_pdf = [];
 
+					dd($list);
+
 		            foreach ($list as $key => $value) {
 
 		            	$arr_name = explode('t,t',$value->file_pdf);
