@@ -2875,18 +2875,10 @@
 				//     setRedirect($link,FSText :: _('Khung giờ này đã được in tự động, in bằng tay không thể thực hiện được'),'error');
 				// }
 
-
-
 				// test phần kiểm tra in với userid là admin 
 				$userid =  $_SESSION['ad_userid'];
 
-				// var_dump($userid);
-
-				// die;
-
-
-
-
+		
 				// if($userid ==9){
 				// 	$str_ids ='226199,226198';
 				// }
@@ -3186,7 +3178,7 @@
 
 					file_get_contents('https://drive.phanmemttp.xyz/pythonAI/callpy.php?file='.$dir_file_name_convert.'&warehouse_id='.$warehouse_id.'&house_id='.$house_id);
 
-					
+
 				}
 				//lưu lại lịch sử in
 				$row2 = array();
