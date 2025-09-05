@@ -2894,41 +2894,41 @@
 				// $str_ids = implode(',',$ids);
 				$list = $this->get_records('id IN ('.$str_ids.')','fs_order_uploads');
 
-				if($userid ==9){
+				// if($userid ==9){
 
-					$list_Ar = [];
+				// 	$list_Ar = [];
 
-		            foreach ($list as $key => $value) {
+		        //     foreach ($list as $key => $value) {
 
-		            	$arr_name = explode('t,t',$value->file_pdf);
+		        //     	$arr_name = explode('t,t',$value->file_pdf);
 
-		            	if(!empty($arr_name)){
+		        //     	if(!empty($arr_name)){
 
-		            		$i=0;
-							foreach ($arr_name as $name_item) {
-								$base_name = basename($name_item);
-								if($i == 0){
-									$path = str_replace($base_name,'',$name_item);
-								}
+		        //     		$i=0;
+				// 			foreach ($arr_name as $name_item) {
+				// 				$base_name = basename($name_item);
+				// 				if($i == 0){
+				// 					$path = str_replace($base_name,'',$name_item);
+				// 				}
 
-								$file_namesss = str_replace('admin/order/','',PATH_BASE.$path.$base_name);
-								$i++;
+				// 				$file_namesss = str_replace('admin/order/','',PATH_BASE.$path.$base_name);
+				// 				$i++;
 								
-								array_push($list_Ar, $file_namesss);
-		            		}
-		            	}
+				// 				array_push($list_Ar, $file_namesss);
+		        //     		}
+		        //     	}
 
-		            }
+		        //     }
 
-		            // $file_pdf_print = $model->merge_file($list_Ar, $house_id, $warehouse_id);
+		        //     // $file_pdf_print = $model->merge_file($list_Ar, $house_id, $warehouse_id);
 
-		            // $dir_file_name_convert = str_replace('/www/wwwroot/'.DOMAIN, 'https://dienmayai.com', $file_pdf_print);
+		        //     // $dir_file_name_convert = str_replace('/www/wwwroot/'.DOMAIN, 'https://dienmayai.com', $file_pdf_print);
 
-		            print_r($list_Ar);
+		        //     print_r($list_Ar);
 
-					// echo '<pre>'; var_dump($list); echo'</pre>';
-					die;
-				}	
+				// 	// echo '<pre>'; var_dump($list); echo'</pre>';
+				// 	die;
+				// }	
 				
 				//kiểm tra các file pdf với excel có tồn tại hay không
 				foreach ($list as $item){
