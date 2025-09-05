@@ -3145,7 +3145,8 @@
 				else{
 					$get_list_page_pdf = [];
 
-					dd($list);
+					var_dump($list);
+					die;
 
 		            foreach ($list as $key => $value) {
 
