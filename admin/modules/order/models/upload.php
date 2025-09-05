@@ -3184,11 +3184,9 @@
 
             		$file_save = 'pythonAI/tiktok/'.$date_now.'/input'.$warehouse_id.'_'.$house_id.'.pdf';
 
-					// file_get_contents('https://drive.phanmemttp.xyz/pythonAI/callpy.php?file='.$dir_file_name_convert.'&warehouse_id='.$warehouse_id.'&house_id='.$house_id);
+					file_get_contents('https://drive.phanmemttp.xyz/pythonAI/callpy.php?file='.$dir_file_name_convert.'&warehouse_id='.$warehouse_id.'&house_id='.$house_id);
 
-					print_r('https://drive.phanmemttp.xyz/pythonAI/callpy.php?file='.$dir_file_name_convert.'&warehouse_id='.$warehouse_id.'&house_id='.$house_id);
-
-					die;
+					
 				}
 				//lưu lại lịch sử in
 				$row2 = array();
