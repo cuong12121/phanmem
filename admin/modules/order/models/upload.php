@@ -2586,6 +2586,13 @@
 			return $i;
 		}
 
+		public function count_page_file_pdf($file_pdf)
+		{
+			$pdf = new \setasign\Fpdi\Fpdi();
+			$pageCount = $pdf->setSourceFile($file_pdf);
+			return $pageCount;
+		}
+
 		function pdf_to_text($id,$file_pdf,$path){
 			$server_file = PATH_BASE.$file_pdf;
 			$server_file = str_replace('/', DS,$server_file);
@@ -3175,11 +3182,12 @@
 
 
 		            }
-		            $i = count($get_list_page_pdf);
-
+		           
 		            $date_now = date("Y/m/d");  
 
 		            $file_pdf_print = $this->merge_file($get_list_page_pdf, $house_id, $warehouse_id);
+
+		            $i = $this->count_page_file_pdf($file_pdf_print);
 
             		$dir_file_name_convert = str_replace('/www/wwwroot/'.DOMAIN, 'https://dienmayai.com', $file_pdf_print);
 
@@ -3465,11 +3473,12 @@
 
 
 		            }
-		            $i = count($get_list_page_pdf);
-
+		          
 		            $date_now = date("Y/m/d");  
 
 		            $file_pdf_print = $this->merge_file($get_list_page_pdf, $house_id, $warehouse_id);
+
+		            $i = $this->count_page_file_pdf($file_pdf_print);
 
             		$dir_file_name_convert = str_replace('/www/wwwroot/'.DOMAIN, 'https://dienmayai.com', $file_pdf_print);
 
