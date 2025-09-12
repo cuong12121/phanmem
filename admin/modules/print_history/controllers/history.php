@@ -436,6 +436,7 @@
 		function clone_function_tiktok()
 		{
 
+			die;
 			$json = {'quantity': 1,
 			  'sku': '425Y-BK-00',
 			  'sku_full': '425Y-BK-00',
