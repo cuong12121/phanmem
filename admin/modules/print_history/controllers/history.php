@@ -482,46 +482,54 @@
 
 			$dems=0;
 
-			foreach ($data_result as &$group) {
-			    foreach ($group as &$item) {
-			    	$array_data = $this->combo_Return_code($item['sku_full_check']);
+			foreach ($data_result) {
+
+				$array_data = $this->combo_Return_code($item['sku_full_check']);
+				echo "<pre>";
+					print_r($array_data);
+				echo "</pre>";	
+
+
+
+			    // foreach ($group as &$item) {
+			    // 	$array_data = $this->combo_Return_code($item['sku_full_check']);
 			    	
 
-			        $item['combo'] = !empty($array_data) ? $array_data['list'] : '';
-			        $item['product_combo_code'] = !empty($array_data) ? $array_data['product_code'] : '';
+			    //     $item['combo'] = !empty($array_data) ? $array_data['list'] : '';
+			    //     $item['product_combo_code'] = !empty($array_data) ? $array_data['product_code'] : '';
 			        
-			        // $item['count_show_more'] = !empty($array_data['list']) ? count($array_data['list']) : 0;
-			    }
+			    //     // $item['count_show_more'] = !empty($array_data['list']) ? count($array_data['list']) : 0;
+			    // }
 			}
 
-			foreach ($data_result as &$groups) {
+			// foreach ($data_result as &$groups) {
 				
-			    foreach ($groups as &$item) {
+			//     foreach ($groups as &$item) {
 
-			    	if (is_array($item['combo']) && count($item['combo']) > 0) {
-			    		$sl_cb = $item['quantity'];
-				        foreach ($item['combo'] as $combo_item) {
+			//     	if (is_array($item['combo']) && count($item['combo']) > 0) {
+			//     		$sl_cb = $item['quantity'];
+			// 	        foreach ($item['combo'] as $combo_item) {
 
-				            $combo_item = preg_replace_callback('/:(\d+)/', function($matches) use ($sl_cb) {
-							    return ':' . ($matches[1] * intval($sl_cb));
-							}, $combo_item);
-				            $result_print[$dems][] = $combo_item;
+			// 	            $combo_item = preg_replace_callback('/:(\d+)/', function($matches) use ($sl_cb) {
+			// 				    return ':' . ($matches[1] * intval($sl_cb));
+			// 				}, $combo_item);
+			// 	            $result_print[$dems][] = $combo_item;
 
-				        }
-				    } else {
-				        $result_print[$dems][] = $item['sku'] . ':' . $item['quantity'];
-				    }
-			    }	
-			    $dems++;
+			// 	        }
+			// 	    } else {
+			// 	        $result_print[$dems][] = $item['sku'] . ':' . $item['quantity'];
+			// 	    }
+			//     }	
+			//     $dems++;
 
-			}
+			// }
 
-			$model->calculateCumulativeQuantities($data_result);
+			// $model->calculateCumulativeQuantities($data_result);
 
-			$data_result = $model->show_list_array_run($data_result);
-			echo'<pre>';
-				print_r($data_result);
-			echo'<pre>';
+			// $data_result = $model->show_list_array_run($data_result);
+			// echo'<pre>';
+			// 	print_r($data_result);
+			// echo'<pre>';
 		}
 
 		
