@@ -476,7 +476,7 @@
 			    ],
 			];
 
-			$data_result = json_decode($json);  
+			$data_result = $json;  
 
 			$result_print = [];
 
