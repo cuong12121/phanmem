@@ -482,9 +482,9 @@
 
 			$dems=0;
 
-			foreach ($data_result) {
+			foreach ($data_result as $val) {
 
-				$array_data = $this->combo_Return_code($item['sku_full_check']);
+				$array_data = $this->combo_Return_code($val['sku_full_check']);
 				echo "<pre>";
 					print_r($array_data);
 				echo "</pre>";	
