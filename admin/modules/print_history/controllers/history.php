@@ -436,7 +436,7 @@
 		function clone_function_tiktok()
 		{
 
-			$json = [{'quantity': 1,
+			$json = {'quantity': 1,
 			  'sku': '425Y-BK-00',
 			  'sku_full': '425Y-BK-00',
 			  'sku_full_check': '425Y-BK-00'},
@@ -460,7 +460,7 @@
 			 {'quantity': 1,
 			  'sku': '751A-BL-00',
 			  'sku_full': '751A-BL-00',
-			  'sku_full_check': '751A-BL-00'}];
+			  'sku_full_check': '751A-BL-00'};
 			$data_result = json_decode($json);  
 
 			$result_print = [];
