@@ -486,8 +486,10 @@
 
 				$array_data = $this->combo_Return_code($val['sku_full_check']);
 				echo "<pre>";
-					print_r($array_data);
+					print_r($val);
 				echo "</pre>";	
+
+				die;
 
 
 
