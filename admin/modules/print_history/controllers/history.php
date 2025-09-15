@@ -435,6 +435,7 @@
 
 		function clone_function_tiktok()
 		{
+			$model = $this -> model;
 
 			$json = [
 			    [
