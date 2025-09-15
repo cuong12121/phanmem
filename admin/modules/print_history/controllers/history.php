@@ -470,9 +470,9 @@
 			    
 			    [
 			        'quantity' => 1,
-			        'sku' => '751A-BL-00',
-			        'sku_full' => '751A-BL-00',
-			        'sku_full_check' => '751A-BL-00',
+			        'sku' => 'P100-MT-00',
+			        'sku_full' => 'P100-MT-00',
+			        'sku_full_check' => 'P100-MT-00',
 			    ],
 			];
 
