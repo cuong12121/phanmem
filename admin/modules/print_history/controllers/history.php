@@ -511,26 +511,26 @@
 
 			    
 				
-		    foreach ($data_result as &$item) {
+		    // foreach ($data_result as &$item) {
 
-		    	if (is_array($item['combo']) && count($item['combo']) > 0) {
-		    		$sl_cb = $item['quantity'];
-			        foreach ($item['combo'] as $combo_item) {
+		    // 	if (is_array($item['combo']) && count($item['combo']) > 0) {
+		    // 		$sl_cb = $item['quantity'];
+			//         foreach ($item['combo'] as $combo_item) {
 
-			            $combo_item = preg_replace_callback('/:(\d+)/', function($matches) use ($sl_cb) {
-						    return ':' . ($matches[1] * intval($sl_cb));
-						}, $combo_item);
-			            $result_print[$dems][] = $combo_item;
+			//             $combo_item = preg_replace_callback('/:(\d+)/', function($matches) use ($sl_cb) {
+			// 			    return ':' . ($matches[1] * intval($sl_cb));
+			// 			}, $combo_item);
+			//             $result_print[$dems][] = $combo_item;
 
-			        }
-			    } else {
-			        $result_print[$dems][] = $item['sku'] . ':' . $item['quantity'];
-			    }
-		    }	
+			//         }
+			//     } else {
+			//         $result_print[$dems][] = $item['sku'] . ':' . $item['quantity'];
+			//     }
+		    // }	
 
-			echo "<pre>";
-				print_r($data_result);
-			echo "</pre>";	
+			// echo "<pre>";
+			// 	print_r($data_result);
+			// echo "</pre>";	
 
 			
 		
