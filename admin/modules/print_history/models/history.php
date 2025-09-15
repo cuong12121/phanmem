@@ -163,46 +163,7 @@
 		    return $fileUrl;
 		}
 
-		function calculateCumulativeQuantitiesTiktok(&$data) {
-		 
-		 
-		     $totals_sku = [];
-		 
-		    // Bước 1: Duyệt qua toàn bộ mảng để tính tổng quantity cho từng SKU
-		    foreach ($data as $group) {
-		        foreach ($group as $item) {
-		            $sku = $item['sku'];
-		            $qty = $item['quantity'];
-		 
-		            if (isset($totals_sku[$sku])) {
-		                $totals_sku[$sku] +=  intval($qty);
-		            } else {
-		                $totals_sku[$sku] = $qty;
-		            }
-		 
-		        }
-		    }
-		 
-		    $skuTotals = [];
-		 
-		 
-		    foreach ($data as $i => $group) {
-		        foreach ($group as $j => $item) {
-		            $sku = $item['sku'];
-		            $qty = $item['quantity'];
-		 
-		            if (!isset($skuTotals[$sku])) {
-		                $skuTotals[$sku] = 0;
-		            }
-		 
-		            $skuTotals[$sku] += $qty;
-		            $data[$i][$j]['count'] = $skuTotals[$sku];
-		            $data[$i][$j]['parent_index'] =  intval($this->findIndexInArray($item['sku'],$data));
-		            $data[$i][$j]['all'] = $totals_sku[$sku];
-		            $data[$i][$j]['all_to_sku'] = $this->countSKuInArray($data, $item['sku']);
-		        }   
-		    }
-		}
+		
 
 		function calculateCumulativeQuantities(&$data) {
 		 
