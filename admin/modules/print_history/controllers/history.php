@@ -482,15 +482,19 @@
 
 			$dems=0;
 
+
+
 			foreach ($data_result as $val) {
 
 				$array_data = $this->combo_Return_code($val['sku_full_check']);
-				echo "<pre>";
-					print_r($array_data);
-				echo "</pre>";	
 
-				die;
+				if(!empty($array_data)){
 
+					array_push($result_print, $array_data);
+				}
+
+				
+				
 
 
 			    // foreach ($group as &$item) {
@@ -503,6 +507,12 @@
 			    //     // $item['count_show_more'] = !empty($array_data['list']) ? count($array_data['list']) : 0;
 			    // }
 			}
+			echo "<pre>";
+					print_r($result_print);
+				echo "</pre>";	
+
+				die;
+
 
 			// foreach ($data_result as &$groups) {
 				
