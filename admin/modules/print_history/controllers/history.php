@@ -484,31 +484,32 @@
 
 
 
-			foreach ($data_result as $val) {
+			// foreach ($data_result as $val) {
 
-				$array_data = $this->combo_Return_code($val['sku_full_check']);
+			// 	$array_data = $this->combo_Return_code($val['sku_full_check']);
 
-				if(!empty($array_data)){
-
-					array_push($result_print, $array_data);
-				}
+			//     $item['combo'] = !empty($array_data) ? $array_data['list'] : '';
+		    //     $item['product_combo_code'] = !empty($array_data) ? $array_data['product_code'] : '';
+		        
+		    //     $item['count_show_more'] = !empty($array_data['list']) ? count($array_data['list']) : 0;
 
 				
 				
 
 
-			    // foreach ($group as &$item) {
-			    // 	$array_data = $this->combo_Return_code($item['sku_full_check']);
+			    
+			// }
+			foreach ($data_result as &$item) {
+			    	$array_data = $this->combo_Return_code($item['sku_full_check']);
 			    	
 
-			    //     $item['combo'] = !empty($array_data) ? $array_data['list'] : '';
-			    //     $item['product_combo_code'] = !empty($array_data) ? $array_data['product_code'] : '';
+			        $item['combo'] = !empty($array_data) ? $array_data['list'] : '';
+			        $item['product_combo_code'] = !empty($array_data) ? $array_data['product_code'] : '';
 			        
-			    //     // $item['count_show_more'] = !empty($array_data['list']) ? count($array_data['list']) : 0;
-			    // }
-			}
+			        // $item['count_show_more'] = !empty($array_data['list']) ? count($array_data['list']) : 0;
+			    }
 			echo "<pre>";
-					print_r($result_print);
+					print_r($data_result);
 				echo "</pre>";	
 
 				die;
