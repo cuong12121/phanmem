@@ -508,34 +508,37 @@
 			        
 			        // $item['count_show_more'] = !empty($array_data['list']) ? count($array_data['list']) : 0;
 			    }
-			echo "<pre>";
-					print_r($data_result);
-				echo "</pre>";	
 
-				die;
-
-
-			// foreach ($data_result as &$groups) {
+			    $dems++;
 				
-			//     foreach ($groups as &$item) {
 
-			//     	if (is_array($item['combo']) && count($item['combo']) > 0) {
-			//     		$sl_cb = $item['quantity'];
-			// 	        foreach ($item['combo'] as $combo_item) {
+			}	
+			
+				
+		    foreach ($data_result as &$item) {
 
-			// 	            $combo_item = preg_replace_callback('/:(\d+)/', function($matches) use ($sl_cb) {
-			// 				    return ':' . ($matches[1] * intval($sl_cb));
-			// 				}, $combo_item);
-			// 	            $result_print[$dems][] = $combo_item;
+		    	if (is_array($item['combo']) && count($item['combo']) > 0) {
+		    		$sl_cb = $item['quantity'];
+			        foreach ($item['combo'] as $combo_item) {
 
-			// 	        }
-			// 	    } else {
-			// 	        $result_print[$dems][] = $item['sku'] . ':' . $item['quantity'];
-			// 	    }
-			//     }	
-			//     $dems++;
+			            $combo_item = preg_replace_callback('/:(\d+)/', function($matches) use ($sl_cb) {
+						    return ':' . ($matches[1] * intval($sl_cb));
+						}, $combo_item);
+			            $result_print[$dems][] = $combo_item;
 
-			// }
+			        }
+			    } else {
+			        $result_print[$dems][] = $item['sku'] . ':' . $item['quantity'];
+			    }
+		    }	
+			    
+			echo "<pre>";
+				print_r($data_result);
+			echo "</pre>";	
+
+			die;    
+
+		
 
 			// $model->calculateCumulativeQuantities($data_result);
 
@@ -543,7 +546,7 @@
 			// echo'<pre>';
 			// 	print_r($data_result);
 			// echo'<pre>';
-		}
+		
 
 		
 
