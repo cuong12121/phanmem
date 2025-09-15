@@ -545,7 +545,7 @@
 
 		
 
-
+		}	    
 		function return_product_sku_quantity_to_text($string)
 		{
 			$model  = $this -> model;
