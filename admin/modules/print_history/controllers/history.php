@@ -507,13 +507,9 @@
 			        $item['product_combo_code'] = !empty($array_data) ? $array_data['product_code'] : '';
 			        
 			        // $item['count_show_more'] = !empty($array_data['list']) ? count($array_data['list']) : 0;
-			   
+			    }
 
-			    $dems++;
-				
-
-			}	
-			
+			    
 				
 		    foreach ($data_result as &$item) {
 
