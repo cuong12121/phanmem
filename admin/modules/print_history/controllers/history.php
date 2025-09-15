@@ -500,37 +500,37 @@
 			    
 			// }
 			foreach ($data_result as &$item) {
-			    	$array_data = $this->combo_Return_code($item['sku_full_check']);
-			    	
+		    	$array_data = $this->combo_Return_code($item['sku_full_check']);
+		    	
 
-			        $item['combo'] = !empty($array_data) ? $array_data['list'] : '';
-			        $item['product_combo_code'] = !empty($array_data) ? $array_data['product_code'] : '';
-			        
-			        // $item['count_show_more'] = !empty($array_data['list']) ? count($array_data['list']) : 0;
-			    }
+		        $item['combo'] = !empty($array_data) ? $array_data['list'] : '';
+		        $item['product_combo_code'] = !empty($array_data) ? $array_data['product_code'] : '';
+		        
+		        // $item['count_show_more'] = !empty($array_data['list']) ? count($array_data['list']) : 0;
+		    }
 
 			    
 				
-		    // foreach ($data_result as &$item) {
+		    foreach ($data_result as &$item) {
 
-		    // 	if (is_array($item['combo']) && count($item['combo']) > 0) {
-		    // 		$sl_cb = $item['quantity'];
-			//         foreach ($item['combo'] as $combo_item) {
+		    	if (is_array($item['combo']) && count($item['combo']) > 0) {
+		    		$sl_cb = $item['quantity'];
+			        foreach ($item['combo'] as $combo_item) {
 
-			//             $combo_item = preg_replace_callback('/:(\d+)/', function($matches) use ($sl_cb) {
-			// 			    return ':' . ($matches[1] * intval($sl_cb));
-			// 			}, $combo_item);
-			//             $result_print[$dems][] = $combo_item;
+			            $combo_item = preg_replace_callback('/:(\d+)/', function($matches) use ($sl_cb) {
+						    return ':' . ($matches[1] * intval($sl_cb));
+						}, $combo_item);
+			            $result_print[$dems][] = $combo_item;
 
-			//         }
-			//     } else {
-			//         $result_print[$dems][] = $item['sku'] . ':' . $item['quantity'];
-			//     }
-		    // }	
+			        }
+			    } else {
+			        $result_print[$dems][] = $item['sku'] . ':' . $item['quantity'];
+			    }
+		    }	
 
-			// echo "<pre>";
-			// 	print_r($data_result);
-			// echo "</pre>";	
+			echo "<pre>";
+				print_r($data_result);
+			echo "</pre>";	
 
 			
 		
