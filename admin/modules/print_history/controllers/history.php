@@ -485,7 +485,14 @@
 			            'sku_full_check' => 'B560-XT-05',
 			        ]
 			    ],
-			    [], // phần tử rỗng
+			    [
+			    	[
+			            'sku' => '360H-BK-00',
+			            'quantity' => 1,
+			            'sku_full' => '360H-BK-00',
+			            'sku_full_check' => '360H-BK-00',
+			        ]
+			    ], // phần tử rỗng
 			    [
 			        [
 			            'sku' => '751A-BL-00',
