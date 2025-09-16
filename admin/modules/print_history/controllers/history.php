@@ -437,45 +437,93 @@
 		{
 			$model = $this -> model;
 
-			$json = [
-			    [
-			        'quantity' => 1,
-			        'sku' => '425Y-BK-00',
-			        'sku_full' => '425Y-BK-00',
-			        'sku_full_check' => '425Y-BK-00',
-			    ],
-			    [
-			        'quantity' => 1,
-			        'sku' => '060C-BK-00',
-			        'sku_full' => '060C-BK-00',
-			        'sku_full_check' => '060C-BK-00',
-			    ],
-			    [
-			        'quantity' => 1,
-			        'sku' => '425Y-BK-00',
-			        'sku_full' => '425Y-BK-00',
-			        'sku_full_check' => '425Y-BK-00',
-			    ],
-			    [
-			        'quantity' => 1,
-			        'sku' => '360H-BK-00',
-			        'sku_full' => '360H-BK-00',
-			        'sku_full_check' => '360H-BK-00',
-			    ],
-			    [
-			        'quantity' => 1,
-			        'sku' => '558G-MT-00',
-			        'sku_full' => '558G-MT-00',
-			        'sku_full_check' => '558G-MT-00',
-			    ],
-			    
-			    [
-			        'quantity' => 1,
-			        'sku' => 'P100-MT-00',
-			        'sku_full' => 'P100-MT-00',
-			        'sku_full_check' => 'P100-MT-00',
-			    ],
-			];
+			$json = Array
+			(
+			    [0] => Array
+			        (
+			            [0] => Array
+			                (
+			                    [sku] => 425Y-BK-00
+			                    [quantity] => 1
+			                    [sku_full] => 425Y-BK-00
+			                    [sku_full_check] => 425Y-BK-00
+			                )
+
+			        )
+
+			    [1] => Array
+			        (
+			            [0] => Array
+			                (
+			                    [sku] => 060C-BK-00
+			                    [quantity] => 1
+			                    [sku_full] => 060C-BK-00
+			                    [sku_full_check] => 060C-BK-00
+			                )
+
+			        )
+
+			    [2] => Array
+			        (
+			            [0] => Array
+			                (
+			                    [sku] => 425Y-BK-00
+			                    [quantity] => 1
+			                    [sku_full] => 425Y-BK-00
+			                    [sku_full_check] => 425Y-BK-00
+			                )
+
+			        )
+
+			    [3] => Array
+			        (
+			            [0] => Array
+			                (
+			                    [sku] => 360H-BK-00
+			                    [quantity] => 1
+			                    [sku_full] => 360H-BK-00
+			                    [sku_full_check] => 360H-BK-00
+			                )
+
+			        )
+
+			    [4] => Array
+			        (
+			            [0] => Array
+			                (
+			                    [sku] => 558G-MT-00
+			                    [quantity] => 1
+			                    [sku_full] => 558G-MT-00
+			                    [sku_full_check] => 558G-MT-00
+			                )
+
+			            [1] => Array
+			                (
+			                    [sku] => B560-XT-05
+			                    [quantity] => 1
+			                    [sku_full] => B560-XT-05
+			                    [sku_full_check] => B560-XT-05
+			                )
+
+			        )
+
+			    [5] => Array
+			        (
+			        )
+
+			    [6] => Array
+			        (
+			            [0] => Array
+			                (
+			                    [sku] => 751A-BL-00
+			                    [quantity] => 1
+			                    [sku_full] => 751A-BL-00
+			                    [sku_full_check] => 751A-BL-00
+			                )
+
+			        )
+
+			);
 
 			$data_result = $json;  
 
@@ -485,53 +533,47 @@
 
 
 
-			// foreach ($data_result as $val) {
+			$result_print = [];
 
-			// 	$array_data = $this->combo_Return_code($val['sku_full_check']);
+			$dems=0;
 
-			//     $item['combo'] = !empty($array_data) ? $array_data['list'] : '';
-		    //     $item['product_combo_code'] = !empty($array_data) ? $array_data['product_code'] : '';
-		        
-		    //     $item['count_show_more'] = !empty($array_data['list']) ? count($array_data['list']) : 0;
+			foreach ($data_result as &$group) {
+			    foreach ($group as &$item) {
+			    	$array_data = $this->combo_Return_code($item['sku_full_check']);
+			    	
 
-				
-				
-
-
-			    
-			// }
-			foreach ($data_result as &$item) {
-		    	$array_data = $this->combo_Return_code($item['sku_full_check']);
-		    	
-
-		        $item['combo'] = !empty($array_data) ? $array_data['list'] : '';
-		        $item['product_combo_code'] = !empty($array_data) ? $array_data['product_code'] : '';
-		        
-		        // $item['count_show_more'] = !empty($array_data['list']) ? count($array_data['list']) : 0;
-		    }
-
-			    
-				
-		    foreach ($data_result as &$item) {
-
-		    	if (is_array($item['combo']) && count($item['combo']) > 0) {
-		    		$sl_cb = $item['quantity'];
-			        foreach ($item['combo'] as $combo_item) {
-
-			            $combo_item = preg_replace_callback('/:(\d+)/', function($matches) use ($sl_cb) {
-						    return ':' . ($matches[1] * intval($sl_cb));
-						}, $combo_item);
-			            $result_print[$dems][] = $combo_item;
-
-			        }
-			    } else {
-			        $result_print[$dems][] = $item['sku'] . ':' . $item['quantity'];
+			        $item['combo'] = !empty($array_data) ? $array_data['list'] : '';
+			        $item['product_combo_code'] = !empty($array_data) ? $array_data['product_code'] : '';
+			        
+			        // $item['count_show_more'] = !empty($array_data['list']) ? count($array_data['list']) : 0;
 			    }
-		    }	
+			}
 
-		    // $model->calculateCumulativeQuantities($data_result);
+			foreach ($data_result as &$groups) {
+				
+			    foreach ($groups as &$item) {
 
-			// $data_result = $model->show_list_array_run($data_result);
+			    	if (is_array($item['combo']) && count($item['combo']) > 0) {
+			    		$sl_cb = $item['quantity'];
+				        foreach ($item['combo'] as $combo_item) {
+
+				            $combo_item = preg_replace_callback('/:(\d+)/', function($matches) use ($sl_cb) {
+							    return ':' . ($matches[1] * intval($sl_cb));
+							}, $combo_item);
+				            $result_print[$dems][] = $combo_item;
+
+				        }
+				    } else {
+				        $result_print[$dems][] = $item['sku'] . ':' . $item['quantity'];
+				    }
+			    }	
+			    $dems++;
+
+			}
+
+			$model->calculateCumulativeQuantities($data_result);
+
+			$data_result = $model->show_list_array_run($data_result);
 
 			echo "<pre>";
 				print_r($data_result);
