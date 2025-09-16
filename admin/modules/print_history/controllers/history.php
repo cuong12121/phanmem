@@ -493,6 +493,12 @@
 
 			$data_result = $model->show_list_array_run($data_result);
 
+			echo "<pre>";
+
+			print_r($data_result);
+
+			echo "</pre>";
+
 
 			// $pdf = new Fpdi();
 		    // $pageCount = $pdf->setSourceFile($input_pdf);
