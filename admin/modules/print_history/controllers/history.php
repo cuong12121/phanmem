@@ -438,70 +438,10 @@
 			$model = $this -> model;
 
 			
-			$json = [
-			    [
-			        [
-			            'sku' => '425Y-BK-00',
-			            'quantity' => 1,
-			            'sku_full' => '425Y-BK-00',
-			            'sku_full_check' => '425Y-BK-00',
-			        ]
-			    ],
-			    [
-			        [
-			            'sku' => '060C-BK-00',
-			            'quantity' => 1,
-			            'sku_full' => '060C-BK-00',
-			            'sku_full_check' => '060C-BK-00',
-			        ]
-			    ],
-			    [
-			        [
-			            'sku' => '425Y-BK-00',
-			            'quantity' => 1,
-			            'sku_full' => '425Y-BK-00',
-			            'sku_full_check' => '425Y-BK-00',
-			        ]
-			    ],
-			    [
-			        [
-			            'sku' => '360H-BK-00',
-			            'quantity' => 1,
-			            'sku_full' => '360H-BK-00',
-			            'sku_full_check' => '360H-BK-00',
-			        ]
-			    ],
-			    [
-			        [
-			            'sku' => '558G-MT-00',
-			            'quantity' => 1,
-			            'sku_full' => '558G-MT-00',
-			            'sku_full_check' => '558G-MT-00',
-			        ],
-			        [
-			            'sku' => 'B560-XT-05',
-			            'quantity' => 1,
-			            'sku_full' => 'B560-XT-05',
-			            'sku_full_check' => 'B560-XT-05',
-			        ]
-			    ],
-			    [
-			    	[
-			            'sku' => '360H-BK-00',
-			            'quantity' => 1,
-			            'sku_full' => '360H-BK-00',
-			            'sku_full_check' => '360H-BK-00',
-			        ]
-			    ], // phần tử rỗng
-			    [
-			        [
-			            'sku' => '751A-BL-00',
-			            'quantity' => 1,
-			            'sku_full' => '751A-BL-00',
-			            'sku_full_check' => '751A-BL-00',
-			        ]
-			    ]
-			];
+			$json = file_get_contents('https://drive.phanmemttp.xyz/pythonAI/data.json');
+
+			$json = json_decode($json, true);
+
 
 			$data_result = $json;  
 
@@ -553,9 +493,47 @@
 
 			$data_result = $model->show_list_array_run($data_result);
 
-			echo "<pre>";
-				print_r($data_result);
-			echo "</pre>";	
+
+			// $pdf = new Fpdi();
+		    // $pageCount = $pdf->setSourceFile($input_pdf);
+
+		    // $extra_height = 45; // khoảng trắng thêm phía dưới
+
+		    // for ($i = 1; $i <= $pageCount; $i++) {
+		    //     $tplId = $pdf->importPage($i);
+		    //     $size = $pdf->getTemplateSize($tplId);
+
+		    //     $width = $size['width'];
+		    //     $height = $size['height'];
+		    //     $new_height = $height + $extra_height;
+
+		    //     // Tạo trang mới với chiều cao tăng thêm
+		    //     $pdf->AddPage('P', [$width, $new_height]);
+
+		    //     // Vẽ template cũ dịch lên trên
+		    //     $pdf->useTemplate($tplId, 0, 0, $width, $height);
+
+		    //     // Set font
+		    //     $pdf->SetFont('Arial', '', 10);
+
+		    //     // Vẽ text trong vùng extra_height (tức phần trắng mới)
+		    //     $page_num_text = $i . "/" . $pageCount;
+
+		    //     $pdf->SetXY(10, $height); 
+		    //     $pdf->Write(5, $footer_text);
+
+		    //     $pdf->SetXY(10, $height+8); 
+		    //     $pdf->Write(5, $footer_text);
+
+		    //     $pdf->SetXY(10, $height + 16); 
+		    //     $pdf->Write(5, $page_num_text);
+		    // }
+
+		    // $pdf->Output('F', $output_pdf);
+
+			// echo "<pre>";
+			// 	print_r($data_result);
+			// echo "</pre>";	
 
 			
 		
