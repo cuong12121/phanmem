@@ -437,93 +437,64 @@
 		{
 			$model = $this -> model;
 
-			$json = Array
-			(
-			    [0] => Array
-			        (
-			            [0] => Array
-			                (
-			                    [sku] => 425Y-BK-00
-			                    [quantity] => 1
-			                    [sku_full] => 425Y-BK-00
-			                    [sku_full_check] => 425Y-BK-00
-			                )
-
-			        )
-
-			    [1] => Array
-			        (
-			            [0] => Array
-			                (
-			                    [sku] => 060C-BK-00
-			                    [quantity] => 1
-			                    [sku_full] => 060C-BK-00
-			                    [sku_full_check] => 060C-BK-00
-			                )
-
-			        )
-
-			    [2] => Array
-			        (
-			            [0] => Array
-			                (
-			                    [sku] => 425Y-BK-00
-			                    [quantity] => 1
-			                    [sku_full] => 425Y-BK-00
-			                    [sku_full_check] => 425Y-BK-00
-			                )
-
-			        )
-
-			    [3] => Array
-			        (
-			            [0] => Array
-			                (
-			                    [sku] => 360H-BK-00
-			                    [quantity] => 1
-			                    [sku_full] => 360H-BK-00
-			                    [sku_full_check] => 360H-BK-00
-			                )
-
-			        )
-
-			    [4] => Array
-			        (
-			            [0] => Array
-			                (
-			                    [sku] => 558G-MT-00
-			                    [quantity] => 1
-			                    [sku_full] => 558G-MT-00
-			                    [sku_full_check] => 558G-MT-00
-			                )
-
-			            [1] => Array
-			                (
-			                    [sku] => B560-XT-05
-			                    [quantity] => 1
-			                    [sku_full] => B560-XT-05
-			                    [sku_full_check] => B560-XT-05
-			                )
-
-			        )
-
-			    [5] => Array
-			        (
-			        )
-
-			    [6] => Array
-			        (
-			            [0] => Array
-			                (
-			                    [sku] => 751A-BL-00
-			                    [quantity] => 1
-			                    [sku_full] => 751A-BL-00
-			                    [sku_full_check] => 751A-BL-00
-			                )
-
-			        )
-
-			);
+			
+			$json = [
+			    [
+			        [
+			            'sku' => '425Y-BK-00',
+			            'quantity' => 1,
+			            'sku_full' => '425Y-BK-00',
+			            'sku_full_check' => '425Y-BK-00',
+			        ]
+			    ],
+			    [
+			        [
+			            'sku' => '060C-BK-00',
+			            'quantity' => 1,
+			            'sku_full' => '060C-BK-00',
+			            'sku_full_check' => '060C-BK-00',
+			        ]
+			    ],
+			    [
+			        [
+			            'sku' => '425Y-BK-00',
+			            'quantity' => 1,
+			            'sku_full' => '425Y-BK-00',
+			            'sku_full_check' => '425Y-BK-00',
+			        ]
+			    ],
+			    [
+			        [
+			            'sku' => '360H-BK-00',
+			            'quantity' => 1,
+			            'sku_full' => '360H-BK-00',
+			            'sku_full_check' => '360H-BK-00',
+			        ]
+			    ],
+			    [
+			        [
+			            'sku' => '558G-MT-00',
+			            'quantity' => 1,
+			            'sku_full' => '558G-MT-00',
+			            'sku_full_check' => '558G-MT-00',
+			        ],
+			        [
+			            'sku' => 'B560-XT-05',
+			            'quantity' => 1,
+			            'sku_full' => 'B560-XT-05',
+			            'sku_full_check' => 'B560-XT-05',
+			        ]
+			    ],
+			    [], // phần tử rỗng
+			    [
+			        [
+			            'sku' => '751A-BL-00',
+			            'quantity' => 1,
+			            'sku_full' => '751A-BL-00',
+			            'sku_full_check' => '751A-BL-00',
+			        ]
+			    ]
+			];
 
 			$data_result = $json;  
 
