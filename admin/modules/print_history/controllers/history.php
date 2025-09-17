@@ -16,6 +16,8 @@
 	use Smalot\PdfParser\Parser;
 	use PhpOffice\PhpSpreadsheet\IOFactory;
 
+	use setasign\Fpdi\PdfParser\StreamReader;
+
 	class Print_historyControllersHistory extends Controllers
 	{
 		function __construct()
@@ -435,71 +437,153 @@
 
 		function clone_function_tiktok()
 		{
+
+			$datas = file_get_contents('https://drive.dienmayai.com/file_in_tiktok.php');
+
+			$data = json_decode($datas, true);
+					
 			$model = $this -> model;
 
-			
-			$json = file_get_contents('https://drive.phanmemttp.xyz/pythonAI/data.json');
+			for ($i=1; $i <= count($data); $i++) { 
 
-			$json = json_decode($json, true);
+				$indexs = $i-1;
 
+				$json = file_get_contents('https://drive.phanmemttp.xyz/pythonAI/data'.$i.'.json');
 
-			$data_result = $json;  
-
-			$result_print = [];
-
-			$dems=0;
+				$json = json_decode($json, true);
 
 
+				$data_result = $json;  
 
-			$result_print = [];
+				$result_print = [];
 
-			$dems=0;
+				$dems=0;
 
-			foreach ($data_result as &$group) {
-			    foreach ($group as &$item) {
-			    	$array_data = $this->combo_Return_code($item['sku_full_check']);
-			    	
 
-			        $item['combo'] = !empty($array_data) ? $array_data['list'] : '';
-			        $item['product_combo_code'] = !empty($array_data) ? $array_data['product_code'] : '';
-			        
-			        // $item['count_show_more'] = !empty($array_data['list']) ? count($array_data['list']) : 0;
-			    }
-			}
+				foreach ($data_result as &$group) {
+				    foreach ($group as &$item) {
+				    	$array_data = $this->combo_Return_code($item['sku_full_check']);
+				    	
 
-			foreach ($data_result as &$groups) {
-				
-			    foreach ($groups as &$item) {
-
-			    	if (is_array($item['combo']) && count($item['combo']) > 0) {
-			    		$sl_cb = $item['quantity'];
-				        foreach ($item['combo'] as $combo_item) {
-
-				            $combo_item = preg_replace_callback('/:(\d+)/', function($matches) use ($sl_cb) {
-							    return ':' . ($matches[1] * intval($sl_cb));
-							}, $combo_item);
-				            $result_print[$dems][] = $combo_item;
-
-				        }
-				    } else {
-				        $result_print[$dems][] = $item['sku'] . ':' . $item['quantity'];
+				        $item['combo'] = !empty($array_data) ? $array_data['list'] : '';
+				        $item['product_combo_code'] = !empty($array_data) ? $array_data['product_code'] : '';
+				        
+				        // $item['count_show_more'] = !empty($array_data['list']) ? count($array_data['list']) : 0;
 				    }
-			    }	
-			    $dems++;
+				}
 
+				foreach ($data_result as &$groups) {
+					
+				    foreach ($groups as &$item) {
+
+				    	if (is_array($item['combo']) && count($item['combo']) > 0) {
+				    		$sl_cb = $item['quantity'];
+					        foreach ($item['combo'] as $combo_item) {
+
+					            $combo_item = preg_replace_callback('/:(\d+)/', function($matches) use ($sl_cb) {
+								    return ':' . ($matches[1] * intval($sl_cb));
+								}, $combo_item);
+					            $result_print[$dems][] = $combo_item;
+
+					        }
+					    } else {
+					        $result_print[$dems][] = $item['sku'] . ':' . $item['quantity'];
+					    }
+				    }	
+				    $dems++;
+
+				}
+
+				$model->calculateCumulativeQuantities($data_result);
+
+				$data_result = $model->show_list_array_run($data_result);
+
+				$output_pdf = basename($data[$indexs]['file_pdf']).'_count_'.$i;
+
+				$url_pdf_get = 'https://drive.phanmemttp.xyz/'.$data[$indexs]['file_pdf'];
+
+				$pdfContent = file_get_contents($url_pdf_get);
+
+
+				$pdf = new Fpdi();
+
+				$pageCount = $pdf->setSourceFile(StreamReader::createByString($pdfContent));
+
+				$extra_height = 45; // khoảng trắng thêm phía dưới
+
+				for ($pageNo = 1; $pageNo <= $pageCount; $pageNo++) {
+			        $tplId = $pdf->importPage($i);
+			        $size = $pdf->getTemplateSize($tplId);
+
+			        $width = $size['width'];
+			        $height = $size['height'];
+			        $new_height = $height + $extra_height;
+
+			        $index_data = $pageNo - 1;
+				    $data_all = $data_result[$index_data];
+
+				    
+
+			        // Tạo trang mới với chiều cao tăng thêm
+			        $pdf->AddPage('P', [$width, $new_height]);
+
+			        // Vẽ template cũ dịch lên trên
+			        $pdf->useTemplate($tplId, 0, 0, $width, $height);
+
+			        // Set font
+			        $pdf->SetFont('Arial', '', 10);
+
+			        // Vẽ text trong vùng extra_height (tức phần trắng mới)
+			        $page_num_text = $i . "/" . $pageCount;
+
+			   
+
+			        for ($i = 0; $i < count($data_all); $i++) {
+
+				    	//phần ghi mã sản phẩm khi có combo hoặc có sản phẩm nhiều hơn 2
+				    	// if(count($result_print[$index_data])>1){
+
+				    	// 	foreach ($result_print[$index_data] as $keysss => $value) {
+				    	// 		$dong = $k[$keysss];
+				    	// 		$dong += 5;
+						//         $pdf->SetXY(105, $dong);
+				    	// 		$writes = $value;
+				    	// 		$pdf->Write(10, $writes);
+				    	// 	}	
+
+				    		
+				    	// }
+
+
+				    	// $pdf->SetFont('Arial', 'B', 14);
+				    	// $pdf->SetTextColor(0, 0, 0); // Màu đen
+
+				        $pdf->SetXY(10, $height+$i*8);
+				        $write = $data_result[$index_data][$i]['parent_index'] . '--' .
+				                 $data_result[$index_data][$i]['show_list'] . '==>' .
+				                 $data_result[$index_data][$i]['all'] . '--' .
+				                 $data_result[$index_data][$i]['all_to_sku'];
+				        $pdf->Write(10, $write);
+
+				        // if(!empty($data_result[$index_data][$i]['combo'] &&count($data_result[$index_data][$i]['combo'])>0)){
+				        // 	$in_cb = 'CB:'.$data_result[$index_data][$i]['product_combo_code'].':'.$data_result[$index_data][$i]['all_to_sku'];
+				        // 	$y_in = $i+1+intval(count($data_all));
+				        // 	$pdf->SetXY(105, $y[$y_in]);
+				        // 	$pdf->Write(10, $in_cb);
+				        // }
+				    }
+
+			        $pdf->SetXY(10, $height + 16); 
+			        $pdf->Write(5, $page_num_text);
+			    }
+
+			    $pdf->Output('F', $output_pdf);
+
+		    
 			}
 
-			$model->calculateCumulativeQuantities($data_result);
 
-			$data_result = $model->show_list_array_run($data_result);
-
-			echo "<pre>";
-
-			print_r($data_result);
-
-			echo "</pre>";
-
-
+			
 			// $pdf = new Fpdi();
 		    // $pageCount = $pdf->setSourceFile($input_pdf);
 
@@ -550,6 +634,7 @@
 			// echo'<pre>';
 			// 	print_r($data_result);
 			// echo'<pre>';
+				
 		
 
 		
