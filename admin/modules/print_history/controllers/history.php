@@ -511,7 +511,7 @@
 
 				$extra_height = 45; // khoảng trắng thêm phía dưới
 
-				for ($pageNo = 1; $pageNo <= $pageCount; $pageNo++) {
+				for ($pageNo = 1; $pageNo < $pageCount; $pageNo++) {
 			        $tplId = $pdf->importPage($i);
 			        $size = $pdf->getTemplateSize($tplId);
 
