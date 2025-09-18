@@ -440,7 +440,7 @@ $user_id = $_SESSION['ad_userid'];
                 </td>
                 <td>
                     <?php 
-                        if($user_id ==9 || $user_id ==207|| $user_id ==232){
+                        if($user_id ==9 || $user_id ==207|| $user_id ==232|| $user_id ==285){
 
                     ?>
                     <a title="Xóa" href="/admin/index.php?module=products&view=products&task=delete_product&product_id=<?= $value->id ?>" class="link_delete"><img border="0" alt="xóa" src="/admin/templates/default/images/toolbar/remove.png"></a></td>
