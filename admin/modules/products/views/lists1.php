@@ -430,7 +430,7 @@ $user_id = $_SESSION['ad_userid'];
                 <td><?= (int)$value->amount - (int)$product_sale ?></td>
                 <td>
                     <?php 
-                        if($user_id ==9 || $user_id ==207|| $user_id ==232){
+                        if($user_id ==9 || $user_id ==207|| $user_id ==232|| $user_id ==285){
 
                     ?>
                     <div class="wrap_list_pr"><a title="Sửa" href="/admin/product/edit/<?= $value->id ?>"><img border="0" alt="Sửa" src="/admin/templates/default/images/edit.png"></a></div>
