@@ -521,7 +521,7 @@
 			        // $height = $size['height'];
 			        // $new_height = $height + $extra_height;
 
-			        // $index_data = $pageNo - 1;
+			        $index_data = $pageNo - 1;
 				    $data_all = $data_result[$index_data];
 
 				    echo "<pre>";
