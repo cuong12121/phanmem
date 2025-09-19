@@ -541,12 +541,19 @@
 				        for ($z = 0; $z < count($data_all); $z++) {
 
 				        	$toado_y = $height+$z*8;
+				        	$addtd = 0;
+
+				        	if(count($data_all)>1){
+				        		$addtd = 10;
+				        	}
+
+				        	
 
 					    	//phần ghi mã sản phẩm khi có combo hoặc có sản phẩm nhiều hơn 2
 					    	if(count($result_print[$index_data])>1){
 
 					    		foreach ($result_print[$index_data] as $keysss => $value) {
-					    			$dong = 130+$keysss*4;
+					    			$dong = 130+$addtd+$keysss*5;
 				    				
 							        $pdf->SetXY(195, $dong);
 					    			$writes = $value;
@@ -560,7 +567,7 @@
 					    	// $pdf->SetFont('Arial', 'B', 14);
 					    	// $pdf->SetTextColor(0, 0, 0); // Màu đen
 
-					        $pdf->SetXY(10, 150);
+					        $pdf->SetXY(10, 150+$addtd+$z*5);
 					        $write = $data_result[$index_data][$z]['parent_index'] . '--' .
 					                 $data_result[$index_data][$z]['show_list'] . '==>' .
 					                 $data_result[$index_data][$z]['all'] . '--' .
@@ -575,18 +582,16 @@
 					        // }
 					    }
 					}    
-			        $pdf->SetXY(10, $height + 16); 
+			        $pdf->SetXY(10, $height+$addtd+ 16); 
 			        $pdf->Write(5, $page_num_text);
 			    }
 
 
 			    $pdf->Output('F', $output_pdf);
-
 		    
 			}
 
 
-			
 			// $pdf = new Fpdi();
 		    // $pageCount = $pdf->setSourceFile($input_pdf);
 
