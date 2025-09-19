@@ -559,12 +559,12 @@
 					    	// $pdf->SetFont('Arial', 'B', 14);
 					    	// $pdf->SetTextColor(0, 0, 0); // Màu đen
 
-					        $pdf->SetXY(10, $toado_y);
-					        $write = $data_result[$index_data][$z]['parent_index'] . '--' .
-					                 $data_result[$index_data][$z]['show_list'] . '==>' .
-					                 $data_result[$index_data][$z]['all'] . '--' .
-					                 $data_result[$index_data][$z]['all_to_sku'];
-					        $pdf->Write(10, $write);
+					        // $pdf->SetXY(10, $toado_y);
+					        // $write = $data_result[$index_data][$z]['parent_index'] . '--' .
+					        //          $data_result[$index_data][$z]['show_list'] . '==>' .
+					        //          $data_result[$index_data][$z]['all'] . '--' .
+					        //          $data_result[$index_data][$z]['all_to_sku'];
+					        // $pdf->Write(10, $write);
 
 					        // if(!empty($data_result[$index_data][$i]['combo'] &&count($data_result[$index_data][$i]['combo'])>0)){
 					        // 	$in_cb = 'CB:'.$data_result[$index_data][$i]['product_combo_code'].':'.$data_result[$index_data][$i]['all_to_sku'];
