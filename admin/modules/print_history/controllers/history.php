@@ -548,7 +548,7 @@
 					    		foreach ($result_print[$index_data] as $keysss => $value) {
 					    			$dong = $height+($keysss*3);
 				    				
-							        $pdf->SetXY(105, $toado_y);
+							        $pdf->SetXY(105, $dong);
 					    			$writes = $value;
 					    			$pdf->Write(10, $writes);
 					    		}	
