@@ -571,7 +571,7 @@
 					    	// $pdf->SetFont('Arial', 'B', 14);
 					    	// $pdf->SetTextColor(0, 0, 0); // Màu đen
 
-					        $pdf->SetXY(10, 150+$addtd+$z*$multi);
+					        $pdf->SetXY(10, 150+$addtd+$z*2);
 					        $write = $data_result[$index_data][$z]['parent_index'] . '--' .
 					                 $data_result[$index_data][$z]['show_list'] . '==>' .
 					                 $data_result[$index_data][$z]['all'] . '--' .
