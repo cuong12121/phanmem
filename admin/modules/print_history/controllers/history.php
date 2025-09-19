@@ -546,7 +546,7 @@
 					    	if(count($result_print[$index_data])>1){
 
 					    		foreach ($result_print[$index_data] as $keysss => $value) {
-					    			$dong = $height+($keysss*3);
+					    			$dong = $height+($keysss*8);
 				    				
 							        $pdf->SetXY(195, $dong);
 					    			$writes = $value;
@@ -575,8 +575,8 @@
 					        // }
 					    }
 					}    
-			        // $pdf->SetXY(10, $height + 16); 
-			        // $pdf->Write(5, $page_num_text);
+			        $pdf->SetXY(0, $height + 16); 
+			        $pdf->Write(5, $page_num_text);
 			    }
 
 
