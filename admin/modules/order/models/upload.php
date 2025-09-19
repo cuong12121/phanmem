@@ -1792,6 +1792,21 @@
 					$InputFile  = PATH_BASE.'files/orders/'.$cyear.'/'.$cmonth.'/'.$cday.'/'.$item_file_pdf_name;
 
 
+					
+					// Sửa lại tên file không cho nhập ký tự đặc biệt
+
+					$files_convert_name_pdf = $this->convert_name_file($item_file_pdf_name);
+
+
+					if($item_file_pdf_name != $files_convert_name_pdf){
+
+						$msg1 = 'File pdf trong tên có ký tự đặc biệt, vui lòng tìm và sửa lại' ;
+
+						setRedirect($link,$msg,'error');
+						return false;
+					};
+
+
 					// Kiểm tra có quyền đọc
 					if (!is_readable($InputFile)) {
 					   
@@ -1808,9 +1823,8 @@
 						return false;
 					}
 
-					// Sửa lại tên file không cho nhập ký tự đặc biệt
 
-					$files_convert_name_pdf = $this->convert_name_file($item_file_pdf_name);
+
 
 					$OutputFile = PATH_BASE.'files/orders/'.$cyear.'/'.$cmonth.'/'.$cday.'/'.str_replace('.pdf','_cv.pdf',$files_convert_name_pdf);
 					
