@@ -1802,7 +1802,7 @@
 
 						$msg1 = 'File pdf trong tên có ký tự đặc biệt, vui lòng tìm và sửa lại' ;
 
-						setRedirect($link,$msg,'error');
+						setRedirect($link,$msg1,'error');
 						return false;
 					};
 
