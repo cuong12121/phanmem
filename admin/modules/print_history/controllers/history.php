@@ -514,7 +514,7 @@
 				for ($pageNo = 1; $pageNo <= $pageCount; $pageNo++) {
 
 					
-			        $tplId = $pdf->importPage($i);
+			        $tplId = $pdf->importPage($pageNo);
 			        $size = $pdf->getTemplateSize($tplId);
 
 			        $width = $size['width'];
