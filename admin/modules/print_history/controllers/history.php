@@ -586,7 +586,7 @@
 					        // }
 					    }
 					}    
-			        $pdf->SetXY(10, 165); 
+			        $pdf->SetXY(10, 160); 
 			        $pdf->Write(5, $page_num_text);
 			    }
 
