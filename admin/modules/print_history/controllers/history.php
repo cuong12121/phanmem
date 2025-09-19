@@ -547,7 +547,7 @@
 				        	if(count($data_all)>1){
 				        		$addtd = 10;
 
-				        		$multi = 2.5;
+				        		$multi = 3.5;
 
 				        	}
 
