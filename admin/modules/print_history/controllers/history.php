@@ -540,12 +540,14 @@
 			        if(!empty($data_all)&& count($data_all)>0){
 				        for ($z = 0; $z < count($data_all); $z++) {
 
+				        	$toado_y = $height+$z*8;
+
 					    	//phần ghi mã sản phẩm khi có combo hoặc có sản phẩm nhiều hơn 2
 					    	if(count($result_print[$index_data])>1){
 
 					    		foreach ($result_print[$index_data] as $keysss => $value) {
 					    			
-							        $pdf->SetXY(85, $height+$z*8);
+							        $pdf->SetXY(85, $toado_y);
 					    			$writes = $value;
 					    			$pdf->Write(10, $writes);
 					    		}	
@@ -557,7 +559,7 @@
 					    	// $pdf->SetFont('Arial', 'B', 14);
 					    	// $pdf->SetTextColor(0, 0, 0); // Màu đen
 
-					        $pdf->SetXY(10, $height+$z*8);
+					        $pdf->SetXY(10, $toado_y);
 					        $write = $data_result[$index_data][$z]['parent_index'] . '--' .
 					                 $data_result[$index_data][$z]['show_list'] . '==>' .
 					                 $data_result[$index_data][$z]['all'] . '--' .
