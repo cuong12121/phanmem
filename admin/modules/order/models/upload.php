@@ -1791,6 +1791,23 @@
 					//chuyển file pdf về 1.4(thì thư viện mới cắt và ghép đc)
 					$InputFile  = PATH_BASE.'files/orders/'.$cyear.'/'.$cmonth.'/'.$cday.'/'.$item_file_pdf_name;
 
+
+					// Kiểm tra có quyền đọc
+					if (!is_readable($InputFile)) {
+					    $link = FSRoute::_('index.php?module=order&view=upload&task=edit&id='.$id);
+						$msg1 = 'File pdf đơn hàng bị lỗi vui lòng kiểm tra lại' ;
+						setRedirect($link,$msg1,'error');
+						return false;
+					}
+
+					// Kiểm tra dung lượng > 0
+					if (filesize($InputFile) === 0) {
+					    $link = FSRoute::_('index.php?module=order&view=upload&task=edit&id='.$id);
+						$msg1 = 'File pdf đơn hàng bị lỗi(rỗng file) vui lòng kiểm tra lại' ;
+						setRedirect($link,$msg1,'error');
+						return false;
+					}
+
 					// Sửa lại tên file không cho nhập ký tự đặc biệt
 
 					$files_convert_name_pdf = $this->convert_name_file($item_file_pdf_name);
