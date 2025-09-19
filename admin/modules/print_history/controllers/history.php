@@ -546,9 +546,11 @@
 					    	if(count($result_print[$index_data])>1){
 
 					    		foreach ($result_print[$index_data] as $keysss => $value) {
-								    $pdf->SetXY(85, $toado_y + ($keysss * 8)); // Mỗi item cách 8px
-								    $pdf->Write(10, $value);
-								}	
+					    			
+							        $pdf->SetXY(105, $toado_y);
+					    			$writes = $value;
+					    			$pdf->Write(10, $writes);
+					    		}	
 
 					    		
 					    	}
