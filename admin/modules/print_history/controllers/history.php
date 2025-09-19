@@ -547,7 +547,7 @@
 				        	if(count($data_all)>1){
 				        		$addtd = 10;
 
-				        		$multi = 4;
+				        		$multi = 6;
 
 				        	}
 
@@ -586,7 +586,7 @@
 					        // }
 					    }
 					}    
-			        $pdf->SetXY(10, 160+$z*2); 
+			        $pdf->SetXY(10, 165+$z*2); 
 			        $pdf->Write(5, $page_num_text);
 			    }
 
