@@ -498,7 +498,7 @@
 
 				$data_result = $model->show_list_array_run($data_result);
 
-				$output_pdf = basename($data[$indexs]['file_pdf']).'_count_'.$i;
+				$output_pdf = PATH_BASE.'/_count_'.$i.'/'basename($data[$indexs]['file_pdf']);
 
 				$url_pdf_get = 'https://drive.phanmemttp.xyz/'.$data[$indexs]['file_pdf'];
 
