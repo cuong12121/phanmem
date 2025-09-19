@@ -660,11 +660,12 @@
 			// xóa các file cũ trong thư mục cho nhẹ server
 			$path_remove_file = PATH_ADMINISTRATOR.DS.'export'.DS.'excel'.DS.'order_item'.DS;
 
-			if (file_exists($path_remove_file)) {
-				array_map('unlink', array_filter(
+			if (is_file($path_remove_file) && file_exists($path_remove_file)) {
+			    array_map('unlink', array_filter(
 	       		(array) array_merge(glob($path_remove_file."*"))));
 			}
 
+			
 			FSFactory::include_class('excel','excel');
 			
 			$filename = 'FILE_NHAT'.$this->file_export_name;
