@@ -537,42 +537,42 @@
 			        $page_num_text = $i . "/" . $pageCount;
 
 			   
+			        if(!empty($data_all)&& count($data_all)>0){
+				        for ($i = 0; $i < count($data_all); $i++) {
 
-			        for ($i = 0; $i < count($data_all); $i++) {
+					    	//phần ghi mã sản phẩm khi có combo hoặc có sản phẩm nhiều hơn 2
+					    	// if(count($result_print[$index_data])>1){
 
-				    	//phần ghi mã sản phẩm khi có combo hoặc có sản phẩm nhiều hơn 2
-				    	// if(count($result_print[$index_data])>1){
+					    	// 	foreach ($result_print[$index_data] as $keysss => $value) {
+					    	// 		$dong = $k[$keysss];
+					    	// 		$dong += 5;
+							//         $pdf->SetXY(105, $dong);
+					    	// 		$writes = $value;
+					    	// 		$pdf->Write(10, $writes);
+					    	// 	}	
 
-				    	// 	foreach ($result_print[$index_data] as $keysss => $value) {
-				    	// 		$dong = $k[$keysss];
-				    	// 		$dong += 5;
-						//         $pdf->SetXY(105, $dong);
-				    	// 		$writes = $value;
-				    	// 		$pdf->Write(10, $writes);
-				    	// 	}	
-
-				    		
-				    	// }
+					    		
+					    	// }
 
 
-				    	// $pdf->SetFont('Arial', 'B', 14);
-				    	// $pdf->SetTextColor(0, 0, 0); // Màu đen
+					    	// $pdf->SetFont('Arial', 'B', 14);
+					    	// $pdf->SetTextColor(0, 0, 0); // Màu đen
 
-				        $pdf->SetXY(10, $height+$i*8);
-				        $write = $data_result[$index_data][$i]['parent_index'] . '--' .
-				                 $data_result[$index_data][$i]['show_list'] . '==>' .
-				                 $data_result[$index_data][$i]['all'] . '--' .
-				                 $data_result[$index_data][$i]['all_to_sku'];
-				        $pdf->Write(10, $write);
+					        $pdf->SetXY(10, $height+$i*8);
+					        $write = $data_result[$index_data][$i]['parent_index'] . '--' .
+					                 $data_result[$index_data][$i]['show_list'] . '==>' .
+					                 $data_result[$index_data][$i]['all'] . '--' .
+					                 $data_result[$index_data][$i]['all_to_sku'];
+					        $pdf->Write(10, $write);
 
-				        // if(!empty($data_result[$index_data][$i]['combo'] &&count($data_result[$index_data][$i]['combo'])>0)){
-				        // 	$in_cb = 'CB:'.$data_result[$index_data][$i]['product_combo_code'].':'.$data_result[$index_data][$i]['all_to_sku'];
-				        // 	$y_in = $i+1+intval(count($data_all));
-				        // 	$pdf->SetXY(105, $y[$y_in]);
-				        // 	$pdf->Write(10, $in_cb);
-				        // }
-				    }
-
+					        // if(!empty($data_result[$index_data][$i]['combo'] &&count($data_result[$index_data][$i]['combo'])>0)){
+					        // 	$in_cb = 'CB:'.$data_result[$index_data][$i]['product_combo_code'].':'.$data_result[$index_data][$i]['all_to_sku'];
+					        // 	$y_in = $i+1+intval(count($data_all));
+					        // 	$pdf->SetXY(105, $y[$y_in]);
+					        // 	$pdf->Write(10, $in_cb);
+					        // }
+					    }
+					}    
 			        $pdf->SetXY(10, $height + 16); 
 			        $pdf->Write(5, $page_num_text);
 			    }
