@@ -546,6 +546,8 @@
 					    	if(count($result_print[$index_data])>1){
 
 					    		foreach ($result_print[$index_data] as $keysss => $value) {
+					    			$dong = $k[$keysss];
+				    				$dong += 8;
 					    			
 							        $pdf->SetXY(105, $toado_y);
 					    			$writes = $value;
