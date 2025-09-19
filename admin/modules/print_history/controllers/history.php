@@ -542,9 +542,13 @@
 
 				        	$toado_y = $height+$z*8;
 				        	$addtd = 0;
+				        	$multi = 5;
 
 				        	if(count($data_all)>1){
 				        		$addtd = 10;
+
+				        		$multi = 2;
+
 				        	}
 
 				        	
