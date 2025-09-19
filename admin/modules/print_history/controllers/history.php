@@ -511,9 +511,9 @@
 
 				$extra_height = 45; // khoảng trắng thêm phía dưới
 
-				for ($pageNo = 1; $pageNo < $pageCount; $pageNo++) {
+				for ($pageNo = 1; $pageNo <= $pageCount; $pageNo++) {
 
-					echo $pageNo;
+					// echo $pageNo;
 			        // $tplId = $pdf->importPage($i);
 			        // $size = $pdf->getTemplateSize($tplId);
 
@@ -522,7 +522,13 @@
 			        // $new_height = $height + $extra_height;
 
 			        // $index_data = $pageNo - 1;
-				    // $data_all = $data_result[$index_data];
+				    $data_all = $data_result[$index_data];
+
+				    echo "<pre>";
+
+				    print_r($data_all);
+
+				    echo "</pre>";
 
 				    
 
