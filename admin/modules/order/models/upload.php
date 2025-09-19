@@ -1794,16 +1794,16 @@
 
 					// Kiểm tra có quyền đọc
 					if (!is_readable($InputFile)) {
-					    $link = FSRoute::_('index.php?module=order&view=upload&task=edit&id='.$id);
-						$msg1 = 'File pdf đơn hàng bị lỗi vui lòng kiểm tra lại' ;
+					   
+						$msg1 = 'File pdf đơn hàng bị lỗi, vui lòng kiểm tra lại' ;
 						setRedirect($link,$msg1,'error');
 						return false;
 					}
 
 					// Kiểm tra dung lượng > 0
 					if (filesize($InputFile) === 0) {
-					    $link = FSRoute::_('index.php?module=order&view=upload&task=edit&id='.$id);
-						$msg1 = 'File pdf đơn hàng bị lỗi(rỗng file) vui lòng kiểm tra lại' ;
+					    
+						$msg1 = 'File pdf đơn hàng bị lỗi(rỗng file), vui lòng kiểm tra lại' ;
 						setRedirect($link,$msg1,'error');
 						return false;
 					}
