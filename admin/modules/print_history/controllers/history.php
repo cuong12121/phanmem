@@ -547,7 +547,7 @@
 				        	if(count($data_all)>1){
 				        		$addtd = 10;
 
-				        		$multi = 2;
+				        		$multi = 2.5;
 
 				        	}
 
@@ -557,7 +557,7 @@
 					    	if(count($result_print[$index_data])>1){
 
 					    		foreach ($result_print[$index_data] as $keysss => $value) {
-					    			$dong = 130+$addtd+$keysss*5;
+					    			$dong = 130+$addtd+$keysss*$multi;
 				    				
 							        $pdf->SetXY(195, $dong);
 					    			$writes = $value;
@@ -571,7 +571,7 @@
 					    	// $pdf->SetFont('Arial', 'B', 14);
 					    	// $pdf->SetTextColor(0, 0, 0); // Màu đen
 
-					        $pdf->SetXY(10, 150+$addtd+$z*5);
+					        $pdf->SetXY(10, 150+$addtd+$z*$multi);
 					        $write = $data_result[$index_data][$z]['parent_index'] . '--' .
 					                 $data_result[$index_data][$z]['show_list'] . '==>' .
 					                 $data_result[$index_data][$z]['all'] . '--' .
