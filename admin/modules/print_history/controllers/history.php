@@ -584,6 +584,7 @@
 			        // $pdf->SetXY(10, $height + 16); 
 			        // $pdf->Write(5, $page_num_text);
 			    }
+			    die;
 
 			    // $pdf->Output('F', $output_pdf);
 
