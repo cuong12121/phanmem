@@ -541,18 +541,17 @@
 				        for ($z = 0; $z < count($data_all); $z++) {
 
 					    	//phần ghi mã sản phẩm khi có combo hoặc có sản phẩm nhiều hơn 2
-					    	// if(count($result_print[$index_data])>1){
+					    	if(count($result_print[$index_data])>1){
 
-					    	// 	foreach ($result_print[$index_data] as $keysss => $value) {
-					    	// 		$dong = $k[$keysss];
-					    	// 		$dong += 5;
-							//         $pdf->SetXY(105, $dong);
-					    	// 		$writes = $value;
-					    	// 		$pdf->Write(10, $writes);
-					    	// 	}	
+					    		foreach ($result_print[$index_data] as $keysss => $value) {
+					    			
+							        $pdf->SetXY(85, $height+$z*8);
+					    			$writes = $value;
+					    			$pdf->Write(10, $writes);
+					    		}	
 
 					    		
-					    	// }
+					    	}
 
 
 					    	// $pdf->SetFont('Arial', 'B', 14);
