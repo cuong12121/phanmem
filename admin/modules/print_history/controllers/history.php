@@ -509,7 +509,7 @@
 
 				$pageCount = $pdf->setSourceFile(StreamReader::createByString($pdfContent));
 
-				$extra_height = 54; // khoảng trắng thêm phía dưới
+				$extra_height = 58; // khoảng trắng thêm phía dưới
 
 				for ($pageNo = 1; $pageNo <= $pageCount; $pageNo++) {
 
@@ -586,7 +586,7 @@
 					        // }
 					    }
 					}    
-			        $pdf->SetXY(10, 170+$z*2); 
+			        $pdf->SetXY(10, 175+$z*2); 
 			        $pdf->Write(5, $page_num_text);
 			    }
 
