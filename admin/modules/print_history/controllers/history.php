@@ -1501,7 +1501,7 @@
 		$link = $data-> file_pdf_dem;
 
 		if (strpos($link, "https://dienmayai.com") === false) {
-		    $link = "https://dienmayai.com/" . ltrim($str, "/");
+		    $link = "https://dienmayai.com/" . ltrim($link, "/");
 		}
 
 		
