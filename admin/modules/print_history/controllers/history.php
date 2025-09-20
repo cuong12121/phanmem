@@ -438,7 +438,7 @@
 		function clone_function_tiktok()
 		{
 			global $db;
-			
+
 			$datas = file_get_contents('https://drive.dienmayai.com/file_in_tiktok.php');
 
 			$data = json_decode($datas, true);
@@ -1498,18 +1498,11 @@
 		$model = $controle -> model;
 		$data = $model->get_record('id = ' .$id,'fs_order_uploads_history_prints','id,file_pdf_dem, platform_id');
 
-		$define = '';
-
-		if($data->platform_id==9){
-			$url = 'http://drive.phanmemttp.xyz/';
-			$define = '(Bản in update)';
-		}
-		else{
-			$url = URL_ROOT;
-		}
+		
+		
 		$link = $url.$data-> file_pdf_dem;
 
-		$check = !empty($data-> file_pdf_dem)?'<a target="_blink" href="' . $link . '">Xem file'.$define.'</a>':'';
+		$check = !empty($data-> file_pdf_dem)?'<a target="_blink" href="' . $link . '">Xem file</a>':'';
 
 		
 		return $check;
