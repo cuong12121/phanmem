@@ -1838,6 +1838,10 @@
 
 						$timkitudb = $this->define_convert_name_file($item_file_pdf_name);
 
+						print_r($timkitudb);
+
+						die;
+
 
 						$msg1= "File pdf trong tên có ký tự: " . implode(', ', $timkitudb['removed']) . " vui lòng xóa ký tự đó";
 
