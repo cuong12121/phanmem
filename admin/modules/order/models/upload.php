@@ -1862,14 +1862,6 @@
 						return false;
 					}
 
-					echo "thành công";
-
-					die;
-
-
-
-
-
 					$OutputFile = PATH_BASE.'files/orders/'.$cyear.'/'.$cmonth.'/'.$cday.'/'.str_replace('.pdf','_cv.pdf',$files_convert_name_pdf);
 					
 					$text_pdf_check = $this->showPDFText($InputFile);
