@@ -1804,6 +1804,9 @@
 
 						setRedirect($link,$msg1,'error');
 						return false;
+					}
+					else{
+						echo "file đơn hàng k bị lỗi";
 					};
 
 					die;
