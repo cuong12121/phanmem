@@ -1,7 +1,7 @@
 <?php
 
 // // Lấy thời gian hiện tại
-// $now = new DateTime('now', new DateTimeZone('Asia/Ho_Chi_Minh')); // Đặt múi giờ Việt Nam
+$now = new DateTime('now', new DateTimeZone('Asia/Ho_Chi_Minh')); // Đặt múi giờ Việt Nam
 
 // Thời điểm 0h00 ngày 31/3/2025
 $mocThoiGian = new DateTime('2025-09-20 23:00:00', new DateTimeZone('Asia/Ho_Chi_Minh'));
