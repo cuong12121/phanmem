@@ -1836,7 +1836,7 @@
 
 					if($item_file_pdf_name != $files_convert_name_pdf){
 
-						$timkitudb = $this->define_convert_name_file($item_file_pdf_name);
+						$timkitudb = $this->define_convert_name_file($files_convert_name_pdf);
 
 						print_r($timkitudb);
 
