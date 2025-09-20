@@ -1798,30 +1798,34 @@
 					$files_convert_name_pdf = $this->convert_name_file($item_file_pdf_name);
 
 
-					// if($item_file_pdf_name != $files_convert_name_pdf){
+					if($item_file_pdf_name != $files_convert_name_pdf){
 
-					// 	$msg1 = 'File pdf trong tên có ký tự đặc biệt, vui lòng tìm và sửa lại' ;
+						$msg1 = 'File pdf trong tên có ký tự đặc biệt, vui lòng tìm và sửa lại' ;
 
-					// 	setRedirect($link,$msg1,'error');
-					// 	return false;
-					// };
+						setRedirect($link,$msg1,'error');
+						return false;
+					};
+
+					die;
 
 
-					// // Kiểm tra có quyền đọc
-					// if (!is_readable($InputFile)) {
+
+					// Kiểm tra có quyền đọc
+					if (!is_readable($InputFile)) {
 					   
-					// 	$msg1 = 'File pdf đơn hàng bị lỗi, vui lòng kiểm tra lại' ;
-					// 	setRedirect($link,$msg1,'error');
-					// 	return false;
-					// }
+						$msg1 = 'File pdf đơn hàng bị lỗi, vui lòng kiểm tra lại' ;
+						setRedirect($link,$msg1,'error');
+						return false;
+					}
 
-					// // Kiểm tra dung lượng > 0
-					// if (filesize($InputFile) === 0) {
+					// Kiểm tra dung lượng > 0
+					if (filesize($InputFile) === 0) {
 					    
-					// 	$msg1 = 'File pdf đơn hàng bị lỗi(rỗng file), vui lòng kiểm tra lại' ;
-					// 	setRedirect($link,$msg1,'error');
-					// 	return false;
-					// }
+						$msg1 = 'File pdf đơn hàng bị lỗi(rỗng file), vui lòng kiểm tra lại' ;
+						setRedirect($link,$msg1,'error');
+						return false;
+					}
+
 
 
 
