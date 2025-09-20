@@ -1839,7 +1839,7 @@
 
 						
 
-						$msg1= "File pdf trong tên có ký tự: " . $result['removed_string'] . PHP_EOL.' vui lòng xóa ký tự đó';
+						$msg1= "File pdf trong tên có ký tự: " . $timkitudb['removed_string'] . PHP_EOL.' vui lòng xóa ký tự đó';
 
 						
 						setRedirect($link,$msg1,'error');
