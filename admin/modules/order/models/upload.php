@@ -1639,6 +1639,39 @@
 		    return $str;
 		}
 
+		function define_convert_name_file($str)
+		{
+		    // Bước 1: Chuyển tiếng Việt có dấu thành không dấu
+		    $original = $str;
+		    $str = iconv('UTF-8', 'ASCII//TRANSLIT//IGNORE', $str);
+
+		    // Regex: cho phép chữ, số, khoảng trắng, dấu chấm, gạch dưới
+		    $allowedPattern = '/[a-zA-Z0-9\s\._]/';
+
+		    $removedChars = [];
+		    $converted = '';
+
+		    // Lặp từng ký tự để biết ký tự nào bị xóa
+		    $len = mb_strlen($str, 'UTF-8');
+		    for ($i = 0; $i < $len; $i++) {
+		        $ch = mb_substr($str, $i, 1, 'UTF-8');
+		        if (preg_match($allowedPattern, $ch)) {
+		            $converted .= $ch;
+		        } else {
+		            $removedChars[] = $ch;
+		        }
+		    }
+
+		    // Xoá khoảng trắng thừa 2 bên
+		    $converted = trim($converted);
+
+		    return [
+		        'original' => $original,
+		        'converted' => $converted,
+		        'removed' => array_unique($removedChars) // loại bỏ ký tự trùng lặp
+		    ];
+		}
+
 		function return_path_array($input)
 		{
 
@@ -1798,10 +1831,17 @@
 					$files_convert_name_pdf = $this->convert_name_file($item_file_pdf_name);
 
 
+
+
 					if($item_file_pdf_name != $files_convert_name_pdf){
 
-						$msg1 = 'File pdf trong tên có ký tự đặc biệt, vui lòng tìm và sửa lại' ;
+						$timkitudb = $this->define_convert_name_file($item_file_pdf_name);
 
+						
+
+						$msg1= "File pdf trong tên có ký tự: " . $result['removed_string'] . PHP_EOL.' vui lòng xóa ký tự đó';
+
+						
 						setRedirect($link,$msg1,'error');
 						return false;
 					}
