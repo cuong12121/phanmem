@@ -1643,6 +1643,7 @@
 		{
 		    // Bước 1: Chuyển tiếng Việt có dấu thành không dấu
 		    $original = $str;
+		    $str = trim($str);
 		    $str = iconv('UTF-8', 'ASCII//TRANSLIT//IGNORE', $str);
 
 		    // Regex: cho phép chữ, số, khoảng trắng, dấu chấm, gạch dưới
