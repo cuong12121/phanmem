@@ -1844,14 +1844,7 @@
 						setRedirect($link,$msg1,'error');
 						return false;
 					}
-					else{
-						echo "file đơn hàng k bị lỗi";
-					};
-
-					die;
-
-
-
+					
 					// Kiểm tra có quyền đọc
 					if (!is_readable($InputFile)) {
 					   
@@ -1867,6 +1860,10 @@
 						setRedirect($link,$msg1,'error');
 						return false;
 					}
+
+					echo "thành công";
+
+					die;
 
 
 
