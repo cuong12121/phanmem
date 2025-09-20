@@ -1837,13 +1837,8 @@
 
 						$timkitudb = $this->define_convert_name_file($item_file_pdf_name);
 
-						var_dump($timkitudb);
 
-						die;
-
-						
-
-						$msg1= "File pdf trong tên có ký tự: " . $timkitudb['removed_string'] . PHP_EOL.' vui lòng xóa ký tự đó';
+						$msg1= "File pdf trong tên có ký tự: " . implode(' ', $timkitudb['removed']) . "\n".' vui lòng xóa ký tự đó';
 
 						
 						setRedirect($link,$msg1,'error');
