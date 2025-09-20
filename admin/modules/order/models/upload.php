@@ -1838,7 +1838,7 @@
 
 						$timkitudb = $this->define_convert_name_file($files_convert_name_pdf);
 
-						print_r($path);
+						print_r($_FILES["file_pdf"]["name"]);
 
 						die;
 
