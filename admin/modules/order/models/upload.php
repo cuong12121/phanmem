@@ -1810,7 +1810,7 @@
 					$timkitudb = $this->define_convert_name_file($value);
 
 					if(!empty($timkitudb['removed'])){
-						$msg1= "File pdf trong tên có ký tự: " . implode(', ', $timkitudb['removed']) . " vui lòng xóa ký tự đó";
+						$msg1= "File pdf trong tên có ký tự: " . implode(', ', $timkitudb['removed']) . " vui lòng xóa ký tự đó trong tên file";
 
 						
 						setRedirect($link,$msg1,'error');
