@@ -437,12 +437,15 @@
 
 		function clone_function_tiktok()
 		{
-
+			global $db;
+			
 			$datas = file_get_contents('https://drive.dienmayai.com/file_in_tiktok.php');
 
 			$data = json_decode($datas, true);
 					
 			$model = $this -> model;
+
+			$date_now = date("Y/m/d");  
 
 			for ($i=1; $i <= count($data); $i++) { 
 
@@ -497,8 +500,9 @@
 				$model->calculateCumulativeQuantities($data_result);
 
 				$data_result = $model->show_list_array_run($data_result);
+				
 
-				$output_pdf = PATH_BASE.'/_count_'.$i.'_'.basename($data[$indexs]['file_pdf']);
+				$output_pdf = PATH_BASE.'/files/print/tiktok/'.$date_now.'_count_'.$i.'_'.basename($data[$indexs]['file_pdf']);
 
 				$url_pdf_get = 'https://drive.phanmemttp.xyz/'.$data[$indexs]['file_pdf'];
 
@@ -592,65 +596,17 @@
 
 
 			    $pdf->Output('F', $output_pdf);
+
+			    $ids = $data[$indexs]['id'];
+
+			    $dir_file_name_convert = str_replace('/www/wwwroot/'.DOMAIN, 'https://dienmayai.com', $output_pdf);
+
+			    $sql = "UPDATE fs_order_uploads_history_prints SET file_pdf_dem = '$dir_file_name_convert' WHERE id = '$ids'";
+
+				$db->query($sql);
 		    
 			}
-
-
-			// $pdf = new Fpdi();
-		    // $pageCount = $pdf->setSourceFile($input_pdf);
-
-		    // $extra_height = 45; // khoảng trắng thêm phía dưới
-
-		    // for ($i = 1; $i <= $pageCount; $i++) {
-		    //     $tplId = $pdf->importPage($i);
-		    //     $size = $pdf->getTemplateSize($tplId);
-
-		    //     $width = $size['width'];
-		    //     $height = $size['height'];
-		    //     $new_height = $height + $extra_height;
-
-		    //     // Tạo trang mới với chiều cao tăng thêm
-		    //     $pdf->AddPage('P', [$width, $new_height]);
-
-		    //     // Vẽ template cũ dịch lên trên
-		    //     $pdf->useTemplate($tplId, 0, 0, $width, $height);
-
-		    //     // Set font
-		    //     $pdf->SetFont('Arial', '', 10);
-
-		    //     // Vẽ text trong vùng extra_height (tức phần trắng mới)
-		    //     $page_num_text = $i . "/" . $pageCount;
-
-		    //     $pdf->SetXY(10, $height); 
-		    //     $pdf->Write(5, $footer_text);
-
-		    //     $pdf->SetXY(10, $height+8); 
-		    //     $pdf->Write(5, $footer_text);
-
-		    //     $pdf->SetXY(10, $height + 16); 
-		    //     $pdf->Write(5, $page_num_text);
-		    // }
-
-		    // $pdf->Output('F', $output_pdf);
-
-			// echo "<pre>";
-			// 	print_r($data_result);
-			// echo "</pre>";	
-
-			
-		
-
-			// $model->calculateCumulativeQuantities($data_result);
-
-			// $data_result = $model->show_list_array_run($data_result);
-			// echo'<pre>';
-			// 	print_r($data_result);
-			// echo'<pre>';
-				
-		
-
-		
-
+	
 		}	    
 		function return_product_sku_quantity_to_text($string)
 		{
