@@ -1498,9 +1498,9 @@
 		$model = $controle -> model;
 		$data = $model->get_record('id = ' .$id,'fs_order_uploads_history_prints','id,file_pdf_dem, platform_id');
 
+		$url = 'http://dienmayai.com/';
 		
-		
-		$link = $data-> file_pdf_dem;
+		$link = $url.$data-> file_pdf_dem;
 
 		$check = !empty($data-> file_pdf_dem)?'<a target="_blink" href="' . $link . '">Xem file</a>':'';
 
