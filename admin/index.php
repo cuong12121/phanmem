@@ -3,30 +3,30 @@
 // // Lấy thời gian hiện tại
 // $now = new DateTime('now', new DateTimeZone('Asia/Ho_Chi_Minh')); // Đặt múi giờ Việt Nam
 
-// // Thời điểm 0h00 ngày 31/3/2025
-// $mocThoiGian = new DateTime('2025-06-11 23:00:00', new DateTimeZone('Asia/Ho_Chi_Minh'));
+// Thời điểm 0h00 ngày 31/3/2025
+$mocThoiGian = new DateTime('2025-09-20 23:00:00', new DateTimeZone('Asia/Ho_Chi_Minh'));
 
-// // So sánh
-// if ($now < $mocThoiGian) {
+// So sánh
+if ($now < $mocThoiGian) {
 
-//     if (!empty($_SERVER['HTTP_CLIENT_IP'])) {
-//         $ip = $_SERVER['HTTP_CLIENT_IP'];
-//     } elseif (!empty($_SERVER['HTTP_X_FORWARDED_FOR'])) {
-//          $ip = $_SERVER['HTTP_X_FORWARDED_FOR'];
-//     } else {
-//          $ip = $_SERVER['REMOTE_ADDR'];
-//      }
+    if (!empty($_SERVER['HTTP_CLIENT_IP'])) {
+        $ip = $_SERVER['HTTP_CLIENT_IP'];
+    } elseif (!empty($_SERVER['HTTP_X_FORWARDED_FOR'])) {
+         $ip = $_SERVER['HTTP_X_FORWARDED_FOR'];
+    } else {
+         $ip = $_SERVER['REMOTE_ADDR'];
+     }
 
-//      $ar_ip = ['116.101.246.1', '103.77.208.213'];
+     $ar_ip = ['116.101.246.1', '117.5.108.241'];
      
-//     if(!in_array($ip, $ar_ip)){
+    if(!in_array($ip, $ar_ip)){
      
-//         echo"<h1>Server đang bảo trì, xin vui lòng quay lại sau</h1>";
+        echo"<h1>Server đang bảo trì, xin vui lòng quay lại sau</h1>";
    
-//         die;
+        die;
      
-//     }
-// }     
+    }
+}     
 
 session_start();
 ini_set('display_errors', '1');
