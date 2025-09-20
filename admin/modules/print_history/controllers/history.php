@@ -1500,7 +1500,7 @@
 
 		
 		
-		$link = $url.$data-> file_pdf_dem;
+		$link = $data-> file_pdf_dem;
 
 		$check = !empty($data-> file_pdf_dem)?'<a target="_blink" href="' . $link . '">Xem file</a>':'';
 
