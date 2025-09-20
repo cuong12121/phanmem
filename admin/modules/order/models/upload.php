@@ -1806,6 +1806,20 @@
 	      
 			if(!empty($file_pdf[0])){
 
+				foreach ($file_pdf as $key => $value) {
+					$timkitudb = $this->define_convert_name_file($value);
+
+					if(!empty($timkitudb['removed'])){
+						$msg1= "File pdf trong tên có ký tự: " . implode(', ', $timkitudb['removed']) . " vui lòng xóa ký tự đó";
+
+						
+						setRedirect($link,$msg1,'error');
+						return false;
+
+					}
+					
+				}
+
 				$ar_id_file_pdf_google = [];
 
 				$file_pdf_name = $fsFile -> upload_file_multiple("file_pdf", $path ,100000000, '_'.time());
@@ -1831,24 +1845,6 @@
 
 					$files_convert_name_pdf = $this->convert_name_file($item_file_pdf_name);
 
-
-
-
-					if($item_file_pdf_name != $files_convert_name_pdf){
-
-						$timkitudb = $this->define_convert_name_file($files_convert_name_pdf);
-
-						print_r($_FILES["file_pdf"]["name"]);
-
-						die;
-
-
-						$msg1= "File pdf trong tên có ký tự: " . implode(', ', $timkitudb['removed']) . " vui lòng xóa ký tự đó";
-
-						
-						setRedirect($link,$msg1,'error');
-						return false;
-					}
 					
 					// Kiểm tra có quyền đọc
 					if (!is_readable($InputFile)) {
