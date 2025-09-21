@@ -513,7 +513,7 @@
 
 				$pageCount = $pdf->setSourceFile(StreamReader::createByString($pdfContent));
 
-				$extra_height = 58; // khoảng trắng thêm phía dưới
+				$extra_height = 65; // khoảng trắng thêm phía dưới
 
 				for ($pageNo = 1; $pageNo <= $pageCount; $pageNo++) {
 
@@ -575,7 +575,7 @@
 					    	// $pdf->SetFont('Arial', 'B', 14);
 					    	// $pdf->SetTextColor(0, 0, 0); // Màu đen
 
-					        $pdf->SetXY(10, 160+$addtd+$z*4);
+					        $pdf->SetXY(10, 162+$addtd+$z*4);
 					        $write = $data_result[$index_data][$z]['parent_index'] . '--' .
 					                 $data_result[$index_data][$z]['show_list'] . '==>' .
 					                 $data_result[$index_data][$z]['all'] . '--' .
@@ -590,7 +590,7 @@
 					        // }
 					    }
 					}    
-			        $pdf->SetXY(10, 175+$z*2); 
+			        $pdf->SetXY(10, 179+$z*2); 
 			        $pdf->Write(5, $page_num_text);
 			    }
 
