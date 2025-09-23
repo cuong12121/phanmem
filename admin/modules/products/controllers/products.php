@@ -337,10 +337,10 @@ class ProductsControllersProducts  extends Controllers
 
 				$sql = "
 		    SELECT 
-		        p.*, 
-		        w.quantity AS total_quantity, 
-		        wpt.quantity AS warehouse_quantity, 
-		        wpt.warehouses_id
+		         p.*, 
+			    w.*, 
+			    wpt.quantity AS warehouse_quantity, 
+			    wpt.warehouses_id
 		    FROM fs_products AS p
 		    LEFT JOIN fs_warehouses_products_total AS w 
 		        ON p.id = w.product_id
