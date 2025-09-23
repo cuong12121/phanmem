@@ -323,13 +323,29 @@ class ProductsControllersProducts  extends Controllers
 		// 	setRedirect('index.php?module='.$this -> module.'&view='.$this -> view.'&task=export_file&raw=1');
 		// }	
 
-		function export(){
+		function export($kho=0){
+
+			global $db;
 
 			FSFactory::include_class('excel','excel');
 			$model  = $this -> model;
 			$filename = 'Danh_sach_san_pham';
-			$list = $model->get_data_for_export();
-			// dd($list);
+
+			$kho = $_GET['kho'];
+
+			if($kho!=0){
+
+				$sql = "SELECT p.*, w.*, wpt.*
+			        FROM fs_products AS p
+			        LEFT JOIN fs_warehouses_products_total AS w ON p.id = w.product_id
+			        LEFT JOIN fs_warehouses_products AS wpt ON p.id = wpt.product_id
+			        WHERE (wpt.warehouses_id = ".$kho");
+			    $db->query ( $sql );   
+			    $list = $db->getObjectList();  
+			}
+			else{
+				$list = $model->get_data_for_export();
+			}
 
 			if(empty($list)){
 				echo 'error';exit;
