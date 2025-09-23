@@ -434,6 +434,10 @@
 			    $house_id = 18;
 			} 
 
+			echo $platform_id;
+
+			die;
+
 			
 
 			$filename = 'file_nhat_tiktok'.$warehouse_id .'_'.$platform_id.'_'.$dates_fix.'_'.$house_id;
@@ -613,9 +617,7 @@
 
 				$dir_file = str_replace('/www/wwwroot/'.DOMAIN, '', $link_excel);
 
-				echo $dir_file;
 
-				die;
 
 				
 				$sql_xls_query= "UPDATE fs_order_uploads_history_prints SET file_xlsx = '$dir_file'  WHERE `id`=".$id_xlsx;
