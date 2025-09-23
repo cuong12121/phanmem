@@ -412,7 +412,7 @@
 
 		function showTongNgayFileNhatTiktok()
 		{
-			$baseDir =  PATH_BASE.'admin/export/excel/order_item/';
+			$baseDir =  PATH_BASE.'admin/export/excel/order_item';
 
 			$warehouse_id = $_GET['warehouse_id'];
 
@@ -578,7 +578,8 @@
 				$db->query($sql_xls_query);
 				
 				echo "thành công";
-				// end xuất file
+
+			}	// end xuất file
 		}
 
 
