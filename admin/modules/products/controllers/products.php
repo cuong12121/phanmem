@@ -329,7 +329,11 @@ class ProductsControllersProducts  extends Controllers
 
 			FSFactory::include_class('excel','excel');
 			$model  = $this -> model;
-			$filename = 'Danh_sach_san_pham';
+
+			$kho = $_GET['kho']; 
+
+
+			$filename = 'Danh_sach_san_pham_'.$kho;
 
 			$kho = $_GET['kho'];
 
