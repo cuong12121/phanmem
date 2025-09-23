@@ -469,11 +469,7 @@
 				echo 'Không có đơn nào được tìm thấy !';exit;
 			}else {
 
-				echo "<pre>";
-				var_dump(1);
-				echo "</pre>";
-
-				die;
+				
 
 				//tính tổng
 				$arr_total_count = array();
@@ -545,6 +541,12 @@
 				
 			    $total_sheet = $excel->obj_php_excel->createSheet(1);
 			    $total_sheet->setTitle("Tổng đơn 1");
+
+			    echo "<pre>";
+				var_dump($total_sheet);
+				echo "</pre>";
+
+				die;
 
 
 				$total_sheet->getColumnDimension('A')->setWidth(20);
