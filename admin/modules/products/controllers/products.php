@@ -352,7 +352,7 @@ class ProductsControllersProducts  extends Controllers
 			    $db->query ( $sql );   
 			    $list = $db->getObjectList();  
 			    echo "<pre>";
-			    var_dump($sql);
+			    var_dump($list);
 			    echo "</pre>";
 
 			    die;
