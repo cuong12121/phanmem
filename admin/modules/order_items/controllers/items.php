@@ -479,8 +479,8 @@
 				$list = $arr_total_count;
 				// printr($arr_total_count);
 				FSFactory::include_class('excel','excel');
-				$excel = FSExcel();
-				$excel->set_params(array('out_put_xls'=>'export/excel/order_item/'.$filename.'.xlsx','out_put_xlsx'=>'export/excel/order_item/'.$filename.'.xlsx'));
+				$total_sheet = FSExcel();
+				$total_sheet->set_params(array('out_put_xls'=>'export/excel/order_item/'.$filename.'.xlsx','out_put_xlsx'=>'export/excel/order_item/'.$filename.'.xlsx'));
 				$style_header = array(
 					'fill' => array(
 						'type' => PHPExcel_Style_Fill::FILL_SOLID,
