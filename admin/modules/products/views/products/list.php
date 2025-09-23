@@ -3,7 +3,13 @@ global $toolbar;
 $toolbar->setTitle(FSText :: _('Products') );
 	// $toolbar->addButton('duplicate',FSText :: _('Duplicate'),FSText :: _('You must select at least one record'),'duplicate.png');
 	// $toolbar->addButton('save_all',FSText :: _('Save'),'','save.png');
-$toolbar->addButton('export',FSText :: _('Xuất exel'),'','Excel-icon.png');
+?>
+<a class="toolbar" href="/admin/index.php?module=products&amp;view=products&amp;task=export">
+                    <span title="Xuất exel" style="background:url('https://dienmayai.com/admin/templates/default/images/toolbar/Excel-icon.png') no-repeat"></span>
+                    Xuất exel
+                </a>
+<!-- $toolbar->addButton('export',FSText :: _('Xuất exel'),'','Excel-icon.png'); -->
+<?php
 $toolbar->addButton('print_barcode_open',FSText :: _('In mã vạch'),FSText :: _(''),'print.png'); 
 
 	// $toolbar->addButton('edit',FSText :: _('Edit'),FSText :: _('You must select at least one record'),'edit.png');
