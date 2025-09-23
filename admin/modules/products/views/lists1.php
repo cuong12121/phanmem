@@ -239,12 +239,14 @@ $user_id = $_SESSION['ad_userid'];
             </div>
             <?php 
                 }
+
+                $kho = !empty($_GET['filter1'])?$_GET['filter1']:0;
             ?>
 
             <div class="fr">
 
                 <!-- <button onclick="showFormAdd()">test</button> -->
-                <a class="toolbar"  href="/admin/index.php?module=products&view=products&task=export">
+                <a class="toolbar" href="/admin/index.php?module=products&amp;view=products&amp;task=export&kho=<?= $kho ?>">
                     <span title="Xuất exel" style="background:url('https://dienmayai.com/admin/templates/default/images/toolbar/Excel-icon.png') no-repeat"></span>
                     Xuất exel
                 </a>

@@ -7,8 +7,8 @@ $toolbar->setTitle(FSText :: _('Products') );
 $kho = !empty($_GET['filter1'])?$_GET['filter1']:0;
 ?>
 <a class="toolbar" href="/admin/index.php?module=products&amp;view=products&amp;task=export&kho=<?= $kho ?>">
-                    <span title="Xuất exel1" style="background:url('https://dienmayai.com/admin/templates/default/images/toolbar/Excel-icon.png') no-repeat"></span>
-                    Xuất exel1
+                    <span title="Xuất exel" style="background:url('https://dienmayai.com/admin/templates/default/images/toolbar/Excel-icon.png') no-repeat"></span>
+                    Xuất exel
                 </a>
 <!-- $toolbar->addButton('export',FSText :: _('Xuất exel'),'','Excel-icon.png'); -->
 <?php
