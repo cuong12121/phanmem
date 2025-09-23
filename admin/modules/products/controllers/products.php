@@ -337,7 +337,7 @@ class ProductsControllersProducts  extends Controllers
 
 				$sql = "
 		    SELECT 
-		         p.*, w.*, wpt.* AS 
+		         p.*, w.*, wpt.*
 		    FROM fs_products AS p
 		    LEFT JOIN fs_warehouses_products_total AS w 
 		        ON p.id = w.product_id
