@@ -335,11 +335,19 @@ class ProductsControllersProducts  extends Controllers
 
 			if($kho!=0){
 
-				$sql = "SELECT p.*, w.*, wpt.*
-			        FROM fs_products AS p
-			        LEFT JOIN fs_warehouses_products_total AS w ON p.id = w.product_id
-			        LEFT JOIN fs_warehouses_products AS wpt ON p.id = wpt.product_id
-			        WHERE (wpt.warehouses_id = ".$kho");
+				$sql = "
+		    SELECT 
+		        p.*, 
+		        w.quantity AS total_quantity, 
+		        wpt.quantity AS warehouse_quantity, 
+		        wpt.warehouses_id
+		    FROM fs_products AS p
+		    LEFT JOIN fs_warehouses_products_total AS w 
+		        ON p.id = w.product_id
+		    LEFT JOIN fs_warehouses_products AS wpt 
+		        ON p.id = wpt.product_id 
+		        AND wpt.warehouses_id = ".(int)$kho;
+		        
 			    $db->query ( $sql );   
 			    $list = $db->getObjectList();  
 			}
