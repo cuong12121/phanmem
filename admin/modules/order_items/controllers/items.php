@@ -542,11 +542,7 @@
 			    $total_sheet = $excel->obj_php_excel->createSheet(1);
 			    $total_sheet->setTitle("Tổng đơn 1");
 
-			    echo "<pre>";
-				var_dump($total_sheet);
-				echo "</pre>";
 
-				die;
 
 
 				$total_sheet->getColumnDimension('A')->setWidth(20);
@@ -585,6 +581,12 @@
 				$total_sheet->setCellValue('K1', 'Số lượng');
 				$total_sheet->setCellValue('L1', 'Tổng giá bán (sản phẩm)');
 				$list_detail = $model->get_list_detail_tong();
+
+				echo "<pre>";
+				var_dump($list_detail);
+				echo "</pre>";
+
+				die;
 				
 				foreach ($list_detail as $item_dt){
 					if($item_dt->ma_kien_hang == 'null'){
