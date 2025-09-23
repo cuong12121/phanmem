@@ -461,17 +461,19 @@
 			$sqls = $db->query($querys);
 			$result = $db->getObjectList();
 
-			echo "<pre>";
-			var_dump($result);
-			echo "</pre>";
 
-			die;
 
 			// phần xuất file excel 
 
 			if(empty($list)){
 				echo 'Không có đơn nào được tìm thấy !';exit;
 			}else {
+
+				echo "<pre>";
+				var_dump(1);
+				echo "</pre>";
+
+				die;
 
 				//tính tổng
 				$arr_total_count = array();
@@ -502,7 +504,7 @@
 						'bold' => true,
 					)
 				);
-				$excel->obj_php_excel->getActiveSheet()->setTitle("Tổng In");
+				$excel->obj_php_excel->getActiveSheet()->setTitle("Tổng In Tiktok");
 				$excel->obj_php_excel->getActiveSheet()->mergeCells('A1:E1');
 				$excel->obj_php_excel->getActiveSheet()->setCellValue ('A1', $filename);
 				$excel->obj_php_excel->getActiveSheet()->getStyle('A1')->getAlignment()->setHorizontal(PHPExcel_Style_Alignment::HORIZONTAL_CENTER);
@@ -534,6 +536,8 @@
 				$excel->obj_php_excel->getActiveSheet()->getStyle('A1')->getFont()->setName('Arial');
 				$excel->obj_php_excel->getActiveSheet()->getStyle('A1')->applyFromArray( $style_header );
 				$excel->obj_php_excel->getActiveSheet()->duplicateStyle( $excel->obj_php_excel->getActiveSheet()->getStyle('A1'), 'B1:E1' );
+
+
 
 
 				// Add new sheet
