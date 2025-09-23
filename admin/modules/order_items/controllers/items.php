@@ -413,6 +413,7 @@
 		function showTongNgayFileNhatTiktok()
 		{
 			$model  = $this -> model;
+			global $db;
 			$baseDir =  PATH_BASE.'admin/export/excel/order_item';
 
 			$warehouse_id = $_GET['warehouse_id'];
@@ -434,15 +435,12 @@
 			    $house_id = 18;
 			} 
 
-			echo $platform_id;
-
-			die;
-
+			
 			
 
 			$filename = 'file_nhat_tiktok'.$warehouse_id .'_'.$platform_id.'_'.$dates_fix.'_'.$house_id;
 
-			global $db;
+			
 
 			$query = "SELECT id,count,product_id,sku,product_name,`date`,is_print,product_id,house_id,warehouse_id,color,size,platform_id,shipping_unit_id FROM fs_order_uploads_detail AS a where 1=1 AND is_print = 1    AND a.date =  '$date'  AND a.house_id =  '$house_id'  AND a.warehouse_id =  '$warehouse_id'  AND a.platform_id =  '$platform_id'  AND warehouse_id IN (1,2,4,6,7) ORDER BY sku_fisrt ASC,ABS(sku_fisrt),sku_last ASC,ABS(sku_last),color ASC,ABS(color),size ASC,ABS(size),created_time DESC , id DESC";
 
@@ -463,7 +461,11 @@
 			$sqls = $db->query($querys);
 			$result = $db->getObjectList();
 
-		
+			echo "<pre>";
+			var_dump($result);
+			echo "</pre>";
+
+			die;
 
 			// phần xuất file excel 
 
