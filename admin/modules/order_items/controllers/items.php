@@ -495,6 +495,46 @@
 						'bold' => true,
 					)
 				);
+				$excel->obj_php_excel->getActiveSheet()->setTitle("Tổng In");
+				$excel->obj_php_excel->getActiveSheet()->mergeCells('A1:E1');
+				$excel->obj_php_excel->getActiveSheet()->setCellValue ('A1', $filename);
+				$excel->obj_php_excel->getActiveSheet()->getStyle('A1')->getAlignment()->setHorizontal(PHPExcel_Style_Alignment::HORIZONTAL_CENTER);
+
+				$excel->obj_php_excel->getActiveSheet()->getColumnDimension('A')->setWidth(10);
+				$excel->obj_php_excel->getActiveSheet()->getColumnDimension('B')->setWidth(60);
+				$excel->obj_php_excel->getActiveSheet()->getColumnDimension('C')->setWidth(15);
+				$excel->obj_php_excel->getActiveSheet()->getColumnDimension('D')->setWidth(15);
+				$excel->obj_php_excel->getActiveSheet()->getColumnDimension('E')->setWidth(15);
+		
+				$excel->obj_php_excel->getActiveSheet()->setCellValue('A2', 'Mã');
+				$excel->obj_php_excel->getActiveSheet()->setCellValue('B2', 'Tên sản phẩm');
+				$excel->obj_php_excel->getActiveSheet()->setCellValue('C2', 'Tổng đơn');
+				$excel->obj_php_excel->getActiveSheet()->setCellValue('D2', 'Thực xuất');
+				$excel->obj_php_excel->getActiveSheet()->setCellValue('E2', 'NV đóng gói');
+				// printr($list);
+				foreach ($list as $item){
+					$key = isset($key)?($key+1):3;
+					$excel->obj_php_excel->getActiveSheet()->setCellValue('A'.$key, $item->sku);
+					$excel->obj_php_excel->getActiveSheet()->setCellValue('B'.$key, $item->product_name);
+					$excel->obj_php_excel->getActiveSheet()->setCellValue('C'.$key, $item->count);
+					$excel->obj_php_excel->getActiveSheet()->setCellValue('D'.$key,'');
+					$excel->obj_php_excel->getActiveSheet()->setCellValue('E'.$key, '');
+				}
+
+				
+				$excel->obj_php_excel->getActiveSheet()->getRowDimension(1)->setRowHeight(20);
+				$excel->obj_php_excel->getActiveSheet()->getStyle('A1')->getFont()->setSize(12);
+				$excel->obj_php_excel->getActiveSheet()->getStyle('A1')->getFont()->setName('Arial');
+				$excel->obj_php_excel->getActiveSheet()->getStyle('A1')->applyFromArray( $style_header );
+				$excel->obj_php_excel->getActiveSheet()->duplicateStyle( $excel->obj_php_excel->getActiveSheet()->getStyle('A1'), 'B1:E1' );
+
+
+				// Add new sheet
+
+				
+			    $total_sheet = $excel->obj_php_excel->createSheet(1);
+			    $total_sheet->setTitle("Tổng đơn 1");
+
 
 				$total_sheet->getColumnDimension('A')->setWidth(20);
 				$total_sheet->getColumnDimension('B')->setWidth(20);
