@@ -10,6 +10,14 @@
 	$(document).ready(function() {
 		$("#tabs").tabs();
 	});
+
+	// Lấy phần tử theo id cũ
+	let el = document.getElementById("wrap-toolbar");
+
+	// Đổi id thành wrap_toolbar
+	if (el) {
+	  el.id = "wrap_toolbars";
+	}
 </script>
 <?php
 $title = @$data ? FSText :: _('Edit'): FSText :: _('Add'); 
