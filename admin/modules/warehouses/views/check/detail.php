@@ -18,6 +18,42 @@
 	if (el) {
 	  el.id = "wrap_toolbars";
 	}
+
+	document.addEventListener("DOMContentLoaded", function () {
+    const table = document.getElementById("table_products_search_ajax_list");
+    if (!table) return;
+
+    // Tạo header clone
+    const cloneHeader = table.querySelector("thead").cloneNode(true);
+    const floatingHeader = document.createElement("table");
+    floatingHeader.appendChild(cloneHeader);
+    floatingHeader.style.position = "fixed";
+    floatingHeader.style.top = "0";
+    floatingHeader.style.left = table.getBoundingClientRect().left + "px";
+    floatingHeader.style.width = table.offsetWidth + "px";
+    floatingHeader.style.display = "none";
+    floatingHeader.style.background = "#fff";
+    floatingHeader.style.zIndex = "999";
+
+    document.body.appendChild(floatingHeader);
+
+    // Cập nhật khi scroll
+    window.addEventListener("scroll", function () {
+        const rect = table.getBoundingClientRect();
+        if (rect.top < 0 && rect.bottom > 0) {
+            floatingHeader.style.display = "table";
+            floatingHeader.style.left = rect.left + "px";
+        } else {
+            floatingHeader.style.display = "none";
+        }
+    });
+
+    // Cập nhật khi resize
+    window.addEventListener("resize", function () {
+        floatingHeader.style.width = table.offsetWidth + "px";
+        floatingHeader.style.left = table.getBoundingClientRect().left + "px";
+    });
+});
 </script>
 <?php
 $title = @$data ? FSText :: _('Edit'): FSText :: _('Add'); 
