@@ -23,8 +23,11 @@
     const table = document.getElementById("table_products_search_ajax_list");
     if (!table) return;
 
-    // Tạo header clone
-    const cloneHeader = table.querySelector("thead").cloneNode(true);
+    // Nếu có <thead> thì lấy, nếu không thì lấy hàng đầu tiên
+    let headerRow = table.querySelector("thead") || table.querySelector("tr");
+    if (!headerRow) return;
+
+    const cloneHeader = headerRow.cloneNode(true);
     const floatingHeader = document.createElement("table");
     floatingHeader.appendChild(cloneHeader);
     floatingHeader.style.position = "fixed";
@@ -37,7 +40,6 @@
 
     document.body.appendChild(floatingHeader);
 
-    // Cập nhật khi scroll
     window.addEventListener("scroll", function () {
         const rect = table.getBoundingClientRect();
         if (rect.top < 0 && rect.bottom > 0) {
@@ -48,12 +50,12 @@
         }
     });
 
-    // Cập nhật khi resize
     window.addEventListener("resize", function () {
         floatingHeader.style.width = table.offsetWidth + "px";
         floatingHeader.style.left = table.getBoundingClientRect().left + "px";
     });
 });
+
 </script>
 <?php
 $title = @$data ? FSText :: _('Edit'): FSText :: _('Add'); 
