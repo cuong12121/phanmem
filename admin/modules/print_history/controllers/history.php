@@ -979,6 +979,117 @@
 		
 		}
 
+
+		function show_tracking_code_tiktok()
+		{
+			global $db;
+
+			for ($i=1; $i <=2 ; $i++) { 
+			
+				$dem =$i;
+
+				$url_json = 'https://api.phanmemttp.xyz/apis_tiktok.php?key_number='.$dem;
+
+				$content = file_get_contents($url_json);
+
+				$content = json_decode($content);
+
+				$pdf = [];
+
+				
+
+				// Đếm số lần xuất hiện của từng mvd
+				
+				$mvdCount = [];
+				$mvdPages = [];
+
+				foreach ($content as $page => $orders) {
+				    if (!empty($orders) && isset($orders[0]->mvd)) {
+				        $mvd = $orders[0]->mvd;
+				        $pageNum = $orders[0]->page; // Lấy số trang từ object
+
+				        if (!isset($mvdCount[$mvd])) {
+				            $mvdCount[$mvd] = 0;
+				            $mvdPages[$mvd] = [];
+				        }
+
+				        $mvdCount[$mvd]++;
+				        $mvdPages[$mvd][] = $pageNum;
+				    }
+				}
+
+				// Tìm các mvd bị trùng
+				$duplicateMvds = [];
+
+				foreach ($mvdCount as $mvd => $count) {
+				    if ($count >= 2) {
+				        $duplicateMvds[] = [
+				            'mvd' => $mvd,
+				            'pages' => $mvdPages[$mvd]
+				        ];
+				    }
+				}
+
+				foreach ($content as $group) {
+				    foreach ($group as $item) {
+				        // Nếu mã vận đơn là 'none', dùng mã đơn hàng thay thế
+				        $key = ($item->mvd === 'none' || empty($item->mvd)) ? $item->mdh : $item->mvd;
+				        $combo_item = $this->combo_Return_code($item->sku);
+
+				        if(!empty($combo_item)){
+				        	$combo_first =  trim($combo_item['list'][0]);
+				        	$parts = explode(':', $combo_first);
+							// The last element of the array will be "50"
+							$quantity_combo = intval(end($parts));
+				        }
+				        else{
+				        	$quantity_combo =1;
+				        }
+
+				       	
+
+				        // Thêm vào mảng kết quả
+				        $pdf[$key][] = [
+				        	'page' => trim($item->page),
+				            'sku' => trim($item->sku),
+				            'sl' => (int) $item->quantity*$quantity_combo,
+				            'combo' =>  !empty($combo_item)?$combo_item:''
+				        ];
+				    }
+				}
+
+				$data_in = file_get_contents('https://drive.dienmayai.com/file_in_tiktok.php');
+
+				$data_in = json_decode($data_in, true);
+
+				$file_xlsx = $data_in[intval($dem)-1]['file_xlsx'];
+
+				$id = $data_in[intval($dem)-1]['id'];
+
+
+				$dataexcel  =  $this->data_excel($file_xlsx);
+
+				$baseDir = PATH_BASE.'/admin/export/txt/';
+
+
+				$file_name = $baseDir.$id.'.html';
+
+				// Gọi hàm với 2 mảng đã cho
+				$this->compare_arrays($dataexcel, $pdf, $file_name, $duplicateMvds);
+
+				$dir_file_name_convert = str_replace('/www/wwwroot/'.DOMAIN, '', $file_name);
+
+
+				$sql = "UPDATE fs_order_uploads_history_prints SET compare_ex_pdf = '$dir_file_name_convert' WHERE id = '$id'";
+
+				$values = $db->query($sql);
+			}
+
+			echo "thành công";
+		
+		}
+
+
 		function clone_function()
 		{
 			global $db;
