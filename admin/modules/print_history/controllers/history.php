@@ -801,7 +801,7 @@
 		    echo "</pre>";		
 		}
 
-		function compare_arrays($mang1, $mang2, $filename, $duplicateMvds) {
+		function compare_arrays($mang1, $mang2, $filename, $duplicateMvds, $tiktok=0) {
 		    $all_keys = array_unique(array_merge(array_keys($mang1), array_keys($mang2)));
 		    $output = '
 			<!DOCTYPE html>
@@ -814,7 +814,9 @@
 			if(!empty($duplicateMvds) && count($duplicateMvds)>0){
 				foreach ($duplicateMvds as $key => $values_mvd) {
 
-					$output.= 'Mã vận đơn bị trùng tìm được ở  file pdf là '.$values_mvd['mvd'].'<br>'.' ở trang '.implode(",", $values_mvd['pages']).'<br>';
+					$output .= 'Mã vận đơn bị trùng tìm được ở file pdf là '
+			         . $values_mvd['mvd'] . '<br>'
+			         . ($tiktok == 1 ? '' : ' ở trang ' . implode(",", $values_mvd['pages']) . '<br>');
 				}
 				
 			}
@@ -824,8 +826,12 @@
 		        // Kiểm tra key chỉ tồn tại ở một bên
 		        if (!isset($mang1[$key])) {
 		        	$page = $mang2[$key][0]['page'];
-		            $output .= "Mã vận đơn $key chỉ có trong file pdf trang $page <br>";
-		            continue;
+
+		        	$output .= "Mã vận đơn $key chỉ có trong file pdf"
+					         . ($tiktok == 1 ? '' : " trang $page")
+					         . "<br>";
+					continue;
+		            
 		        }
 
 		        if (!isset($mang2[$key])) {
@@ -851,13 +857,22 @@
 		        	
 		            if (!isset($items1[$sku])) {
 		            	$page = $items2[$sku][0]['page'];
-		                $output .= "SKU $sku chỉ có trong file pdf với mã vận đơn $key ở trang $page file pdf<br>";
+
+		            	$output .= "SKU $sku chỉ có trong file pdf với mã vận đơn $key"
+						         . ($tiktok == 1 ? '' : " ở trang $page")
+						         . " file pdf<br>";
+		                
 		            } elseif (!isset($items2[$sku])) {
 		                $output .= "SKU $sku chỉ có trong file excel với mã vận đơn $key<br>";
 		            } 
 		            elseif ($items1[$sku] != $items2[$sku]) {
+
 		            	
 		            	$pages = $mang2[$key][0]['page'];
+
+		            	$output .= "Sai số lượng SKU $sku với mã vận đơn $key"
+				         . ($tiktok == 1 ? '' : " với trang pdf là $pages")
+				         . " (sku excel: {$items1[$sku]}, sku pdf: {$items2[$sku]})<br>";
 		                $output .= "Sai số lượng SKU $sku với mã vận đơn $key với trang pdf là $pages (sku excel: {$items1[$sku]}, sku pdf: {$items2[$sku]})<br>";
 		            }
 		        }
@@ -1074,8 +1089,10 @@
 
 				$file_name = $baseDir.$id.'.html';
 
+				$tiktok=1;
+
 				// Gọi hàm với 2 mảng đã cho
-				$this->compare_arrays($dataexcel, $pdf, $file_name, $duplicateMvds);
+				$this->compare_arrays($dataexcel, $pdf, $file_name, $duplicateMvds, $tiktok);
 
 				$dir_file_name_convert = str_replace('/www/wwwroot/'.DOMAIN, '', $file_name);
 
