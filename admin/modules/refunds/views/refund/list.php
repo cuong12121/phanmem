@@ -109,15 +109,11 @@
 </script>
 
 <style>
-.fixedHeader {
-  position: fixed;
-  top: 0px;
-  display: none;
+#dataTables-example thead th {
+  position: sticky;
+  top: 56px;
   background: #fff;
-  z-index: 99;
-}
-.fixedHeader th {
-  background: #fff;
+  z-index: 2;
 }
 </style>
 <script>
