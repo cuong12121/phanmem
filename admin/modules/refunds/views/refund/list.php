@@ -129,11 +129,7 @@
 	  el.id = "wrap_toolbars";
 	}
 
-	document.addEventListener("DOMContentLoaded", function() {
-  document.querySelectorAll('#dataTables-example thead input[type="checkbox"]').forEach(cb => {
-    cb.addEventListener('click', () => checkAll(5));
-  });
-});
+	
 
   document.addEventListener("DOMContentLoaded", function() {
   const table = document.querySelector("#dataTables-example");
