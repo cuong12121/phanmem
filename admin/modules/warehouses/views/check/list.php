@@ -71,10 +71,13 @@ TemplateHelper::genarate_form_liting($this, $this->module,$this -> view,$list,$f
 <style>
 .fixedHeader {
   position: fixed;
-  top: 56px; /* khoảng cách với navbar */
+  top: 56px;
   display: none;
   background: #fff;
   z-index: 99;
+}
+.fixedHeader th {
+  background: #fff;
 }
 </style>
 <script>
@@ -87,23 +90,36 @@ TemplateHelper::genarate_form_liting($this, $this->module,$this -> view,$list,$f
 	}
 
   document.addEventListener("DOMContentLoaded", function() {
-    const table = document.querySelector("#dataTables-example");
-    const thead = table.querySelector("thead");
-    
-    // Clone thead
-    const clone = thead.cloneNode(true);
-    clone.classList.add("fixedHeader");
-    table.parentNode.insertBefore(clone, table);
+  const table = document.querySelector("#dataTables-example");
+  const thead = table.querySelector("thead");
 
-    window.addEventListener("scroll", function() {
-      const rect = table.getBoundingClientRect();
-      if (rect.top < 56 && rect.bottom > 0) {
-        clone.style.display = "table-header-group";
-      } else {
-        clone.style.display = "none";
-      }
+  // Clone thead
+  const clone = thead.cloneNode(true);
+  clone.classList.add("fixedHeader");
+  table.parentNode.insertBefore(clone, table);
+
+  function matchColumnWidths() {
+    const origTh = thead.querySelectorAll("th");
+    const cloneTh = clone.querySelectorAll("th");
+    origTh.forEach((th, i) => {
+      cloneTh[i].style.width = th.offsetWidth + "px";
     });
+    clone.style.width = table.offsetWidth + "px";
+  }
+
+  // Match widths after page load and on resize
+  matchColumnWidths();
+  window.addEventListener("resize", matchColumnWidths);
+
+  window.addEventListener("scroll", function() {
+    const rect = table.getBoundingClientRect();
+    if (rect.top < 56 && rect.bottom > 0) {
+      clone.style.display = "table-header-group";
+    } else {
+      clone.style.display = "none";
+    }
   });
+});
 
 	// document.addEventListener("DOMContentLoaded", function () {
     // const table = document.getElementById("dataTables-example");
