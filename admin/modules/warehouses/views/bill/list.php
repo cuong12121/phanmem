@@ -138,3 +138,4 @@ TemplateHelper::genarate_form_liting($this, $this->module,$this -> view,$list,$f
     }
   });
 });
+</script>  
