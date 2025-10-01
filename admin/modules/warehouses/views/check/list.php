@@ -73,7 +73,7 @@ TemplateHelper::genarate_form_liting($this, $this->module,$this -> view,$list,$f
 	    if (!table) return;
 
 	    // Nếu có <thead> thì lấy, nếu không thì lấy hàng đầu tiên
-	    let headerRow = table.querySelector("thead") || table.querySelector("tr");
+	    let headerRow = table.querySelector("tr");
 	    if (!headerRow) return;
 
 	    const cloneHeader = headerRow.cloneNode(true);
