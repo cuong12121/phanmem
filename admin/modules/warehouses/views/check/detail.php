@@ -7,54 +7,54 @@
 
 <!-- FOR TAB -->	
 <script>
-// 	$(document).ready(function() {
-// 		$("#tabs").tabs();
-// 	});
+	$(document).ready(function() {
+		$("#tabs").tabs();
+	});
 
-// 	// Lấy phần tử theo id cũ
-// 	let el = document.getElementById("wrap-toolbar");
+	// Lấy phần tử theo id cũ
+	let el = document.getElementById("wrap-toolbar");
 
-// 	// Đổi id thành wrap_toolbar
-// 	if (el) {
-// 	  el.id = "wrap_toolbars";
-// 	}
+	// Đổi id thành wrap_toolbar
+	if (el) {
+	  el.id = "wrap_toolbars";
+	}
 
-// 	document.addEventListener("DOMContentLoaded", function () {
-//     const table = document.getElementById("table_products_search_ajax_list");
-//     if (!table) return;
+	document.addEventListener("DOMContentLoaded", function () {
+    const table = document.getElementById("table_products_search_ajax_list");
+    if (!table) return;
 
-//     // Nếu có <thead> thì lấy, nếu không thì lấy hàng đầu tiên
-//     let headerRow = table.querySelector("thead") || table.querySelector("tr");
-//     if (!headerRow) return;
+    // Nếu có <thead> thì lấy, nếu không thì lấy hàng đầu tiên
+    let headerRow = table.querySelector("thead") || table.querySelector("tr");
+    if (!headerRow) return;
 
-//     const cloneHeader = headerRow.cloneNode(true);
-//     const floatingHeader = document.createElement("table");
-//     floatingHeader.appendChild(cloneHeader);
-//     floatingHeader.style.position = "fixed";
-//     floatingHeader.style.top = "0";
-//     floatingHeader.style.left = table.getBoundingClientRect().left + "px";
-//     floatingHeader.style.width = table.offsetWidth + "px";
-//     floatingHeader.style.display = "none";
-//     floatingHeader.style.background = "#fff";
-//     floatingHeader.style.zIndex = "999";
+    const cloneHeader = headerRow.cloneNode(true);
+    const floatingHeader = document.createElement("table");
+    floatingHeader.appendChild(cloneHeader);
+    floatingHeader.style.position = "fixed";
+    floatingHeader.style.top = "0";
+    floatingHeader.style.left = table.getBoundingClientRect().left + "px";
+    floatingHeader.style.width = table.offsetWidth + "px";
+    floatingHeader.style.display = "none";
+    floatingHeader.style.background = "#fff";
+    floatingHeader.style.zIndex = "999";
 
-//     document.body.appendChild(floatingHeader);
+    document.body.appendChild(floatingHeader);
 
-//     window.addEventListener("scroll", function () {
-//         const rect = table.getBoundingClientRect();
-//         if (rect.top < 0 && rect.bottom > 0) {
-//             floatingHeader.style.display = "table";
-//             floatingHeader.style.left = rect.left + "px";
-//         } else {
-//             floatingHeader.style.display = "none";
-//         }
-//     });
+    window.addEventListener("scroll", function () {
+        const rect = table.getBoundingClientRect();
+        if (rect.top < 0 && rect.bottom > 0) {
+            floatingHeader.style.display = "table";
+            floatingHeader.style.left = rect.left + "px";
+        } else {
+            floatingHeader.style.display = "none";
+        }
+    });
 
-//     window.addEventListener("resize", function () {
-//         floatingHeader.style.width = table.offsetWidth + "px";
-//         floatingHeader.style.left = table.getBoundingClientRect().left + "px";
-//     });
-// });
+    window.addEventListener("resize", function () {
+        floatingHeader.style.width = table.offsetWidth + "px";
+        floatingHeader.style.left = table.getBoundingClientRect().left + "px";
+    });
+});
 
 </script>
 <?php
