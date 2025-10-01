@@ -856,7 +856,7 @@
 
 		        	
 		            if (!isset($items1[$sku])) {
-		            	$page = $items2[$sku][0]['page'];
+		            	$page = !empty($items2[$sku][0]['page'])??'';
 
 		            	$output .= "SKU $sku chỉ có trong file pdf với mã vận đơn $key"
 						         . ($tiktok == 1 ? '' : " ở trang $page")
