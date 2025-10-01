@@ -78,38 +78,38 @@ TemplateHelper::genarate_form_liting($this, $this->module,$this -> view,$list,$f
 }
 </style>
 <script>
-	window.addEventListener('load', function () {
-  const table = document.getElementById('dataTables-example');
-  const thead = table.querySelector('thead');
-  
-  // clone header
-  const fixedHeader = thead.cloneNode(true);
-  const fixedTable = document.createElement('table');
-  fixedTable.className = table.className + ' fixed-header';
-  fixedTable.style.width = table.offsetWidth + 'px';
-  fixedTable.appendChild(fixedHeader);
-  document.body.appendChild(fixedTable);
+// 	window.addEventListener('load', function () {
+// 	  	const table = document.getElementById('dataTables-example');
+// 	  	const thead = table.querySelector('thead');
+	  
+// 	  	// clone header
+// 	  	const fixedHeader = thead.cloneNode(true);
+// 	  	const fixedTable = document.createElement('table');
+// 	  	fixedTable.className = table.className + ' fixed-header';
+// 	  	fixedTable.style.width = table.offsetWidth + 'px';
+// 	  	fixedTable.appendChild(fixedHeader);
+// 	  	document.body.appendChild(fixedTable);
 
-  function adjustHeader() {
-    const rect = table.getBoundingClientRect();
-    fixedTable.style.left = rect.left + 'px';
-    fixedTable.style.width = rect.width + 'px';
-    
-    // set width từng cột
-    const originalTh = thead.querySelectorAll('th');
-    const cloneTh = fixedHeader.querySelectorAll('th');
-    originalTh.forEach((th, i) => {
-      cloneTh[i].style.width = th.offsetWidth + 'px';
-    });
-    
-    // show/hide theo scroll
-    if (rect.top < 56 && rect.bottom > 0) {
-      fixedTable.style.display = 'table';
-    } else {
-      fixedTable.style.display = 'none';
-    }
-  }
+// 	  	function adjustHeader() {
+// 		    const rect = table.getBoundingClientRect();
+// 		    fixedTable.style.left = rect.left + 'px';
+// 		    fixedTable.style.width = rect.width + 'px';
+		    
+// 		    // set width từng cột
+// 		    const originalTh = thead.querySelectorAll('th');
+// 		    const cloneTh = fixedHeader.querySelectorAll('th');
+// 		    originalTh.forEach((th, i) => {
+// 		      cloneTh[i].style.width = th.offsetWidth + 'px';
+// 		    });
+		    
+// 		    // show/hide theo scroll
+// 		    if (rect.top < 56 && rect.bottom > 0) {
+// 		      fixedTable.style.display = 'table';
+// 		    } else {
+// 		      fixedTable.style.display = 'none';
+// 		    }
+  // 		}
 
-  window.addEventListener('scroll', adjustHeader);
-  window.addEventListener('resize', adjustHeader);
+  // window.addEventListener('scroll', adjustHeader);
+  // window.addEventListener('resize', adjustHeader);
 </script>
