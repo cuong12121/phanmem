@@ -85,3 +85,57 @@
 <link type="text/css" rel="stylesheet" media="all" href="<?php echo URL_ROOT.LINK_AMIN.'/modules/'.$this->module.'/assets/css/history.css' ?>" />
 
 <script type="text/javascript" src="<?php echo URL_ROOT.LINK_AMIN.'/modules/'.$this->module.'/assets/js/history.js' ?>"></script>
+
+<style>
+.fixedHeader {
+  position: fixed;
+  top: 0px;
+  display: none;
+  background: #fff;
+  z-index: 99;
+}
+.fixedHeader th {
+  background: #fff;
+}
+</style>
+<script>
+// Lấy phần tử theo id cũ
+	let el = document.getElementById("wrap-toolbar");
+
+	// Đổi id thành wrap_toolbar
+	if (el) {
+	  el.id = "wrap_toolbars";
+	}
+
+  document.addEventListener("DOMContentLoaded", function() {
+  const table = document.querySelector("#dataTables-example");
+  const thead = table.querySelector("thead");
+
+  // Clone thead
+  const clone = thead.cloneNode(true);
+  clone.classList.add("fixedHeader");
+  table.parentNode.insertBefore(clone, table);
+
+  function matchColumnWidths() {
+    const origTh = thead.querySelectorAll("th");
+    const cloneTh = clone.querySelectorAll("th");
+    origTh.forEach((th, i) => {
+      cloneTh[i].style.width = th.offsetWidth + "px";
+    });
+    clone.style.width = table.offsetWidth + "px";
+  }
+
+  // Match widths after page load and on resize
+  matchColumnWidths();
+  window.addEventListener("resize", matchColumnWidths);
+
+  window.addEventListener("scroll", function() {
+    const rect = table.getBoundingClientRect();
+    if (rect.top < 56 && rect.bottom > 0) {
+      clone.style.display = "table-header-group";
+    } else {
+      clone.style.display = "none";
+    }
+  });
+});
+</script>  
