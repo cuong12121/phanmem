@@ -9,7 +9,6 @@
 </div>
 <?php } ?>
 
-<button onclick="checkAll(100)">chọn tất cả</button>
 
 <?php  
 
