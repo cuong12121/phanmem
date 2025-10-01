@@ -115,7 +115,7 @@
 <style>
 .fixedHeader {
   position: fixed;
-  top: 0px;
+  top: 56px;
   display: none;
   background: #fff;
   z-index: 99;
