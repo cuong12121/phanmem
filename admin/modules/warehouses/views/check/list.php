@@ -67,36 +67,49 @@ $list_config[] = array('title'=>'Tình trạng','field'=>'status','ordering'=> 1
 $list_config[] = array('title'=>'Thao tác','type'=>'list_action','list_action' => array('edit'=> 'Sửa phiếu','print' => 'In phiếu'));
 TemplateHelper::genarate_form_liting($this, $this->module,$this -> view,$list,$fitler_config,$list_config,$sort_field,$sort_direct,$pagination);
 ?>
+
+<style>
+.fixed-header {
+  position: fixed;
+  top: 56px;
+  background: white;
+  display: none;
+  z-index: 1000;
+}
+</style>
 <script>
-	document.addEventListener("DOMContentLoaded", function () {
-	    const table = document.getElementById("dataTables-example");
-	    if (!table) return;
+	window.addEventListener('load', function () {
+  const table = document.getElementById('dataTables-example');
+  const thead = table.querySelector('thead');
+  
+  // clone header
+  const fixedHeader = thead.cloneNode(true);
+  const fixedTable = document.createElement('table');
+  fixedTable.className = table.className + ' fixed-header';
+  fixedTable.style.width = table.offsetWidth + 'px';
+  fixedTable.appendChild(fixedHeader);
+  document.body.appendChild(fixedTable);
 
-	    // Nếu có <thead> thì lấy, nếu không thì lấy hàng đầu tiên
-	    let headerRow = table.querySelector("tr");
-	    if (!headerRow) return;
-
-	    const cloneHeader = headerRow.cloneNode(true);
-	    const floatingHeader = document.createElement("table");
-	    floatingHeader.appendChild(cloneHeader);
-	    floatingHeader.style.position = "fixed";
-	    floatingHeader.style.top = "0";
-	    floatingHeader.style.left = table.getBoundingClientRect().left + "px";
-	    floatingHeader.style.width = table.offsetWidth + "px";
-	    floatingHeader.style.display = "none";
-	    floatingHeader.style.background = "#fff";
-	    floatingHeader.style.zIndex = "999";
-
-	    document.body.appendChild(floatingHeader);
-
-	    window.addEventListener("scroll", function () {
-	        const rect = table.getBoundingClientRect();
-	        if (rect.top < 0 && rect.bottom > 0) {
-	            floatingHeader.style.display = "table";
-	            floatingHeader.style.left = rect.left + "px";
-	        } else {
-	            floatingHeader.style.display = "none";
-	        }
-	    });
+  function adjustHeader() {
+    const rect = table.getBoundingClientRect();
+    fixedTable.style.left = rect.left + 'px';
+    fixedTable.style.width = rect.width + 'px';
+    
+    // set width từng cột
+    const originalTh = thead.querySelectorAll('th');
+    const cloneTh = fixedHeader.querySelectorAll('th');
+    originalTh.forEach((th, i) => {
+      cloneTh[i].style.width = th.offsetWidth + 'px';
     });
+    
+    // show/hide theo scroll
+    if (rect.top < 56 && rect.bottom > 0) {
+      fixedTable.style.display = 'table';
+    } else {
+      fixedTable.style.display = 'none';
+    }
+  }
+
+  window.addEventListener('scroll', adjustHeader);
+  window.addEventListener('resize', adjustHeader);
 </script>
