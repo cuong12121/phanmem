@@ -67,3 +67,35 @@ $list_config[] = array('title'=>'Tình trạng','field'=>'status','ordering'=> 1
 $list_config[] = array('title'=>'Thao tác','type'=>'list_action','list_action' => array('edit'=> 'Sửa phiếu','print' => 'In phiếu'));
 TemplateHelper::genarate_form_liting($this, $this->module,$this -> view,$list,$fitler_config,$list_config,$sort_field,$sort_direct,$pagination);
 ?>
+<script>
+	document.addEventListener("DOMContentLoaded", function () {
+    const table = document.getElementById("dataTables-example");
+    if (!table) return;
+
+    // Nếu có <thead> thì lấy, nếu không thì lấy hàng đầu tiên
+    let headerRow = table.querySelector("thead") || table.querySelector("tr");
+    if (!headerRow) return;
+
+    const cloneHeader = headerRow.cloneNode(true);
+    const floatingHeader = document.createElement("table");
+    floatingHeader.appendChild(cloneHeader);
+    floatingHeader.style.position = "fixed";
+    floatingHeader.style.top = "0";
+    floatingHeader.style.left = table.getBoundingClientRect().left + "px";
+    floatingHeader.style.width = table.offsetWidth + "px";
+    floatingHeader.style.display = "none";
+    floatingHeader.style.background = "#fff";
+    floatingHeader.style.zIndex = "999";
+
+    document.body.appendChild(floatingHeader);
+
+    window.addEventListener("scroll", function () {
+        const rect = table.getBoundingClientRect();
+        if (rect.top < 0 && rect.bottom > 0) {
+            floatingHeader.style.display = "table";
+            floatingHeader.style.left = rect.left + "px";
+        } else {
+            floatingHeader.style.display = "none";
+        }
+    });
+</script>
