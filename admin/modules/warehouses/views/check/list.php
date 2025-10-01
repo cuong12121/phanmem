@@ -71,7 +71,7 @@ TemplateHelper::genarate_form_liting($this, $this->module,$this -> view,$list,$f
 <style>
 .fixedHeader {
   position: fixed;
-  top: 56px;
+  top: 0px;
   display: none;
   background: #fff;
   z-index: 99;
