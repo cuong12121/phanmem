@@ -69,12 +69,12 @@ TemplateHelper::genarate_form_liting($this, $this->module,$this -> view,$list,$f
 ?>
 
 <style>
-.fixed-header {
+.fixedHeader {
   position: fixed;
-  top: 56px;
-  background: white;
+  top: 56px; /* khoảng cách với navbar */
   display: none;
-  z-index: 1000;
+  background: #fff;
+  z-index: 99;
 }
 </style>
 <script>
@@ -85,6 +85,25 @@ TemplateHelper::genarate_form_liting($this, $this->module,$this -> view,$list,$f
 	if (el) {
 	  el.id = "wrap_toolbars";
 	}
+
+  document.addEventListener("DOMContentLoaded", function() {
+    const table = document.querySelector("#dataTables-example");
+    const thead = table.querySelector("thead");
+    
+    // Clone thead
+    const clone = thead.cloneNode(true);
+    clone.classList.add("fixedHeader");
+    table.parentNode.insertBefore(clone, table);
+
+    window.addEventListener("scroll", function() {
+      const rect = table.getBoundingClientRect();
+      if (rect.top < 56 && rect.bottom > 0) {
+        clone.style.display = "table-header-group";
+      } else {
+        clone.style.display = "none";
+      }
+    });
+  });
 
 	// document.addEventListener("DOMContentLoaded", function () {
     // const table = document.getElementById("dataTables-example");
