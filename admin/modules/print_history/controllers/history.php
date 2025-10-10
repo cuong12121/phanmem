@@ -1075,13 +1075,7 @@
 				    }
 				}
 
-				echo "<pre>";
-
-				print_r($pdf);
-
-				echo "</pre>";
-
-				die;
+				
 
 				
 
