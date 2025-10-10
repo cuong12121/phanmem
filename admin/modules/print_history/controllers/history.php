@@ -1073,6 +1073,14 @@
 				    }
 				}
 
+				echo "<pre>";
+
+				print_r($pdf);
+
+				echo "</pre>";
+
+				die;
+
 				$data_in = file_get_contents('https://drive.dienmayai.com/file_in_tiktok.php');
 
 				$data_in = json_decode($data_in, true);
