@@ -1009,13 +1009,7 @@
 
 				$content = json_decode($content);
 
-				echo "<pre>";
 
-				print_r($content);
-
-				echo "</pre>";
-
-				die;
 
 				$pdf = [];
 
@@ -1080,6 +1074,14 @@
 				        ];
 				    }
 				}
+
+				echo "<pre>";
+
+				print_r($pdf);
+
+				echo "</pre>";
+
+				die;
 
 				
 
