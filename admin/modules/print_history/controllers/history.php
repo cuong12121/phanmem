@@ -1075,7 +1075,7 @@
 
 				echo "<pre>";
 
-				print_r($pdf);
+				print_r($duplicateMvds);
 
 				echo "</pre>";
 
