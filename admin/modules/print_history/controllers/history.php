@@ -1101,7 +1101,7 @@
 					print_r($pdf);
 				echo "</pre>";
 
-				exit()
+				exit();
 
 				// Gọi hàm với 2 mảng đã cho
 				$this->compare_arrays($dataexcel, $pdf, $file_name, $duplicateMvds, $tiktok);
