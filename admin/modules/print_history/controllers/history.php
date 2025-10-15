@@ -1049,8 +1049,8 @@
 
 				foreach ($content as $group) {
 				    foreach ($group as $item) {
-				        // Nếu mã vận đơn là 'none', dùng mã đơn hàng thay thế
-				        $key = ($item->mvd === 'none' || empty($item->mvd)) ? $item->mdh : $item->mvd;
+				        
+				        $key =  $item->mvd;
 				        $combo_item = $this->combo_Return_code($item->sku);
 
 				        if(!empty($combo_item)){
@@ -1097,11 +1097,6 @@
 
 				$tiktok=1;
 
-				echo "<pre>";
-					print_r($dataexcel);
-				echo "</pre>";
-
-				exit();
 
 				// Gọi hàm với 2 mảng đã cho
 				$this->compare_arrays($dataexcel, $pdf, $file_name, $duplicateMvds, $tiktok);
