@@ -69,18 +69,18 @@
 		function display()
 		{
 
-			if($_SESSION['ad_userid']==9){
-				$start = microtime(true);
+			// if($_SESSION['ad_userid']==9){
+			// 	$start = microtime(true);
 
-					echo "kiểm tra mạng";
-				$end = microtime(true);	
+			// 		echo "kiểm tra mạng";
+			// 	$end = microtime(true);	
 
-				$executionTime = $end - $start;
+			// 	$executionTime = $end - $start;
 
-				echo "Thời gian thực thi: " . number_format($executionTime, 6) . " giây";
+			// 	echo "Thời gian thực thi: " . number_format($executionTime, 6) . " giây";
 
-				die;
-			}
+			// 	die;
+			// }
 			parent::display();
 			$sort_field = $this -> sort_field;
 			$sort_direct = $this -> sort_direct;
