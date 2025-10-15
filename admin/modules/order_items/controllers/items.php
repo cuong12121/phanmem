@@ -79,53 +79,36 @@
 			
 			$shipping_unit = $model -> get_records('published = 1','fs_shipping_unit');
 
-			if($_SESSION['ad_userid']==9){
-				$start = microtime(true);
-					// Kết nối Redis
-					$redis = new Redis();
-					$redis->connect('127.0.0.1', 6379); // IP & Port Redis server
 
-					if (!$redis->ping()) {
-					    die("Không thể kết nối Redis");
-					}
+			// Kết nối Redis
+			$redis = new Redis();
+			$redis->connect('127.0.0.1', 6379); // IP & Port Redis server
 
-					$key = "list_xuat_kho";
+			$key = "list_xuat_kho";
 
-					$cacheData = $redis->get($key);
+			$cacheData = $redis->get($key);
 
-					if ($cacheData) {
+			if ($cacheData) {
 
-					    $list = json_decode($cacheData, true);
-					}
-					else{
-						$list = $this -> model->get_data();
-					
-						// Chuyển mảng thành chuỗi
-						$list_json = json_encode($list);
-
-						// Lưu vào Redis (set thời gian sống là 3600 giây = 1h)
-						$redis->setex($key, 36000, $list_json);
-					}
-
-				$end = microtime(true);	
-
-				$executionTime = $end - $start;
-
-				echo "Thời gian thực thi: " . number_format($executionTime, 6) . " giây";
-
-				die;
-
-			}	
-
-			
-
-			$list = $this -> model->get_data();
-
-			if($_SESSION['ad_userid']==9){
-				dd($list);
-				// echo "string";
-				die;
+			    $list = json_decode($cacheData, true);
 			}
+			else{
+				$list = $this -> model->get_data();
+			
+				// Chuyển mảng thành chuỗi
+				$list_json = json_encode($list);
+
+				// Lưu vào Redis (set thời gian sống là 36000 giây = 1h)
+				$redis->setex($key, 36000, $list_json);
+			}
+
+			// $list = $this -> model->get_data();
+
+			// if($_SESSION['ad_userid']==9){
+			// 	dd($list);
+			// 	// echo "string";
+			// 	die;
+			// }
 			
 			$pagination = $model->getPagination();
 
