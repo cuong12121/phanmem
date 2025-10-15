@@ -76,13 +76,16 @@
 			$warehouses = $model -> get_records('published = 1 AND id IN ('.$wrap_id_warehouses.')','fs_warehouses');
 			$platforms = $model -> get_records('published = 1','fs_platforms');
 			$houses = $model -> get_records('published = 1','fs_house');
-			if($_SESSION['ad_userid']==9){
-
-				echo "string";
-				die;
-			}
+			
 			$shipping_unit = $model -> get_records('published = 1','fs_shipping_unit');
 			$list = $this -> model->get_data();
+
+			if($_SESSION['ad_userid']==9){
+				dd($list);
+				// echo "string";
+				die;
+			}
+			
 			$pagination = $model->getPagination();
 
 
