@@ -105,12 +105,12 @@
 			
 			
 			
-			if($_SESSION['ad_userid']==9){
-				if ($cacheData) {
+			// if($_SESSION['ad_userid']==9){
+			// 	if ($cacheData) {
 
-				    $list = json_decode($cacheData);
-				}
-			}
+			// 	    $list = json_decode($cacheData);
+			// 	}
+			// }
 			
 			$pagination = $model->getPagination();
 
