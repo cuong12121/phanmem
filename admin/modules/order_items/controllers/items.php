@@ -109,11 +109,11 @@
 
 
 			}	
+			else{
+				$list = $this -> model->get_data();
+			}
 
 			
-
-			$list = $this -> model->get_data();
-
 			// if($_SESSION['ad_userid']==9){
 			// 	dd($list);
 			// 	// echo "string";
