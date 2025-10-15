@@ -79,6 +79,8 @@
 			
 			$shipping_unit = $model -> get_records('published = 1','fs_shipping_unit');
 
+
+			$start = microtime(true);
 			// Kết nối Redis
 			$redis = new Redis();
 			$redis->connect('127.0.0.1', 6379); // IP & Port Redis server
@@ -113,6 +115,13 @@
 			// }
 			
 			$pagination = $model->getPagination();
+
+			$end = microtime(true);
+
+			// Tính thời gian chạy
+			$executionTime = $end - $start;
+
+			echo "Thời gian thực thi: " . number_format($executionTime, 6) . " giây";
 
 
 
