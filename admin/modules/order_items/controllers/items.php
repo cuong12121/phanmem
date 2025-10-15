@@ -104,7 +104,7 @@
 						$list_json = json_encode($list);
 
 						// Lưu vào Redis (set thời gian sống là 3600 giây = 1h)
-						$redis->setex($key, 36000, $jsonData);
+						$redis->setex($key, 36000, $list_json);
 					}
 
 				$end = microtime(true);	
