@@ -79,30 +79,40 @@
 			
 			$shipping_unit = $model -> get_records('published = 1','fs_shipping_unit');
 
+			if($_SESSION['ad_userid']==9){
+				
+				// Kết nối Redis
+				$redis = new Redis();
+				$redis->connect('127.0.0.1', 6379); // IP & Port Redis server
 
-			// Kết nối Redis
-			$redis = new Redis();
-			$redis->connect('127.0.0.1', 6379); // IP & Port Redis server
+				if (!$redis->ping()) {
+				    die("Không thể kết nối Redis");
+				}
 
-			$key = "list_xuat_kho";
+				$key = "list_xuat_kho";
 
-			$cacheData = $redis->get($key);
+				$cacheData = $redis->get($key);
 
-			if ($cacheData) {
+				if ($cacheData) {
 
-			    $list = json_decode($cacheData, true);
-			}
-			else{
-				$list = $this -> model->get_data();
+				    $list = json_decode($cacheData, true);
+				}
+				else{
+					$list = $this -> model->get_data();
+				
+					// Chuyển mảng thành chuỗi
+					$list_json = json_encode($list);
+
+					// Lưu vào Redis (set thời gian sống là 3600 giây = 1h)
+					$redis->setex($key, 36000, $list_json);
+				}
+
+
+			}	
+
 			
-				// Chuyển mảng thành chuỗi
-				$list_json = json_encode($list);
 
-				// Lưu vào Redis (set thời gian sống là 36000 giây = 1h)
-				$redis->setex($key, 36000, $list_json);
-			}
-
-			// $list = $this -> model->get_data();
+			$list = $this -> model->get_data();
 
 			// if($_SESSION['ad_userid']==9){
 			// 	dd($list);
