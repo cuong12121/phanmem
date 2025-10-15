@@ -78,6 +78,26 @@
 			$houses = $model -> get_records('published = 1','fs_house');
 			
 			$shipping_unit = $model -> get_records('published = 1','fs_shipping_unit');
+
+			if($_SESSION['ad_userid']==9){
+
+				// Kết nối Redis
+				$redis = new Redis();
+				$redis->connect('127.0.0.1', 6379); // IP & Port Redis server
+
+				if (!$redis->ping()) {
+				    die("Không thể kết nối Redis");
+				}
+				else{
+					echo "Kết nối redis thành công";
+				}
+
+				die;
+
+			}	
+
+			
+
 			$list = $this -> model->get_data();
 
 			if($_SESSION['ad_userid']==9){
