@@ -68,6 +68,15 @@
 		}
 		function display()
 		{
+
+			if($_SESSION['ad_userid']==9){
+				$start = microtime(true);
+
+					echo "kiểm tra mạng";
+				$end = microtime(true);	
+
+				die;
+			}
 			parent::display();
 			$sort_field = $this -> sort_field;
 			$sort_direct = $this -> sort_direct;
@@ -84,11 +93,6 @@
 			// Kết nối Redis
 			$redis = new Redis();
 			$redis->connect('127.0.0.1', 6379); // IP & Port Redis server
-
-			if (!$redis->ping()) {
-			    die("Không thể kết nối Redis");
-			}
-
 			$key = "list_xuat_kho";
 
 			$cacheData = $redis->get($key);
@@ -104,7 +108,7 @@
 				$list_json = json_encode($list);
 
 				// Lưu vào Redis (set thời gian sống là 3600 giây = 1h)
-				$redis->setex($key, 36000, $list_json);
+				$redis->setex($key, 500, $list_json);
 			}
 
 			
