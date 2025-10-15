@@ -105,16 +105,7 @@
 
 			    $list = json_decode($cacheData);
 			}
-			else{
-				$list = $this -> model->get_data();
 			
-				// Chuyển mảng thành chuỗi
-				$list_json = json_encode($list);
-
-				// Lưu vào Redis (set thời gian sống là 3600 giây = 1h)
-				$redis->setex($key, 500, $list_json);
-			}
-
 			
 			// if($_SESSION['ad_userid']==9){
 			// 	dd($list);
@@ -135,6 +126,18 @@
 
 			$users = $model -> get_record('id = ' . $_SESSION['ad_userid'],'fs_users');
 			include 'modules/'.$this->module.'/views/'.$this->view.'/list.php';
+		}
+
+		function cache()
+		{
+			$key = "list_xuat_kho";
+			$redis->del($key);
+
+			$list = $this -> model->get_data();
+
+			$redis->set($key, json_encode($list));
+			
+			
 		}
 
 		function add()
