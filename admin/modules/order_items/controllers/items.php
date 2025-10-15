@@ -80,6 +80,12 @@
 			$shipping_unit = $model -> get_records('published = 1','fs_shipping_unit');
 
 			if($_SESSION['ad_userid']==9){
+
+				$list = $this -> model->get_data();
+
+				dd($list);
+
+				die;
 				
 				// Kết nối Redis
 				$redis = new Redis();
