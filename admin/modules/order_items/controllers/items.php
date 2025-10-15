@@ -81,11 +81,11 @@
 
 			if($_SESSION['ad_userid']==9){
 
-				$list = $this -> model->get_data();
+				// $list = $this -> model->get_data();
 
-				dd($list);
+				// dd($list);
 
-				die;
+				// die;
 				
 				// Kết nối Redis
 				$redis = new Redis();
@@ -112,6 +112,10 @@
 					// Lưu vào Redis (set thời gian sống là 3600 giây = 1h)
 					$redis->setex($key, 36000, $list_json);
 				}
+
+				dd($list);
+
+				die;
 
 
 			}	
