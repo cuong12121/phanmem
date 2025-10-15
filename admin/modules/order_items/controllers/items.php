@@ -100,18 +100,17 @@
 			$key = "list_xuat_kho";
 
 			$cacheData = $redis->get($key);
+			$list = $this -> model->get_data();
 
-			if ($cacheData) {
+			
+			
+			
+			if($_SESSION['ad_userid']==9){
+				if ($cacheData) {
 
-			    $list = json_decode($cacheData);
+				    $list = json_decode($cacheData);
+				}
 			}
-			
-			
-			// if($_SESSION['ad_userid']==9){
-			// 	dd($list);
-			// 	// echo "string";
-			// 	die;
-			// }
 			
 			$pagination = $model->getPagination();
 
