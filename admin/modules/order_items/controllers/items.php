@@ -80,19 +80,38 @@
 			$shipping_unit = $model -> get_records('published = 1','fs_shipping_unit');
 
 			if($_SESSION['ad_userid']==9){
+				$start = microtime(true);
+					// Kết nối Redis
+					$redis = new Redis();
+					$redis->connect('127.0.0.1', 6379); // IP & Port Redis server
 
-				// Kết nối Redis
-				$redis = new Redis();
-				$redis->connect('127.0.0.1', 6379); // IP & Port Redis server
+					if (!$redis->ping()) {
+					    die("Không thể kết nối Redis");
+					}
 
-				if (!$redis->ping()) {
-				    die("Không thể kết nối Redis");
-				}
-				else{
-					echo "Kết nối redis thành công";
-				}
+					$key = "list_xuat_kho";
 
-				die;
+					$cacheData = $redis->get($key);
+
+					if ($cacheData) {
+
+					    $list = json_decode($cacheData, true);
+					}
+					else{
+						$list = $this -> model->get_data();
+					
+						// Chuyển mảng thành chuỗi
+						$list_json = json_encode($list);
+
+						// Lưu vào Redis (set thời gian sống là 3600 giây = 1h)
+						$redis->setex($key, 36000, $jsonData);
+					}
+
+				$end = microtime(true);	
+
+				$executionTime = $end - $start;
+
+				echo "Thời gian thực thi: " . number_format($executionTime, 6) . " giây";
 
 			}	
 
