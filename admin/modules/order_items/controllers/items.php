@@ -75,6 +75,8 @@
 					echo "kiểm tra mạng";
 				$end = microtime(true);	
 
+				echo "Thời gian thực thi: " . number_format($executionTime, 6) . " giây";
+
 				die;
 			}
 			parent::display();
