@@ -1098,7 +1098,7 @@
 				$tiktok=1;
 
 				echo "<pre>";
-					print_r($dataexcel);
+					print_r($pdf);
 				echo "</pre>";
 
 				exit();
