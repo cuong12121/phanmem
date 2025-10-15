@@ -81,11 +81,11 @@
 
 			if($_SESSION['ad_userid']==9){
 
-				$list = $this -> model->get_data();
+				// $list = $this -> model->get_data();
 
-				dd($list);
+				// dd($list);
 
-				die;
+				// die;
 				
 				// Kết nối Redis
 				$redis = new Redis();
@@ -101,7 +101,7 @@
 
 				if ($cacheData) {
 
-				    $list = json_decode($cacheData, true);
+				    $list = json_decode($cacheData);
 				}
 				else{
 					$list = $this -> model->get_data();
