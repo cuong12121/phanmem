@@ -128,7 +128,7 @@
 
 			    echo "</pre>";
 
-				die;
+				
 				
 
 			}else{
@@ -149,30 +149,7 @@
 
 			$users = $model -> get_record('id = ' . $_SESSION['ad_userid'],'fs_users');
 
-			// if($_SESSION['ad_userid']==9){
-
-
-			// 	$key1 = 'xuatkho_page';
-
-			// 	$html = $redis->get($key1);
-
-			// 	if (!$html) {
-
-			// 		 // Bắt đầu "buffer" output của include
-			// 	    ob_start();
-			// 	    include 'modules/'.$this->module.'/views/'.$this->view.'/list.php';
-			// 	    $html = ob_get_clean();
-
-			// 	    // Lưu vào Redis
-			// 	    $redis->set($key, $html);
-
-			// 	}	
-			// 	echo $html;
-
-			// }
-			// else{
-			// 	include 'modules/'.$this->module.'/views/'.$this->view.'/list.php';	
-			// }
+			
 			include 'modules/'.$this->module.'/views/'.$this->view.'/list.php';	
 
 			
