@@ -78,7 +78,7 @@
 			echo "Thời gian thực thi server là: " . number_format($executionTime1, 6) . " giây <br>";
 
 
-
+			$start = microtime(true);
 			parent::display();
 			$sort_field = $this -> sort_field;
 			$sort_direct = $this -> sort_direct;
@@ -89,6 +89,13 @@
 			$houses = $model -> get_records('published = 1','fs_house');
 			
 			$shipping_unit = $model -> get_records('published = 1','fs_shipping_unit');
+
+			$end = microtime(true);
+
+			// Tính thời gian chạy
+			$executionTime2 = $end - $start;
+
+			echo "Thời gian thực thi tác vụ 1 là: " . number_format($executionTime2, 6) . " giây <br>";
 
 
 			$start = microtime(true);
