@@ -117,36 +117,7 @@
 
 			$cacheData = $redis->get($key);
 
-
-			if($_SESSION['ad_userid']==9){
-				
-			
-				$cacheData = $redis->get($key);
-
-				$list = json_decode($cacheData);
-
-				// $file = __FILE__;
-
-				// if (opcache_is_script_cached($file)) {
-				//     echo "✅ Đang chạy từ OPcache<br>";
-				// }
-				// else{
-				// 	echo "chưa cache <br>";
-				// }
-
-				// if ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($_POST)) {
-				// 	echo "<pre>";
-				// 		print_r($_POST);
-				// 	echo "</pre>";
-				    
-				// } 
-
-			
-			}
-			else{
-				$list = $this -> model->get_data();
-			}
-			
+			$list = $this -> model->get_data();
 			
 			$pagination = $model->getPagination();
 
