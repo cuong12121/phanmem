@@ -101,7 +101,7 @@
 			$start = microtime(true);
 			// Kết nối Redis
 			$redis = new Redis();
-			$redis->connect('127.0.0.1', 6379); // IP & Port Redis server
+			$redis->pconnect('127.0.0.1', 6379); // IP & Port Redis server
 			$key = "list_xuat_kho";
 
 			$cacheData = $redis->get($key);
