@@ -68,6 +68,16 @@
 		}
 		function display()
 		{
+			$start = microtime(true);
+
+			$end = microtime(true);
+
+			// Tính thời gian chạy
+			$executionTime1 = $end - $start;
+
+			echo "Thời gian thực thi server là: " . number_format($executionTime1, 6) . " giây .'<br>'";
+
+
 
 			parent::display();
 			$sort_field = $this -> sort_field;
