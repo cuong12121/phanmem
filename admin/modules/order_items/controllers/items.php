@@ -75,7 +75,7 @@
 			// Tính thời gian chạy
 			$executionTime1 = $end - $start;
 
-			echo "Thời gian thực thi server là: " . number_format($executionTime1, 6) . " giây .'<br>'";
+			echo "Thời gian thực thi server là: " . number_format($executionTime1, 6) . " giây <br>";
 
 
 
