@@ -120,11 +120,17 @@
 
 					$list = $this -> model->get_data();
 
-					var_dump($list);
 
-					die;
 
 				    $redis->set($key, json_encode($list));
+
+				    $cache_data = $redis->get($key);
+
+					$list1 = json_decode($cache_data);
+
+				    var_dump($list1);
+
+					die;
 				   
 				}
 				else{
