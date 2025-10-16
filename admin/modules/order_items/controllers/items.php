@@ -161,7 +161,7 @@
 
 
 
-			// $redis->set($key, json_encode($list));
+			$redis->set($key, json_encode($list));
 			
 			
 		}
