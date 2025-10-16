@@ -108,8 +108,7 @@
 
 			if($_SESSION['ad_userid']==9){
 
-				$key = "list_xuat_kho";
-
+			
 				$cacheData = $redis->get($key);
 
 				$list = json_decode($cacheData);
