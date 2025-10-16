@@ -119,12 +119,12 @@
 				
 				$cache_data = $redis->get($key);
 
-				$list = json_decode($cache_data);
+				$lists = json_decode($cache_data);
 				
 
 				echo "<pre>";
 
-			    print_r($list);
+			    print_r($lists);
 
 			    echo "</pre>";
 
