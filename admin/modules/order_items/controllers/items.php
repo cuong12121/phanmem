@@ -118,6 +118,8 @@
 				$cache_data = $redis->get($key);
 
 				$list = json_decode($cache_data);
+
+				dd($list);
 			}else{
 				$list = $this -> model->get_data();
 			}	
