@@ -126,15 +126,9 @@
 
 				    $cache_data = $redis->get($key);
 
-					$list1 = json_decode($cache_data);
+					$list = json_decode($cache_data);
 
-					echo "<pre>";
-
-				    var_dump($list1);
-
-				    echo "</pre>";
-
-					die;
+					
 				   
 				}
 				else{
@@ -142,6 +136,14 @@
 
 					$list = json_decode($cache_data);
 				}
+
+				echo "<pre>";
+
+			    var_dump($list);
+
+			    echo "</pre>";
+
+				die;
 				
 
 			}else{
