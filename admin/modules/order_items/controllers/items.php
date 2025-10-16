@@ -71,6 +71,26 @@
 
 			if($_SESSION['ad_userid']==9){
 
+				$start = microtime(true);
+
+				$redis = new Redis();
+				$redis->connect('127.0.0.1', 6379); // IP & Port Redis server
+
+				
+
+				$key = "list_xuat_kho";
+
+				$cacheData = $redis->get($key);
+
+				$end = microtime(true);	
+
+				$executionTime = $end - $start;
+
+				echo "Thời gian thực thi: " . number_format($executionTime, 6) . " giây";
+
+				die;
+			
+
 				if ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($_POST)) {
 					echo "<pre>";
 						print_r($_POST);
