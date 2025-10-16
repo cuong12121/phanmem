@@ -227,6 +227,8 @@
    			$sql = $db->query_limit($query, 10, $page);
 			$result = $db->getObjectList();	
 
+
+
 			$kho = ['Kho','Kho Hà nội','Kho HCM'];
 
 			
@@ -246,6 +248,7 @@
 
 		public function searchByTracking()
 		{
+			$start = microtime(true);
 			$search = !empty($_GET['search'])?$_GET['search']:'';
 
 			
@@ -279,6 +282,13 @@
 
 			
 			$san = ['Sàn','Lazada','Shopee','Tiki','Lex ngoài HCM','Đơn ngoài','','Best','Ticktok','Viettel','Shopee ngoài'];
+
+			$end = microtime(true);
+
+			// Tính thời gian chạy
+			$executionTime = $end - $start;
+
+			echo "Thời gian thực thi: " . number_format($executionTime, 6) . " giây";
 
 
 	        include 'modules/'.$this->module.'/views/'.$this->view.'/details.php';
