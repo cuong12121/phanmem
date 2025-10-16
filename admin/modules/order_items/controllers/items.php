@@ -113,6 +113,15 @@
 
 				$list = json_decode($cacheData);
 
+				$file = __FILE__;
+
+				if (opcache_is_script_cached($file)) {
+				    echo "✅ Đang chạy từ OPcache<br>";
+				}
+				else{
+					echo "chưa cache <br>";
+				}
+
 				
 
 				// if ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($_POST)) {
