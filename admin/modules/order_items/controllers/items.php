@@ -139,7 +139,7 @@
 
 				echo "<pre>";
 
-			    var_dump($list);
+			    var_dump($key);
 
 			    echo "</pre>";
 
