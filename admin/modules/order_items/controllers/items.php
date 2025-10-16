@@ -69,18 +69,27 @@
 		function display()
 		{
 
-			// if($_SESSION['ad_userid']==9){
-			// 	$start = microtime(true);
+			if($_SESSION['ad_userid']==9){
 
-			// 		echo "kiểm tra mạng";
-			// 	$end = microtime(true);	
+				if ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($_POST)) {
+					echo "<pre>";
+						print_r($_POST);
+					echo "</pre>";
+				    
+				} 
 
-			// 	$executionTime = $end - $start;
+				
+				// $start = microtime(true);
 
-			// 	echo "Thời gian thực thi: " . number_format($executionTime, 6) . " giây";
+				// 	echo "kiểm tra mạng";
+				// $end = microtime(true);	
 
-			// 	die;
-			// }
+				// $executionTime = $end - $start;
+
+				// echo "Thời gian thực thi: " . number_format($executionTime, 6) . " giây";
+
+				// die;
+			}
 			parent::display();
 			$sort_field = $this -> sort_field;
 			$sort_direct = $this -> sort_direct;
