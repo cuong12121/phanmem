@@ -119,13 +119,13 @@
 
 				$list = json_decode($cache_data);
 
-				echo "<pre>";
+				// echo "<pre>";
 
-				print_r($list);
+				// print_r($list);
 
-				echo "</pre>";
+				// echo "</pre>";
 
-				die;
+				
 			}else{
 				$list = $this -> model->get_data();
 			}	
