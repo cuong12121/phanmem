@@ -98,6 +98,7 @@
 			echo "Thời gian thực thi tác vụ 1 là: " . number_format($executionTime2, 6) . " giây <br>";
 
 
+
 			$start = microtime(true);
 			// Kết nối Redis
 			$redis = new Redis();
@@ -106,8 +107,9 @@
 
 			$cacheData = $redis->get($key);
 
-			if($_SESSION['ad_userid']==9){
 
+			if($_SESSION['ad_userid']==9){
+				$start = microtime(true);
 			
 				$cacheData = $redis->get($key);
 
@@ -121,6 +123,14 @@
 				else{
 					echo "chưa cache <br>";
 				}
+
+				$end = microtime(true);
+
+				$executionTime3 = $end - $start;
+
+				echo "Thời gian thực thi tác là: " . number_format($executionTime3, 6) . " giây <br>";
+
+				die;
 
 				
 
