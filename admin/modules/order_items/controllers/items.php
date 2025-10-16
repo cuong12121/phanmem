@@ -214,7 +214,7 @@
 
 			$etag = md5_file(__FILE__);
 			header("ETag: \"$etag\"");
-			header("Cache-Control: max-age=3600");
+			header("Cache-Control: max-age=360000");
 
 			if (isset($_SERVER['HTTP_IF_NONE_MATCH']) && 
 			    $_SERVER['HTTP_IF_NONE_MATCH'] === "\"$etag\"") {
