@@ -103,7 +103,7 @@
 
 			$start = microtime(true);
 			
-			static $list = null;  // 👈 biến tĩnh dùng làm cache
+			static $list = null;  //biến tĩnh dùng làm cache
 
 		    if ($list === null) {
 		        
