@@ -108,20 +108,16 @@
 			$key = "list_xuat_kho";
 			if($_SESSION['ad_userid']==9){
 
-				
 				$cache_data = $redis->get($key);
 
 				$list = json_decode($cache_data);
 				
-
 				echo "<pre>";
 
 			    print_r($list);
 
 			    echo "</pre>";
 
-				
-				
 
 			}else{
 				$list = $this -> model->get_data();
@@ -168,8 +164,15 @@
 			$redis = new Redis();
 			$redis->connect('127.0.0.1', 6379); // IP & Port Redis server
 			$key = "list_xuat_kho";
-			$redis->del($key);
+			$cache_data = $redis->get($key);
 
+			$list = json_decode($cache_data);
+			
+			echo "<pre>";
+
+		    print_r($list);
+
+		    echo "</pre>";
 			// $list = $this -> model->get_data();
 
 
