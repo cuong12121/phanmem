@@ -68,6 +68,16 @@
 		}
 		function display()
 		{
+
+			$etag = md5_file(__FILE__);
+			header("ETag: \"$etag\"");
+			header("Cache-Control: max-age=3600");
+
+			if (isset($_SERVER['HTTP_IF_NONE_MATCH']) && 
+			    $_SERVER['HTTP_IF_NONE_MATCH'] === "\"$etag\"") {
+			    header("HTTP/1.1 304 Not Modified");
+			    exit;
+			}
 			$start = microtime(true);
 
 			$end = microtime(true);
