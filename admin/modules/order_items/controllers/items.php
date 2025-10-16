@@ -115,17 +115,21 @@
 			$redis->pconnect('127.0.0.1', 6379); // IP & Port Redis server
 			$key = "list_xuat_kho";
 			if($_SESSION['ad_userid']==9){
-				$cache_data = $redis->get($key);
 
-				$list = json_decode($cache_data);
+				if (!$redis->exists($key)) {
 
-				// echo "<pre>";
+					$list = $this -> model->get_data();
 
-				// print_r($list);
+				    $redis->set($key, json_encode($list));
+				   
+				}
+				else{
+					$cache_data = $redis->get($key);
 
-				// echo "</pre>";
-
+					$list = json_decode($cache_data);
+				}
 				
+
 			}else{
 				$list = $this -> model->get_data();
 			}	
