@@ -115,6 +115,8 @@
 					$cache_data = $redis->get($key);
 
 					$list = json_decode($cache_data);
+
+					echo "redis <br>";
 				}
 				else{
 					$list = $this -> model->get_data();
