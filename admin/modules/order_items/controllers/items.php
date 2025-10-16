@@ -214,6 +214,7 @@
 
 		public function details()
 		{
+			$start = microtime(true);
 			global $db;
 
 			$page = !empty($_GET['page'])?$_GET['page']:1;
@@ -231,6 +232,13 @@
 			
 
 			$san = ['Sàn','Lazada','Shopee','Tiki','Lex ngoài HCM','Đơn ngoài','','Best','Ticktok','Viettel','Shopee ngoài'];
+
+			$end = microtime(true);
+
+			// Tính thời gian chạy
+			$executionTime = $end - $start;
+
+			echo "Thời gian thực thi: " . number_format($executionTime, 6) . " giây";
 
 
 			include 'modules/'.$this->module.'/views/'.$this->view.'/details.php';	
