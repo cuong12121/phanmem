@@ -275,7 +275,16 @@
 
 	        // Send the request
 
-	        $response = file_get_contents('https://api.'.DOMAIN.'/api/search-data-order-to-date?&search='.$search,FALSE, $context);
+	       
+
+	        static $response = null;  // 👈 biến tĩnh dùng làm cache
+
+		    if ($response === null) {
+		        
+		       $response = file_get_contents('https://api.'.DOMAIN.'/api/search-data-order-to-date?&search='.$search,FALSE, $context);
+		    }
+
+		    return $cache;
 
 
 	        $results = json_decode($response);
