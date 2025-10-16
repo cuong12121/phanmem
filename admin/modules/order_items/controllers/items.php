@@ -109,30 +109,20 @@
 
 
 			if($_SESSION['ad_userid']==9){
-				$start = microtime(true);
+				
 			
 				$cacheData = $redis->get($key);
 
 				$list = json_decode($cacheData);
 
-				$file = __FILE__;
+				// $file = __FILE__;
 
-				if (opcache_is_script_cached($file)) {
-				    echo "✅ Đang chạy từ OPcache<br>";
-				}
-				else{
-					echo "chưa cache <br>";
-				}
-
-				$end = microtime(true);
-
-				$executionTime3 = $end - $start;
-
-				echo "Thời gian thực thi tác là: " . number_format($executionTime3, 6) . " giây <br>";
-
-				die;
-
-				
+				// if (opcache_is_script_cached($file)) {
+				//     echo "✅ Đang chạy từ OPcache<br>";
+				// }
+				// else{
+				// 	echo "chưa cache <br>";
+				// }
 
 				// if ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($_POST)) {
 				// 	echo "<pre>";
