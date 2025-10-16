@@ -491,6 +491,8 @@ class TemplateHelper
 			$i ++;
 			
 		}
+
+		$list =  $list ?? [];
 		$html_head = '<div class="dataTable_wrapper">
 		<table style="width: 100%;" id="dataTables-example" class="table table-hover table-striped table-bordered"><thead><tr>';
 		$html_head .= '<th width="30px" ></th>
