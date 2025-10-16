@@ -69,15 +69,7 @@
 		function display()
 		{
 
-			$etag = md5_file(__FILE__);
-			header("ETag: \"$etag\"");
-			header("Cache-Control: max-age=3600");
-
-			if (isset($_SERVER['HTTP_IF_NONE_MATCH']) && 
-			    $_SERVER['HTTP_IF_NONE_MATCH'] === "\"$etag\"") {
-			    header("HTTP/1.1 304 Not Modified");
-			    exit;
-			}
+			
 			$start = microtime(true);
 
 			$end = microtime(true);
@@ -119,12 +111,12 @@
 				
 				$cache_data = $redis->get($key);
 
-				$lists = json_decode($cache_data);
+				$list = json_decode($cache_data);
 				
 
 				echo "<pre>";
 
-			    print_r($lists);
+			    print_r($list);
 
 			    echo "</pre>";
 
