@@ -199,11 +199,11 @@
 			$key = "list_xuat_kho";
 			$redis->del($key);
 
-			$list = $this -> model->get_data();
+			// $list = $this -> model->get_data();
 
 
 
-			$redis->set($key, json_encode($list));
+			// $redis->set($key, json_encode($list));
 			
 			
 		}
