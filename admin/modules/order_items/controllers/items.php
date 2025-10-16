@@ -116,30 +116,15 @@
 			$key = "list_xuat_kho";
 			if($_SESSION['ad_userid']==9){
 
-				if (!$redis->exists($key)) {
+				
+				$cache_data = $redis->get($key);
 
-					$list = $this -> model->get_data();
-
-
-
-				    $redis->set($key, json_encode($list));
-
-				    $cache_data = $redis->get($key);
-
-					$list = json_decode($cache_data);
-
-					
-				   
-				}
-				else{
-					$cache_data = $redis->get($key);
-
-					$list = json_decode($cache_data);
-				}
+				$list = json_decode($cache_data);
+				
 
 				echo "<pre>";
 
-			    var_dump($key);
+			    print_r($list);
 
 			    echo "</pre>";
 
