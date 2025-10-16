@@ -106,25 +106,13 @@
 			$redis = new Redis();
 			$redis->pconnect('127.0.0.1', 6379); // IP & Port Redis server
 			$key = "list_xuat_kho";
-			if($_SESSION['ad_userid']==9){
-
-				$cache_data = $redis->get($key);
-
-				$list = json_decode($cache_data);
+			
 				
-				echo "<pre>";
 
-			    print_r($list);
+			$list = $this -> model->get_data();
 
-			    echo "</pre>";
-
-
-			}else{
-				$list = $this -> model->get_data();
-			}	
-
-
-
+			$redis->set($key, json_encode($list));
+			
 			
 			$pagination = $model->getPagination();
 
@@ -163,7 +151,7 @@
 		{
 			$redis = new Redis();
 			$redis->connect('127.0.0.1', 6379); // IP & Port Redis server
-			$key = "complete_box";
+			$key = "list_xuat_kho";
 			$cache_data = $redis->get($key);
 
 			$list = json_decode($cache_data);
