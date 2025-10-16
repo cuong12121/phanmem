@@ -78,6 +78,8 @@
 			    header("HTTP/1.1 304 Not Modified");
 			    exit;
 			}
+
+
 			$start = microtime(true);
 
 			$end = microtime(true);
@@ -115,21 +117,6 @@
 			$redis->pconnect('127.0.0.1', 6379); // IP & Port Redis server
 			$key = "list_xuat_kho";
 
-			$cacheData = $redis->get($key);
-
-			$list = $this -> model->get_data();
-			
-			$pagination = $model->getPagination();
-
-			$end = microtime(true);
-
-			// Tính thời gian chạy
-			$executionTime = $end - $start;
-
-			echo "Thời gian thực thi: " . number_format($executionTime, 6) . " giây";
-
-			$users = $model -> get_record('id = ' . $_SESSION['ad_userid'],'fs_users');
-
 			if($_SESSION['ad_userid']==9){
 
 
@@ -150,10 +137,29 @@
 				}	
 				echo $html;
 
+				die;
+
 			}
-			else{
-				include 'modules/'.$this->module.'/views/'.$this->view.'/list.php';	
-			}
+
+			$cacheData = $redis->get($key);
+
+			$list = $this -> model->get_data();
+			
+			$pagination = $model->getPagination();
+
+			$end = microtime(true);
+
+			// Tính thời gian chạy
+			$executionTime = $end - $start;
+
+			echo "Thời gian thực thi: " . number_format($executionTime, 6) . " giây";
+
+			$users = $model -> get_record('id = ' . $_SESSION['ad_userid'],'fs_users');
+
+			
+			
+			include 'modules/'.$this->module.'/views/'.$this->view.'/list.php';	
+			
 
 			
 
