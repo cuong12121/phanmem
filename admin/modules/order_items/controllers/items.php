@@ -120,6 +120,10 @@
 
 					$list = $this -> model->get_data();
 
+					var_dump($list);
+
+					die;
+
 				    $redis->set($key, json_encode($list));
 				   
 				}
