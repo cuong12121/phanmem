@@ -69,47 +69,6 @@
 		function display()
 		{
 
-			if($_SESSION['ad_userid']==9){
-
-				$start = microtime(true);
-
-				$redis = new Redis();
-				$redis->connect('127.0.0.1', 6379); // IP & Port Redis server
-
-				
-
-				$key = "list_xuat_kho";
-
-				$cacheData = $redis->get($key);
-
-				$end = microtime(true);	
-
-				$executionTime = $end - $start;
-
-				echo "Thời gian thực thi: " . number_format($executionTime, 6) . " giây";
-
-				die;
-			
-
-				if ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($_POST)) {
-					echo "<pre>";
-						print_r($_POST);
-					echo "</pre>";
-				    
-				} 
-
-				
-				// $start = microtime(true);
-
-				// 	echo "kiểm tra mạng";
-				// $end = microtime(true);	
-
-				// $executionTime = $end - $start;
-
-				// echo "Thời gian thực thi: " . number_format($executionTime, 6) . " giây";
-
-				// die;
-			}
 			parent::display();
 			$sort_field = $this -> sort_field;
 			$sort_direct = $this -> sort_direct;
@@ -129,17 +88,30 @@
 			$key = "list_xuat_kho";
 
 			$cacheData = $redis->get($key);
-			$list = $this -> model->get_data();
+
+			if($_SESSION['ad_userid']==9){
+
+				$key = "list_xuat_kho";
+
+				$cacheData = $redis->get($key);
+
+				$list = json_decode($cacheData);
+
+				
+
+				// if ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($_POST)) {
+				// 	echo "<pre>";
+				// 		print_r($_POST);
+				// 	echo "</pre>";
+				    
+				// } 
 
 			
+			}
+			else{
+				$list = $this -> model->get_data();
+			}
 			
-			
-			// if($_SESSION['ad_userid']==9){
-			// 	if ($cacheData) {
-
-			// 	    $list = json_decode($cacheData);
-			// 	}
-			// }
 			
 			$pagination = $model->getPagination();
 
@@ -149,8 +121,6 @@
 			$executionTime = $end - $start;
 
 			echo "Thời gian thực thi: " . number_format($executionTime, 6) . " giây";
-
-
 
 			$users = $model -> get_record('id = ' . $_SESSION['ad_userid'],'fs_users');
 			include 'modules/'.$this->module.'/views/'.$this->view.'/list.php';
