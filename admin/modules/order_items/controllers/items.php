@@ -125,7 +125,7 @@
 				
 		    }
 		    else{
-		    	echo "Có cache <br>";
+		    	echo "cache <br>";
 		    }
 			
 
