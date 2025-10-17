@@ -124,6 +124,9 @@
 		    	
 				
 		    }
+		    else{
+		    	echo "Có cache <br>";
+		    }
 			
 
 			$pagination = $model->getPagination();
