@@ -114,9 +114,16 @@
 				if($_SESSION['ad_userid']==9){
 					$cache_data = $redis->get($key);
 
-					$list = json_decode($cache_data);
+					$list1 = json_decode($cache_data);
 
-					echo "redis <br>";
+					// Lấy cache
+					$list = apcu_fetch('list_xuat_kho');
+
+					if ($list == false) {
+					    apcu_store('list_xuat_kho', $list1, 3600); // TTL 3600s = 1h
+					    $list = apcu_fetch('list_xuat_kho');
+					} 
+					
 				}
 				else{
 					$list = $this -> model->get_data();
