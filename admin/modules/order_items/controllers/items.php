@@ -166,14 +166,23 @@
 		{
 			$redis = new Redis();
 			$redis->connect('127.0.0.1', 6379); // IP & Port Redis server
-			$key = "sale_model";
+			$key = "list_xuat_kho";
 			$cache_data = $redis->get($key);
 
 			$list = json_decode($cache_data);
+
+			// Lấy cache
+			$data = apcu_fetch('list_xuat_kho');
+
+			if ($data == false) {
+			    apcu_store('list_xuat_kho', $list, 3600); // TTL 3600s = 1h
+			    $data = apcu_fetch('list_xuat_kho');
+			} 
+
 			
 			echo "<pre>";
 
-		    print_r($list);
+		    print_r($data);
 
 		    echo "</pre>";
 			// $list = $this -> model->get_data();
