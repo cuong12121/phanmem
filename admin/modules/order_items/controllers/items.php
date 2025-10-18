@@ -156,14 +156,13 @@
 
 			$end = microtime(true);
 
-			// Tính thời gian chạy
-			$executionTime = $end - $start;
-
-			echo "Thời gian thực thi: " . number_format($executionTime, 6) . " giây";
+			
 		}
 
 		function cache()
 		{
+			$start = microtime(true);
+
 			$redis = new Redis();
 			$redis->connect('127.0.0.1', 6379); // IP & Port Redis server
 			$key = "list_xuat_kho";
@@ -178,13 +177,13 @@
 			    apcu_store('list_xuat_kho', $list, 3600); // TTL 3600s = 1h
 			    $data = apcu_fetch('list_xuat_kho');
 			} 
+			$end = microtime(true);
 
-			
-			echo "<pre>";
+			// Tính thời gian chạy
+			$executionTime = $end - $start;
 
-		    print_r($data);
+			echo "Thời gian thực thi: " . number_format($executionTime, 6) . " giây";
 
-		    echo "</pre>";
 			// $list = $this -> model->get_data();
 
 
