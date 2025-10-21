@@ -1604,7 +1604,7 @@
 		$data = $model->get_record('id = ' .$id,'fs_order_uploads_history_prints','id,compare_ex_pdf');
 		$link = URL_ROOT.$data-> compare_ex_pdf;
 
-		$check = !empty($data-> compare_ex_pdf)?'<a target="_blink" href="' . $link . '">Xem file</a>':'';
+		$check = !empty($data-> compare_ex_pdf)?'<a target="_blank" href="' . $link . '">Xem file</a>':'';
 
 	
 		return $check;
@@ -1638,7 +1638,7 @@
 
 		
 
-		$check = !empty($data-> file_pdf_dem)?'<a target="_blink" href="' . $link . '">Xem file</a>':'';
+		$check = !empty($data-> file_pdf_dem)?'<a target="_blank" href="' . $link . '">Xem file</a>':'';
 
 		
 		return $check;
