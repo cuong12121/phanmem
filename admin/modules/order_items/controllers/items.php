@@ -168,28 +168,86 @@
 
 		function cache()
 		{
+
+
+			$etag = md5_file(__FILE__);
+			header("ETag: \"$etag\"");
+			header("Cache-Control: max-age=360000");
+
+			if (isset($_SERVER['HTTP_IF_NONE_MATCH']) && 
+			    $_SERVER['HTTP_IF_NONE_MATCH'] === "\"$etag\"") {
+			    header("HTTP/1.1 304 Not Modified");
+			    exit;
+			}
+
 			$start = microtime(true);
+			global $db;
 
-			$redis = new Redis();
-			$redis->connect('127.0.0.1', 6379); // IP & Port Redis server
-			$key = "list_xuat_kho";
-			$cache_data = $redis->get($key);
+			$page = !empty($_GET['page'])?$_GET['page']:1;
 
-			$list = json_decode($cache_data);
+			// $query = " SELECT * FROM run_check_file_order_pdf_excel
+   			// 			  WHERE user_id = 208";
 
-			// Lấy cache
+
+   			// Lấy cache
 			$data = apcu_fetch('list_xuat_kho');
 
 			if ($data == false) {
-			    apcu_store('list_xuat_kho', $list, 3600); // TTL 3600s = 1h
+
+				$query = " SELECT * FROM fs_order_uploads_detail  WHERE is_package = 1 ORDER BY date_package DESC" ;
+
+	   			$sql = $db->query_limit($query, 10, $page);
+				$result = $db->getObjectList();	
+			    apcu_store('list_xuat_kho', $result, 3600); // TTL 3600s = 1h
 			    $data = apcu_fetch('list_xuat_kho');
 			} 
+
+			
+
+
+
+			$kho = ['Kho','Kho Hà nội','Kho HCM'];
+
+			
+
+			$san = ['Sàn','Lazada','Shopee','Tiki','Lex ngoài HCM','Đơn ngoài','','Best','Ticktok','Viettel','Shopee ngoài'];
+
 			$end = microtime(true);
 
 			// Tính thời gian chạy
 			$executionTime = $end - $start;
 
 			echo "Thời gian thực thi: " . number_format($executionTime, 6) . " giây";
+
+
+			include 'modules/'.$this->module.'/views/'.$this->view.'/details.php';	
+
+
+
+
+
+			// $start = microtime(true);
+
+			// $redis = new Redis();
+			// $redis->connect('127.0.0.1', 6379); // IP & Port Redis server
+			// $key = "list_xuat_kho";
+			// $cache_data = $redis->get($key);
+
+			// $list = json_decode($cache_data);
+
+			// // Lấy cache
+			// $data = apcu_fetch('list_xuat_kho');
+
+			// if ($data == false) {
+			//     apcu_store('list_xuat_kho', $list, 3600); // TTL 3600s = 1h
+			//     $data = apcu_fetch('list_xuat_kho');
+			// } 
+			// $end = microtime(true);
+
+			// // Tính thời gian chạy
+			// $executionTime = $end - $start;
+
+			// echo "Thời gian thực thi: " . number_format($executionTime, 6) . " giây";
 
 			// $list = $this -> model->get_data();
 
