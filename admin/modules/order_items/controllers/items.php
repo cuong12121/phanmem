@@ -190,16 +190,16 @@
 
 
    			// Lấy cache
-			$data = apcu_fetch('list_xuat_kho');
+			$result = apcu_fetch('list_xuat_kho');
 
-			if ($data == false) {
+			if ($result == false) {
 
 				$query = " SELECT * FROM fs_order_uploads_detail  WHERE is_package = 1 ORDER BY date_package DESC" ;
 
 	   			$sql = $db->query_limit($query, 10, $page);
-				$result = $db->getObjectList();	
-			    apcu_store('list_xuat_kho', $result, 3600); // TTL 3600s = 1h
-			    $data = apcu_fetch('list_xuat_kho');
+				$data = $db->getObjectList();	
+			    apcu_store('list_xuat_kho', $data, 3600); // TTL 3600s = 1h
+			    $result = apcu_fetch('list_xuat_kho');
 			} 
 
 			
