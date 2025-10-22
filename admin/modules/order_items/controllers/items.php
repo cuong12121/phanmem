@@ -151,9 +151,9 @@
 
 			$list = $this -> model->get_data();
 
-			apcu_store('list_xuat_kho', $list1, 3600); // TTL 3600s = 1h
+			apcu_store('list_xuat_kho', $list, 3600); // TTL 3600s = 1h
 
-			$list = apcu_fetch('list_xuat_kho');
+			// $list = apcu_fetch('list_xuat_kho');
 
 			$end = microtime(true);
 
