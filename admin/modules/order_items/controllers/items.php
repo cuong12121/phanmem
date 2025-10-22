@@ -159,7 +159,13 @@
 		{
 			$start = microtime(true);
 
+			$list = $this -> model->get_data();
 
+			echo "<pre>";
+
+			print_r($list);
+
+			echo "</pre>";
 
 			$end = microtime(true);
 
