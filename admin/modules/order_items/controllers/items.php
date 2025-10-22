@@ -107,22 +107,11 @@
 
 		    if ($list === null) {
 
-		    	// Kết nối Redis
-				$redis = new Redis();
-				$redis->pconnect('127.0.0.1', 6379); // IP & Port Redis server
-				$key = "list_xuat_kho";
+		    	
 				if($_SESSION['ad_userid']==9){
-					$cache_data = $redis->get($key);
-
-					$list1 = json_decode($cache_data);
-
+					
 					// Lấy cache
 					$list = apcu_fetch('list_xuat_kho');
-
-					if ($list == false) {
-					    apcu_store('list_xuat_kho', $list1, 3600); // TTL 3600s = 1h
-					    $list = apcu_fetch('list_xuat_kho');
-					} 
 					
 				}
 				else{
@@ -146,14 +135,15 @@
 			echo "Thời gian thực thi: " . number_format($executionTime, 6) . " giây";
 
 			$users = $model -> get_record('id = ' . $_SESSION['ad_userid'],'fs_users');
-
 			
 			include 'modules/'.$this->module.'/views/'.$this->view.'/list.php';	
 
-			
-
-
 		}
+
+		// function FunctionName($value='')
+		// {
+		// 	// code...
+		// }
 
 		function checksv()
 		{
@@ -161,11 +151,9 @@
 
 			$list = $this -> model->get_data();
 
-			echo "<pre>";
+			apcu_store('list_xuat_kho', $list1, 3600); // TTL 3600s = 1h
 
-			print_r($list);
-
-			echo "</pre>";
+			$list = apcu_fetch('list_xuat_kho');
 
 			$end = microtime(true);
 
