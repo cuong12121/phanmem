@@ -3033,7 +3033,7 @@
 
 
 				// phần này là tìm kiếm để sắp xếp thứ tự in ngoại trừ tiktok đang làm
-				if($platform_id!=9){
+				if($platform_id!=1000){
 			
 					foreach ($list as $item){
 						//xóa hết các file page pdf trước khi chạy split_page_pdf_tiki
@@ -3315,7 +3315,7 @@
 
 
 				// phần này là chạy bản không tiktok
-				if($platform_id!=9){
+				if($platform_id!=1000){
 					foreach ($list as $item){
 						//xóa hết các file page pdf trước khi chạy split_page_pdf_tiki
 						$this -> _remove('record_id  = '.$item-> id,'fs_order_uploads_page_pdf');
