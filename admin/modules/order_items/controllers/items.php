@@ -621,33 +621,43 @@
 
 		function showTongThang()
 		{
-			$from = '2025-08-01';
-			$to   = '2025-10-31';
+			// $from = '2025-08-01';
+			// $to   = '2025-10-31';
 
-			$baseDir =  PATH_BASE.'admin/export/excel/order_item';
+			// $baseDir =  PATH_BASE.'admin/export/excel/order_item';
 
-			$date = date('Y-m-d');
+			// $date = date('Y-m-d');
 
-			$filename = 'file_nhat_tiktok_thang_8_10';
+			// $filename = 'file_nhat_tiktok_thang_8_10';
 
-			global $db;
+			// global $db;
 
-			$query = "SELECT * FROM fs_order_uploads_detail WHERE created_time BETWEEN '$from' AND '$to' AND is_print = 1";
+			// $query = "SELECT * FROM fs_order_uploads_detail WHERE created_time BETWEEN '$from' AND '$to' AND is_print = 1";
 
-			$sql = $db->query($query);
+			// $sql = $db->query($query);
 
-			$list = $db->getObjectList();
+			// $list = $db->getObjectList();
 
-			$result = $list;
+			// $result = $list;
 
 
 			$redis = new Redis();
 			$redis->connect('127.0.0.1', 6379); // IP & Port Redis server
 			$key = "list_xuat_kho_t8_t10";
 
-			$redis->set($key, json_encode($list));
+			// $redis->set($key, json_encode($list));
 
-			echo "Thành công";
+			$cache_data = $redis->get($key);
+
+			$list = json_decode($cache_data);
+
+			echo "<pre>";
+
+			print_r($list);
+			
+			echo "</pre>";
+
+			// echo "Thành công";
 
 			die;
 
