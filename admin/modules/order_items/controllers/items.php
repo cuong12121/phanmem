@@ -632,26 +632,13 @@
 
 			global $db;
 
-			$query = "SELECT * FROM fs_order_uploads_detail WHERE created_time BETWEEN '$from' AND '$to'";
+			$query = "SELECT * FROM fs_order_uploads_detail WHERE created_time BETWEEN '$from' AND '$to' AND is_print = 1";
 
 			$sql = $db->query($query);
 
 			$list = $db->getObjectList();
 
-			$querys = "SELECT  id FROM fs_order_uploads_history_prints WHERE platform_id = '$platform_id' AND warehouse_id = '$warehouse_id' AND house_id = $house_id ORDER BY id DESC";
-
-			$sqls = $db->query($querys);
-
-			$id_xlsx = $db->getResult();
-
-
-
-			$querys = "SELECT * FROM fs_order_uploads_detail AS a  WHERE 1=1 AND is_print = 1    AND a.date =  '$date'  AND a.house_id =  '$house_id'  AND a.warehouse_id =  '$warehouse_id'  AND a.platform_id =  '$platform_id'  ORDER BY sku_fisrt ASC,ABS(sku_fisrt),sku_last ASC,ABS(sku_last),color ASC,ABS(color),size ASC,ABS(size),created_time DESC , id DESC";
-
-			$sqls = $db->query($querys);
-			$result = $db->getObjectList();
-
-		
+			$result = $list;
 
 			// phần xuất file excel 
 
@@ -821,13 +808,6 @@
 
 				$output = $excel->write_files();
 
-				$dir_file = str_replace('/www/wwwroot/'.DOMAIN, '', $link_excel);
-
-				
-				$sql_xls_query= "UPDATE fs_order_uploads_history_prints SET file_xlsx = '$dir_file'  WHERE `id`=".$id_xlsx;
-
-				$db->query($sql_xls_query);
-				
 				echo "thành công";
 			}	
 		}
