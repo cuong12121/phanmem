@@ -105,24 +105,26 @@
 			
 			static $list = null;  //biến tĩnh dùng làm cache
 
-		    if ($list === null) {
+			$list = $this -> model->get_data();
+
+		    // if ($list === null) {
 
 		    	
-				if($_SESSION['ad_userid']==9){
+			// 	if($_SESSION['ad_userid']==9){
 					
-					// Lấy cache
-					$list = apcu_fetch('list_xuat_kho');
+			// 		// Lấy cache
+			// 		$list = apcu_fetch('list_xuat_kho');
 					
-				}
-				else{
-					$list = $this -> model->get_data();
-				}	
+			// 	}
+			// 	else{
+			// 		$list = $this -> model->get_data();
+			// 	}	
 		    	
 				
-		    }
-		    else{
-		    	echo "cache <br>";
-		    }
+		    // }
+		    // else{
+		    // 	echo "cache <br>";
+		    // }
 			
 
 			$pagination = $model->getPagination();
