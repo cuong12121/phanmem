@@ -619,10 +619,14 @@
 		}
 
 
-		function showTongThang($value='')
+		function showTongThang()
 		{
 			$from = '2025-08-01';
 			$to   = '2025-10-31';
+
+			$baseDir =  PATH_BASE.'admin/export/excel/order_item';
+
+			$date = date('Y-m-d');
 
 			$filename = 'file_nhat_tiktok_thang_8_10';
 
