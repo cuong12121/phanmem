@@ -281,14 +281,16 @@ endif;
             <td><?= $value->tracking_code  ?></td>
             <td><?= $value->product_name  ?></td>
             <td><?= $value->shop_name  ?></td>
-            <td><?= @$value->sku  ?></td>
-            <td><?= $value->color  ?></td>
-            <td><?= $value->size  ?></td>
+            
 
 
             <td><?= @$kho_define[$value->warehouse_id]  ?></td>
 
             <td><?= $value->shop_code  ?></td>
+            <td><?= @$value->sku  ?></td>
+            <td><?= $value->color  ?></td>
+            <td><?= $value->size  ?></td>
+            
             <td><?= $value->count  ?></td>
             <td><?= $value->record_id  ?></td>
 
