@@ -231,6 +231,10 @@ endif;
             <th>Tên shop</th>
             <th>Kho</th>
             <th>Mã shop</th>
+            <th>Mã sản phẩm</th>
+            <th>Mã màu</th>
+            <th>Mã size</th>
+
             <th>Số lượng</th>
             <th>Id đơn hàng</th>
             
@@ -277,6 +281,11 @@ endif;
             <td><?= $value->tracking_code  ?></td>
             <td><?= $value->product_name  ?></td>
             <td><?= $value->shop_name  ?></td>
+            <td><?= @$value->sku  ?></td>
+            <td><?= $value->color  ?></td>
+            <td><?= $value->size  ?></td>
+
+
             <td><?= @$kho_define[$value->warehouse_id]  ?></td>
 
             <td><?= $value->shop_code  ?></td>
