@@ -15293,5 +15293,6 @@ $result = [];
 foreach ($arrA as $index => $key) {
     $result[$key] = $arrB[$index] ?? null;
 }
-
+echo"<pre>";
 print_r($result);
+echo"</pre>";
