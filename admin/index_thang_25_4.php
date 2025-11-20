@@ -15316,4 +15316,4 @@ foreach ($result as $id => $price) {
         echo "Lỗi update id $id: " . $mysqli->error . "<br>";
     }
 }
-echo "string";
+echo "update thành công";
