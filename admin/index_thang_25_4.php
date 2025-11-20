@@ -15294,7 +15294,7 @@ foreach ($arrA as $index => $key) {
     $result[$key] = $arrB[$index] ?? null;
 }
 // --- Kết nối MySQL ---
-$mysqli = new mysqli("localhost", "username", "password", "database_name");
+$mysqli = new mysqli("localhost", "sql_dienmay_bak", "bfsHT6wL4GBJnAYA", "sql_dienmay_bak");
 $mysqli->set_charset("utf8");
 
 if ($mysqli->connect_errno) {
