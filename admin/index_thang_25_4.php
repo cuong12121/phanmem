@@ -15293,6 +15293,27 @@ $result = [];
 foreach ($arrA as $index => $key) {
     $result[$key] = $arrB[$index] ?? null;
 }
-echo"<pre>";
-print_r($result);
-echo"</pre>";
+// --- Kết nối MySQL ---
+$mysqli = new mysqli("localhost", "username", "password", "database_name");
+$mysqli->set_charset("utf8");
+
+if ($mysqli->connect_errno) {
+    die("Kết nối thất bại: " . $mysqli->connect_error);
+}
+
+// --- Update bảng fs_products ---
+foreach ($result as $id => $price) {
+
+    $id    = (int)$id;
+    $price = (int)$price; // convert giá về số
+
+    $sql = "UPDATE fs_products SET price_min = $price WHERE id = $id";
+
+    $kq = $mysqli->query($sql);
+
+    if (!$kq) {
+       
+        echo "Lỗi update id $id: " . $mysqli->error . "<br>";
+    }
+}
+echo "string";
