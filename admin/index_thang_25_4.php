@@ -890,7 +890,7 @@ foreach ($arrA as $index => $key) {
     $result[$key] = $arrB[$index] ?? null;
 }
 // --- Kết nối MySQL ---
-$mysqli = new mysqli("localhost", "sql_dienmay_bak", "bfsHT6wL4GBJnAYA", "sql_dienmay_bak");
+$mysqli = new mysqli("localhost", "user", "password", "sql_dienmay_bak");
 $mysqli->set_charset("utf8");
 
 if ($mysqli->connect_errno) {
@@ -903,7 +903,7 @@ foreach ($result as $id => $price) {
     $id    = (int)$id;
     $price = (int)$price; // convert giá về số
 
-    $sql = "UPDATE fs_products SET price_pack = 9000 WHERE id = $id";
+    $sql = "UPDATE fs_products SET price_pack = $price WHERE id = $id";
 
     $kq = $mysqli->query($sql);
 
