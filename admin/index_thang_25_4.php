@@ -903,7 +903,7 @@ foreach ($result as $id => $price) {
     $id    = (int)$id;
     $price = (int)$price; // convert giá về số
 
-    $sql = "UPDATE fs_products SET price = $price WHERE id = $id";
+    $sql = "UPDATE fs_products SET price_pack = 9000 WHERE id = $id";
 
     $kq = $mysqli->query($sql);
 
