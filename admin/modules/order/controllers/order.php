@@ -690,6 +690,14 @@
 	       
 	        $info_data = json_decode($response);
 
+	        echo "<pre>";
+
+	        print_r($info_data);
+
+	        echo "</pre>";
+
+	        die;
+
 	        include 'modules/'.$this->module.'/views/'.$this->view.'/details.php';
 	    	
 		}
@@ -1064,11 +1072,7 @@
 				$excel->obj_php_excel->getActiveSheet()->getColumnDimension('I')->setWidth(30);
 				$excel->obj_php_excel->getActiveSheet()->getColumnDimension('J')->setWidth(30);
 				$excel->obj_php_excel->getActiveSheet()->getColumnDimension('K')->setWidth(30);
-				$excel->obj_php_excel->getActiveSheet()->getColumnDimension('M')->setWidth(30);
-				$excel->obj_php_excel->getActiveSheet()->getColumnDimension('N')->setWidth(30);
-				$excel->obj_php_excel->getActiveSheet()->getColumnDimension('O')->setWidth(30);
-
-				
+				$excel->obj_php_excel->getActiveSheet()->getColumnDimension('L')->setWidth(30);
 
 				$excel->obj_php_excel->getActiveSheet()->getStyle('A')->getNumberFormat()->setFormatCode( PHPExcel_Style_NumberFormat::FORMAT_TEXT );
 				$excel->obj_php_excel->getActiveSheet()->getStyle('B')->getNumberFormat()->setFormatCode( PHPExcel_Style_NumberFormat::FORMAT_TEXT );
@@ -1082,9 +1086,6 @@
 				$excel->obj_php_excel->getActiveSheet()->getStyle('J')->getNumberFormat()->setFormatCode( PHPExcel_Style_NumberFormat::FORMAT_TEXT );
 				$excel->obj_php_excel->getActiveSheet()->getStyle('K')->getNumberFormat()->setFormatCode( PHPExcel_Style_NumberFormat::FORMAT_TEXT );
 				$excel->obj_php_excel->getActiveSheet()->getStyle('L')->getNumberFormat()->setFormatCode( PHPExcel_Style_NumberFormat::FORMAT_TEXT );
-				$excel->obj_php_excel->getActiveSheet()->getStyle('M')->getNumberFormat()->setFormatCode( PHPExcel_Style_NumberFormat::FORMAT_TEXT );
-				$excel->obj_php_excel->getActiveSheet()->getStyle('N')->getNumberFormat()->setFormatCode( PHPExcel_Style_NumberFormat::FORMAT_TEXT );
-				$excel->obj_php_excel->getActiveSheet()->getStyle('O')->getNumberFormat()->setFormatCode( PHPExcel_Style_NumberFormat::FORMAT_TEXT );
 
 
 				$excel->obj_php_excel->getActiveSheet()->setCellValue('A1', 'STT');
@@ -1099,9 +1100,6 @@
 				$excel->obj_php_excel->getActiveSheet()->setCellValue('J1', 'Thời gian đóng đơn hàng');
 				$excel->obj_php_excel->getActiveSheet()->setCellValue('K1', 'Thành tiền');
 				$excel->obj_php_excel->getActiveSheet()->setCellValue('L1', 'Đơn vị vẩn chuyển');
-				$excel->obj_php_excel->getActiveSheet()->setCellValue('M1', 'Mã sản phẩm');
-				$excel->obj_php_excel->getActiveSheet()->setCellValue('N1', 'Mã màu');
-				$excel->obj_php_excel->getActiveSheet()->setCellValue('O1', 'Size');
 
 				$key=1;
 				$stt =0;
@@ -1131,9 +1129,6 @@
 						$excel->obj_php_excel->getActiveSheet()->setCellValue('J'.$key, date("d/m/Y", strtotime($item->date_package)));
 						$excel->obj_php_excel->getActiveSheet()->setCellValue('K'.$key, number_format((float)$item->total_price, 0, ',', '.'));
 						$excel->obj_php_excel->getActiveSheet()->setCellValue('L'.$key, $item->shipping_unit_name??'');
-						$excel->obj_php_excel->getActiveSheet()->setCellValue('M'.$key, $item->sku??'');
-						$excel->obj_php_excel->getActiveSheet()->setCellValue('N'.$key, $item->color??'');
-						$excel->obj_php_excel->getActiveSheet()->setCellValue('O'.$key, $item->size??'');
 
 					}
 				}	
