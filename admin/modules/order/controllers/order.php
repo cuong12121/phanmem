@@ -690,13 +690,13 @@
 	       
 	        $info_data = json_decode($response);
 
-	        echo "<pre>";
+	        // echo "<pre>";
 
-	        print_r($info_data);
+	        // print_r($info_data);
 
-	        echo "</pre>";
+	        // echo "</pre>";
 
-	        die;
+	        // die;
 
 	        include 'modules/'.$this->module.'/views/'.$this->view.'/details.php';
 	    	
