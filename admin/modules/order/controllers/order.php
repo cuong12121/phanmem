@@ -328,6 +328,14 @@
 
 				$row_tracks = trim($data[$j]['A']);
 
+				$row_time = trim($data[$j]['B']);
+
+				$date = DateTime::createFromFormat('d/m/Y H:i:s', $row_time);
+
+				if(!$date->format('Y/m/d H:i:s')){
+					$error .="Định dạng thời gian dòng $j không đúng vui lòng kiểm tra lại";
+				}	
+			
 			
 				$kytudefine = substr(trim($row_tracks), -1);
 
@@ -376,6 +384,7 @@
 					$row_time = trim($data[$j]['B']);
 
 					$date = DateTime::createFromFormat('d/m/Y H:i:s', $row_time);
+
 					$date_time = $date->format('Y/m/d H:i:s');
 
 					
