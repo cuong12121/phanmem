@@ -333,7 +333,9 @@
 				$date = DateTime::createFromFormat('d/m/Y H:i:s', $row_time);
 
 				if (!$date) {
-				    throw new Exception("Định dạng thời gian dòng $j không đúng");
+				    throw new Exception("Định dạng thời gian dòng $j không đúng $row_time");
+
+				    die;
 				}
 
 				$dateFormatted = $date->format('Y/m/d H:i:s');
