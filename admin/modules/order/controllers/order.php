@@ -293,10 +293,19 @@
 
 			$error = '';
 
+			if(trim($data[2]['C'])=== 'null'){
+				$error .="Cần có mã của kho 1 là Hà nội 2 Là Hồ chí minh ở cột C hàng 2 <br>";
+
+					
+			}
+
 		
 			//kiểm tra lần đầu để check lỗi 
 
 			for($j=2;$j<=$heightRow;$j++){
+
+
+
 
 				if(trim($data[$j]['A']) === 'null'|| trim($data[$j]['B'])==='null'){
 
@@ -320,12 +329,12 @@
 
 				$sql = "SELECT id FROM fs_order_uploads_detail 
 				        WHERE is_package = :is_package 
-				        AND tracking_code = :tracking_code 
+				        AND tracking_code = :tracking_code  AND warehouse_id = :warehouse_id
 				        ORDER BY id DESC 
 				        LIMIT 100";
 
 				$stmt = $pdo->prepare($sql);
-				$stmt->execute(['is_package' => 0, 'tracking_code' => $search]);
+				$stmt->execute(['is_package' => 0, 'tracking_code' => $search, 'warehouse_id'  => trim($data[2]['C'])]);
 				$results = $stmt->fetchAll();
 
 				if(empty($results)){
@@ -368,13 +377,13 @@
 					// phần này là update vào db
 
 					$sql = "SELECT id FROM fs_order_uploads_detail 
-					        WHERE is_package = :is_package 
-					        AND tracking_code = :tracking_code 
-					        ORDER BY id DESC 
-					        LIMIT 100";
+				        WHERE is_package = :is_package 
+				        AND tracking_code = :tracking_code  AND warehouse_id = :warehouse_id
+				        ORDER BY id DESC 
+				        LIMIT 100";
 
 					$stmt = $pdo->prepare($sql);
-					$stmt->execute(['is_package' => 0, 'tracking_code' => $search]);
+					$stmt->execute(['is_package' => 0, 'tracking_code' => $search, 'warehouse_id'  => trim($data[2]['C'])]);
 					$results = $stmt->fetchAll();
 
 					if(!empty($results)){
