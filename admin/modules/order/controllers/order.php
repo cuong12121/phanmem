@@ -265,6 +265,7 @@
 			if($kho_df=== 'null'){
 				$error .="Cần có mã của kho :1 là Hà nội.<br> :2 Là Hồ chí minh ở cột C hàng 2 <br>";
 			}
+			$set_ky_tu = ['&'];
 
 			$define_id = ['&'=>9];
 
