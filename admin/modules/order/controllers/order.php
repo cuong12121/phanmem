@@ -333,10 +333,10 @@
 				$date = DateTime::createFromFormat('d/m/Y H:i:s', $row_time);
 
 				try {
-					$date->format('Y/m/d H:i:s')
+					$date->format('Y/m/d H:i:s');
 				} catch (Exception $e) {
 					$error .="Định dạng thời gian dòng $j không đúng vui lòng kiểm tra lại";
-					
+
 				}
 
 				
