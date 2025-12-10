@@ -348,7 +348,7 @@
 
 				if(empty($results)){
 
-					$error .="Mã tracking của dòng $j không đúng, vui lòng kiểm tra lại <br>";
+					$error .="Mã tracking $search của dòng $j không đúng, vui lòng kiểm tra lại <br>";
 					
 				}
 
