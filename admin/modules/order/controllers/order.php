@@ -260,9 +260,22 @@
 
 			date_default_timezone_set('Asia/Ho_Chi_Minh');
 
-			$set_ky_tu = ['$','@','%','?','+','&','#','*','/','>','<','-'];
+			$kho_df = trim($data[2]['C']);
 
-			$define_id = ['$'=>252, '@'=>253, '%'=>254,'?'=>255, '+'=>251, '&'=>9,'#'=>256, '*'=>257,'/'=>258,'>'=>259,'<'=>260,'-'=>266];
+			if($kho_df=== 'null'){
+				$error .="Cần có mã của kho :1 là Hà nội.<br> :2 Là Hồ chí minh ở cột C hàng 2 <br>";
+			}
+
+			$define_id = ['&'=>9];
+
+			if($kho_df==1){
+
+				$set_ky_tu = ['$','@','%','?','+','&','#','*','/','>','<','-'];
+
+				$define_id = ['$'=>252, '@'=>253, '%'=>254,'?'=>255, '+'=>251, '&'=>9,'#'=>256, '*'=>257,'/'=>258,'>'=>259,'<'=>260,'-'=>266];
+
+			}
+
 
 			$config = require PATH_BASE.'/includes/configs.php';
 
@@ -293,11 +306,7 @@
 
 			$error = '';
 
-			if(trim($data[2]['C'])=== 'null'){
-				$error .="Cần có mã của kho :1 là Hà nội.<br> :2 Là Hồ chí minh ở cột C hàng 2 <br>";
-
-					
-			}
+			
 
 		
 			//kiểm tra lần đầu để check lỗi 
