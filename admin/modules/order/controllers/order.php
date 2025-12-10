@@ -332,12 +332,15 @@
 
 				$date = DateTime::createFromFormat('j/n/Y H:i:s', $row_time);
 
-				if (!$date) {
-				    throw new Exception("Định dạng thời gian dòng $j không đúng $row_time");
+				$errors = DateTime::getLastErrors();
 
-				    die;
+				if ($date === false || $errors['error_count'] > 0) {
+				    $error .= "Thời gian không hợp lệ dòng $j<br>";
+				} else {
+				    // format lại → tự thêm số 0 + thêm giây
+				    $row_time = $date->format('d/m/Y H:i:s');
 				}
-
+				
 				$dateFormatted = $date->format('Y/m/d H:i:s');
 
 				
@@ -390,7 +393,14 @@
 
 					$date = DateTime::createFromFormat('j/n/Y H:i:s', $row_time);
 
-					$date_time = $date->format('Y/m/d H:i:s');
+					$errors = DateTime::getLastErrors();
+
+					if ($date === false || $errors['error_count'] > 0) {
+					    $error .= "Thời gian không hợp lệ dòng $j<br>";
+					} else {
+					    // format lại → tự thêm số 0 + thêm giây
+					    $row_time = $date->format('d/m/Y H:i:s');
+					}
 
 					
 
