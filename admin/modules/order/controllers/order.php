@@ -236,6 +236,10 @@
 
 		function update_pack($file_path)
 		{
+
+			echo "Hệ thống đang bảo trì vui lòng quay lại sau";
+
+			die;
 			// $row_time ='6/30/2025 9:12:27';
 			// $date_time = (new DateTime($row_time))->format('Y-m-d H:i:s');
 
