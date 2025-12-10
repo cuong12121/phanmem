@@ -330,13 +330,13 @@
 
 				$row_time = trim($data[$j]['B']);
 
-				try {
-					$date = DateTime::createFromFormat('d/m/Y H:i:s', $row_time);
-					$date->format('Y/m/d H:i:s');
-				} catch (Exception $e) {
-					$error .="Định dạng thời gian dòng $j không đúng vui lòng kiểm tra lại";
+				$date = DateTime::createFromFormat('d/m/Y H:i:s', $row_time);
 
+				if (!$date) {
+				    throw new Exception("Định dạng thời gian dòng $j không đúng");
 				}
+
+				$dateFormatted = $date->format('Y/m/d H:i:s');
 
 				
 			
