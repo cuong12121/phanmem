@@ -271,6 +271,15 @@
 			// Reset key để dễ dùng
 			$data = array_values($filteredData);
 
+			echo "<pre>";
+			var_dump($data);
+
+			echo "</pre>";
+
+			die;
+
+
+
 			// $data->load($file_path);
 			unset($heightRow);  
 			$heightRow=$objexcel->setActiveSheetIndex()->getHighestRow();
