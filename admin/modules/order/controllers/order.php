@@ -336,19 +336,31 @@
 				$row_time = trim($data[$j]['B']);
 
 				
-			    $date = DateTime::createFromFormat('j/n/Y G:i', $row_time);
-			    $errors = DateTime::getLastErrors();
 
-			    if ($date === false || $errors['error_count'] > 0) {
-			        $error .= "Thời gian không hợp lệ dòng $j<br>";
-			    } else {
-			        // Chuẩn hóa: thêm số 0 + thêm giây
-			        $row_time = $date->format('d/m/Y H:i:s');
+				// Bắt buộc đúng dạng: d/m/Y H:i (1 hoặc 2 số vẫn OK)
+				if (!preg_match('/^\d{1,2}\/\d{1,2}\/\d{4} \d{1,2}:\d{2}$/', $row_time)) {
 
-			       
-			    }
-			    $dateFormatted = $date->format('Y/m/d H:i:s');
-				
+				    $date = DateTime::createFromFormat('d/n/Y G:i', $row_time);
+
+
+				} else {
+
+				    $date = DateTime::createFromFormat('j/n/Y G:i', $row_time);
+				    $errors = DateTime::getLastErrors();
+
+				    if ($date === false || $errors['error_count'] > 0) {
+				        $error .= "Thời gian không hợp lệ dòng $j<br>";
+				    } else {
+				        // Chuẩn hóa: thêm số 0 + thêm giây
+				        $row_time = $date->format('d/m/Y H:i:s');
+
+				       
+				    }
+				    
+				}
+				$datetime = $date->format('Y/m/d H:i:s');
+
+			
 
 				$kytudefine = substr(trim($row_tracks), -1);
 
@@ -398,7 +410,10 @@
 
 					// Bắt buộc đúng dạng: d/m/Y H:i (1 hoặc 2 số vẫn OK)
 					if (!preg_match('/^\d{1,2}\/\d{1,2}\/\d{4} \d{1,2}:\d{2}$/', $row_time)) {
-					    $error .= "Sai định dạng thời gian dòng $j<br>";
+
+					    $date = DateTime::createFromFormat('d/n/Y G:i', $row_time);
+
+
 					} else {
 
 					    $date = DateTime::createFromFormat('j/n/Y G:i', $row_time);
@@ -409,10 +424,12 @@
 					    } else {
 					        // Chuẩn hóa: thêm số 0 + thêm giây
 					        $row_time = $date->format('d/m/Y H:i:s');
-					    }
-					}
 
-					$date_time = $date->format('Y/m/d H:i:s');
+					       
+					    }
+					    
+					}
+					$datetime = $date->format('Y/m/d H:i:s');
 
 					
 					$user_id = $define_id[$kytudefine];
