@@ -423,6 +423,10 @@
 					}
 
 					$date_time = $date->format('Y/m/d H:i:s');
+
+					var_dump($date_time);
+
+					die;
 					
 
 					$user_id = $define_id[$kytudefine];
