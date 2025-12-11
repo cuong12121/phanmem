@@ -342,6 +342,10 @@
 
 				    $date = DateTime::createFromFormat('d/n/Y H:i:s', $row_time);
 
+				    var_dump($date);
+
+				    die;
+
 
 				} else {
 
