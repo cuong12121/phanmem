@@ -358,7 +358,7 @@
 				// Bắt buộc đúng dạng: d/m/Y H:i (1 hoặc 2 số vẫn OK)
 				if (!preg_match('/^\d{1,2}\/\d{1,2}\/\d{4} \d{1,2}:\d{2}$/', $row_time)) {
 
-				    $date = DateTime::createFromFormat('d/n/Y H:i:s', $row_time);
+				    $date = DateTime::createFromFormat('d/m/Y H:i:s', $row_time);
 
 
 
