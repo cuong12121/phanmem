@@ -272,6 +272,12 @@
 			}
 
 			$data = $filtered;   // Gán lại data chỉ còn dòng có dữ liệu
+
+			echo "<pre>";
+			var_dump($data);
+			echo "<pre>";
+
+			die;
 			// $data->load($file_path);
 			unset($heightRow);  
 			$heightRow=$objexcel->setActiveSheetIndex()->getHighestRow();
