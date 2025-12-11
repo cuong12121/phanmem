@@ -359,6 +359,10 @@
 
 				$dateFormatted = $date->format('Y/m/d H:i:s');
 
+				var_dump($dateFormatted);
+
+					die;
+
 
 				$kytudefine = substr(trim($row_tracks), -1);
 
