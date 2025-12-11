@@ -335,7 +335,7 @@
 		
 			//kiểm tra lần đầu để check lỗi 
 
-			for($j=2;$j<=count($data);$j++){
+			for($j=2;$j<count($data);$j++){
 
 
 
@@ -429,7 +429,7 @@
 				setRedirect($link,$error,'error');
 			}
 			
-			for($j=2;$j<=count($data);$j++){
+			for($j=2;$j<count($data);$j++){
 
 				if(!empty($data[$j]['A'])  && !empty($data[$j]['B'])){
 			
