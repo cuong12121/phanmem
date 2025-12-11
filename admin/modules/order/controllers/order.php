@@ -421,6 +421,8 @@
 					        $row_time = $date->format('d/m/Y H:i:s');
 					    }
 					}
+
+					$date_time = $date->format('Y/m/d H:i:s');
 					
 
 					$user_id = $define_id[$kytudefine];
