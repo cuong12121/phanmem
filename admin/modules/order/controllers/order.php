@@ -263,6 +263,8 @@
 			unset($j);
 
 			date_default_timezone_set('Asia/Ho_Chi_Minh');
+			$error = '';
+
 
 			$kho_df = trim($data[2]['C']);
 
@@ -309,8 +311,7 @@
 
 			$link = 'index.php?module=order&view=order&task=view_pack';
 
-			$error = '';
-
+			
 			
 
 		
