@@ -465,9 +465,7 @@
 							    'id' => $checkorders_id
 							];
 
-							var_dump($params);
-
-							die;
+							
 
 							// Thực hiện câu lệnh
 							$update = $stmt->execute($params);
