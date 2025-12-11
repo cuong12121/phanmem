@@ -361,8 +361,23 @@
 				    
 				}
 
-				
-				$date_time = $date->format('Y/m/d H:i:s');
+				try {
+				    $date = DateTime::createFromFormat('d/m/Y H:i:s', $row_time);
+
+				    // Nếu parse lỗi -> $date === false
+				    if ($date === false) {
+				        throw new Exception("Ngày giờ không hợp lệ");
+				    }
+
+				    $date_time = $date->format('Y/m/d H:i:s');  // CHỈ chạy khi an toàn
+
+				} catch (Exception $e) {
+				    // Dừng code tại đây để kiểm tra lỗi
+				    die("Lỗi dòng $j: ".$row_time." - ".$e->getMessage());
+				}
+
+
+				// $date_time = $date->format('Y/m/d H:i:s');
 
 			
 
