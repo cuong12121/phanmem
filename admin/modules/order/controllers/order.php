@@ -461,7 +461,7 @@
 
 							// Các giá trị cần bind
 							$params = [
-							    'is_package' => 0,
+							    'is_package' => 1,
 							    'user_package_id' => $user_package_id,
 							    'date_package' =>   ($date_time),
 							    'id' => $checkorders_id
