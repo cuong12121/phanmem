@@ -261,11 +261,11 @@
 			$filtered = [];
 
 			foreach ($data as $row) {
-			    // Kiểm tra cột A, B, C có dữ liệu
+			    // Kiểm tra cột A, B có dữ liệu
 			    if (
 			        (!empty($row['A']) && $row['A'] !== 'null') ||
-			        (!empty($row['B']) && $row['B'] !== 'null') ||
-			        (!empty($row['C']) && $row['C'] !== 'null')
+			        (!empty($row['B']) && $row['B'] !== 'null')
+			        
 			    ) {
 			        $filtered[] = $row;
 			    }
@@ -273,11 +273,7 @@
 
 			$data = $filtered;   // Gán lại data chỉ còn dòng có dữ liệu
 
-			echo "<pre>";
-			var_dump($data);
-			echo "<pre>";
 
-			die;
 			// $data->load($file_path);
 			unset($heightRow);  
 			$heightRow=$objexcel->setActiveSheetIndex()->getHighestRow();
@@ -339,7 +335,7 @@
 		
 			//kiểm tra lần đầu để check lỗi 
 
-			for($j=2;$j<=$heightRow;$j++){
+			for($j=2;$j<=$count($data);$j++){
 
 
 
@@ -433,7 +429,7 @@
 				setRedirect($link,$error,'error');
 			}
 			
-			for($j=2;$j<=$heightRow;$j++){
+			for($j=2;$j<=$count($data);$j++){
 
 				if(!empty($data[$j]['A'])  && !empty($data[$j]['B'])){
 			
