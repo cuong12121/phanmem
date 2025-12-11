@@ -440,7 +440,7 @@
 				        LIMIT 100";
 
 					$stmt = $pdo->prepare($sql);
-					$stmt->execute(['is_package' => 1, 'tracking_code' => trim($search), 'warehouse_id'  => trim($data[2]['C'])]);
+					$stmt->execute(['is_package' => 0, 'tracking_code' => trim($search), 'warehouse_id'  => trim($data[2]['C'])]);
 					$results = $stmt->fetchAll();
 
 					if(!empty($results)){
