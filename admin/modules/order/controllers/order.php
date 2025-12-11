@@ -349,8 +349,12 @@
 				    } else {
 				        // Chuẩn hóa: thêm số 0 + thêm giây
 				        $row_time = $date->format('d/m/Y H:i:s');
+
+				        var_dump($row_time);
 				    }
 				}
+
+				die;
 
 				$dateFormatted = $date->format('Y/m/d H:i:s');
 
