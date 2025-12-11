@@ -257,34 +257,24 @@
 			$objexcel = $objReader->load($file_path);
 			$data =$objexcel->getActiveSheet()->toArray('null',true,true,true);
 
-			// Lọc bỏ các dòng null (tất cả cột đều null hoặc rỗng)
-			$filteredData = array_filter($data, function($row){
-			    // Nếu tất cả phần tử đều null hoặc chuỗi rỗng thì bỏ
-			    foreach ($row as $cell) {
-			        if (!is_null($cell) && trim($cell) !== "") {
-			            return true; // có dữ liệu
-			        }
+			// Lọc chỉ các dòng có dữ liệu ở cột A, B hoặc C
+			$filtered = [];
+
+			foreach ($data as $row) {
+			    // Kiểm tra cột A, B, C có dữ liệu
+			    if (
+			        (!empty($row['A']) && $row['A'] !== 'null') ||
+			        (!empty($row['B']) && $row['B'] !== 'null') ||
+			        (!empty($row['C']) && $row['C'] !== 'null')
+			    ) {
+			        $filtered[] = $row;
 			    }
-			    return false; // cả dòng rỗng → loại
-			});
+			}
 
-			// Reset key để dễ dùng
-			$data = array_values($filteredData);
-
-
-
-
-
+			$data = $filtered;   // Gán lại data chỉ còn dòng có dữ liệu
 			// $data->load($file_path);
 			unset($heightRow);  
 			$heightRow=$objexcel->setActiveSheetIndex()->getHighestRow();
-
-			echo "<pre>";
-			var_dump($heightRow);
-
-			echo "</pre>";
-
-			die;
 			// printr($data);
 			unset($j);
 
