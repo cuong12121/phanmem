@@ -256,6 +256,21 @@
 			$objReader->setLoadAllSheets();
 			$objexcel = $objReader->load($file_path);
 			$data =$objexcel->getActiveSheet()->toArray('null',true,true,true);
+
+			// Lọc bỏ các dòng null (tất cả cột đều null hoặc rỗng)
+			$filteredData = array_filter($data, function($row){
+			    // Nếu tất cả phần tử đều null hoặc chuỗi rỗng thì bỏ
+			    foreach ($row as $cell) {
+			        if (!is_null($cell) && trim($cell) !== "") {
+			            return true; // có dữ liệu
+			        }
+			    }
+			    return false; // cả dòng rỗng → loại
+			});
+
+			// Reset key để dễ dùng
+			$data = array_values($filteredData);
+
 			// $data->load($file_path);
 			unset($heightRow);  
 			$heightRow=$objexcel->setActiveSheetIndex()->getHighestRow();
