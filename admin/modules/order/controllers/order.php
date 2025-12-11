@@ -359,12 +359,7 @@
 
 				$dateFormatted = $date->format('Y/m/d H:i:s');
 
-				var_dump($dateFormatted);
 
-				die;
-
-				
-			
 				$kytudefine = substr(trim($row_tracks), -1);
 
 				if(!in_array($kytudefine, $set_ky_tu)){
@@ -380,7 +375,7 @@
 				        LIMIT 100";
 
 				$stmt = $pdo->prepare($sql);
-				$stmt->execute(['is_package' => 0, 'tracking_code' => trim($search), 'warehouse_id'  => trim($data[2]['C'])]);
+				$stmt->execute(['is_package' => 1, 'tracking_code' => trim($search), 'warehouse_id'  => trim($data[2]['C'])]);
 				$results = $stmt->fetchAll();
 
 				if(empty($results)){
@@ -441,7 +436,7 @@
 				        LIMIT 100";
 
 					$stmt = $pdo->prepare($sql);
-					$stmt->execute(['is_package' => 0, 'tracking_code' => trim($search), 'warehouse_id'  => trim($data[2]['C'])]);
+					$stmt->execute(['is_package' => 1, 'tracking_code' => trim($search), 'warehouse_id'  => trim($data[2]['C'])]);
 					$results = $stmt->fetchAll();
 
 					if(!empty($results)){
