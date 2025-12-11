@@ -375,7 +375,7 @@
 				        LIMIT 100";
 
 				$stmt = $pdo->prepare($sql);
-				$stmt->execute(['is_package' => 1, 'tracking_code' => trim($search), 'warehouse_id'  => trim($data[2]['C'])]);
+				$stmt->execute(['is_package' => 0, 'tracking_code' => trim($search), 'warehouse_id'  => trim($data[2]['C'])]);
 				$results = $stmt->fetchAll();
 
 				if(empty($results)){
@@ -459,7 +459,7 @@
 
 							// Các giá trị cần bind
 							$params = [
-							    'is_package' => 1,
+							    'is_package' => 0,
 							    'user_package_id' => $user_package_id,
 							    'date_package' =>   ($date_time),
 							    'id' => $checkorders_id
