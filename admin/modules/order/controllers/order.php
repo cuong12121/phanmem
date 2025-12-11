@@ -342,9 +342,7 @@
 
 				    $date = DateTime::createFromFormat('d/n/Y H:i:s', $row_time);
 
-				    var_dump($date);
 
-				    die;
 
 
 				} else {
@@ -362,6 +360,10 @@
 				    }
 				    
 				}
+
+				var_dump($date->format('Y/m/d H:i:s'));
+
+				    die;
 				$date_time = $date->format('Y/m/d H:i:s');
 
 			
