@@ -337,7 +337,7 @@
 
 			for($j=2;$j<count($data);$j++){
 
-
+				$dong= $j+1;
 
 
 				if(trim($data[$j]['A']) === 'null'|| trim($data[$j]['B'])==='null'){
@@ -369,7 +369,7 @@
 				    $errors = DateTime::getLastErrors();
 
 				    if ($date === false || $errors['error_count'] > 0) {
-				        $error .= "Thời gian không hợp lệ dòng $j<br>";
+				        $error .= "Thời gian không hợp lệ dòng $dong<br>";
 				    } else {
 				        // Chuẩn hóa: thêm số 0 + thêm giây
 				        $row_time = $date->format('d/m/Y H:i:s');
@@ -419,7 +419,7 @@
 
 				if(empty($results)){
 
-					$error .="Mã tracking $search của dòng $j không đúng, vui lòng kiểm tra lại <br>";
+					$error .="Mã tracking $search của dòng $dong không đúng, vui lòng kiểm tra lại <br>";
 					
 				}
 
@@ -430,6 +430,8 @@
 			}
 			
 			for($j=2;$j<count($data);$j++){
+
+				$dong= $j+1;
 
 				if(!empty($data[$j]['A'])  && !empty($data[$j]['B'])){
 			
@@ -457,7 +459,7 @@
 					    $errors = DateTime::getLastErrors();
 
 					    if ($date === false || $errors['error_count'] > 0) {
-					        $error .= "Thời gian không hợp lệ dòng $j<br>";
+					        $error .= "Thời gian không hợp lệ dòng $dong<br>";
 					    } else {
 					        // Chuẩn hóa: thêm số 0 + thêm giây
 					        $row_time = $date->format('d/m/Y H:i:s');
@@ -515,7 +517,7 @@
 							$update = $stmt->execute($params);
 
 							if (!$update) {
-								$msg = "Có lỗi xảy ra với mã tracking của dòng $j vui lòng kiểm tra lại";
+								$msg = "Có lỗi xảy ra với mã tracking của dòng $dong vui lòng kiểm tra lại";
 
 								setRedirect($link,$msg, 'error');
 							}	
