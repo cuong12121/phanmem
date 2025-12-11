@@ -361,9 +361,7 @@
 				    
 				}
 
-				var_dump($date->format('Y/m/d H:i:s'));
-
-				    die;
+				
 				$date_time = $date->format('Y/m/d H:i:s');
 
 			
