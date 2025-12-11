@@ -359,7 +359,7 @@
 
 				$dateFormatted = $date->format('Y/m/d H:i:s');
 
-				
+
 
 
 				$kytudefine = substr(trim($row_tracks), -1);
@@ -426,11 +426,7 @@
 
 					$date_time = $date->format('Y/m/d H:i:s');
 
-					var_dump($date_time);
-
-					die;
 					
-
 					$user_id = $define_id[$kytudefine];
 
 					$search = str_replace($kytudefine, '', $row_track);
