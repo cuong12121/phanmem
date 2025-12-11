@@ -340,6 +340,8 @@
 				// Bắt buộc đúng dạng: d/m/Y H:i (1 hoặc 2 số vẫn OK)
 				if (!preg_match('/^\d{1,2}\/\d{1,2}\/\d{4} \d{1,2}:\d{2}$/', $row_time)) {
 				    $error .= "Sai định dạng thời gian dòng $j<br>";
+
+				    die;
 				} else {
 
 				    $date = DateTime::createFromFormat('j/n/Y G:i', $row_time);
@@ -353,11 +355,12 @@
 
 				       
 				    }
+				    $dateFormatted = $date->format('Y/m/d H:i:s');
 				}
 
 				
 
-				$dateFormatted = $date->format('Y/m/d H:i:s');
+				
 
 
 
