@@ -336,35 +336,19 @@
 				$row_time = trim($data[$j]['B']);
 
 				
+			    $date = DateTime::createFromFormat('j/n/Y G:i', $row_time);
+			    $errors = DateTime::getLastErrors();
 
-				// Bắt buộc đúng dạng: d/m/Y H:i (1 hoặc 2 số vẫn OK)
-				if (!preg_match('/^\d{1,2}\/\d{1,2}\/\d{4} \d{1,2}:\d{2}$/', $row_time)) {
-				    $error .= "Sai định dạng thời gian dòng $j<br>";
-				    echo $error;
+			    if ($date === false || $errors['error_count'] > 0) {
+			        $error .= "Thời gian không hợp lệ dòng $j<br>";
+			    } else {
+			        // Chuẩn hóa: thêm số 0 + thêm giây
+			        $row_time = $date->format('d/m/Y H:i:s');
 
-				    die;
-				} else {
-
-				    $date = DateTime::createFromFormat('j/n/Y G:i', $row_time);
-				    $errors = DateTime::getLastErrors();
-
-				    if ($date === false || $errors['error_count'] > 0) {
-				        $error .= "Thời gian không hợp lệ dòng $j<br>";
-				    } else {
-				        // Chuẩn hóa: thêm số 0 + thêm giây
-				        $row_time = $date->format('d/m/Y H:i:s');
-
-				       
-				    }
-				    $dateFormatted = $date->format('Y/m/d H:i:s');
-				}
-
+			       
+			    }
+			    $dateFormatted = $date->format('Y/m/d H:i:s');
 				
-
-				
-
-
-
 
 				$kytudefine = substr(trim($row_tracks), -1);
 
