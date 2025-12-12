@@ -3260,7 +3260,7 @@
 
             		$file_save = 'pythonAI/tiktok/'.$date_now.'/input'.$warehouse_id.'_'.$house_id.'.pdf';
 
-            		$url_decode = html_entity_decode('https://drive.phanmemttp.xyz/pythonAI/callpy.php?file='.$dir_file_name_convert.'&warehouse_id='.$warehouse_id.'&house_id='.$house_id);
+            		$url_decode = html_entity_decode('https://drive.mayruaxekaw.com/pythonAI/callpy.php?file='.$dir_file_name_convert.'&warehouse_id='.$warehouse_id.'&house_id='.$house_id);
 
 
 					file_get_contents($url_decode);
@@ -3554,7 +3554,7 @@
             		$file_save = 'pythonAI/tiktok/'.$date_now.'/input'.$warehouse_id.'_'.$house_id.'.pdf';
 
 
-					file_get_contents('https://drive.phanmemttp.xyz/pythonAI/callpy.php?file='.$dir_file_name_convert.'&warehouse_id='.$warehouse_id.'&house_id='.$house_id);
+					file_get_contents('https://drive.mayruaxekaw.com/pythonAI/callpy.php?file='.$dir_file_name_convert.'&warehouse_id='.$warehouse_id.'&house_id='.$house_id);
 				}
 
 				//lưu lại lịch sử in

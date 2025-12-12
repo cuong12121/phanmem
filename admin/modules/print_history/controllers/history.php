@@ -451,7 +451,7 @@
 
 				$indexs = $i-1;
 
-				$json = file_get_contents('https://drive.phanmemttp.xyz/pythonAI/data'.$i.'.json');
+				$json = file_get_contents('https://drive.mayruaxekaw.com/pythonAI/data'.$i.'.json');
 
 				$json = json_decode($json, true);
 
@@ -504,7 +504,7 @@
 
 				$output_pdf = PATH_BASE.'/files/print/tiktok/'.$date_now.'_count_'.$i.'_'.basename($data[$indexs]['file_pdf']);
 
-				$url_pdf_get = 'https://drive.phanmemttp.xyz/'.$data[$indexs]['file_pdf'];
+				$url_pdf_get = 'https://drive.mayruaxekaw.com/'.$data[$indexs]['file_pdf'];
 
 				$pdfContent = file_get_contents($url_pdf_get);
 
@@ -759,7 +759,7 @@
 
 		function show_combo()
 		{
-			$code  = file_get_contents('https://api.phanmemttp.xyz/api.php?key_number=1');
+			$code  = file_get_contents('https://ai.mayruaxekaw.com/api.php?key_number=1');
 
 			$data = json_decode($code);
 
@@ -893,7 +893,7 @@
 			
 				$dem =$i;
 
-				$url_json = 'https://api.phanmemttp.xyz/apis.php?key_number='.$dem;
+				$url_json = 'https://ai.mayruaxekaw.com/apis.php?key_number='.$dem;
 
 				$content = file_get_contents($url_json);
 
@@ -1003,7 +1003,7 @@
 			
 				$dem =$i;
 
-				$url_json = 'https://api.phanmemttp.xyz/apis_tiktok.php?key_number='.$dem;
+				$url_json = 'https://ai.mayruaxekaw.com/apis_tiktok.php?key_number='.$dem;
 
 				$content = file_get_contents($url_json);
 
@@ -1142,7 +1142,7 @@
 
 				$filename = str_replace('https://dienmayai.com', '', $filename[0]['file_link']) ;
 
-				$url_json = 'https://api.phanmemttp.xyz/api.php?key_number='.$dem;
+				$url_json = 'https://ai.mayruaxekaw.com/api.php?key_number='.$dem;
 
 				$content = file_get_contents($url_json);
 
@@ -1618,7 +1618,7 @@
 		$link = URL_ROOT.$data-> file_pdf;
 		if (strpos($data-> file_pdf, "pythonAI/tiktok/") !== false) {
 
-			$link = 'https://drive.phanmemttp.xyz/'.$data-> file_pdf;
+			$link = 'https://drive.mayruaxekaw.com/'.$data-> file_pdf;
 		   
 		}
 		
